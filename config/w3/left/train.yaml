@@ -1,10 +1,4 @@
 data:
-  train_h5_paths:
-  - data/left/TRAIN_SESSION/free_motion.h5
-  val_h5_paths:
-  - data/left/VAL_SESSION/free_motion.h5
-  val_episodes: all
-  train_episodes: all
   arm_mode: single
   keys:
     joint_pos: joint_pos
@@ -12,9 +6,8 @@ data:
     joint_cmd: joint_cmd
     measured_joint_torque: measured_joint_torque
   history: 50
-  val_fraction: 0.1
-  val_split: contiguous
-  val_buffer_windows: 50
+  manifest: data/left/SET_DATASET_ID/split.json
+  memory_budget_mb: 512
 model:
   type: lstm
   state_mode: stateless
@@ -30,6 +23,7 @@ train:
   learning_rate: 0.001
   device: cpu
   seed: 0
+  cpu_threads: 1
 save:
   output_dir: runs
   run_name: next_left_DATASET_ID

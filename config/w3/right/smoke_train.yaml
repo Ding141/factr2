@@ -1,3 +1,4 @@
+# Synthetic development smoke only; baseline architecture unchanged.
 data:
   arm_mode: single
   keys:
@@ -6,7 +7,7 @@ data:
     joint_cmd: joint_cmd
     measured_joint_torque: measured_joint_torque
   history: 50
-  manifest: data/right/SET_DATASET_ID/split.json
+  manifest: data/mock/right/split.json
   memory_budget_mb: 512
 model:
   type: lstm
@@ -18,15 +19,15 @@ model:
   head_layers: 2
   dropout: 0.1
 train:
-  batch_size: 2048
-  epochs: 20
+  batch_size: 64
+  epochs: 2
   learning_rate: 0.001
   device: cpu
   seed: 0
   cpu_threads: 1
 save:
   output_dir: runs
-  run_name: next_right_DATASET_ID
+  run_name: next_right_synthetic_smoke
 contract_version: w3_next_v1
 side: right
 joint_names:

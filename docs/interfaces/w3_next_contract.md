@@ -24,3 +24,11 @@ adapter_status 位于 `/factr2/{side}/adapter_status`，header 为生成时间�
 路径：`data/{side}/{session_id}/`、`runs/next_{side}_{dataset_id}_{timestamp}/`、`reports/generated/`，均忽略 Git。NEXT 普通 YAML 经 config_file 参数传入，trainer 经 --config；不能将普通 YAML 当 ROS --params-file。adapter 的配置为 ROS 参数 YAML。
 
 后续 manifest 必须含 contract_version、side、joint_names、sample_hz、history、session_id、dataset_id、episode/split 清单、自由空间/接触标记、工具/负载、两仓库 commit、标定文件路径+SHA256、实际数据绝对路径+SHA256、起止时间、质量统计、采集配置。模型 metadata 必须含 contract_version、side、joint_names、input_size/output_size/history、feature_order、模型配置、train/val session IDs、manifest SHA256、归一化来源 train、软件/依赖版本、checkpoint/config/normalization/metrics 绝对路径+SHA256；工具在第 4/5 部分实现。
+
+### 数据集与 checkpoint 实现（第 4/5 部分）
+
+录制侧车为同名 `.metadata.json`，严格检查模块为 `factr2_next.data_collection.quality`。`w3_split_v1` manifest 保存 dataset_id、三份非空 train/val/test、每份绝对 path、内容 SHA256、episode 清单及 rosbag audit_paths。唯一来源是 `(H5 SHA256,episode)`。未通过严格检查/标记排除的片段不能用于训练。
+
+`w3_checkpoint_v1` 的 `metadata.json` 记录 contract_version、side、joint_order、feature_order=[q,qdot,q_cmd-q]、history=50、input_size=21、output_size=7、sample_hz=50、dataset_id、manifest_sha256、tool/gripper/load/calibration、software_versions/commits、seed、resolved_device 和 artifact_sha256。加载时逐项核验 config/权重/归一化及运行 profile，不以尺寸相同代替侧别匹配。保存 minimum validation normalized MSE 的 best epoch，test 仅冻结后评估。
+
+x normalization 的统计覆盖训练窗口每个时间步（按重叠次数加权），y normalization 覆盖训练窗口末帧标签；float64 计算、float32 存储、std+1e-6。离线残差 measured-predicted，单位 Nm；physical MSE 为 Nm²。部署与离线都使用 stateless 同一窗口，不保存跨窗口 recurrent hidden state。

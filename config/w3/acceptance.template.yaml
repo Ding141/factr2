@@ -1,0 +1,11 @@
+# Freeze on pilot/validation data before final test. Null never passes.
+version: null
+per_joint_rmse_nm: [null, null, null, null, null, null, null]
+per_joint_abs_bias_nm: [null, null, null, null, null, null, null]
+baseline_improvement: null
+sigma_floor_nm: [null, null, null, null, null, null, null]
+free_contact_false_positive_time_rate: null
+contact_high: null
+contact_low: null
+contact_scale_nm: null
+filter_alpha: null

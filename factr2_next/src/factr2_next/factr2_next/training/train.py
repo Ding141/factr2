@@ -22,6 +22,10 @@ def main():
 
     cfg = load_yaml(args.config)
     validate_w3_config(cfg, "train")
+    if "contract_version" in cfg:
+        from factr2_next.training.w3_train import train
+        train(cfg)
+        return
     set_seed(int(cfg["train"].get("seed", 0)))
     for arm in resolve_arms(cfg["data"]):
         train_arm(cfg, arm)

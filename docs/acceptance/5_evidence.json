@@ -1,0 +1,237 @@
+[
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/cli_template/metrics.csv",
+    "sha256": "4390e1869ddcaba263dbebaab03acf266ba94e5d66b4f283e345e72c5f1458df",
+    "bytes": 2036
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/cli_template/report.json",
+    "sha256": "2804db031b2da98beab78a3bb3d77f1c0131c80ef8438b03558acb98a7825d3f",
+    "bytes": 20970
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/cli_template/samples.csv",
+    "sha256": "c61ae594002d4c4742e5a00a08b299fa054882aec79aa2074c0eb3a592a39a66",
+    "bytes": 289479
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/left/summary.json",
+    "sha256": "523ba227766e1ca2a7b09d0a70299fcaad2867a4c6f7db20820fdf31f61705a9",
+    "bytes": 1184
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/left/test/metrics.csv",
+    "sha256": "4390e1869ddcaba263dbebaab03acf266ba94e5d66b4f283e345e72c5f1458df",
+    "bytes": 2036
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/left/test/plots/synthetic_left_test_20261005_155606_ep_0000.png",
+    "sha256": "32f41222bee44e480b8cb41f4cac8aeb07d4c9a006e675278a994968a28c79a2",
+    "bytes": 188355
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/left/test/report.json",
+    "sha256": "3fbd46931f99677085e243ae1351c09380cdfdc74ca6573e9d8fbc0a36a93b0e",
+    "bytes": 20969
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/left/test/samples.csv",
+    "sha256": "c61ae594002d4c4742e5a00a08b299fa054882aec79aa2074c0eb3a592a39a66",
+    "bytes": 289479
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/left/train/metrics.csv",
+    "sha256": "93ef59959e6fba0857ba7d6bb4115f94465a416e517d55ff1f6a033c0945429c",
+    "bytes": 2042
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/left/train/plots/synthetic_left_continuous_20261005_154503_ep_0000.png",
+    "sha256": "42885a643db29cf14a4c3583e0d52b1eff19098044562e80dda0812c51d2bb49",
+    "bytes": 237168
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/left/train/report.json",
+    "sha256": "54a8ddf2a93828846de6df96ead3d0578d8dfde4e04562c6407ac0d45d4262a9",
+    "bytes": 21037
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/left/train/samples.csv",
+    "sha256": "684f2b7a2e3ba5075cc6c0fe08868dbff7db341435e043776d01dc64d39bfbf2",
+    "bytes": 1566198
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/left/val/metrics.csv",
+    "sha256": "9ef74c2ab4c1ad4a065abb2b55c30f26e1d0af58d56efcc7d33b49089a7fcec3",
+    "bytes": 2039
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/left/val/plots/synthetic_left_val_20261005_155026_ep_0000.png",
+    "sha256": "4ec76cce82435ad22f597b27cf32867d983d0189be26902eeed38852fa898e84",
+    "bytes": 198520
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/left/val/report.json",
+    "sha256": "849bc5ed6807c7b3f838ea759cee9928dd401e7e237cbe9aa1896a0458fbb39b",
+    "bytes": 21002
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/left/val/samples.csv",
+    "sha256": "d511850336b3bf9eeb67a18388445496f43c18b8e9cae8174be7c25ad63b61fa",
+    "bytes": 288404
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/resources.json",
+    "sha256": "b986f8dd2df562fd3a0a1142bfd0dae7796cf5b95a88d711f6f766b0312741f8",
+    "bytes": 395
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/right/summary.json",
+    "sha256": "2b51cac0a68112b9823411b37871351e2b408f08c0e91da73f6a392815be5c02",
+    "bytes": 1182
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/right/test/metrics.csv",
+    "sha256": "b414ec0c8e247df62a7985e73a62eaf56619d74eca3a305d471b214852af4bd2",
+    "bytes": 2033
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/right/test/plots/synthetic_right_test_20261005_155607_ep_0000.png",
+    "sha256": "813b771b53964f4ee7bfd3b4b5a1984a16dae0f5001746b4300a56c49ed36239",
+    "bytes": 175566
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/right/test/report.json",
+    "sha256": "f12a2c35bd57e25aaaa4be445879747d7c2259228bc93de0e3b89c1d392a9628",
+    "bytes": 20954
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/right/test/samples.csv",
+    "sha256": "b78ca0bde2df8ee81f3f763453649afe64a6bd1b0ba4c4e198e7527631b7ce2a",
+    "bytes": 290690
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/right/train/metrics.csv",
+    "sha256": "48f6b999e733318fd30e5931e4841892cd0df90461a97c48733db959cb37b14c",
+    "bytes": 2040
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/right/train/plots/synthetic_right_continuous_20261005_154705_ep_0000.png",
+    "sha256": "4d3dbd016d693669e46ef36b3719ea559c03b029bde485005c05eb1e6bc47fe3",
+    "bytes": 208194
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/right/train/report.json",
+    "sha256": "d91dc2884597e104730c89e3e577b9e72553d9ab41282561df4fc96fa4113e26",
+    "bytes": 21019
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/right/train/samples.csv",
+    "sha256": "459cbb4bd9ad50905be628e977bb5ea767909855752397538a8c502620f90d4b",
+    "bytes": 1572684
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/right/val/metrics.csv",
+    "sha256": "db3ac252c848803d07d44ff1d84b9dbd27f6afde24932bd55aecdaed7596f43d",
+    "bytes": 2046
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/right/val/plots/synthetic_right_val_20261005_155024_ep_0000.png",
+    "sha256": "efd1cba948a5394d4de555f7e99a79d44e8997071030a0ac7c94a26cea4ac40f",
+    "bytes": 167538
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/right/val/report.json",
+    "sha256": "5b68a390ebb9574e52dbd4a0b5db5002e93f8c38fa3212d49d2f994ec5912011",
+    "bytes": 21028
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5/right/val/samples.csv",
+    "sha256": "2d94d46a15dd9220a3ca11fe70ce19ab05d1ccc0ff9a9fdacd5a60388c40670a",
+    "bytes": 290237
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5_tests.log",
+    "sha256": "75b0a87f7af7d1c8b452402a646fa67799f67dd8f6c07ae7b036cbd8cc902244",
+    "bytes": 100
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5_train_left.log",
+    "sha256": "0b33e25c123b7e75210a0f1b29b073126f83f84b83fbf04358e639dff49fab36",
+    "bytes": 164
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5_train_right.log",
+    "sha256": "ac65b671799569d14f77aafe315eaa5fb7783460999722895b3f6208bb9a9dd7",
+    "bytes": 167
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5_eval_left.log",
+    "sha256": "523ba227766e1ca2a7b09d0a70299fcaad2867a4c6f7db20820fdf31f61705a9",
+    "bytes": 1184
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/5_eval_right.log",
+    "sha256": "2b51cac0a68112b9823411b37871351e2b408f08c0e91da73f6a392815be5c02",
+    "bytes": 1182
+  },
+  {
+    "path": "/home/dingyj/factr2/runs/next_left_synthetic_smoke_20261005_155856_184675/config.yaml",
+    "sha256": "fa84095a263dbd1468f513c79c3d04620698d4c7e1fb8c933f455ae91026d3f0",
+    "bytes": 750
+  },
+  {
+    "path": "/home/dingyj/factr2/runs/next_left_synthetic_smoke_20261005_155856_184675/metadata.json",
+    "sha256": "9ebafc6e7f4cd1e24399668c6c06d3e1c78bac7a625983d4927af66251b4a27b",
+    "bytes": 1368
+  },
+  {
+    "path": "/home/dingyj/factr2/runs/next_left_synthetic_smoke_20261005_155856_184675/metrics.json",
+    "sha256": "e322560d4cc891ca21157ffc0ed191efa512049aebac5b0481e7af797fcf131d",
+    "bytes": 476
+  },
+  {
+    "path": "/home/dingyj/factr2/runs/next_left_synthetic_smoke_20261005_155856_184675/model.pt",
+    "sha256": "11b718ccfb3631e62852eec14ebcb64077b95d4cbe2259a9bddb274d91caa6e1",
+    "bytes": 980562
+  },
+  {
+    "path": "/home/dingyj/factr2/runs/next_left_synthetic_smoke_20261005_155856_184675/normalization.npz",
+    "sha256": "a57ca74f9c57cbf27e7db6d080c4cdefa1e611e83715f6f43c2d8f28b4517aeb",
+    "bytes": 1218
+  },
+  {
+    "path": "/home/dingyj/factr2/runs/next_right_synthetic_smoke_20261005_155856_812052/config.yaml",
+    "sha256": "682dcf62280b686e8aca09a2ff8d15131fadb859acf6b2e5dd9a6ae6a8d39267",
+    "bytes": 760
+  },
+  {
+    "path": "/home/dingyj/factr2/runs/next_right_synthetic_smoke_20261005_155856_812052/metadata.json",
+    "sha256": "a1b569a2a504cc9fabd329b5fb323619c1c7214d1f80cabb8449338ea3ce6db7",
+    "bytes": 1377
+  },
+  {
+    "path": "/home/dingyj/factr2/runs/next_right_synthetic_smoke_20261005_155856_812052/metrics.json",
+    "sha256": "3e32fcdd1a145f63585d248f57b412e542e5beccb0951d160f37e8c6ebd23f80",
+    "bytes": 477
+  },
+  {
+    "path": "/home/dingyj/factr2/runs/next_right_synthetic_smoke_20261005_155856_812052/model.pt",
+    "sha256": "ff7426690820d5a9917a2abfc51bd5912363cbefc3e41a6959ae69f62c7398c4",
+    "bytes": 980562
+  },
+  {
+    "path": "/home/dingyj/factr2/runs/next_right_synthetic_smoke_20261005_155856_812052/normalization.npz",
+    "sha256": "aa03b7abf4076fdd62d733ee057913ea61318a50847dfb4bb47abc13e2e3c56f",
+    "bytes": 1218
+  },
+  {
+    "path": "/home/dingyj/factr2/data/mock/left/split.json",
+    "sha256": "6f1fb17ca00e323fbf541ff42b195bbaee9c5b102fcb7ea909b355bbd25e3710",
+    "bytes": 988
+  },
+  {
+    "path": "/home/dingyj/factr2/data/mock/right/split.json",
+    "sha256": "d90050616ac85382a627a17f7d9bf858478f8fa82c941fb261a32a16685d3c5d",
+    "bytes": 995
+  }
+]

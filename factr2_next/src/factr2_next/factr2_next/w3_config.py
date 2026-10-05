@@ -47,13 +47,12 @@ def validate_w3_config(cfg, purpose, require_paths=True):
                         hidden_size=128, num_layers=2, head_hidden=256, head_layers=2, dropout=0.1)
         if any(model.get(k) != v for k, v in baseline.items()):
             raise ValueError('W3 v1 baseline model differs from contract')
-        train, val = data.get('train_h5_paths', []), data.get('val_h5_paths', [])
-        if not train or not val or set(train) & set(val):
-            raise ValueError('Independent train/val paths required')
-        if require_paths:
-            for path in train + val:
-                if not Path(path).is_file():
-                    raise ValueError(f'Set an existing W3 data path: {path}')
+        if data.get('val_split') == 'random':
+            raise ValueError('W3 random window split forbidden')
+        if not data.get('manifest'):
+            raise ValueError('W3 accepted train/val/test manifest required')
+        if require_paths and not Path(data['manifest']).is_file():
+            raise ValueError('Set an existing W3 split manifest')
     if require_paths and purpose == 'inference':
         for name in ('model.pt', 'config.yaml', 'normalization.npz'):
             if not (Path(cfg['checkpoint_dir']) / name).is_file():

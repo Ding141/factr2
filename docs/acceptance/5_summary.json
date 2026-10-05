@@ -1,0 +1,105 @@
+{
+  "left": {
+    "checkpoint": "/home/dingyj/factr2/runs/next_left_synthetic_smoke_20261005_155856_184675",
+    "checkpoint_sha256": "11b718ccfb3631e62852eec14ebcb64077b95d4cbe2259a9bddb274d91caa6e1",
+    "metrics": {
+      "train_loss": [
+        0.2480205603405298,
+        0.008088242741675952
+      ],
+      "val_loss": [
+        0.003988156489689242,
+        0.00042497556074522436
+      ],
+      "selection_rule": "minimum validation normalized MSE; first epoch on ties",
+      "best_epoch": 2,
+      "seed": 0,
+      "device": "cpu",
+      "window_counts": {
+        "train": 2951,
+        "val": 550
+      },
+      "dataset_step_bytes": 403088,
+      "eager_window_bytes": 14704200,
+      "training_seconds": 8.356557916999009,
+      "peak_rss_mb": 405.44921875
+    },
+    "val": {
+      "samples": 550,
+      "rmse_nm": 0.00043696274072484425,
+      "baseline_rmse_nm": 0.021228433954997055,
+      "acceptance": "UNCONFIGURED"
+    },
+    "test": {
+      "samples": 551,
+      "rmse_nm": 0.0004310767009953146,
+      "baseline_rmse_nm": 0.021163716542749563,
+      "acceptance": "UNCONFIGURED"
+    },
+    "train": {
+      "samples": 2951,
+      "rmse_nm": 0.00044742600552182904,
+      "baseline_rmse_nm": 0.021194018735604364,
+      "acceptance": "UNCONFIGURED"
+    }
+  },
+  "right": {
+    "checkpoint": "/home/dingyj/factr2/runs/next_right_synthetic_smoke_20261005_155856_812052",
+    "checkpoint_sha256": "ff7426690820d5a9917a2abfc51bd5912363cbefc3e41a6959ae69f62c7398c4",
+    "metrics": {
+      "train_loss": [
+        0.24758583369964765,
+        0.007711311001962019
+      ],
+      "val_loss": [
+        0.0026785578606599524,
+        0.0006567616265088813
+      ],
+      "selection_rule": "minimum validation normalized MSE; first epoch on ties",
+      "best_epoch": 2,
+      "seed": 0,
+      "device": "cpu",
+      "window_counts": {
+        "train": 2950,
+        "val": 551
+      },
+      "dataset_step_bytes": 403088,
+      "eager_window_bytes": 14704200,
+      "training_seconds": 8.986338280999917,
+      "peak_rss_mb": 407.53515625
+    },
+    "val": {
+      "samples": 551,
+      "rmse_nm": 0.000542730934056123,
+      "baseline_rmse_nm": 0.02105490903919883,
+      "acceptance": "UNCONFIGURED"
+    },
+    "test": {
+      "samples": 551,
+      "rmse_nm": 0.0005591021235866653,
+      "baseline_rmse_nm": 0.021392095133511754,
+      "acceptance": "UNCONFIGURED"
+    },
+    "train": {
+      "samples": 2950,
+      "rmse_nm": 0.0005352851748663167,
+      "baseline_rmse_nm": 0.021199204799392905,
+      "acceptance": "UNCONFIGURED"
+    }
+  },
+  "resources": {
+    "result": "PASS",
+    "rows": 180000,
+    "windows": 179951,
+    "history": 50,
+    "load_and_norm_seconds": 0.12338782100050594,
+    "peak_rss_mb": 329.390625,
+    "before_rss_mb": 248.30078125,
+    "step_cache_bytes": 20160000,
+    "eager_window_bytes": 755794200,
+    "memory_budget_mb": 512,
+    "caveat": "RSS includes torch runtime, fixture arrays and checker; budget covers cache, not process runtime"
+  },
+  "tests": "36 passed",
+  "result": "PASS (synthetic development only); physical acceptance UNCONFIGURED"
+}
