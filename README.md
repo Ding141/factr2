@@ -17,3 +17,5 @@
 W3 仓库负责 CAN、ros2_control 和真机状态；本仓库负责 NEXT 的数据采集、训练、推理以及后续 W3 数据适配。两个仓库通过 ROS 2 话题通信，不合并控制代码。
 
 训练数据、模型权重、虚拟环境和运行日志不提交到 Git；详见 `.gitignore`。复现步骤见 [FACTR2_NEXT_W3_REPRODUCTION_PLAN.md](FACTR2_NEXT_W3_REPRODUCTION_PLAN.md)。
+
+供不同 agent 逐步执行的开发任务、前置依赖和验收标准见 [分步开发任务](docs/development/README.md)，共 8 个部分，建议按编号推进。各阶段区分无硬件开发验收与真机实验验收，具体报告由执行该阶段的 agent 填写。
