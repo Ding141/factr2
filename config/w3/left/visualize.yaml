@@ -1,0 +1,24 @@
+next_topic_root: /next/left
+web:
+  host: 127.0.0.1
+  port: 8080
+plot:
+  max_points: 500
+outputs:
+  external_joint_torque: '{next_topic_root}/external_joint_torque'
+  external_joint_torque_raw: '{next_topic_root}/external_joint_torque/raw'
+  free_joint_torque_pred: '{next_topic_root}/free_joint_torque_pred'
+  mse: '{next_topic_root}/mse'
+  normalized_contact_magnitude: '{next_topic_root}/normalized_contact_magnitude'
+  contact_state: '{next_topic_root}/contact_state'
+contract_version: w3_next_v1
+side: left
+joint_names:
+- left_joint_0
+- left_joint_1
+- left_joint_2
+- left_joint_3
+- left_joint_4
+- left_joint_5
+- left_joint_6
+robot_topic_root: /factr2/left

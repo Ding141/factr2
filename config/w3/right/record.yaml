@@ -1,0 +1,38 @@
+output_dir: data/right/SESSION_ID
+session_name: SESSION_ID
+robot_topic_root: /factr2/right
+sync:
+  queue_size: 20
+  slop_seconds: 0.03
+recording:
+  target_hz: 50.0
+  min_hz: 45.0
+  sample_timeout_seconds: 0.2
+  warn_after_seconds: 2.0
+topics:
+  joint_pos:
+    topic: '{robot_topic_root}/joint_pos'
+    field: position
+    type: sensor_msgs/JointState
+  joint_vel:
+    topic: '{robot_topic_root}/joint_vel'
+    field: velocity
+    type: sensor_msgs/JointState
+  joint_cmd:
+    topic: '{robot_topic_root}/joint_cmd'
+    field: position
+    type: sensor_msgs/JointState
+  measured_joint_torque:
+    topic: '{robot_topic_root}/joint_effort'
+    field: effort
+    type: sensor_msgs/JointState
+contract_version: w3_next_v1
+side: right
+joint_names:
+- right_joint_0
+- right_joint_1
+- right_joint_2
+- right_joint_3
+- right_joint_4
+- right_joint_5
+- right_joint_6

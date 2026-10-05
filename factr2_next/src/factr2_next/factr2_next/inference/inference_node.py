@@ -1,3 +1,4 @@
+from factr2_next.w3_config import validate_w3_config
 from pathlib import Path
 
 import numpy as np
@@ -62,6 +63,7 @@ class InferenceNode(Node):
         )
         config_file = self.declare_parameter("config_file", str(default_config)).value
         self.cfg = self._load_config(config_file)
+        validate_w3_config(self.cfg, "inference")
         self.robot_topic_root = str(self.cfg.get("robot_topic_root", "/robot"))
         self.next_topic_root = str(self.cfg.get("next_topic_root", "/next"))
 

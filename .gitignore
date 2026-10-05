@@ -23,3 +23,4 @@ __pycache__/
 .codex/
 .factr2_next_git_backup/
 .git-local/
+reports/generated/

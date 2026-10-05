@@ -1,0 +1,45 @@
+data:
+  train_h5_paths:
+  - data/left/TRAIN_SESSION/free_motion.h5
+  val_h5_paths:
+  - data/left/VAL_SESSION/free_motion.h5
+  val_episodes: all
+  train_episodes: all
+  arm_mode: single
+  keys:
+    joint_pos: joint_pos
+    joint_vel: joint_vel
+    joint_cmd: joint_cmd
+    measured_joint_torque: measured_joint_torque
+  history: 50
+  val_fraction: 0.1
+  val_split: contiguous
+  val_buffer_windows: 50
+model:
+  type: lstm
+  state_mode: stateless
+  hidden_size: 128
+  num_layers: 2
+  bidirectional: false
+  head_hidden: 256
+  head_layers: 2
+  dropout: 0.1
+train:
+  batch_size: 2048
+  epochs: 20
+  learning_rate: 0.001
+  device: cpu
+  seed: 0
+save:
+  output_dir: runs
+  run_name: next_left_DATASET_ID
+contract_version: w3_next_v1
+side: left
+joint_names:
+- left_joint_0
+- left_joint_1
+- left_joint_2
+- left_joint_3
+- left_joint_4
+- left_joint_5
+- left_joint_6

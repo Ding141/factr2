@@ -10,6 +10,7 @@ import torch.nn.functional as F
 import yaml
 from torch.utils.data import DataLoader, Subset
 
+from factr2_next.w3_config import validate_w3_config
 from factr2_next.training.dataset import NextTorqueDataset
 from factr2_next.training.models import build_model
 
@@ -20,6 +21,7 @@ def main():
     args = parser.parse_args()
 
     cfg = load_yaml(args.config)
+    validate_w3_config(cfg, "train")
     set_seed(int(cfg["train"].get("seed", 0)))
     for arm in resolve_arms(cfg["data"]):
         train_arm(cfg, arm)

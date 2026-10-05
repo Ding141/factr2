@@ -1,3 +1,4 @@
+from factr2_next.w3_config import validate_w3_config
 import json
 import threading
 import time
@@ -142,6 +143,7 @@ class WebNode(Node):
         super().__init__("factr2_next_visualize")
         default = Path(get_package_share_directory("factr2_next")) / "config" / "visualize.yaml"
         self.cfg = self._load_config(self.declare_parameter("config_file", str(default)).value)
+        validate_w3_config(self.cfg, "visualize")
         self.next_topic_root = str(self.cfg.get("next_topic_root", "/next"))
         self.feedback_topic_root = str(self.cfg.get("feedback_topic_root", "/factr2_feedback"))
         self.max_points = int(self.cfg.get("plot", {}).get("max_points", 500))

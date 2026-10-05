@@ -1,0 +1,92 @@
+version: w3_next_v1
+message_type: sensor_msgs/JointState
+sides:
+  left:
+    joint_names:
+    - left_joint_0
+    - left_joint_1
+    - left_joint_2
+    - left_joint_3
+    - left_joint_4
+    - left_joint_5
+    - left_joint_6
+    robot_topic_root: /factr2/left
+    next_topic_root: /next/left
+    channel: 0
+  right:
+    joint_names:
+    - right_joint_0
+    - right_joint_1
+    - right_joint_2
+    - right_joint_3
+    - right_joint_4
+    - right_joint_5
+    - right_joint_6
+    robot_topic_root: /factr2/right
+    next_topic_root: /next/right
+    channel: 1
+sources:
+  state:
+    topic: /joint_states
+    fields:
+    - position
+    - velocity
+    - effort
+  command:
+    topic: /joint_position_controller/command_state
+    fields:
+    - position
+    - velocity
+    effort: []
+signals:
+  joint_pos:
+    suffix: joint_pos
+    field: position
+    unit: rad
+  joint_vel:
+    suffix: joint_vel
+    field: velocity
+    unit: rad/s
+  joint_cmd:
+    suffix: joint_cmd
+    field: position
+    unit: rad
+  measured_joint_torque:
+    suffix: joint_effort
+    field: effort
+    unit: Nm
+timing:
+  publish_hz: 50.0
+  input_timeout_seconds: 0.25
+  max_source_skew_seconds: 0.03
+  future_tolerance_seconds: 0.0
+  hardware_health_timeout_seconds: 0.25
+  max_window_gap_seconds: 0.04
+  output_stamp: selected_joint_states_source_stamp
+  receive_clock: monotonic
+  source_clock: ROS
+  unique_state_stamp: true
+model:
+  history: 50
+  input_size: 21
+  output_size: 7
+  features:
+  - q
+  - qdot
+  - q_cmd-q
+  label: last_frame_measured_joint_torque
+  state_mode: stateless
+  type: lstm
+health:
+  topic: /factr2/w3_health
+  status_names:
+  - factr2/w3/left
+  - factr2/w3/right
+  required_real: true
+  normal_error_flags: 1
+  stamp: diagnostic_generation_ROS_time
+  raw_source_stamp: bridge_publish_time_not_motor_receive_time
+next_torque_output:
+  field: position
+  unit: Nm
+  names: side_joint_0..6

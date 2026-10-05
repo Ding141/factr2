@@ -1,0 +1,42 @@
+[
+  {
+    "path": "/home/dingyj/factr2/reports/generated/1_environment.json",
+    "sha256": "27863170df92d6126e1c203246993fd44d49fcee30a7f643043fdcb417e01586",
+    "bytes": 2147
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/1_build.log",
+    "sha256": "9d1b52d4958c64e4de33366d00b076fe9d318d0cdfafb213af3a0076949a5191",
+    "bytes": 179
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/1_executables.txt",
+    "sha256": "c1f4a8bf8004501c3258d3174a1a39f3947ec66ae265e33f0ed4ee2191345705",
+    "bytes": 97
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/1_train_help.txt",
+    "sha256": "722f5d097ed7459950c3ff22945e65e9816f343920f9db1597ea3443b7ded82e",
+    "bytes": 120
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/1_configs.txt",
+    "sha256": "552d9674e79b327e5726e389c338c416e228f15befce4def94419253a21c76da",
+    "bytes": 270
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/1_invalid_runtime.log",
+    "sha256": "e7174ba300d551a425c8f9f8c29f4c521ac0a2bd441b9ab0d1a9cbf46fdfdbb6",
+    "bytes": 449
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/1_dds.log",
+    "sha256": "bfdbee26241126f36aa2f1ed6cab32010f75c3f6974b542cc5056eacf24c8201",
+    "bytes": 412
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/1/dds.json",
+    "sha256": "7436b4a79cf204fe71dae5fd9b5d85c50b3c86384cd9faf95c2be620d1a280b6",
+    "bytes": 319
+  }
+]

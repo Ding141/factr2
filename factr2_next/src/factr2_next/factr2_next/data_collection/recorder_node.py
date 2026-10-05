@@ -1,3 +1,4 @@
+from factr2_next.w3_config import validate_w3_config
 import select
 import sys
 import termios
@@ -28,6 +29,7 @@ class RecorderNode(Node):
         )
         config_file = self.declare_parameter("config_file", str(default_config)).value
         self.cfg = self._load_config(config_file)
+        validate_w3_config(self.cfg, "record")
 
         self.output_dir = Path(self.cfg.get("output_dir", "data")).expanduser()
         self.session_name = str(self.cfg.get("session_name", "free_motion"))
