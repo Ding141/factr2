@@ -1,0 +1,25 @@
+# Runtime and generated artifacts
+build/
+install/
+log/
+data/
+runs/
+.venv/
+*.h5
+*.pt
+*.npz
+*.egg-info/
+
+# Python and tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.vscode/
+
+# Local Codex/workspace metadata
+.agents/
+.aws/
+.codex/
+.factr2_next_git_backup/
+.git-local/
