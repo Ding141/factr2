@@ -1,0 +1,37 @@
+[
+  {
+    "path": "/home/dingyj/w3_dual_arm_ws/log/acceptance2/baseline_overlay.log",
+    "sha256": "815a18e134bb860387cf1306b8a7e595eef4a3c028c49a8e8c3f72444dac8bd8",
+    "bytes": 539
+  },
+  {
+    "path": "/home/dingyj/w3_dual_arm_ws/log/acceptance2/build_final.log",
+    "sha256": "d1bc046b963cf82a3493016d08af6ed26a7897af517dbfd6d1a9cdf0d32c8519",
+    "bytes": 959
+  },
+  {
+    "path": "/home/dingyj/w3_dual_arm_ws/log/acceptance2/test_final.log",
+    "sha256": "3b1d76ac349e2122abbbcb96fe79464f186296ea67b914709d1c4162bc0c61ab",
+    "bytes": 23094
+  },
+  {
+    "path": "/home/dingyj/w3_dual_arm_ws/build/ieir_controllers/test_results/ieir_controllers/calibration_seek.xunit.xml",
+    "sha256": "db01d1e7be5cccdde77464de8c47c9510151c73c4f67902e25b7625b4f7dff72",
+    "bytes": 20011
+  },
+  {
+    "path": "/home/dingyj/w3_dual_arm_ws/build/ieir_controllers/test_results/ieir_controllers/command_state.gtest.xml",
+    "sha256": "94e239df1d2849066d92af2154910d6ec7a21e963a847ec016a935f2f50c7b6b",
+    "bytes": 1570
+  },
+  {
+    "path": "/home/dingyj/w3_dual_arm_ws/build/ieir_controllers/test_results/ieir_controllers/distribution.xunit.xml",
+    "sha256": "c9a74d0b56103aa85c343bcc2c9afab7befc4268f5cc76d10b8a6ca92e651fee",
+    "bytes": 1231
+  },
+  {
+    "path": "/home/dingyj/w3_dual_arm_ws/build/ieir_controllers/test_results/ieir_controllers/w3_migration.xunit.xml",
+    "sha256": "16da57a753a1dfe8adfbfbe4f92a24ea935af260ce9d5ef8f6088c8c800bf60b",
+    "bytes": 4321
+  }
+]
