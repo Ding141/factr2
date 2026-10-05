@@ -192,7 +192,7 @@ checkpoint 目录命名要关联机械臂侧别、训练数据版本和时间。
 
 1. 终端 A：按你现有流程启动 W3 CAN bridge。
 2. 终端 B：按现有流程启动控制端，确认双臂反馈、标定坐标和 controller 状态正常。
-3. 终端 C：source Humble 和 W3 overlay，启动 NEXT adapter；检查 `command_state` 与四路输出频率、joint names 和数值。
+3. 终端 C：source Humble、FACTR2 独立 venv 和 FACTR2 overlay，启动 NEXT adapter 的 real profile；不加载 W3 overlay。另用独立 W3 系统 Python shell 运行 `factr2_w3_adapter/tools/w3_health_monitor.py`，将 raw 状态转为标准诊断。两者同 ROS domain/时钟。检查 `command_state`、硬件健康与四路输出频率、joint names 和数值。
 4. 终端 D：在独立环境启动 `next_record`，采集无接触自由运动 episode。
 5. 离线训练时使用 FACTR2 环境读取 H5，不必连接 CAN；推理时回到同时可见 W3 ROS graph 的 NEXT 终端运行。
 

@@ -1,0 +1,133 @@
+{
+  "result": "PASS",
+  "scope": "PASS_OFFLINE",
+  "tests": {
+    "pytest": 57,
+    "failures": 0
+  },
+  "w3_commit": "d32262d",
+  "factr2_parent": "a334ab1",
+  "contract": "w3_next_v1",
+  "streams": {
+    "left": {
+      "duration_seconds": 60.00985360300001,
+      "data": {
+        "joint_pos": {
+          "rows": 3000,
+          "hz": 49.991790012465955,
+          "max_gap_seconds": 0.026766706,
+          "first_stamp_ns": 1791178389702105965,
+          "last_stamp_ns": 1791178449684690121
+        },
+        "joint_vel": {
+          "rows": 3000,
+          "hz": 49.991790012465955,
+          "max_gap_seconds": 0.026766706,
+          "first_stamp_ns": 1791178389702105965,
+          "last_stamp_ns": 1791178449684690121
+        },
+        "joint_cmd": {
+          "rows": 3000,
+          "hz": 49.991790012465955,
+          "max_gap_seconds": 0.026766706,
+          "first_stamp_ns": 1791178389702105965,
+          "last_stamp_ns": 1791178449684690121
+        },
+        "joint_effort": {
+          "rows": 3000,
+          "hz": 49.991790012465955,
+          "max_gap_seconds": 0.026766706,
+          "first_stamp_ns": 1791178389702105965,
+          "last_stamp_ns": 1791178449684690121
+        }
+      },
+      "four_stamp_sequences_identical": true,
+      "input_hz": 300,
+      "qos": "BEST_EFFORT/VOLATILE/KEEP_LAST depth=5"
+    },
+    "right": {
+      "duration_seconds": 60.0117687689999,
+      "data": {
+        "joint_pos": {
+          "rows": 3000,
+          "hz": 49.99019461578845,
+          "max_gap_seconds": 0.026785797,
+          "first_stamp_ns": 1791178390677203049,
+          "last_stamp_ns": 1791178450654903359
+        },
+        "joint_vel": {
+          "rows": 3000,
+          "hz": 49.99019461578845,
+          "max_gap_seconds": 0.026785797,
+          "first_stamp_ns": 1791178390677203049,
+          "last_stamp_ns": 1791178450654903359
+        },
+        "joint_cmd": {
+          "rows": 3000,
+          "hz": 49.99019461578845,
+          "max_gap_seconds": 0.026785797,
+          "first_stamp_ns": 1791178390677203049,
+          "last_stamp_ns": 1791178450654903359
+        },
+        "joint_effort": {
+          "rows": 3000,
+          "hz": 49.99019461578845,
+          "max_gap_seconds": 0.026785797,
+          "first_stamp_ns": 1791178390677203049,
+          "last_stamp_ns": 1791178450654903359
+        }
+      },
+      "four_stamp_sequences_identical": true,
+      "input_hz": 300,
+      "qos": "BEST_EFFORT/VOLATILE/KEEP_LAST depth=5"
+    }
+  },
+  "health_cases": {
+    "missing_left": {
+      "left_rows": 0,
+      "right_rows": 8,
+      "left_healthy": false
+    },
+    "duplicate_left": {
+      "left_rows": 0,
+      "right_rows": 8,
+      "left_healthy": false
+    },
+    "offline_left": {
+      "left_rows": 0,
+      "right_rows": 7,
+      "left_healthy": false
+    },
+    "disabled_left": {
+      "left_rows": 0,
+      "right_rows": 7,
+      "left_healthy": false
+    },
+    "fault_left": {
+      "left_rows": 0,
+      "right_rows": 7,
+      "left_healthy": false
+    },
+    "nan_left": {
+      "left_rows": 0,
+      "right_rows": 7,
+      "left_healthy": false
+    },
+    "right_only_channel1": {
+      "channel": 1,
+      "healthy": true
+    },
+    "raw_timeout": {
+      "left": {
+        "healthy": false,
+        "raw_receive_age_seconds": 0.49661758999900485,
+        "reason": "raw_stale"
+      },
+      "right": {
+        "healthy": false,
+        "raw_receive_age_seconds": 0.49661758999900485,
+        "reason": "raw_stale"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+/**:
+  ros__parameters:
+    side: left
+    state_topic: /joint_states
+    command_state_topic: /joint_position_controller/command_state
+    output_root: /factr2/left
+    publish_hz: 50.0
+    input_timeout_seconds: 0.25
+    max_source_skew_seconds: 0.03
+    health_topic: /factr2/w3_health
+    require_hardware_health: false
+    hardware_health_timeout_seconds: 0.25

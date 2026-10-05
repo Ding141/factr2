@@ -10,7 +10,7 @@
 
 | 验收条目 | 命令/实验（退出码） | 证据 | 结论 |
 |---|---|---|---|
-| ENV-01 | scripts/next.sh python scripts/environment_probe.py（0） | 1_environment.json，12 模块路径/版本，prefixes 仅 NEXT/Humble，Python 3.10 | PASS |
+| ENV-01 | scripts/next.sh python scripts/environment_probe.py（0） | 1_environment.json，13 模块路径/版本，prefixes 仅 NEXT/Humble，Python 3.10 | PASS |
 | ENV-02 | scripts/next.sh python -m colcon build --base-paths factr2_next/src/factr2_next --symlink-install（0）；ros2 pkg executables factr2_next；ros2 run factr2_next next_train --help（均 0） | 1_build.log；1_executables.txt 的四个入口；1_train_help.txt；log/latest_build/factr2_next/command.log 指定 venv 解释器 | PASS |
 | ENV-03 | bash scripts/test_environment_dds.sh（0） | 1_dds.log、1/dds.json：系统 Python + W3 overlay subscriber 与 NEXT venv publisher 保真接收 JointState；stamp=[123,456789]，q=.125、qdot=-.25、tau=1.5 | PASS |
 | ENV-04 | scripts/next.sh python scripts/check_w3_configs.py（0）；--runtime train --config config/w3/left/train.yaml（预期拒绝，1） | 1_configs.txt 八个模板；1_invalid_runtime.log 拒绝不存在的训练数据路径；节点/trainer 调用同一 validator | PASS |
