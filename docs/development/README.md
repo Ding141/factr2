@@ -2,7 +2,7 @@
 
 本目录依据 [整体规划](../../FACTR2_NEXT_W3_REPRODUCTION_PLAN.md) 和两个本地仓库的实际源码拆分。阅读基线：2026-10-05，FACTR2 commit `8434e19`，W3 commit `00740ac`。后续 agent 必须先检查当前代码和工作区改动，不能假定基线仍然有效。
 
-这些文件是任务书，**不是已实现功能或已通过的验收报告**。实际实现状态以 [第1部分](../acceptance/1_environment_and_contract.md)、[第2部分](../acceptance/2_w3_command_state.md)、[第3部分](../acceptance/3_adapter_and_health.md) 等验收报告为准。
+这些文件是任务书，**不是已实现功能或已通过的验收报告**。实际实现状态以 [第1部分](../acceptance/1_environment_and_contract.md)、[第2部分](../acceptance/2_w3_command_state.md)、[第3部分](../acceptance/3_adapter_and_health.md)、[第4部分](../acceptance/4_recording_and_data_quality.md)、[第5部分](../acceptance/5_training_and_offline_evaluation.md)、[第6部分](../acceptance/6_inference_and_visualization.md) 等验收报告为准。
 
 ## 执行顺序与任务边界
 

@@ -13,7 +13,8 @@ fi
 export PYTHONNOUSERSITE=1
 export ROS_LOG_DIR="$_factr_root/log/ros"
 export MPLCONFIGDIR="$_factr_root/log/matplotlib"
-mkdir -p "$MPLCONFIGDIR"
+export TMPDIR="$_factr_root/log/tmp"
+mkdir -p "$MPLCONFIGDIR" "$TMPDIR"
 _factr_local=${ROS_LOCALHOST_ONLY:-1}
 source /opt/ros/humble/setup.bash
 source "$_factr_root/.venv/bin/activate"

@@ -14,6 +14,7 @@ from rclpy.node import Node
 from rclpy.qos import qos_profile_sensor_data
 from sensor_msgs.msg import JointState
 from std_msgs.msg import Bool, Float32
+from diagnostic_msgs.msg import DiagnosticArray
 
 
 HTML = """<!doctype html>
@@ -37,30 +38,7 @@ canvas{display:block;width:100%;height:580px}.controls{display:grid;grid-templat
 const canvas=document.getElementById("plot"), ctx=canvas.getContext("2d");
 const controls=document.getElementById("controls"), statusEl=document.getElementById("status");
 let data={t:[]}, controlsReady=false;
-const groups=[
-  ["Summary",[
-    ["ext_norm","|tau ext| filtered","#ff5a63",true],
-    ["ext_raw_norm","|tau ext| raw","#f7a1a8",false],
-    ["fb_norm","|tau fb out|","#9cdcfe",true],
-    ["fb_gate","feedback gate","#c586c0",true],
-    ["free_norm","|tau free pred|","#58a6ff",false],
-    ["mse","mse","#ffb454",false],
-    ["normalized_contact_magnitude","contact magnitude","#6ee787",true],
-    ["contact","contact","#d2a8ff",true],
-  ]],
-  ["Filtered joints",[
-    ["ext_j1","j1","#ff6b6b",false],["ext_j2","j2","#ffa94d",false],["ext_j3","j3","#ffd43b",false],
-    ["ext_j4","j4","#69db7c",false],["ext_j5","j5","#4dabf7",false],["ext_j6","j6","#b197fc",false],
-  ]],
-  ["Raw joints",[
-    ["raw_j1","j1 raw","#ff8787",false],["raw_j2","j2 raw","#ffc078",false],["raw_j3","j3 raw","#ffe066",false],
-    ["raw_j4","j4 raw","#8ce99a",false],["raw_j5","j5 raw","#74c0fc",false],["raw_j6","j6 raw","#c4b5fd",false],
-  ]],
-  ["Feedback output",[
-    ["fb_j1","j1 fb","#7dd3fc",false],["fb_j2","j2 fb","#67e8f9",false],["fb_j3","j3 fb","#5eead4",false],
-    ["fb_j4","j4 fb","#86efac",false],["fb_j5","j5 fb","#fde047",false],["fb_j6","j6 fb","#f0abfc",false],
-  ]],
-];
+const groups=__GROUPS__;
 const series=groups.flatMap(g=>g[1]).map(s=>({key:s[0],label:s[1],color:s[2],visible:loadVisible(s[0],s[3])}));
 function loadVisible(key, fallback){const v=localStorage.getItem("next."+key); return v===null?fallback:v==="1"}
 function setVisible(key, value){localStorage.setItem("next."+key,value?"1":"0")}
@@ -107,47 +85,67 @@ function grid(pad,W,H,x0,x1,y0,y1){
     ctx.fillText((x0+(x1-x0)*i/5).toFixed(1),x-8,pad.t+H+24);
   }
 }
-new EventSource("/events").onmessage=(ev)=>{
+const events=new EventSource("/events");
+events.onerror=()=>{statusEl.textContent="disconnected"};
+events.onmessage=(ev)=>{
   data=JSON.parse(ev.data); document.getElementById("topic-root").textContent=`topics: ${data.next_topic_root}  samples: ${(data.t||[]).length}`;
-  statusEl.textContent="live"; draw();
+  const age=data.last_valid_age_seconds===null?"--":data.last_valid_age_seconds.toFixed(2)+" s";
+  statusEl.textContent=`${data.state} · last valid ${age} · ${data.reason||""}`; draw();
 };
 setupControls(); draw();
 </script></body></html>
 """
 
 
-JOINT_COUNT = 6
-PLOT_KEYS = (
-    "t",
-    "ext_norm",
-    "ext_raw_norm",
-    "fb_norm",
-    "fb_gate",
-    "free_norm",
-    "mse",
-    "normalized_contact_magnitude",
-    "contact",
-    *(f"ext_j{i}" for i in range(1, JOINT_COUNT + 1)),
-    *(f"raw_j{i}" for i in range(1, JOINT_COUNT + 1)),
-    *(f"fb_j{i}" for i in range(1, JOINT_COUNT + 1)),
-)
+def plot_keys(count, feedback=False):
+    summary=['t','ext_norm','ext_raw_norm','free_norm','mse','normalized_contact_magnitude','contact']
+    prefixes=['ext','raw','free']
+    if feedback:
+        summary+=['fb_norm','fb_gate'];prefixes+=['fb']
+    return tuple(summary+[f'{p}_j{i+1}' for p in prefixes for i in range(count)])
+
+
+def page(names, feedback=False):
+    groups=[['Summary',[
+        ['ext_norm','Filtered torque norm (Nm)','#ff5a63',True],
+        ['ext_raw_norm','Raw torque norm (Nm)','#f7a1a8',False],
+        ['free_norm','Free torque norm (Nm)','#58a6ff',False],
+        ['mse','MSE (Nm²)','#ffb454',False],
+        ['normalized_contact_magnitude','Contact magnitude','#6ee787',True],
+        ['contact','Contact state','#d2a8ff',True]]]]
+    colors=['#ff6b6b','#ffa94d','#ffd43b','#69db7c','#4dabf7','#b197fc','#f783ac']
+    for label,prefix in [('Filtered torque (Nm)','ext'),('Raw torque (Nm)','raw'),('Free prediction (Nm)','free')]+([('Feedback (Nm)','fb')] if feedback else []):
+        groups.append([label,[[f'{prefix}_j{i+1}',name,colors[i%len(colors)],False] for i,name in enumerate(names)]])
+    return HTML.replace('__GROUPS__',json.dumps(groups))
+
+
 TORQUE_KEYS = {
     "ext": ("ext_norm", "ext"),
     "raw": ("ext_raw_norm", "raw"),
     "fb": ("fb_norm", "fb"),
+    "free": ("free_norm", "free"),
 }
 
 
 class WebNode(Node):
-    def __init__(self):
-        super().__init__("factr2_next_visualize")
+    def __init__(self, **kwargs):
+        super().__init__("factr2_next_visualize", **kwargs)
         default = Path(get_package_share_directory("factr2_next")) / "config" / "visualize.yaml"
         self.cfg = self._load_config(self.declare_parameter("config_file", str(default)).value)
         validate_w3_config(self.cfg, "visualize")
         self.next_topic_root = str(self.cfg.get("next_topic_root", "/next"))
         self.feedback_topic_root = str(self.cfg.get("feedback_topic_root", "/factr2_feedback"))
         self.max_points = int(self.cfg.get("plot", {}).get("max_points", 500))
-        self.keys = PLOT_KEYS
+        self.w3 = 'contract_version' in self.cfg
+        self.joint_count = len(self.cfg.get('joint_names',[])) or int(self.cfg.get('joint_count',6))
+        self.names = self.cfg.get('joint_names',[f'joint_{i}' for i in range(self.joint_count)])
+        if not 1<=self.joint_count<=64 or not 1<=self.max_points<=10000:raise ValueError('web_joint_count_max_points')
+        self.feedback = any(k.startswith('feedback_') for k in self.cfg['outputs'])
+        self.keys = plot_keys(self.joint_count,self.feedback)
+        self.html = page(self.names,self.feedback)
+        self.runtime_status={'state':'warming','reason':'waiting_for_status'}
+        self.status_received = None
+        self.last_valid_mono = None
         self.data = {key: deque(maxlen=self.max_points) for key in self.keys}
         self.latest = {key: np.nan for key in self.keys if key != "t"}
         self.t0, self.seq, self.running = time.monotonic(), 0, True
@@ -157,8 +155,16 @@ class WebNode(Node):
         web = self.cfg.get("web", {})
         host = str(web.get("host", "127.0.0.1"))
         port = int(web.get("port", 8080))
-        self.httpd = ThreadingHTTPServer((host, port), self._handler())
-        threading.Thread(target=self.httpd.serve_forever, daemon=True).start()
+        self.refresh_hz=float(web.get("refresh_hz",10))
+        if not 1<=self.refresh_hz<=20:raise ValueError("web_refresh_hz_range")
+        try:
+            self.httpd = ThreadingHTTPServer((host, port), self._handler())
+        except OSError as exc:
+            super().destroy_node()
+            raise ValueError(f'web_bind_failed {host}:{port}: {exc}') from exc
+        self.httpd.daemon_threads=True
+        self.server_thread=threading.Thread(target=self.httpd.serve_forever,daemon=True)
+        self.server_thread.start()
         self.get_logger().info(f"NEXT plot at http://{host}:{port}")
 
     def _subscribe(self):
@@ -171,19 +177,19 @@ class WebNode(Node):
             self._sub(
                 JointState,
                 outputs["external_joint_torque"],
-                lambda m: self._set_torque("ext", m.position, True),
+                lambda m: self._torque_message("ext", m, True),
                 qos_profile_sensor_data,
             ),
             self._sub(
                 JointState,
                 outputs["external_joint_torque_raw"],
-                lambda m: self._set_torque("raw", m.position),
+                lambda m: self._torque_message("raw", m),
                 qos_profile_sensor_data,
             ),
             self._sub(
                 JointState,
                 outputs["free_joint_torque_pred"],
-                lambda m: self._set_norm("free_norm", m.position),
+                lambda m: self._torque_message("free", m),
                 qos_profile_sensor_data,
             ),
             self._sub(
@@ -199,6 +205,7 @@ class WebNode(Node):
                 10,
             ),
         ]
+        self.subs.append(self._sub(DiagnosticArray,self.next_topic_root+'/status',self._status,qos_profile_sensor_data))
         if "contact_state" in outputs:
             self.subs.append(
                 self._sub(
@@ -213,7 +220,7 @@ class WebNode(Node):
                 self._sub(
                     JointState,
                     outputs["feedback_torque"],
-                    lambda m: self._set_torque("fb", m.position),
+                    lambda m: self._torque_message("fb", m),
                     qos_profile_sensor_data,
                 )
             )
@@ -227,6 +234,17 @@ class WebNode(Node):
                 )
             )
 
+    def _status(self,msg):
+        for s in msg.status:
+            if s.name=='factr2/next/'+str(self.cfg.get('side','generic')):
+                self.runtime_status={kv.key:json.loads(kv.value) for kv in s.values}
+                self.status_received=time.monotonic()
+                with self.cond:self.seq+=1;self.cond.notify_all()
+
+    def _torque_message(self,prefix,msg,sample=False):
+        if self.w3 and (msg.name!=self.names or len(msg.position)!=self.joint_count or not np.isfinite(msg.position).all()):return
+        self._set_torque(prefix,msg.position,sample)
+
     def _set_norm(self, key, values, sample=False):
         self.latest[key] = float(np.linalg.norm(np.asarray(values, dtype=float)))
         if sample:
@@ -236,7 +254,7 @@ class WebNode(Node):
         values = np.asarray(values, dtype=float)
         norm_key, joint_prefix = TORQUE_KEYS[prefix]
         self.latest[norm_key] = float(np.linalg.norm(values))
-        for i in range(JOINT_COUNT):
+        for i in range(self.joint_count):
             self.latest[f"{joint_prefix}_j{i + 1}"] = (
                 float(values[i]) if i < len(values) else np.nan
             )
@@ -247,6 +265,7 @@ class WebNode(Node):
         self.latest[key] = float(value)
 
     def _append(self):
+        self.last_valid_mono=time.monotonic()
         with self.cond:
             self.data["t"].append(time.monotonic() - self.t0)
             for key in self.keys:
@@ -262,8 +281,18 @@ class WebNode(Node):
                 k: [x if np.isfinite(x) else None for x in v]
                 for k, v in self.data.items()
             }
-            out["next_topic_root"] = self.next_topic_root
-            return json.dumps(out).encode()
+            out['next_topic_root']=self.next_topic_root
+            out['joint_names']=self.names;out['side']=self.cfg.get('side','generic')
+            out['units']='torque Nm; MSE Nm²; contact magnitude configured norm/scale'
+            age=time.monotonic()-self.last_valid_mono if self.last_valid_mono is not None else None
+            status_age=time.monotonic()-self.status_received if self.status_received is not None else None
+            out['last_valid_age_seconds']=age;out['status_age_seconds']=status_age
+            out['state']=self.runtime_status.get('state','warming')
+            out['reason']=self.runtime_status.get('reason','')
+            if (age is not None and age>.25) or (self.w3 and (status_age is None or status_age>.25)):
+                out['state']='stale';out['reason']='torque_or_status_timeout'
+            out['diagnostics']=self.runtime_status
+            return json.dumps(out,allow_nan=False).encode()
 
     def _handler(self):
         node = self
@@ -276,9 +305,12 @@ class WebNode(Node):
                 if self.path == "/events":
                     self._events()
                     return
-                body = HTML.encode()
+                if self.path=='/snapshot':
+                    body=node._snapshot();content_type='application/json'
+                else:
+                    body=node.html.encode();content_type='text/html'
                 self.send_response(200)
-                self.send_header("content-type", "text/html")
+                self.send_header("content-type", content_type)
                 self.send_header("content-length", str(len(body)))
                 self.end_headers()
                 self.wfile.write(body)
@@ -291,11 +323,13 @@ class WebNode(Node):
                 last = -1
                 while node.running and rclpy.ok():
                     with node.cond:
-                        node.cond.wait_for(lambda: node.seq != last or not node.running, 1.0)
+                        node.cond.wait_for(lambda: node.seq != last or not node.running, .25)
                         last = node.seq
                     try:
                         self.wfile.write(b"data: " + node._snapshot() + b"\n\n")
                         self.wfile.flush()
+                        # Coalesce 50 Hz torque/status updates into bounded UI refresh.
+                        time.sleep(1.0/node.refresh_hz)
                     except (BrokenPipeError, ConnectionResetError):
                         break
 
@@ -306,7 +340,9 @@ class WebNode(Node):
         with self.cond:
             self.cond.notify_all()
         self.httpd.shutdown()
-        super().destroy_node()
+        self.httpd.server_close()
+        self.server_thread.join(timeout=1)
+        return super().destroy_node()
 
     def _topic(self, topic):
         return str(topic).format(
@@ -330,11 +366,13 @@ class WebNode(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    node = WebNode()
+    node = None
     try:
+        node = WebNode()
         rclpy.spin(node)
     except KeyboardInterrupt:
         pass
     finally:
-        node.destroy_node()
+        if node is not None:
+            node.destroy_node()
         rclpy.try_shutdown()

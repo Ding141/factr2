@@ -34,7 +34,7 @@ def refresh(path):
 
 
 @pytest.mark.parametrize('bad', ['missing','schema','six','eight','length','float_time','duplicate','regression',
-                               'unequal','nan','inf','low_hz','gap','hash','side','order','contract'])
+                               'unequal','nan','inf','nan_time','low_hz','gap','hash','side','order','contract'])
 def test_corruption(tmp_path,bad):
     path=fixture(tmp_path/'bad.h5')
     if bad in ('side','order','contract'):
@@ -49,8 +49,10 @@ def test_corruption(tmp_path,bad):
             elif bad in ('six','eight'):
                 del g['data'];g.create_dataset('data',data=np.ones((110,6 if bad=='six' else 8),np.float32))
             elif bad=='length':g['data'].resize(109,axis=0)
-            elif bad=='float_time':
-                t=g['timestamps'][:].astype(float);del g['timestamps'];g['timestamps']=t
+            elif bad in ('float_time','nan_time'):
+                t=g['timestamps'][:].astype(float)
+                if bad=='nan_time':t[0]=float('nan')
+                del g['timestamps'];g['timestamps']=t
             elif bad in ('duplicate','regression'):g['timestamps'][2]=g['timestamps'][1]-(1 if bad=='regression' else 0)
             elif bad=='unequal':g['timestamps'][2]+=1
             elif bad in ('nan','inf'):g['data'][2,0]=float(bad)
@@ -108,3 +110,23 @@ def test_frame_validation():
     msgs[0].name=names
     msgs[0].header.stamp.nanosec=1
     with pytest.raises(ValueError,match='frame_stamp'):frame(msgs,list(SIGNALS),specs,names,10_010_000_000)
+
+
+def test_bad_sidecar_stays_machine_readable(tmp_path):
+    path=fixture(tmp_path/'badmeta.h5')
+    for content in ('[]','{"source": NaN}'):
+        sidecar_path(path).write_text(content)
+        report=check(path);assert not report['accepted'] and report['errors'][0].startswith('read_error:')
+        proc=subprocess.run([sys.executable,'-m','factr2_next.data_collection.quality','check',str(path)],capture_output=True,text=True)
+        assert proc.returncode==1 and json.loads(proc.stdout)['errors']
+
+
+def test_gap_nanosecond_boundary(tmp_path):
+    path=fixture(tmp_path/'boundary.h5')
+    with h5py.File(path,'r+') as h:
+        for key in SIGNALS:
+            t=h['ep_0000'][key]['timestamps'][:];t[55:]+=20_000_001
+            h['ep_0000'][key]['timestamps'][:]=t
+    refresh(path)
+    report=check(path)
+    assert not report['accepted'] and 'ep_0000:gap' in report['errors']

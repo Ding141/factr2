@@ -53,6 +53,8 @@ def validate_w3_config(cfg, purpose, require_paths=True):
             raise ValueError('W3 accepted train/val/test manifest required')
         if require_paths and not Path(data['manifest']).is_file():
             raise ValueError('Set an existing W3 split manifest')
+    if purpose == 'inference' and cfg.get('require_adapter_status', True) is not True:
+        raise ValueError('W3 inference requires adapter diagnostics')
     if require_paths and purpose == 'inference':
         for name in ('model.pt', 'config.yaml', 'normalization.npz'):
             if not (Path(cfg['checkpoint_dir']) / name).is_file():

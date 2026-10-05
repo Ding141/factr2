@@ -2,6 +2,7 @@ next_topic_root: /next/right
 web:
   host: 127.0.0.1
   port: 8081
+  refresh_hz: 10
 plot:
   max_points: 500
 outputs:

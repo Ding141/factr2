@@ -3,7 +3,7 @@ robot_topic_root: /factr2/right
 next_topic_root: /next/right
 device: cpu
 sync:
-  queue_size: 20
+  queue_size: 5
   slop_seconds: 0.03
 topics:
   joint_pos:
@@ -29,6 +29,7 @@ outputs:
   mse: '{next_topic_root}/mse'
   normalized_contact_magnitude: '{next_topic_root}/normalized_contact_magnitude'
   contact_state: '{next_topic_root}/contact_state'
+  status: '{next_topic_root}/status'
 smoothing:
   enabled: true
   mode: ema
@@ -53,3 +54,8 @@ joint_names:
 - right_joint_4
 - right_joint_5
 - right_joint_6
+cpu_threads: 1
+require_adapter_status: true
+timing:
+  input_timeout_seconds: 0.25
+  max_gap_seconds: 0.04

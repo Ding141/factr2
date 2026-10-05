@@ -61,12 +61,16 @@ def session_metadata(cfg, config_path):
             'episodes': {}}
 
 
+def _nonfinite_json(value):
+    raise ValueError('nonfinite_json:' + value)
+
+
 def check(path, episodes=None, expected=None):
     path = Path(path).resolve()
     result = {'path': str(path), 'errors': [], 'episodes': {}, 'excluded': {}}
     err = result['errors']
     try:
-        meta = json.loads(sidecar_path(path).read_text())
+        meta = json.loads(sidecar_path(path).read_text(), parse_constant=_nonfinite_json)
         result['metadata'] = meta
         result['h5_sha256'] = sha256(path)
         if meta.get('h5_sha256') != result['h5_sha256']:
@@ -150,18 +154,19 @@ def check(path, episodes=None, expected=None):
                 info['rows'] = n
                 if n < 50:
                     reasons.append('too_short')
-                if times and len(times[0]) >= 2:
-                    dt = np.diff(times[0].astype(np.float64)) * 1e-9
+                if times and times[0].dtype == np.dtype('int64') and times[0].ndim == 1 and len(times[0]) >= 2:
+                    gaps_ns = np.diff(times[0])
+                    dt = gaps_ns * 1e-9
                     duration = (int(times[0][-1]) - int(times[0][0])) * 1e-9
                     hz = (len(times[0]) - 1) / duration if duration > 0 else 0
                     info.update(duration_seconds=duration, hz=hz, max_gap_seconds=float(dt.max()))
                     if not 45 <= hz <= 55:
                         reasons.append('frequency')
-                    if dt.max() > .040000001:
+                    if gaps_ns.max() > 40_000_000:
                         reasons.append('gap')
                 if reasons:
                     err.extend(ep + ':' + r for r in reasons)
-    except (OSError, ValueError, KeyError, TypeError) as exc:
+    except (OSError, ValueError, KeyError, TypeError, AttributeError, OverflowError, IndexError) as exc:
         err.append('read_error:' + str(exc))
     result['accepted'] = not err
     return result

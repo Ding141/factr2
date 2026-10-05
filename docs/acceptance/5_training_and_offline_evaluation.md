@@ -1,17 +1,17 @@
 # 第 5 部分验收：训练、模型契约和离线评估
 
-2026-10-05，FACTR2 `dingyj-dev`，前置提交 `f063b57`。无硬件、CPU 合成数据开发验收通过。真实物理门槛保持 UNCONFIGURED。
+2026-10-05，FACTR2 `dingyj-dev`，前置提交 `f063b57`；W3 `d32262d`，本阶段无改动。**结论：PASS，范围：PASS_OFFLINE**，使用 CPU 合成数据。真实物理门槛保持 UNCONFIGURED，真机验收留待第 7/8 部分。
 
-| 验收项 | 结果 |
-|---|---|
-| TRN-01/02 | 人工 70 行 ×2 episode：每段 21 个窗口、特征 cmd-pos、末帧标签准确；第 22 个窗口回到第二 episode，第 1 段历史不会混入。共享 strict 拒绝 gap/异长等坏数据，禁止截断 |
-| TRN-03 | train/val/test 来自第 4 部分实际 recorder 的独立 session。单测将 test torque 改为 +100 并重建 manifest，相同 seed 的全部权重和 norm 逐值相同 |
-| TRN-04 | 左右 CPU/单线程、seed=0、两 epoch、batch=64、契约默认 stateless LSTM；有限 train/val loss，完整 artifact 和 metadata |
-| TRN-05/06 | 保存前后模型 allclose(1e-5)；同序列 dataset batched eval vs HistoryBuffer 逐窗口 eval allclose(1e-5)，标签与 raw residual 符号一致 |
-| TRN-07 | 无前缀和显式 `{arm}_...` keys；1105 行均得到 1056 预测。真实 60 s 录制全量评估左 2951、右 2950 预测，超过原 1000 限制 |
-| TRN-08 | 缺 artifact、错 side/order/rate/dim、非法/错形 std、权重 shape 在加载前拒收；运行期 side expected 也拒绝错臂 |
-| TRN-09 | 手算 MSE、bias、std 一致；Nm JSON/CSV、逐样本 stamp、单 episode 误差曲线/频谱、分组和 train-mean baseline 已生成 |
-| TRN-10 | 同 seed CPU 逐值复现；180000 行代表加载严格 PASS，179951 窗口，cache 20.16 MB，对照 eager 755.79 MB，加载+norm 0.123 s，进程峰值 329.4 MiB（含 torch/夹具/检查） |
+| 验收条目 | 命令/实验 | 证据 | 结论 |
+|---|---|---|---|
+| TRN-01/02 | `scripts/next.sh python -m pytest factr2_next/src/factr2_next/test/test_training_contract.py -q`：人工 70 行 ×2 episode、坏数据实验 | [5_evidence.json](5_evidence.json)：每段 21 个窗口、cmd-pos、末帧标签准确，第 22 窗口回到第二 episode；strict 拒绝 gap/异长，无截断 | PASS |
+| TRN-03 | `scripts/next.sh python scripts/prepare_w3_smoke.py`；同一测试将 test torque 改为 +100 后重建 manifest、同 seed 再训练 | [5_summary.json](5_summary.json) 及 [5_evidence.json](5_evidence.json)：独立 recorder session；全部权重和 norm 逐值不变 | PASS |
+| TRN-04 | `scripts/next.sh python -m factr2_next.training.train --config config/w3/left/smoke_train.yaml`，右侧配置同样执行 | [5_summary.json](5_summary.json)：CPU/单线程、seed=0、两 epoch、batch=64、默认 stateless LSTM，有限 loss、完整 artifact/metadata | PASS |
+| TRN-05/06 | 同一 training_contract 测试：保存重载、dataset batched eval 与 HistoryBuffer 逐窗口比较 | [5_evidence.json](5_evidence.json)：allclose(1e-5)，末帧标签和 measured-predicted residual 一致 | PASS |
+| TRN-07 | 同一测试的无前缀/显式 arm keys；`scripts/next.sh python scripts/evaluate_w3_smoke.py --side left`，右侧同样执行 | [5_summary.json](5_summary.json)：1105 行得到 1056 预测，60 s 录制左 2951/右 2950 预测，无隐式 1000 上限 | PASS |
+| TRN-08 | 同一 training_contract 测试构造缺 artifact、错 side/order/rate/dim/std/权重 shape | [5_evidence.json](5_evidence.json)：加载前明确拒收，运行期 expected side 拒绝错臂 | PASS |
+| TRN-09 | 同一测试手算物理指标；左右 `evaluate_w3_smoke.py` 生成报告、CSV、图表 | [5_evidence.json](5_evidence.json)：MSE/bias/std 一致，Nm 单位、逐样本 stamp、单 episode 频谱、分组和 train-mean baseline 完整 | PASS |
+| TRN-10 | 同 seed CPU 重训实验；`scripts/next.sh python scripts/test_training_resources.py` | [5_summary.json](5_summary.json)：逐值复现；180000 行/179951 窗口，cache 20.16 MB 对照 eager 755.79 MB，加载+norm 0.123 s，峰值 329.4 MiB | PASS |
 
 核心回归共 36 项通过（含第 4 部分 21 项）。额外构造 epoch 2 更差的测试，实际保存 epoch 1 权重，证明部署取 best 而非 last；真实两轮 run 均 best_epoch=2。`colcon build` 两包成功，左右配置模板检查通过。CLI 在 acceptance 模板 null 时产生 UNCONFIGURED JSON 并退出 2，不能自动 PASS。
 

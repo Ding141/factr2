@@ -32,3 +32,9 @@ adapter_status 位于 `/factr2/{side}/adapter_status`，header 为生成时间�
 `w3_checkpoint_v1` 的 `metadata.json` 记录 contract_version、side、joint_order、feature_order=[q,qdot,q_cmd-q]、history=50、input_size=21、output_size=7、sample_hz=50、dataset_id、manifest_sha256、tool/gripper/load/calibration、software_versions/commits、seed、resolved_device 和 artifact_sha256。加载时逐项核验 config/权重/归一化及运行 profile，不以尺寸相同代替侧别匹配。保存 minimum validation normalized MSE 的 best epoch，test 仅冻结后评估。
 
 x normalization 的统计覆盖训练窗口每个时间步（按重叠次数加权），y normalization 覆盖训练窗口末帧标签；float64 计算、float32 存储、std+1e-6。离线残差 measured-predicted，单位 Nm；physical MSE 为 Nm²。部署与离线都使用 stateless 同一窗口，不保存跨窗口 recurrent hidden state。
+
+### 在线有效性和状态（第 6 部分）
+
+`/next/{side}/status` (`diagnostic_msgs/DiagnosticArray`) 的 name 为 `factr2/next/{side}`。每 20 ms 输出 JSON 编码的 state/reason/history_count/source_age_seconds/receive_age_seconds/last_output_stamp_ns/output_hz/infer_ms/infer_p95_ms/outputs/dropped/resets/device。状态 loading/warming/valid/stale/invalid；invalid/stale 不发布 torque，恢复从 50 帧新历史开始。header 为诊断生成时间，last_output_stamp_ns 才是最近有效 torque 的末帧源时间。
+
+W3 推理必须使用对应 side 的 checkpoint 和新鲜 adapter OK diagnostics；四输入严格同 stamp、同有序 name，gap>40 ms/坏帧/回退/adapter 非 OK 重置 history、filter、contact。source+monotonic receive 超时=.25 s，steady watchdog 周期=.02 s。三路 torque name/order/末帧 stamp 完全相同，position 单位 Nm；无 header 标量保持上游兼容，通过诊断关联有效性。
