@@ -30,3 +30,5 @@ W3 仓库负责 CAN、ros2_control 和真机状态；本仓库负责 NEXT 的数
 - [只读推理与七关节页面](docs/acceptance/6_inference_and_visualization.md)
 
 运行环境见 [隔离环境说明](docs/environment.md)，adapter/健康器入口见 [adapter README](factr2_w3_adapter/README.md)。真实采集须使用 real profile 并启用健康门禁；真机验证留第 7/8 部分。
+
+现场人员从 [项目讲解与操作指导](docs/operator_guide/README.md) 开始：包含已完成的工作、隔离环境、W3 网页操作，以及第 7 部分采集/训练和第 8 部分只读部署/接触验收的步骤。
