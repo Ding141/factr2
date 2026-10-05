@@ -1,0 +1,115 @@
+{
+  "left": {
+    "result": "PASS",
+    "side": "left",
+    "rows": 3000,
+    "episodes": {
+      "ep_0000": {
+        "errors": [],
+        "rows": 3000,
+        "duration_seconds": 59.979969695,
+        "hz": 50.00002526260029,
+        "max_gap_seconds": 0.026534400000000003
+      }
+    },
+    "episodes_metadata": {
+      "ep_0000": {
+        "rows": 3000
+      }
+    }
+  },
+  "right": {
+    "result": "PASS",
+    "side": "right",
+    "rows": 2999,
+    "episodes": {
+      "ep_0000": {
+        "errors": [],
+        "rows": 2999,
+        "duration_seconds": 59.959258419,
+        "hz": 50.00061840407933,
+        "max_gap_seconds": 0.03336448
+      }
+    },
+    "episodes_metadata": {
+      "ep_0000": {
+        "rows": 2999
+      }
+    },
+    "invalid_frames": 0
+  },
+  "faults": {
+    "result": "PASS",
+    "side": "left",
+    "rows": 738,
+    "episodes": {
+      "ep_0000": {
+        "errors": [],
+        "rows": 250,
+        "duration_seconds": 4.9700480460000005,
+        "hz": 50.100119293695855,
+        "max_gap_seconds": 0.027017472
+      },
+      "ep_0001": {
+        "errors": [],
+        "rows": 132,
+        "duration_seconds": 2.616729994,
+        "hz": 50.062482678906456,
+        "max_gap_seconds": 0.027073792000000003
+      },
+      "ep_0002": {
+        "errors": [],
+        "rows": 135,
+        "duration_seconds": 2.679982851,
+        "hz": 50.00031994607715,
+        "max_gap_seconds": 0.026784000000000002
+      },
+      "ep_0003": {
+        "errors": [],
+        "rows": 135,
+        "duration_seconds": 2.679882935,
+        "hz": 50.002184143912984,
+        "max_gap_seconds": 0.026706176
+      },
+      "ep_0004": {
+        "errors": [],
+        "rows": 86,
+        "duration_seconds": 1.7002096480000002,
+        "hz": 49.99383464267931,
+        "max_gap_seconds": 0.026737408
+      }
+    },
+    "episodes_metadata": {
+      "ep_0000": {
+        "end_reason": "receive_timeout",
+        "rows": 250
+      },
+      "ep_0001": {
+        "end_reason": "receive_timeout",
+        "rows": 132
+      },
+      "ep_0002": {
+        "end_reason": "receive_timeout",
+        "rows": 135
+      },
+      "ep_0003": {
+        "end_reason": "receive_timeout",
+        "rows": 135
+      },
+      "ep_0004": {
+        "rows": 86
+      },
+      "ep_0005": {
+        "end_reason": "frame_stamp",
+        "rows": 0,
+        "excluded_reason": "short_segment_less_than_history"
+      },
+      "ep_0006": {
+        "end_reason": "frame_stamp",
+        "rows": 0,
+        "excluded_reason": "short_segment_less_than_history"
+      }
+    },
+    "invalid_frames": 235
+  }
+}

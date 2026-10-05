@@ -36,3 +36,22 @@ joint_names:
 - left_joint_4
 - left_joint_5
 - left_joint_6
+metadata:
+  source: real
+  tool: SET_TOOL_ID
+  gripper: excluded_from_model
+  load: SET_LOAD_ID
+  calibration:
+    path: SET_CALIBRATION_FILE
+  control:
+    gains: SET_GAINS
+    feedforward: SET_FEEDFORWARD
+  trajectory_id: SET_TRAJECTORY_ID
+  contact:
+    present: false
+    label: verified_free_motion
+  temperature:
+    source: SET_TEMPERATURE_SOURCE
+  audit_paths:
+  - SET_ROSBAG_PATH
+  health_gate_enabled: true

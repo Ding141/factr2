@@ -12,6 +12,8 @@
   <depend>rclpy</depend>
   <depend>sensor_msgs</depend>
   <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>diagnostic_msgs</depend>
   <depend>message_filters</depend>
   <depend>ament_index_python</depend>
 

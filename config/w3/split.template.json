@@ -1,0 +1,9 @@
+{
+  "schema": "w3_split_v1",
+  "dataset_id": "SET_DATASET_ID",
+  "splits": {
+    "train": [{"path": "SET_ABSOLUTE_H5", "h5_sha256": "SET_SHA256", "episodes": ["ep_0000"], "audit_paths": []}],
+    "val": [{"path": "SET_ABSOLUTE_H5", "h5_sha256": "SET_SHA256", "episodes": ["ep_0000"], "audit_paths": []}],
+    "test": [{"path": "SET_ABSOLUTE_H5", "h5_sha256": "SET_SHA256", "episodes": ["ep_0000"], "audit_paths": []}]
+  }
+}

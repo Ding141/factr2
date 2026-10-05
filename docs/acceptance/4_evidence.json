@@ -1,0 +1,132 @@
+[
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/cli.json",
+    "sha256": "3ea0917052851a631a0ef2646ec15bb5c7fa6c016606b63e537e0e0ec87ff112",
+    "bytes": 2300
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/left/adapter.log",
+    "sha256": "4c1a6332c89371920c5c9e972b96c93b90e245a333656175acd1aa1fa5a627ff",
+    "bytes": 176
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/left/continuous/adapter.log",
+    "sha256": "b96a83772e1792bb4537192815296802791df3a1b53e87afe560cd4675c23f3d",
+    "bytes": 176
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/left/continuous/continuous.json",
+    "sha256": "19b747603a41bec56444089580376306df63e5795a01c050066e75c24ac580f0",
+    "bytes": 2579
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/left/continuous/mock.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/left/continuous/record.yaml",
+    "sha256": "5044fbd2b1b38756783b9d429a1eaaa4c275a8bf12381f182f21032963389016",
+    "bytes": 1202
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/left/faults/adapter.log",
+    "sha256": "b370bc92d2807a78d56fd301576137cc43aa06d93679911ee77374f086ce9c92",
+    "bytes": 660
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/left/faults/faults.json",
+    "sha256": "d97db8a51154a40f1d52748012e26338b4cbbce8af49ba24545db6df461c31d2",
+    "bytes": 4582
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/left/faults/mock.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/left/faults/record.yaml",
+    "sha256": "101753aac85711b26e7ddd612dd5b92749bb9b53f629776d05e94260fdf97c87",
+    "bytes": 1198
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/left/mock.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/left/record.yaml",
+    "sha256": "c885d6aecf518147a5763bd2d922f7419395afebb987ddc41a9b25d09780ddbe",
+    "bytes": 1191
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/right/adapter.log",
+    "sha256": "6ae0b621eb2534d019616e5804edf86d18409e9ac209b7830a218556c6712f1c",
+    "bytes": 180
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/right/continuous/adapter.log",
+    "sha256": "0120256603903dae0278713418ca5840ab330385b0cee3942902c9162a8ed5c2",
+    "bytes": 180
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/right/continuous/continuous.json",
+    "sha256": "5eedf4399e00ae87098f9e9d86d5b93c945bd260fa372cc2da4cf0b695d62708",
+    "bytes": 2604
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/right/continuous/mock.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/right/continuous/record.yaml",
+    "sha256": "4e695a2e0a4a78fed6947f9472452f0ae2e3444bd7cd6b3a6e8125972f6e12df",
+    "bytes": 1213
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/right/mock.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/right/record.yaml",
+    "sha256": "6af7f2a942f389792f0391a8a9a3611ae153f9a72e9ea562e87e7e7e8020aa57",
+    "bytes": 1202
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/shutdown/adapter.log",
+    "sha256": "5d32c2aad8531b33595321cacb91b85d1b91ac2b1bf19ad55e19e7d16b85099f",
+    "bytes": 102
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/shutdown/mock.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/shutdown/record.yaml",
+    "sha256": "f94a45e1919966905be1652cb9e839d5d26fccd2266ccdcd00c0ec74fbc767ff",
+    "bytes": 1199
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/shutdown/recorder.log",
+    "sha256": "fb5f33c35188d43c6d1a85b0a9cc6d14ec53708931331b8b82d86f710f446796",
+    "bytes": 608
+  },
+  {
+    "path": "/home/dingyj/factr2/reports/generated/4/shutdown/summary.json",
+    "sha256": "22914324438a7b1646f970f271b402ae3d5dcc079f12b4cf8c09a76b547c28aa",
+    "bytes": 2769
+  },
+  {
+    "path": "/home/dingyj/factr2/data/mock/left/synthetic_left_continuous_20261005_154503.h5",
+    "sha256": "bc7fd6eaf862b242d5a105de574af122f5b79a4a833a59d82d67d4264ce532ef",
+    "bytes": 1462796
+  },
+  {
+    "path": "/home/dingyj/factr2/data/mock/right/synthetic_right_continuous_20261005_154705.h5",
+    "sha256": "4ff9e67e81c75e1ab9d9eedb9e7f0b7141b17c7e2d871728b83d31d59950ca40",
+    "bytes": 1462652
+  }
+]
