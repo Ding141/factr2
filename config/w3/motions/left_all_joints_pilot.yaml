@@ -1,0 +1,28 @@
+# Terminal D motion file. Angles are degrees, ordered J1..J7 (joint_0..6).
+# Each row is relative to ONE initial measured pose, not relative to the previous row.
+# Review the physical swept path before using --send. There is no collision planner.
+version: 1
+name: left_all_joints_pilot
+side: left
+reference: initial_feedback
+units: deg
+start_hold_seconds: 2
+finish_hold_seconds: 3
+# The previous pilot showed about 1 degree of steady tracking error on J7.
+# This is a pilot continuation limit, not a statement of precise positioning accuracy.
+arrival_tolerance_deg: 1.5
+steps:
+  - {name: J1_plus2, offset_deg: [2, 0, 0, 0, 0, 0, 0], duration_seconds: 5, hold_seconds: 2}
+  - {name: J1_return, offset_deg: [0, 0, 0, 0, 0, 0, 0], duration_seconds: 5, hold_seconds: 2}
+  - {name: J2_plus2, offset_deg: [0, 2, 0, 0, 0, 0, 0], duration_seconds: 5, hold_seconds: 2}
+  - {name: J2_return, offset_deg: [0, 0, 0, 0, 0, 0, 0], duration_seconds: 5, hold_seconds: 2}
+  - {name: J3_plus2, offset_deg: [0, 0, 2, 0, 0, 0, 0], duration_seconds: 5, hold_seconds: 2}
+  - {name: J3_return, offset_deg: [0, 0, 0, 0, 0, 0, 0], duration_seconds: 5, hold_seconds: 2}
+  - {name: J4_plus2, offset_deg: [0, 0, 0, 2, 0, 0, 0], duration_seconds: 5, hold_seconds: 2}
+  - {name: J4_return, offset_deg: [0, 0, 0, 0, 0, 0, 0], duration_seconds: 5, hold_seconds: 2}
+  - {name: J5_plus2, offset_deg: [0, 0, 0, 0, 2, 0, 0], duration_seconds: 5, hold_seconds: 2}
+  - {name: J5_return, offset_deg: [0, 0, 0, 0, 0, 0, 0], duration_seconds: 5, hold_seconds: 2}
+  - {name: J6_plus2, offset_deg: [0, 0, 0, 0, 0, 2, 0], duration_seconds: 5, hold_seconds: 2}
+  - {name: J6_return, offset_deg: [0, 0, 0, 0, 0, 0, 0], duration_seconds: 5, hold_seconds: 2}
+  - {name: J7_plus2, offset_deg: [0, 0, 0, 0, 0, 0, 2], duration_seconds: 5, hold_seconds: 2}
+  - {name: J7_return, offset_deg: [0, 0, 0, 0, 0, 0, 0], duration_seconds: 5, hold_seconds: 2}
