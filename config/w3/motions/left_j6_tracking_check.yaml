@@ -1,0 +1,16 @@
+# J6 gain trial: same speed and arrival gate as the all-joint pilot.
+# Angles use the initial measured pose; J6 is left_joint_5.
+version: 1
+name: left_j6_tracking_check
+side: left
+reference: initial_feedback
+units: deg
+max_step_deg: 3
+start_hold_seconds: 2
+finish_hold_seconds: 3
+arrival_tolerance_deg: 1.5
+steps:
+  - {name: J6_plus2, offset_deg: [0, 0, 0, 0, 0, 2, 0], duration_seconds: 5, hold_seconds: 2}
+  - {name: J6_return_from_plus, offset_deg: [0, 0, 0, 0, 0, 0, 0], duration_seconds: 5, hold_seconds: 2}
+  - {name: J6_minus2, offset_deg: [0, 0, 0, 0, 0, -2, 0], duration_seconds: 5, hold_seconds: 2}
+  - {name: J6_return_from_minus, offset_deg: [0, 0, 0, 0, 0, 0, 0], duration_seconds: 5, hold_seconds: 2}

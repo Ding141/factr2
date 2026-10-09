@@ -51,13 +51,16 @@ def session_metadata(cfg, config_path):
         calibration['sha256'] = sha256(calibration['path'])
     elif supplied['source'] == 'real':
         raise ValueError('real_calibration_required')
+    factr_root = Path(__file__).resolve().parents[5]
+    w3_workspace = Path(supplied.get('w3_workspace', factr_root.parent / 'dual_arm_robot')).expanduser().resolve()
     return {**supplied, 'contract_version': cfg['contract_version'], 'side': cfg['side'],
             'joint_order': cfg['joint_names'], 'sample_hz': cfg['recording']['target_hz'],
             'topics': cfg['topics'], 'session_id': cfg['session_name'],
             'time_source': 'ROS header ns; recorder watchdog monotonic',
             'config_sha256': sha256(config_path),
-            'software_commits': {'factr2': commit_at(Path(__file__).resolve().parents[5]),
-                                 'w3': commit_at('/home/dingyj/w3_dual_arm_ws')},
+            'w3_workspace': str(w3_workspace),
+            'software_commits': {'factr2': commit_at(factr_root),
+                                 'w3': commit_at(w3_workspace)},
             'episodes': {}}
 
 

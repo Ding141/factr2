@@ -4,6 +4,7 @@ import io
 import math
 from pathlib import Path
 import shutil
+import shlex
 import subprocess
 import tempfile
 import unittest
@@ -24,6 +25,20 @@ def description(path):
 
 
 class QuickFlowTests(unittest.TestCase):
+    def test_default_workspace_is_local_dual_arm_robot(self):
+        self.assertEqual(capture.W3, capture.ROOT.parent / 'dual_arm_robot')
+        command = capture.w3_command(['ros2', 'node', 'list'], {})
+        self.assertIn(f'ROS_LOG_DIR={capture.W3 / "log/ros"}', command)
+        self.assertIn(f'source {capture.W3 / "install/local_setup.bash"};', command[-5])
+
+    def test_custom_workspace_with_shell_characters_is_quoted(self):
+        workspace = Path('/tmp/W3 space; echo unwanted')
+        command = capture.w3_command(['ros2', 'node', 'list'], {}, workspace)
+        self.assertIn(f'TMPDIR={workspace / "log/tmp"}', command)
+        shell = command[command.index('-c') + 1]
+        self.assertIn(f'source {shlex.quote(str(workspace / "install/local_setup.bash"))};', shell)
+        self.assertNotIn('/home/dingyj/', shell)
+
     def test_domain_zero_overrides_next_default_73(self):
         with patch.dict(capture.os.environ, {}, clear=True):
             env = capture.runtime_environment(0)
@@ -41,6 +56,7 @@ class QuickFlowTests(unittest.TestCase):
         self.assertTrue(capture.controller_is_active(f'\x1b[92m{name}\x1b[0m plugin active', name))
 
     def test_configuration_uses_loaded_calibration_and_freezes_hash(self):
+        from factr2_next.data_collection import quality
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             templates = root / 'config/w3/left'
@@ -56,8 +72,9 @@ class QuickFlowTests(unittest.TestCase):
                 'gravity.yaml': yaml.safe_dump({'g': {'ros__parameters': {'friction_model_yaml': str(friction)}}}),
                 'robot_description.yaml': yaml.safe_dump({'r': {'ros__parameters': {'robot_description': description(calibration)}}})}
             session = root / 'session'
+            workspace = root / 'local control workspace'
             with patch.object(capture, 'ROOT', root):
-                capture.prepare(session, 'left', snapshots, 'empty_v1', 'bare_attachment_v1')
+                capture.prepare(session, 'left', snapshots, 'empty_v1', 'bare_attachment_v1', workspace=workspace)
             cfg = yaml.safe_load((session / 'record.yaml').read_text())
             self.assertEqual(cfg['side'], 'left')
             self.assertEqual(cfg['metadata']['source'], 'real')
@@ -65,6 +82,11 @@ class QuickFlowTests(unittest.TestCase):
             self.assertFalse(cfg['metadata']['contact']['present'])
             self.assertEqual(Path(cfg['metadata']['calibration']['path']).read_bytes(), calibration.read_bytes())
             self.assertEqual((session / 'audit/friction_model.yaml').read_bytes(), friction.read_bytes())
+            with patch.object(quality, 'commit_at', side_effect=lambda path: Path(path).name) as commit:
+                metadata = quality.session_metadata(cfg, session / 'record.yaml')
+            self.assertEqual(commit.call_args_list[-1].args, (workspace,))
+            self.assertEqual(metadata['w3_workspace'], str(workspace))
+            self.assertEqual(metadata['software_commits']['w3'], workspace.name)
 
     def test_refuses_ambiguous_or_gripper_description(self):
         with self.assertRaises(ValueError):

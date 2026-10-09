@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 import re
 import select
+import shlex
 import shutil
 import signal
 import subprocess
@@ -17,7 +18,7 @@ import xml.etree.ElementTree as ET
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-W3 = Path('/home/dingyj/w3_dual_arm_ws')
+W3 = ROOT.parent / 'dual_arm_robot'
 
 
 def runtime_environment(domain):
@@ -29,10 +30,11 @@ def runtime_environment(domain):
     return env
 
 
-def w3_command(args, env):
+def w3_command(args, env, workspace=None):
+    workspace = Path(workspace if workspace is not None else W3).expanduser().resolve()
     clean = ['/usr/bin/env', '-i', f'HOME={Path.home()}', 'PATH=/usr/bin:/bin',
-             'LANG=C.UTF-8', 'PYTHONNOUSERSITE=1', f'ROS_LOG_DIR={W3 / "log/ros"}',
-             f'TMPDIR={W3 / "log/tmp"}']
+             'LANG=C.UTF-8', 'PYTHONNOUSERSITE=1', f'ROS_LOG_DIR={workspace / "log/ros"}',
+             f'TMPDIR={workspace / "log/tmp"}']
     for key in ('ROS_DOMAIN_ID', 'ROS_LOCALHOST_ONLY', 'RMW_IMPLEMENTATION',
                 'FASTRTPS_DEFAULT_PROFILES_FILE'):
         if key in env:
@@ -40,7 +42,7 @@ def w3_command(args, env):
     return clean + ['/bin/bash', '--noprofile', '--norc', '-c',
                     'set -e; quick_local_only=${ROS_LOCALHOST_ONLY:-0}; '
                     'source /opt/ros/humble/setup.bash; '
-                    'source /home/dingyj/w3_dual_arm_ws/install/local_setup.bash; '
+                    f'source {shlex.quote(str(workspace / "install/local_setup.bash"))}; '
                     'export ROS_LOCALHOST_ONLY=$quick_local_only; '
                     'exec "$@"', 'bash', *map(str, args)]
 
@@ -88,7 +90,7 @@ def calibration_from_description(description):
     return path
 
 
-def prepare(session, side, snapshots, load, tool, motion=None):
+def prepare(session, side, snapshots, load, tool, motion=None, workspace=None):
     audit = session / 'audit'
     audit.mkdir(parents=True)
     for name, text in snapshots.items():
@@ -115,6 +117,7 @@ def prepare(session, side, snapshots, load, tool, motion=None):
     cfg.update(output_dir=str(session), session_name=session.name)
     cfg['metadata'] = dict(
         source='real', tool=tool, gripper='absent', load=load,
+        w3_workspace=str(Path(workspace if workspace is not None else W3).expanduser().resolve()),
         calibration={'path': str(frozen)},
         control={'gains': {'position_params': str(audit / 'position.yaml')},
                  'feedforward': {'gravity_params': str(audit / 'gravity.yaml'), **friction}},
@@ -159,8 +162,8 @@ def summarize(session, env):
         print(coverage.strip())
     motion_ok = True
     if (session / 'audit/motion.yaml').exists():
-        from w3_motion_sequence import load_motion
-        plan, _, digest = load_motion(session / 'audit/motion.yaml')
+        from w3_coverage_plan import load_capture_motion
+        plan, _, digest = load_capture_motion(session / 'audit/motion.yaml')
         try:
             motion = json.loads((session / 'audit/motion_run.json').read_text())
             motion_ok = (motion.get('status') == 'completed' and motion.get('motion_sha256') == digest and
@@ -169,22 +172,33 @@ def summarize(session, env):
         except (OSError, ValueError):
             motion_ok = False
         print('整套动作执行：' + ('PASS' if motion_ok else 'FAIL（未执行或中断，查看 audit/motion_run.json）'))
+        if plan.get('schema') == 'w3_coverage_motion_v1' and (session / 'audit/motion_run.json').exists():
+            measured = subprocess.run(next_command(['python', ROOT / 'scripts/w3_coverage_motion.py',
+                'report', '--session', session]), env=env, cwd=ROOT, text=True,
+                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=60)
+            (session / 'coverage.log').write_text(measured.stdout)
+            print(measured.stdout.strip())
+            if measured.returncode:
+                motion_ok = False
     return 0 if report['accepted'] and motion_ok else 1
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--w3-workspace', type=Path, default=W3,
+                        help='W3 workspace (default: sibling dual_arm_robot with local calibration)')
     parser.add_argument('--side', choices=['left', 'right'], default='left')
     parser.add_argument('--domain', type=int, default=int(os.environ.get('ROS_DOMAIN_ID', '0')))
     parser.add_argument('--load', default='empty_v1', help='Operator-declared actual load identity')
     parser.add_argument('--tool', default='bare_attachment_v1')
     parser.add_argument('--motion', type=Path, help='Freeze the motion file for terminal D; C never publishes it')
     args = parser.parse_args()
+    workspace = args.w3_workspace.expanduser().resolve()
     motion = None
     if args.motion is not None:
-        from w3_motion_sequence import load_motion
+        from w3_coverage_plan import load_capture_motion
         try:
-            motion = load_motion(args.motion)
+            motion = load_capture_motion(args.motion)
             if motion[0]['side'] != args.side:
                 raise ValueError('--side must match the motion file side')
         except (ValueError, OSError, yaml.YAMLError) as exc:
@@ -193,7 +207,7 @@ def main():
     if not sys.stdin.isatty():
         parser.error('Run capture in an interactive terminal; Enter stops this session')
     env = runtime_environment(args.domain)
-    for folder in (W3 / 'log/ros', W3 / 'log/tmp'):
+    for folder in (workspace / 'log/ros', workspace / 'log/tmp'):
         folder.mkdir(parents=True, exist_ok=True)
     children = []
     handles = []
@@ -231,10 +245,10 @@ def main():
                     return False
         return True
 
-    print(f'ROS domain={args.domain}，side={args.side}\n本次目录：{session}', flush=True)
+    print(f'ROS domain={args.domain}，side={args.side}\nW3 工作空间：{workspace}\n本次目录：{session}', flush=True)
     try:
         print('正在只读检查现有 W3 控制器（不会启动控制端或切换模式）…', flush=True)
-        controllers = run(w3_command(['ros2', 'control', 'list_controllers'], env), env)
+        controllers = run(w3_command(['ros2', 'control', 'list_controllers'], env, workspace), env)
         if not all(controller_is_active(controllers, name) for name in
                    ('joint_state_broadcaster', 'gravity_compensation_controller', 'joint_position_controller')):
             raise RuntimeError('请先在 W3 网页启动控制端并切到“关节位置”；本脚本不会代你启动或切模式。\n' + controllers)
@@ -245,18 +259,18 @@ def main():
         for filename, node in [('position.yaml', '/joint_position_controller'),
                                ('gravity.yaml', '/gravity_compensation_controller'),
                                ('robot_description.yaml', '/robot_state_publisher')]:
-            snapshots[filename] = run(w3_command(['ros2', 'param', 'dump', node], env), env)
-        prepare(session, args.side, snapshots, args.load, args.tool, motion)
+            snapshots[filename] = run(w3_command(['ros2', 'param', 'dump', node], env, workspace), env)
+        prepare(session, args.side, snapshots, args.load, args.tool, motion, workspace=workspace)
         run(next_command(['python', 'scripts/check_w3_configs.py', '--runtime', 'record',
                           '--config', session / 'record.yaml']), env)
         # Refuse to duplicate existing capture components on this side.
-        graph = run(w3_command(['ros2', 'node', 'list', '--no-daemon'], env), env)
+        graph = run(w3_command(['ros2', 'node', 'list', '--no-daemon'], env, workspace), env)
         if any(name in graph.splitlines() for name in
                ('/w3_health_monitor', f'/w3_next_adapter_{args.side}', f'/quick_recorder_{args.side}')):
             raise RuntimeError('已有健康器/本侧 adapter/quick recorder，请先停止旧采集进程再运行。')
         print('正在启动只读健康器、real adapter、bag 和 recorder，等待新鲜四流…', flush=True)
         launch('health', w3_command(['/usr/bin/python3.10',
-               ROOT / 'factr2_w3_adapter/tools/w3_health_monitor.py'], env))
+               ROOT / 'factr2_w3_adapter/tools/w3_health_monitor.py'], env, workspace))
         launch('adapter', next_command(['ros2', 'launch', 'factr2_w3_adapter', 'adapter.launch.py',
                f'side:={args.side}', 'profile:=real']))
         root = f'/factr2/{args.side}'
@@ -264,7 +278,7 @@ def main():
                   '/joint_position_controller/command_state', '/factr2/w3_health']
         topics += [root + '/' + key for key in
                    ('adapter_status', 'joint_pos', 'joint_vel', 'joint_cmd', 'joint_effort')]
-        launch('bag', w3_command(['ros2', 'bag', 'record', '-o', session / 'audit/bag', *topics], env))
+        launch('bag', w3_command(['ros2', 'bag', 'record', '-o', session / 'audit/bag', *topics], env, workspace))
         launch('recorder', next_command(['ros2', 'run', 'factr2_next', 'next_record', '--ros-args',
                '-p', f'config_file:={session / "record.yaml"}', '-r', f'__node:=quick_recorder_{args.side}']))
         deadline = time.monotonic() + 30

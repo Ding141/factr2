@@ -1,5 +1,7 @@
 # 四终端采集：D 读取一个动作文件，顺序执行整套动作
 
+需要逐关节覆盖、多关节末端路径和快慢速度的数据采集，参见 [保守范围覆盖采集](COVERAGE_CAPTURE.md)。本文保留原 pilot 的操作方法。
+
 沿用你已经跑通的连接方式。A 是 bridge，B 是网页，C 开录/停录，D 执行动作文件。**不用在 D 一条条发坐标。** 脚本直接从源码运行，无须重新编译；本次开发只做了离线检查，没有启动真机控制或发送目标。
 
 本文示例：无夹爪、空载、右臂。动作文件是 [right_all_joints_pilot.yaml](../../config/w3/motions/right_all_joints_pilot.yaml)。它让 **J1～J7 依次 +8°、返回起始目标**，14 段，每段运动 8 秒、保持 2 秒，前后静置共 5 秒，总计划约 **145 秒**，另有服务检查耗时。文件明确设置 `max_step_deg: 10`，支持本次 5～10° 范围的动作；示例取 8°，为到位误差留出余量。
@@ -10,10 +12,12 @@
 
 ## 1. A/B：保持现有连接
 
+本机控制工作空间为 `/home/venom/dual_arm_robot`，使用 `src/ros2_ws_config/` 中刚迁移的 7 个本机标定文件。A/B/D 都从这个工作空间 source；C 默认使用与 factr2 同级的 dual_arm_robot，也可用 `--w3-workspace` 显式指定。C 仍从运行中的 robot_description 读取实际加载的标定并冻结哈希，不会替换运行中控制器的标定。首次使用前需完成 dual_arm_robot 的 ROS 构建和 factr2 的环境准备，使下文的 install/setup.bash、.venv 及 ROS 包可用。
+
 **已经启动就不用重复执行。** 如果尚未启动，A：
 
 ```bash
-cd /home/dingyj/w3_dual_arm_ws
+cd /home/venom/dual_arm_robot
 source install/setup.bash
 ros2 launch ieir_bringup bridge.launch.py arms:=dual gripper:=false
 ```
@@ -21,7 +25,7 @@ ros2 launch ieir_bringup bridge.launch.py arms:=dual gripper:=false
 B：
 
 ```bash
-cd /home/dingyj/w3_dual_arm_ws
+cd /home/venom/dual_arm_robot
 source install/setup.bash
 ros2 launch ieir_bringup ui.launch.py workspace:="$PWD" gripper:=false
 ```
@@ -35,9 +39,9 @@ ros2 launch ieir_bringup ui.launch.py workspace:="$PWD" gripper:=false
 新终端 C，无须 source 工作区：
 
 ```bash
-cd /home/dingyj/factr2
+cd /home/venom/factr2
 /usr/bin/python3.10 scripts/quick_capture.py \
-  --side right --domain 0 \
+  --side right --domain 0 --w3-workspace /home/venom/dual_arm_robot \
   --motion config/w3/motions/right_all_joints_pilot.yaml
 ```
 
@@ -50,11 +54,11 @@ C 自动检查现有位置/重力控制器，保存实际参数、标定和动�
 新终端 D，先设置与现有 W3 相同的环境：
 
 ```bash
-cd /home/dingyj/w3_dual_arm_ws
+cd /home/venom/dual_arm_robot
 source install/setup.bash
 export ROS_DOMAIN_ID=0
 export ROS_LOCALHOST_ONLY=0
-cd /home/dingyj/factr2
+cd /home/venom/factr2
 ```
 
 首次先检查文件；这条命令完全离线，不连接 ROS、不运动：
@@ -95,7 +99,7 @@ cd /home/dingyj/factr2
 正常应有：
 
 ```text
-H5：/home/dingyj/factr2/data/quick_capture/right/…/….h5
+H5：/home/venom/factr2/data/quick_capture/right/…/….h5
 质量检查：PASS
 Δq(deg)= […]   Δq_cmd(deg)= […]
 整套动作执行：PASS

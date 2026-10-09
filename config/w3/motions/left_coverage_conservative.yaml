@@ -1,0 +1,33 @@
+# Absolute controller angles, degrees, J1..J7 = left_joint_0..6.
+# These are operational bounds, NOT the full hardware range or a collision certificate.
+version: 1
+name: left_free_space_coverage_conservative_v1
+side: left
+tool_frame: left_attachment_point
+home_deg: [0, 8, 0, -16, 0, 0, 0]
+working_bounds_deg:
+  - [-8, 8]
+  - [0, 16]
+  - [-8, 8]
+  - [-24, -8]
+  - [-8, 8]
+  - [-6, 6]
+  - [-8, 8]
+repeats: 2
+sample_period_seconds: 0.02
+hold_seconds: 1.0
+hardware_margin_deg: 3.0
+arrival_tolerance_deg: 1.5
+start_tolerance_deg: 1.5
+tracking_limit_deg: 5.0
+speeds:
+  slow:
+    velocity_deg_s: [2, 2, 2, 2, 2, 2, 2]
+    acceleration_deg_s2: [12, 12, 12, 12, 12, 12, 12]
+  fast:
+    velocity_deg_s: [6, 6, 6, 6, 6, 6, 6]
+    acceleration_deg_s2: [24, 24, 24, 24, 24, 24, 24]
+cartesian:
+  line_half_extent_m: 0.003
+  circle_radius_m: 0.003
+  waypoint_spacing_m: 0.0005
