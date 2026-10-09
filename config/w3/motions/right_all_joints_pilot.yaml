@@ -1,0 +1,28 @@
+# Right arm only. Angles in degrees, ordered J1..J7 (right_joint_0..6).
+# All offsets use ONE initial measured pose; zeros return to that pose, not robot zero.
+# Review the complete physical swept path before --send. No collision planning.
+version: 1
+name: right_all_joints_pilot
+side: right
+reference: initial_feedback
+units: deg
+# Explicitly extend this file's motion limit; older files still default to 5 degrees.
+max_step_deg: 10
+start_hold_seconds: 2
+finish_hold_seconds: 3
+arrival_tolerance_deg: 1.5
+steps:
+  - {name: J1_plus8, offset_deg: [8, 0, 0, 0, 0, 0, 0], duration_seconds: 8, hold_seconds: 2}
+  - {name: J1_return, offset_deg: [0, 0, 0, 0, 0, 0, 0], duration_seconds: 8, hold_seconds: 2}
+  - {name: J2_plus8, offset_deg: [0, 8, 0, 0, 0, 0, 0], duration_seconds: 8, hold_seconds: 2}
+  - {name: J2_return, offset_deg: [0, 0, 0, 0, 0, 0, 0], duration_seconds: 8, hold_seconds: 2}
+  - {name: J3_plus8, offset_deg: [0, 0, 8, 0, 0, 0, 0], duration_seconds: 8, hold_seconds: 2}
+  - {name: J3_return, offset_deg: [0, 0, 0, 0, 0, 0, 0], duration_seconds: 8, hold_seconds: 2}
+  - {name: J4_plus8, offset_deg: [0, 0, 0, 8, 0, 0, 0], duration_seconds: 8, hold_seconds: 2}
+  - {name: J4_return, offset_deg: [0, 0, 0, 0, 0, 0, 0], duration_seconds: 8, hold_seconds: 2}
+  - {name: J5_plus8, offset_deg: [0, 0, 0, 0, 8, 0, 0], duration_seconds: 8, hold_seconds: 2}
+  - {name: J5_return, offset_deg: [0, 0, 0, 0, 0, 0, 0], duration_seconds: 8, hold_seconds: 2}
+  - {name: J6_plus8, offset_deg: [0, 0, 0, 0, 0, 8, 0], duration_seconds: 8, hold_seconds: 2}
+  - {name: J6_return, offset_deg: [0, 0, 0, 0, 0, 0, 0], duration_seconds: 8, hold_seconds: 2}
+  - {name: J7_plus8, offset_deg: [0, 0, 0, 0, 0, 0, 8], duration_seconds: 8, hold_seconds: 2}
+  - {name: J7_return, offset_deg: [0, 0, 0, 0, 0, 0, 0], duration_seconds: 8, hold_seconds: 2}
