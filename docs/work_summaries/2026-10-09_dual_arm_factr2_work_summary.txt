@@ -1,0 +1,139 @@
+双臂机械臂与 FACTR2 工作总结
+生成时间：2026-10-09 16:51:23 CST（Asia/Shanghai）
+
+一、项目目标与当前状态
+目标：基于 FACTR 2 的开源实现复现自由空间力矩预测与外力估计，为后续以外力观测作为辅助的高动态研究提供基础。
+当前阶段：本机标定迁移、代码整合、重力补偿与录制链路运行、保守范围采集程序开发、真机采集及数据分析已完成。
+完整模型训练尚未开始。已完成的训练验证仅为现有 LSTM 的一批前向、反向与 Adam 更新，未产生可部署 checkpoint。
+本次用户要求先提交仓库改动并生成工作总结；因此没有继续正式训练或向机器人部署模型。
+
+二、仓库与本次提交
+控制仓库：/home/venom/dual_arm_robot
+分支：liyq-dev
+本次代码提交：edaf1118097e4ddb9e28fa4bdcded0f51184862d
+提交说明：fix: tune left J6 stiffness and damping
+修改：src/ieir_controllers/config/dual_arm_controllers.yaml；src/ieir_controllers/config/teleop_joint_gains.yaml。
+
+学习与采集仓库：/home/venom/factr2
+分支：liyq-dev
+本次代码提交：0ba263f3d684f129720d0dc1999b9305f369066f
+提交说明：feat: add conservative free-space coverage capture
+内容：保守范围采集工具、逐关节/末端轨迹规划、快慢运动配置、本机工作空间路径适配、质量元数据适配、测试及操作文档。
+本 TXT 另以文档提交纳入 factr2；其提交记录可通过 git log 查看。
+以上均为本地提交，本次未执行 git push。
+
+此前已把实际远端 dingyj-dev 分支整合进两个仓库的 liyq-dev。整合后的控制仓库 HEAD 为 8bc09d053ef7d2a8184ca5e10bbff5b01f83e0c8；factr2 HEAD 为 43355dc90a698882ba24dfba0987296505d1f833。
+最新录制的冻结元数据仍保留录制当时的这两个 HEAD；当时采集工具及增益存在未提交的修改，本次提交将对应源码归档，不改写历史元数据。
+
+三、本机标定迁移与保留
+从 /home/venom/w3_dual_arm_ws 获得的 7 个本机标定文件已迁移到：
+/home/venom/dual_arm_robot/src/ros2_ws_config
+备份目录：/home/venom/dual_arm_robot/log/calibration_migration_backups/20261009-130513-910905
+清单文件：该目录中的 migration_manifest.json；整合核对记录：merge_verification.json。
+本次提交前重新核对：以下 7 个当前文件均与备份逐字节相同。
+joint_directions_left.yaml  SHA256=a4479bcbcf8895bf9da521ccebeb31705c740932648777b0321d1e67385fd86c
+joint_directions_right.yaml  SHA256=6b05b6612a2473ae538187919800d29e0cbac046d82901b91a4b690ba28e3760
+joint_calibration_dual_left_reviewed.yaml  SHA256=5d5b782d916e39d356f0dba8a14006886d26971c94fe10925c52602497c828a8
+joint_calibration_dual_right_reviewed.yaml  SHA256=67503184c2cc2dbb608535b658502765c61e6bd42b80fb8f8c0d18fe98e1b9d5
+joint_offsets_left.yaml  SHA256=fac5521e41b77fd3ce56a7929c9455432e81e38f9daa7388fc1154d939d98e43
+joint_offsets_right.yaml  SHA256=23532d9890f7e3ece77a80f0af8a26742c6bcf85a1cd07ceda3147dd528e6838
+joint_offsets_dual.yaml  SHA256=edf771ba9b48ea3df508380569d22a30b0e51036dcb3a321df3cf9e582f2b9ca
+实际运行中使用 joint_offsets_dual.yaml；采集冻结的标定 SHA256 为 edf771ba9b48ea3df508380569d22a30b0e51036dcb3a321df3cf9e582f2b9ca。
+本机标定、录制数据、rosbag、运行日志与 build/install 按仓库已有忽略规则留在本地；没有强制加入 Git。Git 提交不是这些本机文件的备份。
+
+四、机器人运行链路与 J6 调整
+A 终端：ros2 launch ieir_bringup bridge.launch.py arms:=dual gripper:=false
+B 终端：ros2 launch ieir_bringup ui.launch.py workspace:=/home/venom/dual_arm_robot gripper:=false
+网页：http://127.0.0.1:8766；已运行重力补偿和关节位置控制。
+本次运行使用 ROS_DOMAIN_ID=0、ROS_LOCALHOST_ONLY=0、无夹爪、空载。
+左臂 J6 对应 left_joint_5。针对早期小幅度扫描的跟踪不足，将 slave 配置与关节位置/笛卡尔位置配置中的 J6 kp 从 10 调为 20，kd 从 0.6 调为 0.85；master 配置不变。
+此前已构建并将此增益用于真机录制。本次 Git 提交本身不重新构建、不重启控制器、不改变机器人当前模式。
+调整后小幅度 pilot 完成，但最新数据表明 J6 跟踪不足仍存在，不能将本增益试验描述为已经彻底解决。
+
+五、FACTR2 采集工具改动
+1. scripts/quick_capture.py 默认控制工作空间改为同级 dual_arm_robot，支持 --w3-workspace；处理含空格/特殊字符的路径，并继续从运行中的 robot_description 冻结实际标定。
+2. factr2_next/.../data_collection/quality.py 使用实际配置的 w3_workspace 保存软件版本信息，替换原先固定的 /home/dingyj/w3_dual_arm_ws。注意：训练入口中还有另一处旧路径，尚未修复。
+3. 新增 scripts/w3_coverage_plan.py：解析展开 URDF、正运动学、雅可比、位置逆运动学、保守工作范围检查、轨迹时间缩放及速度/加速度检查。
+4. 新增 scripts/w3_coverage_motion.py：plan 生成冻结计划；run 默认离线检查；run --send 执行；report 输出实测覆盖。只有显式 --send 发送运动。
+5. 新增 config/w3/motions/left_coverage_conservative.yaml 和 left_j6_tracking_check.yaml。
+6. 新增 COVERAGE_CAPTURE.md、测试文件；更新 QUICK_CAPTURE.md 与 quick_capture 测试。
+7. C 继续保存原有 H5、审计 rosbag、健康与 adapter 日志；核对计划哈希、每段完成状态并生成 coverage.json。
+
+默认协议（左臂、绝对控制器角度，J1～J7）：
+中心姿态：[0, 8, 0, -16, 0, 0, 0] 度。
+工作范围：[-8,8]、[0,16]、[-8,8]、[-24,-8]、[-8,8]、[-6,6]、[-8,8] 度。
+先逐关节下界→上界→中心；再多关节末端 XYZ 直线与 XY 圆；慢速、快速各重复两轮；最后返回初始控制目标。
+直线幅度 ±3 mm、圆半径 3 mm；末端位置逆解允许姿态变化，未锁定六维末端姿态。
+慢速上限 2 度/秒、加速度上限 12 度/秒²；快速为 6 度/秒、24 度/秒²；轨迹点间隔 20 ms。
+默认 142 段。从零度起始约 810 秒；本次实际起始目标对应计划约 812 秒，另有检查与录制前后时间。
+发送前检查模型、限位裕量、范围、连续性、初始姿态及录制状态；运行中检查反馈、健康、目标一致性和跟踪误差。
+发送窗口约覆盖未来 600 ms、约每 150 ms 更新；异常停止后续发送，不自动重试或提高增益。
+不包含碰撞规划。Ctrl-C 与 C 停录不是硬件急停，已送出的短窗口仍可能继续，异常需按现场停车流程处理。
+现场启动脚本与正常自动停录包装器保存在 log/manual_start/20261009-161110-coverage，不属于本次 Git 源码提交。
+
+论文依据：FACTR 2 项目 https://jasonjzliu.com/factr2/；论文 https://arxiv.org/html/2606.12406v1。
+Appendix A.3 描述逐关节覆盖、多关节末端类似笛卡尔运动及慢/快重复。本机角度与速度是保守初始配置，不是论文作者给出的本机数值。
+论文采样使用 100 Hz，本机目前链路为 50 Hz；本次未升级传感器采样链路。
+
+六、真机录制与分析结果
+最新会话：/home/venom/factr2/data/quick_capture/left/20261009_161246_435241
+H5：/home/venom/factr2/data/quick_capture/left/20261009_161246_435241/20261009_161246_435241_20261009_161253.h5
+H5 SHA256：a98b892b00797798344f2c16f5a69bea95e0377d8a3321f2b4f5dc578e2768fc
+轨迹计划：/home/venom/factr2/data/motion_plans/left_coverage_20261009-161110.yaml
+冻结执行报告：/home/venom/factr2/data/quick_capture/left/20261009_161246_435241/audit/motion_run.json
+完整分析：/home/venom/factr2/data/quick_capture/left/20261009_161246_435241/analysis/ASSESSMENT.md
+独立质量检查：/home/venom/factr2/data/quick_capture/left/20261009_161246_435241/analysis/independent_quality.json
+统计与图表：analysis/capture_analysis.json、cartesian_assessment.json、angle_tracking.png/pdf、coverage_summary.png/pdf、j6_detail.png、cartesian_paths.png。
+
+录制 874.64 秒（14.58 分钟），43733 帧；50.00 Hz；最大帧间隔 23.36 ms。
+142 段全部完成，一个连续 episode；四流时间戳完全相同，独立质量检查 PASS；C 正常停录并关闭 H5。
+逐关节扫描时段的实测跨度/工作范围覆盖率/全程角度跟踪 RMSE/慢快实测速率 P95如下：
+关节  实测跨度(度)  覆盖率  RMSE(度)  慢速P95/快速P95(度/秒)
+J1    15.12          94.5%    0.372      3.82/7.10
+J2    14.86          92.9%    0.412      4.59/6.88
+J3    15.63          97.7%    0.338      3.17/6.67
+J4    14.99          93.7%    0.638      2.95/6.99
+J5    14.56          91.0%    0.664      3.93/7.10
+J6    9.77          81.4%    0.870      2.30/6.34
+J7    14.29          89.3%    0.861      3.61/7.43
+跨度排除了接近/返回过渡；速度来自实测角度的 200 ms 中心割线，只统计对应关节驱动且目标速度超过 0.25 度/秒的时段。角度 RMSE 是实测角度与控制目标的差，不是外力预测误差。
+J6：目标 ±6 度，实测约 -4.87～+4.90 度；覆盖 81.4%；全程 RMSE 0.870 度，P99 绝对误差约 1.57 度、最大约 2.20 度。仍有跟踪不足。
+全部关节快/慢位置推算速度 P95 比值为 1.50～2.76，确实覆盖不同速度；目前仍属保守速度范围，不能推广为高动态验证。
+末端小轨迹未准确复现。完整直线的平均目标沿轴跨度为 6 mm，模型推算的实测 X/Y/Z 跨度约为 1.37/3.87/5.38 mm；Z 路径同时出现约 10.27 mm 的非目标 Y 方向跨度。
+末端分段位置跟踪 RMSE 中位数 2.46 mm，与 ±3 mm 路径幅度同量级。末端位置由 URDF 和实测关节角推算，没有独立末端测量。
+多关节阶段主要由 J1、J4 运动；J3 没有明显变化，部分腕部运动很小，联合运动覆盖仍需改善。
+速度反馈有量化台阶，静止附近中位数绝对值约 0.28～0.70 度/秒；未修正或替换原始 H5 速度。
+正常输出最大 ROS 源消息年龄约 4.93 ms，状态/命令最大时间差约 3.42 ms；但桥接器给缓存反馈赋当前发布时间，缺少逐电机真实 CAN 接收时间，不能据此证明底层反馈始终新鲜。
+adapter 在停录后的退出阶段出现 Python/ROS 堆栈，采集中未出现断段，H5 已正常关闭并通过哈希检查。
+
+此前可参考的录制：
+20261009_134121_473881、20261009_135027_065645：早期 J6 跟踪不足导致动作失败。
+20261009_140212_513856：增益调整后 J6 ±2 度四步试验完成。
+20261009_150900_298038：七关节 +2 度及返回的完整 pilot 完成，10120 帧；analysis 中有角度与训练接口检查。
+本次 20261009_161246_435241 的覆盖明显提高，但保守工作范围尚未扩大。
+
+七、训练准备与未完成事项
+现有 FACTR2 的 W3 NEXT 路径为监督力矩回归：历史输入 [q, qdot, q_cmd-q]，标签为历史末帧 measured_joint_torque；不是强化学习策略训练入口。
+本次接口验证生成 43684 个 50 帧窗口，批输入 [16,50,21]、批标签 [16,7]，LSTM 前向/反向/Adam 更新通过。
+相邻窗口高度重叠，窗口数量不等于独立实验样本数量；50 Hz 下历史首末跨度约 0.98 秒。
+尚未完整训练、尚未设置本次正式 train/val/test manifest、尚未生成模型 checkpoint、尚未在机器人上部署外力估计模型。
+当前仅一个连续录制会话，不能独自满足严格的独立 train/val/test；同一 episode 重复放入各划分会被仓库检查拒绝。若只用本次数据试训，需显式设计无重叠时间块/动作块划分并说明仍属于同一会话内评估，避免随机相邻窗口泄漏。
+需修复 factr2_next/src/factr2_next/factr2_next/training/w3_train.py 中保存训练元数据时固定调用 commit_at(/home/dingyj/w3_dual_arm_ws) 的路径；本次提交未修改该训练入口。
+本机现有 .venv 为 PyTorch 2.5.1+cpu，CUDA 不可用；训练设备与批量需按当前资源配置。
+自由运动数据可以作为自由空间力矩模型训练候选，但不包含独立接触外力真值，不能仅用它验证外力估计精度。
+
+八、本次提交前验证
+FACTR2：test_w3*motion*.py 共 26 项通过；test_quick_capture.py 共 13 项通过；合计 39 项离线测试通过。
+dual_arm_robot：两份修改的控制器 YAML 解析通过；7 个当前本机标定与备份逐字节一致。
+两个仓库 git diff --check 通过。最新真实录制 H5 已独立质量检查并完成派生分析。
+这些检查不代表 J6、笛卡尔精度或高动态外力估计已通过研究级验收。
+
+九、后续建议顺序
+1. 完成本次会话的明确、无重叠试训划分，修复训练保存元数据的旧路径并进行一次可复现训练。
+2. 用验证集选择模型，再检查测试集电机力矩预测/自由空间残差，和训练集均值基线比较。
+3. 核查底层反馈真实年龄、速度量化与状态/力矩同步，改善 J6/J7 跟踪及有效多关节运动。
+4. 验证后逐步扩大工作范围与速度，补采独立验证/测试会话和其他工作姿态。
+5. 引入有参考的接触或已知载荷实验，再研究以外力估计作为辅助的高动态方法。
+
+关键操作文档：/home/venom/factr2/docs/operator_guide/COVERAGE_CAPTURE.md
+原 pilot 操作文档：/home/venom/factr2/docs/operator_guide/QUICK_CAPTURE.md
