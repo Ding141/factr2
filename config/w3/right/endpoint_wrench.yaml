@@ -1,0 +1,15 @@
+side: right
+tool_frame: right_attachment_point
+root_frame: base_footprint
+robot_description_sha256: 7830b419d3b12a413a1ec672a1ca0da8ef5d6b255bc883d40428185933fd88f4
+inference_config: /home/venom/factr2/config/w3/right/inference_smooth_100hz.yaml
+solver:
+  characteristic_length_m: 0.4
+  damping: 0.005
+  max_condition: 100.0
+  max_relative_residual: 0.35
+web:
+  host: 127.0.0.1
+  port: 8082
+  refresh_hz: 10
+  history_points: 600

@@ -38,6 +38,8 @@ def validate_w3_config(cfg, purpose, require_paths=True):
                 raise ValueError('Output must stay in side NEXT namespace')
     if purpose == 'train':
         data = cfg['data']
+        if data.get('sample_hz',50) not in (50,100):
+            raise ValueError('W3 sample frequency must be 50 or 100 Hz')
         if data.get('arm_mode') != 'single' or data.get('history') != 50:
             raise ValueError('W3 baseline requires single arm and history=50')
         if data.get('keys') != {k: k for k in SIGNALS}:

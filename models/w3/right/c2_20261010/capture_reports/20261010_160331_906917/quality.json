@@ -1,0 +1,99 @@
+{
+  "path": "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/20261010_160331_906917_20261010_160338.h5",
+  "errors": [],
+  "episodes": {
+    "ep_0000": {
+      "errors": [],
+      "rows": 142652,
+      "duration_seconds": 1426.5098601680002,
+      "hz": 100.00000980238579,
+      "max_gap_seconds": 0.013376142
+    }
+  },
+  "excluded": {},
+  "metadata": {
+    "source": "real",
+    "tool": "bare_attachment_v1",
+    "gripper": "absent",
+    "load": "empty_v1",
+    "w3_workspace": "/home/venom/dual_arm_robot",
+    "calibration": {
+      "path": "/home/venom/factr2/data/quick_capture/profiles/23532d9890f7e3ece77a80f0af8a26742c6bcf85a1cd07ceda3147dd528e6838/calibration.yaml",
+      "sha256": "23532d9890f7e3ece77a80f0af8a26742c6bcf85a1cd07ceda3147dd528e6838"
+    },
+    "control": {
+      "gains": {
+        "position_params": "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/position.yaml"
+      },
+      "feedforward": {
+        "gravity_params": "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/gravity.yaml",
+        "friction_model": "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/friction_model.yaml",
+        "friction_sha256": "5b3fb0c9415b973d951c0ee8d2fee4af974a8ceeb735137271a68e98febe71e1"
+      }
+    },
+    "trajectory_id": "right_free_space_c2_near_limits_v2:sha256:5fb1795b6213cbd75612896928bd717caa55b1930217b0d2963118a533eb6a29",
+    "contact": {
+      "present": false,
+      "label": "operator_declared_free_motion"
+    },
+    "temperature": {
+      "source": "unknown_no_sensor",
+      "condition": "not_recorded"
+    },
+    "audit_paths": [
+      "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/bag",
+      "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/motion.yaml",
+      "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/motion_run.json"
+    ],
+    "health_gate_enabled": true,
+    "contract_version": "w3_next_v1",
+    "side": "right",
+    "joint_order": [
+      "right_joint_0",
+      "right_joint_1",
+      "right_joint_2",
+      "right_joint_3",
+      "right_joint_4",
+      "right_joint_5",
+      "right_joint_6"
+    ],
+    "sample_hz": 100.0,
+    "topics": {
+      "joint_pos": {
+        "topic": "{robot_topic_root}/joint_pos",
+        "field": "position",
+        "type": "sensor_msgs/JointState"
+      },
+      "joint_vel": {
+        "topic": "{robot_topic_root}/joint_vel",
+        "field": "velocity",
+        "type": "sensor_msgs/JointState"
+      },
+      "joint_cmd": {
+        "topic": "{robot_topic_root}/joint_cmd",
+        "field": "position",
+        "type": "sensor_msgs/JointState"
+      },
+      "measured_joint_torque": {
+        "topic": "{robot_topic_root}/joint_effort",
+        "field": "effort",
+        "type": "sensor_msgs/JointState"
+      }
+    },
+    "session_id": "20261010_160331_906917",
+    "time_source": "ROS header ns; recorder watchdog monotonic",
+    "config_sha256": "c2aabf874d07419cfdf791bc8099388248a11fd15b9cf9b9257aabc381aaaedd",
+    "software_commits": {
+      "factr2": "7eb6b1a139d358b615c9fee02a375344f06dc02c",
+      "w3": "edaf1118097e4ddb9e28fa4bdcded0f51184862d"
+    },
+    "episodes": {
+      "ep_0000": {
+        "rows": 142652
+      }
+    },
+    "h5_sha256": "5a56ce2fffee455b827c50470ef1576e3b351c9d9517eb82675f4efb7fd8431e"
+  },
+  "h5_sha256": "5a56ce2fffee455b827c50470ef1576e3b351c9d9517eb82675f4efb7fd8431e",
+  "accepted": true
+}

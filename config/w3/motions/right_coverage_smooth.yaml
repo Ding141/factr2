@@ -1,0 +1,25 @@
+version: 1
+name: right_free_space_coverage_smooth_v1
+side: right
+tool_frame: right_attachment_point
+trajectory_profile: continuous_sine
+home_deg: [0, 16, 0, -24, 0, 0, 0]
+working_bounds_deg: [[-16, 16], [0, 32], [-16, 16], [-40, -8], [-16, 16], [-12, 12], [-16, 16]]
+repeats: 2
+sample_period_seconds: 0.01
+hold_seconds: 0.0
+hardware_margin_deg: 3.0
+arrival_tolerance_deg: 1.5
+start_tolerance_deg: 1.5
+tracking_limit_deg: 5.0
+speeds:
+  slow:
+    velocity_deg_s: [3, 3, 3, 3, 3, 3, 3]
+    acceleration_deg_s2: [12, 12, 12, 12, 12, 12, 12]
+  fast:
+    velocity_deg_s: [10, 10, 10, 10, 10, 10, 10]
+    acceleration_deg_s2: [35, 35, 35, 35, 35, 35, 35]
+cartesian:
+  line_half_extent_m: 0.008
+  circle_radius_m: 0.008
+  waypoint_spacing_m: 0.0005

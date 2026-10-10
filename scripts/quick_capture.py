@@ -90,7 +90,7 @@ def calibration_from_description(description):
     return path
 
 
-def prepare(session, side, snapshots, load, tool, motion=None, workspace=None):
+def prepare(session, side, snapshots, load, tool, motion=None, workspace=None, frequency=50):
     audit = session / 'audit'
     audit.mkdir(parents=True)
     for name, text in snapshots.items():
@@ -113,8 +113,24 @@ def prepare(session, side, snapshots, load, tool, motion=None, workspace=None):
         shutil.copy2(source, audit / 'friction_model.yaml')
         friction = {'friction_model': str(audit / 'friction_model.yaml'),
                     'friction_sha256': hashlib.sha256(source.read_bytes()).hexdigest()}
+    source_dir=audit/'source_snapshot';source_dir.mkdir()
+    workspace_path=Path(workspace if workspace is not None else W3).expanduser().resolve()
+    sources=[workspace_path/'src/ieir_controllers/src/joint_position_controller.cpp',
+      workspace_path/'src/ieir_controllers/include/ieir_controllers/joint_position_controller.hpp',
+      workspace_path/'src/ieir_controllers/include/ieir_controllers/trajectory_spline.hpp',
+      workspace_path/'src/ieir_controllers/src/gravity_compensation_controller.cpp',
+      workspace_path/'src/ieir_controllers/include/ieir_controllers/gravity_compensation_controller.hpp',
+      workspace_path/'src/ieir_controllers/include/ieir_controllers/smooth_friction.hpp',
+      ROOT/'scripts/w3_coverage_motion.py',ROOT/'scripts/w3_smooth_coverage.py',ROOT/'scripts/w3_coverage_plan.py']
+    manifest={}
+    for source in sources:
+        if source.is_file():
+            shutil.copy2(source,source_dir/source.name)
+            manifest[str(source)]=hashlib.sha256(source.read_bytes()).hexdigest()
+    (source_dir/'manifest.json').write_text(json.dumps(manifest,indent=2))
     cfg = yaml.safe_load((ROOT / f'config/w3/{side}/record.yaml').read_text())
     cfg.update(output_dir=str(session), session_name=session.name)
+    cfg['recording'].update(target_hz=float(frequency), min_hz=.9*frequency)
     cfg['metadata'] = dict(
         source='real', tool=tool, gripper='absent', load=load,
         w3_workspace=str(Path(workspace if workspace is not None else W3).expanduser().resolve()),
@@ -191,6 +207,7 @@ def main():
     parser.add_argument('--domain', type=int, default=int(os.environ.get('ROS_DOMAIN_ID', '0')))
     parser.add_argument('--load', default='empty_v1', help='Operator-declared actual load identity')
     parser.add_argument('--tool', default='bare_attachment_v1')
+    parser.add_argument('--frequency', type=int, choices=[50, 100], default=50)
     parser.add_argument('--motion', type=Path, help='Freeze the motion file for terminal D; C never publishes it')
     args = parser.parse_args()
     workspace = args.w3_workspace.expanduser().resolve()
@@ -260,7 +277,7 @@ def main():
                                ('gravity.yaml', '/gravity_compensation_controller'),
                                ('robot_description.yaml', '/robot_state_publisher')]:
             snapshots[filename] = run(w3_command(['ros2', 'param', 'dump', node], env, workspace), env)
-        prepare(session, args.side, snapshots, args.load, args.tool, motion, workspace=workspace)
+        prepare(session, args.side, snapshots, args.load, args.tool, motion, workspace=workspace, frequency=args.frequency)
         run(next_command(['python', 'scripts/check_w3_configs.py', '--runtime', 'record',
                           '--config', session / 'record.yaml']), env)
         # Refuse to duplicate existing capture components on this side.
@@ -272,10 +289,10 @@ def main():
         launch('health', w3_command(['/usr/bin/python3.10',
                ROOT / 'factr2_w3_adapter/tools/w3_health_monitor.py'], env, workspace))
         launch('adapter', next_command(['ros2', 'launch', 'factr2_w3_adapter', 'adapter.launch.py',
-               f'side:={args.side}', 'profile:=real']))
+               f'side:={args.side}', 'profile:=real', f'publish_hz:={args.frequency}']))
         root = f'/factr2/{args.side}'
         topics = ['/w3_robot_bridge_node/state', '/joint_states',
-                  '/joint_position_controller/command_state', '/factr2/w3_health']
+                  '/joint_position_controller/command_state', '/joint_position_command', '/factr2/w3_health']
         topics += [root + '/' + key for key in
                    ('adapter_status', 'joint_pos', 'joint_vel', 'joint_cmd', 'joint_effort')]
         launch('bag', w3_command(['ros2', 'bag', 'record', '-o', session / 'audit/bag', *topics], env, workspace))

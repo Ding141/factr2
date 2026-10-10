@@ -42,6 +42,16 @@ def live_snapshot(side):
         client.close()
 
 
+def trajectory_derivatives(times, positions_deg):
+    """One C2 spline for the entire recording, independent of window boundaries."""
+    from scipy.interpolate import CubicSpline
+    times=np.asarray(times,dtype=float);q=np.asarray(positions_deg,dtype=float)
+    curve=CubicSpline(times,q,axis=0,bc_type=((1,np.zeros(q.shape[1])),(1,np.zeros(q.shape[1]))))
+    velocity=curve(times,1);acceleration=curve(times,2)
+    velocity[[0,-1]]=0.;acceleration[[0,-1]]=0.
+    return velocity,acceleration
+
+
 def window_indices(times, elapsed, horizon=.6):
     """Include preceding samples so controller interpolates the same curve at replacement."""
     start = max(0, int(np.searchsorted(times, elapsed, side='right')) - 2)
@@ -68,12 +78,13 @@ class CoverageClient(MotionClient):
         if self.expected_deg is not None and np.max(np.abs(np.rad2deg(self.state['cmd']) - self.expected_deg)) > .5:
             raise RuntimeError('Controller target differs from scheduled path by >0.5 degrees')
 
-    def play(self, step, capture_guard):
+    def play(self, step, capture_guard, on_tick=None):
         from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
         self.check_mode()
         self.guard()
         q = np.asarray(step['positions_deg'])
         times = np.asarray(step['times_seconds'])
+        velocity,acceleration=trajectory_derivatives(times,q)
         if np.max(np.abs(np.rad2deg(self.state['cmd']) - q[0])) > .05:
             raise RuntimeError('Controller start target differs from frozen trajectory')
         if self.publisher is None:
@@ -100,6 +111,8 @@ class CoverageClient(MotionClient):
             self.expected_deg = np.array([np.interp(max(0, command_elapsed), times, q[:, i]) for i in range(7)])
             self.guard()
             capture_guard()
+            if on_tick is not None:
+                on_tick(max(0., elapsed))
             if not final_published and now_tick - last_publish >= .15:
                 start, end = window_indices(times, max(0, elapsed))
                 message = JointTrajectory()
@@ -108,6 +121,8 @@ class CoverageClient(MotionClient):
                 for index in range(start, end):
                     point = JointTrajectoryPoint()
                     point.positions = np.deg2rad(q[index]).tolist()
+                    point.velocities = np.deg2rad(velocity[index]).tolist()
+                    point.accelerations = np.deg2rad(acceleration[index]).tolist()
                     ns = round(times[index] * 1e9)
                     point.time_from_start.sec, point.time_from_start.nanosec = divmod(ns, 1_000_000_000)
                     message.points.append(point)
@@ -129,6 +144,8 @@ def check_start(plan, initial, description, command):
 
 
 def execute(plan, client, capture_guard, report, save):
+    if plan['config'].get('trajectory_profile') == 'continuous_sine':
+        return execute_continuous(plan, client, capture_guard, report, save)
     for index, step in enumerate(plan['steps'], 1):
         capture_guard()
         client.guard()
@@ -142,6 +159,45 @@ def execute(plan, client, capture_guard, report, save):
         save()
     report.update(status='completed', completed_utc=utc_now())
     save()
+
+
+def execute_continuous(plan, client, capture_guard, report, save):
+    """One absolute clock and uninterrupted windows across all logical blocks."""
+    steps=plan['steps']; times=[]; positions=[]; offset=0.; boundaries=[]
+    for index,step in enumerate(steps):
+        t=np.asarray(step['times_seconds'])+offset; q=step['positions_deg']
+        times.extend(t[1:] if index else t); positions.extend(q[1:] if index else q)
+        offset+=step['duration_seconds']; boundaries.append(offset)
+    combined=dict(times_seconds=times,positions_deg=positions,hold_seconds=.8)
+    index=-1
+    def tick(elapsed):
+        nonlocal index
+        if index < 0:
+            index=0; start(0)
+        while index<len(steps) and elapsed>=boundaries[index]:
+            waypoint_error=np.abs(np.rad2deg(client.state['q'])-steps[index]['positions_deg'][-1])
+            # A logical repetition can cross this waypoint at full speed. It
+            # is not a stop/arrival request. Preserve the motion tracking cap
+            # against the actual controller target; play() separately checks
+            # the final stopped position after its hold, using arrival tolerance.
+            reference=np.rad2deg(client.state['cmd']) if 'cmd' in client.state else steps[index]['positions_deg'][-1]
+            tracking_error=np.abs(np.rad2deg(client.state['q'])-reference)
+            if np.max(tracking_error)>plan['config']['tracking_limit_deg']:
+                raise RuntimeError(f'Continuous block tracking error {tracking_error.tolist()}')
+            report['events'][-1].update(status='completed',completed_utc=utc_now(),
+                boundary_type='continuous_schedule',waypoint_error_deg=waypoint_error.tolist(),
+                tracking_error_deg=tracking_error.tolist())
+            index+=1
+            if index<len(steps): start(index)
+            save()
+    def start(i):
+        event={k:steps[i][k] for k in ('name','phase','kind','speed','repetition','joint')}
+        event.update(index=i+1,utc=utc_now(),status='sending');report['events'].append(event)
+        print(f'[{i+1}/{len(steps)}] {event["name"]}: {steps[i]["duration_seconds"]:.2f}s',flush=True)
+        save()
+    client.play(combined,capture_guard,on_tick=tick)
+    if index!=len(steps):raise RuntimeError('Incomplete continuous schedule')
+    report.update(status='completed',completed_utc=utc_now());save()
 
 
 def send(plan, digest):

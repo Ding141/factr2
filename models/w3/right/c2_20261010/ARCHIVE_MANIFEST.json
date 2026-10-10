@@ -1,0 +1,46 @@
+{
+  "original_run": "/home/venom/factr2/runs/next_right_c2_campaign_20261010_164151_566506_session_trial_20261010_174837_628319",
+  "original_model_sha256": "47e6cb562a77d41955191f994c864e3d7abd3b6bb529ef3faee0449d488606b0",
+  "local_raw_recordings": [
+    "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/20261010_160331_906917_20261010_160338.h5",
+    "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/20261010_164151_566506_20261010_164157.h5"
+  ],
+  "scope": "Repeated-motion holdouts; no calibrated contact accuracy, known static baseline bias at poorly covered combined poses",
+  "checkpoint_files_unchanged": true,
+  "files": {
+    "training_summary.png": "4f04d478b3f6f4a3d0a2ded69962fa03e26532138063eb8c0f14e601f454afa9",
+    "trial_summary.json": "44e38a426fd9e58e18fd325f5611971c32cdc176309fc9df1a566f69f26015d3",
+    "config.yaml": "7464d96968c27194b084e191b2d1c85f57eeb9a39b52432f973e07e9fef9a4ba",
+    "CAMPAIGN_REPORT.md": "211f18bb013e0391909479c161dea72ea85dfc8910d04ea0ccd5a493383c7366",
+    "metrics.json": "1aeabdc4a94c6222ca928241936a596fda7d5fbf5f63fce4cf6db6a631225a6a",
+    "normalization.npz": "9b017f2f0f6ff34aa85b22aa737916cf050d068b33c3533bf051ab13d4f7c7e8",
+    "split.json": "a2650105c94151bd24085ae04b406052eada7c6bfd4010bda3b37d03d4b9d705",
+    "split_audit.json": "70fc70204102ff4e22d8ebc1a2bab1d1a6a62becbe5a2a19d1c936d5f39dd2d4",
+    "model.pt": "47e6cb562a77d41955191f994c864e3d7abd3b6bb529ef3faee0449d488606b0",
+    "TRIAL_REPORT.md": "b2b895186b9ef6e8aa6f84a1a1681169f854e6f066b37784cac327fd2f4b1b18",
+    "metadata.json": "dfa054dafa77fda8f71b99b551d4c4e229e75b2b793cab4c4cbcfbcab4165a05",
+    "README.md": "ea8e998a97f68b7f748d6d60ccfe2a1d5595d941ceeba1a85b6ccdaac4ad95d3",
+    "BASELINE_DIAGNOSTIC.md": "9eb86fc03208f6f4bd0f53aa9aae34aa4766dccf2f64fe4ab2df591249b47bdd",
+    "collection_config/robot_description.yaml": "ea3d51a0c470a3ee5849ba983f405cab0cbbe4bc52fcfefb14ea58938015e032",
+    "collection_config/friction_model.yaml": "5b3fb0c9415b973d951c0ee8d2fee4af974a8ceeb735137271a68e98febe71e1",
+    "collection_config/gravity.yaml": "09216c9c155bd5fc4300344052fdb1793fadfc299c535949a2acd84e9520887e",
+    "collection_config/position.yaml": "0db1a5fd06d6ba573b5d46532603eacf7d557766a8d4c938234d2cf0ff4423ee",
+    "capture_reports/20261010_160331_906917/controller_smoothness.json": "34e8ac38730ab0f9eb5da2a4133fbe9d7bca6694a4981d2a330a1ced8c98fc78",
+    "capture_reports/20261010_160331_906917/capture_diagnostics.json": "c93b1c15590f7b5361c275e5b7b56207bc2d703b27fef949634b35183336a7eb",
+    "capture_reports/20261010_160331_906917/quality.json": "f9c5eeadbf559f06fb28b68779c4164bac6dcfa868dcefe807d0cf11a0d3b7f0",
+    "capture_reports/20261010_164151_566506/controller_smoothness.json": "aa4aa99967d4aa66844e704a0c0c140dcfa1fd3c7842bba1e3e074cbbf357994",
+    "capture_reports/20261010_164151_566506/capture_diagnostics.json": "1aab99845cdb47a23eb7305bf1e5feaf2641fad61bc8844074054de6c9911573",
+    "capture_reports/20261010_164151_566506/quality.json": "f706bb5c50fe9602b77913b75a46f61f174da7557402e701278b9cc287c7ea63",
+    "evaluation/train/report.json": "8542a7f25559f02fc99b1592bd392becbdf6d3fee5d8dd12a4e4060861edcfe5",
+    "evaluation/val/report.json": "a8d9551052649159192b7302b21ae1095bcb9cec600676b48f19916e718f9592",
+    "evaluation/test/report.json": "7ce0bdafe8120d41fb6250029c93f13fff8172745b73b43323efaacf82ba341c"
+  },
+  "verification": {
+    "offline_python_tests": 83,
+    "cpp_test_suites": 3,
+    "cpp_test_cases": 15,
+    "archived_checkpoint_load": "PASS",
+    "git_diff_check": "PASS",
+    "live_robot_control_changed": false
+  }
+}

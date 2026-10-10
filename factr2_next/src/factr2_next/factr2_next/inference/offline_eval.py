@@ -28,6 +28,18 @@ def read_episode(h5_path, episode, arm=None, max_steps=None, keys=None):
 
 
 def predict_sequence(loaded, arrays):
+    if loaded.config.get('contract_version') == 'w3_next_v1' and loaded.config['model'].get('state_mode') == 'stateless':
+        from factr2_next.w3_samples import features
+        rows=features(arrays['joint_pos'],arrays['joint_vel'],arrays['joint_cmd'])
+        if len(rows)<loaded.history:raise ValueError('no_predictions_history')
+        windows=np.lib.stride_tricks.sliding_window_view(rows,loaded.history,axis=0).transpose(0,2,1)
+        norm=loaded.normalization;pred=[]
+        with torch.inference_mode():
+            for start in range(0,len(windows),256):
+                x=np.ascontiguousarray((windows[start:start+256]-norm['x_mean'])/norm['x_std'])
+                y=loaded.model(torch.from_numpy(x).to(loaded.device)).cpu().numpy()
+                pred.append((y*norm['y_std']+norm['y_mean']).astype(np.float32))
+        return np.vstack(pred),arrays['measured_joint_torque'][loaded.history-1:]
     buf=HistoryBuffer(loaded.history);pred=[];measured=[];norm=loaded.normalization
     with torch.inference_mode():
         for q,v,c,tau in zip(*(arrays[k] for k in SIGNALS)):

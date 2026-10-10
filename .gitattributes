@@ -1,0 +1,3 @@
+
+# Preserve byte-identical ROS parameter/description audit snapshots.
+models/w3/right/c2_20261010/collection_config/*.yaml whitespace=-blank-at-eof

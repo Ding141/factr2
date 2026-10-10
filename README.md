@@ -16,7 +16,7 @@
 
 W3 仓库负责 CAN、ros2_control 和真机状态；本仓库负责 NEXT 的数据采集、训练、推理以及后续 W3 数据适配。两个仓库通过 ROS 2 话题通信，不合并控制代码。
 
-训练数据、模型权重、虚拟环境和运行日志不提交到 Git；详见 `.gitignore`。复现步骤见 [FACTR2_NEXT_W3_REPRODUCTION_PLAN.md](FACTR2_NEXT_W3_REPRODUCTION_PLAN.md)。
+训练数据、虚拟环境和运行日志不提交到 Git；默认也忽略模型权重。本次按保存工作结果的要求，例外保留约 960 KB 的右臂 checkpoint 于 `models/w3/right/c2_20261010/`；详见 `.gitignore`。复现步骤见 [FACTR2_NEXT_W3_REPRODUCTION_PLAN.md](FACTR2_NEXT_W3_REPRODUCTION_PLAN.md)。
 
 供不同 agent 逐步执行的开发任务、前置依赖和验收标准见 [分步开发任务](docs/development/README.md)，共 8 个部分，建议按编号推进。各阶段区分无硬件开发验收与真机实验验收，具体报告由执行该阶段的 agent 填写。
 
@@ -32,3 +32,5 @@ W3 仓库负责 CAN、ros2_control 和真机状态；本仓库负责 NEXT 的数
 运行环境见 [隔离环境说明](docs/environment.md)，adapter/健康器入口见 [adapter README](factr2_w3_adapter/README.md)。真实采集须使用 real profile 并启用健康门禁；真机验证留第 7/8 部分。
 
 现场人员从 [项目讲解与操作指导](docs/operator_guide/README.md) 开始：包含已完成的工作、隔离环境、W3 网页操作，以及第 7 部分采集/训练和第 8 部分只读部署/接触验收的步骤。
+
+当前本机右臂（ROS域74，100 Hz）从 [2026-10-10 连接与模型启动手册](docs/operator_guide/RIGHT_ARM_STARTUP_20261010.md) 开始；[TXT版](docs/operator_guide/RIGHT_ARM_STARTUP_20261010.txt)。

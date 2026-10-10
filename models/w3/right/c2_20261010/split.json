@@ -1,0 +1,121 @@
+{
+  "schema": "w3_split_v1",
+  "dataset_id": "c2_campaign_20261010_164151_566506_session_trial",
+  "splits": {
+    "train": [
+      {
+        "path": "/home/venom/factr2/data/right/c2_20261010_160331_verified_prefix/train.h5",
+        "episodes": [
+          "ep_0000",
+          "ep_0001",
+          "ep_0002",
+          "ep_0003",
+          "ep_0004",
+          "ep_0005"
+        ],
+        "h5_sha256": "76d9b0d22c0fa3e9d9e3be10eab092016deb956e0479e1244e320e107920abb8",
+        "audit_paths": [
+          "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/bag",
+          "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/motion.yaml",
+          "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/motion_run.json"
+        ]
+      },
+      {
+        "path": "/home/venom/factr2/data/right/c2_remaining_20261010_164151_566506_session_trial/train.h5",
+        "episodes": [
+          "ep_0000",
+          "ep_0001",
+          "ep_0002",
+          "ep_0003",
+          "ep_0004",
+          "ep_0005",
+          "ep_0006",
+          "ep_0007",
+          "ep_0008",
+          "ep_0009"
+        ],
+        "h5_sha256": "9003fa88018726b1f850d9a8b114176e88669587aebf7fb5a8333b5b1aa108bf",
+        "audit_paths": [
+          "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/audit/bag",
+          "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/audit/motion.yaml",
+          "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/audit/motion_run.json"
+        ]
+      }
+    ],
+    "val": [
+      {
+        "path": "/home/venom/factr2/data/right/c2_20261010_160331_verified_prefix/val.h5",
+        "episodes": [
+          "ep_0000",
+          "ep_0001",
+          "ep_0002"
+        ],
+        "h5_sha256": "4c016a4b3c4b66a44f964486279888375b0e1b7804d80711e7bb9890319f42c9",
+        "audit_paths": [
+          "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/bag",
+          "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/motion.yaml",
+          "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/motion_run.json"
+        ]
+      },
+      {
+        "path": "/home/venom/factr2/data/right/c2_remaining_20261010_164151_566506_session_trial/val.h5",
+        "episodes": [
+          "ep_0000",
+          "ep_0001",
+          "ep_0002",
+          "ep_0003",
+          "ep_0004",
+          "ep_0005",
+          "ep_0006",
+          "ep_0007"
+        ],
+        "h5_sha256": "c6926be3c8881ef623967a42c05a59e3a245e50d1873c3f01f586e24bf100d13",
+        "audit_paths": [
+          "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/audit/bag",
+          "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/audit/motion.yaml",
+          "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/audit/motion_run.json"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "path": "/home/venom/factr2/data/right/c2_20261010_160331_verified_prefix/test.h5",
+        "episodes": [
+          "ep_0000",
+          "ep_0001",
+          "ep_0002"
+        ],
+        "h5_sha256": "835b01b751ed34c9054d85a348fed0c1254ae4d498624866100cd7604cbb4166",
+        "audit_paths": [
+          "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/bag",
+          "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/motion.yaml",
+          "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/motion_run.json"
+        ]
+      },
+      {
+        "path": "/home/venom/factr2/data/right/c2_remaining_20261010_164151_566506_session_trial/test.h5",
+        "episodes": [
+          "ep_0000",
+          "ep_0001",
+          "ep_0002",
+          "ep_0003",
+          "ep_0004",
+          "ep_0005",
+          "ep_0006",
+          "ep_0007"
+        ],
+        "h5_sha256": "fc5684621d5d18d0a510210927b4c36829e0d68dfcbe21b500a448425f579484",
+        "audit_paths": [
+          "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/audit/bag",
+          "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/audit/motion.yaml",
+          "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/audit/motion_run.json"
+        ]
+      }
+    ]
+  },
+  "evaluation_scope": "Repeated-motion holdouts from segmented captures in the same campaign; not independent session generalization",
+  "source_datasets": [
+    "/home/venom/factr2/data/right/c2_20261010_160331_verified_prefix",
+    "/home/venom/factr2/data/right/c2_remaining_20261010_164151_566506_session_trial"
+  ]
+}

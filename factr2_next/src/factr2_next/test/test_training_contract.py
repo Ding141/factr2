@@ -32,6 +32,19 @@ def config(tmp):
     return cfg
 
 
+def test_100_hz_adamw_checkpoint_cannot_load_as_50_hz(tmp_path):
+    cfg=config(tmp_path)
+    paths=[fixture(tmp_path/f'high_{s}.h5',phase=i*20,hz=100) for i,s in enumerate(('train','val','test'))]
+    manifest=tmp_path/'high_manifest.json'
+    make_manifest(manifest,dict(zip(('train','val','test'),[[p] for p in paths])),'100hz')
+    cfg['data'].update(manifest=str(manifest),sample_hz=100)
+    cfg['train'].update(optimizer='adamw',weight_decay=1e-6,gradient_clip=1.0,
+        early_stopping=dict(enabled=True,patience=20,warmup=10,min_delta=1e-5))
+    run=train(cfg)
+    assert load_checkpoint(run).metadata['sample_hz']==100
+    with pytest.raises(ValueError,match='sample_hz'):load_checkpoint(run,expected={'sample_hz':50})
+
+
 def test_lazy_feature_label_normalization_and_boundaries(tmp_path):
     path=fixture(tmp_path/'training.h5',n=70)
     # Explicit second episode: last-to-first discontinuity cannot enter a window.

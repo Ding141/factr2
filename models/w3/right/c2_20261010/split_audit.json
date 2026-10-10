@@ -1,0 +1,1164 @@
+{
+  "parent_h5": "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/20261010_164151_566506_20261010_164157.h5",
+  "parent_sha256_before": "17a2fdfc0cc09044e47f0261cbe0e2022c60ef8af635e46be5f64e028017da89",
+  "parent_sha256_after": "17a2fdfc0cc09044e47f0261cbe0e2022c60ef8af635e46be5f64e028017da89",
+  "source_rows": 227462,
+  "retained_rows": 208858,
+  "guard_frames_each_end": 100,
+  "source_ranges_disjoint": true,
+  "scope": "Repeated-motion holdouts from segmented captures in the same campaign; not independent session generalization",
+  "splits": {
+    "train": {
+      "rows": 106024,
+      "windows": 105240,
+      "episodes": 16
+    },
+    "val": {
+      "rows": 60960,
+      "windows": 60421,
+      "episodes": 11
+    },
+    "test": {
+      "rows": 41874,
+      "windows": 41335,
+      "episodes": 11
+    }
+  },
+  "blocks": [
+    {
+      "split": "train",
+      "start_utc": "2026-10-10T08:42:03.738564+00:00",
+      "end_utc": "2026-10-10T08:43:32.108237+00:00",
+      "events": [
+        "resume_approach",
+        "014_single_joint_sine_cycle_slow_1_j7"
+      ],
+      "phases": [
+        "transition",
+        "single_joint"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 714,
+      "source_row_stop_exclusive": 9351,
+      "rows": 8637
+    },
+    {
+      "split": "val",
+      "start_utc": "2026-10-10T08:43:32.108252+00:00",
+      "end_utc": "2026-10-10T08:44:58.328229+00:00",
+      "events": [
+        "015_single_joint_sine_cycle_slow_2_j7"
+      ],
+      "phases": [
+        "single_joint"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 9551,
+      "source_row_stop_exclusive": 17973,
+      "rows": 8422
+    },
+    {
+      "split": "train",
+      "start_utc": "2026-10-10T08:44:58.328243+00:00",
+      "end_utc": "2026-10-10T08:45:41.458270+00:00",
+      "events": [
+        "016_single_joint_sine_cycle_fast_1_j1"
+      ],
+      "phases": [
+        "single_joint"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 18173,
+      "source_row_stop_exclusive": 22286,
+      "rows": 4113
+    },
+    {
+      "split": "test",
+      "start_utc": "2026-10-10T08:45:41.458286+00:00",
+      "end_utc": "2026-10-10T08:46:24.588199+00:00",
+      "events": [
+        "017_single_joint_sine_cycle_fast_2_j1"
+      ],
+      "phases": [
+        "single_joint"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 22486,
+      "source_row_stop_exclusive": 26599,
+      "rows": 4113
+    },
+    {
+      "split": "train",
+      "start_utc": "2026-10-10T08:46:24.588214+00:00",
+      "end_utc": "2026-10-10T08:46:52.608220+00:00",
+      "events": [
+        "018_single_joint_sine_cycle_fast_1_j2"
+      ],
+      "phases": [
+        "single_joint"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 26799,
+      "source_row_stop_exclusive": 29401,
+      "rows": 2602
+    },
+    {
+      "split": "val",
+      "start_utc": "2026-10-10T08:46:52.608236+00:00",
+      "end_utc": "2026-10-10T08:47:20.628188+00:00",
+      "events": [
+        "019_single_joint_sine_cycle_fast_2_j2"
+      ],
+      "phases": [
+        "single_joint"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 29601,
+      "source_row_stop_exclusive": 32203,
+      "rows": 2602
+    },
+    {
+      "split": "train",
+      "start_utc": "2026-10-10T08:47:20.628204+00:00",
+      "end_utc": "2026-10-10T08:48:02.268269+00:00",
+      "events": [
+        "020_single_joint_sine_cycle_fast_1_j3"
+      ],
+      "phases": [
+        "single_joint"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 32403,
+      "source_row_stop_exclusive": 36367,
+      "rows": 3964
+    },
+    {
+      "split": "test",
+      "start_utc": "2026-10-10T08:48:02.268285+00:00",
+      "end_utc": "2026-10-10T08:48:43.908152+00:00",
+      "events": [
+        "021_single_joint_sine_cycle_fast_2_j3"
+      ],
+      "phases": [
+        "single_joint"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 36567,
+      "source_row_stop_exclusive": 40531,
+      "rows": 3964
+    },
+    {
+      "split": "train",
+      "start_utc": "2026-10-10T08:48:43.908168+00:00",
+      "end_utc": "2026-10-10T08:49:14.098293+00:00",
+      "events": [
+        "022_single_joint_sine_cycle_fast_1_j4"
+      ],
+      "phases": [
+        "single_joint"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 40731,
+      "source_row_stop_exclusive": 43550,
+      "rows": 2819
+    },
+    {
+      "split": "val",
+      "start_utc": "2026-10-10T08:49:14.098309+00:00",
+      "end_utc": "2026-10-10T08:49:44.288170+00:00",
+      "events": [
+        "023_single_joint_sine_cycle_fast_2_j4"
+      ],
+      "phases": [
+        "single_joint"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 43750,
+      "source_row_stop_exclusive": 46569,
+      "rows": 2819
+    },
+    {
+      "split": "train",
+      "start_utc": "2026-10-10T08:49:44.288186+00:00",
+      "end_utc": "2026-10-10T08:50:25.928243+00:00",
+      "events": [
+        "024_single_joint_sine_cycle_fast_1_j5"
+      ],
+      "phases": [
+        "single_joint"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 46769,
+      "source_row_stop_exclusive": 50733,
+      "rows": 3964
+    },
+    {
+      "split": "test",
+      "start_utc": "2026-10-10T08:50:25.928258+00:00",
+      "end_utc": "2026-10-10T08:51:07.568189+00:00",
+      "events": [
+        "025_single_joint_sine_cycle_fast_2_j5"
+      ],
+      "phases": [
+        "single_joint"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 50933,
+      "source_row_stop_exclusive": 54897,
+      "rows": 3964
+    },
+    {
+      "split": "train",
+      "start_utc": "2026-10-10T08:51:07.568204+00:00",
+      "end_utc": "2026-10-10T08:51:19.028619+00:00",
+      "events": [
+        "026_single_joint_sine_cycle_fast_1_j6"
+      ],
+      "phases": [
+        "single_joint"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 55097,
+      "source_row_stop_exclusive": 56043,
+      "rows": 946
+    },
+    {
+      "split": "val",
+      "start_utc": "2026-10-10T08:51:19.028636+00:00",
+      "end_utc": "2026-10-10T08:51:30.488208+00:00",
+      "events": [
+        "027_single_joint_sine_cycle_fast_2_j6"
+      ],
+      "phases": [
+        "single_joint"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 56243,
+      "source_row_stop_exclusive": 57189,
+      "rows": 946
+    },
+    {
+      "split": "train",
+      "start_utc": "2026-10-10T08:51:30.488225+00:00",
+      "end_utc": "2026-10-10T08:51:56.358210+00:00",
+      "events": [
+        "028_single_joint_sine_cycle_fast_1_j7"
+      ],
+      "phases": [
+        "single_joint"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 57389,
+      "source_row_stop_exclusive": 59776,
+      "rows": 2387
+    },
+    {
+      "split": "test",
+      "start_utc": "2026-10-10T08:51:56.358226+00:00",
+      "end_utc": "2026-10-10T08:52:22.228410+00:00",
+      "events": [
+        "029_single_joint_sine_cycle_fast_2_j7"
+      ],
+      "phases": [
+        "single_joint"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 59976,
+      "source_row_stop_exclusive": 62363,
+      "rows": 2387
+    },
+    {
+      "split": "train",
+      "start_utc": "2026-10-10T08:52:22.228428+00:00",
+      "end_utc": "2026-10-10T08:53:28.088161+00:00",
+      "events": [
+        "030_cartesian_line_x_slow_1",
+        "031_transition_reset_home_slow_1",
+        "032_cartesian_line_y_slow_1",
+        "033_transition_reset_home_slow_1",
+        "034_cartesian_line_z_slow_1",
+        "035_transition_reset_home_slow_1",
+        "036_cartesian_circle_xy_slow_1",
+        "037_transition_reset_home_slow_1"
+      ],
+      "phases": [
+        "cartesian",
+        "transition",
+        "cartesian",
+        "transition",
+        "cartesian",
+        "transition",
+        "cartesian",
+        "transition"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 62563,
+      "source_row_stop_exclusive": 68949,
+      "rows": 6386
+    },
+    {
+      "split": "val",
+      "start_utc": "2026-10-10T08:53:28.088175+00:00",
+      "end_utc": "2026-10-10T08:53:42.868155+00:00",
+      "events": [
+        "038_cartesian_line_x_slow_2",
+        "039_transition_reset_home_slow_2"
+      ],
+      "phases": [
+        "cartesian",
+        "transition"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 69149,
+      "source_row_stop_exclusive": 70427,
+      "rows": 1278
+    },
+    {
+      "split": "test",
+      "start_utc": "2026-10-10T08:53:42.868171+00:00",
+      "end_utc": "2026-10-10T08:54:02.058159+00:00",
+      "events": [
+        "040_cartesian_line_y_slow_2",
+        "041_transition_reset_home_slow_2"
+      ],
+      "phases": [
+        "cartesian",
+        "transition"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 70627,
+      "source_row_stop_exclusive": 72346,
+      "rows": 1719
+    },
+    {
+      "split": "val",
+      "start_utc": "2026-10-10T08:54:02.058174+00:00",
+      "end_utc": "2026-10-10T08:54:14.788139+00:00",
+      "events": [
+        "042_cartesian_line_z_slow_2",
+        "043_transition_reset_home_slow_2"
+      ],
+      "phases": [
+        "cartesian",
+        "transition"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 72546,
+      "source_row_stop_exclusive": 73619,
+      "rows": 1073
+    },
+    {
+      "split": "test",
+      "start_utc": "2026-10-10T08:54:14.788153+00:00",
+      "end_utc": "2026-10-10T08:54:33.948344+00:00",
+      "events": [
+        "044_cartesian_circle_xy_slow_2",
+        "045_transition_reset_home_slow_2"
+      ],
+      "phases": [
+        "cartesian",
+        "transition"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 73819,
+      "source_row_stop_exclusive": 75535,
+      "rows": 1716
+    },
+    {
+      "split": "train",
+      "start_utc": "2026-10-10T08:54:33.948359+00:00",
+      "end_utc": "2026-10-10T08:55:18.718377+00:00",
+      "events": [
+        "046_cartesian_line_x_fast_1",
+        "047_transition_reset_home_fast_1",
+        "048_cartesian_line_y_fast_1",
+        "049_transition_reset_home_fast_1",
+        "050_cartesian_line_z_fast_1",
+        "051_transition_reset_home_fast_1",
+        "052_cartesian_circle_xy_fast_1",
+        "053_transition_reset_home_fast_1"
+      ],
+      "phases": [
+        "cartesian",
+        "transition",
+        "cartesian",
+        "transition",
+        "cartesian",
+        "transition",
+        "cartesian",
+        "transition"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 75735,
+      "source_row_stop_exclusive": 80012,
+      "rows": 4277
+    },
+    {
+      "split": "test",
+      "start_utc": "2026-10-10T08:55:18.718396+00:00",
+      "end_utc": "2026-10-10T08:55:25.498307+00:00",
+      "events": [
+        "054_cartesian_line_x_fast_2",
+        "055_transition_reset_home_fast_2"
+      ],
+      "phases": [
+        "cartesian",
+        "transition"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 80212,
+      "source_row_stop_exclusive": 80690,
+      "rows": 478
+    },
+    {
+      "split": "val",
+      "start_utc": "2026-10-10T08:55:25.498325+00:00",
+      "end_utc": "2026-10-10T08:55:40.098185+00:00",
+      "events": [
+        "056_cartesian_line_y_fast_2",
+        "057_transition_reset_home_fast_2"
+      ],
+      "phases": [
+        "cartesian",
+        "transition"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 80890,
+      "source_row_stop_exclusive": 82150,
+      "rows": 1260
+    },
+    {
+      "split": "test",
+      "start_utc": "2026-10-10T08:55:40.098200+00:00",
+      "end_utc": "2026-10-10T08:55:51.228250+00:00",
+      "events": [
+        "058_cartesian_line_z_fast_2",
+        "059_transition_reset_home_fast_2"
+      ],
+      "phases": [
+        "cartesian",
+        "transition"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 82350,
+      "source_row_stop_exclusive": 83263,
+      "rows": 913
+    },
+    {
+      "split": "val",
+      "start_utc": "2026-10-10T08:55:51.228266+00:00",
+      "end_utc": "2026-10-10T08:56:03.488333+00:00",
+      "events": [
+        "060_cartesian_circle_xy_fast_2",
+        "061_transition_reset_home_fast_2"
+      ],
+      "phases": [
+        "cartesian",
+        "transition"
+      ],
+      "source_episode": "ep_0000",
+      "source_row_start": 83463,
+      "source_row_stop_exclusive": 84489,
+      "rows": 1026
+    }
+  ],
+  "skipped_transition_groups": [],
+  "completed_prefix_only": false,
+  "excluded_incomplete_events": [],
+  "source_sessions": [
+    {
+      "parent_h5": "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/20261010_160331_906917_20261010_160338.h5",
+      "parent_sha256_before": "5a56ce2fffee455b827c50470ef1576e3b351c9d9517eb82675f4efb7fd8431e",
+      "dataset": "/home/venom/factr2/data/right/c2_20261010_160331_verified_prefix",
+      "audit": {
+        "parent_h5": "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/20261010_160331_906917_20261010_160338.h5",
+        "parent_sha256_before": "5a56ce2fffee455b827c50470ef1576e3b351c9d9517eb82675f4efb7fd8431e",
+        "parent_sha256_after": "5a56ce2fffee455b827c50470ef1576e3b351c9d9517eb82675f4efb7fd8431e",
+        "source_rows": 142652,
+        "retained_rows": 130083,
+        "guard_frames_each_end": 100,
+        "source_ranges_disjoint": true,
+        "scope": "within one real session; repeated trajectories and shared hardware",
+        "splits": {
+          "train": {
+            "episodes": 6,
+            "rows": 65929,
+            "windows": 65635
+          },
+          "val": {
+            "episodes": 3,
+            "rows": 41534,
+            "windows": 41387
+          },
+          "test": {
+            "episodes": 3,
+            "rows": 22620,
+            "windows": 22473
+          }
+        },
+        "blocks": [
+          {
+            "split": "train",
+            "start_utc": "2026-10-10T08:03:53.085130+00:00",
+            "end_utc": "2026-10-10T08:06:34.595582+00:00",
+            "events": [
+              "001_transition_approach_slow_0",
+              "002_single_joint_sine_cycle_slow_1_j1"
+            ],
+            "phases": [
+              "transition",
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 1510,
+            "source_row_stop_exclusive": 17461,
+            "rows": 15951
+          },
+          {
+            "split": "val",
+            "start_utc": "2026-10-10T08:06:34.595597+00:00",
+            "end_utc": "2026-10-10T08:08:58.355627+00:00",
+            "events": [
+              "003_single_joint_sine_cycle_slow_2_j1"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 17661,
+            "source_row_stop_exclusive": 31837,
+            "rows": 14176
+          },
+          {
+            "split": "train",
+            "start_utc": "2026-10-10T08:08:58.355645+00:00",
+            "end_utc": "2026-10-10T08:10:31.735639+00:00",
+            "events": [
+              "004_single_joint_sine_cycle_slow_1_j2"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 32037,
+            "source_row_stop_exclusive": 41175,
+            "rows": 9138
+          },
+          {
+            "split": "test",
+            "start_utc": "2026-10-10T08:10:31.735652+00:00",
+            "end_utc": "2026-10-10T08:12:05.115703+00:00",
+            "events": [
+              "005_single_joint_sine_cycle_slow_2_j2"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 41375,
+            "source_row_stop_exclusive": 50513,
+            "rows": 9138
+          },
+          {
+            "split": "train",
+            "start_utc": "2026-10-10T08:12:05.115719+00:00",
+            "end_utc": "2026-10-10T08:14:23.905564+00:00",
+            "events": [
+              "006_single_joint_sine_cycle_slow_1_j3"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 50713,
+            "source_row_stop_exclusive": 64392,
+            "rows": 13679
+          },
+          {
+            "split": "val",
+            "start_utc": "2026-10-10T08:14:23.905579+00:00",
+            "end_utc": "2026-10-10T08:16:42.695571+00:00",
+            "events": [
+              "007_single_joint_sine_cycle_slow_2_j3"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 64592,
+            "source_row_stop_exclusive": 78271,
+            "rows": 13679
+          },
+          {
+            "split": "train",
+            "start_utc": "2026-10-10T08:16:42.695589+00:00",
+            "end_utc": "2026-10-10T08:18:23.315722+00:00",
+            "events": [
+              "008_single_joint_sine_cycle_slow_1_j4"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 78471,
+            "source_row_stop_exclusive": 88333,
+            "rows": 9862
+          },
+          {
+            "split": "test",
+            "start_utc": "2026-10-10T08:18:23.315743+00:00",
+            "end_utc": "2026-10-10T08:20:03.935527+00:00",
+            "events": [
+              "009_single_joint_sine_cycle_slow_2_j4"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 88533,
+            "source_row_stop_exclusive": 98395,
+            "rows": 9862
+          },
+          {
+            "split": "train",
+            "start_utc": "2026-10-10T08:20:03.935543+00:00",
+            "end_utc": "2026-10-10T08:22:22.725720+00:00",
+            "events": [
+              "010_single_joint_sine_cycle_slow_1_j5"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 98595,
+            "source_row_stop_exclusive": 112274,
+            "rows": 13679
+          },
+          {
+            "split": "val",
+            "start_utc": "2026-10-10T08:22:22.725751+00:00",
+            "end_utc": "2026-10-10T08:24:41.515500+00:00",
+            "events": [
+              "011_single_joint_sine_cycle_slow_2_j5"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 112474,
+            "source_row_stop_exclusive": 126153,
+            "rows": 13679
+          },
+          {
+            "split": "train",
+            "start_utc": "2026-10-10T08:24:41.515517+00:00",
+            "end_utc": "2026-10-10T08:25:19.715898+00:00",
+            "events": [
+              "012_single_joint_sine_cycle_slow_1_j6"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 126353,
+            "source_row_stop_exclusive": 129973,
+            "rows": 3620
+          },
+          {
+            "split": "test",
+            "start_utc": "2026-10-10T08:25:19.715916+00:00",
+            "end_utc": "2026-10-10T08:25:57.915585+00:00",
+            "events": [
+              "013_single_joint_sine_cycle_slow_2_j6"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 130173,
+            "source_row_stop_exclusive": 133793,
+            "rows": 3620
+          }
+        ],
+        "skipped_transition_groups": [],
+        "completed_prefix_only": true,
+        "excluded_incomplete_events": [
+          "014_single_joint_sine_cycle_slow_1_j7"
+        ]
+      }
+    },
+    {
+      "parent_h5": "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/20261010_164151_566506_20261010_164157.h5",
+      "parent_sha256_before": "17a2fdfc0cc09044e47f0261cbe0e2022c60ef8af635e46be5f64e028017da89",
+      "dataset": "/home/venom/factr2/data/right/c2_remaining_20261010_164151_566506_session_trial",
+      "audit": {
+        "parent_h5": "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/20261010_164151_566506_20261010_164157.h5",
+        "parent_sha256_before": "17a2fdfc0cc09044e47f0261cbe0e2022c60ef8af635e46be5f64e028017da89",
+        "parent_sha256_after": "17a2fdfc0cc09044e47f0261cbe0e2022c60ef8af635e46be5f64e028017da89",
+        "source_rows": 84810,
+        "retained_rows": 78775,
+        "guard_frames_each_end": 100,
+        "source_ranges_disjoint": true,
+        "scope": "within one real session; repeated trajectories and shared hardware",
+        "splits": {
+          "train": {
+            "episodes": 10,
+            "rows": 40095,
+            "windows": 39605
+          },
+          "val": {
+            "episodes": 8,
+            "rows": 19426,
+            "windows": 19034
+          },
+          "test": {
+            "episodes": 8,
+            "rows": 19254,
+            "windows": 18862
+          }
+        },
+        "blocks": [
+          {
+            "split": "train",
+            "start_utc": "2026-10-10T08:42:03.738564+00:00",
+            "end_utc": "2026-10-10T08:43:32.108237+00:00",
+            "events": [
+              "resume_approach",
+              "014_single_joint_sine_cycle_slow_1_j7"
+            ],
+            "phases": [
+              "transition",
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 714,
+            "source_row_stop_exclusive": 9351,
+            "rows": 8637
+          },
+          {
+            "split": "val",
+            "start_utc": "2026-10-10T08:43:32.108252+00:00",
+            "end_utc": "2026-10-10T08:44:58.328229+00:00",
+            "events": [
+              "015_single_joint_sine_cycle_slow_2_j7"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 9551,
+            "source_row_stop_exclusive": 17973,
+            "rows": 8422
+          },
+          {
+            "split": "train",
+            "start_utc": "2026-10-10T08:44:58.328243+00:00",
+            "end_utc": "2026-10-10T08:45:41.458270+00:00",
+            "events": [
+              "016_single_joint_sine_cycle_fast_1_j1"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 18173,
+            "source_row_stop_exclusive": 22286,
+            "rows": 4113
+          },
+          {
+            "split": "test",
+            "start_utc": "2026-10-10T08:45:41.458286+00:00",
+            "end_utc": "2026-10-10T08:46:24.588199+00:00",
+            "events": [
+              "017_single_joint_sine_cycle_fast_2_j1"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 22486,
+            "source_row_stop_exclusive": 26599,
+            "rows": 4113
+          },
+          {
+            "split": "train",
+            "start_utc": "2026-10-10T08:46:24.588214+00:00",
+            "end_utc": "2026-10-10T08:46:52.608220+00:00",
+            "events": [
+              "018_single_joint_sine_cycle_fast_1_j2"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 26799,
+            "source_row_stop_exclusive": 29401,
+            "rows": 2602
+          },
+          {
+            "split": "val",
+            "start_utc": "2026-10-10T08:46:52.608236+00:00",
+            "end_utc": "2026-10-10T08:47:20.628188+00:00",
+            "events": [
+              "019_single_joint_sine_cycle_fast_2_j2"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 29601,
+            "source_row_stop_exclusive": 32203,
+            "rows": 2602
+          },
+          {
+            "split": "train",
+            "start_utc": "2026-10-10T08:47:20.628204+00:00",
+            "end_utc": "2026-10-10T08:48:02.268269+00:00",
+            "events": [
+              "020_single_joint_sine_cycle_fast_1_j3"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 32403,
+            "source_row_stop_exclusive": 36367,
+            "rows": 3964
+          },
+          {
+            "split": "test",
+            "start_utc": "2026-10-10T08:48:02.268285+00:00",
+            "end_utc": "2026-10-10T08:48:43.908152+00:00",
+            "events": [
+              "021_single_joint_sine_cycle_fast_2_j3"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 36567,
+            "source_row_stop_exclusive": 40531,
+            "rows": 3964
+          },
+          {
+            "split": "train",
+            "start_utc": "2026-10-10T08:48:43.908168+00:00",
+            "end_utc": "2026-10-10T08:49:14.098293+00:00",
+            "events": [
+              "022_single_joint_sine_cycle_fast_1_j4"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 40731,
+            "source_row_stop_exclusive": 43550,
+            "rows": 2819
+          },
+          {
+            "split": "val",
+            "start_utc": "2026-10-10T08:49:14.098309+00:00",
+            "end_utc": "2026-10-10T08:49:44.288170+00:00",
+            "events": [
+              "023_single_joint_sine_cycle_fast_2_j4"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 43750,
+            "source_row_stop_exclusive": 46569,
+            "rows": 2819
+          },
+          {
+            "split": "train",
+            "start_utc": "2026-10-10T08:49:44.288186+00:00",
+            "end_utc": "2026-10-10T08:50:25.928243+00:00",
+            "events": [
+              "024_single_joint_sine_cycle_fast_1_j5"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 46769,
+            "source_row_stop_exclusive": 50733,
+            "rows": 3964
+          },
+          {
+            "split": "test",
+            "start_utc": "2026-10-10T08:50:25.928258+00:00",
+            "end_utc": "2026-10-10T08:51:07.568189+00:00",
+            "events": [
+              "025_single_joint_sine_cycle_fast_2_j5"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 50933,
+            "source_row_stop_exclusive": 54897,
+            "rows": 3964
+          },
+          {
+            "split": "train",
+            "start_utc": "2026-10-10T08:51:07.568204+00:00",
+            "end_utc": "2026-10-10T08:51:19.028619+00:00",
+            "events": [
+              "026_single_joint_sine_cycle_fast_1_j6"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 55097,
+            "source_row_stop_exclusive": 56043,
+            "rows": 946
+          },
+          {
+            "split": "val",
+            "start_utc": "2026-10-10T08:51:19.028636+00:00",
+            "end_utc": "2026-10-10T08:51:30.488208+00:00",
+            "events": [
+              "027_single_joint_sine_cycle_fast_2_j6"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 56243,
+            "source_row_stop_exclusive": 57189,
+            "rows": 946
+          },
+          {
+            "split": "train",
+            "start_utc": "2026-10-10T08:51:30.488225+00:00",
+            "end_utc": "2026-10-10T08:51:56.358210+00:00",
+            "events": [
+              "028_single_joint_sine_cycle_fast_1_j7"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 57389,
+            "source_row_stop_exclusive": 59776,
+            "rows": 2387
+          },
+          {
+            "split": "test",
+            "start_utc": "2026-10-10T08:51:56.358226+00:00",
+            "end_utc": "2026-10-10T08:52:22.228410+00:00",
+            "events": [
+              "029_single_joint_sine_cycle_fast_2_j7"
+            ],
+            "phases": [
+              "single_joint"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 59976,
+            "source_row_stop_exclusive": 62363,
+            "rows": 2387
+          },
+          {
+            "split": "train",
+            "start_utc": "2026-10-10T08:52:22.228428+00:00",
+            "end_utc": "2026-10-10T08:53:28.088161+00:00",
+            "events": [
+              "030_cartesian_line_x_slow_1",
+              "031_transition_reset_home_slow_1",
+              "032_cartesian_line_y_slow_1",
+              "033_transition_reset_home_slow_1",
+              "034_cartesian_line_z_slow_1",
+              "035_transition_reset_home_slow_1",
+              "036_cartesian_circle_xy_slow_1",
+              "037_transition_reset_home_slow_1"
+            ],
+            "phases": [
+              "cartesian",
+              "transition",
+              "cartesian",
+              "transition",
+              "cartesian",
+              "transition",
+              "cartesian",
+              "transition"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 62563,
+            "source_row_stop_exclusive": 68949,
+            "rows": 6386
+          },
+          {
+            "split": "val",
+            "start_utc": "2026-10-10T08:53:28.088175+00:00",
+            "end_utc": "2026-10-10T08:53:42.868155+00:00",
+            "events": [
+              "038_cartesian_line_x_slow_2",
+              "039_transition_reset_home_slow_2"
+            ],
+            "phases": [
+              "cartesian",
+              "transition"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 69149,
+            "source_row_stop_exclusive": 70427,
+            "rows": 1278
+          },
+          {
+            "split": "test",
+            "start_utc": "2026-10-10T08:53:42.868171+00:00",
+            "end_utc": "2026-10-10T08:54:02.058159+00:00",
+            "events": [
+              "040_cartesian_line_y_slow_2",
+              "041_transition_reset_home_slow_2"
+            ],
+            "phases": [
+              "cartesian",
+              "transition"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 70627,
+            "source_row_stop_exclusive": 72346,
+            "rows": 1719
+          },
+          {
+            "split": "val",
+            "start_utc": "2026-10-10T08:54:02.058174+00:00",
+            "end_utc": "2026-10-10T08:54:14.788139+00:00",
+            "events": [
+              "042_cartesian_line_z_slow_2",
+              "043_transition_reset_home_slow_2"
+            ],
+            "phases": [
+              "cartesian",
+              "transition"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 72546,
+            "source_row_stop_exclusive": 73619,
+            "rows": 1073
+          },
+          {
+            "split": "test",
+            "start_utc": "2026-10-10T08:54:14.788153+00:00",
+            "end_utc": "2026-10-10T08:54:33.948344+00:00",
+            "events": [
+              "044_cartesian_circle_xy_slow_2",
+              "045_transition_reset_home_slow_2"
+            ],
+            "phases": [
+              "cartesian",
+              "transition"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 73819,
+            "source_row_stop_exclusive": 75535,
+            "rows": 1716
+          },
+          {
+            "split": "train",
+            "start_utc": "2026-10-10T08:54:33.948359+00:00",
+            "end_utc": "2026-10-10T08:55:18.718377+00:00",
+            "events": [
+              "046_cartesian_line_x_fast_1",
+              "047_transition_reset_home_fast_1",
+              "048_cartesian_line_y_fast_1",
+              "049_transition_reset_home_fast_1",
+              "050_cartesian_line_z_fast_1",
+              "051_transition_reset_home_fast_1",
+              "052_cartesian_circle_xy_fast_1",
+              "053_transition_reset_home_fast_1"
+            ],
+            "phases": [
+              "cartesian",
+              "transition",
+              "cartesian",
+              "transition",
+              "cartesian",
+              "transition",
+              "cartesian",
+              "transition"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 75735,
+            "source_row_stop_exclusive": 80012,
+            "rows": 4277
+          },
+          {
+            "split": "test",
+            "start_utc": "2026-10-10T08:55:18.718396+00:00",
+            "end_utc": "2026-10-10T08:55:25.498307+00:00",
+            "events": [
+              "054_cartesian_line_x_fast_2",
+              "055_transition_reset_home_fast_2"
+            ],
+            "phases": [
+              "cartesian",
+              "transition"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 80212,
+            "source_row_stop_exclusive": 80690,
+            "rows": 478
+          },
+          {
+            "split": "val",
+            "start_utc": "2026-10-10T08:55:25.498325+00:00",
+            "end_utc": "2026-10-10T08:55:40.098185+00:00",
+            "events": [
+              "056_cartesian_line_y_fast_2",
+              "057_transition_reset_home_fast_2"
+            ],
+            "phases": [
+              "cartesian",
+              "transition"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 80890,
+            "source_row_stop_exclusive": 82150,
+            "rows": 1260
+          },
+          {
+            "split": "test",
+            "start_utc": "2026-10-10T08:55:40.098200+00:00",
+            "end_utc": "2026-10-10T08:55:51.228250+00:00",
+            "events": [
+              "058_cartesian_line_z_fast_2",
+              "059_transition_reset_home_fast_2"
+            ],
+            "phases": [
+              "cartesian",
+              "transition"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 82350,
+            "source_row_stop_exclusive": 83263,
+            "rows": 913
+          },
+          {
+            "split": "val",
+            "start_utc": "2026-10-10T08:55:51.228266+00:00",
+            "end_utc": "2026-10-10T08:56:03.488333+00:00",
+            "events": [
+              "060_cartesian_circle_xy_fast_2",
+              "061_transition_reset_home_fast_2"
+            ],
+            "phases": [
+              "cartesian",
+              "transition"
+            ],
+            "source_episode": "ep_0000",
+            "source_row_start": 83463,
+            "source_row_stop_exclusive": 84489,
+            "rows": 1026
+          }
+        ],
+        "skipped_transition_groups": [],
+        "completed_prefix_only": false,
+        "excluded_incomplete_events": []
+      }
+    }
+  ]
+}

@@ -36,7 +36,7 @@ def load_checkpoint(run_dir, device='cpu', expected=None):
         meta=json.loads((run_dir/'metadata.json').read_text())
         validate_w3_config(config,'train',require_paths=False)
         required=dict(schema='w3_checkpoint_v1',contract_version=config['contract_version'],side=config['side'],
-            joint_order=config['joint_names'],feature_order=FEATURE_ORDER,history=50,input_size=21,output_size=7,sample_hz=50)
+            joint_order=config['joint_names'],feature_order=FEATURE_ORDER,history=50,input_size=21,output_size=7,sample_hz=config['data'].get('sample_hz',50))
         required.update(expected or {})
         for k,v in required.items():
             if meta.get(k)!=v:raise ValueError('checkpoint_profile:'+k)

@@ -83,7 +83,7 @@ def check(path, episodes=None, expected=None):
             err.append('metadata_contract_side')
         if meta.get('joint_order') != [f'{side}_joint_{i}' for i in range(7)]:
             err.append('metadata_joint_order')
-        if meta.get('sample_hz') != 50:
+        if meta.get('sample_hz') not in (50, 100):
             err.append('metadata_sample_hz')
         for key in ('session_id', 'topics', 'software_commits', 'config_sha256', 'tool', 'gripper',
                     'load', 'calibration', 'control', 'trajectory_id', 'contact', 'temperature',
@@ -163,9 +163,9 @@ def check(path, episodes=None, expected=None):
                     duration = (int(times[0][-1]) - int(times[0][0])) * 1e-9
                     hz = (len(times[0]) - 1) / duration if duration > 0 else 0
                     info.update(duration_seconds=duration, hz=hz, max_gap_seconds=float(dt.max()))
-                    if not 45 <= hz <= 55:
+                    if not .9 * meta.get('sample_hz',50) <= hz <= 1.1 * meta.get('sample_hz',50):
                         reasons.append('frequency')
-                    if gaps_ns.max() > 40_000_000:
+                    if gaps_ns.max() > 2e9 / meta.get('sample_hz',50):
                         reasons.append('gap')
                 if reasons:
                     err.extend(ep + ':' + r for r in reasons)
@@ -198,7 +198,7 @@ def validate_manifest(path, expected=None):
                 raise ValueError('manifest_hash')
             meta = report['metadata']
             signatures.append({k: meta[k] for k in ('side', 'joint_order', 'contract_version',
-                                                   'tool', 'gripper', 'load', 'calibration')})
+                                                   'tool', 'gripper', 'load', 'calibration', 'sample_hz')})
             if meta['contact'].get('present') is not False:
                 raise ValueError('free_motion_contact_required')
             for ep in entry['episodes']:

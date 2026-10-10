@@ -117,7 +117,7 @@ def make_datasets(data_cfg, arm):
     return Subset(dataset, train_idx), Subset(dataset, val_idx)
 
 
-def run_epoch(model, loader, device, opt=None):
+def run_epoch(model, loader, device, opt=None, gradient_clip=None):
     model.train(opt is not None)
     total, n = 0.0, 0
     for x, y in loader:
@@ -129,6 +129,8 @@ def run_epoch(model, loader, device, opt=None):
         if opt is not None:
             opt.zero_grad(set_to_none=True)
             loss.backward()
+            if gradient_clip is not None:
+                torch.nn.utils.clip_grad_norm_(model.parameters(), gradient_clip)
             opt.step()
         total += loss.item() * len(x)
         n += len(x)

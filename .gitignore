@@ -24,3 +24,7 @@ __pycache__/
 .factr2_next_git_backup/
 .git-local/
 reports/generated/
+
+# Explicitly retained small right-arm deployment checkpoint (2026-10-10).
+!models/w3/right/c2_20261010/model.pt
+!models/w3/right/c2_20261010/normalization.npz

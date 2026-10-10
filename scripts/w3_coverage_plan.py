@@ -139,8 +139,12 @@ def validate_config(config, model):
                 'repeats', 'sample_period_seconds', 'hold_seconds', 'hardware_margin_deg',
                 'arrival_tolerance_deg', 'start_tolerance_deg', 'tracking_limit_deg',
                 'speeds', 'cartesian'}
-    if not isinstance(config, dict) or set(config) != required or type(config['version']) is not int or config['version'] != 1:
+    if not isinstance(config, dict) or not required <= set(config) or set(config) - required - {'trajectory_profile', 'finish_at_home', 'continuous_repetitions'} or type(config['version']) is not int or config['version'] != 1:
         raise ValueError('Invalid coverage configuration keys/version')
+    if type(config.get('continuous_repetitions',False)) is not bool:
+        raise ValueError('continuous_repetitions must be boolean')
+    if type(config.get('finish_at_home',False)) is not bool:
+        raise ValueError('finish_at_home must be boolean')
     if config['side'] not in ('left', 'right') or not isinstance(config['name'], str) or not config['name'].strip():
         raise ValueError('Invalid side/name')
     home = vector(config['home_deg'], 7, 'home')
@@ -154,7 +158,10 @@ def validate_config(config, model):
         raise ValueError('Working bounds exceed live hardware/model limits with margin')
     if type(config['repeats']) is not int or not 1 <= config['repeats'] <= 20:
         raise ValueError('repeats must be integer 1..20')
-    for key, low, high in [('sample_period_seconds', .01, .05), ('hold_seconds', .5, 10),
+    profile = config.get('trajectory_profile', 'legacy')
+    if profile not in ('legacy', 'continuous_sine'):
+        raise ValueError('Unknown trajectory profile')
+    for key, low, high in [('sample_period_seconds', .01, .05), ('hold_seconds', 0 if profile == 'continuous_sine' else .5, 10),
                           ('arrival_tolerance_deg', .05, 2), ('start_tolerance_deg', .05, 2),
                           ('tracking_limit_deg', .5, 5)]:
         scalar(config[key], low, high, key)
@@ -204,6 +211,9 @@ def smooth_path(path, speed, dt):
 
 
 def build_plan(config, description, initial_deg):
+    if config.get('trajectory_profile') == 'continuous_sine':
+        from w3_smooth_coverage import build_smooth_plan
+        return build_smooth_plan(config, description, initial_deg)
     model = ArmModel(description, config['side'], config['tool_frame'])
     home, bounds = validate_config(config, model)
     initial = vector(initial_deg, 7, 'initial command')
@@ -292,7 +302,10 @@ def validate_plan(plan):
     if not isinstance(steps, list) or not 1 <= len(steps) <= 1000:
         raise ValueError('Invalid number of steps')
     seen = set()
-    for step in steps:
+    continuous = config.get('trajectory_profile') == 'continuous_sine'
+    previous_velocity = np.zeros(7)
+    previous_acceleration = np.zeros(7)
+    for step_index, step in enumerate(steps):
         if not isinstance(step, dict) or set(step) != {'name', 'phase', 'kind', 'speed', 'repetition', 'joint', 'duration_seconds', 'hold_seconds', 'times_seconds', 'positions_deg'}:
             raise ValueError('Invalid step fields')
         if not isinstance(step['name'], str) or not step['name'] or step['name'] in seen:
@@ -304,7 +317,7 @@ def validate_plan(plan):
             raise ValueError('Invalid repetition')
         if step['joint'] is not None and (type(step['joint']) is not int or not 0 <= step['joint'] <= 6):
             raise ValueError('Invalid joint index')
-        scalar(step['hold_seconds'], .5, 10, 'step hold')
+        scalar(step['hold_seconds'], 0 if config.get('trajectory_profile') == 'continuous_sine' else .5, 10, 'step hold')
         scalar(step['duration_seconds'], .1, 600, 'step duration')
         if not isinstance(step['times_seconds'], list) or not 2 <= len(step['times_seconds']) <= 60001:
             raise ValueError('Invalid time samples')
@@ -323,10 +336,24 @@ def validate_plan(plan):
         if step['phase'] != 'transition' and (np.any(q < bounds[:, 0] - 1e-8) or np.any(q > bounds[:, 1] + 1e-8)):
             raise ValueError('Trajectory exceeds working bounds')
         v = np.diff(q, axis=0) / dt[:, None]
-        a = np.diff(np.vstack([np.zeros(7), v, np.zeros(7)]), axis=0) / config['sample_period_seconds']
+        # Logical block boundaries need not be stationary in a continuous recording.
+        if continuous:
+            if step_index+1<len(steps):
+                next_q=np.asarray(steps[step_index+1]['positions_deg'][:2])
+                next_velocity=(next_q[1]-next_q[0])/config['sample_period_seconds']
+            else:next_velocity=np.zeros(7)
+            a=np.diff(np.vstack([previous_velocity,v,next_velocity]),axis=0)/config['sample_period_seconds']
+        else:
+            a=np.diff(np.vstack([np.zeros(7),v,np.zeros(7)]),axis=0)/config['sample_period_seconds']
         speed = config['speeds'][step['speed']]
         if np.any(np.abs(v) > np.array(speed['velocity_deg_s']) + 1e-5) or np.any(np.abs(a) > np.array(speed['acceleration_deg_s2']) + 1e-5):
             raise ValueError('Trajectory exceeds velocity/acceleration limit')
+        if config.get('trajectory_profile') == 'continuous_sine':
+            jerk=np.diff(np.vstack([previous_acceleration,a]),axis=0)/config['sample_period_seconds']
+            previous_acceleration=a[-2] if len(a)>1 else a[-1]
+            previous_velocity=v[-1]
+            if np.max(np.abs(jerk))>120.0001:
+                raise ValueError('Smooth trajectory exceeds discrete jerk limit')
         if step['phase'] == 'single_joint':
             if step['joint'] is None or np.max(np.abs(np.delete(q - home, step['joint'], axis=1))) > 1e-7:
                 raise ValueError('Single-joint sweep moves other joints')

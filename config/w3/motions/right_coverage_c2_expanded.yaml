@@ -1,0 +1,76 @@
+version: 1
+name: right_free_space_c2_near_limits_v2
+side: right
+tool_frame: right_attachment_point
+trajectory_profile: continuous_sine
+home_deg:
+- 0
+- 50
+- 0
+- -55
+- 0
+- 0
+- 0
+working_bounds_deg:
+- - -135.0
+  - 105.0
+- - -0.5
+  - 155.4
+- - -115.9
+  - 115.9
+- - -99.0
+  - 69.0
+- - -115.9
+  - 115.9
+- - -31.9
+  - 31.9
+- - -72.0
+  - 72.0
+repeats: 2
+sample_period_seconds: 0.01
+hold_seconds: 0.0
+hardware_margin_deg: 3.0
+arrival_tolerance_deg: 1.5
+start_tolerance_deg: 1.5
+tracking_limit_deg: 5.0
+speeds:
+  slow:
+    velocity_deg_s:
+    - 6.0
+    - 6.0
+    - 6.0
+    - 6.0
+    - 6.0
+    - 6.0
+    - 6.0
+    acceleration_deg_s2:
+    - 24.0
+    - 24.0
+    - 24.0
+    - 24.0
+    - 24.0
+    - 24.0
+    - 24.0
+  fast:
+    velocity_deg_s:
+    - 20.0
+    - 20.0
+    - 20.0
+    - 20.0
+    - 20.0
+    - 20.0
+    - 20.0
+    acceleration_deg_s2:
+    - 80.0
+    - 80.0
+    - 80.0
+    - 80.0
+    - 80.0
+    - 80.0
+    - 80.0
+cartesian:
+  line_half_extent_m: 0.02
+  circle_radius_m: 0.02
+  waypoint_spacing_m: 0.0005
+continuous_repetitions: true
+finish_at_home: true

@@ -13,9 +13,9 @@ from factr2_next.data_collection.quality import check, sha256, sidecar_path, mak
 from factr2_next.w3_config import SIGNALS
 
 
-def fixture(path, n=110, phase=0):
+def fixture(path, n=110, phase=0, hz=50):
     meta=dict(contract_version='w3_next_v1',side='left',joint_order=[f'left_joint_{i}' for i in range(7)],
-        sample_hz=50,session_id=path.stem,topics={k:dict(topic='/factr2/left/'+v[0],field=v[1]) for k,v in SIGNALS.items()},
+        sample_hz=hz,session_id=path.stem,topics={k:dict(topic='/factr2/left/'+v[0],field=v[1]) for k,v in SIGNALS.items()},
         software_commits={'factr2':'test','w3':'test'},config_sha256='test',tool='mock_tool',gripper='excluded',
         load='none',calibration={'id':'synthetic_v1'},control={'id':'mock'},trajectory_id=str(phase),
         contact={'present':False,'label':'synthetic_free'},temperature={'source':'unavailable'},time_source='test',
@@ -23,10 +23,22 @@ def fixture(path, n=110, phase=0):
     writer=H5Writer(path,path.stem,SIGNALS,meta); writer.start_episode()
     for i in range(n):
         q=np.arange(7,dtype=np.float32)*.01 + np.sin((i+phase)*.04)*.1
-        writer.append(10**15+i*20_000_000,{ 'joint_pos':q, 'joint_vel':q*.3+.1,
+        writer.append(10**15+i*int(1e9/hz),{ 'joint_pos':q, 'joint_vel':q*.3+.1,
             'joint_cmd':q+.2, 'measured_joint_torque':q*.4+1})
     writer.close()
     return path
+
+
+def test_100_hz_requires_true_frequency_and_rejects_mixed_rates(tmp_path):
+    paths=[fixture(tmp_path/f'{s}.h5',hz=100) for s in ('train','val','test')]
+    assert all(check(p)['accepted'] for p in paths)
+    make_manifest(tmp_path/'split.json',dict(zip(('train','val','test'),[[p] for p in paths])),'100hz')
+    meta=json.loads(sidecar_path(paths[0]).read_text());meta['sample_hz']=50
+    sidecar_path(paths[0]).write_text(json.dumps(meta))
+    assert any('frequency' in e for e in check(paths[0])['errors'])
+    mixed=fixture(tmp_path/'mixed.h5',hz=50)
+    with pytest.raises(ValueError,match='profile_mismatch'):
+        make_manifest(tmp_path/'mixed.json',dict(train=[mixed],val=[paths[1]],test=[paths[2]]),'mixed')
 
 
 def refresh(path):

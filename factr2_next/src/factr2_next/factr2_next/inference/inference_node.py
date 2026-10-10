@@ -20,6 +20,7 @@ from std_msgs.msg import Bool, Float32
 
 from factr2_next.inference.checkpoint import load_checkpoint
 from factr2_next.inference.history_buffer import HistoryBuffer
+from factr2_next.inference.operating_envelope import OperatingEnvelope
 
 
 INPUT_KEYS = ("joint_pos", "joint_vel", "joint_cmd", "measured_joint_torque")
@@ -102,9 +103,11 @@ class InferenceNode(Node):
             Path(str(self.cfg["checkpoint_dir"])).expanduser(),
             device=self.cfg.get("device", "cpu"),
             expected=({'side':self.cfg['side'],'joint_order':self.cfg['joint_names'],
-                       'sample_hz':50,'history':50} if self.w3 else None),
+                       'sample_hz':self.cfg.get('sample_hz',50),'history':50} if self.w3 else None),
         )
         self.buffer = HistoryBuffer(self.loaded.history)
+        self.operating_envelope = OperatingEnvelope(
+            self.cfg.get('operating_envelope'), len(self.cfg.get('joint_names', [])))
         self.torque_filter = TorqueFilter(self.cfg.get("smoothing", {}))
         self.contact_magnitude_cfg = self._contact_magnitude_cfg()
         self.contact_cfg = self.cfg.get("contact", {})
@@ -177,7 +180,8 @@ class InferenceNode(Node):
         scale=float(c.get('scale',1.));low=float(self.contact_cfg.get('low_threshold',1.));high=float(self.contact_cfg.get('high_threshold',2.))
         if not np.isfinite([scale,low,high]).all() or scale<=0 or not 0<=low<=high:
             raise ValueError('contact_scale_thresholds')
-        if self.w3 and self.torque_filter.sample_hz != 50:raise ValueError('W3 smoothing rate must be 50')
+        if self.w3 and self.torque_filter.sample_hz != self.loaded.metadata['sample_hz']:
+            raise ValueError('W3 smoothing rate must match checkpoint sample_hz')
 
     def _invalidate(self, reason, state='invalid'):
         if self.state != state or self.reason != reason or len(self.buffer.rows):
@@ -276,9 +280,7 @@ class InferenceNode(Node):
                 or max(abs(mse),abs(normalized_contact_magnitude))>np.finfo(np.float32).max):
             self.counts['dropped']+=1
             self._invalidate('output_nonfinite_or_float32_range');return
-        contact = self._update_contact_state(normalized_contact_magnitude)
-
-        self.state,self.reason="valid","ok"
+        contact = self._update_observation_state(normalized_contact_magnitude)
         self.counts["outputs"]+=1;self.output_times.append(time.monotonic())
         self.last_output_stamp=self.last_stamp
         stamp = msgs[-1].header.stamp
@@ -290,6 +292,16 @@ class InferenceNode(Node):
             Float32(data=normalized_contact_magnitude)
         )
         self.pubs["contact"].publish(Bool(data=contact))
+
+    def _update_observation_state(self, magnitude):
+        outside = self.operating_envelope.outside_joints(self.buffer.array())
+        if outside:
+            self.state = 'out_of_scope'
+            self.reason = 'outside_collection_range:' + ','.join(self.names[i] for i in outside)
+            self.contact_state = False
+            return False
+        self.state, self.reason = 'valid', 'ok'
+        return self._update_contact_state(magnitude)
 
     def _predict_free_torque(self):
         norm = self.loaded.normalization
