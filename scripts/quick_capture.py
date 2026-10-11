@@ -19,6 +19,18 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 W3 = ROOT.parent / 'dual_arm_robot'
+DISK_RESERVE = 512 * 1024**2
+
+
+def check_capture_space(path, duration_seconds=0., bag_profile='full'):
+    # Conservative planning estimate, not a guarantee of compression or traffic.
+    rate = (2. if bag_profile == 'full' else .5) * 1024**2
+    required = DISK_RESERVE + max(0., duration_seconds)*rate
+    free = shutil.disk_usage(path).free
+    if free < required:
+        raise RuntimeError(f'磁盘空间不足：剩余 {free/1024**3:.2f} GiB，'
+                           f'本次预计至少需要 {required/1024**3:.2f} GiB；请先清理或缩小采集计划。')
+    return required
 
 
 def runtime_environment(domain):
@@ -76,6 +88,20 @@ def parameters(text):
     raise ValueError('Parameter dump has no ros__parameters')
 
 
+def runtime_parameters(node, env, workspace):
+    """Read live services after discovery, without a potentially stale CLI daemon."""
+    command = w3_command(['ros2', 'param', 'dump', '--no-daemon',
+                          '--spin-time', '3', node], env, workspace)
+    for attempt in range(3):
+        try:
+            result = run(command, env, timeout=30)
+            parameters(result)  # Never accept an empty/error snapshot.
+            return result
+        except RuntimeError as exc:
+            if str(exc).strip() != 'Node not found' or attempt == 2:
+                raise
+
+
 def calibration_from_description(description):
     root = ET.fromstring(description)
     paths = {p.text.strip() for p in root.findall('./ros2_control/hardware/param')
@@ -90,7 +116,8 @@ def calibration_from_description(description):
     return path
 
 
-def prepare(session, side, snapshots, load, tool, motion=None, workspace=None, frequency=50):
+def prepare(session, side, snapshots, load, tool, motion=None, workspace=None, frequency=50,
+            collision_report=None, validation_only=False):
     audit = session / 'audit'
     audit.mkdir(parents=True)
     for name, text in snapshots.items():
@@ -121,7 +148,15 @@ def prepare(session, side, snapshots, load, tool, motion=None, workspace=None, f
       workspace_path/'src/ieir_controllers/src/gravity_compensation_controller.cpp',
       workspace_path/'src/ieir_controllers/include/ieir_controllers/gravity_compensation_controller.hpp',
       workspace_path/'src/ieir_controllers/include/ieir_controllers/smooth_friction.hpp',
-      ROOT/'scripts/w3_coverage_motion.py',ROOT/'scripts/w3_smooth_coverage.py',ROOT/'scripts/w3_coverage_plan.py']
+      ROOT/'scripts/w3_coverage_motion.py',ROOT/'scripts/w3_smooth_coverage.py',ROOT/'scripts/w3_coverage_plan.py',
+      ROOT/'scripts/w3_baseline_protocol.py',ROOT/'scripts/w3_baseline_resume.py',
+      ROOT/'scripts/w3_motion_audit.py',
+      ROOT/'scripts/w3_motion_sequence.py',ROOT/'scripts/prepare_w3_baseline_campaign.py',
+      ROOT/'scripts/quick_capture.py',
+      ROOT/'factr2_w3_adapter/factr2_w3_adapter/adapter_node.py',
+      ROOT/'factr2_w3_adapter/factr2_w3_adapter/validation.py',
+      ROOT/'factr2_next/src/factr2_next/factr2_next/data_collection/recorder_node.py',
+      ROOT/'factr2_next/src/factr2_next/factr2_next/data_collection/h5_writer.py']
     manifest={}
     for source in sources:
         if source.is_file():
@@ -143,9 +178,18 @@ def prepare(session, side, snapshots, load, tool, motion=None, workspace=None, f
         audit_paths=[str(audit / 'bag')], health_gate_enabled=True)
     if motion is not None:
         plan, raw, digest = motion
+        if plan.get('config', {}).get('baseline_protocol'):
+            if (not collision_report or collision_report.get('accepted') is not True
+                    or collision_report.get('plan_sha256') != digest
+                    or collision_report.get('robot_description_sha256') != plan['model_sha256']):
+                raise ValueError('New baseline protocol requires matching accepted collision report')
+            (audit/'collision.json').write_text(json.dumps(collision_report, indent=2)+'\n')
         (audit / 'motion.yaml').write_bytes(raw)
         cfg['metadata']['trajectory_id'] = f'{plan["name"]}:sha256:{digest}'
         cfg['metadata']['audit_paths'] += [str(audit / 'motion.yaml'), str(audit / 'motion_run.json')]
+    if validation_only:
+        # Contact/release recordings must never enter a free-space train split.
+        cfg['metadata']['contact'] = {'present': True, 'label': 'mixed_contact_validation_only'}
     (session / 'record.yaml').write_text(yaml.safe_dump(cfg, sort_keys=False))
 
 
@@ -209,7 +253,12 @@ def main():
     parser.add_argument('--tool', default='bare_attachment_v1')
     parser.add_argument('--frequency', type=int, choices=[50, 100], default=50)
     parser.add_argument('--motion', type=Path, help='Freeze the motion file for terminal D; C never publishes it')
+    parser.add_argument('--validation-only', action='store_true', help='Mixed contact/release validation, forbidden as training data')
+    parser.add_argument('--bag-profile', choices=['full', 'minimal'], default='full',
+                        help='minimal omits redundant raw bridge/state traffic; H5 four streams are unchanged')
     args = parser.parse_args()
+    if args.validation_only and args.motion:
+        parser.error('Contact validation uses position holding; no automatic motion plan')
     workspace = args.w3_workspace.expanduser().resolve()
     motion = None
     if args.motion is not None:
@@ -224,6 +273,8 @@ def main():
     if not sys.stdin.isatty():
         parser.error('Run capture in an interactive terminal; Enter stops this session')
     env = runtime_environment(args.domain)
+    duration = sum(s['duration_seconds'] + s['hold_seconds'] for s in motion[0]['steps']) if motion else 0.
+    check_capture_space(ROOT, duration, args.bag_profile)
     for folder in (workspace / 'log/ros', workspace / 'log/tmp'):
         folder.mkdir(parents=True, exist_ok=True)
     children = []
@@ -276,8 +327,13 @@ def main():
         for filename, node in [('position.yaml', '/joint_position_controller'),
                                ('gravity.yaml', '/gravity_compensation_controller'),
                                ('robot_description.yaml', '/robot_state_publisher')]:
-            snapshots[filename] = run(w3_command(['ros2', 'param', 'dump', node], env, workspace), env)
-        prepare(session, args.side, snapshots, args.load, args.tool, motion, workspace=workspace, frequency=args.frequency)
+            print(f'读取实时参数：{node}', flush=True)
+            snapshots[filename] = runtime_parameters(node, env, workspace)
+        collision = None
+        if motion and motion[0].get('config', {}).get('baseline_protocol'):
+            collision = json.loads(args.motion.with_suffix('.collision.json').read_text())
+        prepare(session, args.side, snapshots, args.load, args.tool, motion, workspace=workspace,
+                frequency=args.frequency, collision_report=collision, validation_only=args.validation_only)
         run(next_command(['python', 'scripts/check_w3_configs.py', '--runtime', 'record',
                           '--config', session / 'record.yaml']), env)
         # Refuse to duplicate existing capture components on this side.
@@ -295,6 +351,10 @@ def main():
                   '/joint_position_controller/command_state', '/joint_position_command', '/factr2/w3_health']
         topics += [root + '/' + key for key in
                    ('adapter_status', 'joint_pos', 'joint_vel', 'joint_cmd', 'joint_effort')]
+        if args.bag_profile == 'minimal':
+            topics = [t for t in topics if t not in ('/w3_robot_bridge_node/state', '/joint_states')]
+        (session/'audit/bag_profile.json').write_text(json.dumps(dict(profile=args.bag_profile, topics=topics,
+            reserve_bytes=DISK_RESERVE, estimated_duration_seconds=duration), indent=2)+'\n')
         launch('bag', w3_command(['ros2', 'bag', 'record', '-o', session / 'audit/bag', *topics], env, workspace))
         launch('recorder', next_command(['ros2', 'run', 'factr2_next', 'next_record', '--ros-args',
                '-p', f'config_file:={session / "record.yaml"}', '-r', f'__node:=quick_recorder_{args.side}']))
@@ -318,10 +378,14 @@ def main():
             active_info = {'pid': os.getpid(), 'session': str(session), 'side': args.side,
                            'domain': args.domain, 'motion_sha256': motion[2]}
             write_json(active_file, active_info)
-        print('\n已开始录制。现在可在另一个终端发送关节目标。\n运动结束后回到这里按 Enter 停录并检查。', flush=True)
+        if args.validation_only:
+            print('\n已开始接触/卸载验证录制，此数据禁止训练。保持位置模式，按现场确认的步骤测试并标注时段；按 Enter 停录。', flush=True)
+        else:
+            print('\n已开始无接触录制。现在可在另一个终端发送关节目标。\n运动结束后回到这里按 Enter 停录并检查。', flush=True)
         if motion is not None:
             print(f'D 请执行动作文件：{args.motion.resolve()}\n本次只接受这份文件一次；动作内容已冻结到 audit/motion.yaml。', flush=True)
         while True:
+            check_capture_space(ROOT)
             failed = [label for label, proc in children if proc.poll() is not None]
             if failed:
                 raise RuntimeError(f'采集中进程退出：{failed}；本次不视为完整成功，请检查日志。')

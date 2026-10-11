@@ -1,0 +1,76 @@
+version: 1
+scope: proposed_engineering_thresholds_freeze_before_test_not_paper_accuracy
+per_joint_abs_bias_nm:
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+per_joint_abs_p95_nm:
+- 0.25
+- 0.25
+- 0.25
+- 0.25
+- 0.25
+- 0.25
+- 0.25
+per_joint_rmse_nm:
+- 0.2
+- 0.2
+- 0.2
+- 0.2
+- 0.2
+- 0.2
+- 0.2
+per_joint_return_gap_nm:
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+release_recovery_nm:
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+static_pose_tolerance_deg: 1.5
+static_measured_span_deg: 0.5
+static_speed_rad_s: 0.04
+release_settle_seconds: 2.0
+minimum_free_window_seconds: 5.0
+maximum_post_release_drift_nm:
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+- 0.1
+minimum_contact_norm_nm: 0.5
+minimum_release_cases: 3
+endpoint_abs_bias:
+- 1.0
+- 1.0
+- 1.0
+- 0.15
+- 0.15
+- 0.15
+endpoint_abs_p95:
+- 3.0
+- 3.0
+- 3.0
+- 0.4
+- 0.4
+- 0.4
+endpoint_solver:
+  characteristic_length_m: 0.4
+  damping: 0.005
+  max_condition: 100.0
+  max_relative_residual: 0.35

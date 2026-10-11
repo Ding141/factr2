@@ -117,7 +117,7 @@ def make_datasets(data_cfg, arm):
     return Subset(dataset, train_idx), Subset(dataset, val_idx)
 
 
-def run_epoch(model, loader, device, opt=None, gradient_clip=None):
+def run_epoch(model, loader, device, opt=None, gradient_clip=None, output_scale=None):
     model.train(opt is not None)
     total, n = 0.0, 0
     for x, y in loader:
@@ -125,7 +125,13 @@ def run_epoch(model, loader, device, opt=None, gradient_clip=None):
         y = y.to(device)
         pred = model(x)
         # Paper Sec. 4, Eq. (4): L2 regression trains f_theta(x_i) -> tau_m,i.
-        loss = F.mse_loss(pred, y)
+        if output_scale is None:
+            loss = F.mse_loss(pred, y)
+        else:
+            # Undo target standardization in the loss only. Inputs/outputs and
+            # inference normalization are unchanged; optimize MSE in (N m)^2.
+            scale = torch.as_tensor(output_scale, dtype=pred.dtype, device=device)
+            loss = F.mse_loss(pred * scale, y * scale)
         if opt is not None:
             opt.zero_grad(set_to_none=True)
             loss.backward()

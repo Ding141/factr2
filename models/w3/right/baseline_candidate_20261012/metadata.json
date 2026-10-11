@@ -1,0 +1,65 @@
+{
+  "source": "real",
+  "tool": "bare_attachment_v1",
+  "gripper": "absent",
+  "load": "empty_v1",
+  "calibration": {
+    "path": "/home/venom/factr2/data/quick_capture/profiles/23532d9890f7e3ece77a80f0af8a26742c6bcf85a1cd07ceda3147dd528e6838/calibration.yaml",
+    "sha256": "23532d9890f7e3ece77a80f0af8a26742c6bcf85a1cd07ceda3147dd528e6838"
+  },
+  "control": {
+    "gains": {
+      "position_params": "/home/venom/factr2/data/quick_capture/right/20261011_215544_913483/audit/position.yaml"
+    },
+    "feedforward": {
+      "gravity_params": "/home/venom/factr2/data/quick_capture/right/20261011_215544_913483/audit/gravity.yaml",
+      "friction_model": "/home/venom/factr2/data/quick_capture/right/20261011_215544_913483/audit/friction_model.yaml",
+      "friction_sha256": "5b3fb0c9415b973d951c0ee8d2fee4af974a8ceeb735137271a68e98febe71e1"
+    }
+  },
+  "control_profile_sha256": "82af2663601b7c902f410b5270b867d010a4e0539fee0c8f11b203b42fbfec6a",
+  "schema": "w3_checkpoint_v1",
+  "contract_version": "w3_next_v1",
+  "side": "right",
+  "joint_order": [
+    "right_joint_0",
+    "right_joint_1",
+    "right_joint_2",
+    "right_joint_3",
+    "right_joint_4",
+    "right_joint_5",
+    "right_joint_6"
+  ],
+  "feature_order": [
+    "q",
+    "qdot",
+    "q_cmd-q"
+  ],
+  "history": 50,
+  "input_size": 21,
+  "output_size": 7,
+  "sample_hz": 100,
+  "dataset_id": "baseline_campaign_20261012_000958_resume4",
+  "manifest_sha256": "0f5a3f301b3dab1fd3b5225101603eacf19e801bebc8e2ae045012bc7c84233d",
+  "seed": 0,
+  "resolved_device": "cpu",
+  "software_versions": {
+    "python": "3.10.12",
+    "numpy": "1.26.4",
+    "torch": "2.5.1+cpu"
+  },
+  "w3_workspace": "/home/venom/dual_arm_robot",
+  "evaluation_scope": "independent_recording_sessions",
+  "training_source_sha256": "8e2e67c6f286d5adea22e3a39e8f51c0091055a1f948101e9696e481ec18c7ba",
+  "software_commits": {
+    "factr2": "e1643b4ad52102941c06a797fb4257d31e456fa0",
+    "w3": "66eb8c6e25d1d2d3aeb52d7bb1eb08cac5ffc07c"
+  },
+  "baseline": "train eligible-label mean Nm",
+  "artifact_sha256": {
+    "model.pt": "20e673f4d1980c3c0d52e9b0f74bd70b7eefe8c5c2e70f7432b427c2cd9c3eeb",
+    "config.yaml": "1a462a8a1440d1707333001e016d71ba9cf501cafd92cb86bb0cacad00197f62",
+    "normalization.npz": "569c5693a0fa4d660657d7884b0f751743a64f8d36bae2e99ce5bf7b5f426edb",
+    "metrics.json": "e80c4181ebd113474ce8a8d8420de66a62cb63848835025dda217fabe09ecf40"
+  }
+}

@@ -136,8 +136,10 @@ class RecorderNode(Node):
                            for key, msg in zip(self.keys, msgs)}
                 stamp = min(self._stamp_ns(msg) for msg in msgs)
             if (self.w3 and self.recording and self.last_written_timestamp_ns is not None
-                    and stamp - self.last_written_timestamp_ns > 40_000_000):
-                self._break_segment('gap_over_40ms')
+                    and stamp - self.last_written_timestamp_ns > 2e9 / self.target_hz):
+                # Match the quality checker at both 50 and 100 Hz. Do not let
+                # history windows cross a gap that later invalidates an episode.
+                self._break_segment('gap_over_two_sample_periods')
             self.latest_samples = samples
             self.latest_timestamp_ns = stamp
             self.latest_sync_time = time.monotonic()

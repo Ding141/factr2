@@ -6,6 +6,19 @@ Assumes all external loading acts at the selected tool origin.
 import numpy as np
 
 
+def geometry_quality(jacobian, characteristic_length_m=.4):
+    """Shared planner/runtime criterion; rotation of tool axes leaves SVD unchanged."""
+    j = np.asarray(jacobian, dtype=float)
+    if (j.shape != (6, 7) or not np.isfinite(j).all()
+            or not np.isfinite(characteristic_length_m) or characteristic_length_m <= 0):
+        raise ValueError('geometry_shape_or_length')
+    scaled = j.copy(); scaled[:3] /= characteristic_length_m
+    s = np.linalg.svd(scaled.T, compute_uv=False)
+    return dict(condition_number=float(s[0]/s[-1]) if s[-1] > 1e-12 else None,
+                scaled_singular_values=s.tolist(), observable_rank=int(np.sum(s > 1e-8)),
+                scaled_noise_gain=float(1/s[-1]) if s[-1] > 1e-12 else None)
+
+
 def estimate_wrench(jacobian, torque, *, characteristic_length_m=0.4,
                     damping=0.005, max_condition=100., max_relative_residual=0.35):
     j = np.asarray(jacobian, dtype=float)

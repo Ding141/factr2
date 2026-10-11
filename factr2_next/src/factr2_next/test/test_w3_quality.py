@@ -142,3 +142,39 @@ def test_gap_nanosecond_boundary(tmp_path):
     refresh(path)
     report=check(path)
     assert not report['accepted'] and 'ep_0000:gap' in report['errors']
+
+
+def test_recorder_100hz_splits_30ms_gap_without_interpolating_or_losing_valid_frames(tmp_path):
+    from types import SimpleNamespace as NS
+    import threading
+    from sensor_msgs.msg import JointState
+    from factr2_next.data_collection.recorder_node import RecorderNode
+    template = fixture(tmp_path/'template.h5', hz=100)
+    meta = json.loads(sidecar_path(template).read_text()); meta['episodes'] = {}
+    raw = tmp_path/'recorded.h5'; meta['session_id'] = raw.stem
+    writer = H5Writer(raw,raw.stem,SIGNALS,meta); writer.start_episode()
+    now = [10**15]
+    names = [f'left_joint_{i}' for i in range(7)]
+    specs = {k:dict(field=field) for k,(_,field) in SIGNALS.items()}
+    n = NS(lock=threading.Lock(),w3=True,keys=list(SIGNALS),topic_cfg=specs,
+        cfg={'joint_names':names},target_hz=100.,recording=True,record_start_stamp_ns=now[0]-1,
+        latest_timestamp_ns=None,last_written_timestamp_ns=None,segment_pending=False,
+        writer=writer,episode_count=1,rows_written_since_check=0,invalid_frames=0,
+        get_clock=lambda:NS(now=lambda:NS(nanoseconds=now[0])))
+    n._break_segment = lambda reason:RecorderNode._break_segment(n,reason)
+    for tick in list(range(60))+list(range(62,122)):
+        now[0] = 10**15+tick*10_000_000
+        msgs = []
+        for key,(_,field) in SIGNALS.items():
+            m=JointState();m.name=names.copy()
+            m.header.stamp.sec,m.header.stamp.nanosec=divmod(now[0],10**9)
+            setattr(m,field,[float(i) for i in range(7)]);msgs.append(m)
+        RecorderNode._sync_callback(n,*msgs)
+    writer.close()
+    result=check(raw)
+    assert result['accepted'] and set(result['episodes']) == {'ep_0000','ep_0001'}
+    assert all(e['rows'] == 60 for e in result['episodes'].values())
+    assert result['metadata']['episodes']['ep_0000']['end_reason'] == 'gap_over_two_sample_periods'
+    with h5py.File(raw,'r') as h:
+        a=h['ep_0000/joint_pos/timestamps'][-1];b=h['ep_0001/joint_pos/timestamps'][0]
+    assert b-a == 30_000_000 and n.rows_written_since_check == 120

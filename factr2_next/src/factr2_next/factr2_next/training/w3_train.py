@@ -22,6 +22,9 @@ def train(cfg):
     manifest_path = str(Path(cfg['data']['manifest']).resolve())
     expected = {'side':cfg['side'], 'joint_order':cfg['joint_names'], 'contract_version':cfg['contract_version'], 'sample_hz':cfg['data'].get('sample_hz',50)}
     manifest, reports = validate_manifest(manifest_path, expected)
+    if cfg['data'].get('require_independent_sessions', False):
+        from factr2_next.data_collection.campaign import validate_independent_manifest
+        validate_independent_manifest(manifest, reports)
     cfg['data']['manifest'] = manifest_path
     seed = int(cfg['train'].get('seed',0));set_seed(seed)
     torch.set_num_threads(int(cfg['train'].get('cpu_threads',1)))
@@ -34,6 +37,10 @@ def train(cfg):
          cfg['data'].get('memory_budget_mb',512)) for s in ('train','val')]
     norm = train_ds.fit_normalization()
     train_ds.norm = val_ds.norm = norm
+    loss_units = cfg['train'].get('loss_units', 'normalized')
+    if loss_units not in ('normalized', 'physical_nm'):
+        raise ValueError('Invalid loss_units')
+    output_scale = norm['y_std'] if loss_units == 'physical_nm' else None
     model = build_model(cfg['model'],21,7,50).to(device)
     optimizer=cfg['train'].get('optimizer','adam')
     if optimizer not in ('adam','adamw'): raise ValueError('Unsupported optimizer')
@@ -47,6 +54,9 @@ def train(cfg):
                'best_epoch':None, 'seed':seed, 'device':str(device), 'window_counts':{'train':len(train_ds),'val':len(val_ds)},
                'dataset_step_bytes':train_ds.step_bytes+val_ds.step_bytes,
                'eager_window_bytes':(len(train_ds)+len(val_ds))*50*21*4}
+    metrics['loss_units'] = loss_units
+    if loss_units == 'physical_nm':
+        metrics['selection_rule'] = 'minimum validation physical Nm squared MSE; first epoch on ties'
     best, state = float('inf'), None
     early=cfg['train'].get('early_stopping',{})
     patience=int(early.get('patience',20)); warmup=int(early.get('warmup',10)); delta=float(early.get('min_delta',1e-5))
@@ -55,8 +65,9 @@ def train(cfg):
     started=time.monotonic()
     for epoch in range(1,epochs+1):
         extra={'gradient_clip':cfg['train']['gradient_clip']} if 'gradient_clip' in cfg['train'] else {}
-        tr=run_epoch(model,loaders[0],device,opt,**extra)
-        with torch.inference_mode():va=run_epoch(model,loaders[1],device)
+        scale_args = {'output_scale':output_scale} if output_scale is not None else {}
+        tr=run_epoch(model,loaders[0],device,opt,**scale_args,**extra)
+        with torch.inference_mode():va=run_epoch(model,loaders[1],device,**scale_args)
         if not np.isfinite([tr,va]).all():
             raise ValueError('nonfinite_loss')
         metrics['train_loss'].append(tr);metrics['val_loss'].append(va)
@@ -84,6 +95,8 @@ def train(cfg):
     w3_workspace=Path(source.get('w3_workspace',
         Path(__file__).resolve().parents[5].parent/'dual_arm_robot')).expanduser().resolve()
     meta={k:copy.deepcopy(source[k]) for k in ('source','tool','gripper','load','calibration','control')}
+    if 'control_profile_sha256' in source:
+        meta['control_profile_sha256'] = source['control_profile_sha256']
     meta.update(schema='w3_checkpoint_v1',contract_version=cfg['contract_version'],side=cfg['side'],
         joint_order=cfg['joint_names'],feature_order=FEATURE_ORDER,history=50,input_size=21,output_size=7,sample_hz=cfg['data'].get('sample_hz',50),
         dataset_id=manifest['dataset_id'],manifest_sha256=sha256(manifest_path),seed=seed,resolved_device=str(device),

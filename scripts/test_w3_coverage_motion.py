@@ -15,7 +15,7 @@ import numpy as np
 import yaml
 
 from w3_coverage_plan import ArmModel, build_plan, load_capture_motion, validate_plan
-from w3_coverage_motion import CoverageClient, check_start, coverage_report, execute, window_indices
+from w3_coverage_motion import CoverageClient, check_start, coverage_report, execute, window_indices, scheduled_position
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -125,6 +125,14 @@ class CoverageTests(unittest.TestCase):
             self.assertLessEqual(times[end-1], elapsed+.621)
             self.assertGreaterEqual(end-start, 2)
 
+    def test_single_bracket_matches_interpolation_at_boundaries_and_between_samples(self):
+        rng = np.random.default_rng(1701)
+        times = np.cumsum(rng.uniform(.001,.1,2000))
+        positions = rng.normal(size=(len(times),7))
+        for elapsed in np.r_[times[[0,1,-2,-1]], -1., times[-1]+1., rng.uniform(0,times[-1],100)]:
+            expected = [np.interp(elapsed,times,positions[:,j]) for j in range(7)]
+            np.testing.assert_allclose(scheduled_position(times,positions,elapsed),expected,atol=1e-12)
+
     def test_failure_prevents_all_following_steps(self):
         class Fake:
             def __init__(self): self.calls = 0
@@ -175,6 +183,9 @@ class CoverageTests(unittest.TestCase):
                 client.state['cmd_stamp'] = client.node.ns
             client.ros = SimpleNamespace(spin_once=spin)
             client.check_mode = lambda: None
+            # Feedback freshness is covered separately; this fake simulates a
+            # healthy stream to exercise common-clock windows/capture faults.
+            client.ready = lambda: True
             def guard():
                 if client.expected_deg is not None:
                     np.testing.assert_allclose(np.rad2deg(client.state['cmd']), client.expected_deg, atol=.00001)
@@ -200,6 +211,25 @@ class CoverageTests(unittest.TestCase):
             self.assertGreater(len(messages), 3)
             self.assertEqual(len({(m.header.stamp.sec,m.header.stamp.nanosec) for m in messages}), 1)
             np.testing.assert_allclose(messages[-1].points[-1].positions, np.deg2rad(step['positions_deg'][-1]))
+            # A stalled callback must still prevent publishing motion; the new
+            # diagnostics identify spin time without relaxing the 200ms cap.
+            client = make_client()
+            normal_spin = client.ros.spin_once
+            def stalled_spin(*args, **kwargs):
+                normal_spin(*args, **kwargs)
+                client.node.ns += 250_000_000
+            client.ros.spin_once = stalled_spin
+            with patch('w3_coverage_motion.time.monotonic', side_effect=lambda: client.node.ns*1e-9):
+                with self.assertRaisesRegex(RuntimeError, 'stalled >200ms .*spin=260.0ms'):
+                    client.play(step, lambda: None)
+            self.assertEqual(client.node.pub.messages, [])
+            client = make_client()
+            def blocked_tick(_):
+                client.node.ns += 250_000_000
+            with patch('w3_coverage_motion.time.monotonic', side_effect=lambda: client.node.ns*1e-9):
+                with self.assertRaisesRegex(RuntimeError, 'stalled >200ms .*before publish'):
+                    client.play(step, lambda: None, on_tick=blocked_tick)
+            self.assertEqual(client.node.pub.messages, [])
 
     def test_report_uses_nanosecond_h5_stamps_and_keeps_real_angles(self):
         import h5py

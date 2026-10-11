@@ -59,6 +59,17 @@ def window_indices(times, elapsed, horizon=.6):
     return start, end
 
 
+def scheduled_position(times, positions, elapsed):
+    """One bracket lookup; avoid copying seven entire strided path columns."""
+    index = int(np.searchsorted(times, elapsed, side='right'))
+    if index == 0:
+        return positions[0].copy()
+    if index == len(times):
+        return positions[-1].copy()
+    fraction = (elapsed-times[index-1])/(times[index]-times[index-1])
+    return positions[index-1] + fraction*(positions[index]-positions[index-1])
+
+
 class CoverageClient(MotionClient):
     def __init__(self, plan):
         super().__init__(plan['side'])
@@ -66,25 +77,45 @@ class CoverageClient(MotionClient):
         self.expected_deg = None
         self.hardware_bounds = ArmModel(plan['robot_description'], plan['side'], plan['config']['tool_frame']).limits_deg
 
+    def health(self, msg):
+        super().health(msg)
+        for diagnostic in msg.status:
+            if diagnostic.name == f'factr2/adapter/{self.side}':
+                values = {v.key:v.value for v in diagnostic.values}
+                self.state['adapter_hz'] = float(values.get('output_hz_last_second', '0'))
+                self.state['adapter_reason'] = diagnostic.message
+
     def guard(self):
         super().guard()
         config = self.plan['config']
         measured = np.rad2deg(self.state['q'])
         if np.any(measured < self.hardware_bounds[:, 0]) or np.any(measured > self.hardware_bounds[:, 1]):
             raise RuntimeError('Measured joint angle exceeds hardware/model limits')
-        if np.max(np.abs(np.rad2deg(np.array(self.state['q']) - self.state['cmd']))) > config['tracking_limit_deg']:
-            raise RuntimeError('Configured tracking error limit exceeded')
+        tracking = np.abs(np.rad2deg(np.array(self.state['q']) - self.state['cmd']))
+        self.monitor_max_tracking = np.maximum(getattr(self, 'monitor_max_tracking', np.zeros(7)), tracking)
+        if np.max(tracking) > config['tracking_limit_deg']:
+            joint = int(np.argmax(tracking))
+            raise RuntimeError(f'Configured tracking error limit exceeded: J{joint+1} '
+                f'{tracking[joint]:.3f} deg > {config["tracking_limit_deg"]:.3f} deg; '
+                f'measured={measured[joint]:.3f} deg, '
+                f'target={np.rad2deg(self.state["cmd"])[joint]:.3f} deg')
         # Detect another command source or a controller holding after a lost window.
         if self.expected_deg is not None and np.max(np.abs(np.rad2deg(self.state['cmd']) - self.expected_deg)) > .5:
             raise RuntimeError('Controller target differs from scheduled path by >0.5 degrees')
 
     def play(self, step, capture_guard, on_tick=None):
         from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
-        self.check_mode()
-        self.guard()
+        # Preparing a long campaign spline can take longer than the feedback
+        # freshness window. Do it before the final ROS preflight, then consume
+        # fresh inputs. No motion has been published during this preparation.
         q = np.asarray(step['positions_deg'])
         times = np.asarray(step['times_seconds'])
         velocity,acceleration=trajectory_derivatives(times,q)
+        positions_rad, velocity_rad, acceleration_rad = map(np.deg2rad, (q, velocity, acceleration))
+        self.check_mode()
+        self.wait_until(self.ready, 'fresh feedback after trajectory preparation')
+        self.guard()
+        capture_guard()
         if np.max(np.abs(np.rad2deg(self.state['cmd']) - q[0])) > .05:
             raise RuntimeError('Controller start target differs from frozen trajectory')
         if self.publisher is None:
@@ -98,21 +129,41 @@ class CoverageClient(MotionClient):
         # All windows share one absolute ROS start time. A stall >0.2s aborts;
         # previously published future motion is limited to about 0.6s.
         last_tick = time.monotonic()
+        previous_phases = {}
+        self.scheduler_monitor = dict(max_gap_ms=0., phase_max_ms={})
         while True:
+            spin_start = time.monotonic()
             self.ros.spin_once(self.node, timeout_sec=.01)
             now_tick = time.monotonic()
+            gap_ms = (now_tick-last_tick)*1000
+            spin_ms = (now_tick-spin_start)*1000
+            self.scheduler_monitor['max_gap_ms'] = max(self.scheduler_monitor['max_gap_ms'],gap_ms)
             if now_tick - last_tick > .2:
-                raise RuntimeError('Motion scheduler stalled >200ms; stop sending windows')
+                raise RuntimeError(f'Motion scheduler stalled >200ms ({gap_ms:.1f}ms); '
+                    f'spin={spin_ms:.1f}ms, previous phases={previous_phases}; stop sending windows')
             last_tick = now_tick
+            phases = dict(spin=spin_ms)
+            phase_start = now_tick
             elapsed = (self.node.get_clock().now().nanoseconds - base_ns) / 1e9
             if elapsed < -.2:
                 raise RuntimeError('ROS clock moved backwards')
             command_elapsed = (self.state.get('cmd_stamp', base_ns) - base_ns) / 1e9
-            self.expected_deg = np.array([np.interp(max(0, command_elapsed), times, q[:, i]) for i in range(7)])
+            self.expected_deg = scheduled_position(times, q, max(0, command_elapsed))
             self.guard()
+            phases['state_guard'] = (time.monotonic()-phase_start)*1000
+            phase_start = time.monotonic()
             capture_guard()
+            phases['capture_guard'] = (time.monotonic()-phase_start)*1000
+            phase_start = time.monotonic()
             if on_tick is not None:
                 on_tick(max(0., elapsed))
+            phases['audit_tick'] = (time.monotonic()-phase_start)*1000
+            work_ms = (time.monotonic()-last_tick)*1000
+            if work_ms > 200.:
+                self.scheduler_monitor['max_gap_ms'] = max(self.scheduler_monitor['max_gap_ms'],work_ms)
+                raise RuntimeError(f'Motion scheduler stalled >200ms ({work_ms:.1f}ms) '
+                    f'before publish; phases={phases}; stop sending windows')
+            phase_start = time.monotonic()
             if not final_published and now_tick - last_publish >= .15:
                 start, end = window_indices(times, max(0, elapsed))
                 message = JointTrajectory()
@@ -120,15 +171,22 @@ class CoverageClient(MotionClient):
                 message.header.stamp.sec, message.header.stamp.nanosec = divmod(base_ns, 1_000_000_000)
                 for index in range(start, end):
                     point = JointTrajectoryPoint()
-                    point.positions = np.deg2rad(q[index]).tolist()
-                    point.velocities = np.deg2rad(velocity[index]).tolist()
-                    point.accelerations = np.deg2rad(acceleration[index]).tolist()
+                    point.positions = positions_rad[index].tolist()
+                    point.velocities = velocity_rad[index].tolist()
+                    point.accelerations = acceleration_rad[index].tolist()
                     ns = round(times[index] * 1e9)
                     point.time_from_start.sec, point.time_from_start.nanosec = divmod(ns, 1_000_000_000)
                     message.points.append(point)
+                phases['build_window'] = (time.monotonic()-phase_start)*1000
+                phase_start = time.monotonic()
                 self.publisher.publish(message)
+                phases['publish'] = (time.monotonic()-phase_start)*1000
                 last_publish = now_tick
                 final_published = end == len(times)
+            previous_phases = phases
+            for name, duration in phases.items():
+                maximum = self.scheduler_monitor['phase_max_ms']
+                maximum[name] = max(maximum.get(name,0.), duration)
             if elapsed >= times[-1] + step['hold_seconds']:
                 break
         return self.endpoint(np.deg2rad(q[-1]).tolist(), self.plan['config']['arrival_tolerance_deg'])
@@ -153,7 +211,6 @@ def execute(plan, client, capture_guard, report, save):
         event.update(index=index, utc=utc_now(), status='sending')
         report['events'].append(event)
         save()
-        print(f'[{index}/{len(plan["steps"])}] {step["name"]}: {step["duration_seconds"]:.2f}s', flush=True)
         event['arrival_error_deg'] = client.play(step, capture_guard)
         event.update(status='completed', completed_utc=utc_now())
         save()
@@ -169,9 +226,20 @@ def execute_continuous(plan, client, capture_guard, report, save):
         times.extend(t[1:] if index else t); positions.extend(q[1:] if index else q)
         offset+=step['duration_seconds']; boundaries.append(offset)
     combined=dict(times_seconds=times,positions_deg=positions,hold_seconds=.8)
-    index=-1
+    index=-1; last_monitor=-1e9
     def tick(elapsed):
-        nonlocal index
+        nonlocal index, last_monitor
+        # Inspect existing subscriptions; never spawn a new DDS participant or
+        # open the live recording database to verify a moving robot.
+        if elapsed-last_monitor >= 10.:
+            report['live_monitor'] = dict(utc=utc_now(),elapsed_seconds=elapsed,
+                adapter_hz_last_second=client.state.get('adapter_hz'),
+                adapter_reason=client.state.get('adapter_reason'),health_ok=client.state.get('ok'),
+                max_tracking_deg=getattr(client,'monitor_max_tracking',np.zeros(7)).tolist(),
+                measured_deg=np.rad2deg(client.state['q']).tolist(),
+                target_deg=np.rad2deg(client.state['cmd']).tolist() if 'cmd' in client.state else None)
+            report['live_monitor']['scheduler'] = getattr(client,'scheduler_monitor',None)
+            save();last_monitor=elapsed
         if index < 0:
             index=0; start(0)
         while index<len(steps) and elapsed>=boundaries[index]:
@@ -193,7 +261,6 @@ def execute_continuous(plan, client, capture_guard, report, save):
     def start(i):
         event={k:steps[i][k] for k in ('name','phase','kind','speed','repetition','joint')}
         event.update(index=i+1,utc=utc_now(),status='sending');report['events'].append(event)
-        print(f'[{i+1}/{len(steps)}] {event["name"]}: {steps[i]["duration_seconds"]:.2f}s',flush=True)
         save()
     client.play(combined,capture_guard,on_tick=tick)
     if index!=len(steps):raise RuntimeError('Incomplete continuous schedule')
@@ -203,6 +270,11 @@ def execute_continuous(plan, client, capture_guard, report, save):
 def send(plan, digest):
     active = read_active(plan['side'], digest)
     session = Path(active['session'])
+    if plan['config'].get('baseline_protocol'):
+        collision = json.loads((session/'audit/collision.json').read_text())
+        if (collision.get('accepted') is not True or collision.get('plan_sha256') != digest
+                or collision.get('robot_description_sha256') != plan['model_sha256']):
+            raise RuntimeError('Frozen baseline collision report is missing or mismatched')
     path = session / 'audit/motion_run.json'
     with (session / 'audit/motion.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -210,11 +282,15 @@ def send(plan, digest):
             raise RuntimeError('This capture already attempted motion; start a new C session')
         report = {'status': 'preflight', 'motion_sha256': digest, 'motion_name': plan['name'],
                   'side': plan['side'], 'started_utc': utc_now(), 'events': []}
-        save = lambda: write_json(path, report)
+        from w3_motion_audit import MotionAuditWriter
+        writer = MotionAuditWriter(path)
+        save = lambda: writer.submit(report)
         save()
+        writer.flush()  # Persist preflight before any robot trajectory publication.
         client = None
         try:
             def capture_guard():
+                writer.check()
                 if read_active(plan['side'], digest) != active:
                     raise RuntimeError('Capture ended or changed')
             client = CoverageClient(plan)
@@ -225,6 +301,8 @@ def send(plan, digest):
             save()
             execute(plan, client, capture_guard, report, save)
         except (Exception, KeyboardInterrupt) as exc:
+            if client is not None:
+                report['scheduler'] = getattr(client,'scheduler_monitor',None)
             report.update(status='interrupted' if isinstance(exc, KeyboardInterrupt) else 'failed',
                           error=str(exc) or 'Ctrl-C', completed_utc=utc_now())
             save()
@@ -232,6 +310,7 @@ def send(plan, digest):
         finally:
             if client is not None:
                 client.close()
+            writer.close()  # Final completed/failed snapshot must reach disk before D exits.
     print(f'完成：{path}。回到 C 按 Enter 停录并检查实测覆盖。')
 
 

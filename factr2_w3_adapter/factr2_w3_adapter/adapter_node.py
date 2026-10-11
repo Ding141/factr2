@@ -64,7 +64,7 @@ class AdapterNode(Node):
                       state_source_stamp_ns=(self.gate.sources['state'].stamp if self.gate.sources['state'] else 0),
                       command_source_stamp_ns=(self.gate.sources['command'].stamp if self.gate.sources['command'] else 0))
         self.status_pub.publish(diagnostic(now.to_msg(), f'factr2/adapter/{self.config.side}',
-                                          values, self.gate.reason == 'ok', self.gate.reason))
+                                          values, self.gate.diagnostic_ok, self.gate.reason))
         reason = self.gate.reason
         if reason != 'ok' and mono - self.last_warnings.get(reason, float('-inf')) >= 1.0:
             self.get_logger().warning(reason)

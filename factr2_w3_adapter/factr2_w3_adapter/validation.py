@@ -119,6 +119,13 @@ class AdapterGate:
             self.clear_sources()
         return False
 
+    @property
+    def diagnostic_ok(self):
+        # sample() reaches this duplicate branch only AFTER validating both
+        # sources, their ages/skew, and hardware health. It must not re-emit an
+        # old frame, but waiting one timer tick for new state is not an error.
+        return self.reason in ('ok', 'state_already_sampled')
+
     def ingest(self, kind, msg, now_ros, now_mono):
         self.observe_clock(now_ros)
         stamp = stamp_ns(msg.header.stamp)

@@ -139,8 +139,16 @@ def validate_config(config, model):
                 'repeats', 'sample_period_seconds', 'hold_seconds', 'hardware_margin_deg',
                 'arrival_tolerance_deg', 'start_tolerance_deg', 'tracking_limit_deg',
                 'speeds', 'cartesian'}
-    if not isinstance(config, dict) or not required <= set(config) or set(config) - required - {'trajectory_profile', 'finish_at_home', 'continuous_repetitions'} or type(config['version']) is not int or config['version'] != 1:
+    if not isinstance(config, dict) or not required <= set(config) or set(config) - required - {'trajectory_profile', 'finish_at_home', 'continuous_repetitions', 'baseline_protocol'} or type(config['version']) is not int or config['version'] != 1:
         raise ValueError('Invalid coverage configuration keys/version')
+    if 'baseline_protocol' in config:
+        protocol = config['baseline_protocol']
+        if (not isinstance(protocol, dict) or set(protocol) != {'version', 'role', 'seed', 'max_condition', 'dwell_seconds'}
+                or protocol['version'] != 1 or protocol['role'] not in ('train', 'val', 'test')
+                or type(protocol['seed']) is not int):
+            raise ValueError('Invalid baseline protocol')
+        scalar(protocol['max_condition'], 1.01, 100, 'protocol condition')
+        scalar(protocol['dwell_seconds'], 3, 30, 'protocol dwell')
     if type(config.get('continuous_repetitions',False)) is not bool:
         raise ValueError('continuous_repetitions must be boolean')
     if type(config.get('finish_at_home',False)) is not bool:

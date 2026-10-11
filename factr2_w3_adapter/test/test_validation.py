@@ -59,6 +59,22 @@ def test_ADP02_static_advancing_stamps_and_ADP07_no_resampling():
     assert g.counts['outputs'] == 2
 
 
+def test_duplicate_sampling_tick_is_not_fault_but_timeout_and_invalid_input_are():
+    g = AdapterGate(AdapterConfig('left'))
+    inputs(g)
+    assert g.sample(T, 100) and g.diagnostic_ok
+    assert g.sample(T+20_000_000, 100.02) is None
+    assert g.reason == 'state_already_sampled' and g.diagnostic_ok
+    assert g.counts['outputs'] == 1  # No duplicate data or refreshed timestamps.
+    assert g.sample(T+251_000_000, 100.251) is None
+    assert not g.diagnostic_ok and g.reason == 'state_stale'
+    inputs(g,T+300_000_000,100.3)
+    assert g.sample(T+300_000_000,100.3)
+    bad = js(stamp=T+310_000_000); bad.position[0] = float('nan')
+    assert not g.ingest('state',bad,T+310_000_000,100.31)
+    assert not g.diagnostic_ok
+
+
 @pytest.mark.parametrize('kind,damage,reason', [
     ('state', lambda m: m.name.pop(), 'array_length'),
     ('state', lambda m: m.name.__setitem__(0, 'other_joint'), 'missing_joints'),

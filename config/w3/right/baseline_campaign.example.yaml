@@ -1,0 +1,7 @@
+sessions:
+  train:
+  - /home/venom/factr2/data/quick_capture/right/SET_TRAIN_SESSION
+  val:
+  - /home/venom/factr2/data/quick_capture/right/SET_VAL_SESSION
+  test:
+  - /home/venom/factr2/data/quick_capture/right/SET_TEST_SESSION

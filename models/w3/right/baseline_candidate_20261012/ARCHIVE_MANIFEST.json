@@ -1,0 +1,32 @@
+{
+  "candidate_source": "/home/venom/factr2/runs/next_right_baseline_campaign_20261012_000958_resume4_20261012_013705_122044",
+  "deployment_status": "explicitly requested read-only diagnostic deployment",
+  "validation_passed": false,
+  "deployment_ready": false,
+  "final_test_evaluated": false,
+  "manual_release_evaluated": false,
+  "old_model_preserved": "models/w3/right/c2_20261010",
+  "files_sha256": {
+    "config.yaml": "1a462a8a1440d1707333001e016d71ba9cf501cafd92cb86bb0cacad00197f62",
+    "acceptance.yaml": "92f81ed2600a8eb275413a44d9e41dc132cbf3c1c116992242ff0f7209665c5a",
+    "metrics.json": "e80c4181ebd113474ce8a8d8420de66a62cb63848835025dda217fabe09ecf40",
+    "normalization.npz": "569c5693a0fa4d660657d7884b0f751743a64f8d36bae2e99ce5bf7b5f426edb",
+    "split_audit.json": "af9060a8ac5a4969fed11a640027f7a4c15e0553707fc6651b990cc55e81c797",
+    "model.pt": "20e673f4d1980c3c0d52e9b0f74bd70b7eefe8c5c2e70f7432b427c2cd9c3eeb",
+    "baseline_acceptance.json": "224a663e58f0dccd99b67ed700b4176b128c40e600770d2cf7706650e50fe9aa",
+    "metadata.json": "75e00b6aaa74a5896eadaccb4600c905c5b02c2b9c7473f27354fc72f890c7be",
+    "README.md": "710447f58ccddaf82ba82def408189a4784d7c6df1525e68fc8862a3afda9074",
+    "TRAINING_RESULT.md": "60c5be62ea2d48bf5f65650a4e6361c930302f5c6670f5424eb1ff9742cacb9a",
+    "protocol_completeness.json": "fd84c1c970760e491fda36ad249325addd31e479c9c0a3badeecde0e6fb1745c",
+    "collection_config/robot_description.yaml": "5e6fe1205d05747e225c1d2fdae855b94891813f13cee9a93e8286a1105a59a7",
+    "collection_config/friction_model.yaml": "5b3fb0c9415b973d951c0ee8d2fee4af974a8ceeb735137271a68e98febe71e1",
+    "collection_config/gravity.yaml": "9c6d44e3dd5d2b32225e575a672640d39f78113b78e0da764a21fa27d33e047e",
+    "collection_config/position.yaml": "9fa6f86bf74cf3f8f376b7a828c8d2cc50e6368c2fd7e29c6e9dbd5fffef34a9"
+  },
+  "control_snapshot_original_sha256": {
+    "gravity.yaml": "09216c9c155bd5fc4300344052fdb1793fadfc299c535949a2acd84e9520887e",
+    "position.yaml": "0db1a5fd06d6ba573b5d46532603eacf7d557766a8d4c938234d2cf0ff4423ee",
+    "robot_description.yaml": "ea3d51a0c470a3ee5849ba983f405cab0cbbe4bc52fcfefb14ea58938015e032"
+  },
+  "control_snapshot_format_note": "Only trailing empty lines removed from archived ROS parameter dumps; parsed YAML unchanged. Required checkpoint files remain byte-identical."
+}
