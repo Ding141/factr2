@@ -141,12 +141,25 @@ def prepare(spec, output):
         raise ValueError('Freeze identical control gains, gravity and friction across sessions')
     # Validate all input and build ranges before creating any derived output.
     prepared = []
+    protocols = []
+    working_envelopes = []
     for role, records in sources.items():
         for source, meta, report, run, profile in records:
             plan = yaml.load((source.parent/'audit/motion.yaml').read_text(),
                              Loader=getattr(yaml, 'CSafeLoader', yaml.SafeLoader))
+            protocols.append(plan['config']['baseline_protocol'])
+            working_envelopes.append(plan['config']['working_bounds_deg'])
             blocks = event_blocks(source, meta, run, plan)
             prepared.append((role, source, meta, report, profile, blocks))
+    versions = {p['version'] for p in protocols}
+    if len(versions) != 1:
+        raise ValueError('Do not mix baseline protocol revisions in one campaign')
+    if versions == {2}:
+        for field in ('recipe_sha256', 'shared_pose_seed', 'task_poses_deg'):
+            if any(p[field] != protocols[0][field] for p in protocols):
+                raise ValueError('Independent sessions require the same task coverage: ' + field)
+        if any(b != working_envelopes[0] for b in working_envelopes):
+            raise ValueError('Independent sessions require identical working envelopes')
     completion_audit = {}
     for role in sources:
         selected = [b for r, *_, blocks in prepared if r == role for b in blocks]
@@ -185,6 +198,11 @@ def prepare(spec, output):
     for index, (role, source, meta, report, profile, blocks) in enumerate(prepared):
         path = output/f'{role}_{index:02d}.h5'
         derived = copy.deepcopy(meta); derived['session_id'] = output.name+'_'+path.stem
+        if versions == {2}:
+            derived['operating_envelope'] = dict(position_bounds_deg=working_envelopes[0],
+                                                position_margin_deg=3.)
+            derived['task_coverage'] = {k:copy.deepcopy(protocols[0][k]) for k in
+                                       ('recipe_sha256', 'shared_pose_seed', 'task_poses_deg', 'max_condition')}
         derived['episodes'] = {}; derived['control_profile_sha256'] = profile
         derived['derivation'] = dict(parent_session_id=meta['session_id'],
             parent_h5=str(source), parent_h5_sha256=report['h5_sha256'],
@@ -210,7 +228,8 @@ def prepare(spec, output):
     manifest, reports = validate_manifest(manifest_path)
     audit = validate_independent_manifest(manifest, reports)
     write_json(output/'split_audit.json', audit)
-    cfg = yaml.safe_load((ROOT/'config/w3/right/train_baseline.yaml').read_text())
+    template = 'train_next_v2.yaml' if versions == {2} else 'train_baseline.yaml'
+    cfg = yaml.safe_load((ROOT/'config/w3/right'/template).read_text())
     cfg['data']['manifest'] = str(manifest_path.resolve())
     cfg['save']['run_name'] = 'next_right_'+output.name
     (output/'train.yaml').write_text(yaml.safe_dump(cfg, sort_keys=False))

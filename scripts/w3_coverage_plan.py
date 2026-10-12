@@ -133,6 +133,31 @@ class ArmModel:
                 break
         raise ValueError('Cartesian path unreachable inside working bounds; reduce extent or change home/bounds')
 
+    def jacobians(self, positions):
+        """Batch the same FK chain for exhaustive path conditioning checks."""
+        q = np.asarray(positions, dtype=float)
+        if q.ndim != 2 or q.shape[1] != 7 or not np.isfinite(q).all():
+            raise ValueError('Invalid batch joint positions')
+        transform = np.repeat(np.eye(4)[None], len(q), axis=0)
+        origins = np.empty((len(q), 7, 3))
+        axes = np.empty_like(origins)
+        for origin, index, axis in self.chain:
+            transform = transform @ origin
+            if index is None:
+                continue
+            origins[:, index] = transform[:, :3, 3]
+            axes[:, index] = transform[:, :3, :3] @ axis
+            # Rodrigues rotation about a fixed local axis, for every sample.
+            x, y, z = axis
+            skew = np.array([[0, -z, y], [z, 0, -x], [-y, x, 0]])
+            angle = q[:, index, None, None]
+            rot = np.repeat(np.eye(4)[None], len(q), axis=0)
+            rot[:, :3, :3] = (np.eye(3) + np.sin(angle)*skew
+                              + (1-np.cos(angle))*(skew @ skew))
+            transform = transform @ rot
+        linear = np.cross(axes, transform[:, None, :3, 3]-origins)
+        return np.concatenate((linear, axes), axis=2).transpose(0, 2, 1)
+
 
 def validate_config(config, model):
     required = {'version', 'name', 'side', 'tool_frame', 'home_deg', 'working_bounds_deg',
@@ -143,12 +168,24 @@ def validate_config(config, model):
         raise ValueError('Invalid coverage configuration keys/version')
     if 'baseline_protocol' in config:
         protocol = config['baseline_protocol']
-        if (not isinstance(protocol, dict) or set(protocol) != {'version', 'role', 'seed', 'max_condition', 'dwell_seconds'}
-                or protocol['version'] != 1 or protocol['role'] not in ('train', 'val', 'test')
+        fields = {'version', 'role', 'seed', 'max_condition', 'dwell_seconds'}
+        if isinstance(protocol, dict) and protocol.get('version') == 2:
+            fields |= {'recipe_sha256', 'shared_pose_seed', 'task_poses_deg'}
+        if (not isinstance(protocol, dict) or set(protocol) != fields
+                or protocol['version'] not in (1, 2) or protocol['role'] not in ('train', 'val', 'test')
                 or type(protocol['seed']) is not int):
             raise ValueError('Invalid baseline protocol')
         scalar(protocol['max_condition'], 1.01, 100, 'protocol condition')
         scalar(protocol['dwell_seconds'], 3, 30, 'protocol dwell')
+        if protocol['version'] == 2:
+            if (type(protocol['shared_pose_seed']) is not int
+                    or not isinstance(protocol['recipe_sha256'], str)
+                    or len(protocol['recipe_sha256']) != 64
+                    or not isinstance(protocol['task_poses_deg'], list)
+                    or not 1 <= len(protocol['task_poses_deg']) <= 12):
+                raise ValueError('Invalid shared pose protocol')
+            for pose in protocol['task_poses_deg']:
+                vector(pose, 7, 'shared task pose')
     if type(config.get('continuous_repetitions',False)) is not bool:
         raise ValueError('continuous_repetitions must be boolean')
     if type(config.get('finish_at_home',False)) is not bool:

@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 import h5py
 import numpy as np
@@ -92,6 +93,7 @@ class ManifestDataset(Dataset):
         self.history, self.keys = int(history), keys
         self.input_size, self.output_size = 21, 7
         self.episodes, self.ends, self.norm = [], [], None
+        self.episode_info = []
         estimate = 0
         for entry in entries:
             with h5py.File(entry['path'], 'r') as h:
@@ -103,6 +105,8 @@ class ManifestDataset(Dataset):
         self.step_bytes = estimate
         total = 0
         for entry in entries:
+            from factr2_next.data_collection.quality import sidecar_path
+            metadata = json.loads(sidecar_path(entry['path']).read_text())
             with h5py.File(entry['path'], 'r') as h:
                 for ep in entry['episodes']:
                     arrays = [np.asarray(h[ep][keys[k]]['data'], dtype=np.float32) for k in
@@ -114,6 +118,7 @@ class ManifestDataset(Dataset):
                     if windows <= 0:
                         raise ValueError('no_windows:' + ep)
                     self.episodes.append((x, y))
+                    self.episode_info.append(dict(metadata['episodes'][ep], path=str(entry['path']), episode=ep))
                     total += windows; self.ends.append(total)
         if not total:
             raise ValueError('no_windows')

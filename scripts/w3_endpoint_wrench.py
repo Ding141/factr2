@@ -53,7 +53,7 @@ function plot(id,s,keys,unit){
  ctx.fillText(unit,p.l,p.t-10);ctx.fillText('时间（s）',p.l+w/2-30,c.height-5);
  keys.forEach((key,i)=>{ctx.strokeStyle=colors[i];ctx.lineWidth=2;ctx.beginPath();let open=false;
   s.history[key].forEach((v,k)=>{if(!Number.isFinite(v)){open=false;return}const x=p.l+(t[k]-a)/Math.max(b-a,1e-6)*w,y=p.t+(hi-v)/(hi-lo)*h;open?ctx.lineTo(x,y):ctx.moveTo(x,y);open=true});ctx.stroke()});
- document.getElementById(id+'-values').innerHTML=keys.map((key,i)=>`<span style="color:${colors[i]}">${key.toUpperCase()}: ${s.wrench===null?'—':s.wrench[key].toFixed(3)+' '+unit}</span>`).join('');
+ document.getElementById(id+'-values').innerHTML=keys.map((key,i)=>`<span style="color:${colors[i]}">${key.toUpperCase()}: ${s.wrench===null||s.wrench[key]===null?'—':s.wrench[key].toFixed(3)+' '+unit}</span>`).join('');
 }
 let busy=false;async function update(){if(busy)return;busy=true;try{
  const response=await fetch('/snapshot',{cache:'no-store'});if(!response.ok)throw Error('HTTP');const s=await response.json();
@@ -69,9 +69,13 @@ def stamp_ns(msg):
 
 
 class EndpointObserver(Node):
-    def __init__(self, config):
+    def __init__(self, config, mode=None):
         super().__init__('right_endpoint_wrench_observer')
         self.cfg = yaml.safe_load(Path(config).read_text())
+        if mode is not None:
+            self.cfg['solver']['mode'] = mode
+        self.mode = self.cfg['solver'].get('mode', 'full_wrench')
+        estimate_wrench(np.c_[np.eye(6), np.zeros(6)], np.zeros(7), **self.cfg['solver'])
         if self.cfg['side'] != 'right':
             raise ValueError('This deployment requires side=right')
         self.names = [f'right_joint_{i}' for i in range(7)]
@@ -184,6 +188,10 @@ class EndpointObserver(Node):
         with self.lock:
             self.state, self.reasons = 'valid', []
             self.wrench = dict(zip(('fx', 'fy', 'fz', 'mx', 'my', 'mz'), map(float, tool_value)))
+            if self.mode == 'force_only':
+                # The point-force hypothesis assumes zero moment; the UI must
+                # never present those assumed values as measured moments.
+                self.wrench.update(mx=None, my=None, mz=None)
             self.outputs += 1
         self.publisher.publish(msg)
 
@@ -214,11 +222,15 @@ class EndpointObserver(Node):
                 if reason.startswith('outside_collection_range:'):
                     joints = ', '.join('J' + str(int(n.rsplit('_', 1)[-1]) + 1) for n in reason.split(':', 1)[1].split(','))
                     explanation.append(joints + ' 超出模型采集范围')
-                elif reason == 'near_singular': explanation.append('姿态接近奇异点，误差会被放大')
+                elif reason == 'near_singular': explanation.append('末端换算接近奇异点；可继续查看关节外力矩')
                 elif reason == 'inconsistent_with_tool_contact': explanation.append('关节残差不符合单一末端接触假设')
                 elif 'stale' in reason: explanation.append('等待新鲜同步数据')
                 else: explanation.append(reason)
-            return dict(state=self.state, reasons=reasons, explanation='；'.join(explanation) or '等效末端负载估计，尚未做接触精度与方向标定',
+            mode = getattr(self, 'mode', 'full_wrench')
+            normal = ('末端点力估计，假设外加力矩为0；力矩未观测' if mode == 'force_only'
+                      else '等效末端负载估计，尚未做接触精度与方向标定')
+            return dict(state=self.state, reasons=reasons, explanation='；'.join(explanation) or normal,
+                        estimation_mode=mode, moments_observed=mode == 'full_wrench',
                         geometry=dict(self.geometry), frame_id=self.frame_id,
                         moment_reference_point=self.frame_id, sign_convention='NEXT_residual',
                         outputs=self.outputs, wrench=None if self.wrench is None else dict(self.wrench),
@@ -245,10 +257,12 @@ class EndpointObserver(Node):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--config', type=Path, default=Path(__file__).resolve().parents[1] / 'config/w3/right/endpoint_wrench.yaml')
+    parser.add_argument('--mode', choices=['full_wrench', 'force_only'],
+                        help='force_only assumes a point force and zero external moment; moments are not measured')
     args = parser.parse_args()
     rclpy.init(); node = None
     try:
-        node = EndpointObserver(args.config)
+        node = EndpointObserver(args.config, args.mode)
         rclpy.spin(node)
     except (KeyboardInterrupt, rclpy.executors.ExternalShutdownException):
         pass

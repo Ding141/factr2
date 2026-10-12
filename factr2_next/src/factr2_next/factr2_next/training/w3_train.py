@@ -36,6 +36,12 @@ def train(cfg):
     train_ds, val_ds = [ManifestDataset(manifest['splits'][s],cfg['data']['keys'],50,
          cfg['data'].get('memory_budget_mb',512)) for s in ('train','val')]
     norm = train_ds.fit_normalization()
+    coverage = None
+    if cfg['data'].get('coverage_requirements') is not None:
+        from factr2_next.training.coverage_audit import audit_coverage
+        coverage = audit_coverage(train_ds, val_ds, cfg['data']['coverage_requirements'])
+        if not coverage['passed']:
+            raise ValueError('measured_coverage_failed: '+', '.join(coverage['reasons']))
     train_ds.norm = val_ds.norm = norm
     loss_units = cfg['train'].get('loss_units', 'normalized')
     if loss_units not in ('normalized', 'physical_nm'):
@@ -55,6 +61,11 @@ def train(cfg):
                'dataset_step_bytes':train_ds.step_bytes+val_ds.step_bytes,
                'eager_window_bytes':(len(train_ds)+len(val_ds))*50*21*4}
     metrics['loss_units'] = loss_units
+    if coverage is not None:
+        metrics['coverage_audit'] = coverage
+    diagnostics_enabled = cfg['train'].get('validation_diagnostics', False)
+    if diagnostics_enabled:
+        metrics['validation_diagnostics'] = []
     if loss_units == 'physical_nm':
         metrics['selection_rule'] = 'minimum validation physical Nm squared MSE; first epoch on ties'
     best, state = float('inf'), None
@@ -67,7 +78,12 @@ def train(cfg):
         extra={'gradient_clip':cfg['train']['gradient_clip']} if 'gradient_clip' in cfg['train'] else {}
         scale_args = {'output_scale':output_scale} if output_scale is not None else {}
         tr=run_epoch(model,loaders[0],device,opt,**scale_args,**extra)
-        with torch.inference_mode():va=run_epoch(model,loaders[1],device,**scale_args)
+        if diagnostics_enabled:
+            from factr2_next.training.validation_metrics import validation_epoch
+            va, diagnostic = validation_epoch(model, loaders[1], device, norm, loss_units)
+            metrics['validation_diagnostics'].append(diagnostic)
+        else:
+            with torch.inference_mode():va=run_epoch(model,loaders[1],device,**scale_args)
         if not np.isfinite([tr,va]).all():
             raise ValueError('nonfinite_loss')
         metrics['train_loss'].append(tr);metrics['val_loss'].append(va)
@@ -75,6 +91,10 @@ def train(cfg):
             best=va;metrics['best_epoch']=epoch
             state={k:v.detach().cpu().clone() for k,v in model.state_dict().items()}
         print(f"{cfg['side']} epoch {epoch}: train={tr:.6f} val={va:.6f}",flush=True)
+        if diagnostics_enabled:
+            for group, values in diagnostic['groups'].items():
+                print(f"  val {group}: max joint RMSE={max(values['per_joint_rmse_nm']):.4f} Nm "
+                      f"max abs bias={max(map(abs, values['signed_bias_nm'])):.4f} Nm", flush=True)
         if va < early_best-delta: early_best=va; stale=0
         else: stale+=1
         if early.get('enabled',False) and epoch>=warmup and stale>=patience:
@@ -97,6 +117,9 @@ def train(cfg):
     meta={k:copy.deepcopy(source[k]) for k in ('source','tool','gripper','load','calibration','control')}
     if 'control_profile_sha256' in source:
         meta['control_profile_sha256'] = source['control_profile_sha256']
+    for field in ('operating_envelope', 'task_coverage'):
+        if field in source:
+            meta[field] = copy.deepcopy(source[field])
     meta.update(schema='w3_checkpoint_v1',contract_version=cfg['contract_version'],side=cfg['side'],
         joint_order=cfg['joint_names'],feature_order=FEATURE_ORDER,history=50,input_size=21,output_size=7,sample_hz=cfg['data'].get('sample_hz',50),
         dataset_id=manifest['dataset_id'],manifest_sha256=sha256(manifest_path),seed=seed,resolved_device=str(device),
@@ -107,6 +130,9 @@ def train(cfg):
         software_commits={'factr2':commit_at(Path(__file__).resolve().parents[5]),'w3':commit_at(w3_workspace)},
         baseline='train eligible-label mean Nm',artifact_sha256={f:sha256(run/f) for f in
         ('model.pt','config.yaml','normalization.npz','metrics.json')})
+    source_dir = Path(__file__).resolve().parent
+    meta['training_source_files_sha256'] = {name:sha256(source_dir/name) for name in
+        ('w3_train.py', 'train.py', 'dataset.py', 'models.py', 'coverage_audit.py', 'validation_metrics.py')}
     write_json(run/'metadata.json',meta)
     from factr2_next.inference.checkpoint import load_checkpoint
     loaded=load_checkpoint(run,device,expected={'side':cfg['side'],'joint_order':cfg['joint_names']})

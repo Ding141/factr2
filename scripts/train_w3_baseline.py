@@ -28,6 +28,14 @@ def main():
     if bool(args.release_h5) != bool(args.annotations):
         p.error('Supply both release H5 and annotations')
     run = train(cfg); loaded = load_checkpoint(run, expected={'side':'right', 'sample_hz':100})
+    if loaded.metadata.get('operating_envelope'):
+        # Prepare a reviewable runtime profile with the new, narrower envelope.
+        # Creating this file does not start an observer or change a running one.
+        profile = yaml.safe_load((Path(__file__).resolve().parents[1]/'config/w3/right/inference.yaml').read_text())
+        profile.update(checkpoint_dir=str(run.resolve()), sample_hz=100,
+                       operating_envelope=loaded.metadata['operating_envelope'])
+        profile['smoothing']['sample_hz'] = 100
+        (run/'inference.yaml').write_text(yaml.safe_dump(profile, sort_keys=False))
     # Freeze acceptance BEFORE training/test. Do not tune using final test.
     (run/'acceptance.yaml').write_text(yaml.safe_dump(acceptance, sort_keys=False))
     result = dict(acceptance_sha256=acceptance_hash, deployment_ready=False,

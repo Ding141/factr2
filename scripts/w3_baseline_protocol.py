@@ -19,9 +19,16 @@ from w3_smooth_coverage import retime
 
 
 def conditions(model, positions, length=.4):
-    from factr2_next.inference.endpoint_wrench import geometry_quality
-    return [geometry_quality(model.fk(np.deg2rad(q), True)[1], length)['condition_number']
-            for q in positions]
+    if not np.isfinite(length) or length <= 0:
+        raise ValueError('Invalid characteristic length')
+    positions = np.asarray(positions, dtype=float).reshape(-1, 7)
+    result = []
+    for start in range(0, len(positions), 2048):
+        j = model.jacobians(np.deg2rad(positions[start:start+2048]))
+        j[:, :3] /= length
+        s = np.linalg.svd(j.transpose(0, 2, 1), compute_uv=False)
+        result.extend(float(a/b) if b > 1e-12 else None for a, b in zip(s[:, 0], s[:, -1]))
+    return result
 
 
 def task_path_ok(model, positions, maximum):
@@ -36,6 +43,19 @@ def build_protocol(recipe, description, initial_deg, role):
     model = ArmModel(description, cfg['side'], cfg['tool_frame'])
     home, bounds = validate_config(cfg, model)
     spec = recipe['protocol']
+    revision = recipe.get('task_coverage')
+    if revision is not None:
+        if (set(revision) != {'shared_pose_seed', 'coupled_amplitude_deg',
+                             'coupled_cycles', 'cartesian_repeats'}
+                or type(revision['shared_pose_seed']) is not int
+                or type(revision['coupled_cycles']) is not int
+                or not 1 <= revision['coupled_cycles'] <= 10
+                or type(revision['cartesian_repeats']) is not int
+                or not 1 <= revision['cartesian_repeats'] <= cfg['repeats']):
+            raise ValueError('Invalid task coverage recipe')
+        amplitude = np.asarray(revision['coupled_amplitude_deg'], dtype=float)
+        if amplitude.shape != (7,) or not np.isfinite(amplitude).all() or np.any(amplitude <= 0):
+            raise ValueError('Invalid coupled amplitude')
     if (set(spec) != {'seeds', 'max_condition', 'dwell_seconds', 'task_pose_count',
                      'task_pose_bounds_deg', 'return_offset_deg'}
             or set(spec['seeds']) != {'train', 'val', 'test'}
@@ -70,7 +90,7 @@ def build_protocol(recipe, description, initial_deg, role):
         raise ValueError('Invalid initial target')
     dt = cfg['sample_period_seconds']
 
-    def append(curve, phase, kind, speed='slow', joint=None, conditioned=False):
+    def append(curve, phase, kind, speed='slow', joint=None, conditioned=False, repetition=1):
         nonlocal current
         limits = copy.deepcopy(cfg['speeds'][speed])
         if phase in ('single_joint', 'cartesian'):
@@ -82,7 +102,7 @@ def build_protocol(recipe, description, initial_deg, role):
         if conditioned and not task_path_ok(model, q, maximum):
             raise ValueError('Task path approaches singularity: ' + kind)
         steps.append(dict(name=f'{len(steps)+1:03d}_{kind}_{speed}', phase=phase,
-            kind=kind, speed=speed, repetition=1, joint=joint,
+            kind=kind, speed=speed, repetition=repetition, joint=joint,
             duration_seconds=float(t[-1]), hold_seconds=0.,
             times_seconds=t.tolist(), positions_deg=q.tolist()))
         current = q[-1].copy()
@@ -125,12 +145,17 @@ def build_protocol(recipe, description, initial_deg, role):
     # Select poses AND all connecting/return segments by the same scaled
     # Jacobian criterion as deployment. Collision checks remain mandatory.
     poses = [home.copy()]
+    # Same deployment anchors, freshly recorded in independent sessions. Role
+    # seeds still vary speed, direction and coupled trajectories, not coverage.
+    pose_rng = np.random.default_rng(revision['shared_pose_seed']) if revision else rng
     attempts = 0
     while len(poses) < count:
         attempts += 1
         if attempts > 2000:
             raise ValueError('No conditioned pose set; reduce extent or change task bounds')
-        p = rng.uniform(pose_bounds[:, 0], pose_bounds[:, 1])
+        p = pose_rng.uniform(pose_bounds[:, 0], pose_bounds[:, 1])
+        if revision and np.min(np.max(abs(np.asarray(poses)-p), axis=1)) < 4.:
+            continue
         samples = np.vstack([np.linspace(poses[-1], p, 101),
                              np.linspace(p-probe, p+probe, 101)])
         if np.any(samples < bounds[:, 0]) or np.any(samples > bounds[:, 1]):
@@ -143,6 +168,29 @@ def build_protocol(recipe, description, initial_deg, role):
             move(pose+offset, f'pose{i}_condition_{direction}', conditioned=True)
             move(pose, f'pose{i}_return_{direction}', conditioned=True)
             hold(f'static_pose{i}_from_{direction}')
+        if revision:
+            # Concurrent joint excitation spans tracking errors and reversals
+            # at combination poses; a single-home axis sweep cannot supply it.
+            amp = np.minimum(amplitude, np.minimum(pose-bounds[:, 0], bounds[:, 1]-pose)*.8)
+            for pattern in range(2):
+                phase = rng.uniform(-np.pi, np.pi, 7)
+                frequency = rng.integers(1, 3, 7)*revision['coupled_cycles']
+                def coupled(s, amp=amp, phase=phase, frequency=frequency):
+                    envelope = np.sin(np.pi*s)**2
+                    return (pose[None, :] + envelope[:, None]*amp
+                            * np.sin(2*np.pi*s[:, None]*frequency+phase))
+                # Shrink excursions, never raise the conditioning threshold.
+                for _ in range(12):
+                    if task_path_ok(model, coupled(np.linspace(0, 1, 1001)), maximum):
+                        break
+                    amp *= .8
+                else:
+                    raise ValueError('No conditioned coupled path at task pose')
+                if np.min(amp) < .5:
+                    raise ValueError('Coupled path too small; change task anchors')
+                for speed in ('slow', 'fast'):
+                    append(coupled, 'cartesian', f'pose{i}_coupled_sine{pattern}', speed, conditioned=True)
+                hold(f'static_pose{i}_after_coupled{pattern}')
         center = model.fk(np.deg2rad(pose))[:3, 3]
         u = np.linspace(0., 1., 129)
         for kind in ('line_x', 'line_y', 'line_z', 'circle_xy'):
@@ -159,23 +207,37 @@ def build_protocol(recipe, description, initial_deg, role):
                 seed_q = model.ik_position(point, seed_q, np.deg2rad(bounds))
                 q.append(np.rad2deg(seed_q))
             curve = CubicSpline(u, q, axis=0)
-            for speed in ('slow', 'fast'):
-                move(pose, f'pose{i}_reset_{kind}_{speed}', conditioned=True)
-                append(curve, 'cartesian', f'pose{i}_{kind}', speed, conditioned=True)
-                move(pose, f'pose{i}_reset_after_{kind}_{speed}', conditioned=True)
+            for repeat in range(1, (revision['cartesian_repeats'] if revision else 1)+1):
+                for speed in ('slow', 'fast'):
+                    suffix = f'_r{repeat}' if revision else ''
+                    move(pose, f'pose{i}_reset_{kind}_{speed}{suffix}', conditioned=True)
+                    append(curve, 'cartesian', f'pose{i}_{kind}{suffix}', speed,
+                           conditioned=True, repetition=repeat)
+                    move(pose, f'pose{i}_reset_after_{kind}_{speed}{suffix}', conditioned=True)
         hold(f'static_pose{i}_after_motion')
     # Validate the actual final transition too; do not silently return to zero.
     move(home, 'finish_home', conditioned=True)
     hold('static_home_finish')
     cfg['baseline_protocol'] = dict(version=1, role=role, seed=seed,
                                    max_condition=maximum, dwell_seconds=dwell)
+    if revision:
+        cfg['baseline_protocol'].update(version=2, shared_pose_seed=revision['shared_pose_seed'],
+            task_poses_deg=np.asarray(poses).tolist(),
+            recipe_sha256=hashlib.sha256(yaml.safe_dump(recipe, sort_keys=True).encode()).hexdigest())
     plan = dict(schema=SCHEMA, name=cfg['name'], side=cfg['side'], config=cfg,
         robot_description=description, model_sha256=model.sha256,
         joint_names=model.names, initial_deg=list(initial_deg), steps=steps)
     validate_plan(plan)
+    durations = {'single_joint': 0., 'multi_joint': 0., 'static': 0., 'transition': 0.}
+    for step in steps:
+        group = ('static' if step['kind'].startswith('static_') else
+                 'multi_joint' if step['phase'] == 'cartesian' else step['phase'])
+        durations[group] += step['duration_seconds']
     return plan, dict(role=role, seed=seed, task_poses_deg=np.asarray(poses).tolist(),
         task_max_condition=maximum, approach_may_be_singular=True,
         joint_sweeps_may_be_singular=True, automatic_rezero=False,
+        duration_by_group_seconds=durations,
+        fraction_by_group={k:v/sum(durations.values()) for k,v in durations.items()},
         limitations=['Geometry is not collision clearance',
                      'No-contact returns are friction probes, not external-load release validation'])
 

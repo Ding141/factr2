@@ -1,0 +1,121 @@
+# NEXT free-space task coverage at the existing conservative W3 speeds.
+coverage:
+  version: 1
+  name: right_next_task_coverage_v2
+  side: right
+  tool_frame: right_attachment_point
+  trajectory_profile: continuous_sine
+  home_deg:
+  - 0
+  - 50
+  - 0
+  - -55
+  - 0
+  - 0
+  - 0
+  working_bounds_deg:
+  - - -40
+    - 40
+  - - 20
+    - 90
+  - - -30
+    - 30
+  - - -85
+    - -25
+  - - -30
+    - 30
+  - - -23
+    - 23
+  - - -30
+    - 30
+  repeats: 1
+  sample_period_seconds: 0.01
+  hold_seconds: 0.0
+  hardware_margin_deg: 3.0
+  arrival_tolerance_deg: 1.5
+  start_tolerance_deg: 1.5
+  tracking_limit_deg: 3.0
+  speeds:
+    slow:
+      velocity_deg_s:
+      - 6.0
+      - 6.0
+      - 6.0
+      - 6.0
+      - 6.0
+      - 6.0
+      - 6.0
+      acceleration_deg_s2:
+      - 24.0
+      - 24.0
+      - 24.0
+      - 24.0
+      - 24.0
+      - 24.0
+      - 24.0
+    fast:
+      velocity_deg_s:
+      - 12.0
+      - 12.0
+      - 12.0
+      - 12.0
+      - 12.0
+      - 12.0
+      - 12.0
+      acceleration_deg_s2:
+      - 36.0
+      - 36.0
+      - 36.0
+      - 36.0
+      - 36.0
+      - 36.0
+      - 36.0
+  cartesian:
+    line_half_extent_m: 0.015
+    circle_radius_m: 0.012
+    waypoint_spacing_m: 0.0005
+  continuous_repetitions: true
+  finish_at_home: true
+protocol:
+  seeds:
+    train: 1701
+    val: 2903
+    test: 4307
+  max_condition: 20.0
+  dwell_seconds: 12.0
+  task_pose_count: 8
+  task_pose_bounds_deg:
+  - - -35
+    - 35
+  - - 25
+    - 85
+  - - -25
+    - 25
+  - - -80
+    - -30
+  - - -25
+    - 25
+  - - -18
+    - 18
+  - - -25
+    - 25
+  return_offset_deg:
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 3
+  - 4
+task_coverage:
+  shared_pose_seed: 6131
+  coupled_amplitude_deg:
+  - 8
+  - 8
+  - 8
+  - 6
+  - 8
+  - 6
+  - 8
+  coupled_cycles: 1
+  cartesian_repeats: 1

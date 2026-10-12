@@ -106,6 +106,9 @@ class InferenceNode(Node):
                        'sample_hz':self.cfg.get('sample_hz',50),'history':50} if self.w3 else None),
         )
         self.buffer = HistoryBuffer(self.loaded.history)
+        frozen_envelope = self.loaded.metadata.get('operating_envelope')
+        if frozen_envelope is not None and self.cfg.get('operating_envelope') != frozen_envelope:
+            raise ValueError('Runtime envelope must match the checkpoint training envelope')
         self.operating_envelope = OperatingEnvelope(
             self.cfg.get('operating_envelope'), len(self.cfg.get('joint_names', [])))
         self.torque_filter = TorqueFilter(self.cfg.get("smoothing", {}))
