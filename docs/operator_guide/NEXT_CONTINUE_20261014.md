@@ -25,3 +25,5 @@ W3 adapter 给四路数据发布完全相同的时间戳。原录制端使用近
 当前执行目录：`log/live_next_campaign_resume_20261014/`。`pipeline_state.json` 保存采集进度；`finalization_state.json` 保存使用最新契约检查的数据整理与训练状态。录制和清理通过现有工具正常关闭文件，并保持位置和重力控制器运行。在该执行目录创建 `STOP_CAPTURE` 可请求暂停后续采集。
 
 完整组审计、独立会话检查和实测覆盖门禁通过后，使用 NEXT v2 的 50 帧无状态 LSTM 和物理 N·m MSE 训练。模型选取使用验证集；测试数据只在模型固定后用于验收。无接触/卸载标注验证时 `deployment_ready` 仍为 false，训练候选不会自动部署。
+
+训练每次刷新最佳验证结果后即时原子保存 `best_epoch_XXXX.pt` 和含 SHA256 的 `best_snapshot.json`，包含权重、归一化、冻结配置、指标和数据来源，避免进程中断后只剩日志。可选 `train.stop_file` 在完成当前轮验证后保存最佳模型并停止。W3 在线推理也使用精确四流同步；右臂与 RELIABLE 输出配套，继续拒绝过期数据并保持原工作范围门禁。

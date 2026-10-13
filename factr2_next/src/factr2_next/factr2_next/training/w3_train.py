@@ -16,6 +16,20 @@ from factr2_next.training.models import build_model
 FEATURE_ORDER = ['q', 'qdot', 'q_cmd-q']
 
 
+def persist_best_snapshot(run, state, norm, cfg, metrics, source, manifest_path):
+    """Keep an atomic recovery copy before another optimization epoch starts."""
+    path = run / f"best_epoch_{metrics['best_epoch']:04d}.pt"
+    temporary = path.with_suffix('.pending')
+    torch.save(dict(model_state_dict=state, normalization=norm, config=cfg,
+        metrics=copy.deepcopy(metrics), source_metadata=source,
+        manifest_sha256=sha256(manifest_path), input_size=21, output_size=7,
+        history=50, model=cfg['model']), temporary)
+    temporary.replace(path)
+    write_json(run/'best_snapshot.json',dict(path=str(path.resolve()),
+        sha256=sha256(path), best_epoch=metrics['best_epoch'], complete=True))
+    return path
+
+
 def train(cfg):
     from factr2_next.training.train import set_seed, run_epoch
     cfg = copy.deepcopy(cfg)
@@ -74,6 +88,8 @@ def train(cfg):
     if patience<1 or warmup<0 or delta<0 or not np.isfinite(delta):raise ValueError('Invalid early stopping')
     early_best=float('inf'); stale=0
     started=time.monotonic()
+    run = Path(cfg['save']['output_dir'])/(cfg['save']['run_name']+'_'+datetime.now().strftime('%Y%m%d_%H%M%S_%f'))
+    run.mkdir(parents=True,exist_ok=False)
     for epoch in range(1,epochs+1):
         extra={'gradient_clip':cfg['train']['gradient_clip']} if 'gradient_clip' in cfg['train'] else {}
         scale_args = {'output_scale':output_scale} if output_scale is not None else {}
@@ -90,6 +106,7 @@ def train(cfg):
         if va < best:
             best=va;metrics['best_epoch']=epoch
             state={k:v.detach().cpu().clone() for k,v in model.state_dict().items()}
+            persist_best_snapshot(run,state,norm,cfg,metrics,reports['train'][0]['metadata'],manifest_path)
         print(f"{cfg['side']} epoch {epoch}: train={tr:.6f} val={va:.6f}",flush=True)
         if diagnostics_enabled:
             for group, values in diagnostic['groups'].items():
@@ -97,6 +114,10 @@ def train(cfg):
                       f"max abs bias={max(map(abs, values['signed_bias_nm'])):.4f} Nm", flush=True)
         if va < early_best-delta: early_best=va; stale=0
         else: stale+=1
+        stop_file=cfg['train'].get('stop_file')
+        if stop_file and Path(stop_file).exists():
+            metrics.update(stop_reason='user_requested',stopped_epoch=epoch)
+            break
         if early.get('enabled',False) and epoch>=warmup and stale>=patience:
             metrics['early_stopped_epoch']=epoch
             break
@@ -105,8 +126,6 @@ def train(cfg):
     with torch.inference_mode():
         before=(model(x.unsqueeze(0).to(device)).cpu().numpy()[0]*norm['y_std']+norm['y_mean'])
     metrics.update(training_seconds=time.monotonic()-started,peak_rss_mb=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024)
-    run = Path(cfg['save']['output_dir'])/(cfg['save']['run_name']+'_'+datetime.now().strftime('%Y%m%d_%H%M%S_%f'))
-    run.mkdir(parents=True,exist_ok=False)
     torch.save(dict(model_state_dict=state,input_size=21,output_size=7,history=50,model=cfg['model']),run/'model.pt')
     (run/'config.yaml').write_text(yaml.safe_dump(cfg,sort_keys=False))
     np.savez(run/'normalization.npz',**norm)

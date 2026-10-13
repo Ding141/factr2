@@ -3,7 +3,8 @@ robot_topic_root: /factr2/right
 next_topic_root: /next/right
 device: cpu
 sync:
-  queue_size: 5
+  queue_size: 20
+  reliability: reliable
   slop_seconds: 0.03
 topics:
   joint_pos:

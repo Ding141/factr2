@@ -12,9 +12,9 @@ import rclpy
 import torch
 import yaml
 from ament_index_python.packages import get_package_share_directory
-from message_filters import ApproximateTimeSynchronizer, Subscriber
+from message_filters import ApproximateTimeSynchronizer, TimeSynchronizer, Subscriber
 from rclpy.node import Node
-from rclpy.qos import qos_profile_sensor_data
+from rclpy.qos import qos_profile_sensor_data, QoSProfile, ReliabilityPolicy
 from sensor_msgs.msg import JointState
 from std_msgs.msg import Bool, Float32
 
@@ -24,6 +24,21 @@ from factr2_next.inference.operating_envelope import OperatingEnvelope
 
 
 INPUT_KEYS = ("joint_pos", "joint_vel", "joint_cmd", "measured_joint_torque")
+
+
+def make_stream_sync(inputs, cfg, w3):
+    if w3:
+        return TimeSynchronizer(inputs, int(cfg.get('queue_size',20)))
+    return ApproximateTimeSynchronizer(inputs, int(cfg.get('queue_size',5)),
+                                       float(cfg.get('slop_seconds',.03)))
+
+
+def stream_qos(cfg, w3):
+    reliability=cfg.get('reliability','best_effort') if w3 else 'best_effort'
+    if reliability not in ('best_effort','reliable'):
+        raise ValueError('sync.reliability must be best_effort or reliable')
+    return (QoSProfile(depth=int(cfg.get('queue_size',20)),reliability=ReliabilityPolicy.RELIABLE)
+            if reliability=='reliable' else qos_profile_sensor_data)
 
 
 class TorqueFilter:
@@ -124,21 +139,17 @@ class InferenceNode(Node):
         if self.w3:
             self.adapter_sub = self.create_subscription(DiagnosticArray,self.robot_topic_root+'/adapter_status',self._adapter_status,qos_profile_sensor_data)
 
+        sync_cfg = self.cfg.get("sync", {})
         self.subscribers = [
             Subscriber(
                 self,
                 JointState,
                 self._format_topic(self.topic_cfg[key]["topic"]),
-                qos_profile=qos_profile_sensor_data,
+                qos_profile=stream_qos(sync_cfg,self.w3),
             )
             for key in INPUT_KEYS
         ]
-        sync_cfg = self.cfg.get("sync", {})
-        self.sync = ApproximateTimeSynchronizer(
-            self.subscribers,
-            queue_size=int(sync_cfg.get("queue_size", 5)),
-            slop=float(sync_cfg.get("slop_seconds", 0.03)),
-        )
+        self.sync = make_stream_sync(self.subscribers,sync_cfg,self.w3)
         self.sync.registerCallback(self._callback)
 
         self.outputs = self._output_topics(self.cfg["outputs"])

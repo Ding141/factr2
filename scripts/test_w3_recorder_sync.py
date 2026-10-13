@@ -49,3 +49,11 @@ def test_capture_qos_keeps_legacy_and_non_w3_compatibility():
     assert subscription_qos({'reliability':'reliable'}, False).reliability == ReliabilityPolicy.BEST_EFFORT
     with pytest.raises(ValueError, match='sync.reliability'):
         subscription_qos({'reliability':'typo'}, True)
+
+
+def test_inference_sync_also_recovers_after_a_lost_component():
+    from factr2_next.inference.inference_node import make_stream_sync,stream_qos
+    accepted,rejected=playback(lambda inputs:make_stream_sync(inputs,{'queue_size':20},True))
+    assert len(accepted)==299 and not rejected
+    assert stream_qos({'reliability':'reliable'},True).reliability==ReliabilityPolicy.RELIABLE
+    with pytest.raises(ValueError):stream_qos({'reliability':'typo'},True)
