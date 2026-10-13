@@ -197,8 +197,16 @@ def validate_manifest(path, expected=None):
             if entry.get('h5_sha256') != report['h5_sha256']:
                 raise ValueError('manifest_hash')
             meta = report['metadata']
-            signatures.append({k: meta[k] for k in ('side', 'joint_order', 'contract_version',
-                                                   'tool', 'gripper', 'load', 'calibration', 'sample_hz')})
+            signature = {k: meta[k] for k in ('side', 'joint_order', 'contract_version',
+                                              'tool', 'gripper', 'load', 'calibration', 'sample_hz')}
+            if meta.get('control_profile_scope') == 'arm_v2':
+                # The frozen calibration container can contain one or both
+                # arms. Verify its original hash above, then compare this
+                # arm's actual offsets and complete physical control profile.
+                from factr2_next.data_collection.campaign import arm_control_profile
+                signature['control_profile_scope'] = 'arm_v2'
+                signature['calibration'] = {'physical_arm_control_sha256':arm_control_profile(meta)}
+            signatures.append(signature)
             if meta['contact'].get('present') is not False:
                 raise ValueError('free_motion_contact_required')
             for ep in entry['episodes']:

@@ -73,7 +73,7 @@ def check(plan_path, workspace, left_pose_deg, report_path, step_deg=.25):
         if failure:break
     report={'accepted':failure is None,'plan_sha256':hashlib.sha256(raw).hexdigest(),
         'robot_description_sha256':hashlib.sha256(description.encode()).hexdigest(),
-        'left_pose_deg':left_pose_deg,'left_pose_source':'operator_confirmed_near_zero; modeled at zero',
+        'left_pose_deg':left_pose_deg,'left_pose_source':'explicit_static_pose_supplied_by_caller',
         'max_sample_joint_travel_deg':step_deg,'checked_configurations':checked,
         'minimum_sampled_distance_m':minimum,'distance_configurations_checked':distance_checked,'closest':closest,'failure':failure,'excluded_pairs':excluded,
         'elapsed_seconds':time.monotonic()-t0,

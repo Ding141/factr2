@@ -10,7 +10,7 @@ import h5py
 import numpy as np
 import yaml
 from factr2_next.data_collection.quality import require, sha256, sidecar_path, write_json, make_manifest, validate_manifest
-from factr2_next.data_collection.campaign import control_profile, validate_independent_manifest
+from factr2_next.data_collection.campaign import control_profile, arm_control_profile, geometry_sha256, validate_independent_manifest
 from factr2_next.w3_config import SIGNALS
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -114,6 +114,9 @@ def prepare(spec, output):
         raise ValueError('Output already exists; never replace raw data or a frozen split')
     if set(spec['sessions']) != {'train', 'val', 'test'}:
         raise ValueError('Specify three independent session roles')
+    scope = spec.get('control_profile_scope')
+    if scope not in (None, 'arm_v2'):
+        raise ValueError('Unknown control profile scope')
     resumed_roles = spec.get('resumed_evaluation_roles', [])
     if (not isinstance(resumed_roles,list) or any(r not in ('val','test') for r in resumed_roles)
             or len(set(resumed_roles)) != len(resumed_roles)
@@ -133,6 +136,8 @@ def prepare(spec, output):
                 selection = folder['events']; folder = folder['session']
             source, meta, report, run, profile = collect_source(Path(folder).resolve(), role, selection,
                 allow_evaluation_resume=role in resumed_roles)
+            if scope == 'arm_v2':
+                profile = arm_control_profile(meta)
             if report['h5_sha256'] in seen or meta['session_id'] in ids:
                 raise ValueError('Session reused across campaign roles')
             seen.add(report['h5_sha256']); ids.add(meta['session_id']); profiles.add(profile)
@@ -179,13 +184,17 @@ def prepare(spec, output):
                 for field in ('home_deg', 'working_bounds_deg', 'tool_frame', 'baseline_protocol'):
                     if original['config'][field] != reference['config'][field]:
                         raise ValueError('Resumed reference/config mismatch: ' + field)
-                if original['model_sha256'] != reference['model_sha256']:
+                if (original['model_sha256'] != reference['model_sha256'] and not
+                        (scope == 'arm_v2' and geometry_sha256(original['robot_description']) ==
+                         geometry_sha256(reference['robot_description']))):
                     raise ValueError('Resumed reference robot mismatch')
                 for speed in {e['speed'] for e in run['events']}:
                     if original['config']['speeds'][speed] != reference['config']['speeds'][speed]:
                         raise ValueError('Resumed selected speed limits mismatch')
             completion_audit[role] = dict(reference=str(Path(spec['protocol_reference'][role]).resolve()),
                 reference_sha256=sha256(spec['protocol_reference'][role]),
+                control_profile_scope=scope or 'full_snapshot_v1',
+                geometry_sha256=geometry_sha256(reference['robot_description']),
                 required_signatures=[list(s) for s in sorted(required)],
                 observed_signatures=[list(s) for s in sorted({signature(b) for b in selected})],
                 sources=[dict(h5=str(source), h5_sha256=report['h5_sha256'],
@@ -204,6 +213,8 @@ def prepare(spec, output):
             derived['task_coverage'] = {k:copy.deepcopy(protocols[0][k]) for k in
                                        ('recipe_sha256', 'shared_pose_seed', 'task_poses_deg', 'max_condition')}
         derived['episodes'] = {}; derived['control_profile_sha256'] = profile
+        if scope:
+            derived['control_profile_scope'] = scope
         derived['derivation'] = dict(parent_session_id=meta['session_id'],
             parent_h5=str(source), parent_h5_sha256=report['h5_sha256'],
             scope='independent_recording_sessions', guard_frames_each_end={'static':100, 'dynamic':0})

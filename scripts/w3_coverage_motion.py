@@ -5,8 +5,10 @@ import fcntl
 import hashlib
 import json
 import math
+import math
 from pathlib import Path
 import time
+import xml.etree.ElementTree as ET
 
 import numpy as np
 import yaml
@@ -71,11 +73,45 @@ def scheduled_position(times, positions, elapsed):
 
 
 class CoverageClient(MotionClient):
-    def __init__(self, plan):
+    def __init__(self, plan, stationary_left_deg=None):
         super().__init__(plan['side'])
         self.plan = plan
         self.expected_deg = None
         self.hardware_bounds = ArmModel(plan['robot_description'], plan['side'], plan['config']['tool_frame']).limits_deg
+        loaded = {j.get('name') for j in ET.fromstring(plan['robot_description']).findall('./ros2_control/joint')}
+        self.stationary_left_deg = (np.asarray(stationary_left_deg, float)
+            if plan['side'] == 'right' and {f'left_joint_{i}' for i in range(7)} <= loaded else None)
+        if self.stationary_left_deg is not None and (self.stationary_left_deg.shape != (7,) or
+                not np.isfinite(self.stationary_left_deg).all()):
+            raise ValueError('Loaded left arm requires its collision-audited static pose')
+        if self.stationary_left_deg is not None:
+            from diagnostic_msgs.msg import DiagnosticArray
+            from rclpy.qos import qos_profile_sensor_data
+            self.node.create_subscription(DiagnosticArray, '/factr2/w3_health',
+                                          self.left_health, qos_profile_sensor_data)
+
+    def left_health(self, msg):
+        self.state['left_healthy'] = False
+        for status in msg.status:
+            if status.name == 'factr2/w3/left':
+                self.state['left_healthy'] = status.level in (0, b'\x00')
+                self.state['left_health_received'] = time.monotonic()
+                self.state['left_health_stamp'] = msg.header.stamp.sec*10**9+msg.header.stamp.nanosec
+
+    def joints(self, msg, key):
+        super().joints(msg, key)
+        if getattr(self, 'stationary_left_deg', None) is None:
+            return
+        names = [f'left_joint_{i}' for i in range(7)]
+        values = dict(zip(msg.name, msg.position))
+        mapped = 'left_q' if key == 'q' else 'left_cmd'
+        if (len(msg.name) != len(msg.position) or len(msg.name) != len(set(msg.name))
+                or not all(n in values and math.isfinite(values[n]) for n in names)):
+            self.state.pop(mapped, None)
+            return
+        self.state[mapped] = [values[n] for n in names]
+        self.state[mapped+'_received'] = time.monotonic()
+        self.state[mapped+'_stamp'] = msg.header.stamp.sec*10**9+msg.header.stamp.nanosec
 
     def health(self, msg):
         super().health(msg)
@@ -87,6 +123,8 @@ class CoverageClient(MotionClient):
 
     def guard(self):
         super().guard()
+        if getattr(self, 'stationary_left_deg', None) is not None:
+            self.guard_stationary_left()
         config = self.plan['config']
         measured = np.rad2deg(self.state['q'])
         if np.any(measured < self.hardware_bounds[:, 0]) or np.any(measured > self.hardware_bounds[:, 1]):
@@ -102,6 +140,15 @@ class CoverageClient(MotionClient):
         # Detect another command source or a controller holding after a lost window.
         if self.expected_deg is not None and np.max(np.abs(np.rad2deg(self.state['cmd']) - self.expected_deg)) > .5:
             raise RuntimeError('Controller target differs from scheduled path by >0.5 degrees')
+
+    def guard_stationary_left(self):
+        if not all(self.fresh(key) for key in ('left_q','left_cmd','left_health')):
+            raise RuntimeError('Loaded left arm feedback/target stale; collision pose unknown')
+        if not self.state.get('left_healthy'):
+            raise RuntimeError('Loaded left arm motor feedback unhealthy; collision pose unknown')
+        for key in ('left_q','left_cmd'):
+            if np.max(np.abs(np.rad2deg(self.state[key])-self.stationary_left_deg)) > 3.:
+                raise RuntimeError('Left arm moved beyond the audited static pose; stop sending windows')
 
     def play(self, step, capture_guard, on_tick=None):
         from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
@@ -270,6 +317,7 @@ def execute_continuous(plan, client, capture_guard, report, save):
 def send(plan, digest):
     active = read_active(plan['side'], digest)
     session = Path(active['session'])
+    collision = {}
     if plan['config'].get('baseline_protocol'):
         collision = json.loads((session/'audit/collision.json').read_text())
         if (collision.get('accepted') is not True or collision.get('plan_sha256') != digest
@@ -293,7 +341,7 @@ def send(plan, digest):
                 writer.check()
                 if read_active(plan['side'], digest) != active:
                     raise RuntimeError('Capture ended or changed')
-            client = CoverageClient(plan)
+            client = CoverageClient(plan, stationary_left_deg=collision.get('left_pose_deg'))
             initial = client.preflight()
             check_start(plan, initial, client.description, client.state['cmd'])
             capture_guard()

@@ -33,6 +33,20 @@ def check_capture_space(path, duration_seconds=0., bag_profile='full'):
     return required
 
 
+def bag_record_command(output, topics, compression='none'):
+    if compression not in ('none', 'zstd'):
+        raise ValueError('Unsupported bag compression')
+    command = ['ros2', 'bag', 'record', '-o', output]
+    if compression == 'zstd':
+        # Bound each database and avoid CPU contention with the controller.
+        # Message compression avoids the installed file compressor's broken
+        # frame boundaries on split bags. H5 supervision remains intact.
+        command += ['--compression-mode', 'message', '--compression-format', 'zstd',
+                    '--compression-threads', '1', '--compression-queue-size', '4096',
+                    '--max-bag-size', str(64*1024**2)]
+    return command + list(topics)
+
+
 def runtime_environment(domain):
     env = dict(os.environ)
     env['ROS_DOMAIN_ID'] = str(domain)
@@ -156,7 +170,10 @@ def prepare(session, side, snapshots, load, tool, motion=None, workspace=None, f
       ROOT/'factr2_w3_adapter/factr2_w3_adapter/adapter_node.py',
       ROOT/'factr2_w3_adapter/factr2_w3_adapter/validation.py',
       ROOT/'factr2_next/src/factr2_next/factr2_next/data_collection/recorder_node.py',
-      ROOT/'factr2_next/src/factr2_next/factr2_next/data_collection/h5_writer.py']
+      ROOT/'factr2_next/src/factr2_next/factr2_next/data_collection/h5_writer.py',
+      ROOT/'factr2_next/src/factr2_next/factr2_next/data_collection/quality.py',
+      ROOT/'factr2_next/src/factr2_next/factr2_next/data_collection/campaign.py',
+      ROOT/'factr2_next/src/factr2_next/factr2_next/w3_samples.py']
     manifest={}
     for source in sources:
         if source.is_file():
@@ -256,6 +273,8 @@ def main():
     parser.add_argument('--validation-only', action='store_true', help='Mixed contact/release validation, forbidden as training data')
     parser.add_argument('--bag-profile', choices=['full', 'minimal'], default='full',
                         help='minimal omits redundant raw bridge/state traffic; H5 four streams are unchanged')
+    parser.add_argument('--bag-compression', choices=['none', 'zstd'], default='none',
+                        help='Lossless message compression in 64 MiB databases; H5 streams unchanged')
     args = parser.parse_args()
     if args.validation_only and args.motion:
         parser.error('Contact validation uses position holding; no automatic motion plan')
@@ -354,8 +373,9 @@ def main():
         if args.bag_profile == 'minimal':
             topics = [t for t in topics if t not in ('/w3_robot_bridge_node/state', '/joint_states')]
         (session/'audit/bag_profile.json').write_text(json.dumps(dict(profile=args.bag_profile, topics=topics,
+            compression=args.bag_compression,
             reserve_bytes=DISK_RESERVE, estimated_duration_seconds=duration), indent=2)+'\n')
-        launch('bag', w3_command(['ros2', 'bag', 'record', '-o', session / 'audit/bag', *topics], env, workspace))
+        launch('bag', w3_command(bag_record_command(session/'audit/bag', topics, args.bag_compression), env, workspace))
         launch('recorder', next_command(['ros2', 'run', 'factr2_next', 'next_record', '--ros-args',
                '-p', f'config_file:={session / "record.yaml"}', '-r', f'__node:=quick_recorder_{args.side}']))
         deadline = time.monotonic() + 30

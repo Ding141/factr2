@@ -15,7 +15,7 @@ import numpy as np
 import rclpy
 import yaml
 from ament_index_python.packages import get_package_share_directory
-from message_filters import ApproximateTimeSynchronizer, Subscriber
+from message_filters import ApproximateTimeSynchronizer, TimeSynchronizer, Subscriber
 from rclpy.node import Node
 from rclpy.qos import qos_profile_sensor_data
 from sensor_msgs.msg import JointState
@@ -23,6 +23,17 @@ from std_srvs.srv import SetBool
 from termcolor import colored
 
 from factr2_next.data_collection.h5_writer import H5Writer
+
+
+def make_synchronizer(subscribers, sync_cfg, w3):
+    # The W3 adapter emits all four vectors with the same frame timestamp.
+    # Approximate matching can consume neighbouring frames after one message
+    # drops, producing repeated frame_stamp rejection despite healthy feedback.
+    queue_size = int(sync_cfg.get('queue_size', 20))
+    if w3:
+        return TimeSynchronizer(subscribers, queue_size=queue_size)
+    return ApproximateTimeSynchronizer(subscribers, queue_size=queue_size,
+                                       slop=float(sync_cfg.get('slop_seconds', .03)))
 
 
 class RecorderNode(Node):
@@ -82,11 +93,7 @@ class RecorderNode(Node):
         ]
 
         sync_cfg = self.cfg.get("sync", {})
-        self.sync = ApproximateTimeSynchronizer(
-            self.subscribers,
-            queue_size=int(sync_cfg.get("queue_size", 20)),
-            slop=float(sync_cfg.get("slop_seconds", 0.03)),
-        )
+        self.sync = make_synchronizer(self.subscribers, sync_cfg, self.w3)
         self.sync.registerCallback(self._sync_callback)
         self.record_timer = self.create_timer(
             1.0 / max(self.target_hz, 1e-6),

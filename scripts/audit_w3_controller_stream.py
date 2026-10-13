@@ -14,19 +14,38 @@ from rclpy.serialization import deserialize_message
 from sensor_msgs.msg import JointState
 
 
+def command_blobs(bag):
+    metadata = yaml.safe_load((bag/'metadata.yaml').read_text())['rosbag2_bagfile_information']
+    if str(metadata.get('compression_mode', '')).lower() in ('file', 'message'):
+        # The installed rosbag2 compression reader handles chunk decompression;
+        # do not feed a compressed file to SQLite or skip its samples.
+        import rosbag2_py
+        reader = rosbag2_py.SequentialCompressionReader()
+        reader.open(rosbag2_py.StorageOptions(uri=str(bag), storage_id=metadata['storage_identifier']),
+                    rosbag2_py.ConverterOptions('', ''))
+        reader.set_filter(rosbag2_py.StorageFilter(topics=['/joint_position_controller/command_state']))
+        while reader.has_next():
+            topic, blob, _ = reader.read_next()
+            if topic == '/joint_position_controller/command_state':
+                yield blob
+        return
+    for path in sorted(bag.glob('*.db3')):
+        with sqlite3.connect('file:'+str(path.resolve())+'?mode=ro', uri=True) as db:
+            for blob, in db.execute("SELECT m.data FROM messages m JOIN topics t ON m.topic_id=t.id "
+                    "WHERE t.name='/joint_position_controller/command_state' ORDER BY m.timestamp"):
+                yield blob
+
+
 def audit(session):
     config = yaml.safe_load((session/'audit/position.yaml').read_text())
     params = next(iter(config.values()))['ros__parameters']
     names = params['joints']
     rows = []
-    for path in sorted((session/'audit/bag').glob('*.db3')):
-        with sqlite3.connect('file:'+str(path.resolve())+'?mode=ro', uri=True) as db:
-            for blob, in db.execute("SELECT m.data FROM messages m JOIN topics t ON m.topic_id=t.id "
-                    "WHERE t.name='/joint_position_controller/command_state' ORDER BY m.timestamp"):
-                m = deserialize_message(blob, JointState)
-                ix = [m.name.index(name) for name in names]
-                rows.append((m.header.stamp.sec*10**9+m.header.stamp.nanosec,
-                    [m.position[k] for k in ix], [m.velocity[k] for k in ix]))
+    for blob in command_blobs(session/'audit/bag'):
+        m = deserialize_message(blob, JointState)
+        ix = [m.name.index(name) for name in names]
+        rows.append((m.header.stamp.sec*10**9+m.header.stamp.nanosec,
+            [m.position[k] for k in ix], [m.velocity[k] for k in ix]))
     if len(rows) < 500:
         raise ValueError('Too few controller-cycle samples for continuity audit')
     rows.sort(key=lambda item: item[0])

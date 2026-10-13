@@ -117,6 +117,8 @@ def train(cfg):
     meta={k:copy.deepcopy(source[k]) for k in ('source','tool','gripper','load','calibration','control')}
     if 'control_profile_sha256' in source:
         meta['control_profile_sha256'] = source['control_profile_sha256']
+    if 'control_profile_scope' in source:
+        meta['control_profile_scope'] = source['control_profile_scope']
     for field in ('operating_envelope', 'task_coverage'):
         if field in source:
             meta[field] = copy.deepcopy(source[field])
@@ -133,6 +135,8 @@ def train(cfg):
     source_dir = Path(__file__).resolve().parent
     meta['training_source_files_sha256'] = {name:sha256(source_dir/name) for name in
         ('w3_train.py', 'train.py', 'dataset.py', 'models.py', 'coverage_audit.py', 'validation_metrics.py')}
+    meta['data_contract_source_files_sha256'] = {name:sha256(source_dir.parent/'data_collection'/name)
+        for name in ('quality.py','campaign.py')}
     write_json(run/'metadata.json',meta)
     from factr2_next.inference.checkpoint import load_checkpoint
     loaded=load_checkpoint(run,device,expected={'side':cfg['side'],'joint_order':cfg['joint_names']})

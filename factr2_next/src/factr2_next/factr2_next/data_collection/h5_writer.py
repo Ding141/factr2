@@ -87,7 +87,9 @@ class H5Writer:
             return group[name]
         shape = (0, *sample_shape)
         maxshape = (None, *sample_shape)
-        chunks = (1, *sample_shape)
+        # Bound chunk-index growth and write amplification at 100 Hz. The
+        # stored rows, timestamps and pre-write validation remain unchanged.
+        chunks = (128, *sample_shape)
         return group.create_dataset(
             name,
             shape=shape,

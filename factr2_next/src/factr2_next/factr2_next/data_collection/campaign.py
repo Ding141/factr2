@@ -3,9 +3,73 @@ import hashlib
 import json
 from pathlib import Path
 import yaml
+import xml.etree.ElementTree as ET
+
+
+def geometry_sha256(description):
+    """Hash all mechanical geometry/inertia, independently of loaded arm interfaces."""
+    root = ET.fromstring(description)
+    for child in list(root):
+        if child.tag == 'ros2_control':
+            root.remove(child)
+    return hashlib.sha256(ET.canonicalize(ET.tostring(root, encoding='unicode')).encode()).hexdigest()
+
+
+def arm_control_profile(metadata):
+    """Compare the recorded arm's actual physics, gains, interfaces and calibration.
+
+    A second stationary arm may be loaded into the same controller. Its gains
+    do not change this arm's label mapping. Full original snapshots remain saved.
+    """
+    names = metadata['joint_order']
+    side = metadata['side']
+    if names != [f'{side}_joint_{i}' for i in range(7)]:
+        raise ValueError('Arm profile requires exact seven-joint order')
+    control = metadata['control']
+    paths = dict(position=control['gains']['position_params'],
+                 gravity=control['feedforward']['gravity_params'])
+    values = {}
+    for label, path in paths.items():
+        raw = yaml.safe_load(Path(path).read_text())
+        params = next(iter(raw.values()))['ros__parameters']
+        joints = params['joints']
+        if len(joints) != len(set(joints)) or not set(names) <= set(joints):
+            raise ValueError('Missing/duplicate controller joints')
+        indices = [joints.index(n) for n in names]
+        selected = {}
+        for key, value in params.items():
+            if key == 'friction_model_yaml':
+                continue  # Contents are hashed below; per-session paths differ.
+            if key == 'robot_description':
+                model = ET.fromstring(value)
+                for interface in model.findall('ros2_control'):
+                    for joint in list(interface.findall('joint')):
+                        if joint.get('name') not in names:
+                            interface.remove(joint)
+                    for param in interface.findall('./hardware/param'):
+                        if param.get('name') == 'offsets_yaml':
+                            interface.find('hardware').remove(param)
+                value = ET.canonicalize(ET.tostring(model, encoding='unicode'))
+            elif isinstance(value, list) and len(value) == len(joints):
+                value = [value[i] for i in indices]
+            selected[key] = value
+        values[label] = selected
+    calibration = yaml.safe_load(Path(metadata['calibration']['path']).read_text())
+    offsets = {x['name']:x for x in calibration['offsets']}
+    values['calibration'] = []
+    for name in names:
+        entry = offsets[name]
+        values['calibration'].append(dict(name=name, axis_sign=float(entry['axis_sign']),
+            zero_offset=float(entry['zero_offset']), motor_type=entry['motor_type'],
+            slot=int(entry['slot']), channel=int(entry.get('channel', calibration.get('channel')))))
+    values['friction'] = yaml.safe_load(Path(control['feedforward']['friction_model']).read_text())
+    encoded = json.dumps(values, sort_keys=True, allow_nan=False).encode()
+    return hashlib.sha256(encoded).hexdigest()
 
 
 def control_profile(metadata):
+    if metadata.get('control_profile_scope') == 'arm_v2':
+        return arm_control_profile(metadata)
     control = metadata['control']
     paths = dict(position=control['gains']['position_params'],
                  gravity=control['feedforward']['gravity_params'],
