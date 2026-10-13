@@ -6,7 +6,7 @@ import pytest
 import rclpy
 from rclpy.executors import SingleThreadedExecutor
 from rclpy.parameter import Parameter
-from rclpy.qos import qos_profile_sensor_data, ReliabilityPolicy, DurabilityPolicy
+from rclpy.qos import qos_profile_sensor_data, ReliabilityPolicy, DurabilityPolicy, QoSProfile
 from sensor_msgs.msg import JointState
 from diagnostic_msgs.msg import DiagnosticArray, DiagnosticStatus
 from rosgraph_msgs.msg import Clock
@@ -14,7 +14,7 @@ from factr2_w3_adapter.adapter_node import AdapterNode
 
 
 class Harness:
-    def __init__(self, real=False, sim=False):
+    def __init__(self, real=False, sim=False, reliable=False):
         self.probe = rclpy.create_node('adapter_integration_probe')
         self.executor = SingleThreadedExecutor()
         self.executor.add_node(self.probe)
@@ -25,12 +25,14 @@ class Harness:
         for side in ('left','right'):
             node = AdapterNode(namespace=f'/contract_test/{side}', parameter_overrides=[
                 Parameter('side', value=side), Parameter('require_hardware_health', value=real),
+                Parameter('output_reliability', value='reliable' if reliable else 'best_effort'),
                 Parameter('use_sim_time', value=sim)])
             self.nodes[side] = node
             self.executor.add_node(node)
             for key in self.received[side]:
                 self.subscriptions.append(self.probe.create_subscription(JointState, f'/factr2/{side}/{key}',
-                    lambda m, s=side, k=key: self.received[s][k].append(m), qos_profile_sensor_data))
+                    lambda m, s=side, k=key: self.received[s][k].append(m),
+                    QoSProfile(depth=20, reliability=ReliabilityPolicy.RELIABLE) if reliable else qos_profile_sensor_data))
             self.subscriptions.append(self.probe.create_subscription(DiagnosticArray, f'/factr2/{side}/adapter_status',
                 lambda m, s=side: self.status[s].append(m), qos_profile_sensor_data))
         self.state_pub = self.probe.create_publisher(JointState, '/joint_states', qos_profile_sensor_data)
@@ -85,6 +87,26 @@ def harness():
     rclpy.init()
     h = Harness()
     try: yield h
+    finally:
+        h.close()
+        rclpy.shutdown()
+
+
+def test_reliable_capture_delivers_complete_frames():
+    rclpy.init()
+    h = Harness(reliable=True)
+    try:
+        h.drive(0.4)
+        h.drive(0.05, state=False, command=False)
+        for side in ('left','right'):
+            stamps = [{(m.header.stamp.sec,m.header.stamp.nanosec) for m in h.received[side][key]}
+                      for key in h.received[side]]
+            assert len(set.intersection(*stamps)) >= 10
+            assert all(s == stamps[0] for s in stamps)
+            for key in h.received[side]:
+                endpoints = h.probe.get_publishers_info_by_topic(f'/factr2/{side}/{key}')
+                assert len(endpoints) == 1
+                assert endpoints[0].qos_profile.reliability == ReliabilityPolicy.RELIABLE
     finally:
         h.close()
         rclpy.shutdown()

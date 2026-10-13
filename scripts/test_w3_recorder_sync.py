@@ -4,6 +4,9 @@ from sensor_msgs.msg import JointState
 from factr2_next.data_collection.recorder_node import make_synchronizer
 from factr2_next.w3_samples import frame
 from factr2_next.w3_config import SIGNALS
+from factr2_next.data_collection.recorder_node import subscription_qos
+from rclpy.qos import ReliabilityPolicy
+import pytest
 
 
 def playback(factory):
@@ -37,3 +40,12 @@ def test_exact_w3_sync_recovers_after_one_lost_stream_message():
     # from different frames, so the strict contract then rejects good traffic.
     old_accepted,old_rejected=playback(lambda inputs:ApproximateTimeSynchronizer(inputs,20,.03))
     assert len(old_accepted)<len(accepted) and 'frame_stamp' in old_rejected
+
+
+def test_capture_qos_keeps_legacy_and_non_w3_compatibility():
+    assert subscription_qos({}, True).reliability == ReliabilityPolicy.BEST_EFFORT
+    qos = subscription_qos({'reliability':'reliable','queue_size':20}, True)
+    assert qos.reliability == ReliabilityPolicy.RELIABLE and qos.depth == 20
+    assert subscription_qos({'reliability':'reliable'}, False).reliability == ReliabilityPolicy.BEST_EFFORT
+    with pytest.raises(ValueError, match='sync.reliability'):
+        subscription_qos({'reliability':'typo'}, True)

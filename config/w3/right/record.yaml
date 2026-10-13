@@ -2,6 +2,7 @@ output_dir: data/right/SESSION_ID
 session_name: SESSION_ID
 robot_topic_root: /factr2/right
 sync:
+  reliability: reliable
   queue_size: 20
   slop_seconds: 0.03
 recording:

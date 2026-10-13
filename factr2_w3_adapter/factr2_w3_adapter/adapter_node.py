@@ -4,7 +4,7 @@ import time
 import rclpy
 from rclpy.clock import Clock, ClockType
 from rclpy.node import Node
-from rclpy.qos import qos_profile_sensor_data
+from rclpy.qos import qos_profile_sensor_data, QoSProfile, ReliabilityPolicy
 from rcl_interfaces.msg import ParameterDescriptor
 from sensor_msgs.msg import JointState
 from diagnostic_msgs.msg import DiagnosticArray
@@ -29,8 +29,12 @@ class AdapterNode(Node):
             lambda msg: self._input('command', msg), qos_profile_sensor_data)
         self.health_sub = self.create_subscription(DiagnosticArray, self.config.health_topic,
             self._health, qos_profile_sensor_data)
+        # Logging needs all four components of a frame. Reliable output is
+        # optional; control/health inputs retain their low-latency sensor QoS.
+        output_qos = (QoSProfile(depth=20, reliability=ReliabilityPolicy.RELIABLE)
+                      if self.config.output_reliability == 'reliable' else qos_profile_sensor_data)
         self.outputs = {key: self.create_publisher(JointState, f'{self.config.output_root}/{key}',
-                                                  qos_profile_sensor_data)
+                                                  output_qos)
                         for key in ('joint_pos', 'joint_vel', 'joint_cmd', 'joint_effort')}
         self.status_pub = self.create_publisher(DiagnosticArray,
             f'{self.config.output_root}/adapter_status', qos_profile_sensor_data)

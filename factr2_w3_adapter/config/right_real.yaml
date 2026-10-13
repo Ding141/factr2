@@ -10,3 +10,4 @@
     health_topic: /factr2/w3_health
     require_hardware_health: true
     hardware_health_timeout_seconds: 0.25
+    output_reliability: reliable

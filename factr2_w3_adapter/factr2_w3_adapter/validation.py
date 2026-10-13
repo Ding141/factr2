@@ -25,6 +25,7 @@ class AdapterConfig:
     health_topic: str = '/factr2/w3_health'
     require_hardware_health: bool = False
     hardware_health_timeout_seconds: float = 0.25
+    output_reliability: str = 'best_effort'
 
     def __post_init__(self):
         if self.side not in ('left', 'right'):
@@ -43,6 +44,8 @@ class AdapterConfig:
             raise ValueError('max_source_skew_seconds must be finite and nonnegative')
         if not isinstance(self.require_hardware_health, bool):
             raise ValueError('require_hardware_health must be bool')
+        if self.output_reliability not in ('best_effort', 'reliable'):
+            raise ValueError('output_reliability must be best_effort or reliable')
 
     @property
     def names(self):

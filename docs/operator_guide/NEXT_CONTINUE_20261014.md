@@ -16,6 +16,8 @@
 
 W3 adapter 给四路数据发布完全相同的时间戳。原录制端使用近似时间同步，单路消息丢失后可把相邻帧误配；严格帧检查随后持续报 `frame_stamp` 并分段。丢包回放测试复现了此问题。W3 现在使用精确时间同步；其他录制模式保留近似时间同步。不填补丢失数据、不插值时间戳。新的 H5 使用 128 行数据块以减少块索引增长，行内容和写入前检查保持相同。
 
+精确同步后仍观察到间歇接收缺口。右臂 real adapter 的四路采集输出及配套录制配置改用 RELIABLE、20 帧深度，避免 BEST_EFFORT 独立丢弃某一路消息。控制、健康输入保持原 sensor QoS；过期帧、频率和整组连续性门禁保持原值。修改只在下一次启动采集进程时生效，不能使已经丢失的数据变得完整。缺少 `output_reliability` 或 `sync.reliability` 的旧配置仍为 BEST_EFFORT；手工使用 RELIABLE 录制配置时必须配套 RELIABLE 输出，ROS 会拒绝不兼容的 QoS。在隔离 ROS domain 225 中通过 45 项同步、adapter 与 QoS 检查。
+
 ## 数据保存与进度
 
 三个已关闭的旧 rosbag 通过单线程 zstd 无损压缩，解压字节 SHA256 与原文件一致后替换为压缩容器，约节约 2.35 GiB。每个目录保存 `lossless_archive.json` 和 `metadata.uncompressed.yaml`，含原文件哈希、消息数及恢复命令；H5 原始文件未改动。

@@ -7,6 +7,13 @@ from factr2_w3_adapter.validation import AdapterConfig, AdapterGate, joint_vecto
 T = 10_000_000_000
 
 
+def test_output_reliability_is_explicit_and_validated():
+    assert AdapterConfig('right').output_reliability == 'best_effort'
+    assert AdapterConfig('right', output_reliability='reliable').output_reliability == 'reliable'
+    with pytest.raises(ValueError, match='output_reliability'):
+        AdapterConfig('right', output_reliability='typo')
+
+
 def js(side='left', stamp=T, names=None, command=False):
     names = names or [f'{side}_joint_{i}' for i in range(7)]
     indices = [int(n.rsplit('_', 1)[-1]) if '_joint_' in n else 99 for n in names]

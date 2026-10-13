@@ -17,7 +17,7 @@ import yaml
 from ament_index_python.packages import get_package_share_directory
 from message_filters import ApproximateTimeSynchronizer, TimeSynchronizer, Subscriber
 from rclpy.node import Node
-from rclpy.qos import qos_profile_sensor_data
+from rclpy.qos import qos_profile_sensor_data, QoSProfile, ReliabilityPolicy
 from sensor_msgs.msg import JointState
 from std_srvs.srv import SetBool
 from termcolor import colored
@@ -34,6 +34,16 @@ def make_synchronizer(subscribers, sync_cfg, w3):
         return TimeSynchronizer(subscribers, queue_size=queue_size)
     return ApproximateTimeSynchronizer(subscribers, queue_size=queue_size,
                                        slop=float(sync_cfg.get('slop_seconds', .03)))
+
+
+def subscription_qos(sync_cfg, w3):
+    reliability = sync_cfg.get('reliability', 'best_effort') if w3 else 'best_effort'
+    if reliability not in ('best_effort', 'reliable'):
+        raise ValueError('sync.reliability must be best_effort or reliable')
+    if reliability == 'reliable':
+        return QoSProfile(depth=int(sync_cfg.get('queue_size', 20)),
+                          reliability=ReliabilityPolicy.RELIABLE)
+    return qos_profile_sensor_data
 
 
 class RecorderNode(Node):
@@ -82,17 +92,17 @@ class RecorderNode(Node):
         self.sample_timeout = float(rec_cfg.get("sample_timeout_seconds", 0.2))
         self.warn_after = float(rec_cfg.get("warn_after_seconds", 2.0))
 
+        sync_cfg = self.cfg.get("sync", {})
         self.subscribers = [
             Subscriber(
                 self,
                 JointState,
                 topic,
-                qos_profile=qos_profile_sensor_data,
+                qos_profile=subscription_qos(sync_cfg, self.w3),
             )
             for topic in self.topics
         ]
 
-        sync_cfg = self.cfg.get("sync", {})
         self.sync = make_synchronizer(self.subscribers, sync_cfg, self.w3)
         self.sync.registerCallback(self._sync_callback)
         self.record_timer = self.create_timer(
