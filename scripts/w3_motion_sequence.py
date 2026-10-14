@@ -200,7 +200,13 @@ class MotionClient:
             raise RuntimeError('请在网页手动切到关节位置；本工具不使能或切模式')
         if 'cartesian_position_controller' in active:
             raise RuntimeError('Cartesian controller must be inactive')
-        other = [p.node_name for p in self.node.get_publishers_info_by_topic('/joint_position_command')
+        publishers = self.node.get_publishers_info_by_topic('/joint_position_command')
+        discovery_deadline = time.monotonic() + 2.
+        while (any(p.node_name == '_NODE_NAME_UNKNOWN_' for p in publishers)
+                and time.monotonic() < discovery_deadline):
+            self.ros.spin_once(self.node, timeout_sec=.02)
+            publishers = self.node.get_publishers_info_by_topic('/joint_position_command')
+        other = [p.node_name for p in publishers
                  if not p.node_name.startswith('ieir_web_console_') and p.node_name != self.node.get_name()]
         if other:
             raise RuntimeError(f'Other motion publishers: {other}')

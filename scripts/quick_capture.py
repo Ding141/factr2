@@ -164,6 +164,7 @@ def prepare(session, side, snapshots, load, tool, motion=None, workspace=None, f
       workspace_path/'src/ieir_controllers/include/ieir_controllers/smooth_friction.hpp',
       ROOT/'scripts/w3_coverage_motion.py',ROOT/'scripts/w3_smooth_coverage.py',ROOT/'scripts/w3_coverage_plan.py',
       ROOT/'scripts/w3_baseline_protocol.py',ROOT/'scripts/w3_baseline_resume.py',
+      ROOT/'scripts/w3_pose_protocol.py', ROOT/'scripts/w3_pose_motion.py',
       ROOT/'scripts/w3_motion_audit.py',
       ROOT/'scripts/w3_motion_sequence.py',ROOT/'scripts/prepare_w3_baseline_campaign.py',
       ROOT/'scripts/quick_capture.py',
@@ -370,6 +371,8 @@ def main():
                   '/joint_position_controller/command_state', '/joint_position_command', '/factr2/w3_health']
         topics += [root + '/' + key for key in
                    ('adapter_status', 'joint_pos', 'joint_vel', 'joint_cmd', 'joint_effort')]
+        if motion and motion[0].get('config', {}).get('execution_mode') == 'direct_pose_goals':
+            topics += [root+'/pose_goal', '/joint_position_controller/stop']
         if args.bag_profile == 'minimal':
             topics = [t for t in topics if t not in ('/w3_robot_bridge_node/state', '/joint_states')]
         (session/'audit/bag_profile.json').write_text(json.dumps(dict(profile=args.bag_profile, topics=topics,

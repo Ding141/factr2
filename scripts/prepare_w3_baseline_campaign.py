@@ -148,15 +148,19 @@ def prepare(spec, output):
     prepared = []
     protocols = []
     working_envelopes = []
+    execution_modes = set()
     for role, records in sources.items():
         for source, meta, report, run, profile in records:
             plan = yaml.load((source.parent/'audit/motion.yaml').read_text(),
                              Loader=getattr(yaml, 'CSafeLoader', yaml.SafeLoader))
             protocols.append(plan['config']['baseline_protocol'])
+            execution_modes.add(plan['config'].get('execution_mode', 'streaming_windows'))
             working_envelopes.append(plan['config']['working_bounds_deg'])
             blocks = event_blocks(source, meta, run, plan)
             prepared.append((role, source, meta, report, profile, blocks))
     versions = {p['version'] for p in protocols}
+    if len(execution_modes) != 1:
+        raise ValueError('Do not mix pose-goal and streaming collection protocols')
     if len(versions) != 1:
         raise ValueError('Do not mix baseline protocol revisions in one campaign')
     if versions == {2}:
@@ -240,6 +244,8 @@ def prepare(spec, output):
     audit = validate_independent_manifest(manifest, reports)
     write_json(output/'split_audit.json', audit)
     template = 'train_next_v2.yaml' if versions == {2} else 'train_baseline.yaml'
+    if execution_modes == {'direct_pose_goals'}:
+        template = 'train_next_pose_v3.yaml'
     cfg = yaml.safe_load((ROOT/'config/w3/right'/template).read_text())
     cfg['data']['manifest'] = str(manifest_path.resolve())
     cfg['save']['run_name'] = 'next_right_'+output.name

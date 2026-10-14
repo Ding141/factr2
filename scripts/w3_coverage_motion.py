@@ -249,7 +249,8 @@ def check_start(plan, initial, description, command):
 
 
 def execute(plan, client, capture_guard, report, save):
-    if plan['config'].get('trajectory_profile') == 'continuous_sine':
+    if (plan['config'].get('trajectory_profile') == 'continuous_sine'
+            and plan['config'].get('execution_mode') != 'direct_pose_goals'):
         return execute_continuous(plan, client, capture_guard, report, save)
     for index, step in enumerate(plan['steps'], 1):
         capture_guard()
@@ -341,7 +342,11 @@ def send(plan, digest):
                 writer.check()
                 if read_active(plan['side'], digest) != active:
                     raise RuntimeError('Capture ended or changed')
-            client = CoverageClient(plan, stationary_left_deg=collision.get('left_pose_deg'))
+            client_type = CoverageClient
+            if plan['config'].get('execution_mode') == 'direct_pose_goals':
+                from w3_pose_motion import PoseCoverageClient
+                client_type = PoseCoverageClient
+            client = client_type(plan, stationary_left_deg=collision.get('left_pose_deg'))
             initial = client.preflight()
             check_start(plan, initial, client.description, client.state['cmd'])
             capture_guard()
@@ -477,7 +482,10 @@ def main():
     except (Exception, KeyboardInterrupt) as exc:
         print(f'未完成：{exc or "Ctrl-C"}', flush=True)
         if args.action == 'run' and args.send:
-            print('停止后续发送。已发送的小段可能继续约 0.8 秒；本工具不是硬件急停，请按现场停车流程处理并回 C 停录。')
+            if locals().get('plan', {}).get('config', {}).get('execution_mode') == 'direct_pose_goals':
+                print('停止后续目标发送；执行期间监测失败会请求控制器平滑制动。ROS 请求不是硬件急停，请按现场停车流程处理并回 C 停录。')
+            else:
+                print('停止后续发送。已发送的小段可能继续约 0.8 秒；本工具不是硬件急停，请按现场停车流程处理并回 C 停录。')
         return 1
 
 

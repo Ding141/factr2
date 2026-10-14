@@ -1,0 +1,217 @@
+{
+  "date": "2026-10-14",
+  "scope": "obsolete October 10–12 binary datasets, bags and checkpoints; October 13–14 preserved",
+  "files": [
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261011_215544_913483/20261011_215544_913483_20261011_215608.h5",
+      "bytes": 69785892
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261011_215544_913483/audit/bag/bag_0.db3.zst",
+      "bytes": 60595872
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261010_120220_339266/20261010_120220_339266_20261010_120227.h5",
+      "bytes": 2153436
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261011_231301_528314/20261011_231301_528314_20261011_231324.h5",
+      "bytes": 16659148
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261011_231301_528314/audit/bag/bag_0.db3",
+      "bytes": 160669696
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261011_224500_979861/20261011_224500_979861_20261011_224524.h5",
+      "bytes": 44299500
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261011_224500_979861/audit/bag/bag_0.db3.zst",
+      "bytes": 39353225
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261011_214447_254767/20261011_214447_254767_20261011_214454.h5",
+      "bytes": 9066832
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261011_214447_254767/audit/bag/bag_0.db3",
+      "bytes": 86794240
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261010_160004_957524/20261010_160004_957524_20261010_160011.h5",
+      "bytes": 3573496
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261012_002019_959735/20261012_002019_959735_20261012_002042.h5",
+      "bytes": 114054260
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261012_002019_959735/audit/bag/bag_0.db3.zstd",
+      "bytes": 111503531
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261011_223355_547020/20261011_223355_547020_20261011_223417.h5",
+      "bytes": 1493688
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261011_223355_547020/audit/bag/bag_0.db3",
+      "bytes": 13762560
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261010_141247_113649/20261010_141247_113649_20261010_141253.h5",
+      "bytes": 3546440
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/20261010_160331_906917_20261010_160338.h5",
+      "bytes": 68579596
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/bag/bag_0.db3.zstd",
+      "bytes": 112545089
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261011_214028_150233/20261011_214028_150233_20261011_214035.h5",
+      "bytes": 842524
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261011_214028_150233/audit/bag/bag_0.db3",
+      "bytes": 6955008
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261010_120030_799821/20261010_120030_799821_20261010_120037.h5",
+      "bytes": 2259644
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261010_114717_526404/20261010_114717_526404_20261010_114723.h5",
+      "bytes": 17387932
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261011_232124_888889/20261011_232124_888889_20261011_232148.h5",
+      "bytes": 115224468
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261011_232124_888889/audit/bag/bag_0.db3.zst",
+      "bytes": 110990131
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261010_120428_881457/20261010_120428_881457_20261010_120436.h5",
+      "bytes": 66477724
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261012_001341_150928/20261012_001341_150928_20261012_001406.h5",
+      "bytes": 11896156
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261012_001341_150928/audit/bag/bag_0.db3",
+      "bytes": 114896896
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/20261010_164151_566506_20261010_164157.h5",
+      "bytes": 40780364
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/audit/bag/bag_0.db3.zstd",
+      "bytes": 77128820
+    },
+    {
+      "path": "/home/venom/factr2/models/w3/right/c2_20261010/normalization.npz",
+      "bytes": 1218
+    },
+    {
+      "path": "/home/venom/factr2/models/w3/right/c2_20261010/model.pt",
+      "bytes": 980562
+    },
+    {
+      "path": "/home/venom/factr2/models/w3/right/baseline_candidate_20261012/normalization.npz",
+      "bytes": 1218
+    },
+    {
+      "path": "/home/venom/factr2/models/w3/right/baseline_candidate_20261012/model.pt",
+      "bytes": 980562
+    },
+    {
+      "path": "/home/venom/factr2/runs/next_right_baseline_campaign_20261012_000958_resume4_20261012_013705_122044/normalization.npz",
+      "bytes": 1218
+    },
+    {
+      "path": "/home/venom/factr2/runs/next_right_baseline_campaign_20261012_000958_resume4_20261012_013705_122044/model.pt",
+      "bytes": 980562
+    },
+    {
+      "path": "/home/venom/factr2/data/right/c2_remaining_20261010_164151_566506_session_trial/test.h5",
+      "bytes": 1210477
+    },
+    {
+      "path": "/home/venom/factr2/data/right/c2_remaining_20261010_164151_566506_session_trial/val.h5",
+      "bytes": 1202074
+    },
+    {
+      "path": "/home/venom/factr2/data/right/c2_remaining_20261010_164151_566506_session_trial/train.h5",
+      "bytes": 2357744
+    },
+    {
+      "path": "/home/venom/factr2/data/right/smooth_20261010_120428_881457_session_trial/test.h5",
+      "bytes": 1648879
+    },
+    {
+      "path": "/home/venom/factr2/data/right/smooth_20261010_120428_881457_session_trial/val.h5",
+      "bytes": 1890012
+    },
+    {
+      "path": "/home/venom/factr2/data/right/smooth_20261010_120428_881457_session_trial/train.h5",
+      "bytes": 3313684
+    },
+    {
+      "path": "/home/venom/factr2/data/right/baseline_campaign_20261012_000958_resume4/val_04.h5",
+      "bytes": 1876373
+    },
+    {
+      "path": "/home/venom/factr2/data/right/baseline_campaign_20261012_000958_resume4/val_03.h5",
+      "bytes": 10273583
+    },
+    {
+      "path": "/home/venom/factr2/data/right/baseline_campaign_20261012_000958_resume4/train_01.h5",
+      "bytes": 4058071
+    },
+    {
+      "path": "/home/venom/factr2/data/right/baseline_campaign_20261012_000958_resume4/train_02.h5",
+      "bytes": 3440816
+    },
+    {
+      "path": "/home/venom/factr2/data/right/baseline_campaign_20261012_000958_resume4/train_00.h5",
+      "bytes": 5202288
+    },
+    {
+      "path": "/home/venom/factr2/data/right/baseline_campaign_20261012_000958_resume4/test_05.h5",
+      "bytes": 12653821
+    },
+    {
+      "path": "/home/venom/factr2/data/right/c2_20261010_160331_verified_prefix/test.h5",
+      "bytes": 1094299
+    },
+    {
+      "path": "/home/venom/factr2/data/right/c2_20261010_160331_verified_prefix/val.h5",
+      "bytes": 1930479
+    },
+    {
+      "path": "/home/venom/factr2/data/right/c2_20261010_160331_verified_prefix/train.h5",
+      "bytes": 3160271
+    },
+    {
+      "path": "/home/venom/factr2/data/right/smooth_20261010_120428_881457_session_trial_cpu8/test.h5",
+      "bytes": 1648879
+    },
+    {
+      "path": "/home/venom/factr2/data/right/smooth_20261010_120428_881457_session_trial_cpu8/val.h5",
+      "bytes": 1890012
+    },
+    {
+      "path": "/home/venom/factr2/data/right/smooth_20261010_120428_881457_session_trial_cpu8/train.h5",
+      "bytes": 3313684
+    }
+  ],
+  "bytes": 1548386954,
+  "status": "completed",
+  "deleted_bytes": 1548386954
+}

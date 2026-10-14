@@ -3,6 +3,7 @@
 import argparse
 from collections import deque
 import hashlib
+import html
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 from pathlib import Path
@@ -72,6 +73,10 @@ class EndpointObserver(Node):
     def __init__(self, config, mode=None):
         super().__init__('right_endpoint_wrench_observer')
         self.cfg = yaml.safe_load(Path(config).read_text())
+        self.page_html = HTML
+        if self.cfg.get('model_notice'):
+            notice = '<div class="status">' + html.escape(str(self.cfg['model_notice'])) + '</div>\n'
+            self.page_html = HTML.replace('<div class="status" id="status">', notice + '<div class="status" id="status">', 1)
         if mode is not None:
             self.cfg['solver']['mode'] = mode
         self.mode = self.cfg['solver'].get('mode', 'full_wrench')
@@ -234,6 +239,7 @@ class EndpointObserver(Node):
                         geometry=dict(self.geometry), frame_id=self.frame_id,
                         moment_reference_point=self.frame_id, sign_convention='NEXT_residual',
                         outputs=self.outputs, wrench=None if self.wrench is None else dict(self.wrench),
+                        model_notice=getattr(self, 'cfg', {}).get('model_notice'),
                         history={k: list(v) for k, v in self.history.items()})
 
     def _handler(self):
@@ -241,7 +247,7 @@ class EndpointObserver(Node):
         class Handler(BaseHTTPRequestHandler):
             def log_message(self, *_): pass
             def do_GET(self):
-                if self.path == '/': body, kind = HTML.encode(), 'text/html; charset=utf-8'
+                if self.path == '/': body, kind = observer.page_html.encode(), 'text/html; charset=utf-8'
                 elif self.path == '/snapshot': body, kind = json.dumps(observer._snapshot(), allow_nan=False).encode(), 'application/json'
                 else: self.send_error(404); return
                 self.send_response(200); self.send_header('Content-Type', kind)

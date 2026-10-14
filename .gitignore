@@ -25,11 +25,5 @@ __pycache__/
 .git-local/
 reports/generated/
 
-# Explicitly retained small right-arm deployment checkpoint (2026-10-10).
-!models/w3/right/c2_20261010/model.pt
-!models/w3/right/c2_20261010/normalization.npz
-
-# Retained 2026-10-12 candidate for explicitly authorized read-only diagnostics.
-# Independent free-space acceptance failed; this is not a qualified release.
-!models/w3/right/baseline_candidate_20261012/model.pt
-!models/w3/right/baseline_candidate_20261012/normalization.npz
+# Obsolete October 10–12 binaries were cleaned by user request on October 14.
+# Reports/configuration remain; regenerated weights use the normal ignore rules.

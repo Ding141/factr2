@@ -1,0 +1,214 @@
+{
+  "scope": "offline_and_mock_only",
+  "hardware_commands": false,
+  "new_model_trained": false,
+  "complete_plan": {
+    "train": {
+      "name": "right_next_direct_pose_v3",
+      "side": "right",
+      "steps": 385,
+      "duration_seconds": 1113.339999999999,
+      "planned_min_deg": [
+        -40.0,
+        20.0,
+        -30.0,
+        -85.0,
+        -30.0,
+        -23.0,
+        -30.0
+      ],
+      "planned_max_deg": [
+        40.0,
+        90.0,
+        30.0,
+        -25.0,
+        30.0,
+        23.0,
+        30.0
+      ],
+      "working_bounds_deg": [
+        [
+          -40,
+          40
+        ],
+        [
+          20,
+          90
+        ],
+        [
+          -30,
+          30
+        ],
+        [
+          -85,
+          -25
+        ],
+        [
+          -30,
+          30
+        ],
+        [
+          -23,
+          23
+        ],
+        [
+          -30,
+          30
+        ]
+      ],
+      "model_sha256": "e12ef780188e7b52792ccd931c24379f34ead94fa38fcf139973ac22b6615088",
+      "groups": {
+        "single_joint": 257.94,
+        "multi_joint": 497.4700000000006,
+        "static": 270.0,
+        "transition": 87.92999999999995
+      },
+      "task_max_condition": 19.8622550890539
+    },
+    "val": {
+      "name": "right_next_direct_pose_v3",
+      "side": "right",
+      "steps": 385,
+      "duration_seconds": 1113.339999999999,
+      "planned_min_deg": [
+        -40.0,
+        20.0,
+        -30.0,
+        -85.0,
+        -30.0,
+        -23.0,
+        -30.0
+      ],
+      "planned_max_deg": [
+        40.0,
+        90.0,
+        30.0,
+        -25.0,
+        30.0,
+        23.0,
+        30.0
+      ],
+      "working_bounds_deg": [
+        [
+          -40,
+          40
+        ],
+        [
+          20,
+          90
+        ],
+        [
+          -30,
+          30
+        ],
+        [
+          -85,
+          -25
+        ],
+        [
+          -30,
+          30
+        ],
+        [
+          -23,
+          23
+        ],
+        [
+          -30,
+          30
+        ]
+      ],
+      "model_sha256": "e12ef780188e7b52792ccd931c24379f34ead94fa38fcf139973ac22b6615088",
+      "groups": {
+        "single_joint": 257.94,
+        "multi_joint": 497.4700000000006,
+        "static": 270.0,
+        "transition": 87.92999999999995
+      },
+      "task_max_condition": 19.86225508905387
+    },
+    "test": {
+      "name": "right_next_direct_pose_v3",
+      "side": "right",
+      "steps": 385,
+      "duration_seconds": 1113.339999999999,
+      "planned_min_deg": [
+        -40.0,
+        20.0,
+        -30.0,
+        -85.0,
+        -30.0,
+        -23.0,
+        -30.0
+      ],
+      "planned_max_deg": [
+        40.0,
+        90.0,
+        30.0,
+        -25.0,
+        30.0,
+        23.0,
+        30.0
+      ],
+      "working_bounds_deg": [
+        [
+          -40,
+          40
+        ],
+        [
+          20,
+          90
+        ],
+        [
+          -30,
+          30
+        ],
+        [
+          -85,
+          -25
+        ],
+        [
+          -30,
+          30
+        ],
+        [
+          -23,
+          23
+        ],
+        [
+          -30,
+          30
+        ]
+      ],
+      "model_sha256": "e12ef780188e7b52792ccd931c24379f34ead94fa38fcf139973ac22b6615088",
+      "groups": {
+        "single_joint": 257.94,
+        "multi_joint": 497.4700000000006,
+        "static": 270.0,
+        "transition": 87.92999999999995
+      },
+      "task_max_condition": 18.274376805964792
+    }
+  },
+  "ros_stream": {
+    "passed": true,
+    "domain": 227,
+    "hardware": false,
+    "can": false,
+    "initial_pose_messages": 1,
+    "native_trajectories": 1,
+    "native_knots": 2,
+    "duplicate_replayed": false,
+    "command_samples_checked": 159,
+    "max_position_error_deg": 8.881784197001252e-16,
+    "native_start_delay_seconds": 0.003310337,
+    "max_nominal_schedule_error_deg": 0.00162399304147888
+  },
+  "python_broad_regression": "100 passed in 124.06s; before final measured-duration/pose-frame additions",
+  "python_final_changed_area_regression": "52 passed in 31.26s; includes final speed-duration, pose-frame, raw-H5 campaign and training diagnostic changes",
+  "native_controller_regression": "12 passed; includes C2 braking and future-goal cancellation",
+  "binary_cleanup_bytes": 1548386954,
+  "publication_failure_braking_tests": "Final pose/joint-goal publication failure tests request one stop and never retry; included in the last targeted test run.",
+  "final_targeted_result": "................................                                         [100%]\n32 passed in 19.04s",
+  "recording_subscriber_regression": "Verified observers do not block single goals and cannot substitute for the controller stop subscriber."
+}

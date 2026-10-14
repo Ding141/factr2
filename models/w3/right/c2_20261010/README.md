@@ -1,3 +1,5 @@
+> 2026-10-14：该旧模型的 model.pt 与 normalization.npz 已按用户授权清理。此目录仅保留历史配置和验收报告；不能再作为可加载检查点。详情见 [清理清单](../../../../docs/acceptance/cleanup_20261014.json)。
+
 # 2026-10-10 右臂 C2 采集模型
 
 实际真机训练checkpoint副本，五个必需文件按原始字节保存，通过metadata中的artifact_sha256验证。

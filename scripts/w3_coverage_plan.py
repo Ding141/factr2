@@ -53,6 +53,7 @@ class ArmModel:
             joint = by_child[child]
             chain.append(joint)
             child = joint.find('parent').get('link')
+        self.root_frame = child
         self.chain = []
         movable = []
         for joint in reversed(chain):
@@ -164,8 +165,12 @@ def validate_config(config, model):
                 'repeats', 'sample_period_seconds', 'hold_seconds', 'hardware_margin_deg',
                 'arrival_tolerance_deg', 'start_tolerance_deg', 'tracking_limit_deg',
                 'speeds', 'cartesian'}
-    if not isinstance(config, dict) or not required <= set(config) or set(config) - required - {'trajectory_profile', 'finish_at_home', 'continuous_repetitions', 'baseline_protocol'} or type(config['version']) is not int or config['version'] != 1:
+    if not isinstance(config, dict) or not required <= set(config) or set(config) - required - {'trajectory_profile', 'finish_at_home', 'continuous_repetitions', 'baseline_protocol', 'execution_mode'} or type(config['version']) is not int or config['version'] != 1:
         raise ValueError('Invalid coverage configuration keys/version')
+    if 'execution_mode' in config and (config['execution_mode'] != 'direct_pose_goals'
+            or config.get('continuous_repetitions', False)
+            or config.get('trajectory_profile') != 'continuous_sine'):
+        raise ValueError('Direct pose goals require explicit rest-to-rest execution')
     if 'baseline_protocol' in config:
         protocol = config['baseline_protocol']
         fields = {'version', 'role', 'seed', 'max_condition', 'dwell_seconds'}
@@ -351,7 +356,11 @@ def validate_plan(plan):
     previous_velocity = np.zeros(7)
     previous_acceleration = np.zeros(7)
     for step_index, step in enumerate(steps):
-        if not isinstance(step, dict) or set(step) != {'name', 'phase', 'kind', 'speed', 'repetition', 'joint', 'duration_seconds', 'hold_seconds', 'times_seconds', 'positions_deg'}:
+        fields = {'name', 'phase', 'kind', 'speed', 'repetition', 'joint', 'duration_seconds', 'hold_seconds', 'times_seconds', 'positions_deg'}
+        direct = config.get('execution_mode') == 'direct_pose_goals'
+        if direct:
+            fields.add('command')
+        if not isinstance(step, dict) or set(step) != fields:
             raise ValueError('Invalid step fields')
         if not isinstance(step['name'], str) or not step['name'] or step['name'] in seen:
             raise ValueError('Duplicate/invalid step name')
@@ -370,6 +379,8 @@ def validate_plan(plan):
         if not isinstance(step['positions_deg'], list) or len(step['positions_deg']) != len(t):
             raise ValueError('Position/time count mismatch')
         q = np.array([vector(row, 7, 'position') for row in step['positions_deg']])
+        if direct:
+            validate_goal_command(step, model, config['sample_period_seconds'])
         dt = np.diff(t)
         if abs(t[0]) > 1e-9 or abs(t[-1] - step['duration_seconds']) > 1e-7 or np.any(np.abs(dt - config['sample_period_seconds']) > 1e-7):
             raise ValueError('Invalid trajectory time grid/duration')
@@ -404,6 +415,48 @@ def validate_plan(plan):
                 raise ValueError('Single-joint sweep moves other joints')
         previous = q[-1]
     return model
+
+
+def validate_goal_command(step, model, dt):
+    """A pose goal must execute exactly the already audited joint path."""
+    from scipy.spatial.transform import Rotation
+    from w3_pose_protocol import sample_knots
+    command = step['command']
+    if not isinstance(command, dict) or command.get('type') not in ('hold', 'pose_goal', 'joint_trajectory'):
+        raise ValueError('Invalid direct command')
+    if command['type'] == 'hold':
+        if (set(command) != {'type'} or not step['kind'].startswith('static_')
+                or np.max(np.ptp(step['positions_deg'], axis=0)) > 1e-8):
+            raise ValueError('Hold must be constant and explicitly static')
+        return
+    fields = {'type', 'knots'} | ({'target'} if command['type'] == 'pose_goal' else set())
+    if set(command) != fields or not isinstance(command['knots'], list) or not 2 <= len(command['knots']) <= 10:
+        raise ValueError('Invalid goal knots')
+    if command['type'] == 'pose_goal' and len(command['knots']) != 2:
+        raise ValueError('Pose goal must have exactly one endpoint')
+    for knot in command['knots']:
+        if not isinstance(knot, dict) or set(knot) != {'time_seconds', 'position_deg'}:
+            raise ValueError('Invalid knot fields')
+        scalar(knot['time_seconds'], 0, 600, 'knot time')
+        vector(knot['position_deg'], 7, 'knot position')
+    expected_t, expected_q = sample_knots(command['knots'], dt)
+    if (expected_t.shape != np.shape(step['times_seconds'])
+            or expected_q.shape != np.shape(step['positions_deg'])
+            or not np.allclose(expected_t, step['times_seconds'], atol=1e-8, rtol=0)
+            or not np.allclose(expected_q, step['positions_deg'], atol=1e-8, rtol=0)):
+        raise ValueError('Native goal path differs from collision-audited samples')
+    if command['type'] == 'pose_goal':
+        target = command['target']
+        if not isinstance(target, dict) or set(target) != {'frame_id', 'position_m', 'quaternion_xyzw'} or target['frame_id'] != model.root_frame:
+            raise ValueError('Invalid pose frame/fields')
+        position = vector(target['position_m'], 3, 'pose position')
+        quaternion = vector(target['quaternion_xyzw'], 4, 'pose quaternion')
+        if abs(np.linalg.norm(quaternion)-1) > 1e-8:
+            raise ValueError('Non-unit pose quaternion')
+        transform = model.fk(np.deg2rad(step['positions_deg'][-1]))
+        if (np.max(abs(transform[:3, 3]-position)) > 1e-8 or
+                np.max(abs(transform[:3, :3]-Rotation.from_quat(quaternion).as_matrix())) > 1e-8):
+            raise ValueError('Pose differs from frozen inverse solution')
 
 
 def load_coverage(path):

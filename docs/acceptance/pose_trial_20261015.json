@@ -1,0 +1,458 @@
+{
+  "scope": "real_completed_capture_and_single_session_pose_holdout_trial",
+  "session_id": "20261014_230723_088450",
+  "raw_h5_sha256": "2f5445bd9d17e7759d269f33a6d02fd16223d2d98ea3642307aa4024755c56ae",
+  "capture": {
+    "ep_0000": {
+      "errors": [],
+      "rows": 130341,
+      "duration_seconds": 1303.399819311,
+      "hz": 100.00001386289895,
+      "max_gap_seconds": 0.016669716
+    }
+  },
+  "quality_passed": true,
+  "motion_status": "completed",
+  "completed_events": 386,
+  "recipe": "config/w3/motions/right_next_pose_protocol_v3_fast12.yaml",
+  "split": {
+    "splits": {
+      "train": {
+        "episodes": 294,
+        "rows": 98254,
+        "windows": 83848
+      },
+      "val": {
+        "episodes": 46,
+        "rows": 10960,
+        "windows": 8706
+      },
+      "test": {
+        "episodes": 46,
+        "rows": 14334,
+        "windows": 12080
+      }
+    },
+    "source_unchanged": true,
+    "source_ranges_disjoint": true,
+    "independent_sessions": false,
+    "event_boundary_sample_allowance_seconds": 0.02,
+    "synthetic_samples_added": 0
+  },
+  "production_coverage": {
+    "passed": false,
+    "reasons": [
+      "train:insufficient_measured_bidirectional_fast_speed",
+      "train:insufficient_bidirectional_fast_duration",
+      "val:insufficient_measured_bidirectional_fast_speed",
+      "val:insufficient_bidirectional_fast_duration",
+      "val:uncovered_static_pose:ep_0003",
+      "val:uncovered_static_pose:ep_0006",
+      "val:uncovered_static_pose:ep_0045"
+    ],
+    "requirements": {
+      "minimum_static_fraction": 0.1,
+      "minimum_multi_joint_fraction": 0.25,
+      "maximum_single_joint_fraction": 0.6,
+      "max_validation_pose_distance_deg": 5.0,
+      "minimum_fast_fraction": 0.15,
+      "minimum_fast_speed_p95_deg_s": 14.0,
+      "minimum_fast_direction_samples": 100
+    },
+    "measured_speed_coverage": {
+      "train": {
+        "fast_window_fraction": 0.3480941704035874,
+        "positive_speed_p95_deg_s": [
+          11.962775230407715,
+          11.962775230407715,
+          11.473187446594238,
+          10.913439750671387,
+          16.090394973754883,
+          10.493792533874512,
+          10.493792533874512
+        ],
+        "negative_speed_p95_deg_s": [
+          11.962775230407715,
+          9.444457054138184,
+          12.032825469970703,
+          10.913439750671387,
+          9.09453296661377,
+          6.296231746673584,
+          18.888696670532227
+        ],
+        "samples_at_required_speed_by_joint_and_direction": [
+          [
+            315,
+            106
+          ],
+          [
+            45,
+            95
+          ],
+          [
+            28,
+            30
+          ],
+          [
+            7,
+            13
+          ],
+          [
+            493,
+            615
+          ],
+          [
+            56,
+            160
+          ],
+          [
+            768,
+            675
+          ]
+        ]
+      },
+      "val": {
+        "fast_window_fraction": 0.3125430737422467,
+        "positive_speed_p95_deg_s": [
+          13.222152709960938,
+          10.70361614227295,
+          10.913439750671387,
+          11.473187446594238,
+          14.69113540649414,
+          10.493792533874512,
+          13.292094230651855
+        ],
+        "negative_speed_p95_deg_s": [
+          11.962775230407715,
+          10.70361614227295,
+          12.592463493347168,
+          10.353800773620605,
+          13.292094230651855,
+          7.695491790771484,
+          20.28795623779297
+        ],
+        "samples_at_required_speed_by_joint_and_direction": [
+          [
+            52,
+            18
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            53,
+            77
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            95,
+            97
+          ]
+        ]
+      }
+    }
+  },
+  "training": {
+    "run_name": "trial_pose_trial_20261015_20261015_023524_208273",
+    "epochs": 39,
+    "best_epoch": 19,
+    "early_stopped_epoch": 39,
+    "training_seconds": 1159.263686942,
+    "best_validation_physical_mse_nm2": 0.03000711470152588,
+    "test_physical_mse_nm2": 0.07290346322963569,
+    "artifact_sha256": {
+      "model.pt": "f8a2bff3962490e3902c2a092067569148ec9037eef30267ff780de61c3bdb22",
+      "config.yaml": "193cbd4d6af5408bda29f61ce52e088a46daa74ca91f718f803129b11b2fc3b8",
+      "normalization.npz": "40c04bb1572773a4fb4f5e0c631035d51e9d2a435a24e5c2b0824d36008208ba",
+      "metrics.json": "a002d6d63316625a1a81bf4e1832609c54b67f2af4bbd0dbb76923ab0a9a0973"
+    }
+  },
+  "test_diagnostics": {
+    "groups": {
+      "transition": {
+        "samples": 975,
+        "signed_bias_nm": [
+          0.3394827413628212,
+          -0.20970342545942866,
+          0.17526965860504276,
+          0.10972031180275223,
+          0.03966928416670551,
+          0.07098265332419453,
+          -0.007195157920137624
+        ],
+        "per_joint_rmse_nm": [
+          0.603364454259875,
+          0.30059923650533,
+          0.2577711768622657,
+          0.2886310206842359,
+          0.05734238401606116,
+          0.10814671466790567,
+          0.035903432520607265
+        ]
+      },
+      "static": {
+        "samples": 2546,
+        "signed_bias_nm": [
+          0.010300032921773377,
+          -0.11762607655311022,
+          0.04665866034386155,
+          -0.048018218198087353,
+          0.05194272046330043,
+          0.1776565852994209,
+          -0.03331207037071183
+        ],
+        "per_joint_rmse_nm": [
+          0.20606152369544214,
+          0.1299702457996487,
+          0.07454404421859752,
+          0.11410339714999748,
+          0.05464901488002129,
+          0.17989917157749344,
+          0.04161027067348623
+        ]
+      },
+      "multi_joint": {
+        "samples": 8559,
+        "signed_bias_nm": [
+          0.35071319486628516,
+          -0.24093528085757812,
+          0.04390830839548696,
+          0.041142222208416124,
+          0.03453303447481279,
+          0.12208110368316655,
+          -0.022346857791812544
+        ],
+        "per_joint_rmse_nm": [
+          0.5526010285960391,
+          0.38083918138388123,
+          0.19542244065450906,
+          0.29297590098780335,
+          0.06154359126128319,
+          0.18350856923200148,
+          0.05897666737286987
+        ]
+      }
+    },
+    "static_episodes": [
+      {
+        "source_episode": "ep_0000",
+        "source_row_start": 114862,
+        "source_row_stop_exclusive": 115663,
+        "event": "342_static_pose7_from_low",
+        "kind": "static_pose7_from_low",
+        "phase": "cartesian",
+        "speed": "slow",
+        "rows": 801,
+        "path": "/home/venom/factr2/data/right/pose_trial_20261015/test.h5",
+        "episode": "ep_0003",
+        "samples": 752,
+        "signed_bias_nm": [
+          0.32520379312336445,
+          -0.1912924227641618,
+          0.061728280117715764,
+          0.09955242644215839,
+          0.029662415736349933,
+          0.21317442573924014,
+          -0.0036599361039378058
+        ],
+        "per_joint_rmse_nm": [
+          0.32556263328357415,
+          0.19219632230607395,
+          0.07296339343467273,
+          0.10786363970884903,
+          0.030926990536240314,
+          0.21357349095349998,
+          0.003994362600350001
+        ]
+      },
+      {
+        "source_episode": "ep_0000",
+        "source_row_start": 116173,
+        "source_row_stop_exclusive": 116974,
+        "event": "345_static_pose7_from_high",
+        "kind": "static_pose7_from_high",
+        "phase": "cartesian",
+        "speed": "slow",
+        "rows": 801,
+        "path": "/home/venom/factr2/data/right/pose_trial_20261015/test.h5",
+        "episode": "ep_0006",
+        "samples": 752,
+        "signed_bias_nm": [
+          -0.1553588619336803,
+          -0.11551575074368652,
+          0.10064926742551449,
+          -0.08227725032957871,
+          0.053012337872481094,
+          0.18072412955634137,
+          -0.02388819752687073
+        ],
+        "per_joint_rmse_nm": [
+          0.15602562265695702,
+          0.11724861496969305,
+          0.10630854445875962,
+          0.09001210872274476,
+          0.05325954144739593,
+          0.18093833922358135,
+          0.02417191479698416
+        ]
+      },
+      {
+        "source_episode": "ep_0000",
+        "source_row_start": 127618,
+        "source_row_stop_exclusive": 128709,
+        "event": "384_static_pose7_after_motion",
+        "kind": "static_pose7_after_motion",
+        "phase": "cartesian",
+        "speed": "slow",
+        "rows": 1091,
+        "path": "/home/venom/factr2/data/right/pose_trial_20261015/test.h5",
+        "episode": "ep_0045",
+        "samples": 1042,
+        "signed_bias_nm": [
+          -0.0974083535852279,
+          -0.06598487948782793,
+          -0.0031813498244123288,
+          -0.1297939692600675,
+          0.06725024144503068,
+          0.1498099353071481,
+          -0.06151279719142447
+        ],
+        "per_joint_rmse_nm": [
+          0.09842650568940567,
+          0.06851408096221938,
+          0.03973915559439946,
+          0.13254424593180875,
+          0.06752612000022724,
+          0.15010254641922435,
+          0.061622370691994534
+        ]
+      }
+    ],
+    "groups_by_speed": {
+      "transition:slow": {
+        "samples": 975,
+        "signed_bias_nm": [
+          0.3394827413628212,
+          -0.20970342545942866,
+          0.17526965860504276,
+          0.10972031180275223,
+          0.03966928416670551,
+          0.07098265332419453,
+          -0.007195157920137624
+        ],
+        "per_joint_rmse_nm": [
+          0.603364454259875,
+          0.30059923650533,
+          0.2577711768622657,
+          0.2886310206842359,
+          0.05734238401606116,
+          0.10814671466790567,
+          0.035903432520607265
+        ]
+      },
+      "static:slow": {
+        "samples": 2546,
+        "signed_bias_nm": [
+          0.010300032921773377,
+          -0.11762607655311022,
+          0.04665866034386155,
+          -0.048018218198087353,
+          0.05194272046330043,
+          0.1776565852994209,
+          -0.03331207037071183
+        ],
+        "per_joint_rmse_nm": [
+          0.20606152369544214,
+          0.1299702457996487,
+          0.07454404421859752,
+          0.11410339714999748,
+          0.05464901488002129,
+          0.17989917157749344,
+          0.04161027067348623
+        ]
+      },
+      "multi_joint:slow": {
+        "samples": 4259,
+        "signed_bias_nm": [
+          0.38995390853064443,
+          -0.15361121469252398,
+          0.05993491403555129,
+          0.12377078996592834,
+          0.021600109811108915,
+          0.14931517996496949,
+          -0.02089152025156585
+        ],
+        "per_joint_rmse_nm": [
+          0.5613196201439893,
+          0.31125263665341674,
+          0.18750560514955047,
+          0.29850042583723985,
+          0.0601941001944031,
+          0.19148280165952658,
+          0.054589873580637265
+        ]
+      },
+      "multi_joint:fast": {
+        "samples": 4300,
+        "signed_bias_nm": [
+          0.3118466368438419,
+          -0.3274267222057097,
+          0.02803451457664186,
+          -0.04069849176350122,
+          0.0473426452056767,
+          0.09510670115195755,
+          -0.023788318857838275
+        ],
+        "per_joint_rmse_nm": [
+          0.5438278024508798,
+          0.43902113579812013,
+          0.20295960906836558,
+          0.2873993899175499,
+          0.0628516596782903,
+          0.17525306985265832,
+          0.06302134621677534
+        ]
+      }
+    },
+    "matched_return_baselines": [
+      {
+        "path": "/home/venom/factr2/data/right/pose_trial_20261015/test.h5",
+        "pose_id": "7",
+        "baseline_gap_nm": [
+          0.48056265505704476,
+          0.07577667202047529,
+          0.03892098730779872,
+          0.18182967677173711,
+          0.02334992213613116,
+          0.03245029618289877,
+          0.020228261422932926
+        ]
+      }
+    ]
+  },
+  "deployment_ready": false,
+  "automatic_deployment": false,
+  "pending": [
+    "independent matching val/test recordings",
+    "high-speed coverage",
+    "contact/release validation"
+  ],
+  "push_verification": {
+    "python_changed_area_tests": "69 passed in 23.86s",
+    "controller_command_state_tests": "12 passed in 6.324s, isolated ROS domain 229, memory interfaces only",
+    "legacy_resource_script": "Not run: requires missing reports/generated/4/left/continuous/continuous.json; actual completed training peak RSS recorded instead",
+    "actual_training_peak_rss_mb": 2931.93359375
+  }
+}

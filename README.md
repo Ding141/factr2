@@ -2,7 +2,7 @@
 
 这个仓库保存 FACTR2 NEXT 模型、数据处理、训练/推理配置和复现文档。
 
-针对空载偏差、卸载残留和末端奇异提示，当前重采入口为 [2026-10-13 NEXT 重新采集与训练](docs/operator_guide/NEXT_REVISION_20261013.md)。新版代码已做离线检查；须按新协议采集并通过空载/卸载验收后，才能判断现场精度是否改善。
+针对空载偏差、卸载残留和末端奇异提示，当前重采入口为 [直接末端位姿采集与训练](docs/operator_guide/NEXT_POSE_CAPTURE_20261014.md)：一次发送完整目标，训练检查实测速度覆盖和返回基线。10 月 14 日已在慢/快 10/12°/s 下完成 386 个真机动作；10 月 15 日完成单会话姿态留出的初步训练。该模型尚未通过独立会话、高速覆盖和接触卸载验收，不能据此判断原问题已解决。详细结果见[采集与训练记录](docs/acceptance/pose_trial_20261015.json)。
 
 本项目必须与配套的 W3 控制仓库一起使用：
 
@@ -18,7 +18,7 @@
 
 W3 仓库负责 CAN、ros2_control 和真机状态；本仓库负责 NEXT 的数据采集、训练、推理以及后续 W3 数据适配。两个仓库通过 ROS 2 话题通信，不合并控制代码。
 
-训练数据、虚拟环境和运行日志不提交到 Git；默认也忽略模型权重。本次按保存工作结果的要求，例外保留约 960 KB 的右臂 checkpoint 于 `models/w3/right/c2_20261010/`；详见 `.gitignore`。复现步骤见 [FACTR2_NEXT_W3_REPRODUCTION_PLAN.md](FACTR2_NEXT_W3_REPRODUCTION_PLAN.md)。
+训练数据、虚拟环境和运行日志不提交到 Git；默认也忽略模型权重。10 月 10–12 日旧数据和权重已按用户要求清理，旧模型目录只保留报告与配置；[清理清单](docs/acceptance/cleanup_20261014.json)记录文件与占用。10 月 13–14 日最新数据和候选保留。复现步骤见 [FACTR2_NEXT_W3_REPRODUCTION_PLAN.md](FACTR2_NEXT_W3_REPRODUCTION_PLAN.md)。
 
 供不同 agent 逐步执行的开发任务、前置依赖和验收标准见 [分步开发任务](docs/development/README.md)，共 8 个部分，建议按编号推进。各阶段区分无硬件开发验收与真机实验验收，具体报告由执行该阶段的 agent 填写。
 
