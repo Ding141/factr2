@@ -27,12 +27,17 @@
 
 `experiment-results.tar.gz.part001` 等分卷合计约771 MB，保存8,477个文件，保留原来的 `data/`、`log/`、`runs/` 相对路径。包括历史训练权重与恢复检查点、归一化文件、实验参数、报告、图、补偿文件、源码快照以及小型审计记录。
 
-[manifest.json](manifest.json)记录每个分卷及每个归档文件的SHA256、字节数，并列出没有上传的原始流或可重算缓存。约19.1 GB的原始H5、bag、CAN、逐帧CSV/JSONL和大数组缓存未包含在这些分卷中，仍在原机器；这不是完整的原始采集数据备份。
+[manifest.json](manifest.json)记录每个分卷及每个归档文件的SHA256、字节数，并列出没有上传的原始流或可重算缓存。
+
+另外，[analysis_recordings/](analysis_recordings/)补充了最新独立LSTM训练评估、低高速实机对比、残差补偿对比的40个数值记录（CSV、NPZ及JSONL），约198 MB、4个分卷，保留全精度关节波形、配对帧、诊断及末端力记录，用于重新计算最新报告。其独立清单记录逐文件哈希。连同主体归档，共约969 MB。
+
+约18.3 GB的其他原始H5、bag、CAN、历史逐帧记录和大数组缓存仍在原机器；这不是完整的原始采集数据备份。
 
 先校验（只读取，不解压、不运行机器人）：
 
 ```bash
 python3 scripts/verify_w3_work_results.py results/20261030
+python3 scripts/verify_w3_work_results.py results/20261030/analysis_recordings
 ```
 
 在仓库根目录恢复归档时，可先查看已有同名文件并选择独立目录，避免覆盖自己的实验记录：
@@ -40,6 +45,7 @@ python3 scripts/verify_w3_work_results.py results/20261030
 ```bash
 mkdir -p /tmp/factr2-results-20261030
 cat results/20261030/experiment-results.tar.gz.part* | tar -xzf - -C /tmp/factr2-results-20261030
+cat results/20261030/analysis_recordings/experiment-results.tar.gz.part* | tar -xzf - -C /tmp/factr2-results-20261030
 ```
 
 可浏览的 `reports/` 是发布副本，Markdown链接经过转换；归档内保留原始报告内容及其哈希。归档的进程状态仅为历史记录，不应据此恢复或重复机械臂运动。
@@ -48,4 +54,4 @@ cat results/20261030/experiment-results.tar.gz.part* | tar -xzf - -C /tmp/factr2
 
 ## 配套控制仓库
 
-控制侧反馈新鲜度改动与测试保存在 [Ding141/dual_arm_robot](https://github.com/Ding141/dual_arm_robot/tree/liyq-dev)，本仓库不复制其Git历史。当前成果不等同于已通过真实接触测力标定，具体有效范围与不足见各报告。
+控制侧反馈新鲜度改动与测试已上传至用户指定的 [venom049/dual_arm_robot 主分支](https://github.com/venom049/dual_arm_robot/tree/main)，本仓库不复制其Git历史。成果已合并到main，保留两边历史及原有标定文件。当前成果不等同于已通过真实接触测力标定，具体有效范围与不足见各报告。

@@ -45687,38 +45687,8 @@
       "reason": "raw stream or recomputable cache"
     },
     {
-      "path": "log/joint_lstm_live_comparison_20261030_v1/diagnostics.jsonl",
-      "bytes": 44002891,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v1/endpoint_force.jsonl",
-      "bytes": 3552583,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
       "path": "log/joint_lstm_live_comparison_20261030_v1/endpoint_passive_validation/STOP_RECORDER",
       "bytes": 0,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v1/endpoint_passive_validation/diagnostics.jsonl",
-      "bytes": 445268,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v1/endpoint_passive_validation/endpoint_force.jsonl",
-      "bytes": 35771,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v1/endpoint_passive_validation/frames.jsonl",
-      "bytes": 518646,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v1/frames.jsonl",
-      "bytes": 45651072,
       "reason": "raw stream or recomputable cache"
     },
     {
@@ -45727,43 +45697,8 @@
       "reason": "raw stream or recomputable cache"
     },
     {
-      "path": "log/joint_lstm_live_comparison_20261030_v1/passive_validation/diagnostics.jsonl",
-      "bytes": 719422,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v1/passive_validation/frames.jsonl",
-      "bytes": 754353,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v1/samples.csv",
-      "bytes": 30268433,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v1/waveforms.npz",
-      "bytes": 3944817,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
       "path": "log/joint_lstm_live_comparison_20261030_v2/STOP_RECORDER",
       "bytes": 0,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v2/diagnostics.jsonl",
-      "bytes": 72483877,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v2/endpoint_force.jsonl",
-      "bytes": 6057206,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v2/frames.jsonl",
-      "bytes": 72142841,
       "reason": "raw stream or recomputable cache"
     },
     {
@@ -45772,68 +45707,8 @@
       "reason": "raw stream or recomputable cache"
     },
     {
-      "path": "log/joint_lstm_live_comparison_20261030_v2/recording_qualification/diagnostics.jsonl",
-      "bytes": 22586550,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v2/recording_qualification/endpoint_force.jsonl",
-      "bytes": 1854945,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v2/recording_qualification/frames.jsonl",
-      "bytes": 21954658,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v2/recording_qualification/samples.csv",
-      "bytes": 14969874,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
       "path": "log/joint_lstm_live_comparison_20261030_v2/recording_qualification_thread_only/STOP_RECORDER",
       "bytes": 0,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v2/recording_qualification_thread_only/diagnostics.jsonl",
-      "bytes": 21417640,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v2/recording_qualification_thread_only/endpoint_force.jsonl",
-      "bytes": 1840064,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v2/recording_qualification_thread_only/frames.jsonl",
-      "bytes": 21913856,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v2/recording_qualification_thread_only/samples.csv",
-      "bytes": 14942423,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v2/samples.csv",
-      "bytes": 49985250,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_live_comparison_20261030_v2/waveforms.npz",
-      "bytes": 7150948,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_retrain_20261028_v1/evaluation/test_predictions.npz",
-      "bytes": 5998700,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_lstm_retrain_20261028_v1/evaluation/val_predictions.npz",
-      "bytes": 7490500,
       "reason": "raw stream or recomputable cache"
     },
     {
@@ -45842,78 +45717,13 @@
       "reason": "raw stream or recomputable cache"
     },
     {
-      "path": "log/joint_residual_comparison_20261030_v1/diagnostics.jsonl",
-      "bytes": 7057881,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_residual_comparison_20261030_v1/endpoint_force.jsonl",
-      "bytes": 592292,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_residual_comparison_20261030_v1/frames.jsonl",
-      "bytes": 8989074,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
       "path": "log/joint_residual_comparison_20261030_v1/recording_qualification/STOP_RECORDER",
       "bytes": 0,
       "reason": "raw stream or recomputable cache"
     },
     {
-      "path": "log/joint_residual_comparison_20261030_v1/recording_qualification/diagnostics.jsonl",
-      "bytes": 21423478,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_residual_comparison_20261030_v1/recording_qualification/endpoint_force.jsonl",
-      "bytes": 1806715,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_residual_comparison_20261030_v1/recording_qualification/frames.jsonl",
-      "bytes": 27634753,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_residual_comparison_20261030_v1/recording_qualification/samples.csv",
-      "bytes": 17672410,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_residual_comparison_20261030_v1/samples.csv",
-      "bytes": 5751069,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
       "path": "log/joint_residual_comparison_20261030_v2/STOP_RECORDER",
       "bytes": 0,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_residual_comparison_20261030_v2/diagnostics.jsonl",
-      "bytes": 70316267,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_residual_comparison_20261030_v2/endpoint_force.jsonl",
-      "bytes": 6061927,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_residual_comparison_20261030_v2/frames.jsonl",
-      "bytes": 93744598,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_residual_comparison_20261030_v2/samples.csv",
-      "bytes": 61725731,
-      "reason": "raw stream or recomputable cache"
-    },
-    {
-      "path": "log/joint_residual_comparison_20261030_v2/waveforms.npz",
-      "bytes": 7178988,
       "reason": "raw stream or recomputable cache"
     },
     {
@@ -47257,5 +47067,13 @@
       "reason": "symlink; original target files inventoried separately"
     }
   ],
-  "note": "Source/configuration and exported models are committed normally. Concatenate parts and extract at repository root to restore original experiment paths. Live process state is historical evidence, not a resume command."
+  "note": "Source/configuration and exported models are committed normally. Concatenate parts and extract at repository root to restore original experiment paths. Live process state is historical evidence, not a resume command.",
+  "supplementary_archives": [
+    {
+      "folder": "analysis_recordings",
+      "manifest_sha256": "2c2c295f9b3c6a5af7459ba3d2d1a1fbf488795fbc79ca233b4f852eb37ee513",
+      "files": 40,
+      "bytes": 198126462
+    }
+  ]
 }

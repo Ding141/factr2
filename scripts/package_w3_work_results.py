@@ -38,9 +38,13 @@ def main(a):
             if p.is_symlink():
                 skipped.append(dict(path=str(p.relative_to(ROOT)),reason='symlink; original target files inventoried separately'));continue
             size=p.stat().st_size;rel=p.relative_to(ROOT)
+            if a.analysis_streams_only:
+                if not (rel.parts[0]=='log' and rel.parts[1].startswith(('joint_lstm_','joint_residual_'))
+                        and p.suffix in ('.csv','.npz','.jsonl')):continue
             include=(p.suffix in TEXT or p.suffix in ('.png','.jpg','.jpeg','.pt','.gz')
                      or p.name=='normalization.npz' or (p.suffix=='.csv' and size<=2*1024**2))
             if 'bag' in rel.parts or p.suffix in ('.h5','.db3','.mcap','.bin','.jsonl'):include=False
+            if a.analysis_streams_only:include=True
             if include:selected.append(p)
             else:excluded.append(dict(path=str(rel),bytes=size,reason='raw stream or recomputable cache'))
     records=[];writer=Parts(out,48*1024**2)
@@ -77,4 +81,6 @@ def main(a):
     print(json.dumps(dict(archived_files=len(records),parts=len(writer.files),archive_bytes=sum(x['bytes'] for x in writer.files),excluded_bytes=sum(x['bytes'] for x in excluded)),indent=2))
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,required=True);main(p.parse_args())
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--analysis-streams-only',action='store_true',help='Supplement: latest joint-LSTM training and live comparison numeric records only')
+    main(p.parse_args())
