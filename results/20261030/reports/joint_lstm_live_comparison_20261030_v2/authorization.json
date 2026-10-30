@@ -1,0 +1,10 @@
+{
+  "operator_confirmed": true,
+  "confirmed_utc": "2026-10-30T02:55:32.455588+00:00",
+  "plan_sha256": "c836e0e0bb16f5b7d2baea8fee116a348e2cdf9defd40bec95910030ccb722bb",
+  "user_confirmation": "已暂停校时，右臂空载、整条路径畅通，我在现场可操作急停，可以执行",
+  "scope": "同一工作姿态及同一高速路径，保留逐关节6/12/18度每秒档位检查；在用户明确要求后续完成、运行线程与只读快照性能修复、完整负载静止验证后继续",
+  "continuation_request": "完成高速运动，并结合低速结果做分析报告",
+  "continuation_utc": "2026-10-30T03:18:39.894450+00:00",
+  "formal_steps_unchanged": true
+}

@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "side": "right",
+  "domain": 74,
+  "started_unix": 1791612766.8367083,
+  "plan": "/home/venom/factr2/data/motion_plans/right_c2_probe_20261010.yaml",
+  "session": "/home/venom/factr2/data/quick_capture/right/20261010_141247_113649",
+  "completed_unix": 1791612850.0847745
+}

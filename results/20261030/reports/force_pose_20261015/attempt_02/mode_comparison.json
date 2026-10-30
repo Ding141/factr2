@@ -1,0 +1,65 @@
+{
+  "paired_samples": 200,
+  "gates_unchanged": {
+    "characteristic_length_m": 0.4,
+    "damping": 0.005,
+    "max_condition": 100.0,
+    "max_relative_residual": 0.35
+  },
+  "modes": {
+    "force_only": {
+      "valid_fraction": 0.0,
+      "condition": 6.719096184726856,
+      "median_relative_error": 0.5176838915672575,
+      "last": {
+        "condition_number": 6.719096184726856,
+        "scaled_singular_values": [
+          1.2894151234531053,
+          0.8915593373168629,
+          0.19190306076940353
+        ],
+        "mode": "force_only",
+        "observable_rank": 3,
+        "moments_observed": false,
+        "assumption": "tool_point_force_zero_external_moment",
+        "torque_fit_error_nm": 0.0602114136310637,
+        "relative_fit_error": 0.6021141363106369,
+        "reason": "inconsistent_with_tool_contact",
+        "valid": false,
+        "wrench": null
+      }
+    },
+    "full_wrench": {
+      "valid_fraction": 1.0,
+      "condition": 12.49184164532743,
+      "median_relative_error": 0.04439605899381683,
+      "last": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0031039631787032184,
+        "relative_fit_error": 0.031039631787032184,
+        "reason": "ok",
+        "valid": true,
+        "wrench": [
+          0.15326539567611216,
+          0.11847530075333436,
+          -0.11413572012566343,
+          -0.055502387987657414,
+          0.017359504636697696,
+          0.0007211292169232665
+        ]
+      }
+    }
+  }
+}

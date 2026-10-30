@@ -1,0 +1,8 @@
+{
+  "operator_confirmed": true,
+  "plan_sha256": "7e3848007e95e5717596b57e877eb299d62afecc50d855c49edd4b2edc2ce5ab",
+  "confirmation": "已确认，可以执行上述三次高速采集",
+  "original_confirmation": "/home/venom/factr2/log/highspeed_continuous_20261025_v1/plans/train/authorization.json",
+  "manual_resume_after_validation": "/home/venom/factr2/log/highspeed_continuous_20261025_v1/passive_buffer_validation/validation.json",
+  "scope": "Same approved speed and amplitudes; checked approach from bounded-stop pose; no automatic retry, no gain/mode change"
+}

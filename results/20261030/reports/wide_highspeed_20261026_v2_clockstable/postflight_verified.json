@@ -1,0 +1,12 @@
+{
+  "motion_publishers": {
+    "/joint_position_command": [],
+    "/left_pose_goal": [],
+    "/right_pose_goal": []
+  },
+  "hardware_healthy": true,
+  "max_stationary_span_deg": 0.021856605344040804,
+  "new_observer_outputs": 634,
+  "latest_source_age_s": 0.008418228000664385,
+  "extra_compensation_enabled": false
+}

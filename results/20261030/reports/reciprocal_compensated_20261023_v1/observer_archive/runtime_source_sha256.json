@@ -1,0 +1,10 @@
+{
+  "scripts/fit_w3_kinematic_compensation.py": "ec8116db67fa26984300c84829e120dc924226d54f27ea7f584b5cc7ec86247a",
+  "scripts/report_w3_kinematic_compensation.py": "1cd7d7d3b1b1fa575b90b859952727691ecc51432a6995fb9c8b7060a6354959",
+  "scripts/observe_w3_kinematic_compensation.py": "966c10c0275156f1cb473beb4a3082b65a23bd24ad5e7a2b4f97370c83c641de",
+  "scripts/test_w3_kinematic_compensation.py": "4c8ec1282a4239186790604a34fcfce409df4e9184c167b5b2cbedb27cba0ea1",
+  "factr2_next/src/factr2_next/factr2_next/inference/kinematic_compensation.py": "2f1cf09ddc11306c1ca20505ede236ba8616ca005e454fad0cc113bd9717cb7b",
+  "factr2_next/src/factr2_next/factr2_next/inference/kinematic_observer.py": "90fdd4c2a73b12bc47297f414cde08faba60753fc7d0ea85c9f26c67ce16e616",
+  "factr2_next/src/factr2_next/factr2_next/visualization/web_node.py": "d2eacedff1034ba79136ca23fbf64c2f07170fc7306da9ab590d97bd8eb00f77",
+  "factr2_next/src/factr2_next/factr2_next/w3_config.py": "986190fc445d797f425abbd974f659b7a09a9a07f87bce73cfad4eaf306637c4"
+}

@@ -1,0 +1,8 @@
+{
+  "outer_shell_exit_code": 143,
+  "motion_report_status": "completed",
+  "recorder_status": "closed",
+  "capture_quality": "PASS",
+  "robot_postflight": "complete",
+  "automatic_retry": false
+}

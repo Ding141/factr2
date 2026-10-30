@@ -1,0 +1,26 @@
+{
+  "scope": "synthetic messages only, isolated ROS domain 193; no robot topics or motor messages",
+  "physical_robot_delay_fit": false,
+  "depth50": {
+    "depth": 50,
+    "publisher_hz": 350,
+    "read_loop_hz": 300,
+    "spin_calls": 1800,
+    "callbacks": 1800,
+    "samples": 1200,
+    "cache_age_p50_ms": 141.454,
+    "cache_age_p95_ms": 142.848,
+    "cache_age_max_ms": 142.895
+  },
+  "depth1": {
+    "depth": 1,
+    "publisher_hz": 350,
+    "read_loop_hz": 300,
+    "spin_calls": 1800,
+    "callbacks": 1800,
+    "samples": 1200,
+    "cache_age_p50_ms": 1.44138,
+    "cache_age_p95_ms": 2.86377,
+    "cache_age_max_ms": 2.88752
+  }
+}

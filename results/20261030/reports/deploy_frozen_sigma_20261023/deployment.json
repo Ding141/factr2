@@ -1,0 +1,22 @@
+{
+  "status": "running_waiting_for_input",
+  "url": "http://127.0.0.1:8082/",
+  "bundle": "/home/venom/factr2/models/w3/right/frozen_sigma_observer_20261023",
+  "model_schema": "w3_frozen_sigma_observer_v1",
+  "deployment_mode": "read_only_research_observation",
+  "deployment_ready": false,
+  "calibration": "uncalibrated",
+  "real_input_available": false,
+  "runtime_control_profile_verified": false,
+  "reason": "No fresh upstream robot inputs; controller nodes absent from discovered graph",
+  "previous_inference_preserved": true,
+  "new_namespace": "/next/right/frozen_sigma",
+  "ros_domain_id": 74,
+  "isolated_domain_199_transport_test_passed": true,
+  "ordinary_regression_tests_passed": 44,
+  "browser_verified_sigma_panel": true,
+  "metadata_sha256": "cbe838418b4f5b550662e51230e8b3f60a2fdfa4328e6cc5d7a6cd5a112876c9",
+  "inference_config_sha256": "bae1b4beee8fd44a5ff0f951cab5d59d8658bd312d8837dad71f71eb1751d70f",
+  "web_config_sha256": "b8fcf0d36cbbd1023ab2541682bb360c58a98a4d273b6bcf417946438b6d8a7c",
+  "unified_exec_session_id": 75749
+}

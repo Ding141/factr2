@@ -1,0 +1,16 @@
+{
+  "stopped": [
+    {
+      "pid": 26017,
+      "signal": "SIGINT",
+      "component": "adapter_launch_pid"
+    },
+    {
+      "pid": 24935,
+      "signal": "SIGINT",
+      "component": "health_pid"
+    }
+  ],
+  "robot_controllers_untouched": true,
+  "gravity_and_position_remain_active": true
+}

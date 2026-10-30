@@ -1,0 +1,85 @@
+data:
+  arm_mode: single
+  keys:
+    joint_pos: joint_pos
+    joint_vel: joint_vel
+    joint_cmd: joint_cmd
+    measured_joint_torque: measured_joint_torque
+  history: 50
+  manifest: /home/venom/factr2/data/right/next_u_ablation_20261023_v1/split.json
+  memory_budget_mb: 512
+  sample_hz: 100
+  require_independent_sessions: true
+model:
+  type: lstm
+  state_mode: stateless
+  hidden_size: 128
+  num_layers: 2
+  bidirectional: false
+  head_hidden: 256
+  head_layers: 2
+  dropout: 0.1
+train:
+  batch_size: 2048
+  epochs: 120
+  learning_rate: 0.001
+  device: cpu
+  seed: 0
+  cpu_threads: 8
+  optimizer: adamw
+  weight_decay: 1.0e-06
+  gradient_clip: 1.0
+  loss_units: physical_nm
+  early_stopping:
+    enabled: true
+    patience: 20
+    warmup: 10
+    min_delta: 1.0e-05
+  validation_diagnostics: true
+  stop_file: /home/venom/factr2/data/right/next_u_ablation_20261023_v1/STOP_TRAINING
+save:
+  output_dir: /home/venom/factr2/runs
+  run_name: targeted_next_targeted_training_20261016_v1
+contract_version: w3_next_v1
+side: right
+joint_names:
+- right_joint_0
+- right_joint_1
+- right_joint_2
+- right_joint_3
+- right_joint_4
+- right_joint_5
+- right_joint_6
+trial:
+  scope: post-hoc disjoint whole recording sessions; validation/test limited to 6
+    deg/s
+  deployment_ready: false
+  production_coverage_audit: /home/venom/factr2/data/right/targeted_training_20261016_v1/production_coverage_audit.json
+  pending:
+  - prospective matching multi-speed independent validation/test
+  - dedicated cold/warm comparison
+  - 12 deg/s and higher measured coverage
+  - contact/release validation
+next_u:
+  floor: 0.0001
+  ceiling: 10000.0
+  initial: 1.0
+comparison:
+  schema: next_u_ablation_v1
+  arms:
+  - NEXT_MSE
+  - NEXT_U
+  seeds:
+  - 0
+  - 1
+  - 2
+  fresh_paired_training: true
+  historical_checkpoint_reused: false
+  selection: minimum validation physical MSE; first epoch on ties, both arms
+  epoch_budget: lockstep; stop only when both arms meet common MSE patience
+  variance_units: normalized target squared; physical = variance_z * y_std**2
+  calibration: none; Gaussian coverage is an uncalibrated diagnostic
+  interpretation: learned dispersion of reported free torque, not current sensor accuracy
+  deployment_ready: false
+  automatic_deployment: false
+  test_scope: existing sessions; retrospective comparison, not a new blind test

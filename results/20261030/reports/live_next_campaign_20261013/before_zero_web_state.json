@@ -1,0 +1,1363 @@
+{
+  "preview": false,
+  "joints": {
+    "right_joint_0": {
+      "position": 0.10477070325742677,
+      "velocity": 0.010990142822265625,
+      "effort": -1.8593406677246094,
+      "at": 6055.364757681,
+      "age": 0.0009474670005147345
+    },
+    "right_joint_2": {
+      "position": 0.01837733459472668,
+      "velocity": -0.0048847198486328125,
+      "effort": 2.495725631713867,
+      "at": 6055.364757681,
+      "age": 0.0009474670005147345
+    },
+    "right_joint_1": {
+      "position": 0.908020297241211,
+      "velocity": -0.010990142822265625,
+      "effort": 6.448352813720703,
+      "at": 6055.364757681,
+      "age": 0.0009474670005147345
+    },
+    "right_joint_3": {
+      "position": -1.0129372318598886,
+      "velocity": 0.0048847198486328125,
+      "effort": -2.0581188201904297,
+      "at": 6055.364757681,
+      "age": 0.0009474670005147345
+    },
+    "right_joint_4": {
+      "position": -0.00603672790527332,
+      "velocity": -0.012210845947265625,
+      "effort": 0.08058643341064453,
+      "at": 6055.364757681,
+      "age": 0.0009474670005147345
+    },
+    "right_joint_5": {
+      "position": -0.012897343444824294,
+      "velocity": -0.012210845947265625,
+      "effort": -0.05128192901611328,
+      "at": 6055.364757681,
+      "age": 0.0009474670005147345
+    },
+    "right_joint_6": {
+      "position": 0.012324160766601366,
+      "velocity": 0.012210845947265625,
+      "effort": -0.012209892272949219,
+      "at": 6055.364757681,
+      "age": 0.0009474670005147345
+    }
+  },
+  "motors": [
+    {
+      "channel": 1,
+      "slot": 0,
+      "online": true,
+      "enabled": true,
+      "position": 1.537156105041504,
+      "velocity": -0.010990142822265625,
+      "torque": 1.8593406677246094,
+      "error": 1,
+      "age": 0.002868520999982138
+    },
+    {
+      "channel": 1,
+      "slot": 1,
+      "online": true,
+      "enabled": true,
+      "position": 3.039788246154785,
+      "velocity": -0.010990142822265625,
+      "torque": 6.448352813720703,
+      "error": 1,
+      "age": 0.002868520999982138
+    },
+    {
+      "channel": 1,
+      "slot": 2,
+      "online": true,
+      "enabled": true,
+      "position": -2.660983085632324,
+      "velocity": -0.0048847198486328125,
+      "torque": 2.495725631713867,
+      "error": 1,
+      "age": 0.002868520999982138
+    },
+    {
+      "channel": 1,
+      "slot": 3,
+      "online": true,
+      "enabled": true,
+      "position": -0.3080415725708008,
+      "velocity": -0.0048847198486328125,
+      "torque": 2.0581188201904297,
+      "error": 1,
+      "age": 0.002868520999982138
+    },
+    {
+      "channel": 1,
+      "slot": 4,
+      "online": true,
+      "enabled": true,
+      "position": -2.8883419036865234,
+      "velocity": -0.012210845947265625,
+      "torque": 0.07081794738769531,
+      "error": 1,
+      "age": 0.002868520999982138
+    },
+    {
+      "channel": 1,
+      "slot": 5,
+      "online": true,
+      "enabled": true,
+      "position": 2.109750747680664,
+      "velocity": -0.012210845947265625,
+      "torque": -0.05128192901611328,
+      "error": 1,
+      "age": 0.002868520999982138
+    },
+    {
+      "channel": 1,
+      "slot": 6,
+      "online": true,
+      "enabled": true,
+      "position": 1.7626075744628906,
+      "velocity": -0.03662872314453125,
+      "torque": 0.017093658447265625,
+      "error": 1,
+      "age": 0.002868520999982138
+    }
+  ],
+  "controllers": {
+    "gravity_compensation_controller": "active",
+    "joint_state_broadcaster": "active",
+    "joint_position_controller": "active"
+  },
+  "controller_age": 0.5376363479999782,
+  "poses": {
+    "right": {
+      "position": [
+        0.49884128490776247,
+        0.23014814261151667,
+        0.8723795891929023
+      ],
+      "quaternion": [
+        -0.22798060116073726,
+        0.8003067039664525,
+        0.40311423654499173,
+        0.38083190173026493
+      ],
+      "age": 0.037963972999932594
+    }
+  },
+  "services": [
+    "/controller_manager/configure_controller",
+    "/controller_manager/describe_parameters",
+    "/controller_manager/get_parameter_types",
+    "/controller_manager/get_parameters",
+    "/controller_manager/list_controller_types",
+    "/controller_manager/list_controllers",
+    "/controller_manager/list_hardware_components",
+    "/controller_manager/list_hardware_interfaces",
+    "/controller_manager/list_parameters",
+    "/controller_manager/load_controller",
+    "/controller_manager/reload_controller_libraries",
+    "/controller_manager/set_hardware_component_state",
+    "/controller_manager/set_parameters",
+    "/controller_manager/set_parameters_atomically",
+    "/controller_manager/switch_controller",
+    "/controller_manager/unload_controller",
+    "/dm_hardware_interface/describe_parameters",
+    "/dm_hardware_interface/get_parameter_types",
+    "/dm_hardware_interface/get_parameters",
+    "/dm_hardware_interface/list_parameters",
+    "/dm_hardware_interface/set_parameters",
+    "/dm_hardware_interface/set_parameters_atomically",
+    "/gravity_compensation_controller/describe_parameters",
+    "/gravity_compensation_controller/get_parameter_types",
+    "/gravity_compensation_controller/get_parameters",
+    "/gravity_compensation_controller/list_parameters",
+    "/gravity_compensation_controller/set_parameters",
+    "/gravity_compensation_controller/set_parameters_atomically",
+    "/ieir_web_console_7964/describe_parameters",
+    "/ieir_web_console_7964/get_parameter_types",
+    "/ieir_web_console_7964/get_parameters",
+    "/ieir_web_console_7964/list_parameters",
+    "/ieir_web_console_7964/set_parameters",
+    "/ieir_web_console_7964/set_parameters_atomically",
+    "/joint_position_controller/describe_parameters",
+    "/joint_position_controller/get_parameter_types",
+    "/joint_position_controller/get_parameters",
+    "/joint_position_controller/list_parameters",
+    "/joint_position_controller/set_parameters",
+    "/joint_position_controller/set_parameters_atomically",
+    "/joint_state_broadcaster/describe_parameters",
+    "/joint_state_broadcaster/get_parameter_types",
+    "/joint_state_broadcaster/get_parameters",
+    "/joint_state_broadcaster/list_parameters",
+    "/joint_state_broadcaster/set_parameters",
+    "/joint_state_broadcaster/set_parameters_atomically",
+    "/robot_state_publisher/describe_parameters",
+    "/robot_state_publisher/get_parameter_types",
+    "/robot_state_publisher/get_parameters",
+    "/robot_state_publisher/list_parameters",
+    "/robot_state_publisher/set_parameters",
+    "/robot_state_publisher/set_parameters_atomically",
+    "/w3_robot_bridge_node/describe_parameters",
+    "/w3_robot_bridge_node/disable",
+    "/w3_robot_bridge_node/enable",
+    "/w3_robot_bridge_node/get_parameter_types",
+    "/w3_robot_bridge_node/get_parameters",
+    "/w3_robot_bridge_node/list_parameters",
+    "/w3_robot_bridge_node/set_parameters",
+    "/w3_robot_bridge_node/set_parameters_atomically",
+    "/w3_robot_bridge_node/zero"
+  ],
+  "nodes": [
+    "_ros2cli_daemon_74_bc7ac0de06a04b48ac6b7f080143f669",
+    "controller_manager",
+    "dm_hardware_interface",
+    "gravity_compensation_controller",
+    "ieir_web_console_7964",
+    "joint_position_controller",
+    "joint_state_broadcaster",
+    "robot_state_publisher",
+    "w3_robot_bridge_node"
+  ],
+  "calibration": {},
+  "logs": [
+    {
+      "id": 375,
+      "time": "21:52:25",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899545.966818132] [DMHardwareInterface]:   right_joint_1 ch1.slot1  type=DM8009   offset=+2.1318 sign=+1 urdf=[-0.349,+3.054] center=+1.353 wrap_safe=true pos_max=12.5 vel_max=45.0 tor_max=54.0"
+    },
+    {
+      "id": 376,
+      "time": "21:52:25",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899545.966826443] [DMHardwareInterface]:   right_joint_2 ch1.slot2  type=DM4340P  offset=-2.6794 sign=+1 urdf=[-2.531,+2.531] center=+0.000 wrap_safe=true pos_max=12.5 vel_max=20.0 tor_max=28.0"
+    },
+    {
+      "id": 377,
+      "time": "21:52:25",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899545.966833567] [DMHardwareInterface]:   right_joint_3 ch1.slot3  type=DM4340   offset=-1.3210 sign=-1 urdf=[-2.094,+1.571] center=-0.262 wrap_safe=true pos_max=12.5 vel_max=20.0 tor_max=28.0"
+    },
+    {
+      "id": 378,
+      "time": "21:52:25",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899545.966840690] [DMHardwareInterface]:   right_joint_4 ch1.slot4  type=DM4310   offset=-2.8823 sign=+1 urdf=[-2.531,+2.531] center=+0.000 wrap_safe=true pos_max=12.5 vel_max=50.0 tor_max=10.0"
+    },
+    {
+      "id": 379,
+      "time": "21:52:25",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899545.966847814] [DMHardwareInterface]:   right_joint_5 ch1.slot5  type=DM4310   offset=+2.1226 sign=+1 urdf=[-0.698,+0.698] center=+0.000 wrap_safe=true pos_max=12.5 vel_max=50.0 tor_max=10.0"
+    },
+    {
+      "id": 380,
+      "time": "21:52:25",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899545.966854938] [DMHardwareInterface]:   right_joint_6 ch1.slot6  type=DM4310   offset=+1.7749 sign=-1 urdf=[-1.571,+1.571] center=+0.000 wrap_safe=true pos_max=12.5 vel_max=50.0 tor_max=10.0"
+    },
+    {
+      "id": 381,
+      "time": "21:52:25",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899545.966866811] [resource_manager]: Successful initialization of hardware 'dual_arm_dm_system'"
+    },
+    {
+      "id": 382,
+      "time": "21:52:25",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899545.967041344] [resource_manager]: 'configure' hardware 'dual_arm_dm_system'"
+    },
+    {
+      "id": 383,
+      "time": "21:52:25",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899545.972565859] [dm_hardware_interface]: W3 bridge: sub /w3_robot_bridge_node/state   pub /w3_robot_bridge_node/commands"
+    },
+    {
+      "id": 384,
+      "time": "21:52:25",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899545.972610977] [resource_manager]: Successful 'configure' of hardware 'dual_arm_dm_system'"
+    },
+    {
+      "id": 385,
+      "time": "21:52:25",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899545.972629974] [resource_manager]: 'activate' hardware 'dual_arm_dm_system'"
+    },
+    {
+      "id": 386,
+      "time": "21:52:25",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899545.972645409] [dm_hardware_interface]: ENABLE: 50Hz zero-cmd + 50Hz motor_enable publish until all 7 joint(s) report err=1 (timeout 5.0s)..."
+    },
+    {
+      "id": 387,
+      "time": "21:52:25",
+      "level": "info",
+      "source": "dm_hardware_interface",
+      "text": "W3 bridge: sub /w3_robot_bridge_node/state   pub /w3_robot_bridge_node/commands"
+    },
+    {
+      "id": 388,
+      "time": "21:52:25",
+      "level": "info",
+      "source": "dm_hardware_interface",
+      "text": "ENABLE: 50Hz zero-cmd + 50Hz motor_enable publish until all 7 joint(s) report err=1 (timeout 5.0s)..."
+    },
+    {
+      "id": 389,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "dm_hardware_interface",
+      "text": "ENABLED (all 7 motor(s) report err=1)"
+    },
+    {
+      "id": 390,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.054014759] [dm_hardware_interface]: ENABLED (all 7 motor(s) report err=1)"
+    },
+    {
+      "id": 391,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.054080060] [resource_manager]: Successful 'activate' of hardware 'dual_arm_dm_system'"
+    },
+    {
+      "id": 392,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "update rate is 300 Hz"
+    },
+    {
+      "id": 393,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.061018652] [controller_manager]: update rate is 300 Hz"
+    },
+    {
+      "id": 394,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.061055458] [controller_manager]: Spawning controller_manager RT thread with scheduler priority: 50"
+    },
+    {
+      "id": 395,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [WARN] [1791899546.061155191] [controller_manager]: Could not enable FIFO RT scheduling policy: with error number <1>(Operation not permitted). See [https://control.ros.org/master/doc/ros2_control/controller_manager/doc/userdoc.html] for details on how to enable realtime scheduling."
+    },
+    {
+      "id": 396,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "Spawning controller_manager RT thread with scheduler priority: 50"
+    },
+    {
+      "id": 397,
+      "time": "21:52:26",
+      "level": "warn",
+      "source": "controller_manager",
+      "text": "Could not enable FIFO RT scheduling policy: with error number <1>(Operation not permitted). See [https://control.ros.org/master/doc/ros2_control/controller_manager/doc/userdoc.html] for details on how to enable realtime scheduling."
+    },
+    {
+      "id": 398,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "Loading controller 'gravity_compensation_controller'"
+    },
+    {
+      "id": 399,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.124574914] [controller_manager]: Loading controller 'gravity_compensation_controller'"
+    },
+    {
+      "id": 400,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "Loading controller 'joint_state_broadcaster'"
+    },
+    {
+      "id": 401,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.174934317] [controller_manager]: Loading controller 'joint_state_broadcaster'"
+    },
+    {
+      "id": 402,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "Loading controller 'joint_position_controller'"
+    },
+    {
+      "id": 403,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.181578457] [controller_manager]: Loading controller 'joint_position_controller'"
+    },
+    {
+      "id": 404,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[spawner-4] [INFO] [1791899546.185254343] [spawner_gravity_compensation_controller]: \u001b[94mLoaded \u001b[1mgravity_compensation_controller\u001b[0m"
+    },
+    {
+      "id": 405,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "spawner_gravity_compensation_controller",
+      "text": "\u001b[94mLoaded \u001b[1mgravity_compensation_controller\u001b[0m"
+    },
+    {
+      "id": 406,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "spawner_joint_state_broadcaster",
+      "text": "\u001b[94mLoaded \u001b[1mjoint_state_broadcaster\u001b[0m"
+    },
+    {
+      "id": 407,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[spawner-3] [INFO] [1791899546.191234782] [spawner_joint_state_broadcaster]: \u001b[94mLoaded \u001b[1mjoint_state_broadcaster\u001b[0m"
+    },
+    {
+      "id": 408,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "Configuring controller 'gravity_compensation_controller'"
+    },
+    {
+      "id": 409,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.194769380] [controller_manager]: Configuring controller 'gravity_compensation_controller'"
+    },
+    {
+      "id": 410,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.194875049] [gravity_compensation_controller]: Configuring GravityCompensationController with 7 joints"
+    },
+    {
+      "id": 411,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Configuring GravityCompensationController with 7 joints"
+    },
+    {
+      "id": 412,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Dynamics initialized. nq=14, nv=14"
+    },
+    {
+      "id": 413,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.204500505] [gravity_compensation_controller]: Dynamics initialized. nq=14, nv=14"
+    },
+    {
+      "id": 414,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[spawner-5] [INFO] [1791899546.204612111] [spawner_joint_position_controller]: \u001b[94mLoaded \u001b[1mjoint_position_controller\u001b[0m"
+    },
+    {
+      "id": 415,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "spawner_joint_position_controller",
+      "text": "\u001b[94mLoaded \u001b[1mjoint_position_controller\u001b[0m"
+    },
+    {
+      "id": 416,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.205015794] [gravity_compensation_controller]: Joint right_joint_0 (idx_v=7): Effort Limit=40.00, gravity_gain=1.150 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 417,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Joint right_joint_0 (idx_v=7): Effort Limit=40.00, gravity_gain=1.150 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 418,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.205069222] [gravity_compensation_controller]: Joint right_joint_1 (idx_v=8): Effort Limit=40.00, gravity_gain=1.150 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 419,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.205092968] [gravity_compensation_controller]: Joint right_joint_2 (idx_v=9): Effort Limit=27.00, gravity_gain=1.000 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 420,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.205121463] [gravity_compensation_controller]: Joint right_joint_3 (idx_v=10): Effort Limit=27.00, gravity_gain=1.000 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 421,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.205144022] [gravity_compensation_controller]: Joint right_joint_4 (idx_v=11): Effort Limit=7.00, gravity_gain=1.000 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 422,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.205165394] [gravity_compensation_controller]: Joint right_joint_5 (idx_v=12): Effort Limit=7.00, gravity_gain=1.000 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 423,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.205186765] [gravity_compensation_controller]: Joint right_joint_6 (idx_v=13): Effort Limit=7.00, gravity_gain=1.100 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 424,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Joint right_joint_2 (idx_v=9): Effort Limit=27.00, gravity_gain=1.000 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 425,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Joint right_joint_3 (idx_v=10): Effort Limit=27.00, gravity_gain=1.000 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 426,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.205572638] [gravity_compensation_controller]: Friction[right_joint_0 -> DM8009]: gain=0.700 viscous=0.0067 coulomb_pos=0.476 coulomb_neg=0.502"
+    },
+    {
+      "id": 427,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.205605883] [gravity_compensation_controller]: Friction[right_joint_1 -> DM8009]: gain=0.700 viscous=0.0067 coulomb_pos=0.476 coulomb_neg=0.502"
+    },
+    {
+      "id": 428,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.205632003] [gravity_compensation_controller]: Friction[right_joint_2 -> DM4340P]: gain=0.850 viscous=0.0660 coulomb_pos=0.572 coulomb_neg=0.575"
+    },
+    {
+      "id": 429,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Friction[right_joint_3 -> DM4340]: gain=0.950 viscous=0.0508 coulomb_pos=0.500 coulomb_neg=0.474"
+    },
+    {
+      "id": 430,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.205655749] [gravity_compensation_controller]: Friction[right_joint_3 -> DM4340]: gain=0.950 viscous=0.0508 coulomb_pos=0.500 coulomb_neg=0.474"
+    },
+    {
+      "id": 431,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.205690181] [gravity_compensation_controller]: Friction[right_joint_4 -> DM4310]: gain=0.800 viscous=0.0035 coulomb_pos=0.093 coulomb_neg=0.099"
+    },
+    {
+      "id": 432,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.205721051] [gravity_compensation_controller]: Friction[right_joint_5 -> DM4310]: gain=0.800 viscous=0.0035 coulomb_pos=0.093 coulomb_neg=0.099"
+    },
+    {
+      "id": 433,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.205744797] [gravity_compensation_controller]: Friction[right_joint_6 -> DM4310]: gain=0.500 viscous=0.0035 coulomb_pos=0.093 coulomb_neg=0.099"
+    },
+    {
+      "id": 434,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.205763794] [gravity_compensation_controller]: Friction compensation loaded for 7/7 joints (per-joint gain, deadband=0.050)"
+    },
+    {
+      "id": 435,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Friction[right_joint_4 -> DM4310]: gain=0.800 viscous=0.0035 coulomb_pos=0.093 coulomb_neg=0.099"
+    },
+    {
+      "id": 436,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Friction[right_joint_5 -> DM4310]: gain=0.800 viscous=0.0035 coulomb_pos=0.093 coulomb_neg=0.099"
+    },
+    {
+      "id": 437,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Friction[right_joint_6 -> DM4310]: gain=0.500 viscous=0.0035 coulomb_pos=0.093 coulomb_neg=0.099"
+    },
+    {
+      "id": 438,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Friction compensation loaded for 7/7 joints (per-joint gain, deadband=0.050)"
+    },
+    {
+      "id": 439,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "GravityCompensationController configured; smooth friction=on, torque cap=0.800 Nm"
+    },
+    {
+      "id": 440,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.207605299] [gravity_compensation_controller]: GravityCompensationController configured; smooth friction=on, torque cap=0.800 Nm"
+    },
+    {
+      "id": 441,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "Configuring controller 'joint_state_broadcaster'"
+    },
+    {
+      "id": 442,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.208322429] [controller_manager]: Configuring controller 'joint_state_broadcaster'"
+    },
+    {
+      "id": 443,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.208384169] [joint_state_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published"
+    },
+    {
+      "id": 444,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "joint_state_broadcaster",
+      "text": "'joints' or 'interfaces' parameter is empty. All available state interfaces will be published"
+    },
+    {
+      "id": 445,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.214949947] [controller_manager]: Configuring controller 'joint_position_controller'"
+    },
+    {
+      "id": 446,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "Configuring controller 'joint_position_controller'"
+    },
+    {
+      "id": 447,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.217782849] [joint_position_controller]: JointPositionController configured with 7 joint(s); subscribing to '/joint_position_command' (trajectory_msgs/JointTrajectory)"
+    },
+    {
+      "id": 448,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.217829154] [joint_position_controller]:   right_joint_0   kp= 70.00  kd= 2.750"
+    },
+    {
+      "id": 449,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.217855275] [joint_position_controller]:   right_joint_1   kp= 70.00  kd= 2.500"
+    },
+    {
+      "id": 450,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.217876646] [joint_position_controller]:   right_joint_2   kp= 70.00  kd= 2.000"
+    },
+    {
+      "id": 451,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "joint_position_controller",
+      "text": "  right_joint_2   kp= 70.00  kd= 2.000"
+    },
+    {
+      "id": 452,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.217902767] [joint_position_controller]:   right_joint_3   kp= 60.00  kd= 2.000"
+    },
+    {
+      "id": 453,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.217922951] [joint_position_controller]:   right_joint_4   kp= 10.00  kd= 0.700"
+    },
+    {
+      "id": 454,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.217946697] [joint_position_controller]:   right_joint_5   kp= 35.00  kd= 1.000"
+    },
+    {
+      "id": 455,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.217981129] [joint_position_controller]:   right_joint_6   kp= 10.00  kd= 0.500"
+    },
+    {
+      "id": 456,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "joint_position_controller",
+      "text": "  right_joint_3   kp= 60.00  kd= 2.000"
+    },
+    {
+      "id": 457,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "joint_position_controller",
+      "text": "  right_joint_4   kp= 10.00  kd= 0.700"
+    },
+    {
+      "id": 458,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "joint_position_controller",
+      "text": "  right_joint_5   kp= 35.00  kd= 1.000"
+    },
+    {
+      "id": 459,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "joint_position_controller",
+      "text": "  right_joint_6   kp= 10.00  kd= 0.500"
+    },
+    {
+      "id": 460,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "GravityCompensationController activated. Robot should feel weightless."
+    },
+    {
+      "id": 461,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899546.224768933] [gravity_compensation_controller]: GravityCompensationController activated. Robot should feel weightless."
+    },
+    {
+      "id": 462,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "spawner_gravity_compensation_controller",
+      "text": "\u001b[92mConfigured and activated \u001b[1mgravity_compensation_controller\u001b[0m"
+    },
+    {
+      "id": 463,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[spawner-4] [INFO] [1791899546.228764203] [spawner_gravity_compensation_controller]: \u001b[92mConfigured and activated \u001b[1mgravity_compensation_controller\u001b[0m"
+    },
+    {
+      "id": 464,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[spawner-3] [INFO] [1791899546.232028095] [spawner_joint_state_broadcaster]: \u001b[92mConfigured and activated \u001b[1mjoint_state_broadcaster\u001b[0m"
+    },
+    {
+      "id": 465,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "spawner_joint_state_broadcaster",
+      "text": "\u001b[92mConfigured and activated \u001b[1mjoint_state_broadcaster\u001b[0m"
+    },
+    {
+      "id": 466,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[INFO] [spawner-5]: process has finished cleanly [pid 8643]"
+    },
+    {
+      "id": 467,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[INFO] [spawner-4]: process has finished cleanly [pid 8641]"
+    },
+    {
+      "id": 468,
+      "time": "21:52:26",
+      "level": "info",
+      "source": "control",
+      "text": "[INFO] [spawner-3]: process has finished cleanly [pid 8639]"
+    },
+    {
+      "id": 469,
+      "time": "21:52:27",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791899547.911662309] [joint_position_controller]: JointPositionController activated; holding current position. Send a trajectory_msgs/JointTrajectory on '/joint_position_command' to move."
+    },
+    {
+      "id": 470,
+      "time": "21:52:27",
+      "level": "info",
+      "source": "joint_position_controller",
+      "text": "JointPositionController activated; holding current position. Send a trajectory_msgs/JointTrajectory on '/joint_position_command' to move."
+    },
+    {
+      "id": 471,
+      "time": "21:52:27",
+      "level": "info",
+      "source": "console",
+      "text": "switch: Controller manager accepted switch; waiting for refreshed state"
+    },
+    {
+      "id": 472,
+      "time": "22:13:38",
+      "level": "info",
+      "source": "w3_health_monitor",
+      "text": "Bridge-reported feedback only; Python=/usr/bin/python3.10; no command endpoints"
+    },
+    {
+      "id": 473,
+      "time": "22:13:38",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Subscribed to topic '/factr2/w3_health'"
+    },
+    {
+      "id": 474,
+      "time": "22:13:38",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Subscribed to topic '/joint_position_controller/command_state'"
+    },
+    {
+      "id": 475,
+      "time": "22:13:38",
+      "level": "info",
+      "source": "quick_recorder_right",
+      "text": "Press 'r' to start/stop recording."
+    },
+    {
+      "id": 476,
+      "time": "22:13:38",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Keyboard toggle disabled: stdin is not a TTY."
+    },
+    {
+      "id": 477,
+      "time": "22:13:38",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Start refused: require a fresh valid frame"
+    },
+    {
+      "id": 478,
+      "time": "22:13:38",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Subscribed to topic '/factr2/right/adapter_status'"
+    },
+    {
+      "id": 479,
+      "time": "22:13:38",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Subscribed to topic '/factr2/right/joint_cmd'"
+    },
+    {
+      "id": 480,
+      "time": "22:13:38",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Subscribed to topic '/factr2/right/joint_effort'"
+    },
+    {
+      "id": 481,
+      "time": "22:13:38",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Subscribed to topic '/factr2/right/joint_pos'"
+    },
+    {
+      "id": 482,
+      "time": "22:13:38",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Subscribed to topic '/factr2/right/joint_vel'"
+    },
+    {
+      "id": 483,
+      "time": "22:13:39",
+      "level": "info",
+      "source": "quick_recorder_right",
+      "text": "Writing: /home/venom/factr2/data/quick_capture/right/20261013_221316_579007/20261013_221316_579007_20261013_221339.h5"
+    },
+    {
+      "id": 484,
+      "time": "22:13:39",
+      "level": "info",
+      "source": "quick_recorder_right",
+      "text": "Started recording /ep_0000."
+    },
+    {
+      "id": 485,
+      "time": "22:13:57",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Subscribed to topic '/joint_position_command'"
+    },
+    {
+      "id": 486,
+      "time": "22:13:57",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "All requested topics are subscribed. Stopping discovery..."
+    },
+    {
+      "id": 487,
+      "time": "22:22:37",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Recording rate low: 46.4 Hz < 90.0 Hz"
+    },
+    {
+      "id": 488,
+      "time": "22:22:37",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Latest synchronized sample is stale; not writing rows."
+    },
+    {
+      "id": 489,
+      "time": "22:22:41",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Latest synchronized sample is stale; not writing rows."
+    },
+    {
+      "id": 490,
+      "time": "22:22:42",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Recording rate low: 84.0 Hz < 90.0 Hz"
+    },
+    {
+      "id": 491,
+      "time": "22:24:44",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Recording rate low: 50.2 Hz < 90.0 Hz"
+    },
+    {
+      "id": 492,
+      "time": "22:24:44",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Latest synchronized sample is stale; not writing rows."
+    },
+    {
+      "id": 493,
+      "time": "22:30:32",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Recording rate low: 48.4 Hz < 90.0 Hz"
+    },
+    {
+      "id": 494,
+      "time": "22:30:32",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Latest synchronized sample is stale; not writing rows."
+    },
+    {
+      "id": 495,
+      "time": "22:30:38",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Recording rate low: 31.6 Hz < 90.0 Hz"
+    },
+    {
+      "id": 496,
+      "time": "22:30:38",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Latest synchronized sample is stale; not writing rows."
+    },
+    {
+      "id": 497,
+      "time": "22:50:33",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Recording rate low: 4.7 Hz < 90.0 Hz"
+    },
+    {
+      "id": 498,
+      "time": "22:50:33",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Latest synchronized sample is stale; not writing rows."
+    },
+    {
+      "id": 499,
+      "time": "22:50:37",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Recording rate low: 53.6 Hz < 90.0 Hz"
+    },
+    {
+      "id": 500,
+      "time": "22:50:37",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Latest synchronized sample is stale; not writing rows."
+    },
+    {
+      "id": 501,
+      "time": "23:01:06",
+      "level": "info",
+      "source": "quick_recorder_right",
+      "text": "Stopped recording."
+    },
+    {
+      "id": 502,
+      "time": "23:01:07",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Event publisher thread: Exiting"
+    },
+    {
+      "id": 503,
+      "time": "23:01:07",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Recording stopped"
+    },
+    {
+      "id": 504,
+      "time": "23:02:56",
+      "level": "info",
+      "source": "w3_health_monitor",
+      "text": "Bridge-reported feedback only; Python=/usr/bin/python3.10; no command endpoints"
+    },
+    {
+      "id": 505,
+      "time": "23:02:56",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Press SPACE for pausing/resuming"
+    },
+    {
+      "id": 506,
+      "time": "23:02:56",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Listening for topics..."
+    },
+    {
+      "id": 507,
+      "time": "23:02:56",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Event publisher thread: Starting"
+    },
+    {
+      "id": 508,
+      "time": "23:02:56",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Subscribed to topic '/joint_position_controller/command_state'"
+    },
+    {
+      "id": 509,
+      "time": "23:02:56",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Subscribed to topic '/factr2/w3_health'"
+    },
+    {
+      "id": 510,
+      "time": "23:02:56",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Recording..."
+    },
+    {
+      "id": 511,
+      "time": "23:02:56",
+      "level": "info",
+      "source": "quick_recorder_right",
+      "text": "Press 'r' to start/stop recording."
+    },
+    {
+      "id": 512,
+      "time": "23:02:56",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Keyboard toggle disabled: stdin is not a TTY."
+    },
+    {
+      "id": 513,
+      "time": "23:02:56",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "No publishers yet for: /factr2/right/joint_pos, /factr2/right/joint_vel, /factr2/right/joint_cmd, /factr2/right/joint_effort"
+    },
+    {
+      "id": 514,
+      "time": "23:02:56",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Subscribed to topic '/factr2/right/adapter_status'"
+    },
+    {
+      "id": 515,
+      "time": "23:02:56",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Subscribed to topic '/factr2/right/joint_cmd'"
+    },
+    {
+      "id": 516,
+      "time": "23:02:56",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Subscribed to topic '/factr2/right/joint_effort'"
+    },
+    {
+      "id": 517,
+      "time": "23:02:56",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Subscribed to topic '/factr2/right/joint_pos'"
+    },
+    {
+      "id": 518,
+      "time": "23:02:56",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Subscribed to topic '/factr2/right/joint_vel'"
+    },
+    {
+      "id": 519,
+      "time": "23:02:58",
+      "level": "info",
+      "source": "quick_recorder_right",
+      "text": "Writing: /home/venom/factr2/data/quick_capture/right/20261013_230234_420641/20261013_230234_420641_20261013_230258.h5"
+    },
+    {
+      "id": 520,
+      "time": "23:02:58",
+      "level": "info",
+      "source": "quick_recorder_right",
+      "text": "Started recording /ep_0000."
+    },
+    {
+      "id": 521,
+      "time": "23:03:14",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Subscribed to topic '/joint_position_command'"
+    },
+    {
+      "id": 522,
+      "time": "23:03:14",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "All requested topics are subscribed. Stopping discovery..."
+    },
+    {
+      "id": 523,
+      "time": "23:09:30",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Recording rate low: 59.9 Hz < 90.0 Hz"
+    },
+    {
+      "id": 524,
+      "time": "23:09:30",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Latest synchronized sample is stale; not writing rows."
+    },
+    {
+      "id": 525,
+      "time": "23:15:52",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Latest synchronized sample is stale; not writing rows."
+    },
+    {
+      "id": 526,
+      "time": "23:15:52",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Recording rate low: 63.0 Hz < 90.0 Hz"
+    },
+    {
+      "id": 527,
+      "time": "23:15:58",
+      "level": "warn",
+      "source": "quick_recorder_right",
+      "text": "Recording rate low: 87.1 Hz < 90.0 Hz"
+    },
+    {
+      "id": 528,
+      "time": "23:18:34",
+      "level": "warn",
+      "source": "w3_next_adapter_right",
+      "text": "state_already_sampled"
+    },
+    {
+      "id": 529,
+      "time": "23:19:02",
+      "level": "info",
+      "source": "quick_recorder_right",
+      "text": "Stopped recording."
+    },
+    {
+      "id": 530,
+      "time": "23:19:03",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Event publisher thread: Exiting"
+    },
+    {
+      "id": 531,
+      "time": "23:19:03",
+      "level": "info",
+      "source": "rosbag2_recorder",
+      "text": "Recording stopped"
+    },
+    {
+      "id": 532,
+      "time": "23:21:21",
+      "level": "info",
+      "source": "console",
+      "text": "zero: Model-zero trajectory published (right, 8.00 s); arrival is not yet confirmed"
+    },
+    {
+      "id": 533,
+      "time": "23:21:21",
+      "level": "warn",
+      "source": "joint_position_controller",
+      "text": "Rejected trajectory: right_joint_0 segment 0.000000..0.020000 exceeds v/a/jerk limits"
+    },
+    {
+      "id": 534,
+      "time": "23:21:21",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [WARN] [1791904881.880951581] [joint_position_controller]: Rejected trajectory: right_joint_0 segment 0.000000..0.020000 exceeds v/a/jerk limits"
+    }
+  ],
+  "processes": {
+    "control": {
+      "pid": 8630,
+      "running": true,
+      "exit_code": null,
+      "label": "control / right / gravity",
+      "stopping": false
+    }
+  },
+  "recording": null,
+  "last_recording": null
+}

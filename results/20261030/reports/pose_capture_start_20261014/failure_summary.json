@@ -1,0 +1,23 @@
+{
+  "state": "recording_started_then_motion_aborted",
+  "cause": "right_arm_motor_feedback_offline",
+  "affected_joints": [
+    "J5",
+    "J6",
+    "J7"
+  ],
+  "affected_slots": [
+    4,
+    5,
+    6
+  ],
+  "controller_updated": true,
+  "parameters_preserved": true,
+  "raw_quality_passed": true,
+  "automatic_motion_retry": false,
+  "session": "/home/venom/factr2/data/quick_capture/right/20261014_214621_369642",
+  "motion_report": "/home/venom/factr2/data/quick_capture/right/20261014_214621_369642/audit/motion_run.json",
+  "requires": "Restore and verify wrist motor feedback before replanning from current held target",
+  "feedback_current_state": "recovered",
+  "operator_checked_wiring_and_authorized_resume": true
+}

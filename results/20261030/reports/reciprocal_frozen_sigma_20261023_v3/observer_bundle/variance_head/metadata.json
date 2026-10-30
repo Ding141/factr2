@@ -1,0 +1,12 @@
+{
+  "schema": "next_frozen_variance_v1",
+  "deployment_ready": false,
+  "automatic_deployment": false,
+  "mean_model_sha256": "8e1bcb25c1af7053760150ce8f4483a67e38754c243fc0aa069f905ffc4a7ac6",
+  "selection": "minimum validation marginal NLL, including epoch 0; first on ties",
+  "artifact_sha256": {
+    "head.pt": "dd20312fa0d88ef90aa284a0c88b797ce024742de8de4498e93e945ed2176e64",
+    "normalization.npz": "83d81c9b996c06a507c3be0293e8e241d080d3730419ee40b6607c344d3ce46a",
+    "history.json": "b06ef0bb5d3c1214c84d4c7403cc37f67fea9d28d6cc2da32857c25c264deb68"
+  }
+}

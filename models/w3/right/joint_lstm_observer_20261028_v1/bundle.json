@@ -1,0 +1,54 @@
+{
+  "schema": "w3_joint_lstm_observer_v1",
+  "architecture": "independent_joint_lstm_v1",
+  "operating_envelope": {
+    "position_bounds_deg": [
+      [
+        -24.837186813354492,
+        26.854446411132812
+      ],
+      [
+        36.41984176635742,
+        64.52787017822266
+      ],
+      [
+        -22.989648818969727,
+        14.800966262817383
+      ],
+      [
+        -81.4239730834961,
+        -42.12519836425781
+      ],
+      [
+        -17.612869262695312,
+        19.631330490112305
+      ],
+      [
+        -15.16454029083252,
+        11.085623741149902
+      ],
+      [
+        -14.418867111206055,
+        14.716423988342285
+      ]
+    ],
+    "position_margin_deg": 0.0,
+    "source": "actual training positions only; rectangular bounds do not certify pose combinations"
+  },
+  "controller_changes": false,
+  "compensation_enabled": false,
+  "mean_model_sha256": "bec10a63f3ef31bf41dc66560afb8247342f645b42f6d4516c0165e7d44a932b",
+  "evaluation": "/home/venom/factr2/log/joint_lstm_retrain_20261028_v1/evaluation",
+  "evaluation_sha256": "80b39ed270fddca2765490fd2df33e80296012702fcaef31cc32ab4fd7e923ec",
+  "deployment_ready": false,
+  "physical_contact_validated": false,
+  "files": {
+    "inference.yaml": "f8e17d8be537d3a671ae1f3cbc4327aa05b222b30ef8402f8e30a8dc0329a3ec",
+    "web.yaml": "3b7dad4a7f42271f866bbb3e7aeb709bd1568666a4e4efb95e95ee572bd64a1e",
+    "mean_checkpoint/model.pt": "bec10a63f3ef31bf41dc66560afb8247342f645b42f6d4516c0165e7d44a932b",
+    "mean_checkpoint/config.yaml": "df0a453641381984ce5f8c2d9e53243098f76defa19186a75629e5a7608f15c4",
+    "mean_checkpoint/metrics.json": "43a1e3db13829ac554ad4ab397057179b33e2db77876b2c14bd7356b6105c441",
+    "mean_checkpoint/metadata.json": "17573ed455ca504a6ebdd870af3357bd65bee04e83ec27a2e5857f588f6a6ed9",
+    "mean_checkpoint/normalization.npz": "ee2a549e6ad5d8e410af1fc9cce07a84894ac11285fe36c210cc471897b337b3"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "md_inference": {
+    "pid": 71330,
+    "command": [
+      "/bin/bash",
+      "/home/venom/factr2/scripts/next.sh",
+      "python",
+      "-m",
+      "factr2_next.inference.md_observer",
+      "--ros-args",
+      "-r",
+      "__node:=next_md_inference_right",
+      "-p",
+      "config_file:=/home/venom/factr2/config/w3/right/inference_md_observation_20261016.yaml"
+    ],
+    "log": "/home/venom/factr2/log/deploy_md_20261016/md_inference.log"
+  },
+  "md_joint_web": {
+    "pid": 71331,
+    "command": [
+      "/bin/bash",
+      "/home/venom/factr2/scripts/next.sh",
+      "python",
+      "-c",
+      "from factr2_next.visualization.web_node import main; main()",
+      "--ros-args",
+      "-r",
+      "__node:=next_md_web_right",
+      "-p",
+      "config_file:=/home/venom/factr2/config/w3/right/visualize_md_observation_20261016.yaml"
+    ],
+    "log": "/home/venom/factr2/log/deploy_md_20261016/md_joint_web.log"
+  },
+  "md_endpoint": {
+    "pid": 71332,
+    "command": [
+      "/bin/bash",
+      "/home/venom/factr2/scripts/next.sh",
+      "python",
+      "/home/venom/factr2/scripts/w3_endpoint_wrench.py",
+      "--config",
+      "/home/venom/factr2/config/w3/right/endpoint_wrench_md_observation_20261016.yaml"
+    ],
+    "log": "/home/venom/factr2/log/deploy_md_20261016/md_endpoint.log"
+  }
+}

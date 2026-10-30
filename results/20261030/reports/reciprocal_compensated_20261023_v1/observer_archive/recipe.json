@@ -1,0 +1,31 @@
+{
+  "schema": "w3_kinematic_residual_v1",
+  "base": "/home/venom/factr2/models/w3/right/frozen_sigma_observer_20261023",
+  "base_metadata_sha256": "cbe838418b4f5b550662e51230e8b3f60a2fdfa4328e6cc5d7a6cd5a112876c9",
+  "observation": "/home/venom/factr2/log/reciprocal_frozen_sigma_20261023_v3",
+  "observation_sha256": "5e4633f54000fe6ec89caafd8599893afa0d38fd3e7c85852235bcfe84b41347",
+  "split": "recording split retained for historical data; cycle1 train / cycle2 validation / cycle3 retrospective test; 1s boundary purge",
+  "signal": {
+    "input_torque_hz": 12.0,
+    "output_hz": 5.0,
+    "motor_velocity_hz": 8.0,
+    "position_noise_rad": 0.00038,
+    "jerk_density": 1.0,
+    "max_gap_seconds": 0.04,
+    "warmup_seconds": 0.5
+  },
+  "recipe": "no intercept, no measured torque/residual as feature, no online adaptation",
+  "candidate_ridge": [
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1.0
+  ],
+  "scopes": [
+    "pooled",
+    "local_pose"
+  ],
+  "test_role": "previously inspected; not a blind contact or generalization test",
+  "automatic_robot_motion": false
+}

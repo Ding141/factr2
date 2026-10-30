@@ -1,0 +1,48 @@
+{
+  "initial_command_deg": [
+    0.12343763420776382,
+    0.9241678270680882,
+    -3.8429905276009,
+    -1.4494027973007166,
+    -2.728303655054819,
+    0.5287197636352162,
+    -0.0588587890744566
+  ],
+  "target_deg": [
+    0,
+    50,
+    0,
+    -55,
+    0,
+    0,
+    0
+  ],
+  "duration_seconds": 10.55,
+  "left_pose_deg": [
+    -0.6042829517766106,
+    -0.7711715896598152,
+    0.37541626606901507,
+    0.627239811046244,
+    6.75762698879897,
+    -1.1561712396752308,
+    1.2525375315679916
+  ],
+  "target_force_geometry": {
+    "condition_number": 6.717112907357094,
+    "scaled_singular_values": [
+      1.3088336556026137,
+      0.9481736512646632,
+      0.19485062610293172
+    ],
+    "mode": "force_only",
+    "observable_rank": 3,
+    "moments_observed": false,
+    "assumption": "tool_point_force_zero_external_moment",
+    "torque_fit_error_nm": 0.0,
+    "relative_fit_error": 0.0,
+    "reason": "ok",
+    "valid": true
+  },
+  "operator_movement_approval_required": true,
+  "motion_sent": false
+}

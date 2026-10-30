@@ -1,0 +1,122 @@
+{
+  "schema": "w3_continuous_recording_audit_v1",
+  "role": "train",
+  "source": "/home/venom/factr2/data/quick_capture/right/20261025_205102_846154",
+  "accepted": true,
+  "criteria": {
+    "position_change_window_seconds": 0.2,
+    "command_delta_threshold_deg": 0.3,
+    "measured_flat_threshold_deg": 0.04,
+    "max_joint_stall_seconds": 0.3,
+    "maximum_formal_gap_ms": 20.1
+  },
+  "blocks": [
+    {
+      "name": "continuous_v06_train_continuous",
+      "rows": 8997,
+      "coverage_seconds": 89.99664495100001,
+      "max_gap_ms": 20.003814000000002,
+      "command_velocity_peak_deg_s": [
+        4.60710130661665,
+        4.907248311076887,
+        4.300480963685624,
+        4.710895037214876,
+        4.2661272073096494,
+        4.395488119323634,
+        3.439440596206604
+      ],
+      "tracking_max_deg": [
+        0.8395138909949833,
+        1.0149292050679222,
+        0.8869367668374419,
+        1.1719040299576093,
+        0.8397420085711071,
+        0.8621292214847216,
+        1.0978835999686907
+      ],
+      "measured_position_span_deg": [
+        11.780928846491435,
+        11.846444021010193,
+        9.704442055780836,
+        9.464019396996392,
+        7.234645651904226,
+        4.5680851584178885,
+        3.1692624163992766
+      ],
+      "commanded_position_span_deg": [
+        11.999999551414842,
+        11.999999724527434,
+        9.999999310145064,
+        9.999999712977882,
+        7.999999509253003,
+        5.9999993951948385,
+        3.999999429129093
+      ],
+      "suspected_joint_stall_longest_seconds": [
+        0.09,
+        0.14,
+        0.13,
+        0.2,
+        0.23,
+        0.0,
+        0.21
+      ],
+      "suspected_whole_arm_pause_longest_seconds": 0.0,
+      "accepted": true
+    },
+    {
+      "name": "continuous_v12_train_continuous",
+      "rows": 9000,
+      "coverage_seconds": 89.99332565000002,
+      "max_gap_ms": 13.373117,
+      "command_velocity_peak_deg_s": [
+        8.947292100619771,
+        9.751268425580523,
+        7.860771391451525,
+        8.465172181346365,
+        6.889371605913989,
+        6.763458379325936,
+        4.859702505245311
+      ],
+      "tracking_max_deg": [
+        0.7569237652575973,
+        0.9708512885398548,
+        0.7865867354438771,
+        1.0232384362002875,
+        0.9424492919872536,
+        0.8758665767245324,
+        1.1008419094027024
+      ],
+      "measured_position_span_deg": [
+        11.802785451835474,
+        12.043153469106564,
+        9.835581687845082,
+        9.529589213028515,
+        7.234645651904226,
+        4.5680851584178885,
+        3.1692624163992766
+      ],
+      "commanded_position_span_deg": [
+        11.999998420912611,
+        11.999997655009075,
+        9.999998388774598,
+        9.999999322441305,
+        7.999999034328174,
+        5.999999081939618,
+        3.9999981342103093
+      ],
+      "suspected_joint_stall_longest_seconds": [
+        0.03,
+        0.05,
+        0.12,
+        0.14,
+        0.04,
+        0.0,
+        0.12
+      ],
+      "suspected_whole_arm_pause_longest_seconds": 0.0,
+      "accepted": true
+    }
+  ],
+  "limitation": "Position-change stall screen; no external camera or independent torque ground truth"
+}

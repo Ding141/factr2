@@ -1,0 +1,8 @@
+{
+  "scope": "Bag header timing after successful recorder start; not final H5 quality",
+  "samples": 8999,
+  "duration_seconds": 89.98003977200001,
+  "hz": 99.99995579908598,
+  "max_gap_ms": 10.967106,
+  "gaps_over_20ms": 0
+}

@@ -1,0 +1,1020 @@
+{
+  "created_utc": "2026-10-16T09:24:12.701955+00:00",
+  "status": "offline_validated_hardware_not_run",
+  "user_scope": "Targeted contact-free collection code; no robot command, CAN socket, controller rebuild, model training or deployment executed in this task",
+  "source_sha256": {
+    "config/w3/motions/right_targeted_free_v1.yaml": "09342fd2b9b61845d0c920ff1f1729ad572341e6f6cafa6e5e1f9a07753661f5",
+    "scripts/w3_targeted_protocol.py": "1f4625e0a9ea52371d99ffb5aa7e0a4794255cf1da2cf3810b2d1781ed730685",
+    "scripts/w3_targeted_capture.py": "bcae775871ba60751834eb246901c5e7ee4a099dafb95550d43dde02560ba43c",
+    "scripts/w3_targeted_guardian.py": "f03ff8fbba328f628d0d915971cedf15b9cc0461022ce0bdb7e134e9319c59e1",
+    "scripts/w3_targeted_can_record.py": "acfee712d4653485ab8240d61ba9b1d5ea714488bc463f0c0e4cb50899b9aa92",
+    "scripts/prepare_w3_targeted_session.py": "9abfe66bd7dd6d2a96695f48dd7cb58b18cc579f1120ec99892f5cb60a995e15",
+    "scripts/test_w3_targeted_capture.py": "2d29d87afcf831aab269c00e4c79f85ed8e5217c2016e56d4ce53635f0b83274",
+    "scripts/quick_capture.py": "e822e89f3ccac978486cef187d498d88031d4d0f65e2e785fa700beb7bcc3db0",
+    "scripts/w3_coverage_plan.py": "74298c0e5657560a30bd96a836e0594de3479b3ef6861e84dcb54d8021e6006e",
+    "docs/operator_guide/TARGETED_FREE_CAPTURE_20261016.md": "469474f1018e5577af43d0a961a67b2dd6ddf43df7a2cca64ae0202986b69740"
+  },
+  "tests": {
+    "passed": 61,
+    "failed": 0,
+    "command": "MPLCONFIGDIR=/tmp/w3-targeted-mpl OPENBLAS_NUM_THREADS=4 OMP_NUM_THREADS=4 PYTHONPATH=/home/venom/factr2/factr2_next/src/factr2_next/test:$PYTHONPATH .venv/bin/python -m pytest -q scripts/test_w3_targeted_capture.py scripts/test_quick_capture.py scripts/test_w3_coverage_motion.py scripts/test_w3_pose_protocol.py scripts/test_w3_pose_stream.py",
+    "elapsed_seconds": 33.26,
+    "real_ros_nodes_created": false,
+    "real_child_processes_created": false,
+    "can_socket_opened": false,
+    "coverage": [
+      "C2 polynomial boundaries and derivative bounds",
+      "distinct hysteresis velocity/acceleration trajectories",
+      "matched low/high returns and labeled holds",
+      "tamper rejection",
+      "seven-joint progressive gates",
+      "heartbeat timeout latch",
+      "passive frame decoding with transmit-echo exclusion",
+      "causal temperature values with stale mask",
+      "one complete native publish without windows",
+      "exception bounded brake",
+      "whole-block H5 derivation and contact rejection",
+      "C lifecycle with existing health/adapter reuse"
+    ]
+  },
+  "static_checks": {
+    "py_compile": "passed",
+    "git_diff_check": "passed",
+    "cli_help": "passed",
+    "rclpy_steady_timer_api": "available; import-only check"
+  },
+  "assumptions": {
+    "robot_description": "/home/venom/factr2/log/deploy_pose_trial_20261015/robot.urdf",
+    "initial_right_deg": [
+      0,
+      50,
+      0,
+      -55,
+      0,
+      0,
+      0
+    ],
+    "left_static_deg": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "max_profile_velocity_deg_s": 12,
+    "mandatory_before_hardware": "Regenerate --live --check-collision with actual current model and both-arm poses; independently verify contact-free area and progressive actual tracking"
+  },
+  "offline_plans": {
+    "continuous": {
+      "path": "/home/venom/factr2/log/targeted_capture_validation_20261016/final_continuous.yaml",
+      "sha256": "7bdf79fd19c59dd451075b15be59e751b090cbd2ff5814c0e9829982d996cae7",
+      "blocks": 137,
+      "experiment_blocks": 90,
+      "seconds": 1104.83,
+      "max_condition": 14.633119679325567,
+      "profile_bounds": {
+        "v06_a15": {
+          "max_velocity_bound_deg_s": 5.636666852916791,
+          "max_acceleration_bound_deg_s2": 13.8182224296537,
+          "max_jerk_bound_deg_s3": 42.16224153301813
+        },
+        "v10_a20": {
+          "max_velocity_bound_deg_s": 9.442345191576452,
+          "max_acceleration_bound_deg_s2": 18.415786439907862,
+          "max_jerk_bound_deg_s3": 45.25991170981717
+        },
+        "v10_a40": {
+          "max_velocity_bound_deg_s": 7.567898881695825,
+          "max_acceleration_bound_deg_s2": 23.903626400124196,
+          "max_jerk_bound_deg_s3": 92.19144893552044
+        },
+        "v12_a30": {
+          "max_velocity_bound_deg_s": 11.10892276659055,
+          "max_acceleration_bound_deg_s2": 27.64903202630831,
+          "max_jerk_bound_deg_s3": 80.26132192676053
+        },
+        "v12_a60": {
+          "max_velocity_bound_deg_s": 7.882844060671552,
+          "max_acceleration_bound_deg_s2": 27.74892909699838,
+          "max_jerk_bound_deg_s3": 111.79440096328494
+        }
+      },
+      "collision_report_path": "/home/venom/factr2/log/targeted_capture_validation_20261016/final_continuous.collision.json",
+      "collision_report_sha256": "589b45a0a13de252770c4a68dd0b6e6dc7f36dd0fc60c03e9ec1160a44bdcca3",
+      "collision": {
+        "accepted": true,
+        "plan_sha256": "7bdf79fd19c59dd451075b15be59e751b090cbd2ff5814c0e9829982d996cae7",
+        "robot_description_sha256": "e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345",
+        "left_pose_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "left_pose_source": "explicit_static_pose_supplied_by_caller",
+        "max_sample_joint_travel_deg": 0.25,
+        "checked_configurations": 14274,
+        "minimum_sampled_distance_m": 0.016250905170625662,
+        "distance_configurations_checked": 288,
+        "closest": {
+          "pair": [
+            "right_link_3_0",
+            "right_link_1_0"
+          ],
+          "step": "0027_v06_a15_anchor1_cycle0_pattern8",
+          "position_deg": [
+            18.501016755174657,
+            61.81626269758709,
+            -7.583003126390546,
+            -62.49041067073382,
+            4.555784883658797,
+            -9.5693674196093,
+            0.8240920754575289
+          ]
+        },
+        "failure": null,
+        "excluded_pairs": [
+          {
+            "pair": [
+              "left_arm_attachment_point_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_base_link_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_base_link_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_1_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_1_0",
+              "left_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_2_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_2_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_2_0",
+              "left_link_1_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_link_2_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_link_3_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_3_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_4_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_3_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_4_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_5_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_3_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_4_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_5_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_6_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_arm_attachment_point_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_arm_attachment_point_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_arm_attachment_point_0",
+              "left_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "left_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "right_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_1_0",
+              "right_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_1_0",
+              "right_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_2_0",
+              "right_link_1_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_3_0",
+              "right_link_2_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_4_0",
+              "right_link_3_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_5_0",
+              "right_link_4_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_6_0",
+              "right_link_5_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_7_0",
+              "right_link_6_0"
+            ],
+            "reason": "rigid/adjacent body"
+          }
+        ],
+        "elapsed_seconds": 64.42030899800011,
+        "limitations": [
+          "Discrete URDF mesh check, not continuous collision certification",
+          "External support fixtures, cables, and pose uncertainty are not modeled",
+          "Samples describe command targets; measured tracking must be monitored during capture"
+        ]
+      }
+    },
+    "hysteresis": {
+      "path": "/home/venom/factr2/log/targeted_capture_validation_20261016/final_hysteresis.yaml",
+      "sha256": "40ad489f1d3de820a92c50a603a20ee8d116756fd6d6d9357d60810618fa343d",
+      "blocks": 527,
+      "experiment_blocks": 480,
+      "seconds": 2320.97,
+      "max_condition": 14.397664778661603,
+      "profile_bounds": {
+        "v06_a15": {
+          "max_velocity_bound_deg_s": 4.4943820224719095,
+          "max_acceleration_bound_deg_s2": 5.378464627630966,
+          "max_jerk_bound_deg_s3": 9.661912504726287
+        },
+        "v10_a20": {
+          "max_velocity_bound_deg_s": 7.067137809187279,
+          "max_acceleration_bound_deg_s2": 9.995835068721364,
+          "max_jerk_bound_deg_s3": 24.47959608666456
+        },
+        "v10_a40": {
+          "max_velocity_bound_deg_s": 7.5,
+          "max_acceleration_bound_deg_s2": 15.0,
+          "max_jerk_bound_deg_s3": 45.0
+        },
+        "v12_a30": {
+          "max_velocity_bound_deg_s": 8.658008658008658,
+          "max_acceleration_bound_deg_s2": 15.0,
+          "max_jerk_bound_deg_s3": 45.0
+        },
+        "v12_a60": {
+          "max_velocity_bound_deg_s": 8.982035928143713,
+          "max_acceleration_bound_deg_s2": 21.513858510523864,
+          "max_jerk_bound_deg_s3": 77.29530003781029
+        }
+      },
+      "collision_report_path": "/home/venom/factr2/log/targeted_capture_validation_20261016/final_hysteresis.collision.json",
+      "collision_report_sha256": "c0cf2bbd39028c6279558cb0faf9c639aef4839c3f1f5c7f81b46b72db762625",
+      "collision": {
+        "accepted": true,
+        "plan_sha256": "40ad489f1d3de820a92c50a603a20ee8d116756fd6d6d9357d60810618fa343d",
+        "robot_description_sha256": "e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345",
+        "left_pose_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "left_pose_source": "explicit_static_pose_supplied_by_caller",
+        "max_sample_joint_travel_deg": 0.25,
+        "checked_configurations": 12001,
+        "minimum_sampled_distance_m": 0.01625002567699443,
+        "distance_configurations_checked": 1065,
+        "closest": {
+          "pair": [
+            "right_link_3_0",
+            "right_link_1_0"
+          ],
+          "step": "0265_v10_a40_anchor0_return_7_from_high",
+          "position_deg": [
+            1.8736912218715167,
+            51.87369122187152,
+            1.8736912218715167,
+            -53.12630877812848,
+            1.8736912218715167,
+            1.405268416403638,
+            1.8736912218715167
+          ]
+        },
+        "failure": null,
+        "excluded_pairs": [
+          {
+            "pair": [
+              "left_arm_attachment_point_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_base_link_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_base_link_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_1_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_1_0",
+              "left_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_2_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_2_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_2_0",
+              "left_link_1_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_link_2_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_link_3_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_3_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_4_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_3_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_4_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_5_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_3_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_4_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_5_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_6_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_arm_attachment_point_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_arm_attachment_point_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_arm_attachment_point_0",
+              "left_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "left_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "right_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_1_0",
+              "right_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_1_0",
+              "right_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_2_0",
+              "right_link_1_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_3_0",
+              "right_link_2_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_4_0",
+              "right_link_3_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_5_0",
+              "right_link_4_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_6_0",
+              "right_link_5_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_7_0",
+              "right_link_6_0"
+            ],
+            "reason": "rigid/adjacent body"
+          }
+        ],
+        "elapsed_seconds": 227.93908999799987,
+        "limitations": [
+          "Discrete URDF mesh check, not continuous collision certification",
+          "External support fixtures, cables, and pose uncertainty are not modeled",
+          "Samples describe command targets; measured tracking must be monitored during capture"
+        ]
+      }
+    }
+  },
+  "short_batch_examples": {
+    "initial_pose": "reference pose above",
+    "selection": {
+      "profiles": [
+        "v06_a15"
+      ],
+      "single_joints": [
+        0
+      ],
+      "anchor_indices": [
+        0
+      ],
+      "coupled_patterns": 1
+    },
+    "continuous": {
+      "blocks": 11,
+      "seconds": 79.72
+    },
+    "hysteresis": {
+      "blocks": 21,
+      "seconds": 124.02
+    },
+    "warmup": {
+      "blocks": 44,
+      "seconds": 364.35,
+      "warmup_excitation_seconds": 301.93
+    }
+  },
+  "frozen_signal_timing": "No signal time shifts, delay fitting, smoothing or torque re-scaling added; retain raw sources for independently frozen train-only calibration",
+  "thermal": "cold/warm initial conditions are operator/history declarations; nominal motor MOS/rotor temperatures are passive observations with masks, not calibrated or steady-state proof",
+  "limitations": [
+    "Only saved-model offline paths checked; no current hardware communication or actual tracking verified",
+    "URDF mesh check is discrete and excludes adjacent/rigid and static left-only pairs; cables, supports and pose uncertainty absent",
+    "Guardian is a software bounded-stop monitor, not hardware safety certification",
+    "Nominal CAN temperature decode tested on artificial frames only; first real session must validate actual feedback",
+    "Linux CAN receive times are not device acquisition timestamps",
+    "Additional data does not itself prove correction of no-load force errors"
+  ],
+  "disk": {
+    "free_gib": 1.177,
+    "capture_reserve_mib": 512,
+    "planning_rate_mib_s": 3,
+    "full_protocol_requires_more_space": true
+  },
+  "existing_raw_data_and_models_deleted": false
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "w3_observer_profile_v1",
+  "kind": "joint_lstm",
+  "ros_domain_id": 74,
+  "bundle": "/home/venom/factr2/models/w3/right/joint_lstm_observer_20261028_v1",
+  "bundle_sha256": "6762291153e86efe34b9cce8c761a2fcdbcf61f51415c130c51c4d8e952f4c3d",
+  "mean_model_sha256": "bec10a63f3ef31bf41dc66560afb8247342f645b42f6d4516c0165e7d44a932b",
+  "next_topic_root": "/next/right/joint_lstm",
+  "architecture": "independent_joint_lstm_v1",
+  "compensation_enabled": false,
+  "controller_changes": false,
+  "research_only": true,
+  "contact_validated": false,
+  "selected_epoch_per_joint": [
+    33,
+    24,
+    34,
+    15,
+    27,
+    23,
+    19
+  ],
+  "trained_epochs_per_joint": [
+    43,
+    34,
+    44,
+    25,
+    37,
+    33,
+    23
+  ],
+  "rollback": "/home/venom/factr2/log/joint_lstm_retrain_20261028_v1/activation"
+}

@@ -1,0 +1,23 @@
+{
+  "approved": "已确认，可以开始",
+  "duration_seconds": 70.8,
+  "max_offset_deg": 3.0,
+  "max_speed_deg_s": 1.088279376178928,
+  "max_acceleration_deg_s2": 0.8882695102248405,
+  "initial_target_deg": [
+    0.0,
+    50.0,
+    0.0,
+    -55.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "health_feedback_timeout_seconds": 0.25,
+  "scheduler_stall_limit_seconds": 0.2,
+  "tracking_limit_deg": 3,
+  "source": "live stationary controller target",
+  "external_contact_allowed": false,
+  "training_data": false,
+  "status": "offline_validated"
+}

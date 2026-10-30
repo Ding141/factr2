@@ -1,0 +1,21 @@
+{
+  "pid": 19719,
+  "command": [
+    "bash",
+    "scripts/next.sh",
+    "env",
+    "OPENBLAS_NUM_THREADS=1",
+    "OMP_NUM_THREADS=1",
+    "MKL_NUM_THREADS=1",
+    "PYTHONUNBUFFERED=1",
+    "python",
+    "-m",
+    "factr2_next.training.train",
+    "--config",
+    "/home/venom/factr2/log/joint_lstm_retrain_20261028_v1/durable_training_config.yaml"
+  ],
+  "started": "2026-10-28T11:10:20.318601+08:00",
+  "status": "training",
+  "execution": "detached host process, survives foreground tool session lifetime",
+  "log": "/home/venom/factr2/log/joint_lstm_retrain_20261028_v1/durable_training.log"
+}

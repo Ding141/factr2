@@ -1,0 +1,46 @@
+{
+  "total_packets": 3190,
+  "formal_packets": 1401,
+  "common_valid_packets": 726,
+  "units": "N",
+  "frame_id": "right_attachment_point",
+  "interpretation": "Equivalent tool force inferred from joint residuals, assuming all external loading at tool origin; no force-sensor ground truth.",
+  "reasons": {
+    "old": {
+      "ok": 2049,
+      "inconsistent_with_tool_contact": 1120,
+      "outside_collection_range:right_joint_0": 7,
+      "outside_collection_range:right_joint_2": 9,
+      "outside_collection_range:right_joint_2,right_joint_6": 3,
+      "outside_collection_range:right_joint_6": 2
+    },
+    "new": {
+      "inconsistent_with_tool_contact": 1112,
+      "ok": 2024,
+      "outside_collection_range:right_joint_2": 15,
+      "outside_collection_range:right_joint_4": 21,
+      "outside_collection_range:right_joint_6": 6,
+      "outside_collection_range:right_joint_0": 7,
+      "outside_collection_range:right_joint_2,right_joint_4": 1,
+      "outside_collection_range:right_joint_2,right_joint_6": 4
+    }
+  },
+  "old": {
+    "rms_xyz_N": [
+      2.5188486138496287,
+      3.3206796680111297,
+      8.80450198480155
+    ],
+    "rms_norm_N": 9.74118919831707,
+    "p95_norm_N": 18.222925273453484
+  },
+  "new": {
+    "rms_xyz_N": [
+      0.7913979849741445,
+      1.372754650966879,
+      3.0744886169633703
+    ],
+    "rms_norm_N": 3.458792615669472,
+    "p95_norm_N": 7.19183635187603
+  }
+}

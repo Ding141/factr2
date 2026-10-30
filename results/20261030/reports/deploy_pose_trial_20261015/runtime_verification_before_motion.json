@@ -1,0 +1,58 @@
+{
+  "seconds": 5.0003913200000625,
+  "counts": {
+    "/factr2/right/joint_pos": 495,
+    "/next/right/free_joint_torque_pred": 425,
+    "/next/right/external_joint_torque": 425
+  },
+  "statuses": {
+    "adapter": {
+      "state_receive_age_seconds": 0.0018331939999143287,
+      "state_source_age_seconds": 0.0020029780000000003,
+      "command_receive_age_seconds": 0.0017738289999442713,
+      "command_source_age_seconds": 0.0020029780000000003,
+      "output_hz_last_second": 99,
+      "health_mode": "required",
+      "health_receive_age_seconds": 0.01621141800001169,
+      "health_source_age_seconds": 0.016603227,
+      "health_source_stamp_ns": 1792011899361099522,
+      "source_skew_seconds": 0.0,
+      "invalid": 0,
+      "stale": 0,
+      "duplicate": 0,
+      "skew": 0,
+      "health_rejected": 1,
+      "clock_reset": 0,
+      "outputs": 17345,
+      "side": "right",
+      "recent_rejection": "health_missing_stale_or_error",
+      "state_source_stamp_ns": 1792011899375699771,
+      "command_source_stamp_ns": 1792011899375699771,
+      "message": "ok"
+    },
+    "next": {
+      "outputs": 17229,
+      "dropped": 0,
+      "resets": 0,
+      "state": "out_of_scope",
+      "reason": "outside_collection_range:right_joint_1,right_joint_3",
+      "history_count": 50,
+      "source_age_seconds": 0.007888433,
+      "receive_age_seconds": 0.00533098500000051,
+      "last_output_stamp_ns": 1792011899375699771,
+      "output_hz": 100,
+      "infer_ms": 0.6850729999996474,
+      "infer_p95_ms": 0.9352378000016869,
+      "device": "cpu",
+      "message": "out_of_scope:outside_collection_range:right_joint_1,right_joint_3"
+    }
+  },
+  "publishers": {
+    "/next/right/external_joint_torque": [
+      "next_inference_right"
+    ],
+    "/factr2/right/joint_pos": [
+      "w3_next_adapter_right"
+    ]
+  }
+}

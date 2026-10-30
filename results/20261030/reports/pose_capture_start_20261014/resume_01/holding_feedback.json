@@ -1,0 +1,6 @@
+{
+  "holding_feedback_check_passed": true,
+  "samples": 100,
+  "duration_seconds": 20,
+  "maximum_reported_motor_age_seconds": 0.0029516320000766427
+}

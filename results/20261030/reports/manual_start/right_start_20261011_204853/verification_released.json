@@ -1,0 +1,206 @@
+[
+  {
+    "control": {
+      "healthy_motors": 7,
+      "controllers": {
+        "joint_position_controller": "active",
+        "joint_state_broadcaster": "active",
+        "gravity_compensation_controller": "active"
+      },
+      "position_deg": {
+        "right_joint_0": 0.429,
+        "right_joint_2": -0.411,
+        "right_joint_1": 0.596,
+        "right_joint_3": -0.335,
+        "right_joint_4": -1.002,
+        "right_joint_5": -1.351,
+        "right_joint_6": -0.452
+      },
+      "processes": {
+        "control": {
+          "pid": 10652,
+          "running": true,
+          "exit_code": null,
+          "label": "control / right / gravity",
+          "stopping": false
+        }
+      }
+    },
+    "model": {
+      "state": "valid",
+      "reason": "ok",
+      "diagnostics": {
+        "outputs": 5573,
+        "dropped": 0,
+        "resets": 0,
+        "state": "valid",
+        "reason": "ok",
+        "history_count": 50,
+        "source_age_seconds": 0.010176364,
+        "receive_age_seconds": 0.005936508000104368,
+        "last_output_stamp_ns": 1791723177263184076,
+        "output_hz": 100,
+        "infer_ms": 0.7016950000888755,
+        "infer_p95_ms": 0.7721619000221835,
+        "device": "cpu"
+      }
+    },
+    "endpoint": {
+      "state": "unavailable",
+      "reasons": [
+        "near_singular"
+      ],
+      "geometry": {
+        "condition_number": 1645.1818908953016,
+        "scaled_singular_values": [
+          2.1941325900447524,
+          1.8051341291410485,
+          1.414287582977799,
+          0.6280676884893547,
+          0.622649070391815,
+          0.0013336717369595613
+        ],
+        "reason": "near_singular",
+        "valid": false
+      },
+      "outputs": 0,
+      "wrench": null
+    }
+  },
+  {
+    "control": {
+      "healthy_motors": 7,
+      "controllers": {
+        "joint_position_controller": "active",
+        "joint_state_broadcaster": "active",
+        "gravity_compensation_controller": "active"
+      },
+      "position_deg": {
+        "right_joint_0": 0.429,
+        "right_joint_2": -0.411,
+        "right_joint_1": 0.596,
+        "right_joint_3": -0.335,
+        "right_joint_4": -1.002,
+        "right_joint_5": -1.351,
+        "right_joint_6": -0.452
+      },
+      "processes": {
+        "control": {
+          "pid": 10652,
+          "running": true,
+          "exit_code": null,
+          "label": "control / right / gravity",
+          "stopping": false
+        }
+      }
+    },
+    "model": {
+      "state": "valid",
+      "reason": "ok",
+      "diagnostics": {
+        "outputs": 5675,
+        "dropped": 0,
+        "resets": 0,
+        "state": "valid",
+        "reason": "ok",
+        "history_count": 50,
+        "source_age_seconds": 0.010175175,
+        "receive_age_seconds": 0.006189403999997012,
+        "last_output_stamp_ns": 1791723178283183127,
+        "output_hz": 100,
+        "infer_ms": 0.5141020000110075,
+        "infer_p95_ms": 0.7699056000205928,
+        "device": "cpu"
+      }
+    },
+    "endpoint": {
+      "state": "unavailable",
+      "reasons": [
+        "near_singular"
+      ],
+      "geometry": {
+        "condition_number": 1645.1818908953016,
+        "scaled_singular_values": [
+          2.1941325900447524,
+          1.8051341291410485,
+          1.414287582977799,
+          0.6280676884893547,
+          0.622649070391815,
+          0.0013336717369595613
+        ],
+        "reason": "near_singular",
+        "valid": false
+      },
+      "outputs": 0,
+      "wrench": null
+    }
+  },
+  {
+    "control": {
+      "healthy_motors": 7,
+      "controllers": {
+        "joint_position_controller": "active",
+        "joint_state_broadcaster": "active",
+        "gravity_compensation_controller": "active"
+      },
+      "position_deg": {
+        "right_joint_0": 0.429,
+        "right_joint_2": -0.411,
+        "right_joint_1": 0.596,
+        "right_joint_3": -0.335,
+        "right_joint_4": -1.002,
+        "right_joint_5": -1.351,
+        "right_joint_6": -0.452
+      },
+      "processes": {
+        "control": {
+          "pid": 10652,
+          "running": true,
+          "exit_code": null,
+          "label": "control / right / gravity",
+          "stopping": false
+        }
+      }
+    },
+    "model": {
+      "state": "valid",
+      "reason": "ok",
+      "diagnostics": {
+        "outputs": 5777,
+        "dropped": 0,
+        "resets": 0,
+        "state": "valid",
+        "reason": "ok",
+        "history_count": 50,
+        "source_age_seconds": 0.010175176000000001,
+        "receive_age_seconds": 0.005873581000059858,
+        "last_output_stamp_ns": 1791723179303199986,
+        "output_hz": 100,
+        "infer_ms": 0.6779490000781152,
+        "infer_p95_ms": 0.7819570999970437,
+        "device": "cpu"
+      }
+    },
+    "endpoint": {
+      "state": "unavailable",
+      "reasons": [
+        "near_singular"
+      ],
+      "geometry": {
+        "condition_number": 1645.1818908953016,
+        "scaled_singular_values": [
+          2.1941325900447524,
+          1.8051341291410485,
+          1.414287582977799,
+          0.6280676884893547,
+          0.622649070391815,
+          0.0013336717369595613
+        ],
+        "reason": "near_singular",
+        "valid": false
+      },
+      "outputs": 0,
+      "wrench": null
+    }
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "status": "failed",
+  "side": "right",
+  "domain": 74,
+  "started_unix": 1791619392.6000943,
+  "plan": "/home/venom/factr2/data/motion_plans/right_coverage_c2_expanded_friction_20261010.yaml",
+  "session": "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917",
+  "error": "Command '['/usr/bin/python3.10', '/home/venom/factr2/scripts/w3_coverage_motion.py', 'run', '--file', '/home/venom/factr2/data/motion_plans/right_coverage_c2_expanded_friction_20261010.yaml', '--send']' returned non-zero exit status 1.",
+  "completed_unix": 1791620844.3048818
+}

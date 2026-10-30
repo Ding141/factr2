@@ -1,0 +1,20 @@
+{
+  "pid": 23328,
+  "status": "stopped",
+  "sessions": {
+    "train": "/home/venom/factr2/data/quick_capture/right/20261011_214447_254767"
+  },
+  "role": "train",
+  "automatic_deployment": false,
+  "started_utc": "2026-10-11T13:44:13Z",
+  "updated_utc": "2026-10-11T13:48:37Z",
+  "plan": "/home/venom/factr2/log/baseline_campaign_20261011_213553_retry1/train.yaml",
+  "planned_seconds": 2120.5399999999995,
+  "session": "/home/venom/factr2/data/quick_capture/right/20261011_214447_254767",
+  "motion_pid": 23858,
+  "capture_pid": 23419,
+  "event": "003_sine_j1_slow",
+  "event_index": 3,
+  "motion_exit": 1,
+  "error": "train stopped: D=1, C=1; partial data preserved, no automatic retry"
+}

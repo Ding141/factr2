@@ -1,0 +1,113 @@
+{
+  "purpose": "Long, larger-amplitude unloaded observation of latest joint torque dashboard",
+  "role": "test",
+  "model_dir": "/home/venom/factr2/models/w3/right/targeted_candidate_20261016",
+  "model_hash": "b5216350f2c76a7462ab931e5d62e8f2442e00e65f0f4146fb4b7868829d62a6",
+  "plan_sha256": "ebba507ae5a5036e78bd592bef385be8d31dd0db0201c1cb14ef077f4947aff1",
+  "initial_command_deg": [
+    0.0,
+    50.0,
+    0.0,
+    -55.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "left_pose_deg": [
+    0.20441144595289912,
+    -0.7493149843157745,
+    0.37541626606901507,
+    -0.378218676292993,
+    -0.9360073753301131,
+    1.8382383339717192,
+    0.028512990788346505
+  ],
+  "training_envelope": {
+    "position_bounds_deg": [
+      [
+        -4.794407367706299,
+        24.77806854248047
+      ],
+      [
+        45.62163543701172,
+        64.52787017822266
+      ],
+      [
+        -13.022928237915039,
+        4.2003493309021
+      ],
+      [
+        -66.40821075439453,
+        -50.234107971191406
+      ],
+      [
+        -4.733500003814697,
+        10.631965637207031
+      ],
+      [
+        -13.284873008728027,
+        3.8728349208831787
+      ],
+      [
+        -4.779994487762451,
+        4.4436564445495605
+      ]
+    ],
+    "position_margin_deg": 0.0,
+    "source": "observed training positions only; rectangular bounds do not certify all pose combinations"
+  },
+  "command_seconds": 676.21,
+  "steps": 55,
+  "planned_position_range_deg": [
+    [
+      -0.5297824185328749,
+      17.22663629326729
+    ],
+    [
+      49.470217581467125,
+      59.60000000000001
+    ],
+    [
+      -7.930202058917959,
+      0.5297824185328749
+    ],
+    [
+      -62.20000000000001,
+      -54.470217581467125
+    ],
+    [
+      -0.5297824185328749,
+      5.994783627380967
+    ],
+    [
+      -8.936945246604685,
+      0.5297824185328749
+    ],
+    [
+      -1.1861881406470336,
+      1.1993001816175473
+    ]
+  ],
+  "velocity_profiles_deg_s": [
+    2.4,
+    4.0,
+    6.0
+  ],
+  "expected_units": "joint external torque, Nm; no endpoint wrench conversion",
+  "ground_truth": {
+    "source": "operator declares unloaded",
+    "assumed_external_joint_torque_nm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "independently_measured": false
+  },
+  "no_model_or_control_changes": true,
+  "no_time_shift_fit": true,
+  "automatic_retry": false
+}

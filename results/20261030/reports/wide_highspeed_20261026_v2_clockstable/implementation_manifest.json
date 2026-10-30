@@ -1,0 +1,11 @@
+{
+  "scripts/w3_continuous_highspeed.py": "dfb99ae6e03d114b936d5275b00710fd7f5b471d47cdc24cbc340445fe033407",
+  "scripts/w3_wide_highspeed.py": "c6fb4fbbaf21e920015b5b1d29e4367b75145ad4ec1cf6034ff4c9cd14b0026e",
+  "scripts/w3_clock_stability_probe.py": "ba8baa088415eda7be6abe213d1f7df32e9b6b0acf96cae8759ae1c0f95473c2",
+  "scripts/train_w3_highspeed.py": "317c9ca15f28950560431aab4495afaf3cad3c6e06c979a737bd17491db3ea07",
+  "scripts/process_w3_wide_campaign.py": "60eae0486daa2ad2eec0fbe05b51d7de3710301248e9be1d58e73efb881809e6",
+  "scripts/record_w3_atomic_waveforms.py": "36706dfbf263de77eae373ee0cce8aeb870a45812655b918b888cdd992561407",
+  "scripts/observe_w3_frozen_sigma.py": "282e511a8b5d9a0a1fb5dbf141ae4a8394906462e5ebcfa6218c512dca30e60b",
+  "factr2_next/src/factr2_next/factr2_next/inference/frozen_sigma_observer.py": "50864e23c7f08f325be155a61301194238cada60a6cc720b41331009146a7fcd",
+  "factr2_next/src/factr2_next/factr2_next/inference/inference_node.py": "cd8813c89f15cd1588fccf8801b7603bb3bea205c72fc2515ce6c31aab0d2226"
+}

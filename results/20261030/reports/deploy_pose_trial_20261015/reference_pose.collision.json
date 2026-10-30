@@ -1,0 +1,415 @@
+{
+  "accepted": true,
+  "plan_sha256": "482e8faa842ee5bb4abba13ce551d39ac69774373da9de4db14bf16f1a746029",
+  "robot_description_sha256": "e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345",
+  "left_pose_deg": [
+    -0.6042829517766106,
+    -0.7711715896598152,
+    0.37541626606901507,
+    0.627239811046244,
+    6.75762698879897,
+    -1.1561712396752308,
+    1.2525375315679916
+  ],
+  "left_pose_source": "explicit_static_pose_supplied_by_caller",
+  "max_sample_joint_travel_deg": 0.25,
+  "checked_configurations": 336,
+  "minimum_sampled_distance_m": 0.012195609302884963,
+  "distance_configurations_checked": 2,
+  "closest": {
+    "pair": [
+      "right_link_3_0",
+      "right_link_1_0"
+    ],
+    "step": "001_approach_slow",
+    "position_deg": [
+      0.12343763420776382,
+      0.9241678270680882,
+      -3.8429905276009,
+      -1.4494027973007166,
+      -2.728303655054819,
+      0.5287197636352162,
+      -0.0588587890744566
+    ]
+  },
+  "failure": null,
+  "excluded_pairs": [
+    {
+      "pair": [
+        "left_arm_attachment_point_0",
+        "base_link_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "left_base_link_0",
+        "base_link_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "left_base_link_0",
+        "left_arm_attachment_point_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "left_link_1_0",
+        "left_arm_attachment_point_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "left_link_1_0",
+        "left_base_link_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "left_link_2_0",
+        "left_arm_attachment_point_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_2_0",
+        "left_base_link_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_2_0",
+        "left_link_1_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "left_link_3_0",
+        "left_arm_attachment_point_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_3_0",
+        "left_base_link_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_3_0",
+        "left_link_1_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_3_0",
+        "left_link_2_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "left_link_4_0",
+        "left_arm_attachment_point_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_4_0",
+        "left_base_link_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_4_0",
+        "left_link_1_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_4_0",
+        "left_link_2_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_4_0",
+        "left_link_3_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "left_link_5_0",
+        "left_arm_attachment_point_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_5_0",
+        "left_base_link_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_5_0",
+        "left_link_1_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_5_0",
+        "left_link_2_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_5_0",
+        "left_link_3_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_5_0",
+        "left_link_4_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "left_link_6_0",
+        "left_arm_attachment_point_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_6_0",
+        "left_base_link_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_6_0",
+        "left_link_1_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_6_0",
+        "left_link_2_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_6_0",
+        "left_link_3_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_6_0",
+        "left_link_4_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_6_0",
+        "left_link_5_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "left_link_7_0",
+        "left_arm_attachment_point_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_7_0",
+        "left_base_link_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_7_0",
+        "left_link_1_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_7_0",
+        "left_link_2_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_7_0",
+        "left_link_3_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_7_0",
+        "left_link_4_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_7_0",
+        "left_link_5_0"
+      ],
+      "reason": "static left-arm pair"
+    },
+    {
+      "pair": [
+        "left_link_7_0",
+        "left_link_6_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "right_arm_attachment_point_0",
+        "base_link_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "right_arm_attachment_point_0",
+        "left_arm_attachment_point_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "right_arm_attachment_point_0",
+        "left_base_link_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "right_base_link_0",
+        "base_link_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "right_base_link_0",
+        "left_arm_attachment_point_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "right_base_link_0",
+        "left_base_link_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "right_base_link_0",
+        "right_arm_attachment_point_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "right_link_1_0",
+        "right_arm_attachment_point_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "right_link_1_0",
+        "right_base_link_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "right_link_2_0",
+        "right_link_1_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "right_link_3_0",
+        "right_link_2_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "right_link_4_0",
+        "right_link_3_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "right_link_5_0",
+        "right_link_4_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "right_link_6_0",
+        "right_link_5_0"
+      ],
+      "reason": "rigid/adjacent body"
+    },
+    {
+      "pair": [
+        "right_link_7_0",
+        "right_link_6_0"
+      ],
+      "reason": "rigid/adjacent body"
+    }
+  ],
+  "elapsed_seconds": 0.5539736189999758,
+  "limitations": [
+    "Discrete URDF mesh check, not continuous collision certification",
+    "External support fixtures, cables, and pose uncertainty are not modeled",
+    "Samples describe command targets; measured tracking must be monitored during capture"
+  ]
+}

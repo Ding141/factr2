@@ -1,0 +1,17 @@
+side: right
+tool_frame: right_attachment_point
+root_frame: base_footprint
+robot_description_sha256: e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345
+inference_config: /home/venom/factr2/config/w3/right/inference_targeted_20261016.yaml
+solver:
+  characteristic_length_m: 0.4
+  damping: 0.005
+  max_condition: 100.0
+  max_relative_residual: 0.35
+  mode: full_wrench
+web:
+  host: 127.0.0.1
+  port: 8082
+  refresh_hz: 10
+  history_points: 600
+model_notice: 2026-10-16 待验收模型（最佳第12轮）；当前为真机只读观测。验证/测试仅覆盖6°/s，接触及卸载恢复尚未验证。

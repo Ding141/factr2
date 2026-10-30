@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "motion_steps_completed": 27,
+  "paired_frames": 31946,
+  "same_frame_rms_before_nm": 0.13724915189144224,
+  "same_frame_rms_after_nm": 0.13666537897854472,
+  "improvement_percent": 0.42533808395351924,
+  "enabled_joints": [
+    true,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true
+  ],
+  "robot_static_verified": true,
+  "execution_hashes_verified": true,
+  "old_models_preserved": true,
+  "compensation_kept_enabled": true,
+  "report": "/home/venom/factr2/log/joint_residual_comparison_20261030_v2/REPORT.md",
+  "clock_restore_required": true,
+  "finished_utc": "2026-10-30T04:13:42.213397+00:00"
+}

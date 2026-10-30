@@ -1,0 +1,12 @@
+{
+  "actual_peak_speed_max_to_min_ratio": 1.15,
+  "same_direction_start_pose_span_deg": 0.3,
+  "same_direction_end_pose_span_deg": 0.3,
+  "acceleration_order": "strictly increasing median achieved peak, and high/low >=1.4",
+  "derivative_windows_samples": [
+    21,
+    31
+  ],
+  "delay_fitting": false,
+  "unmatched_trials": "report separately; do not claim isolated acceleration causality"
+}

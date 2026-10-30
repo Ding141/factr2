@@ -1,0 +1,8 @@
+{
+  "health_pid": 16224,
+  "adapter_launcher_pid": 16225,
+  "observer_pid": 24407,
+  "extra_compensation_pid": null,
+  "url": "http://127.0.0.1:8082/",
+  "metadata_sha256": "3ea80b6d4a101bce327161b874fefd859afd323fabcf5f2f91ee526bf6edd403"
+}

@@ -1,0 +1,5 @@
+{
+  "previous_observer_profile_existed": false,
+  "previous_default": "observe_w3_kinematic_compensation.py",
+  "new_bundle": "/home/venom/factr2/models/w3/right/joint_lstm_observer_20261028_v1"
+}

@@ -1,0 +1,66 @@
+{
+  "pid": 30833,
+  "status": "stopped",
+  "sessions": {
+    "train": "/home/venom/factr2/data/quick_capture/right/20261011_224500_979861"
+  },
+  "role": "train",
+  "reused_training_source": {
+    "parent_session": "/home/venom/factr2/data/quick_capture/right/20261011_215544_913483",
+    "events": [
+      "003_sine_j1_slow",
+      "004_sine_j2_slow",
+      "005_sine_j3_slow",
+      "007_sine_j5_slow",
+      "008_sine_j6_slow",
+      "009_sine_j7_slow"
+    ],
+    "reference": "/home/venom/factr2/log/baseline_campaign_20261011_224032_resume2/train_reference.yaml"
+  },
+  "automatic_deployment": false,
+  "started_utc": "2026-10-11T14:44:44Z",
+  "updated_utc": "2026-10-11T15:01:09Z",
+  "plan": "/home/venom/factr2/log/baseline_campaign_20261011_224032_resume2/train.yaml",
+  "planned_seconds": 1202.31,
+  "session": "/home/venom/factr2/data/quick_capture/right/20261011_224500_979861",
+  "motion_pid": 31361,
+  "capture_pid": 30917,
+  "live_monitor": {
+    "utc": "2026-10-11T15:00:42.564002+00:00",
+    "elapsed_seconds": 910.070686115,
+    "adapter_hz_last_second": 99.0,
+    "adapter_reason": "ok",
+    "health_ok": true,
+    "max_tracking_deg": [
+      2.1051334912076167,
+      1.8400652008108236,
+      1.8254937065188506,
+      1.9681761168684955,
+      2.3016728127103083,
+      2.1866966705404955,
+      2.4467065839083877
+    ],
+    "measured_deg": [
+      0.10158102886372301,
+      50.69242317663605,
+      0.266105918592131,
+      -54.408777168611984,
+      0.48467197203253903,
+      0.15715747278652253,
+      0.8809752407192979
+    ],
+    "target_deg": [
+      1.5957588127798567e-122,
+      50.0,
+      4.9962863308930895e-124,
+      -55.0,
+      1.463467365455264e-128,
+      -4.3801550174179405e-123,
+      1.2201960253390344e-124
+    ]
+  },
+  "event": "024_pose0_line_x_slow",
+  "event_index": 18,
+  "motion_exit": 1,
+  "error": "train stopped: D=1, C=1; partial data preserved, no automatic retry"
+}

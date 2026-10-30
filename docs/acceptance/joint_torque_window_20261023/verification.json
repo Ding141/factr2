@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-23",
+  "quantity": "external_joint_torque",
+  "default_trace": "raw signed residual per joint in Nm",
+  "default_url": "http://127.0.0.1:8082/",
+  "tests": {
+    "offline_regressions_passed": 19,
+    "isolated_ros_selection": "6 passed in 2.27s (5 overlap with offline tests)",
+    "isolated_domain": 199,
+    "cli_default_smoke": "PASS: actual entry served joint_torque view; seven raw joint channels received",
+    "browser": "PASS: seven selected raw curves, signed values in Nm, optional filtered curves, stale values shown as em dash"
+  },
+  "hardware_motion": false,
+  "screenshot": "preview.jpg",
+  "screenshot_data": "explicitly labeled synthetic offline preview",
+  "sha256": {
+    "factr2_next/src/factr2_next/factr2_next/visualization/web_node.py": "cc4f2f91062e8f017fdd02ccabc7cce64aa20ba71817633d76aa9d2eed91d4af",
+    "scripts/w3_endpoint_wrench.py": "6b27ad03af2f9d118424e495f7dcfab5c699183c054638f5972782c9472e204e",
+    "scripts/test_joint_torque_dashboard.py": "affd675449d6f8add7b9deb160717dbff7dc351799dc521923f81dbbb1c9c1a4",
+    "config/w3/right/visualize.yaml": "098a015096169bb42d515b7b34e1a1bee5ebcb57e83b84b1a3c07dc87e4f1be7"
+  }
+}

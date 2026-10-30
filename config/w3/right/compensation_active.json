@@ -1,0 +1,12 @@
+{
+  "schema": "w3_compensation_profile_v1",
+  "ros_domain_id": 74,
+  "experiment": "/home/venom/factr2/data/right/validated_joint_compensation_20261026_v1",
+  "model_sha256": "da96b945986d6195a9249260baafa62ad190fa658fc42f1485eb55f4aa1e6f88",
+  "model_label": "NEXT · 逐关节择优补偿 · 空载误报改进",
+  "deployment_note": "J1/J2采用验证集择优的非线性补偿；J3–J7保留原补偿，七关节均启用。新版本相对原补偿改善，但低速相对仅滤波基线的回归检查仍未全部通过。当前为只读研究观察，未做新实机运动和真实接触标定。",
+  "research_only": true,
+  "original_low_speed_regression_gate_passed": false,
+  "all_joints_enabled": true,
+  "controller_changes": false
+}

@@ -1,5 +1,7 @@
 # 当前右臂只读外力矩与末端观测
 
+2026-10-23 窗口更新：常用 8082 命令默认显示 J1–J7 外部关节力矩（N·m），详见 [关节力矩窗口说明](JOINT_TORQUE_WINDOW_20261023.md)。下文的末端六维换算是可选诊断，需要显式指定 `--view endpoint_wrench`；模型指标与部署信息保留为当时记录。
+
 更新：2026-10-10。当前模型为 `models/w3/right/c2_20261010`，100 Hz、右臂、50帧历史、ROS域74。
 
 完整连接、控制、模型和网页的命令，以 [详细启动手册](RIGHT_ARM_STARTUP_20261010.md) 为准；本文保留接口和换算说明。旧小范围模型未覆盖的J4零位范围限制不再作为新模型范围说明，但近奇异几何限制仍存在。
@@ -36,7 +38,7 @@
 ```bash
 cd /home/venom/factr2
 export ROS_DOMAIN_ID=74 ROS_LOCALHOST_ONLY=1
-scripts/next.sh python scripts/w3_endpoint_wrench.py --config config/w3/right/endpoint_wrench.yaml
+scripts/next.sh python scripts/w3_endpoint_wrench.py --config config/w3/right/endpoint_wrench.yaml --view endpoint_wrench
 ```
 
 末端 Topic `/next/right/endpoint_wrench` 使用标准 `geometry_msgs/WrenchStamped`，`force` 为 N，`torque` 为 N·m，`header.frame_id=right_attachment_point`。不可用时不发布数值，下游必须同时检查 `/next/right/endpoint_wrench/status` 和消息新鲜度。

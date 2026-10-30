@@ -1,0 +1,17 @@
+{
+  "request": "部署新的模型",
+  "authorized_utc": "2026-10-26T06:14:33.200811+00:00",
+  "mode": "user_requested_read_only_research_deployment",
+  "full_pipeline_gate_passed": false,
+  "known_limitations": {
+    "highspeed_rms_change_pct": -23.78189691306245,
+    "old_low_speed_rms_change_pct": 9.94503903593218
+  },
+  "acceptance": "Explicit user request after regression results were reported; original gate result preserved",
+  "regression_report": "/home/venom/factr2/log/highspeed_continuous_20261025_v2/candidate_evaluation/comparison.json",
+  "base": "/home/venom/factr2/models/w3/right/highspeed_observer_20261025_v1",
+  "compensation": "/home/venom/factr2/data/right/highspeed_compensation_20261025_v1",
+  "rollback_base": "/home/venom/factr2/models/w3/right/frozen_sigma_observer_20261023",
+  "rollback_compensation": "/home/venom/factr2/data/right/kinematic_compensation_20261025_v1",
+  "motor_commands": false
+}

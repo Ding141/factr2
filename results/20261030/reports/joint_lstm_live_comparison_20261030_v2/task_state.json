@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "high_speed_motion_completed": true,
+  "completed_steps": 27,
+  "postflight_static": true,
+  "total_low_high_paired_frames": 51181,
+  "source_locks_verified": true,
+  "old_model_and_backup_unchanged": true,
+  "compensation_enabled": false,
+  "report": "/home/venom/factr2/log/joint_lstm_live_comparison_20261030_v2/COMBINED_REPORT.md",
+  "clock_restore_required": true,
+  "finished_utc": "2026-10-30T03:26:18.171339+00:00"
+}

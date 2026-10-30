@@ -11,6 +11,9 @@ from scipy.spatial import cKDTree
 def group_name(info):
     if info.get('kind', '').startswith('static_'):
         return 'static'
+    if info.get('family') in ('continuous', 'hysteresis'):
+        count = len(info.get('active_joints', []))
+        return 'single_joint' if count == 1 else 'multi_joint' if count > 1 else 'unlabelled'
     if info.get('phase') == 'cartesian':
         return 'multi_joint'
     return info.get('phase', 'unlabelled')

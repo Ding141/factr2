@@ -1,3 +1,4 @@
+import torch
 import torch.nn as nn
 
 
@@ -105,6 +106,28 @@ class LSTMRegressor(nn.Module):
         return self.head(y[:, -1])
 
 
+class JointLSTMRegressor(nn.Module):
+    """One independent all-state-input, scalar-output LSTM per joint.
+
+    Only the input tensor is shared. Recurrent weights, hidden states and
+    regression heads are separate; concatenation preserves joint order.
+    """
+    def __init__(self, input_size, output_size, **kwargs):
+        super().__init__()
+        if input_size < 1 or output_size < 1:
+            raise ValueError("joint_lstm_positive_dimensions")
+        self.input_size = input_size
+        self.joints = nn.ModuleList([
+            LSTMRegressor(input_size=input_size, output_size=1, **kwargs)
+            for _ in range(output_size)
+        ])
+
+    def forward(self, x):
+        if x.ndim != 3 or x.shape[-1] != self.input_size or x.shape[1] < 1:
+            raise ValueError("joint_lstm_requires_batch_history_all_features")
+        return torch.cat([joint(x) for joint in self.joints], dim=-1)
+
+
 def regression_head(input_size, output_size, head_hidden=256, head_layers=2, dropout=0.0):
     layers = []
     width = input_size
@@ -156,8 +179,9 @@ def build_model(model_cfg, input_size, output_size, history):
             state_mode=state_mode,
             **common,
         )
-    if model_type == "lstm":
-        return LSTMRegressor(
+    if model_type in ("lstm", "joint_lstm"):
+        cls = JointLSTMRegressor if model_type == "joint_lstm" else LSTMRegressor
+        return cls(
             head_hidden=int(model_cfg.get("head_hidden", 256)),
             head_layers=int(model_cfg.get("head_layers", 2)),
             bidirectional=bool(model_cfg.get("bidirectional", False)),
@@ -165,5 +189,5 @@ def build_model(model_cfg, input_size, output_size, history):
             **common,
         )
     raise ValueError(
-        f"Unsupported model type '{model_type}'. Use one of: mlp, gru, lstm."
+        f"Unsupported model type '{model_type}'. Use one of: mlp, gru, lstm, joint_lstm."
     )

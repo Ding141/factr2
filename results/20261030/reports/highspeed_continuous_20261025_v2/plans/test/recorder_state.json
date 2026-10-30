@@ -1,0 +1,10 @@
+{
+  "status": "closed",
+  "error": null,
+  "rows": 29526,
+  "updated_mono": 4132.488167077,
+  "last_join_mono": 4132.48269682,
+  "source_rate_hz": 99.97618106628683,
+  "recording_mode": "atomic_full_precision",
+  "pid": 25297
+}

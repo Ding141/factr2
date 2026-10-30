@@ -1,0 +1,14 @@
+{
+  "initial_deg": [
+    -79.38668321732298,
+    50.0,
+    0.0,
+    -55.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "side": "right",
+  "retry_of": "/home/venom/factr2/log/baseline_campaign_20261011_213553_retry1",
+  "reason": "Read lock interfered with SQLite recorder; no further live bag access; initial pose regenerated"
+}

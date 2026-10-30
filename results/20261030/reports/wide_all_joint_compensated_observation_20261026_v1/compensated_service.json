@@ -1,0 +1,23 @@
+{
+  "service": "running",
+  "pid": 30153,
+  "url": "http://127.0.0.1:8083/",
+  "state": "valid",
+  "reason": "ok",
+  "outputs": 376570,
+  "experiment": "/home/venom/factr2/data/right/wide_highspeed_compensation_all_joints_20261026_v1",
+  "next_topic_root": "/next/right/kinematic_compensated",
+  "enabled_joints": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "compensation_applied": true,
+  "calibration": "uncalibrated",
+  "deployment_ready": false,
+  "contact_validated": false
+}

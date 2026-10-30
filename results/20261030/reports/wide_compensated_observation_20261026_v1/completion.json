@@ -1,0 +1,26 @@
+{
+  "status": "completed",
+  "motion_completed": true,
+  "hardware_motion": "stopped",
+  "same_trajectory_as_previous": true,
+  "plan_sha256": "1f0213a421c645916cf27cd5346b288bd237e024f10addb5bf47eb8e1e84bb26",
+  "base_metadata_sha256": "3ea80b6d4a101bce327161b874fefd859afd323fabcf5f2f91ee526bf6edd403",
+  "residual_sha256": "3dc7bd9f62ea73621d8cdcc92583cd110cfa2ee1c5a491ac93046f31172031ca",
+  "enabled_joints": [
+    1,
+    3,
+    5
+  ],
+  "recorded_frames": 33228,
+  "formal_valid_fraction": 0.9674262447317665,
+  "same_filter_before_rms_nm": 0.5662582697020088,
+  "compensated_rms_nm": 0.508079178152592,
+  "incremental_rms_reduction_fraction": 0.1027430320444297,
+  "offline_regression_gate_passed": false,
+  "research_observation_only": true,
+  "time_sync_paused": true,
+  "restore_requires_operator_password": true,
+  "restore_command": "sudo systemctl start systemd-timesyncd",
+  "url": "http://127.0.0.1:8083/",
+  "compensation_service_pid": 27220
+}

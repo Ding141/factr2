@@ -1,0 +1,12 @@
+{
+  "samples": 5000,
+  "hz": 99.4627912456207,
+  "max_gap_ms": 280.007305,
+  "gaps_over_20ms": 1,
+  "large_gaps": [
+    {
+      "relative_seconds": 0.049994902,
+      "gap_ms": 280.007305
+    }
+  ]
+}

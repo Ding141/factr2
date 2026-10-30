@@ -1,0 +1,66 @@
+{
+  "interrupted_stage": "contact_free_collection_not_model_training",
+  "failed_session": "/home/venom/factr2/data/quick_capture/right/20261011_215544_913483",
+  "failed_event": "010_sine_j1_fast",
+  "stopped_motion_utc": "2026-10-11T14:20:18.813656+00:00",
+  "cause": "Configured tracking error limit exceeded",
+  "joint": "J1",
+  "configured_tracking_cap_deg": 3.0,
+  "max_recorded_tracking_deg": 3.05,
+  "raw_data_hz": 100.0,
+  "feedback_interruption_seconds": 0.510006666,
+  "feedback_interruption_affected_event": "006_sine_j4_slow",
+  "actuator_fault_confirmed": false,
+  "physical_cause": "Exact source of dynamic lag is not identified by these logs",
+  "changes": {
+    "fast_velocity_deg_s": [
+      12.0,
+      12.0,
+      12.0,
+      12.0,
+      12.0,
+      12.0,
+      12.0
+    ],
+    "fast_acceleration_deg_s2": [
+      36.0,
+      36.0,
+      36.0,
+      36.0,
+      36.0,
+      36.0,
+      36.0
+    ],
+    "slow_velocity_deg_s": [
+      6.0,
+      6.0,
+      6.0,
+      6.0,
+      6.0,
+      6.0,
+      6.0
+    ],
+    "slow_acceleration_deg_s2": [
+      24.0,
+      24.0,
+      24.0,
+      24.0,
+      24.0,
+      24.0,
+      24.0
+    ],
+    "tracking_cap_deg": 3.0,
+    "calibration_changed": false,
+    "servo_gains_changed": false,
+    "preserve_raw_episode_boundaries": true,
+    "exclude_failed_fast_segment": true,
+    "require_complete_union_against_frozen_reference": true
+  },
+  "offline_checks": {
+    "regression_suite_passed": 22,
+    "additional_resumed_manifest_test_passed": true,
+    "collision_accepted": true,
+    "collision_checked_configurations": 14468
+  },
+  "automatic_deployment": false
+}

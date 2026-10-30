@@ -1,0 +1,66 @@
+{
+  "position": {
+    "count": 1965,
+    "max_source_gap_ms": 10.069671,
+    "max_receive_gap_ms": 10.289325
+  },
+  "mean": {
+    "count": 1855,
+    "max_source_gap_ms": 10.069671,
+    "max_receive_gap_ms": 44.230086
+  },
+  "comp": {
+    "count": 1777,
+    "max_source_gap_ms": 10.069671,
+    "max_receive_gap_ms": 44.377314
+  },
+  "mean_missing": 0,
+  "comp_missing": 0,
+  "diagnostics": {
+    "base": {
+      "message": "valid:ok",
+      "values": {
+        "outputs": 168783,
+        "dropped": 14,
+        "resets": 14,
+        "state": "valid",
+        "reason": "ok",
+        "history_count": 50,
+        "source_age_seconds": 0.008505969,
+        "receive_age_seconds": 0.0052242129986552754,
+        "last_output_stamp_ns": 1793002012176959137,
+        "output_hz": 100,
+        "infer_ms": 0.5734759997721994,
+        "infer_p95_ms": 7.6163686995641715,
+        "device": "cpu"
+      }
+    },
+    "comp": {
+      "message": "valid:ok",
+      "values": {
+        "outputs": 17443,
+        "dropped": 0,
+        "resets": 1,
+        "state": "valid",
+        "reason": "ok",
+        "output_hz": 100,
+        "calibration": "uncalibrated",
+        "contact_validated": false,
+        "compensation_applied": true,
+        "enabled_joints": [
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          false
+        ],
+        "base_metadata_sha256": "3ea80b6d4a101bce327161b874fefd859afd323fabcf5f2f91ee526bf6edd403",
+        "input_cutoff_hz": 12.0,
+        "output_cutoff_hz": 5.0
+      }
+    }
+  },
+  "bad_states": {}
+}

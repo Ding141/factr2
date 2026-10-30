@@ -1,0 +1,7 @@
+{
+  "previous_stage": "/home/venom/factr2/log/reciprocal_frozen_sigma_20261023_v1",
+  "previous_error": "Capture failed before motion: two-second discovery omitted existing state components",
+  "motion_commands_sent_in_previous_attempt": 0,
+  "change": "Increase read-only node discovery to five seconds; preserve all required checks",
+  "same_frozen_motion_and_authorization": true
+}

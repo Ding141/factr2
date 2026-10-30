@@ -1,0 +1,74 @@
+{
+  "purpose": "User-requested all-seven-joint residual activation on same frozen trajectory; no refitting",
+  "next_topic_root": "/next/right/kinematic_compensated",
+  "base_model_dir": "/home/venom/factr2/models/w3/right/wide_highspeed_observer_20261026_v1",
+  "base_metadata_sha256": "3ea80b6d4a101bce327161b874fefd859afd323fabcf5f2f91ee526bf6edd403",
+  "training_envelope": {
+    "position_bounds_deg": [
+      [
+        -24.837188907260355,
+        26.854447712583188
+      ],
+      [
+        36.4198424847882,
+        64.52787067423696
+      ],
+      [
+        -22.989650057528586,
+        14.800966997451564
+      ],
+      [
+        -81.42397600147514,
+        -42.125201951337395
+      ],
+      [
+        -17.612870501381188,
+        19.63133141999794
+      ],
+      [
+        -15.164541382065927,
+        11.085624126720598
+      ],
+      [
+        -14.418867432260832,
+        14.716424623452438
+      ]
+    ],
+    "position_margin_deg": 0.0,
+    "source": "observed training positions only; rectangular bounds do not certify pose combinations"
+  },
+  "plan_sha256": "1f0213a421c645916cf27cd5346b288bd237e024f10addb5bf47eb8e1e84bb26",
+  "command_seconds": 284.97,
+  "model_hash": "18f30cb5d5e98c9a4a89be8b2ec47441a49b512cbf9b5461c17e38f2fae2ad2d",
+  "role": "test",
+  "model_frozen_during_capture": true,
+  "retune_on_observation": false,
+  "recording_mode": "atomic_full_precision",
+  "extra_compensation_enabled": true,
+  "activation_override": {
+    "source": "explicit_user_request",
+    "request": "对所有关节施加补偿，然后控制机械臂运动收集波形图数据",
+    "original_validated_enabled_joints": [
+      true,
+      false,
+      true,
+      false,
+      true,
+      false,
+      false
+    ],
+    "requested_enabled_joints": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "reason": "Predeclared all-joint read-only ablation; not a new validation-selected mask",
+    "original_model_sha256": "3dc7bd9f62ea73621d8cdcc92583cd110cfa2ee1c5a491ac93046f31172031ca",
+    "no_refitting": true,
+    "no_test_tuning": true
+  }
+}

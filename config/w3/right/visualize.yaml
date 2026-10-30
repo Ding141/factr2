@@ -5,6 +5,7 @@ web:
   refresh_hz: 10
 plot:
   max_points: 500
+  view: joint_torque
 outputs:
   external_joint_torque: '{next_topic_root}/external_joint_torque'
   external_joint_torque_raw: '{next_topic_root}/external_joint_torque/raw'

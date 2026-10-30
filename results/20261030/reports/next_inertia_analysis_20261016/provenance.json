@@ -1,0 +1,19 @@
+{
+  "source_sha256": {
+    "/home/venom/factr2/log/md_force_observation_20261016_223403/samples.csv": "e8f7208a5204854f93cf0d36b82b40746baa78915e5c9fbfb505e4268f6f8cad",
+    "/home/venom/factr2/log/md_force_observation_20261016_223403/robot.urdf": "e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345",
+    "/home/venom/factr2/log/md_force_observation_20261016_223403/motion.yaml": "0c066960cf7eb4b64105c63d7fad3389fe2b9d96d59d3313513469cf4b6586ac",
+    "/home/venom/factr2/log/md_force_observation_20261016_223403/test_spec.json": "411d009e49e9ad8fb9ea74ae2df121be9551d34916d89aab7044ea9be7934777",
+    "/home/venom/factr2/data/quick_capture/right/20261016_223606_187477/audit/motion_run.json": "ad103e8d95a2cd5d20ffc8906131bf8d6e062b398c3beb317a77aa35e5763359",
+    "/home/venom/factr2/log/next_inertia_analysis_20261016/compute.py": "b80159c2ec6778d8ddb4f8a07cf15fcf64bf837c4457321a653fee2689496966"
+  },
+  "render_source_sha256": "b14c8a9fc84f6af04c9a690a4d63711a19baf0c1a6961c428281a5e05de019c1",
+  "outputs_sha256": {
+    "analysis.json": "b8d2491ecdd7eb995cd1b3cd03e75383de7dd41dda718cc03700f7a51e54821d",
+    "arrays.npz": "7fccd1ee6490fd2f640363fc5cc48bea3e76c6efef0a22b897004abb9501f40b",
+    "peak_details.json": "1388a4266c8fb4f9572fa628e5e411371b5a5d745ce8386eaafba6eb5372976c",
+    "next_inertia_overview.png": "6f1e4420589830ae866ea83c72a141faa2c0839cc1eb45d168cbf783d433f0cf",
+    "next_inertia_peak.png": "bbd70f5d017e0ca64e3e626b93919a3adca585420166cef7786def4f665a2f25",
+    "REPORT.md": "be01f44043b63695011d761b02df6fcda6ca45a7125c9e5050e6b3a629734d8f"
+  }
+}

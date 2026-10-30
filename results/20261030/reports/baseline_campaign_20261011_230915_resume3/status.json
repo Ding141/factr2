@@ -1,0 +1,97 @@
+{
+  "pid": 33260,
+  "status": "stopped",
+  "sessions": {
+    "train": "/home/venom/factr2/data/quick_capture/right/20261011_231301_528314",
+    "val": "/home/venom/factr2/data/quick_capture/right/20261011_232124_888889"
+  },
+  "role": "val",
+  "reused_training_source": {
+    "retained_sources": [
+      {
+        "parent_session": "/home/venom/factr2/data/quick_capture/right/20261011_215544_913483",
+        "parent_h5_sha256": "b2892d70a6025e474348c1a8f25a2202266d5422ca0927b021c3a7f30f661a46",
+        "events": [
+          "003_sine_j1_slow",
+          "004_sine_j2_slow",
+          "005_sine_j3_slow",
+          "007_sine_j5_slow",
+          "008_sine_j6_slow",
+          "009_sine_j7_slow"
+        ]
+      },
+      {
+        "parent_session": "/home/venom/factr2/data/quick_capture/right/20261011_224500_979861",
+        "parent_h5_sha256": "c3cb931b3a603f1afaa50161ce0f3b8fa26036249329bf57cc4495163c186f3a",
+        "events": [
+          "006_sine_j4_slow",
+          "010_sine_j1_fast",
+          "011_sine_j2_fast",
+          "012_sine_j3_fast",
+          "013_sine_j4_fast",
+          "014_sine_j5_fast",
+          "015_sine_j6_fast",
+          "016_sine_j7_fast"
+        ]
+      }
+    ],
+    "reference": "/home/venom/factr2/log/baseline_campaign_20261011_230915_resume3/train_reference.yaml"
+  },
+  "automatic_deployment": false,
+  "started_utc": "2026-10-11T15:12:56Z",
+  "updated_utc": "2026-10-11T16:02:36Z",
+  "plan": "/home/venom/factr2/log/baseline_campaign_20261011_230915_resume3/val.yaml",
+  "planned_seconds": 2407.6699999999996,
+  "session": "/home/venom/factr2/data/quick_capture/right/20261011_232124_888889",
+  "motion_pid": 34807,
+  "capture_pid": 34364,
+  "live_monitor": {
+    "utc": "2026-10-11T16:01:42.739178+00:00",
+    "elapsed_seconds": 2380.195573397,
+    "adapter_hz_last_second": 100.0,
+    "adapter_reason": "ok",
+    "health_ok": true,
+    "max_tracking_deg": [
+      2.0234664074381854,
+      1.8773926283154636,
+      2.161997879618404,
+      2.351461390433285,
+      2.2154440072530472,
+      2.3634493518347925,
+      2.2285328997597325
+    ],
+    "measured_deg": [
+      -11.504440333362023,
+      56.63752911324187,
+      2.189541830381082,
+      -43.065035070514725,
+      20.833499396414688,
+      10.845201410562556,
+      7.285069889549973
+    ],
+    "target_deg": [
+      -12.049090298693073,
+      56.30449992363489,
+      1.9012223759286129,
+      -42.662831465932655,
+      20.43843037126451,
+      10.541962193637115,
+      6.918537402995212
+    ],
+    "scheduler": {
+      "max_gap_ms": 25.14823799901933,
+      "phase_max_ms": {
+        "spin": 5.409346998931142,
+        "state_guard": 1.7643299997871509,
+        "capture_guard": 1.763143000061973,
+        "audit_tick": 24.805108001601184,
+        "build_window": 2.0801520004170015,
+        "publish": 0.38943499930610415
+      }
+    }
+  },
+  "event": "087_static_pose2_after_motion",
+  "event_index": 87,
+  "motion_exit": 1,
+  "error": "val stopped: D=1, C=1; partial data preserved, no automatic retry"
+}

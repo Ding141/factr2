@@ -1,0 +1,157 @@
+{
+  "checked_utc": "2026-10-11T18:00:34.515672+00:00",
+  "motion_completed": true,
+  "controllers": {
+    "joint_position_controller": "active",
+    "joint_state_broadcaster": "active",
+    "gravity_compensation_controller": "active"
+  },
+  "motors": [
+    {
+      "channel": 1,
+      "slot": 0,
+      "online": true,
+      "enabled": true,
+      "position": 1.6405353546142578,
+      "velocity": 0.010990142822265625,
+      "torque": 2.8087921142578125,
+      "error": 1,
+      "age": 0.001707339000859065
+    },
+    {
+      "channel": 1,
+      "slot": 1,
+      "online": true,
+      "enabled": true,
+      "position": 3.0058364868164062,
+      "velocity": -0.010990142822265625,
+      "torque": 6.1846160888671875,
+      "error": 1,
+      "age": 0.001707339000859065
+    },
+    {
+      "channel": 1,
+      "slot": 2,
+      "online": true,
+      "enabled": true,
+      "position": -2.6781492233276367,
+      "velocity": -0.0048847198486328125,
+      "torque": 1.6888885498046875,
+      "error": 1,
+      "age": 0.001707339000859065
+    },
+    {
+      "channel": 1,
+      "slot": 3,
+      "online": true,
+      "enabled": true,
+      "position": -0.3732738494873047,
+      "velocity": 0.0048847198486328125,
+      "torque": 2.290597915649414,
+      "error": 1,
+      "age": 0.001707339000859065
+    },
+    {
+      "channel": 1,
+      "slot": 4,
+      "online": true,
+      "enabled": true,
+      "position": -2.888723373413086,
+      "velocity": -0.03662872314453125,
+      "torque": 0.0659341812133789,
+      "error": 1,
+      "age": 0.001707339000859065
+    },
+    {
+      "channel": 1,
+      "slot": 5,
+      "online": true,
+      "enabled": true,
+      "position": 2.106698989868164,
+      "velocity": -0.012210845947265625,
+      "torque": 0.520146369934082,
+      "error": 1,
+      "age": 0.001707339000859065
+    },
+    {
+      "channel": 1,
+      "slot": 6,
+      "online": true,
+      "enabled": true,
+      "position": 1.7782478332519531,
+      "velocity": -0.012210845947265625,
+      "torque": -0.08058643341064453,
+      "error": 1,
+      "age": 0.001707339000859065
+    }
+  ],
+  "observation": {
+    "8081": {
+      "state": "valid",
+      "reason": "ok",
+      "diagnostics": {
+        "outputs": 65995,
+        "dropped": 0,
+        "resets": 0,
+        "state": "valid",
+        "reason": "ok",
+        "history_count": 50,
+        "source_age_seconds": 0.005488896,
+        "receive_age_seconds": 0.004288534000806976,
+        "last_output_stamp_ns": 1791741634471343758,
+        "output_hz": 100,
+        "infer_ms": 1.1196260020369664,
+        "infer_p95_ms": 0.8428062999882966,
+        "device": "cpu"
+      },
+      "geometry": null,
+      "wrench": null
+    },
+    "8082": {
+      "state": "valid",
+      "reason": "等效末端负载估计，尚未做接触精度与方向标定",
+      "diagnostics": null,
+      "geometry": {
+        "condition_number": 12.068814349984672,
+        "scaled_singular_values": [
+          2.045986639261501,
+          1.6612467792644487,
+          1.4538198283935255,
+          0.5867585991047171,
+          0.47064150466175714,
+          0.16952673062404838
+        ],
+        "torque_fit_error_nm": 0.017641701550382277,
+        "relative_fit_error": 0.11563040412980126,
+        "reason": "ok",
+        "valid": true
+      },
+      "wrench": {
+        "fx": -0.15104282469100644,
+        "fy": -0.4594597051651057,
+        "fz": 1.6914424059761335,
+        "mx": -0.06463920696765567,
+        "my": 0.022492592324083082,
+        "mz": -0.01104509427878508
+      }
+    }
+  },
+  "return_target_deg": [
+    0.0,
+    50.0,
+    0.0,
+    -55.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "max_tracking_deg": [
+    0.6852567635217459,
+    2.016070027163129,
+    0.4114488470731339,
+    2.265040515595055,
+    0.38959224172909307,
+    0.9356727944155177,
+    0.1899984211387014
+  ]
+}

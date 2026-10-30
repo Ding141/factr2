@@ -1,0 +1,28 @@
+{
+  "schema": "w3_signal_audit_supplementary_v1",
+  "purpose": "full-record timing counts and deterministic summary only; no fitting or lag search",
+  "frozen_sha256": "2c6daa947c06fbaf43a8091aa88b5c5ceea656bcf080c63dd75f9eec353571f6",
+  "full_record": {
+    "rows": 7102,
+    "duration_s": 71.070004909,
+    "average_hz": 99.91556929104361,
+    "gaps_over_20ms": 2,
+    "max_interval_ms": 39.999008,
+    "joined_delay_over_20ms_rows": 9
+  },
+  "gap_rows": [
+    {
+      "row_before": 5988,
+      "interval_ms": 39.999008,
+      "before_phase": "return_start",
+      "after_phase": "return_start"
+    },
+    {
+      "row_before": 5995,
+      "interval_ms": 39.989509,
+      "before_phase": "return_start",
+      "after_phase": "settling_after"
+    }
+  ],
+  "delay_search_history": "v1 train-only tracking profile reached the +150ms search boundary; before any validation the tracking search was widened to +/-500ms. v2 frozen parameters alone were then validated."
+}

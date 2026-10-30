@@ -1,0 +1,123 @@
+{
+  "status": "candidate_only_not_executed",
+  "motion_commands_sent": 0,
+  "seconds": 208.64,
+  "required_free_bytes": 1193195601,
+  "peak_bound_velocity_deg_s": [
+    5.717981607246958,
+    5.7179816072469025,
+    5.717981607246958,
+    5.7179816072469025,
+    5.717981607246958,
+    5.717981607246958,
+    5.717981607246958
+  ],
+  "blocks": [
+    {
+      "name": "0001_v06_a15_initial_approach",
+      "kind": "initial_approach",
+      "seconds": 60.65
+    },
+    {
+      "name": "0002_v06_a15_initial_settle",
+      "kind": "initial_settle",
+      "seconds": 3.0
+    },
+    {
+      "name": "0003_v06_a15_probe_j1",
+      "kind": "probe_j1",
+      "seconds": 8.06
+    },
+    {
+      "name": "0004_v06_a15_probe_j2",
+      "kind": "probe_j2",
+      "seconds": 8.06
+    },
+    {
+      "name": "0005_v06_a15_probe_j3",
+      "kind": "probe_j3",
+      "seconds": 8.06
+    },
+    {
+      "name": "0006_v06_a15_probe_j4",
+      "kind": "probe_j4",
+      "seconds": 8.06
+    },
+    {
+      "name": "0007_v06_a15_probe_j5",
+      "kind": "probe_j5",
+      "seconds": 8.06
+    },
+    {
+      "name": "0008_v06_a15_probe_j6",
+      "kind": "probe_j6",
+      "seconds": 8.06
+    },
+    {
+      "name": "0009_v06_a15_probe_j7",
+      "kind": "probe_j7",
+      "seconds": 8.06
+    },
+    {
+      "name": "0010_v06_a15_anchor0_cycle0_pattern0",
+      "kind": "anchor0_cycle0_pattern0",
+      "seconds": 8.45
+    },
+    {
+      "name": "0011_v06_a15_anchor0_cycle0_pattern1",
+      "kind": "anchor0_cycle0_pattern1",
+      "seconds": 8.21
+    },
+    {
+      "name": "0012_v06_a15_anchor0_cycle0_pattern2",
+      "kind": "anchor0_cycle0_pattern2",
+      "seconds": 8.48
+    },
+    {
+      "name": "0013_v06_a15_anchor0_cycle0_pattern3",
+      "kind": "anchor0_cycle0_pattern3",
+      "seconds": 8.65
+    },
+    {
+      "name": "0014_v06_a15_anchor1_approach",
+      "kind": "anchor1_approach",
+      "seconds": 8.89
+    },
+    {
+      "name": "0015_v06_a15_anchor1_cycle0_pattern0",
+      "kind": "anchor1_cycle0_pattern0",
+      "seconds": 8.55
+    },
+    {
+      "name": "0016_v06_a15_anchor1_cycle0_pattern1",
+      "kind": "anchor1_cycle0_pattern1",
+      "seconds": 8.45
+    },
+    {
+      "name": "0017_v06_a15_anchor1_cycle0_pattern2",
+      "kind": "anchor1_cycle0_pattern2",
+      "seconds": 8.34
+    },
+    {
+      "name": "0018_v06_a15_anchor1_cycle0_pattern3",
+      "kind": "anchor1_cycle0_pattern3",
+      "seconds": 8.66
+    },
+    {
+      "name": "0019_v06_a15_return_home",
+      "kind": "return_home",
+      "seconds": 8.89
+    },
+    {
+      "name": "0020_v06_a15_final_settle",
+      "kind": "final_settle",
+      "seconds": 3.0
+    }
+  ],
+  "blockers": [
+    "insufficient persistent disk space",
+    "expanded physical clearance confirmation pending",
+    "prior J7 speed-guard trip unresolved; do not treat candidate as cleared for execution"
+  ],
+  "collision_report": "/home/venom/factr2/log/extended_motion_precheck_20261023_101750/candidate_motion.collision.json"
+}

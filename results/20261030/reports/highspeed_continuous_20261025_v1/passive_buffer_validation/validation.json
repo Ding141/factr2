@@ -1,0 +1,9 @@
+{
+  "accepted": true,
+  "rows": 8922,
+  "max_gap_ms": 20.00732,
+  "can_frames": 220455,
+  "can_drops": 0,
+  "queue_peak": 6,
+  "max_writer_lag_ms": 2.2755289996894135
+}

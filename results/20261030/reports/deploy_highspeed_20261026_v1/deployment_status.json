@@ -1,0 +1,21 @@
+{
+  "status": "running_read_only_research",
+  "deployed": true,
+  "full_pipeline_gate_passed": false,
+  "user_requested_after_known_regression": true,
+  "model": "/home/venom/factr2/models/w3/right/highspeed_observer_20261025_v1",
+  "compensation": "/home/venom/factr2/data/right/highspeed_compensation_20261025_v1",
+  "url": "http://127.0.0.1:8083/",
+  "enabled_joints": [
+    "J1",
+    "J3",
+    "J5"
+  ],
+  "current_state": "out_of_scope",
+  "compensation_applied": false,
+  "unique_sources_verified": true,
+  "metadata_sha256": "077190d99440a8bf27dc7a41e03563528f1d630f2f56a37db87d3e1f5cc3ebdb",
+  "updated_utc": "2026-10-26T06:18:43.895926+00:00",
+  "motor_commands_sent": 0,
+  "rollback_preserved": true
+}

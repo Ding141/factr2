@@ -1,0 +1,13 @@
+{
+  "status": "failed",
+  "side": "right",
+  "domain": 74,
+  "started_unix": 1791605055.2509916,
+  "plan": "/home/venom/factr2/data/motion_plans/right_coverage_smooth_kp35_20261010.yaml",
+  "session": "/home/venom/factr2/data/quick_capture/right/20261010_120428_881457",
+  "dataset": "/home/venom/factr2/data/right/smooth_20261010_120428_881457_session_trial",
+  "previous_failure_audit": "/home/venom/factr2/log/manual_start/20261010-right-smooth-kp35/workflow_state_preprocessing_failure.json",
+  "training_started_unix": 1791606593.9371057,
+  "error": "Command '['/home/venom/factr2/scripts/next.sh', 'python', '/home/venom/factr2/scripts/run_w3_session_trial.py', '--dataset', '/home/venom/factr2/data/right/smooth_20261010_120428_881457_session_trial']' died with <Signals.SIGINT: 2>.",
+  "completed_unix": 1791606830.7994237
+}

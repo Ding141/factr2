@@ -1,0 +1,21 @@
+{
+  "controllers": {
+    "joint_position_controller": "active",
+    "joint_state_broadcaster": "active",
+    "gravity_compensation_controller": "active"
+  },
+  "processes": {
+    "control": {
+      "pid": 10652,
+      "running": true,
+      "exit_code": null,
+      "label": "control / right / gravity",
+      "stopping": false
+    }
+  },
+  "healthy_motors": 7,
+  "observer_ports": {
+    "8081": "STOPPED",
+    "8082": "STOPPED"
+  }
+}

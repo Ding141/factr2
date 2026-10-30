@@ -1,0 +1,32 @@
+{
+  "original_experiment": "/home/venom/factr2/data/right/wide_highspeed_compensation_20261026_v1",
+  "new_experiment": "/home/venom/factr2/data/right/wide_highspeed_compensation_all_joints_20261026_v1",
+  "only_numeric_change": "enabled_joints mask",
+  "all_weights_filters_caps_support_unchanged": true,
+  "activation_override": {
+    "source": "explicit_user_request",
+    "request": "对所有关节施加补偿，然后控制机械臂运动收集波形图数据",
+    "original_validated_enabled_joints": [
+      true,
+      false,
+      true,
+      false,
+      true,
+      false,
+      false
+    ],
+    "requested_enabled_joints": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "reason": "Predeclared all-joint read-only ablation; not a new validation-selected mask",
+    "original_model_sha256": "3dc7bd9f62ea73621d8cdcc92583cd110cfa2ee1c5a491ac93046f31172031ca",
+    "no_refitting": true,
+    "no_test_tuning": true
+  }
+}

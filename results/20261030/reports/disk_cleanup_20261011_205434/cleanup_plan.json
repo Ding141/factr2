@@ -1,0 +1,3258 @@
+{
+  "retained_model": "/home/venom/factr2/models/w3/right/c2_20261010",
+  "retained_latest_sessions": [
+    "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917",
+    "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506"
+  ],
+  "retained_h5_checksums": {
+    "/home/venom/factr2/data/quick_capture/right/20261010_120220_339266/20261010_120220_339266_20261010_120227.h5": "467334f1f32a6251cfe73b82de15622088baa226e01b8a8071aeadeab9db8a2d",
+    "/home/venom/factr2/data/quick_capture/right/20261010_160004_957524/20261010_160004_957524_20261010_160011.h5": "343f54a87d41ef1f3c5844e6ea3054d0a729006924573c158ab370a46283f76f",
+    "/home/venom/factr2/data/quick_capture/right/20261010_141247_113649/20261010_141247_113649_20261010_141253.h5": "90e74cb025de9f426e05a03bb622ba11a311835fb5b0467399d784aaede6a85b",
+    "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/20261010_160331_906917_20261010_160338.h5": "5a56ce2fffee455b827c50470ef1576e3b351c9d9517eb82675f4efb7fd8431e",
+    "/home/venom/factr2/data/quick_capture/right/20261010_120030_799821/20261010_120030_799821_20261010_120037.h5": "68a70674f66c8586aa1217bda04433e85206f5951bbb26e3918e22a88a6f3bf0",
+    "/home/venom/factr2/data/quick_capture/right/20261010_114717_526404/20261010_114717_526404_20261010_114723.h5": "c646185924c02f77ef03739af71c686e82846c8c46f2faa4904297bc151f3e44",
+    "/home/venom/factr2/data/quick_capture/right/20261010_120428_881457/20261010_120428_881457_20261010_120436.h5": "82e098c02c31f45b06a6f084c29857b71f17c273dd59ecec90382cb71a7b6a17",
+    "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/20261010_164151_566506_20261010_164157.h5": "17a2fdfc0cc09044e47f0261cbe0e2022c60ef8af635e46be5f64e028017da89",
+    "/home/venom/factr2/data/quick_capture/left/20261009_135027_065645/20261009_135027_065645_20261009_135036.h5": "48114ed2574eb2bc1ae4b10195535942766cd31e0409fadd46f059d3873d68fb",
+    "/home/venom/factr2/data/quick_capture/left/20261009_161246_435241/20261009_161246_435241_20261009_161253.h5": "a98b892b00797798344f2c16f5a69bea95e0377d8a3321f2b4f5dc578e2768fc",
+    "/home/venom/factr2/data/quick_capture/left/20261009_140212_513856/20261009_140212_513856_20261009_140220.h5": "90bcaf12207070a57a838df321992f14e110c50fc27e5d27ae08360d3ce4a6db",
+    "/home/venom/factr2/data/quick_capture/left/20261009_134121_473881/20261009_134121_473881_20261009_134128.h5": "28912e0697090ca017b357bb5d105cf827028c1319ddec57918cea82ee7397d1",
+    "/home/venom/factr2/data/quick_capture/left/20261009_150900_298038/20261009_150900_298038_20261009_150907.h5": "be7138740c7268615436f3590bd14073a8aa6db5b39ced05a3eac3e9350d7f89"
+  },
+  "model_checksums": {
+    "training_summary.png": "4f04d478b3f6f4a3d0a2ded69962fa03e26532138063eb8c0f14e601f454afa9",
+    "trial_summary.json": "44e38a426fd9e58e18fd325f5611971c32cdc176309fc9df1a566f69f26015d3",
+    "config.yaml": "7464d96968c27194b084e191b2d1c85f57eeb9a39b52432f973e07e9fef9a4ba",
+    "CAMPAIGN_REPORT.md": "211f18bb013e0391909479c161dea72ea85dfc8910d04ea0ccd5a493383c7366",
+    "metrics.json": "1aeabdc4a94c6222ca928241936a596fda7d5fbf5f63fce4cf6db6a631225a6a",
+    "normalization.npz": "9b017f2f0f6ff34aa85b22aa737916cf050d068b33c3533bf051ab13d4f7c7e8",
+    "split.json": "a2650105c94151bd24085ae04b406052eada7c6bfd4010bda3b37d03d4b9d705",
+    "split_audit.json": "70fc70204102ff4e22d8ebc1a2bab1d1a6a62becbe5a2a19d1c936d5f39dd2d4",
+    "model.pt": "47e6cb562a77d41955191f994c864e3d7abd3b6bb529ef3faee0449d488606b0",
+    "TRIAL_REPORT.md": "b2b895186b9ef6e8aa6f84a1a1681169f854e6f066b37784cac327fd2f4b1b18",
+    "metadata.json": "dfa054dafa77fda8f71b99b551d4c4e229e75b2b793cab4c4cbcfbcab4165a05",
+    "README.md": "ea8e998a97f68b7f748d6d60ccfe2a1d5595d941ceeba1a85b6ccdaac4ad95d3",
+    "BASELINE_DIAGNOSTIC.md": "9eb86fc03208f6f4bd0f53aa9aae34aa4766dccf2f64fe4ab2df591249b47bdd",
+    "collection_config/robot_description.yaml": "ea3d51a0c470a3ee5849ba983f405cab0cbbe4bc52fcfefb14ea58938015e032",
+    "collection_config/friction_model.yaml": "5b3fb0c9415b973d951c0ee8d2fee4af974a8ceeb735137271a68e98febe71e1",
+    "collection_config/gravity.yaml": "09216c9c155bd5fc4300344052fdb1793fadfc299c535949a2acd84e9520887e",
+    "collection_config/position.yaml": "0db1a5fd06d6ba573b5d46532603eacf7d557766a8d4c938234d2cf0ff4423ee",
+    "capture_reports/20261010_160331_906917/controller_smoothness.json": "34e8ac38730ab0f9eb5da2a4133fbe9d7bca6694a4981d2a330a1ced8c98fc78",
+    "capture_reports/20261010_160331_906917/capture_diagnostics.json": "c93b1c15590f7b5361c275e5b7b56207bc2d703b27fef949634b35183336a7eb",
+    "capture_reports/20261010_160331_906917/quality.json": "f9c5eeadbf559f06fb28b68779c4164bac6dcfa868dcefe807d0cf11a0d3b7f0",
+    "capture_reports/20261010_164151_566506/controller_smoothness.json": "aa4aa99967d4aa66844e704a0c0c140dcfa1fd3c7842bba1e3e074cbbf357994",
+    "capture_reports/20261010_164151_566506/capture_diagnostics.json": "1aab99845cdb47a23eb7305bf1e5feaf2641fad61bc8844074054de6c9911573",
+    "capture_reports/20261010_164151_566506/quality.json": "f706bb5c50fe9602b77913b75a46f61f174da7557402e701278b9cc287c7ea63",
+    "evaluation/train/report.json": "8542a7f25559f02fc99b1592bd392becbdf6d3fee5d8dd12a4e4060861edcfe5",
+    "evaluation/val/report.json": "a8d9551052649159192b7302b21ae1095bcb9cec600676b48f19916e718f9592",
+    "evaluation/test/report.json": "7ce0bdafe8120d41fb6250029c93f13fff8172745b73b43323efaacf82ba341c"
+  },
+  "targets": [
+    {
+      "path": "/home/venom/factr2/runs/next_left_coverage_20261009_161246_session_trial_20261010_110350_044237",
+      "reason": "old training outputs or duplicate of validated latest archived checkpoint",
+      "bytes": 25947267,
+      "files": [
+        {
+          "path": "training_summary.png",
+          "size": 74223,
+          "mtime_ns": 1791601450620953689
+        },
+        {
+          "path": "trial_summary.json",
+          "size": 5330,
+          "mtime_ns": 1791601450529954833
+        },
+        {
+          "path": "config.yaml",
+          "size": 827,
+          "mtime_ns": 1791601430045212361
+        },
+        {
+          "path": "metrics.json",
+          "size": 1385,
+          "mtime_ns": 1791601430046212348
+        },
+        {
+          "path": "normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791601430045212361
+        },
+        {
+          "path": "split.json",
+          "size": 2739,
+          "mtime_ns": 1791600877718156052
+        },
+        {
+          "path": "training.log",
+          "size": 3575,
+          "mtime_ns": 1791601450779951690
+        },
+        {
+          "path": "split_audit.json",
+          "size": 14754,
+          "mtime_ns": 1791600877729155914
+        },
+        {
+          "path": "model.pt",
+          "size": 980562,
+          "mtime_ns": 1791601430044212373
+        },
+        {
+          "path": "TRIAL_REPORT.md",
+          "size": 1615,
+          "mtime_ns": 1791601450779951690
+        },
+        {
+          "path": "metadata.json",
+          "size": 1827,
+          "mtime_ns": 1791601430049212310
+        },
+        {
+          "path": "training_summary.pdf",
+          "size": 17453,
+          "mtime_ns": 1791601450778951702
+        },
+        {
+          "path": "trial_runner.py",
+          "size": 6745,
+          "mtime_ns": 1791600964885060216
+        },
+        {
+          "path": "source_snapshot/w3_train.py",
+          "size": 5403,
+          "mtime_ns": 1791600874945190913
+        },
+        {
+          "path": "source_snapshot/prepare_w3_session_trial.py",
+          "size": 6815,
+          "mtime_ns": 1791600875003190184
+        },
+        {
+          "path": "evaluation/train/metrics.csv",
+          "size": 1937,
+          "mtime_ns": 1791601450512955046
+        },
+        {
+          "path": "evaluation/train/report.json",
+          "size": 34634,
+          "mtime_ns": 1791601450518954971
+        },
+        {
+          "path": "evaluation/train/samples.csv",
+          "size": 11225831,
+          "mtime_ns": 1791601450512955046
+        },
+        {
+          "path": "evaluation/val/metrics.csv",
+          "size": 1904,
+          "mtime_ns": 1791601440470081302
+        },
+        {
+          "path": "evaluation/val/report.json",
+          "size": 55629,
+          "mtime_ns": 1791601440474081252
+        },
+        {
+          "path": "evaluation/val/samples.csv",
+          "size": 4902127,
+          "mtime_ns": 1791601440470081302
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0010.png",
+          "size": 257664,
+          "mtime_ns": 1791601440372082534
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0000.png",
+          "size": 161670,
+          "mtime_ns": 1791601435715141080
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0006.png",
+          "size": 270502,
+          "mtime_ns": 1791601439231096878
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0003.png",
+          "size": 229722,
+          "mtime_ns": 1791601438185110028
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0001.png",
+          "size": 161010,
+          "mtime_ns": 1791601436544130658
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0002.png",
+          "size": 155431,
+          "mtime_ns": 1791601437367120312
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0004.png",
+          "size": 194655,
+          "mtime_ns": 1791601438523105779
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0008.png",
+          "size": 193909,
+          "mtime_ns": 1791601440033086796
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0007.png",
+          "size": 234176,
+          "mtime_ns": 1791601439427094414
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0005.png",
+          "size": 198703,
+          "mtime_ns": 1791601438948100436
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0009.png",
+          "size": 209778,
+          "mtime_ns": 1791601440207084609
+        },
+        {
+          "path": "evaluation/test/metrics.csv",
+          "size": 1922,
+          "mtime_ns": 1791601434883151540
+        },
+        {
+          "path": "evaluation/test/report.json",
+          "size": 55726,
+          "mtime_ns": 1791601434887151489
+        },
+        {
+          "path": "evaluation/test/samples.csv",
+          "size": 4001342,
+          "mtime_ns": 1791601434883151540
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0009.png",
+          "size": 221848,
+          "mtime_ns": 1791601434501156342
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0008.png",
+          "size": 257798,
+          "mtime_ns": 1791601434333158454
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0005.png",
+          "size": 222618,
+          "mtime_ns": 1791601433429169819
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0001.png",
+          "size": 163588,
+          "mtime_ns": 1791601431769190687
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0010.png",
+          "size": 216895,
+          "mtime_ns": 1791601434801152570
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0000.png",
+          "size": 146381,
+          "mtime_ns": 1791601430896201662
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0003.png",
+          "size": 190430,
+          "mtime_ns": 1791601432752178330
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0004.png",
+          "size": 206552,
+          "mtime_ns": 1791601433085174143
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0007.png",
+          "size": 205343,
+          "mtime_ns": 1791601433994162716
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0002.png",
+          "size": 223788,
+          "mtime_ns": 1791601432424182453
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0006.png",
+          "size": 219283,
+          "mtime_ns": 1791601433787165318
+        }
+      ]
+    },
+    {
+      "path": "/home/venom/factr2/runs/next_right_c2_campaign_20261010_164151_566506_session_trial_20261010_174837_628319",
+      "reason": "old training outputs or duplicate of validated latest archived checkpoint",
+      "bytes": 114852434,
+      "files": [
+        {
+          "path": "training_summary.png",
+          "size": 78665,
+          "mtime_ns": 1791625733247679729
+        },
+        {
+          "path": "trial_summary.json",
+          "size": 9211,
+          "mtime_ns": 1791625733153680911
+        },
+        {
+          "path": "config.yaml",
+          "size": 1031,
+          "mtime_ns": 1791625717629876072
+        },
+        {
+          "path": "metrics.json",
+          "size": 4538,
+          "mtime_ns": 1791625717629876072
+        },
+        {
+          "path": "normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791625717629876072
+        },
+        {
+          "path": "split.json",
+          "size": 4664,
+          "mtime_ns": 1791622602823034497
+        },
+        {
+          "path": "split_audit.json",
+          "size": 35889,
+          "mtime_ns": 1791622602824034484
+        },
+        {
+          "path": "model.pt",
+          "size": 980562,
+          "mtime_ns": 1791625717627876097
+        },
+        {
+          "path": "TRIAL_REPORT.md",
+          "size": 1996,
+          "mtime_ns": 1791625987125488053
+        },
+        {
+          "path": "metadata.json",
+          "size": 2399,
+          "mtime_ns": 1791625717633876021
+        },
+        {
+          "path": "training_summary.pdf",
+          "size": 18929,
+          "mtime_ns": 1791625733309678950
+        },
+        {
+          "path": "trial_runner.py",
+          "size": 9737,
+          "mtime_ns": 1791621514354718396
+        },
+        {
+          "path": "source_snapshot/w3_smooth_coverage.py",
+          "size": 6843,
+          "mtime_ns": 1791611838169364520
+        },
+        {
+          "path": "source_snapshot/w3_coverage_motion.py",
+          "size": 19417,
+          "mtime_ns": 1791621398091180027
+        },
+        {
+          "path": "source_snapshot/w3_train.py",
+          "size": 6402,
+          "mtime_ns": 1791605917092802533
+        },
+        {
+          "path": "source_snapshot/prepare_w3_session_trial.py",
+          "size": 9082,
+          "mtime_ns": 1791621347850811634
+        },
+        {
+          "path": "training_source/source_sha256.json",
+          "size": 3965,
+          "mtime_ns": 1791622603895021020
+        },
+        {
+          "path": "training_source/collection_config/robot_description.yaml",
+          "size": 24357,
+          "mtime_ns": 1791621715893184715
+        },
+        {
+          "path": "training_source/collection_config/friction_model.yaml",
+          "size": 2000,
+          "mtime_ns": 1791509154065037139
+        },
+        {
+          "path": "training_source/collection_config/controller_smoothness.json",
+          "size": 1130,
+          "mtime_ns": 1791622597138105966
+        },
+        {
+          "path": "training_source/collection_config/capture_diagnostics.json",
+          "size": 49661,
+          "mtime_ns": 1791622590687187065
+        },
+        {
+          "path": "training_source/collection_config/gravity.yaml",
+          "size": 24879,
+          "mtime_ns": 1791621715893184715
+        },
+        {
+          "path": "training_source/collection_config/sha256.json",
+          "size": 1988,
+          "mtime_ns": 1791622603996019750
+        },
+        {
+          "path": "training_source/collection_config/motion_run.json",
+          "size": 42590,
+          "mtime_ns": 1791622564288518941
+        },
+        {
+          "path": "training_source/collection_config/position.yaml",
+          "size": 24382,
+          "mtime_ns": 1791621715893184715
+        },
+        {
+          "path": "training_source/collection_config/record.yaml",
+          "size": 2234,
+          "mtime_ns": 1791621715925184312
+        },
+        {
+          "path": "training_source/collection_config/controllers.txt",
+          "size": 443,
+          "mtime_ns": 1791621715893184715
+        },
+        {
+          "path": "training_source/collection_config/controller_source/smooth_friction.hpp",
+          "size": 926,
+          "mtime_ns": 1791613203437200779
+        },
+        {
+          "path": "training_source/collection_config/controller_source/joint_position_controller.hpp",
+          "size": 7228,
+          "mtime_ns": 1791611839331349912
+        },
+        {
+          "path": "training_source/collection_config/controller_source/w3_smooth_coverage.py",
+          "size": 6843,
+          "mtime_ns": 1791611838169364520
+        },
+        {
+          "path": "training_source/collection_config/controller_source/manifest.json",
+          "size": 1374,
+          "mtime_ns": 1791621715916184426
+        },
+        {
+          "path": "training_source/collection_config/controller_source/w3_coverage_motion.py",
+          "size": 19417,
+          "mtime_ns": 1791621398091180027
+        },
+        {
+          "path": "training_source/collection_config/controller_source/trajectory_spline.hpp",
+          "size": 2130,
+          "mtime_ns": 1791610734118244322
+        },
+        {
+          "path": "training_source/collection_config/controller_source/gravity_compensation_controller.cpp",
+          "size": 21890,
+          "mtime_ns": 1791613240014740937
+        },
+        {
+          "path": "training_source/collection_config/controller_source/gravity_compensation_controller.hpp",
+          "size": 4697,
+          "mtime_ns": 1791613203489200125
+        },
+        {
+          "path": "training_source/collection_config/controller_source/w3_coverage_plan.py",
+          "size": 21562,
+          "mtime_ns": 1791611304155077989
+        },
+        {
+          "path": "training_source/collection_config/controller_source/joint_position_controller.cpp",
+          "size": 17557,
+          "mtime_ns": 1791610982468122142
+        },
+        {
+          "path": "training_source/source_sessions/1/friction_model.yaml",
+          "size": 2000,
+          "mtime_ns": 1791509154065037139
+        },
+        {
+          "path": "training_source/source_sessions/1/controller_smoothness.json",
+          "size": 1130,
+          "mtime_ns": 1791622597138105966
+        },
+        {
+          "path": "training_source/source_sessions/1/gravity.yaml",
+          "size": 24879,
+          "mtime_ns": 1791621715893184715
+        },
+        {
+          "path": "training_source/source_sessions/1/motion_run.json",
+          "size": 42590,
+          "mtime_ns": 1791622564288518941
+        },
+        {
+          "path": "training_source/source_sessions/1/position.yaml",
+          "size": 24382,
+          "mtime_ns": 1791621715893184715
+        },
+        {
+          "path": "training_source/source_sessions/1/record.yaml",
+          "size": 2234,
+          "mtime_ns": 1791621715925184312
+        },
+        {
+          "path": "training_source/source_sessions/1/controller_source/smooth_friction.hpp",
+          "size": 926,
+          "mtime_ns": 1791613203437200779
+        },
+        {
+          "path": "training_source/source_sessions/1/controller_source/joint_position_controller.hpp",
+          "size": 7228,
+          "mtime_ns": 1791611839331349912
+        },
+        {
+          "path": "training_source/source_sessions/1/controller_source/w3_smooth_coverage.py",
+          "size": 6843,
+          "mtime_ns": 1791611838169364520
+        },
+        {
+          "path": "training_source/source_sessions/1/controller_source/manifest.json",
+          "size": 1374,
+          "mtime_ns": 1791621715916184426
+        },
+        {
+          "path": "training_source/source_sessions/1/controller_source/w3_coverage_motion.py",
+          "size": 19417,
+          "mtime_ns": 1791621398091180027
+        },
+        {
+          "path": "training_source/source_sessions/1/controller_source/trajectory_spline.hpp",
+          "size": 2130,
+          "mtime_ns": 1791610734118244322
+        },
+        {
+          "path": "training_source/source_sessions/1/controller_source/gravity_compensation_controller.cpp",
+          "size": 21890,
+          "mtime_ns": 1791613240014740937
+        },
+        {
+          "path": "training_source/source_sessions/1/controller_source/gravity_compensation_controller.hpp",
+          "size": 4697,
+          "mtime_ns": 1791613203489200125
+        },
+        {
+          "path": "training_source/source_sessions/1/controller_source/w3_coverage_plan.py",
+          "size": 21562,
+          "mtime_ns": 1791611304155077989
+        },
+        {
+          "path": "training_source/source_sessions/1/controller_source/joint_position_controller.cpp",
+          "size": 17557,
+          "mtime_ns": 1791610982468122142
+        },
+        {
+          "path": "training_source/source_sessions/0/friction_model.yaml",
+          "size": 2000,
+          "mtime_ns": 1791509154065037139
+        },
+        {
+          "path": "training_source/source_sessions/0/controller_smoothness.json",
+          "size": 1122,
+          "mtime_ns": 1791621303249372350
+        },
+        {
+          "path": "training_source/source_sessions/0/gravity.yaml",
+          "size": 24879,
+          "mtime_ns": 1791619416338094037
+        },
+        {
+          "path": "training_source/source_sessions/0/motion_run.json",
+          "size": 8558,
+          "mtime_ns": 1791620844133144223
+        },
+        {
+          "path": "training_source/source_sessions/0/position.yaml",
+          "size": 24382,
+          "mtime_ns": 1791619416338094037
+        },
+        {
+          "path": "training_source/source_sessions/0/record.yaml",
+          "size": 2232,
+          "mtime_ns": 1791619416378093534
+        },
+        {
+          "path": "training_source/source_sessions/0/controller_source/smooth_friction.hpp",
+          "size": 926,
+          "mtime_ns": 1791613203437200779
+        },
+        {
+          "path": "training_source/source_sessions/0/controller_source/joint_position_controller.hpp",
+          "size": 7228,
+          "mtime_ns": 1791611839331349912
+        },
+        {
+          "path": "training_source/source_sessions/0/controller_source/w3_smooth_coverage.py",
+          "size": 6843,
+          "mtime_ns": 1791611838169364520
+        },
+        {
+          "path": "training_source/source_sessions/0/controller_source/manifest.json",
+          "size": 1374,
+          "mtime_ns": 1791619416362093736
+        },
+        {
+          "path": "training_source/source_sessions/0/controller_source/w3_coverage_motion.py",
+          "size": 18772,
+          "mtime_ns": 1791610982467122154
+        },
+        {
+          "path": "training_source/source_sessions/0/controller_source/trajectory_spline.hpp",
+          "size": 2130,
+          "mtime_ns": 1791610734118244322
+        },
+        {
+          "path": "training_source/source_sessions/0/controller_source/gravity_compensation_controller.cpp",
+          "size": 21890,
+          "mtime_ns": 1791613240014740937
+        },
+        {
+          "path": "training_source/source_sessions/0/controller_source/gravity_compensation_controller.hpp",
+          "size": 4697,
+          "mtime_ns": 1791613203489200125
+        },
+        {
+          "path": "training_source/source_sessions/0/controller_source/w3_coverage_plan.py",
+          "size": 21562,
+          "mtime_ns": 1791611304155077989
+        },
+        {
+          "path": "training_source/source_sessions/0/controller_source/joint_position_controller.cpp",
+          "size": 17557,
+          "mtime_ns": 1791610982468122142
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/w3_config.py",
+          "size": 3737,
+          "mtime_ns": 1791603508690080256
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/__init__.py",
+          "size": 0,
+          "mtime_ns": 1791508937315951343
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/w3_samples.py",
+          "size": 1341,
+          "mtime_ns": 1791508937316951474
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/inference/endpoint_wrench.py",
+          "size": 2573,
+          "mtime_ns": 1791609108622679569
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/inference/checkpoint.py",
+          "size": 3603,
+          "mtime_ns": 1791603508653080721
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/inference/__init__.py",
+          "size": 1,
+          "mtime_ns": 1791508937315951343
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/inference/operating_envelope.py",
+          "size": 1023,
+          "mtime_ns": 1791608151646710386
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/inference/history_buffer.py",
+          "size": 1202,
+          "mtime_ns": 1791508937315951343
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/inference/inference_node.py",
+          "size": 19539,
+          "mtime_ns": 1791608151686709883
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/inference/offline_eval.py",
+          "size": 12662,
+          "mtime_ns": 1791604412144722293
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/data_collection/quality.py",
+          "size": 12078,
+          "mtime_ns": 1791603508614081211
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/data_collection/check_h5.py",
+          "size": 5548,
+          "mtime_ns": 1791508937315951343
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/data_collection/__init__.py",
+          "size": 1,
+          "mtime_ns": 1791508937315951343
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/data_collection/h5_writer.py",
+          "size": 3759,
+          "mtime_ns": 1791508937315951343
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/data_collection/recorder_node.py",
+          "size": 13006,
+          "mtime_ns": 1791508937315951343
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/training/models.py",
+          "size": 5185,
+          "mtime_ns": 1791508937316951474
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/training/train.py",
+          "size": 8460,
+          "mtime_ns": 1791603549855562736
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/training/w3_train.py",
+          "size": 6402,
+          "mtime_ns": 1791605917092802533
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/training/__init__.py",
+          "size": 1,
+          "mtime_ns": 1791508937315951343
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/training/dataset.py",
+          "size": 6621,
+          "mtime_ns": 1791508937316951474
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/visualization/__init__.py",
+          "size": 1,
+          "mtime_ns": 1791508937316951474
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/visualization/web_node.py",
+          "size": 17640,
+          "mtime_ns": 1791508937316951474
+        },
+        {
+          "path": "training_source/scripts/w3_smooth_coverage.py",
+          "size": 6843,
+          "mtime_ns": 1791611838169364520
+        },
+        {
+          "path": "training_source/scripts/w3_coverage_motion.py",
+          "size": 19417,
+          "mtime_ns": 1791621398091180027
+        },
+        {
+          "path": "training_source/scripts/analyze_w3_coverage_session.py",
+          "size": 6717,
+          "mtime_ns": 1791605189712946936
+        },
+        {
+          "path": "training_source/scripts/run_w3_session_trial.py",
+          "size": 9737,
+          "mtime_ns": 1791621514354718396
+        },
+        {
+          "path": "training_source/scripts/combine_w3_session_trials.py",
+          "size": 3420,
+          "mtime_ns": 1791621659324895874
+        },
+        {
+          "path": "training_source/scripts/w3_coverage_plan.py",
+          "size": 21562,
+          "mtime_ns": 1791611304155077989
+        },
+        {
+          "path": "training_source/scripts/audit_w3_controller_stream.py",
+          "size": 3290,
+          "mtime_ns": 1791613349622362983
+        },
+        {
+          "path": "training_source/scripts/quick_capture.py",
+          "size": 19228,
+          "mtime_ns": 1791613277191273565
+        },
+        {
+          "path": "training_source/scripts/prepare_w3_session_trial.py",
+          "size": 9082,
+          "mtime_ns": 1791621347850811634
+        },
+        {
+          "path": "evaluation/train/metrics.csv",
+          "size": 1921,
+          "mtime_ns": 1791625733069681967
+        },
+        {
+          "path": "evaluation/train/report.json",
+          "size": 86751,
+          "mtime_ns": 1791625733097681615
+        },
+        {
+          "path": "evaluation/train/samples.csv",
+          "size": 55797612,
+          "mtime_ns": 1791625733069681967
+        },
+        {
+          "path": "evaluation/val/metrics.csv",
+          "size": 1900,
+          "mtime_ns": 1791625726775761092
+        },
+        {
+          "path": "evaluation/val/report.json",
+          "size": 65684,
+          "mtime_ns": 1791625726791760891
+        },
+        {
+          "path": "evaluation/val/samples.csv",
+          "size": 31865547,
+          "mtime_ns": 1791625726775761092
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0000.png",
+          "size": 143086,
+          "mtime_ns": 1791625724901784651
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0006.png",
+          "size": 212911,
+          "mtime_ns": 1791625725971771200
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0003.png",
+          "size": 235578,
+          "mtime_ns": 1791625725512776970
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0001.png",
+          "size": 141934,
+          "mtime_ns": 1791625725117781936
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0002.png",
+          "size": 157224,
+          "mtime_ns": 1791625725368778780
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0004.png",
+          "size": 187531,
+          "mtime_ns": 1791625725668775009
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0007.png",
+          "size": 230190,
+          "mtime_ns": 1791625726120769327
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0005.png",
+          "size": 199979,
+          "mtime_ns": 1791625725812773199
+        },
+        {
+          "path": "evaluation/test/metrics.csv",
+          "size": 1898,
+          "mtime_ns": 1791625721601826137
+        },
+        {
+          "path": "evaluation/test/report.json",
+          "size": 65669,
+          "mtime_ns": 1791625721613825986
+        },
+        {
+          "path": "evaluation/test/samples.csv",
+          "size": 21897402,
+          "mtime_ns": 1791625721601826137
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0005.png",
+          "size": 196967,
+          "mtime_ns": 1791625720828835855
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0001.png",
+          "size": 130766,
+          "mtime_ns": 1791625719906847446
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0000.png",
+          "size": 149384,
+          "mtime_ns": 1791625719615851104
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0003.png",
+          "size": 208026,
+          "mtime_ns": 1791625720462840456
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0004.png",
+          "size": 206675,
+          "mtime_ns": 1791625720639838231
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0007.png",
+          "size": 200550,
+          "mtime_ns": 1791625721167831593
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0002.png",
+          "size": 162567,
+          "mtime_ns": 1791625720230843373
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0006.png",
+          "size": 242176,
+          "mtime_ns": 1791625721028833341
+        }
+      ]
+    },
+    {
+      "path": "/home/venom/factr2/runs/next_right_smooth_20261010_120428_881457_session_trial_cpu8_20261010_124353_140595",
+      "reason": "old training outputs or duplicate of validated latest archived checkpoint",
+      "bytes": 75684618,
+      "files": [
+        {
+          "path": "training_summary.png",
+          "size": 75181,
+          "mtime_ns": 1791607443972607055
+        },
+        {
+          "path": "trial_summary.json",
+          "size": 5725,
+          "mtime_ns": 1791607443883608173
+        },
+        {
+          "path": "config.yaml",
+          "size": 1031,
+          "mtime_ns": 1791607433141743217
+        },
+        {
+          "path": "metrics.json",
+          "size": 1587,
+          "mtime_ns": 1791607433141743217
+        },
+        {
+          "path": "normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791607433141743217
+        },
+        {
+          "path": "split.json",
+          "size": 2782,
+          "mtime_ns": 1791606838462219351
+        },
+        {
+          "path": "split_audit.json",
+          "size": 13742,
+          "mtime_ns": 1791606838496218924
+        },
+        {
+          "path": "model.pt",
+          "size": 980562,
+          "mtime_ns": 1791607433140743230
+        },
+        {
+          "path": "TRIAL_REPORT.md",
+          "size": 1633,
+          "mtime_ns": 1791607444032606300
+        },
+        {
+          "path": "metadata.json",
+          "size": 2356,
+          "mtime_ns": 1791607433146743154
+        },
+        {
+          "path": "training_summary.pdf",
+          "size": 17929,
+          "mtime_ns": 1791607444032606300
+        },
+        {
+          "path": "trial_runner.py",
+          "size": 8294,
+          "mtime_ns": 1791605952881352610
+        },
+        {
+          "path": "training_source/source_sha256.json",
+          "size": 3457,
+          "mtime_ns": 1791606874384767743
+        },
+        {
+          "path": "training_source/collection_config/robot_description.yaml",
+          "size": 24357,
+          "mtime_ns": 1791605073925402583
+        },
+        {
+          "path": "training_source/collection_config/friction_model.yaml",
+          "size": 2000,
+          "mtime_ns": 1791509154065037139
+        },
+        {
+          "path": "training_source/collection_config/gravity.yaml",
+          "size": 24425,
+          "mtime_ns": 1791605073925402583
+        },
+        {
+          "path": "training_source/collection_config/sha256.json",
+          "size": 539,
+          "mtime_ns": 1791606874449766926
+        },
+        {
+          "path": "training_source/collection_config/position.yaml",
+          "size": 24111,
+          "mtime_ns": 1791605073925402583
+        },
+        {
+          "path": "training_source/collection_config/record.yaml",
+          "size": 2233,
+          "mtime_ns": 1791605073959402156
+        },
+        {
+          "path": "training_source/collection_config/controllers.txt",
+          "size": 443,
+          "mtime_ns": 1791605073925402583
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/w3_config.py",
+          "size": 3737,
+          "mtime_ns": 1791603508690080256
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/__init__.py",
+          "size": 0,
+          "mtime_ns": 1791508937315951343
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/w3_samples.py",
+          "size": 1341,
+          "mtime_ns": 1791508937316951474
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/inference/checkpoint.py",
+          "size": 3603,
+          "mtime_ns": 1791603508653080721
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/inference/__init__.py",
+          "size": 1,
+          "mtime_ns": 1791508937315951343
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/inference/history_buffer.py",
+          "size": 1202,
+          "mtime_ns": 1791508937315951343
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/inference/inference_node.py",
+          "size": 18917,
+          "mtime_ns": 1791603508728079778
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/inference/offline_eval.py",
+          "size": 12662,
+          "mtime_ns": 1791604412144722293
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/data_collection/quality.py",
+          "size": 12078,
+          "mtime_ns": 1791603508614081211
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/data_collection/check_h5.py",
+          "size": 5548,
+          "mtime_ns": 1791508937315951343
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/data_collection/__init__.py",
+          "size": 1,
+          "mtime_ns": 1791508937315951343
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/data_collection/h5_writer.py",
+          "size": 3759,
+          "mtime_ns": 1791508937315951343
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/data_collection/recorder_node.py",
+          "size": 13006,
+          "mtime_ns": 1791508937315951343
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/training/models.py",
+          "size": 5185,
+          "mtime_ns": 1791508937316951474
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/training/train.py",
+          "size": 8460,
+          "mtime_ns": 1791603549855562736
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/training/w3_train.py",
+          "size": 6402,
+          "mtime_ns": 1791605917092802533
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/training/__init__.py",
+          "size": 1,
+          "mtime_ns": 1791508937315951343
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/training/dataset.py",
+          "size": 6621,
+          "mtime_ns": 1791508937316951474
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/visualization/__init__.py",
+          "size": 1,
+          "mtime_ns": 1791508937316951474
+        },
+        {
+          "path": "training_source/factr2_next/src/factr2_next/factr2_next/visualization/web_node.py",
+          "size": 17640,
+          "mtime_ns": 1791508937316951474
+        },
+        {
+          "path": "training_source/scripts/w3_smooth_coverage.py",
+          "size": 4242,
+          "mtime_ns": 1791603466325612849
+        },
+        {
+          "path": "training_source/scripts/w3_coverage_motion.py",
+          "size": 18054,
+          "mtime_ns": 1791603508527082305
+        },
+        {
+          "path": "training_source/scripts/analyze_w3_coverage_session.py",
+          "size": 6717,
+          "mtime_ns": 1791605189712946936
+        },
+        {
+          "path": "training_source/scripts/run_w3_session_trial.py",
+          "size": 8294,
+          "mtime_ns": 1791605952881352610
+        },
+        {
+          "path": "training_source/scripts/w3_coverage_plan.py",
+          "size": 20524,
+          "mtime_ns": 1791603563456391750
+        },
+        {
+          "path": "training_source/scripts/quick_capture.py",
+          "size": 18092,
+          "mtime_ns": 1791603698655692065
+        },
+        {
+          "path": "training_source/scripts/prepare_w3_session_trial.py",
+          "size": 7877,
+          "mtime_ns": 1791606830423320414
+        },
+        {
+          "path": "evaluation/train/metrics.csv",
+          "size": 1932,
+          "mtime_ns": 1791607443831608827
+        },
+        {
+          "path": "evaluation/train/report.json",
+          "size": 34446,
+          "mtime_ns": 1791607443848608613
+        },
+        {
+          "path": "evaluation/train/samples.csv",
+          "size": 36473427,
+          "mtime_ns": 1791607443830608840
+        },
+        {
+          "path": "evaluation/val/metrics.csv",
+          "size": 1906,
+          "mtime_ns": 1791607439734660333
+        },
+        {
+          "path": "evaluation/val/report.json",
+          "size": 59008,
+          "mtime_ns": 1791607439744660207
+        },
+        {
+          "path": "evaluation/val/samples.csv",
+          "size": 18400133,
+          "mtime_ns": 1791607439733660345
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0010.png",
+          "size": 212935,
+          "mtime_ns": 1791607439360665035
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0000.png",
+          "size": 130626,
+          "mtime_ns": 1791607436678698751
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0006.png",
+          "size": 227332,
+          "mtime_ns": 1791607438632674187
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0003.png",
+          "size": 146997,
+          "mtime_ns": 1791607438094680950
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0001.png",
+          "size": 135063,
+          "mtime_ns": 1791607437205692126
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0002.png",
+          "size": 134343,
+          "mtime_ns": 1791607437640686658
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0004.png",
+          "size": 161798,
+          "mtime_ns": 1791607438282678587
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0008.png",
+          "size": 179062,
+          "mtime_ns": 1791607439156667599
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0007.png",
+          "size": 204924,
+          "mtime_ns": 1791607438767672489
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0005.png",
+          "size": 183239,
+          "mtime_ns": 1791607438472676198
+        },
+        {
+          "path": "evaluation/val/plots/val_ep_0009.png",
+          "size": 174446,
+          "mtime_ns": 1791607439255666355
+        },
+        {
+          "path": "evaluation/test/metrics.csv",
+          "size": 1908,
+          "mtime_ns": 1791607436220704509
+        },
+        {
+          "path": "evaluation/test/report.json",
+          "size": 59052,
+          "mtime_ns": 1791607436228704409
+        },
+        {
+          "path": "evaluation/test/samples.csv",
+          "size": 15304495,
+          "mtime_ns": 1791607436220704509
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0009.png",
+          "size": 194581,
+          "mtime_ns": 1791607435664711499
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0008.png",
+          "size": 226104,
+          "mtime_ns": 1791607435565712744
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0005.png",
+          "size": 230782,
+          "mtime_ns": 1791607435064719042
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0001.png",
+          "size": 116215,
+          "mtime_ns": 1791607434047731827
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0010.png",
+          "size": 178182,
+          "mtime_ns": 1791607435906708457
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0000.png",
+          "size": 156277,
+          "mtime_ns": 1791607433642736919
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0003.png",
+          "size": 182851,
+          "mtime_ns": 1791607434588725026
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0004.png",
+          "size": 216528,
+          "mtime_ns": 1791607434868721506
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0007.png",
+          "size": 208987,
+          "mtime_ns": 1791607435410714692
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0002.png",
+          "size": 135839,
+          "mtime_ns": 1791607434403727352
+        },
+        {
+          "path": "evaluation/test/plots/test_ep_0006.png",
+          "size": 213630,
+          "mtime_ns": 1791607435266716502
+        }
+      ]
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/left/20261009_134121_473881/audit/bag",
+      "reason": "older session ROS bag; H5 and analysis retained",
+      "bytes": 118981498,
+      "files": [
+        {
+          "path": "metadata.yaml",
+          "size": 4986,
+          "mtime_ns": 1791524628048445826
+        },
+        {
+          "path": "bag_0.db3",
+          "size": 118976512,
+          "mtime_ns": 1791524628045445864
+        }
+      ]
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/left/20261009_135027_065645/audit/bag",
+      "reason": "older session ROS bag; H5 and analysis retained",
+      "bytes": 148648826,
+      "files": [
+        {
+          "path": "metadata.yaml",
+          "size": 4986,
+          "mtime_ns": 1791525208860144035
+        },
+        {
+          "path": "bag_0.db3",
+          "size": 148643840,
+          "mtime_ns": 1791525208856144085
+        }
+      ]
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/left/20261009_140212_513856/audit/bag",
+      "reason": "older session ROS bag; H5 and analysis retained",
+      "bytes": 885195655,
+      "files": [
+        {
+          "path": "metadata.yaml",
+          "size": 4999,
+          "mtime_ns": 1791526785417324027
+        },
+        {
+          "path": "bag_0.db3",
+          "size": 885190656,
+          "mtime_ns": 1791526785415324052
+        }
+      ]
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/left/20261009_150900_298038/audit/bag",
+      "reason": "older session ROS bag; H5 and analysis retained",
+      "bytes": 172356480,
+      "files": [
+        {
+          "path": "metadata.yaml",
+          "size": 4992,
+          "mtime_ns": 1791529950155537879
+        },
+        {
+          "path": "bag_0.db3",
+          "size": 172351488,
+          "mtime_ns": 1791529950152537917
+        }
+      ]
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/left/20261009_161246_435241/audit/bag",
+      "reason": "older session ROS bag; H5 and analysis retained",
+      "bytes": 740930437,
+      "files": [
+        {
+          "path": "metadata.yaml",
+          "size": 4997,
+          "mtime_ns": 1791534448007992216
+        },
+        {
+          "path": "bag_0.db3",
+          "size": 740925440,
+          "mtime_ns": 1791534448005992241
+        }
+      ]
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261010_114717_526404/audit/bag",
+      "reason": "older session ROS bag; H5 and analysis retained",
+      "bytes": 239682440,
+      "files": [
+        {
+          "path": "metadata.yaml",
+          "size": 5000,
+          "mtime_ns": 1791604405071811211
+        },
+        {
+          "path": "bag_0.db3",
+          "size": 239677440,
+          "mtime_ns": 1791604405070811224
+        }
+      ]
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261010_120030_799821/audit/bag",
+      "reason": "older session ROS bag; H5 and analysis retained",
+      "bytes": 31355771,
+      "files": [
+        {
+          "path": "metadata.yaml",
+          "size": 4987,
+          "mtime_ns": 1791604884052789605
+        },
+        {
+          "path": "bag_0.db3",
+          "size": 31350784,
+          "mtime_ns": 1791604884050789630
+        }
+      ]
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261010_120220_339266/audit/bag",
+      "reason": "older session ROS bag; H5 and analysis retained",
+      "bytes": 29479803,
+      "files": [
+        {
+          "path": "metadata.yaml",
+          "size": 4987,
+          "mtime_ns": 1791604991985432708
+        },
+        {
+          "path": "bag_0.db3",
+          "size": 29474816,
+          "mtime_ns": 1791604991985432708
+        }
+      ]
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261010_120428_881457/audit/bag",
+      "reason": "older session ROS bag; H5 and analysis retained",
+      "bytes": 914482065,
+      "files": [
+        {
+          "path": "metadata.yaml",
+          "size": 5009,
+          "mtime_ns": 1791606459603982244
+        },
+        {
+          "path": "bag_0.db3",
+          "size": 914477056,
+          "mtime_ns": 1791606459600982282
+        }
+      ]
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261010_141247_113649/audit/bag",
+      "reason": "older session ROS bag; H5 and analysis retained",
+      "bytes": 54711667,
+      "files": [
+        {
+          "path": "metadata.yaml",
+          "size": 5491,
+          "mtime_ns": 1791612846479688343
+        },
+        {
+          "path": "bag_0.db3",
+          "size": 54706176,
+          "mtime_ns": 1791612846474688406
+        }
+      ]
+    },
+    {
+      "path": "/home/venom/factr2/data/quick_capture/right/20261010_160004_957524/audit/bag",
+      "reason": "older session ROS bag; H5 and analysis retained",
+      "bytes": 55407987,
+      "files": [
+        {
+          "path": "metadata.yaml",
+          "size": 5491,
+          "mtime_ns": 1791619284926746102
+        },
+        {
+          "path": "bag_0.db3",
+          "size": 55402496,
+          "mtime_ns": 1791619284925746114
+        }
+      ]
+    },
+    {
+      "path": "/home/venom/factr2/log/tmp/pytest-of-venom",
+      "reason": "disposable offline test outputs",
+      "bytes": 34692549,
+      "files": [
+        {
+          "path": "pytest-10/test_corruption_length_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791627325032668282
+        },
+        {
+          "path": "pytest-10/test_corruption_length_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791627325032668282
+        },
+        {
+          "path": "pytest-10/test_gap_nanosecond_boundary0/boundary.metadata.json",
+          "size": 1074,
+          "mtime_ns": 1791627328776621214
+        },
+        {
+          "path": "pytest-10/test_gap_nanosecond_boundary0/boundary.h5",
+          "size": 85388,
+          "mtime_ns": 1791627328776621214
+        },
+        {
+          "path": "pytest-10/test_corruption_duplicate_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791627325431663266
+        },
+        {
+          "path": "pytest-10/test_corruption_duplicate_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791627325431663266
+        },
+        {
+          "path": "pytest-10/test_corruption_missing_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791627324265677924
+        },
+        {
+          "path": "pytest-10/test_corruption_missing_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791627324265677924
+        },
+        {
+          "path": "pytest-10/test_corruption_order_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791627327476637557
+        },
+        {
+          "path": "pytest-10/test_corruption_order_0/bad.metadata.json",
+          "size": 964,
+          "mtime_ns": 1791627327477637544
+        },
+        {
+          "path": "pytest-10/test_corruption_regression_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791627325627660802
+        },
+        {
+          "path": "pytest-10/test_corruption_regression_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791627325627660802
+        },
+        {
+          "path": "pytest-10/test_bad_sidecar_stays_machine0/badmeta.metadata.json",
+          "size": 15,
+          "mtime_ns": 1791627328585623615
+        },
+        {
+          "path": "pytest-10/test_bad_sidecar_stays_machine0/badmeta.h5",
+          "size": 85388,
+          "mtime_ns": 1791627328475624998
+        },
+        {
+          "path": "pytest-10/test_corruption_schema_0/bad.h5",
+          "size": 89484,
+          "mtime_ns": 1791627324459675485
+        },
+        {
+          "path": "pytest-10/test_corruption_schema_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791627324459675485
+        },
+        {
+          "path": "pytest-10/test_corruption_side_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791627327281640008
+        },
+        {
+          "path": "pytest-10/test_corruption_side_0/bad.metadata.json",
+          "size": 1070,
+          "mtime_ns": 1791627327282639996
+        },
+        {
+          "path": "pytest-10/test_corruption_six_0/bad.h5",
+          "size": 88028,
+          "mtime_ns": 1791627324652673059
+        },
+        {
+          "path": "pytest-10/test_corruption_six_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791627324652673059
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/high_train.metadata.json",
+          "size": 1316,
+          "mtime_ns": 1791627320806721409
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/high_train.h5",
+          "size": 85388,
+          "mtime_ns": 1791627320806721409
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/high_val.h5",
+          "size": 85388,
+          "mtime_ns": 1791627320878720504
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/manifest.json",
+          "size": 1033,
+          "mtime_ns": 1791627320725722427
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/high_test.h5",
+          "size": 85388,
+          "mtime_ns": 1791627320951719586
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/test.h5",
+          "size": 85388,
+          "mtime_ns": 1791627320717722528
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/val.h5",
+          "size": 85388,
+          "mtime_ns": 1791627320646723421
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/val.metadata.json",
+          "size": 1309,
+          "mtime_ns": 1791627320646723421
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/train.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791627320573724338
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/high_test.metadata.json",
+          "size": 1316,
+          "mtime_ns": 1791627320952719574
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/high_val.metadata.json",
+          "size": 1315,
+          "mtime_ns": 1791627320879720491
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/test.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791627320717722528
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/high_manifest.json",
+          "size": 1039,
+          "mtime_ns": 1791627320960719473
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/train.h5",
+          "size": 85388,
+          "mtime_ns": 1791627320573724338
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/runs/smoke_20261010_181521_482553/config.yaml",
+          "size": 1045,
+          "mtime_ns": 1791627321484712886
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/runs/smoke_20261010_181521_482553/metrics.json",
+          "size": 416,
+          "mtime_ns": 1791627321484712886
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/runs/smoke_20261010_181521_482553/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791627321484712886
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/runs/smoke_20261010_181521_482553/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791627321482712911
+        },
+        {
+          "path": "pytest-10/test_100_hz_adamw_checkpoint_c0/runs/smoke_20261010_181521_482553/metadata.json",
+          "size": 1583,
+          "mtime_ns": 1791627321488712835
+        },
+        {
+          "path": "pytest-10/test_corruption_inf_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791627326271652706
+        },
+        {
+          "path": "pytest-10/test_corruption_inf_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791627326271652706
+        },
+        {
+          "path": "pytest-10/test_corruption_hash_0/bad.h5",
+          "size": 85468,
+          "mtime_ns": 1791627327069642674
+        },
+        {
+          "path": "pytest-10/test_corruption_hash_0/bad.metadata.json",
+          "size": 1308,
+          "mtime_ns": 1791627327069642674
+        },
+        {
+          "path": "pytest-10/test_lazy_feature_label_normal0/training.h5",
+          "size": 153928,
+          "mtime_ns": 1791627321551712043
+        },
+        {
+          "path": "pytest-10/test_lazy_feature_label_normal0/training.metadata.json",
+          "size": 1098,
+          "mtime_ns": 1791627321555711993
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_std_0/run/config.yaml",
+          "size": 824,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_std_0/run/metrics.json",
+          "size": 413,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_std_0/run/normalization.npz",
+          "size": 1302,
+          "mtime_ns": 1791627322086705318
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_std_0/run/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791627321893707744
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_std_0/run/metadata.json",
+          "size": 1591,
+          "mtime_ns": 1791627322086705318
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_norm0/run/config.yaml",
+          "size": 824,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_norm0/run/metrics.json",
+          "size": 413,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_norm0/run/normalization.npz",
+          "size": 1294,
+          "mtime_ns": 1791627322094705217
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_norm0/run/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791627321893707744
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_norm0/run/metadata.json",
+          "size": 1591,
+          "mtime_ns": 1791627322094705217
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_orde0/run/config.yaml",
+          "size": 824,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_orde0/run/metrics.json",
+          "size": 413,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_orde0/run/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_orde0/run/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791627321893707744
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_orde0/run/metadata.json",
+          "size": 1454,
+          "mtime_ns": 1791627322068705544
+        },
+        {
+          "path": "pytest-10/test_corruption_float_time_0/bad.h5",
+          "size": 86268,
+          "mtime_ns": 1791627325231665780
+        },
+        {
+          "path": "pytest-10/test_corruption_float_time_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791627325231665780
+        },
+        {
+          "path": "pytest-10/test_writer_transaction0/good.h5",
+          "size": 85388,
+          "mtime_ns": 1791627328162628933
+        },
+        {
+          "path": "pytest-10/test_writer_transaction0/good.metadata.json",
+          "size": 1309,
+          "mtime_ns": 1791627328162628933
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_side0/run/config.yaml",
+          "size": 824,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_side0/run/metrics.json",
+          "size": 413,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_side0/run/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_side0/run/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791627321893707744
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_side0/run/metadata.json",
+          "size": 1592,
+          "mtime_ns": 1791627322063705607
+        },
+        {
+          "path": "pytest-10/test_corruption_low_hz_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791627326675647627
+        },
+        {
+          "path": "pytest-10/test_corruption_low_hz_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791627326675647627
+        },
+        {
+          "path": "pytest-10/test_full_and_prefixed_evaluat0/long.h5",
+          "size": 567932,
+          "mtime_ns": 1791627323081692809
+        },
+        {
+          "path": "pytest-10/test_full_and_prefixed_evaluat0/long.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791627322842695813
+        },
+        {
+          "path": "pytest-10/test_full_and_prefixed_evaluat0/eval/metrics.csv",
+          "size": 1988,
+          "mtime_ns": 1791627323080692821
+        },
+        {
+          "path": "pytest-10/test_full_and_prefixed_evaluat0/eval/report.json",
+          "size": 20526,
+          "mtime_ns": 1791627323080692821
+        },
+        {
+          "path": "pytest-10/test_full_and_prefixed_evaluat0/eval/samples.csv",
+          "size": 559664,
+          "mtime_ns": 1791627323079692834
+        },
+        {
+          "path": "pytest-10/test_full_and_prefixed_evaluat0/prefix_eval/metrics.csv",
+          "size": 1988,
+          "mtime_ns": 1791627323506687466
+        },
+        {
+          "path": "pytest-10/test_full_and_prefixed_evaluat0/prefix_eval/report.json",
+          "size": 20530,
+          "mtime_ns": 1791627323507687453
+        },
+        {
+          "path": "pytest-10/test_full_and_prefixed_evaluat0/prefix_eval/samples.csv",
+          "size": 559664,
+          "mtime_ns": 1791627323506687466
+        },
+        {
+          "path": "pytest-10/test_corruption_nan_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791627326071655220
+        },
+        {
+          "path": "pytest-10/test_corruption_nan_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791627326071655220
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_dims0/run/config.yaml",
+          "size": 824,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_dims0/run/metrics.json",
+          "size": 413,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_dims0/run/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_dims0/run/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791627322078705418
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_dims0/run/metadata.json",
+          "size": 1591,
+          "mtime_ns": 1791627322079705406
+        },
+        {
+          "path": "pytest-10/test_manifest_profile_rejectio0/1.h5",
+          "size": 85388,
+          "mtime_ns": 1791627328310627072
+        },
+        {
+          "path": "pytest-10/test_manifest_profile_rejectio0/2.h5",
+          "size": 85388,
+          "mtime_ns": 1791627328383626155
+        },
+        {
+          "path": "pytest-10/test_manifest_profile_rejectio0/0.h5",
+          "size": 85388,
+          "mtime_ns": 1791627328239627965
+        },
+        {
+          "path": "pytest-10/test_manifest_profile_rejectio0/2.metadata.json",
+          "size": 1306,
+          "mtime_ns": 1791627328384626142
+        },
+        {
+          "path": "pytest-10/test_manifest_profile_rejectio0/0.metadata.json",
+          "size": 1306,
+          "mtime_ns": 1791627328239627965
+        },
+        {
+          "path": "pytest-10/test_manifest_profile_rejectio0/1.metadata.json",
+          "size": 1070,
+          "mtime_ns": 1791627328384626142
+        },
+        {
+          "path": "pytest-10/test_splits0/manifest.json",
+          "size": 976,
+          "mtime_ns": 1791627328053630303
+        },
+        {
+          "path": "pytest-10/test_splits0/test.h5",
+          "size": 85388,
+          "mtime_ns": 1791627328042630441
+        },
+        {
+          "path": "pytest-10/test_splits0/val.h5",
+          "size": 85388,
+          "mtime_ns": 1791627327962631447
+        },
+        {
+          "path": "pytest-10/test_splits0/val.metadata.json",
+          "size": 1309,
+          "mtime_ns": 1791627327962631447
+        },
+        {
+          "path": "pytest-10/test_splits0/train.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791627327881632465
+        },
+        {
+          "path": "pytest-10/test_splits0/test.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791627328042630441
+        },
+        {
+          "path": "pytest-10/test_splits0/copy.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791627327881632465
+        },
+        {
+          "path": "pytest-10/test_splits0/copy.h5",
+          "size": 85388,
+          "mtime_ns": 1791627327881632465
+        },
+        {
+          "path": "pytest-10/test_splits0/train.h5",
+          "size": 85388,
+          "mtime_ns": 1791627327881632465
+        },
+        {
+          "path": "pytest-10/test_corruption_contract_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791627327684634942
+        },
+        {
+          "path": "pytest-10/test_corruption_contract_0/bad.metadata.json",
+          "size": 1064,
+          "mtime_ns": 1791627327684634942
+        },
+        {
+          "path": "pytest-10/test_bad_dataset_not_truncated0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791627323582686511
+        },
+        {
+          "path": "pytest-10/test_bad_dataset_not_truncated0/bad.metadata.json",
+          "size": 1308,
+          "mtime_ns": 1791627323582686511
+        },
+        {
+          "path": "pytest-10/test_100_hz_requires_true_freq0/mixed.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791627324174679068
+        },
+        {
+          "path": "pytest-10/test_100_hz_requires_true_freq0/mixed.h5",
+          "size": 85388,
+          "mtime_ns": 1791627324174679068
+        },
+        {
+          "path": "pytest-10/test_100_hz_requires_true_freq0/test.h5",
+          "size": 85388,
+          "mtime_ns": 1791627324073680338
+        },
+        {
+          "path": "pytest-10/test_100_hz_requires_true_freq0/val.h5",
+          "size": 85388,
+          "mtime_ns": 1791627323999681268
+        },
+        {
+          "path": "pytest-10/test_100_hz_requires_true_freq0/split.json",
+          "size": 1024,
+          "mtime_ns": 1791627324090680124
+        },
+        {
+          "path": "pytest-10/test_100_hz_requires_true_freq0/val.metadata.json",
+          "size": 1309,
+          "mtime_ns": 1791627324000681256
+        },
+        {
+          "path": "pytest-10/test_100_hz_requires_true_freq0/train.metadata.json",
+          "size": 1071,
+          "mtime_ns": 1791627324097680036
+        },
+        {
+          "path": "pytest-10/test_100_hz_requires_true_freq0/test.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791627324073680338
+        },
+        {
+          "path": "pytest-10/test_100_hz_requires_true_freq0/train.h5",
+          "size": 85388,
+          "mtime_ns": 1791627323927682173
+        },
+        {
+          "path": "pytest-10/test_corruption_nan_time_0/bad.h5",
+          "size": 86268,
+          "mtime_ns": 1791627326470650204
+        },
+        {
+          "path": "pytest-10/test_corruption_nan_time_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791627326470650204
+        },
+        {
+          "path": "pytest-10/test_best_epoch_is_saved0/manifest.json",
+          "size": 1015,
+          "mtime_ns": 1791627323814683594
+        },
+        {
+          "path": "pytest-10/test_best_epoch_is_saved0/test.h5",
+          "size": 85388,
+          "mtime_ns": 1791627323805683707
+        },
+        {
+          "path": "pytest-10/test_best_epoch_is_saved0/val.h5",
+          "size": 85388,
+          "mtime_ns": 1791627323732684625
+        },
+        {
+          "path": "pytest-10/test_best_epoch_is_saved0/val.metadata.json",
+          "size": 1309,
+          "mtime_ns": 1791627323732684625
+        },
+        {
+          "path": "pytest-10/test_best_epoch_is_saved0/train.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791627323659685543
+        },
+        {
+          "path": "pytest-10/test_best_epoch_is_saved0/test.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791627323805683707
+        },
+        {
+          "path": "pytest-10/test_best_epoch_is_saved0/train.h5",
+          "size": 85388,
+          "mtime_ns": 1791627323658685555
+        },
+        {
+          "path": "pytest-10/test_best_epoch_is_saved0/runs/smoke_20261010_181523_841615/config.yaml",
+          "size": 856,
+          "mtime_ns": 1791627323842683242
+        },
+        {
+          "path": "pytest-10/test_best_epoch_is_saved0/runs/smoke_20261010_181523_841615/metrics.json",
+          "size": 405,
+          "mtime_ns": 1791627323843683229
+        },
+        {
+          "path": "pytest-10/test_best_epoch_is_saved0/runs/smoke_20261010_181523_841615/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791627323843683229
+        },
+        {
+          "path": "pytest-10/test_best_epoch_is_saved0/runs/smoke_20261010_181523_841615/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791627323841683255
+        },
+        {
+          "path": "pytest-10/test_best_epoch_is_saved0/runs/smoke_20261010_181523_841615/metadata.json",
+          "size": 1591,
+          "mtime_ns": 1791627323847683179
+        },
+        {
+          "path": "pytest-10/training0/manifest.json",
+          "size": 967,
+          "mtime_ns": 1791627321913707492
+        },
+        {
+          "path": "pytest-10/training0/test.h5",
+          "size": 85388,
+          "mtime_ns": 1791627321905707593
+        },
+        {
+          "path": "pytest-10/training0/val.h5",
+          "size": 85388,
+          "mtime_ns": 1791627321714709994
+        },
+        {
+          "path": "pytest-10/training0/val.metadata.json",
+          "size": 1309,
+          "mtime_ns": 1791627321714709994
+        },
+        {
+          "path": "pytest-10/training0/train.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791627321642710899
+        },
+        {
+          "path": "pytest-10/training0/test.metadata.json",
+          "size": 1071,
+          "mtime_ns": 1791627321905707593
+        },
+        {
+          "path": "pytest-10/training0/train.h5",
+          "size": 85388,
+          "mtime_ns": 1791627321641710912
+        },
+        {
+          "path": "pytest-10/training0/runs/smoke_20261010_181522_002133/config.yaml",
+          "size": 824,
+          "mtime_ns": 1791627322003706361
+        },
+        {
+          "path": "pytest-10/training0/runs/smoke_20261010_181522_002133/metrics.json",
+          "size": 416,
+          "mtime_ns": 1791627322003706361
+        },
+        {
+          "path": "pytest-10/training0/runs/smoke_20261010_181522_002133/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791627322003706361
+        },
+        {
+          "path": "pytest-10/training0/runs/smoke_20261010_181522_002133/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791627322002706374
+        },
+        {
+          "path": "pytest-10/training0/runs/smoke_20261010_181522_002133/metadata.json",
+          "size": 1591,
+          "mtime_ns": 1791627322007706311
+        },
+        {
+          "path": "pytest-10/training0/runs/smoke_20261010_181521_892804/config.yaml",
+          "size": 824,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/training0/runs/smoke_20261010_181521_892804/metrics.json",
+          "size": 413,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/training0/runs/smoke_20261010_181521_892804/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/training0/runs/smoke_20261010_181521_892804/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791627321893707744
+        },
+        {
+          "path": "pytest-10/training0/runs/smoke_20261010_181521_892804/metadata.json",
+          "size": 1591,
+          "mtime_ns": 1791627321898707681
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_weig0/run/config.yaml",
+          "size": 824,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_weig0/run/metrics.json",
+          "size": 413,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_weig0/run/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_weig0/run/model.pt",
+          "size": 937618,
+          "mtime_ns": 1791627322104705091
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_weig0/run/metadata.json",
+          "size": 1591,
+          "mtime_ns": 1791627322104705091
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_miss0/run/config.yaml",
+          "size": 824,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_miss0/run/metrics.json",
+          "size": 413,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_miss0/run/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_miss0/run/metadata.json",
+          "size": 1591,
+          "mtime_ns": 1791627322060705644
+        },
+        {
+          "path": "pytest-10/test_corruption_eight_0/bad.h5",
+          "size": 88908,
+          "mtime_ns": 1791627324839670708
+        },
+        {
+          "path": "pytest-10/test_corruption_eight_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791627324839670708
+        },
+        {
+          "path": "pytest-10/test_corruption_unequal_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791627325859657885
+        },
+        {
+          "path": "pytest-10/test_corruption_unequal_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791627325859657885
+        },
+        {
+          "path": "pytest-10/test_corruption_gap_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791627326871645163
+        },
+        {
+          "path": "pytest-10/test_corruption_gap_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791627326872645150
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_rate0/run/config.yaml",
+          "size": 824,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_rate0/run/metrics.json",
+          "size": 413,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_rate0/run/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791627321894707731
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_rate0/run/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791627321893707744
+        },
+        {
+          "path": "pytest-10/test_checkpoint_rejection_rate0/run/metadata.json",
+          "size": 1596,
+          "mtime_ns": 1791627322072705494
+        },
+        {
+          "path": "pytest-9/test_corruption_length_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791607020399932084
+        },
+        {
+          "path": "pytest-9/test_corruption_length_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791607020399932084
+        },
+        {
+          "path": "pytest-9/test_gap_nanosecond_boundary0/boundary.metadata.json",
+          "size": 1074,
+          "mtime_ns": 1791607024594879347
+        },
+        {
+          "path": "pytest-9/test_gap_nanosecond_boundary0/boundary.h5",
+          "size": 85388,
+          "mtime_ns": 1791607024594879347
+        },
+        {
+          "path": "pytest-9/test_corruption_duplicate_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791607020861926276
+        },
+        {
+          "path": "pytest-9/test_corruption_duplicate_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791607020861926276
+        },
+        {
+          "path": "pytest-9/test_corruption_missing_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791607019512943235
+        },
+        {
+          "path": "pytest-9/test_corruption_missing_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791607019513943223
+        },
+        {
+          "path": "pytest-9/test_corruption_order_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791607023091898242
+        },
+        {
+          "path": "pytest-9/test_corruption_order_0/bad.metadata.json",
+          "size": 964,
+          "mtime_ns": 1791607023092898229
+        },
+        {
+          "path": "pytest-9/test_corruption_regression_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791607021065923712
+        },
+        {
+          "path": "pytest-9/test_corruption_regression_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791607021065923712
+        },
+        {
+          "path": "pytest-9/test_bad_sidecar_stays_machine0/badmeta.metadata.json",
+          "size": 15,
+          "mtime_ns": 1791607024373882125
+        },
+        {
+          "path": "pytest-9/test_bad_sidecar_stays_machine0/badmeta.h5",
+          "size": 85388,
+          "mtime_ns": 1791607024236883847
+        },
+        {
+          "path": "pytest-9/test_corruption_schema_0/bad.h5",
+          "size": 89484,
+          "mtime_ns": 1791607019737940407
+        },
+        {
+          "path": "pytest-9/test_corruption_schema_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791607019737940407
+        },
+        {
+          "path": "pytest-9/test_corruption_side_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791607022870901020
+        },
+        {
+          "path": "pytest-9/test_corruption_side_0/bad.metadata.json",
+          "size": 1070,
+          "mtime_ns": 1791607022871901007
+        },
+        {
+          "path": "pytest-9/test_corruption_six_0/bad.h5",
+          "size": 88028,
+          "mtime_ns": 1791607019947937767
+        },
+        {
+          "path": "pytest-9/test_corruption_six_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791607019947937767
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/high_train.metadata.json",
+          "size": 1316,
+          "mtime_ns": 1791607015232997041
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/high_train.h5",
+          "size": 85388,
+          "mtime_ns": 1791607015231997054
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/high_val.h5",
+          "size": 85388,
+          "mtime_ns": 1791607015314996011
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/manifest.json",
+          "size": 1030,
+          "mtime_ns": 1791607015134998273
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/high_test.h5",
+          "size": 85388,
+          "mtime_ns": 1791607015396994980
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/test.h5",
+          "size": 85388,
+          "mtime_ns": 1791607015123998412
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/val.h5",
+          "size": 85388,
+          "mtime_ns": 1791607015043999417
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/val.metadata.json",
+          "size": 1309,
+          "mtime_ns": 1791607015044999405
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/train.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791607014964000423
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/high_test.metadata.json",
+          "size": 1316,
+          "mtime_ns": 1791607015397994967
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/high_val.metadata.json",
+          "size": 1315,
+          "mtime_ns": 1791607015315995998
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/test.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791607015123998412
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/high_manifest.json",
+          "size": 1036,
+          "mtime_ns": 1791607015410994804
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/train.h5",
+          "size": 85388,
+          "mtime_ns": 1791607014964000423
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/runs/smoke_20261010_123656_149582/config.yaml",
+          "size": 1043,
+          "mtime_ns": 1791607016150985501
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/runs/smoke_20261010_123656_149582/metrics.json",
+          "size": 415,
+          "mtime_ns": 1791607016150985501
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/runs/smoke_20261010_123656_149582/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791607016150985501
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/runs/smoke_20261010_123656_149582/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791607016149985513
+        },
+        {
+          "path": "pytest-9/test_100_hz_adamw_checkpoint_c0/runs/smoke_20261010_123656_149582/metadata.json",
+          "size": 1583,
+          "mtime_ns": 1791607016155985438
+        },
+        {
+          "path": "pytest-9/test_corruption_inf_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791607021749915113
+        },
+        {
+          "path": "pytest-9/test_corruption_inf_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791607021749915113
+        },
+        {
+          "path": "pytest-9/test_corruption_hash_0/bad.h5",
+          "size": 85468,
+          "mtime_ns": 1791607022649903798
+        },
+        {
+          "path": "pytest-9/test_corruption_hash_0/bad.metadata.json",
+          "size": 1308,
+          "mtime_ns": 1791607022648903811
+        },
+        {
+          "path": "pytest-9/test_lazy_feature_label_normal0/training.h5",
+          "size": 153928,
+          "mtime_ns": 1791607016230984495
+        },
+        {
+          "path": "pytest-9/test_lazy_feature_label_normal0/training.metadata.json",
+          "size": 1098,
+          "mtime_ns": 1791607016234984445
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_std_0/run/config.yaml",
+          "size": 822,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_std_0/run/metrics.json",
+          "size": 416,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_std_0/run/normalization.npz",
+          "size": 1302,
+          "mtime_ns": 1791607017082973784
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_std_0/run/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791607016658979114
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_std_0/run/metadata.json",
+          "size": 1591,
+          "mtime_ns": 1791607017082973784
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_norm0/run/config.yaml",
+          "size": 822,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_norm0/run/metrics.json",
+          "size": 416,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_norm0/run/normalization.npz",
+          "size": 1294,
+          "mtime_ns": 1791607017092973658
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_norm0/run/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791607016658979114
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_norm0/run/metadata.json",
+          "size": 1591,
+          "mtime_ns": 1791607017092973658
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_orde0/run/config.yaml",
+          "size": 822,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_orde0/run/metrics.json",
+          "size": 416,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_orde0/run/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_orde0/run/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791607016658979114
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_orde0/run/metadata.json",
+          "size": 1454,
+          "mtime_ns": 1791607017059974073
+        },
+        {
+          "path": "pytest-9/test_corruption_float_time_0/bad.h5",
+          "size": 86268,
+          "mtime_ns": 1791607020634929130
+        },
+        {
+          "path": "pytest-9/test_corruption_float_time_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791607020634929130
+        },
+        {
+          "path": "pytest-9/test_writer_transaction0/good.h5",
+          "size": 85388,
+          "mtime_ns": 1791607023861888562
+        },
+        {
+          "path": "pytest-9/test_writer_transaction0/good.metadata.json",
+          "size": 1309,
+          "mtime_ns": 1791607023861888562
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_side0/run/config.yaml",
+          "size": 822,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_side0/run/metrics.json",
+          "size": 416,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_side0/run/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_side0/run/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791607016658979114
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_side0/run/metadata.json",
+          "size": 1592,
+          "mtime_ns": 1791607017054974136
+        },
+        {
+          "path": "pytest-9/test_corruption_low_hz_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791607022214909267
+        },
+        {
+          "path": "pytest-9/test_corruption_low_hz_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791607022214909267
+        },
+        {
+          "path": "pytest-9/test_full_and_prefixed_evaluat0/long.h5",
+          "size": 567932,
+          "mtime_ns": 1791607018205959666
+        },
+        {
+          "path": "pytest-9/test_full_and_prefixed_evaluat0/long.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791607017926963174
+        },
+        {
+          "path": "pytest-9/test_full_and_prefixed_evaluat0/eval/metrics.csv",
+          "size": 1988,
+          "mtime_ns": 1791607018204959679
+        },
+        {
+          "path": "pytest-9/test_full_and_prefixed_evaluat0/eval/report.json",
+          "size": 20525,
+          "mtime_ns": 1791607018205959666
+        },
+        {
+          "path": "pytest-9/test_full_and_prefixed_evaluat0/eval/samples.csv",
+          "size": 558608,
+          "mtime_ns": 1791607018204959679
+        },
+        {
+          "path": "pytest-9/test_full_and_prefixed_evaluat0/prefix_eval/metrics.csv",
+          "size": 1988,
+          "mtime_ns": 1791607018684953644
+        },
+        {
+          "path": "pytest-9/test_full_and_prefixed_evaluat0/prefix_eval/report.json",
+          "size": 20529,
+          "mtime_ns": 1791607018685953632
+        },
+        {
+          "path": "pytest-9/test_full_and_prefixed_evaluat0/prefix_eval/samples.csv",
+          "size": 558608,
+          "mtime_ns": 1791607018684953644
+        },
+        {
+          "path": "pytest-9/test_corruption_nan_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791607021524917941
+        },
+        {
+          "path": "pytest-9/test_corruption_nan_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791607021525917929
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_dims0/run/config.yaml",
+          "size": 822,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_dims0/run/metrics.json",
+          "size": 416,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_dims0/run/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_dims0/run/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791607017073973897
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_dims0/run/metadata.json",
+          "size": 1591,
+          "mtime_ns": 1791607017074973885
+        },
+        {
+          "path": "pytest-9/test_manifest_profile_rejectio0/1.h5",
+          "size": 85388,
+          "mtime_ns": 1791607024020886563
+        },
+        {
+          "path": "pytest-9/test_manifest_profile_rejectio0/2.h5",
+          "size": 85388,
+          "mtime_ns": 1791607024094885632
+        },
+        {
+          "path": "pytest-9/test_manifest_profile_rejectio0/0.h5",
+          "size": 85388,
+          "mtime_ns": 1791607023943887531
+        },
+        {
+          "path": "pytest-9/test_manifest_profile_rejectio0/2.metadata.json",
+          "size": 1306,
+          "mtime_ns": 1791607024094885632
+        },
+        {
+          "path": "pytest-9/test_manifest_profile_rejectio0/0.metadata.json",
+          "size": 1306,
+          "mtime_ns": 1791607023943887531
+        },
+        {
+          "path": "pytest-9/test_manifest_profile_rejectio0/1.metadata.json",
+          "size": 1070,
+          "mtime_ns": 1791607024094885632
+        },
+        {
+          "path": "pytest-9/test_splits0/manifest.json",
+          "size": 973,
+          "mtime_ns": 1791607023734890158
+        },
+        {
+          "path": "pytest-9/test_splits0/test.h5",
+          "size": 85388,
+          "mtime_ns": 1791607023720890334
+        },
+        {
+          "path": "pytest-9/test_splits0/val.h5",
+          "size": 85388,
+          "mtime_ns": 1791607023632891440
+        },
+        {
+          "path": "pytest-9/test_splits0/val.metadata.json",
+          "size": 1309,
+          "mtime_ns": 1791607023633891428
+        },
+        {
+          "path": "pytest-9/test_splits0/train.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791607023535892660
+        },
+        {
+          "path": "pytest-9/test_splits0/test.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791607023721890322
+        },
+        {
+          "path": "pytest-9/test_splits0/copy.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791607023535892660
+        },
+        {
+          "path": "pytest-9/test_splits0/copy.h5",
+          "size": 85388,
+          "mtime_ns": 1791607023534892672
+        },
+        {
+          "path": "pytest-9/test_splits0/train.h5",
+          "size": 85388,
+          "mtime_ns": 1791607023534892672
+        },
+        {
+          "path": "pytest-9/test_corruption_contract_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791607023307895526
+        },
+        {
+          "path": "pytest-9/test_corruption_contract_0/bad.metadata.json",
+          "size": 1064,
+          "mtime_ns": 1791607023307895526
+        },
+        {
+          "path": "pytest-9/test_bad_dataset_not_truncated0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791607018767952601
+        },
+        {
+          "path": "pytest-9/test_bad_dataset_not_truncated0/bad.metadata.json",
+          "size": 1308,
+          "mtime_ns": 1791607018766952614
+        },
+        {
+          "path": "pytest-9/test_100_hz_requires_true_freq0/mixed.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791607019415944455
+        },
+        {
+          "path": "pytest-9/test_100_hz_requires_true_freq0/mixed.h5",
+          "size": 85388,
+          "mtime_ns": 1791607019414944467
+        },
+        {
+          "path": "pytest-9/test_100_hz_requires_true_freq0/test.h5",
+          "size": 85388,
+          "mtime_ns": 1791607019306945825
+        },
+        {
+          "path": "pytest-9/test_100_hz_requires_true_freq0/val.h5",
+          "size": 85388,
+          "mtime_ns": 1791607019228946805
+        },
+        {
+          "path": "pytest-9/test_100_hz_requires_true_freq0/split.json",
+          "size": 1021,
+          "mtime_ns": 1791607019325945586
+        },
+        {
+          "path": "pytest-9/test_100_hz_requires_true_freq0/val.metadata.json",
+          "size": 1309,
+          "mtime_ns": 1791607019229946793
+        },
+        {
+          "path": "pytest-9/test_100_hz_requires_true_freq0/train.metadata.json",
+          "size": 1071,
+          "mtime_ns": 1791607019334945473
+        },
+        {
+          "path": "pytest-9/test_100_hz_requires_true_freq0/test.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791607019307945812
+        },
+        {
+          "path": "pytest-9/test_100_hz_requires_true_freq0/train.h5",
+          "size": 85388,
+          "mtime_ns": 1791607019146947836
+        },
+        {
+          "path": "pytest-9/test_corruption_nan_time_0/bad.h5",
+          "size": 86268,
+          "mtime_ns": 1791607021982912183
+        },
+        {
+          "path": "pytest-9/test_corruption_nan_time_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791607021982912183
+        },
+        {
+          "path": "pytest-9/test_best_epoch_is_saved0/manifest.json",
+          "size": 1012,
+          "mtime_ns": 1791607019014949496
+        },
+        {
+          "path": "pytest-9/test_best_epoch_is_saved0/test.h5",
+          "size": 85388,
+          "mtime_ns": 1791607019004949622
+        },
+        {
+          "path": "pytest-9/test_best_epoch_is_saved0/val.h5",
+          "size": 85388,
+          "mtime_ns": 1791607018925950615
+        },
+        {
+          "path": "pytest-9/test_best_epoch_is_saved0/val.metadata.json",
+          "size": 1309,
+          "mtime_ns": 1791607018926950602
+        },
+        {
+          "path": "pytest-9/test_best_epoch_is_saved0/train.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791607018849951570
+        },
+        {
+          "path": "pytest-9/test_best_epoch_is_saved0/test.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791607019004949622
+        },
+        {
+          "path": "pytest-9/test_best_epoch_is_saved0/train.h5",
+          "size": 85388,
+          "mtime_ns": 1791607018848951583
+        },
+        {
+          "path": "pytest-9/test_best_epoch_is_saved0/runs/smoke_20261010_123659_046205/config.yaml",
+          "size": 854,
+          "mtime_ns": 1791607019046949094
+        },
+        {
+          "path": "pytest-9/test_best_epoch_is_saved0/runs/smoke_20261010_123659_046205/metrics.json",
+          "size": 406,
+          "mtime_ns": 1791607019047949081
+        },
+        {
+          "path": "pytest-9/test_best_epoch_is_saved0/runs/smoke_20261010_123659_046205/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791607019047949081
+        },
+        {
+          "path": "pytest-9/test_best_epoch_is_saved0/runs/smoke_20261010_123659_046205/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791607019045949106
+        },
+        {
+          "path": "pytest-9/test_best_epoch_is_saved0/runs/smoke_20261010_123659_046205/metadata.json",
+          "size": 1591,
+          "mtime_ns": 1791607019051949031
+        },
+        {
+          "path": "pytest-9/training0/manifest.json",
+          "size": 964,
+          "mtime_ns": 1791607016854976650
+        },
+        {
+          "path": "pytest-9/training0/test.h5",
+          "size": 85388,
+          "mtime_ns": 1791607016844976776
+        },
+        {
+          "path": "pytest-9/training0/val.h5",
+          "size": 85388,
+          "mtime_ns": 1791607016434981930
+        },
+        {
+          "path": "pytest-9/training0/val.metadata.json",
+          "size": 1309,
+          "mtime_ns": 1791607016434981930
+        },
+        {
+          "path": "pytest-9/training0/train.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791607016349982999
+        },
+        {
+          "path": "pytest-9/training0/test.metadata.json",
+          "size": 1071,
+          "mtime_ns": 1791607016844976776
+        },
+        {
+          "path": "pytest-9/training0/train.h5",
+          "size": 85388,
+          "mtime_ns": 1791607016349982999
+        },
+        {
+          "path": "pytest-9/training0/runs/smoke_20261010_123656_977559/config.yaml",
+          "size": 822,
+          "mtime_ns": 1791607016978975091
+        },
+        {
+          "path": "pytest-9/training0/runs/smoke_20261010_123656_977559/metrics.json",
+          "size": 415,
+          "mtime_ns": 1791607016978975091
+        },
+        {
+          "path": "pytest-9/training0/runs/smoke_20261010_123656_977559/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791607016978975091
+        },
+        {
+          "path": "pytest-9/training0/runs/smoke_20261010_123656_977559/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791607016976975117
+        },
+        {
+          "path": "pytest-9/training0/runs/smoke_20261010_123656_977559/metadata.json",
+          "size": 1591,
+          "mtime_ns": 1791607016982975041
+        },
+        {
+          "path": "pytest-9/training0/runs/smoke_20261010_123656_658294/config.yaml",
+          "size": 822,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/training0/runs/smoke_20261010_123656_658294/metrics.json",
+          "size": 416,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/training0/runs/smoke_20261010_123656_658294/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/training0/runs/smoke_20261010_123656_658294/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791607016658979114
+        },
+        {
+          "path": "pytest-9/training0/runs/smoke_20261010_123656_658294/metadata.json",
+          "size": 1591,
+          "mtime_ns": 1791607016665979026
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_weig0/run/config.yaml",
+          "size": 822,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_weig0/run/metrics.json",
+          "size": 416,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_weig0/run/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_weig0/run/model.pt",
+          "size": 937618,
+          "mtime_ns": 1791607017109973445
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_weig0/run/metadata.json",
+          "size": 1591,
+          "mtime_ns": 1791607017111973419
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_miss0/run/config.yaml",
+          "size": 822,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_miss0/run/metrics.json",
+          "size": 416,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_miss0/run/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_miss0/run/metadata.json",
+          "size": 1591,
+          "mtime_ns": 1791607017050974186
+        },
+        {
+          "path": "pytest-9/test_corruption_eight_0/bad.h5",
+          "size": 88908,
+          "mtime_ns": 1791607020183934800
+        },
+        {
+          "path": "pytest-9/test_corruption_eight_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791607020183934800
+        },
+        {
+          "path": "pytest-9/test_corruption_unequal_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791607021298920782
+        },
+        {
+          "path": "pytest-9/test_corruption_unequal_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791607021298920782
+        },
+        {
+          "path": "pytest-9/test_corruption_gap_0/bad.h5",
+          "size": 85388,
+          "mtime_ns": 1791607022434906501
+        },
+        {
+          "path": "pytest-9/test_corruption_gap_0/bad.metadata.json",
+          "size": 1069,
+          "mtime_ns": 1791607022434906501
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_rate0/run/config.yaml",
+          "size": 822,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_rate0/run/metrics.json",
+          "size": 416,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_rate0/run/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791607016659979102
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_rate0/run/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791607016658979114
+        },
+        {
+          "path": "pytest-9/test_checkpoint_rejection_rate0/run/metadata.json",
+          "size": 1596,
+          "mtime_ns": 1791607017065973998
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/high_train.metadata.json",
+          "size": 1316,
+          "mtime_ns": 1791605918504784782
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/high_train.h5",
+          "size": 85388,
+          "mtime_ns": 1791605918504784782
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/high_val.h5",
+          "size": 85388,
+          "mtime_ns": 1791605918581783814
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/manifest.json",
+          "size": 1030,
+          "mtime_ns": 1791605918415785901
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/high_test.h5",
+          "size": 85388,
+          "mtime_ns": 1791605918664782771
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/test.h5",
+          "size": 85388,
+          "mtime_ns": 1791605918405786027
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/val.h5",
+          "size": 85388,
+          "mtime_ns": 1791605918332786945
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/val.metadata.json",
+          "size": 1309,
+          "mtime_ns": 1791605918333786932
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/train.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791605918254787925
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/high_test.metadata.json",
+          "size": 1316,
+          "mtime_ns": 1791605918664782771
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/high_val.metadata.json",
+          "size": 1315,
+          "mtime_ns": 1791605918582783802
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/test.metadata.json",
+          "size": 1310,
+          "mtime_ns": 1791605918405786027
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/high_manifest.json",
+          "size": 1036,
+          "mtime_ns": 1791605918673782658
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/train.h5",
+          "size": 85388,
+          "mtime_ns": 1791605918254787925
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/runs/smoke_20261010_121839_200729/config.yaml",
+          "size": 1043,
+          "mtime_ns": 1791605919201776020
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/runs/smoke_20261010_121839_200729/metrics.json",
+          "size": 415,
+          "mtime_ns": 1791605919201776020
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/runs/smoke_20261010_121839_200729/normalization.npz",
+          "size": 1218,
+          "mtime_ns": 1791605919201776020
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/runs/smoke_20261010_121839_200729/model.pt",
+          "size": 980562,
+          "mtime_ns": 1791605919200776032
+        },
+        {
+          "path": "pytest-8/test_100_hz_adamw_checkpoint_c0/runs/smoke_20261010_121839_200729/metadata.json",
+          "size": 1583,
+          "mtime_ns": 1791605919205775970
+        }
+      ]
+    }
+  ],
+  "planned_bytes": 3642409497
+}

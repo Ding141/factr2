@@ -1,0 +1,11 @@
+{
+  "domain": 74,
+  "side": "right",
+  "checkpoint": "/home/venom/factr2/models/w3/right/c2_20261010",
+  "state": "running_verified_after_support_removed",
+  "endpoint_reasons": [
+    "near_singular"
+  ],
+  "support_removed_confirmed": true,
+  "endpoint_state": "unavailable"
+}

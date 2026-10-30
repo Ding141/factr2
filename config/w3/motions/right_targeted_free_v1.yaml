@@ -1,0 +1,30 @@
+version: 1
+name: right_targeted_free_v1
+side: right
+tool_frame: right_attachment_point
+home_deg: [0, 50, 0, -55, 0, 0, 0]
+anchors_deg:
+  - [0, 50, 0, -55, 0, 0, 0]
+  - [20, 60, -8, -62, 6, -10, 0]
+working_bounds_deg: [[-40, 40], [20, 90], [-30, 30], [-85, -25], [-30, 30], [-23, 23], [-30, 30]]
+sample_period_seconds: 0.01
+knot_period_seconds: 0.25
+hardware_margin_deg: 3.0
+tracking_limit_deg: 3.0
+promotion_tracking_deg: 2.5
+arrival_tolerance_deg: 1.5
+left_stationary_tolerance_deg: 1.0
+max_condition: 20.0
+return_offset_deg: [4, 4, 4, 4, 4, 3, 4]
+dwell_seconds: [3, 10]
+continuous_cycles: 3
+continuous_amplitude_cap_deg: [10, 10, 8, 7, 8, 6, 8]
+seeds: {train: 61017, val: 71023, test: 81031}
+profiles:
+  - {id: v06_a15, velocity_deg_s: 6, acceleration_deg_s2: 15, jerk_deg_s3: 60}
+  - {id: v10_a20, velocity_deg_s: 10, acceleration_deg_s2: 20, jerk_deg_s3: 100}
+  - {id: v10_a40, velocity_deg_s: 10, acceleration_deg_s2: 40, jerk_deg_s3: 100}
+  - {id: v12_a30, velocity_deg_s: 12, acceleration_deg_s2: 30, jerk_deg_s3: 120}
+  - {id: v12_a60, velocity_deg_s: 12, acceleration_deg_s2: 60, jerk_deg_s3: 120}
+  - {id: v14_a60, velocity_deg_s: 14, acceleration_deg_s2: 60, jerk_deg_s3: 120}
+  - {id: v16_a80, velocity_deg_s: 16, acceleration_deg_s2: 80, jerk_deg_s3: 150}

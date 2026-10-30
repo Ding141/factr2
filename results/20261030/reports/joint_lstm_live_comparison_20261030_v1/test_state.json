@@ -1,0 +1,17 @@
+{
+  "status": "failed",
+  "phase": "postflight_observation",
+  "step_index": 4,
+  "started_utc": "2026-10-30T02:58:07.302756+00:00",
+  "automatic_retry": false,
+  "model_hash": "1e2b7188ef85ab0d8e607935a622994d93dbc41f8053725e931cae0cb0a3f886",
+  "updated_utc": "2026-10-30T03:02:09.319729+00:00",
+  "C_pid": 51217,
+  "session": "/home/venom/factr2/data/quick_capture/right/20261030_105813_514952",
+  "recorder_pid": 52435,
+  "motion_pid": 52476,
+  "total_steps": 27,
+  "error": "Motion stopped; no automatic retry (see motion.log)",
+  "finished_utc": "2026-10-30T03:01:52.117845+00:00",
+  "recording_active": false
+}

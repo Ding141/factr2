@@ -1,0 +1,10 @@
+{
+  "checkpoint_load": "PASS",
+  "side": "right",
+  "sample_hz": 100.0,
+  "history": 50,
+  "finite_forward_shape": [
+    1,
+    7
+  ]
+}

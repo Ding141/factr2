@@ -1,0 +1,9 @@
+{
+  "stopped_observer_pids": [
+    41879,
+    19443
+  ],
+  "old_inference_pid_preserved": 9348,
+  "old_dashboard_port": 8082,
+  "new_dashboard_port": 8082
+}

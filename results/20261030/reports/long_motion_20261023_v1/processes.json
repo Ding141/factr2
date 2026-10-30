@@ -1,0 +1,44 @@
+{
+  "adapter": {
+    "pid": 19367,
+    "command": [
+      "/bin/bash",
+      "/home/venom/factr2/scripts/next.sh",
+      "ros2",
+      "launch",
+      "factr2_w3_adapter",
+      "adapter.launch.py",
+      "side:=right",
+      "profile:=real",
+      "publish_hz:=100"
+    ],
+    "log": "/home/venom/factr2/log/long_motion_20261023_v1/adapter.log"
+  },
+  "inference_web": {
+    "pid": 19385,
+    "command": [
+      "/bin/bash",
+      "/home/venom/factr2/scripts/next.sh",
+      "ros2",
+      "launch",
+      "factr2_next",
+      "readonly.launch.py",
+      "side:=right",
+      "inference_config:=/home/venom/factr2/config/w3/right/inference_targeted_20261016.yaml",
+      "web_config:=/home/venom/factr2/config/w3/right/visualize.yaml"
+    ],
+    "log": "/home/venom/factr2/log/long_motion_20261023_v1/inference_web.log"
+  },
+  "endpoint": {
+    "pid": 19443,
+    "command": [
+      "/bin/bash",
+      "/home/venom/factr2/scripts/next.sh",
+      "python",
+      "/home/venom/factr2/scripts/w3_endpoint_wrench.py",
+      "--config",
+      "/home/venom/factr2/config/w3/right/endpoint_wrench_targeted_20261016.yaml"
+    ],
+    "log": "/home/venom/factr2/log/long_motion_20261023_v1/endpoint.log"
+  }
+}

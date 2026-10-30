@@ -1,0 +1,188 @@
+{
+  "8766": {
+    "motors": [
+      {
+        "channel": 1,
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "position": 1.6348133087158203,
+        "velocity": -0.010990142822265625,
+        "torque": -0.039562225341796875,
+        "error": 1,
+        "age": 0.000903536000009808
+      },
+      {
+        "channel": 1,
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "position": 2.1421756744384766,
+        "velocity": -0.010990142822265625,
+        "torque": 0.0659332275390625,
+        "error": 1,
+        "age": 0.000903536000009808
+      },
+      {
+        "channel": 1,
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "position": -2.6865415573120117,
+        "velocity": -0.0048847198486328125,
+        "torque": -0.047863006591796875,
+        "error": 1,
+        "age": 0.000903536000009808
+      },
+      {
+        "channel": 1,
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "position": -1.3151369094848633,
+        "velocity": -0.0048847198486328125,
+        "torque": 0.07521438598632812,
+        "error": 1,
+        "age": 0.000903536000009808
+      },
+      {
+        "channel": 1,
+        "slot": 4,
+        "online": true,
+        "enabled": true,
+        "position": -2.8997859954833984,
+        "velocity": -0.012210845947265625,
+        "torque": 0.012209892272949219,
+        "error": 1,
+        "age": 0.000903536000009808
+      },
+      {
+        "channel": 1,
+        "slot": 5,
+        "online": true,
+        "enabled": true,
+        "position": 2.099069595336914,
+        "velocity": -0.012210845947265625,
+        "torque": 0.012209892272949219,
+        "error": 1,
+        "age": 0.000903536000009808
+      },
+      {
+        "channel": 1,
+        "slot": 6,
+        "online": true,
+        "enabled": true,
+        "position": 1.7828264236450195,
+        "velocity": -0.012210845947265625,
+        "torque": 0.0024423599243164062,
+        "error": 1,
+        "age": 0.000903536000009808
+      }
+    ],
+    "controllers": {
+      "joint_position_controller": "active",
+      "joint_state_broadcaster": "active",
+      "gravity_compensation_controller": "active"
+    },
+    "joints": {
+      "right_joint_0": {
+        "position": 0.007494969309672861,
+        "velocity": 0.010990142822265625,
+        "effort": 0.0659332275390625,
+        "at": 589.353302421,
+        "age": 0.00012822799999412382
+      },
+      "right_joint_2": {
+        "position": -0.00718113708496082,
+        "velocity": -0.0048847198486328125,
+        "effort": -0.047863006591796875,
+        "at": 589.353302421,
+        "age": 0.00012822799999412382
+      },
+      "right_joint_1": {
+        "position": 0.010407725524902212,
+        "velocity": -0.03296661376953125,
+        "effort": 0.09230804443359375,
+        "at": 589.353302421,
+        "age": 0.00012822799999412382
+      },
+      "right_joint_3": {
+        "position": -0.005841894945825987,
+        "velocity": 0.0048847198486328125,
+        "effort": -0.020513534545898438,
+        "at": 589.353302421,
+        "age": 0.00012822799999412382
+      },
+      "right_joint_4": {
+        "position": -0.01748081970214832,
+        "velocity": -0.012210845947265625,
+        "effort": 0.0073261260986328125,
+        "at": 589.353302421,
+        "age": 0.00012822799999412382
+      },
+      "right_joint_5": {
+        "position": -0.023578495788574294,
+        "velocity": -0.012210845947265625,
+        "effort": -0.012209892272949219,
+        "at": 589.353302421,
+        "age": 0.00012822799999412382
+      },
+      "right_joint_6": {
+        "position": -0.00789468841552754,
+        "velocity": 0.012210845947265625,
+        "effort": -0.0073261260986328125,
+        "at": 589.353302421,
+        "age": 0.00012822799999412382
+      }
+    },
+    "processes": {
+      "control": {
+        "pid": 10652,
+        "running": true,
+        "exit_code": null,
+        "label": "control / right / gravity",
+        "stopping": false
+      }
+    }
+  },
+  "8081": {
+    "state": "valid",
+    "reason": "ok",
+    "diagnostics": {
+      "outputs": 2587,
+      "dropped": 0,
+      "resets": 0,
+      "state": "valid",
+      "reason": "ok",
+      "history_count": 50,
+      "source_age_seconds": 0.010113436,
+      "receive_age_seconds": 0.006150222999963262,
+      "last_output_stamp_ns": 1791723147403255374,
+      "output_hz": 100,
+      "infer_ms": 0.7349399999156958,
+      "infer_p95_ms": 1.0274318999961451,
+      "device": "cpu"
+    }
+  },
+  "8082": {
+    "state": "unavailable",
+    "reasons": [
+      "near_singular"
+    ],
+    "geometry": {
+      "condition_number": 1645.1818908953016,
+      "scaled_singular_values": [
+        2.1941325900447524,
+        1.8051341291410485,
+        1.414287582977799,
+        0.6280676884893547,
+        0.622649070391815,
+        0.0013336717369595613
+      ],
+      "reason": "near_singular",
+      "valid": false
+    },
+    "outputs": 0,
+    "wrench": null
+  }
+}

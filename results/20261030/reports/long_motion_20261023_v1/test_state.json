@@ -1,0 +1,15 @@
+{
+  "status": "failed",
+  "phase": "startup",
+  "step_index": 0,
+  "started_utc": "2026-10-23T02:39:29.766028+00:00",
+  "automatic_retry": false,
+  "model_hash": "b5216350f2c76a7462ab931e5d62e8f2442e00e65f0f4146fb4b7868829d62a6",
+  "updated_utc": "2026-10-23T02:40:22.369349+00:00",
+  "C_pid": 20677,
+  "session": "/home/venom/factr2/data/quick_capture/right/20261023_103938_012150",
+  "recorder_pid": 21099,
+  "error": "Feedback recorder failed before motion",
+  "finished_utc": "2026-10-23T02:40:09.632048+00:00",
+  "recording_active": false
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "w3_kinematic_residual_v1",
+  "files": {
+    "model.json": "887d403a95a1a0fa1387232ae36e89bed368a0f9254a69a0d8a628d2502bed03",
+    "recipe.json": "fb1e462160370ed4c94405591761c4d635a610d46f07b850efefb40bcc4ae639",
+    "comparison.json": "438a2f17bf415f768bc94b99a032daaa426b0431632d1114920efcba43cebdeb",
+    "replay.npz": "bdef52ba8da5ff59f619fc04ef28b34ab4215a23a2447cb57ebd3bbf96c8c556",
+    "velocity.json": "66df5f8a3a832c6b8a85f1b3280a6696d2b2a0dea393e684718c0e37c2c73707",
+    "velocity_acceleration.json": "887d403a95a1a0fa1387232ae36e89bed368a0f9254a69a0d8a628d2502bed03"
+  },
+  "base_metadata_sha256": "cbe838418b4f5b550662e51230e8b3f60a2fdfa4328e6cc5d7a6cd5a112876c9",
+  "deployment_ready": false
+}

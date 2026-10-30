@@ -1,0 +1,11 @@
+{
+  "/factr2/right/joint_pos": 1,
+  "/factr2/right/joint_vel": 1,
+  "/factr2/right/joint_cmd": 1,
+  "/factr2/right/joint_effort": 1,
+  "/next/right/frozen_sigma/free_joint_torque_pred": 1,
+  "/next/right/frozen_sigma/external_joint_torque/raw": 1,
+  "/next/right/frozen_sigma/external_joint_torque": 1,
+  "/next/right/frozen_sigma/status": 1,
+  "/next/right/frozen_sigma/distribution": 1
+}

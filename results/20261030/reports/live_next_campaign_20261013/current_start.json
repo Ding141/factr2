@@ -1,0 +1,22 @@
+{
+  "initial_deg": [
+    0.12343763420776382,
+    0.4433225094991905,
+    0.06939647049576379,
+    -0.3784291354427174,
+    -0.38959224172909307,
+    -1.1760954531999663,
+    -0.1899984211387014
+  ],
+  "source": "live stationary controller command",
+  "left_pose_deg": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "operator_confirmed_left_pose_and_empty_clearance": true
+}

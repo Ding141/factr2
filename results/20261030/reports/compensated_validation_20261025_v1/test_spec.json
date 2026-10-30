@@ -1,0 +1,117 @@
+{
+  "purpose": "New physical frozen-model validation; no training or model selection on these data",
+  "next_topic_root": "/next/right/kinematic_compensated",
+  "base_model_dir": "/home/venom/factr2/models/w3/right/frozen_sigma_observer_20261023",
+  "base_metadata_sha256": "cbe838418b4f5b550662e51230e8b3f60a2fdfa4328e6cc5d7a6cd5a112876c9",
+  "training_envelope": {
+    "position_bounds_deg": [
+      [
+        -4.7944077454344916,
+        24.778070204899308
+      ],
+      [
+        45.621637259169454,
+        64.52787067423696
+      ],
+      [
+        -13.02292873761926,
+        4.200349481051694
+      ],
+      [
+        -66.4082149225523,
+        -50.23411181700325
+      ],
+      [
+        -4.73350038728455,
+        10.631966377142936
+      ],
+      [
+        -13.284873322478418,
+        3.8728350801604123
+      ],
+      [
+        -4.779994765625295,
+        4.443656614100004
+      ]
+    ],
+    "position_margin_deg": 0.0,
+    "source": "observed training positions only; rectangular bounds do not certify pose combinations"
+  },
+  "initial_command_deg": [
+    1.0,
+    55.0,
+    -4.0,
+    -58.00000000000001,
+    1.0,
+    -2.0,
+    0.0
+  ],
+  "left_pose_deg": [
+    0.22626805129693991,
+    -0.7711715896598152,
+    0.37541626606901507,
+    -0.4656450976691562,
+    -1.3731394822109293,
+    1.8382383339717192,
+    -0.8457512229732856
+  ],
+  "working_center_deg": [
+    1.0,
+    55.0,
+    -4.0,
+    -58.0,
+    1.0,
+    -2.0,
+    0.0
+  ],
+  "maximum_amplitude_deg": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    1.5,
+    1.5,
+    1.5
+  ],
+  "plan_sha256": "16a71a54b101af887c78ab6df255789ed5272303614cc36b5efe965ebb508766",
+  "command_seconds": 236.62000000000012,
+  "steps": 26,
+  "block_roles": {
+    "startup_pilot_out": "unused",
+    "startup_pilot_return": "unused",
+    "baseline_before": "train",
+    "validate_slow_probe_j1": "train",
+    "validate_slow_probe_j2": "train",
+    "validate_slow_probe_j3": "train",
+    "validate_slow_probe_j4": "train",
+    "validate_slow_probe_j5": "train",
+    "validate_slow_probe_j6": "train",
+    "validate_slow_probe_j7": "train",
+    "cycle1_validate_slow": "test",
+    "cycle1_validate_slow_settle": "unused",
+    "cycle2_validate_slow": "test",
+    "cycle2_validate_slow_settle": "unused",
+    "validate_fast_probe_j1": "train",
+    "validate_fast_probe_j2": "train",
+    "validate_fast_probe_j3": "train",
+    "validate_fast_probe_j4": "train",
+    "validate_fast_probe_j5": "train",
+    "validate_fast_probe_j6": "train",
+    "validate_fast_probe_j7": "train",
+    "cycle1_validate_fast": "test",
+    "cycle1_validate_fast_settle": "unused",
+    "cycle2_validate_fast": "test",
+    "cycle2_validate_fast_settle": "unused",
+    "baseline_after": "test"
+  },
+  "split_boundary_purge_seconds": 1.0,
+  "model_frozen_during_capture": true,
+  "maximum_planned_velocity_deg_s": 2.4,
+  "maximum_planned_acceleration_deg_s2": 3.0,
+  "input_precision": "full ROS precision, never rounded dashboard output",
+  "no_load_status": "Continuing user-confirmed no-load session within the same smaller motion envelope",
+  "model_hash": "89af2ae40f122e512287dac6fe0798d388701ad10c43cdfcaaa50a5888fc459e",
+  "no_training_on_new_observation": true,
+  "model_dir": "/home/venom/factr2/data/right/kinematic_compensation_20261025_v1",
+  "model_frozen": true
+}

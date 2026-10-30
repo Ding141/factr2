@@ -1,0 +1,14 @@
+{
+  "source_run": "/home/venom/factr2/runs/targeted_next_targeted_training_20261016_v1_20261016_191157_629792",
+  "files_sha256": {
+    "model.pt": "b5216350f2c76a7462ab931e5d62e8f2442e00e65f0f4146fb4b7868829d62a6",
+    "normalization.npz": "7dd5f89e072dcf21208398fe275b703c35d94d1844fc9f2b846c54ac254f7945",
+    "config.yaml": "3c36528a9d7f9ec114996c4dfab844a84f7e27cda15fa0f3b464fc4101363a47",
+    "metadata.json": "8597f0ef3787cbac936590fd866aa08e2809342ad9b99892ceeb013f463c0b54",
+    "metrics.json": "6b6ee48da365291d404b815d33c23fec95e2a96c4b3cb023e81b5ec07ce631f7",
+    "trial_evaluation.json": "68c744e35fa3656a969ac45d232cab071601d60abd33a8c4de26f03684479bac",
+    "best_snapshot.json": "754fbb014e9f6d61e99c05f735d59f814d7de41f56972794980c25bff11799e4"
+  },
+  "deployment_mode": "readonly_trial",
+  "deployment_ready": false
+}

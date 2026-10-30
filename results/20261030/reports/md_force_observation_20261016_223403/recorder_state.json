@@ -1,0 +1,17 @@
+{
+  "status": "closed",
+  "rows": 26302,
+  "updated_mono": 23672.690475154,
+  "last_join_mono": 23672.68097674,
+  "pid": 77704,
+  "channels": {
+    "NEXT": {
+      "rows": 13151,
+      "last_join_mono": 23672.68097674
+    },
+    "NEXT_MD": {
+      "rows": 13151,
+      "last_join_mono": 23672.681971699
+    }
+  }
+}

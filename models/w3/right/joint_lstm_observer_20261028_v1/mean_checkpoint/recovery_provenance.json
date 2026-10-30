@@ -1,0 +1,80 @@
+{
+  "recovered_at": "2026-10-28T21:28:09.672246+08:00",
+  "recovery": {
+    "detected": "2026-10-28T21:26:05.849027+08:00",
+    "source": "/home/venom/factr2/runs/right_joint_lstm_parallel_durable_v1_20261028_111023_546939",
+    "original_config_sha256": "003546f1ac8db5fe75da37cb4cb9f535a3db4fe4c31f6cb120569dc094659b3b",
+    "source_files": {
+      "joint_training/joint_5/final.pt": "d7a45c24e637fbb5b92c84f4496e07767b0ebb605b6df003c41bb8b0160f82ce",
+      "joint_training/joint_5/progress.json": "181de081fbeba2a224c5b9278e54a6f377b47ae0f7d7b9ce225e080c815a92e7",
+      "joint_training/joint_5/best.pt": "ebe5438525b5313b880588ac335fa1122941fedcf71fec5288dfb89136a3ff55",
+      "joint_training/joint_6/final.pt": "a98d57b3150567e06812df6a9fea0ccdd01b2fe5f6217eb0839dbc1f497ec63c",
+      "joint_training/joint_6/progress.json": "2c62e01f67c70d0b62fb437e95687f009639de5a9f7f2bcae698517c3b14af72",
+      "joint_training/joint_6/best.pt": "7968266c37e68f077fbbc615069c5c94f8b969b6c1045f09d52c5ff96e5c55ba",
+      "joint_training/joint_3/progress.json": "9490b99abda6cec05a3bf09a83b89b7207a50c6c0b47ec1f1a44b3d7ffd67dbd",
+      "joint_training/joint_3/best.pt": "b918f4aeb663d084f01dbb7e720d57b8796676c3d48d78f60060be377043a78c",
+      "joint_training/joint_4/final.pt": "fabfbc1711f4f9300800894d001b21e0ec05f7f5f7e9833e1ddd99cc640ee6ca",
+      "joint_training/joint_4/progress.json": "ac94b41439d1d298b60607b0510bbff650b52194cfe1d98a7aec95556251a895",
+      "joint_training/joint_4/best.pt": "5d3ed4138660a0b535ca17dc409382b8789a2b17c75684b2ed8e4c3e113e5f78",
+      "joint_training/joint_2/final.pt": "c64760111d346c155c559fc7d9c8ceaf14df8a2678c7477b27350d014848bd50",
+      "joint_training/joint_2/progress.json": "ac3199c9e30b5647a80dd197f257bff51be3750712a16e655fcccb649491c61e",
+      "joint_training/joint_2/best.pt": "b2a1c4815e59f437070513025c23559fb7592645e8642a00c992db89b151d00f",
+      "joint_training/joint_1/progress.json": "908db8c70edbd0947096fc8d33379b7c983f57314f476ce092b5bed2d2b53d8b",
+      "joint_training/joint_1/best.pt": "cf7b0adcd657fdd6472785b8c4a9bab00432698ea51b0ab5827f7035d97da7e6",
+      "joint_training/joint_7/final.pt": "0fca5eea37cdac43882a2269f26414de78936fb7e0adcdfe6a3364bee8c40199",
+      "joint_training/joint_7/progress.json": "41a3cf66a9c8b18264ad12302bad59bdb54a64f66c7a66b871ea87bfcabe3513",
+      "joint_training/joint_7/best.pt": "cb8036cffa2ef8d784f0c8efc2fce836f33bc1d383d3e7d2ec39a6131d026ef5"
+    },
+    "legacy_contract_attestation": "Contract reconstructed from unchanged original configuration and verified manifest; completed branch validation is rechecked before final export.",
+    "completed_joints": [
+      2,
+      4,
+      5,
+      6,
+      7
+    ],
+    "replayed_joints": [
+      1,
+      3
+    ],
+    "reason": "Host reboot; no optimizer checkpoint existed for unfinished branches",
+    "controller_changes": false,
+    "old_models_changed": false
+  },
+  "preserved_pre_reboot_sources": {
+    "factr2_next/src/factr2_next/factr2_next/training/models.py": "2c33897a688241a116ef613d2db0b688406baae46eb2716b163b6ee2150ba2d0",
+    "factr2_next/src/factr2_next/factr2_next/training/w3_train.py": "ffb06c5d5026905e1e9dd946886847dcee8e8685f18969f9b09ae356d9d29344",
+    "factr2_next/src/factr2_next/factr2_next/training/joint_lstm.py": "be423280854ab6ffec6339683821d0ccb15d9b357384a2feef83a9a530257ee2",
+    "factr2_next/src/factr2_next/factr2_next/training/parallel_joint_lstm.py": "fed973f88825d82358e32613f6e9c4af21e2164be7abba976b7f286c07b32b32",
+    "factr2_next/src/factr2_next/factr2_next/inference/joint_lstm_observer.py": "76029e9f052def2502dc4609ee43ce8f3d6907775993c3e937acd49de7b6dc56",
+    "factr2_next/src/factr2_next/factr2_next/inference/checkpoint.py": "a03ae7e491f339766997e1d94427be5891c6e4cc6b249b98950e9516162042e6",
+    "factr2_next/src/factr2_next/factr2_next/w3_config.py": "28acef197708af8077a255148b1ed972798e7b2fa49784b710686099f1c909c7",
+    "scripts/observe_w3_joint_lstm.py": "1ba6abf1ff4ba2dea496c1b6362d75d7649594dc41a0528c68f5d7734e3972e7",
+    "scripts/export_w3_joint_lstm.py": "7fe125f5fba78344bf80a78c7dcf412bb500297ef58d750952c496f2133843d3",
+    "scripts/activate_w3_joint_lstm.py": "9d325a44f8cfaa4f8cd87c65db328171633e76cd135e76046a3bb02e76f35dd3",
+    "scripts/observe_w3_kinematic_compensation.py": "a43d53d6eb897491207cfa7e5d7216436c554a274ae6b6ab763566dc1a33f7f4",
+    "scripts/test_w3_joint_lstm.py": "6701a583fa079b3496014eee874337cd191b89073a2bce983075b7ad93c85690",
+    "scripts/test_w3_joint_lstm_observer.py": "4ea98cbe51971ff49896d561583f7935011bbfb250f9eccb3eb7614e93dfb428",
+    "scripts/observe_w3_shared_baseline.py": "ec2e89bfa1643559bf09ec1f1c187c322db6d5b993c3304cfc025c845ee072a3"
+  },
+  "recovery_execution_sources": {
+    "factr2_next/src/factr2_next/factr2_next/training/models.py": "2c33897a688241a116ef613d2db0b688406baae46eb2716b163b6ee2150ba2d0",
+    "factr2_next/src/factr2_next/factr2_next/training/w3_train.py": "ffb06c5d5026905e1e9dd946886847dcee8e8685f18969f9b09ae356d9d29344",
+    "factr2_next/src/factr2_next/factr2_next/training/joint_lstm.py": "be423280854ab6ffec6339683821d0ccb15d9b357384a2feef83a9a530257ee2",
+    "factr2_next/src/factr2_next/factr2_next/training/parallel_joint_lstm.py": "e2f75818179d41dc39ca7de7a7025e69a7bd999e674c9b199690fee58f8c6b8c",
+    "factr2_next/src/factr2_next/factr2_next/inference/joint_lstm_observer.py": "76029e9f052def2502dc4609ee43ce8f3d6907775993c3e937acd49de7b6dc56",
+    "factr2_next/src/factr2_next/factr2_next/inference/checkpoint.py": "a03ae7e491f339766997e1d94427be5891c6e4cc6b249b98950e9516162042e6",
+    "factr2_next/src/factr2_next/factr2_next/w3_config.py": "28acef197708af8077a255148b1ed972798e7b2fa49784b710686099f1c909c7",
+    "scripts/observe_w3_joint_lstm.py": "1ba6abf1ff4ba2dea496c1b6362d75d7649594dc41a0528c68f5d7734e3972e7",
+    "scripts/export_w3_joint_lstm.py": "7fe125f5fba78344bf80a78c7dcf412bb500297ef58d750952c496f2133843d3",
+    "scripts/activate_w3_joint_lstm.py": "9d325a44f8cfaa4f8cd87c65db328171633e76cd135e76046a3bb02e76f35dd3",
+    "scripts/observe_w3_kinematic_compensation.py": "a43d53d6eb897491207cfa7e5d7216436c554a274ae6b6ab763566dc1a33f7f4",
+    "scripts/test_w3_joint_lstm.py": "a5e5b1fb72ac79b8b2788e624758441d277363b9ee34e4155acbaeb44bd82f2b",
+    "scripts/test_w3_joint_lstm_observer.py": "4ea98cbe51971ff49896d561583f7935011bbfb250f9eccb3eb7614e93dfb428",
+    "scripts/observe_w3_shared_baseline.py": "ec2e89bfa1643559bf09ec1f1c187c322db6d5b993c3304cfc025c845ee072a3"
+  },
+  "test_results": {
+    "epoch_resume_and_legacy_recovery": "2 passed, 7 deselected in 1.51s",
+    "parallel_mixed_precision": "1 passed, 8 deselected in 3.02s"
+  }
+}

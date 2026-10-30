@@ -1,0 +1,11 @@
+{
+  "status": "motion_aborted_data_preserved",
+  "reason": "paired_model_output_stale_after_approach",
+  "formal_high_speed_completed": false,
+  "completed_steps": 3,
+  "paired_frames": 19283,
+  "robot_postflight_static": true,
+  "automatic_retry": false,
+  "clock_restore_required": true,
+  "updated_utc": "2026-10-30T03:05:37.757108+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "phase": "finished",
+  "step_index": 0,
+  "events": [],
+  "operator_declared_empty": true,
+  "plan_sha256": "c5251d7540495beaabfcf37495fd29988891a9404eb0746553a8e6362006db43",
+  "automatic_retry": false,
+  "updated_utc": "2026-10-14T21:40:12.541445+00:00",
+  "recorder_pid": 51875,
+  "phase_started_utc": "2026-10-14T21:40:12.270476+00:00",
+  "error": "Recorder no longer receiving fresh complete test streams",
+  "finished_utc": "2026-10-14T21:40:12.332580+00:00"
+}

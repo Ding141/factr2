@@ -1,0 +1,23 @@
+{
+  "service": "running",
+  "pid": 22483,
+  "url": "http://127.0.0.1:8083/",
+  "state": "stale",
+  "reason": "input_timeout",
+  "outputs": 194082,
+  "experiment": "/home/venom/factr2/data/right/kinematic_compensation_20261025_v1",
+  "next_topic_root": "/next/right/kinematic_compensated",
+  "enabled_joints": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "compensation_applied": false,
+  "calibration": "uncalibrated",
+  "deployment_ready": false,
+  "contact_validated": false
+}

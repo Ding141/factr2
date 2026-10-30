@@ -1,0 +1,43 @@
+{
+  "profile_valid": true,
+  "manifest_independent": true,
+  "trained_on_robot_data": false,
+  "robot_motion": false,
+  "live_deployment": false,
+  "benchmarks": {
+    "lstm": {
+      "parameters": 244231,
+      "threads": {
+        "1": {
+          "median_ms": 0.4061765000642481,
+          "p99_ms": 0.42764900999827665
+        },
+        "4": {
+          "median_ms": 0.3111639999815452,
+          "p99_ms": 0.3315549099784222
+        },
+        "8": {
+          "median_ms": 0.4156769999781318,
+          "p99_ms": 0.5725063700811006
+        }
+      }
+    },
+    "joint_lstm": {
+      "parameters": 1698823,
+      "threads": {
+        "1": {
+          "median_ms": 2.8669815000057497,
+          "p99_ms": 2.9350926200345406
+        },
+        "4": {
+          "median_ms": 2.197742000021208,
+          "p99_ms": 2.524154799899634
+        },
+        "8": {
+          "median_ms": 1.9952480000142714,
+          "p99_ms": 3.4678833900306962
+        }
+      }
+    }
+  }
+}

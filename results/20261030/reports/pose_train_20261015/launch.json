@@ -1,0 +1,19 @@
+{
+  "pid": 10109,
+  "config": "/home/venom/factr2/data/right/pose_trial_20261015/train.yaml",
+  "log": "/home/venom/factr2/log/pose_train_20261015/train.log",
+  "command": [
+    "/usr/bin/nice",
+    "-n",
+    "5",
+    "/bin/bash",
+    "/home/venom/factr2/scripts/next.sh",
+    "python",
+    "-u",
+    "scripts/train_w3_pose_trial.py",
+    "--config",
+    "/home/venom/factr2/data/right/pose_trial_20261015/train.yaml"
+  ],
+  "scope": "single_session_pose_holdout_trial",
+  "automatic_deployment": false
+}

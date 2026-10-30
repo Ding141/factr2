@@ -1,0 +1,187 @@
+{
+  "purpose": "prospective simultaneous NEXT and NEXT+MD unloaded motion observation; excluded from training",
+  "role": "test",
+  "model_dir": "/home/venom/factr2/models/w3/right/targeted_candidate_20261016",
+  "model_hash": "b5216350f2c76a7462ab931e5d62e8f2442e00e65f0f4146fb4b7868829d62a6",
+  "endpoint_config": {
+    "side": "right",
+    "tool_frame": "right_attachment_point",
+    "root_frame": "base_footprint",
+    "robot_description_sha256": "e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345",
+    "inference_config": "/home/venom/factr2/config/w3/right/inference_targeted_20261016.yaml",
+    "solver": {
+      "characteristic_length_m": 0.4,
+      "damping": 0.005,
+      "max_condition": 100.0,
+      "max_relative_residual": 0.35,
+      "mode": "full_wrench"
+    },
+    "web": {
+      "host": "127.0.0.1",
+      "port": 8082,
+      "refresh_hz": 10,
+      "history_points": 600
+    },
+    "model_notice": "2026-10-16 待验收模型（最佳第12轮）；当前为真机只读观测。验证/测试仅覆盖6°/s，接触及卸载恢复尚未验证。"
+  },
+  "plan_sha256": "0c066960cf7eb4b64105c63d7fad3389fe2b9d96d59d3313513469cf4b6586ac",
+  "initial_command_deg": [
+    3.469446951953614e-18,
+    50.00000000000002,
+    -3.0357660829594124e-18,
+    -54.99999999999999,
+    -6.938893903907228e-18,
+    -8.673617379884035e-19,
+    1.734723475976807e-18
+  ],
+  "left_pose_deg": [
+    3.985658811985318,
+    -1.7110056194535699,
+    0.37541626606901507,
+    6.747143948891029,
+    -18.290425226065313,
+    -1.1561712396752308,
+    1.2525375315679916
+  ],
+  "command_bounds_deg": [
+    [
+      -2.3341456840778334,
+      2.3341456840778343
+    ],
+    [
+      47.6658543159222,
+      52.33414568407788
+    ],
+    [
+      -2.3341456840778334,
+      2.3341456840778343
+    ],
+    [
+      -57.334145684077825,
+      -52.66585431592215
+    ],
+    [
+      -2.3341456840778334,
+      2.3341456840778343
+    ],
+    [
+      -2.3341456840778334,
+      2.3341456840778343
+    ],
+    [
+      -2.3341456840778334,
+      2.3341456840778343
+    ]
+  ],
+  "training_envelope": {
+    "position_bounds_deg": [
+      [
+        -4.794407367706299,
+        24.77806854248047
+      ],
+      [
+        45.62163543701172,
+        64.52787017822266
+      ],
+      [
+        -13.022928237915039,
+        4.2003493309021
+      ],
+      [
+        -66.40821075439453,
+        -50.234107971191406
+      ],
+      [
+        -4.733500003814697,
+        10.631965637207031
+      ],
+      [
+        -13.284873008728027,
+        3.8728349208831787
+      ],
+      [
+        -4.779994487762451,
+        4.4436564445495605
+      ]
+    ],
+    "position_margin_deg": 0.0,
+    "source": "observed training positions only; rectangular bounds do not certify all pose combinations"
+  },
+  "velocity_caps_deg_s": [
+    6,
+    10
+  ],
+  "command_seconds": 119.37000000000002,
+  "steps": 20,
+  "ground_truth": {
+    "source": "operator requests unloaded test in this turn; no independent force sensor",
+    "assumed_external_wrench": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "independently_measured": false
+  },
+  "automatic_retry": false,
+  "models": {
+    "NEXT": {
+      "path": "/home/venom/factr2/models/w3/right/targeted_candidate_20261016",
+      "model_sha256": "b5216350f2c76a7462ab931e5d62e8f2442e00e65f0f4146fb4b7868829d62a6",
+      "endpoint_config": {
+        "side": "right",
+        "tool_frame": "right_attachment_point",
+        "root_frame": "base_footprint",
+        "robot_description_sha256": "e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345",
+        "inference_config": "/home/venom/factr2/config/w3/right/inference_targeted_20261016.yaml",
+        "solver": {
+          "characteristic_length_m": 0.4,
+          "damping": 0.005,
+          "max_condition": 100.0,
+          "max_relative_residual": 0.35,
+          "mode": "full_wrench"
+        },
+        "web": {
+          "host": "127.0.0.1",
+          "port": 8082,
+          "refresh_hz": 10,
+          "history_points": 600
+        },
+        "model_notice": "2026-10-16 待验收模型（最佳第12轮）；当前为真机只读观测。验证/测试仅覆盖6°/s，接触及卸载恢复尚未验证。"
+      }
+    },
+    "NEXT_MD": {
+      "path": "/home/venom/factr2/data/right/md_ablation_20261016_v2/next_md_seed0",
+      "model_sha256": "923bff7d716f33f2c91adec04d307deaebc1e03076939b30feafa3b9c5c4d7f0",
+      "recipe_sha256": "eb52bfae6e35bf023517d17d0d122a5fda22d2ea9dbda820ed3508a615fd0994",
+      "endpoint_config": {
+        "side": "right",
+        "tool_frame": "right_attachment_point",
+        "root_frame": "base_footprint",
+        "robot_description_sha256": "e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345",
+        "inference_config": "/home/venom/factr2/config/w3/right/inference_md_observation_20261016.yaml",
+        "solver": {
+          "characteristic_length_m": 0.4,
+          "damping": 0.005,
+          "max_condition": 100.0,
+          "max_relative_residual": 0.35,
+          "mode": "full_wrench"
+        },
+        "web": {
+          "host": "127.0.0.1",
+          "port": 8084,
+          "refresh_hz": 10,
+          "history_points": 600
+        },
+        "model_notice": "NEXT+MD 实验模型（最佳第8轮）。离线对照误差高于原版，当前仅观测。MD从零初始化，启动前运动历史未知；不扣零、不修改机器人控制。",
+        "next_topic_root": "/next/right/md",
+        "node_name": "right_endpoint_wrench_md_observer",
+        "model_label": "NEXT+MD · 右臂末端等效力与力矩",
+        "joint_dashboard_url": "http://127.0.0.1:8083/"
+      }
+    }
+  },
+  "md_state_policy": "observe already-running MD node without restart; prior online history is retained"
+}

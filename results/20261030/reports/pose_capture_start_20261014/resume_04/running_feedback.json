@@ -1,0 +1,63 @@
+{
+  "motors": [
+    {
+      "slot": 0,
+      "online": true,
+      "enabled": true,
+      "age": 0.0005972130002191989
+    },
+    {
+      "slot": 1,
+      "online": true,
+      "enabled": true,
+      "age": 0.0005972130002191989
+    },
+    {
+      "slot": 2,
+      "online": true,
+      "enabled": true,
+      "age": 0.0005972130002191989
+    },
+    {
+      "slot": 3,
+      "online": true,
+      "enabled": true,
+      "age": 0.0005972130002191989
+    },
+    {
+      "slot": 4,
+      "online": true,
+      "enabled": true,
+      "age": 0.0005972130002191989
+    },
+    {
+      "slot": 5,
+      "online": true,
+      "enabled": true,
+      "age": 0.0005972130002191989
+    },
+    {
+      "slot": 6,
+      "online": true,
+      "enabled": true,
+      "age": 0.0005972130002191989
+    }
+  ],
+  "state": {
+    "status": "failed",
+    "pid": 37267,
+    "side": "right",
+    "role": "train",
+    "domain": 74,
+    "plan": "/home/venom/factr2/log/pose_capture_start_20261014/resume_04/train.yaml",
+    "stop_file": "/home/venom/factr2/log/pose_capture_start_20261014/resume_04/STOP_CAPTURE",
+    "automatic_training": false,
+    "automatic_deployment": false,
+    "updated_at": "2026-10-14T22:49:27.273605+08:00",
+    "capture_pid": 37315,
+    "session": "/home/venom/factr2/data/quick_capture/right/20261014_224420_995437",
+    "motion_pid": 37812,
+    "error": "Motion failed; no automatic retry"
+  },
+  "completed_fast_j1": true
+}

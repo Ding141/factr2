@@ -1,0 +1,51 @@
+{
+  "isolated_ros_domain": 193,
+  "compressed_files": [
+    "bag_0.db3"
+  ],
+  "compression_format": "zstd",
+  "control_continuity_audit": {
+    "accepted": true,
+    "samples": 1500,
+    "joints": [
+      "right_joint_0",
+      "right_joint_1",
+      "right_joint_2",
+      "right_joint_3",
+      "right_joint_4",
+      "right_joint_5",
+      "right_joint_6"
+    ],
+    "median_period_s": 0.004,
+    "max_gap_s": 0.004,
+    "gaps_over_20ms": 0,
+    "max_speed_deg_s": [
+      0.057295779513082325,
+      0.057295779513082325,
+      0.057295779513082325,
+      0.057295779513082325,
+      0.057295779513082325,
+      0.057295779513082325,
+      0.057295779513082325
+    ],
+    "max_acceleration_deg_s2": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_step_vs_integrated_velocity_error_deg": [
+      6.896313785338833e-17,
+      6.896313785338833e-17,
+      6.896313785338833e-17,
+      6.896313785338833e-17,
+      6.896313785338833e-17,
+      6.896313785338833e-17,
+      6.896313785338833e-17
+    ],
+    "limitation": "Checks published target continuity and configured caps. Bag gaps cannot prove all unrecorded control cycles; actual motor smoothness requires the separate capture diagnostic."
+  }
+}

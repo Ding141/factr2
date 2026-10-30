@@ -1,0 +1,17 @@
+{
+  "status": "running_read_only_research",
+  "url": "http://127.0.0.1:8083/",
+  "baseline_url": "http://127.0.0.1:8082/",
+  "experiment": "/home/venom/factr2/data/right/kinematic_compensation_20261023_v2",
+  "report": "/home/venom/factr2/data/right/kinematic_compensation_20261023_v2/REPORT_ZH.md",
+  "model_sha256": "887d403a95a1a0fa1387232ae36e89bed368a0f9254a69a0d8a628d2502bed03",
+  "tests": {
+    "ordinary_passed": 30,
+    "isolated_domain199_passed": 1,
+    "streaming_replay_frames": 21945
+  },
+  "motion_commands_sent": 0,
+  "contact_validated": false,
+  "live_verification": "/home/venom/factr2/log/deploy_kinematic_compensation_20261023/verification.json",
+  "rollback": "Use the original 8082 window; stop only the new observation process if desired"
+}

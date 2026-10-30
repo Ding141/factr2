@@ -1,0 +1,26 @@
+{
+  "pid": 41022,
+  "side": "right",
+  "domain": 74,
+  "role": "train",
+  "operator_authorized_resume": true,
+  "fast_velocity_deg_s": [
+    16,
+    16,
+    16,
+    16,
+    16,
+    12,
+    16
+  ],
+  "fast_acceleration_deg_s2": [
+    60,
+    60,
+    60,
+    60,
+    60,
+    40,
+    60
+  ],
+  "tracking_limit_deg": 3
+}

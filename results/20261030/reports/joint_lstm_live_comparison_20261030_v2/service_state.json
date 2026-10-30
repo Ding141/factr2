@@ -1,0 +1,27 @@
+{
+  "service": "running",
+  "pid": 56952,
+  "state": "valid",
+  "reason": "ok",
+  "outputs": 233975,
+  "counts": {
+    "outputs": 233975,
+    "dropped": 88,
+    "resets": 34
+  },
+  "model_sha256": {
+    "old": "2cdd28518d828e234ae10d5f313b37af516969b77afad76661aaf0918b8a8e59",
+    "new": "bec10a63f3ef31bf41dc66560afb8247342f645b42f6d4516c0165e7d44a932b"
+  },
+  "compensation_enabled": false,
+  "same_input_history": true,
+  "packet_topic": "/next/right/model_comparison/frame",
+  "endpoint_force_enabled": true,
+  "last_stamp_ns": 1793332496287349899,
+  "last_packet_mono_age_seconds": 0.011606564000000002,
+  "old_state": "valid",
+  "infer_ms_p99": 35.21770921961433,
+  "cpu_threads": 1,
+  "old_url": "http://127.0.0.1:8082/",
+  "new_url": "http://127.0.0.1:8083/"
+}

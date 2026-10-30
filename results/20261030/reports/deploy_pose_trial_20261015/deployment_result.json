@@ -1,0 +1,191 @@
+{
+  "deployed_at": "2026-10-15T05:10:00.361187+08:00",
+  "checkpoint": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273",
+  "runtime_profile_compatible": true,
+  "model_accuracy_accepted": false,
+  "deployment_explicitly_authorized": true,
+  "automatic_deployment": false,
+  "inference_status": {
+    "outputs": 40625,
+    "dropped": 0,
+    "resets": 0,
+    "state": "valid",
+    "reason": "ok",
+    "history_count": 50,
+    "source_age_seconds": 0.007905055000000001,
+    "receive_age_seconds": 0.005308426000055988,
+    "last_output_stamp_ns": 1792012133335669308,
+    "output_hz": 100,
+    "infer_ms": 0.7669970000279136,
+    "infer_p95_ms": 1.034970800009205,
+    "device": "cpu",
+    "message": "valid:ok"
+  },
+  "adapter_status": {
+    "state_receive_age_seconds": 0.0018557529999725375,
+    "state_source_age_seconds": 0.002025537,
+    "command_receive_age_seconds": 0.0017940129999942656,
+    "command_source_age_seconds": 0.002025537,
+    "output_hz_last_second": 100,
+    "health_mode": "required",
+    "health_receive_age_seconds": 0.00621789899992109,
+    "health_source_age_seconds": 0.0066013980000000005,
+    "health_source_stamp_ns": 1792012133341097651,
+    "source_skew_seconds": 0.0,
+    "invalid": 0,
+    "stale": 0,
+    "duplicate": 0,
+    "skew": 0,
+    "health_rejected": 1,
+    "clock_reset": 0,
+    "outputs": 40742,
+    "side": "right",
+    "recent_rejection": "health_missing_stale_or_error",
+    "state_source_stamp_ns": 1792012133345673512,
+    "command_source_stamp_ns": 1792012133345673512,
+    "message": "ok"
+  },
+  "reference_motion": {
+    "operator_authorized": true,
+    "status": "completed",
+    "plan_sha256": "482e8faa842ee5bb4abba13ce551d39ac69774373da9de4db14bf16f1a746029",
+    "target_deg": [
+      0.0,
+      50.0,
+      0.0,
+      -55.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "automatic_retry": false,
+    "arrival_error_deg": [
+      0.12343763420776382,
+      -0.6845429600385201,
+      -0.7830111379218275,
+      0.7223624634522618,
+      -0.9141507699860724,
+      0.4850065529471346,
+      0.8372620300312164
+    ],
+    "max_tracking_deg": [
+      0.12343763420776382,
+      1.412626541590659,
+      0.7830111379218275,
+      2.0131180897943515,
+      0.9360073753301131,
+      0.4850065529471346,
+      0.8961208191056729
+    ],
+    "actual_deg": [
+      0.12343763420776382,
+      49.31545703996148,
+      -0.7830111379218275,
+      -54.277637536547736,
+      -0.9141507699860724,
+      0.4850065529471346,
+      0.8372620300312164
+    ]
+  },
+  "endpoint": {
+    "state": "valid",
+    "reasons": [],
+    "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+    "estimation_mode": "full_wrench",
+    "moments_observed": true,
+    "geometry": {
+      "condition_number": 12.49184164532743,
+      "scaled_singular_values": [
+        2.0399720045152203,
+        1.6492493889010906,
+        1.4471744216518911,
+        0.5475119060329449,
+        0.438218516953692,
+        0.16330434394181353
+      ],
+      "mode": "full_wrench",
+      "observable_rank": 6,
+      "moments_observed": true,
+      "assumption": "all_external_loading_at_tool_origin",
+      "torque_fit_error_nm": 0.007385375879299875,
+      "relative_fit_error": 0.07385375879299874,
+      "reason": "ok",
+      "valid": true
+    },
+    "frame_id": "right_attachment_point",
+    "moment_reference_point": "right_attachment_point",
+    "sign_convention": "NEXT_residual",
+    "outputs": 10792,
+    "wrench": {
+      "fx": -0.059715161446641275,
+      "fy": -0.22223665097521753,
+      "fz": 0.43623294643165866,
+      "mx": 0.01696658466624152,
+      "my": 0.05439872578782862,
+      "mz": 0.001218492938251738
+    },
+    "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+  },
+  "all_motors_healthy": true,
+  "windows": [
+    "http://127.0.0.1:8081/",
+    "http://127.0.0.1:8082/"
+  ],
+  "configs": {
+    "inference": "/home/venom/factr2/log/deploy_pose_trial_20261015/inference.yaml",
+    "endpoint": "/home/venom/factr2/log/force_pose_20261015/attempt_02/endpoint_full.yaml"
+  },
+  "processes": {
+    "health": {
+      "pid": 10962,
+      "command": [
+        "/bin/bash",
+        "--noprofile",
+        "--norc",
+        "-c",
+        "source /opt/ros/humble/setup.bash; source /home/venom/dual_arm_robot/install/local_setup.bash; exec /usr/bin/python3.10 /home/venom/factr2/factr2_w3_adapter/tools/w3_health_monitor.py"
+      ]
+    },
+    "adapter": {
+      "pid": 10963,
+      "command": [
+        "/bin/bash",
+        "/home/venom/factr2/scripts/next.sh",
+        "ros2",
+        "launch",
+        "factr2_w3_adapter",
+        "adapter.launch.py",
+        "side:=right",
+        "profile:=real",
+        "publish_hz:=100"
+      ]
+    },
+    "next": {
+      "pid": 10964,
+      "command": [
+        "/bin/bash",
+        "/home/venom/factr2/scripts/next.sh",
+        "ros2",
+        "launch",
+        "factr2_next",
+        "readonly.launch.py",
+        "side:=right",
+        "inference_config:=/home/venom/factr2/log/deploy_pose_trial_20261015/inference.yaml",
+        "web_config:=/home/venom/factr2/config/w3/right/visualize.yaml"
+      ]
+    },
+    "endpoint": {
+      "pid": 10971,
+      "command": [
+        "/bin/bash",
+        "/home/venom/factr2/scripts/next.sh",
+        "python",
+        "scripts/w3_endpoint_wrench.py",
+        "--config",
+        "/home/venom/factr2/log/deploy_pose_trial_20261015/endpoint.yaml"
+      ]
+    }
+  },
+  "latest_motion": "/home/venom/factr2/log/force_pose_20261015/attempt_02/motion_run.json",
+  "latest_force_verification": "/home/venom/factr2/log/force_pose_20261015/attempt_02/final_verification.json"
+}

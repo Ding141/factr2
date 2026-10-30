@@ -1,0 +1,44 @@
+{
+  "status": "stopped",
+  "side": "right",
+  "domain": 74,
+  "frequency_hz": 100,
+  "pid": 12867,
+  "started_at": "2026-10-13T22:12:47.591550+08:00",
+  "operator_confirmed_left_pose_deg": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "operator_confirmed_empty_clearance": true,
+  "roles": {
+    "train": {
+      "session": "/home/venom/factr2/data/quick_capture/right/20261013_221316_579007",
+      "status": "completed",
+      "capture_pid": 12914,
+      "plan": "/home/venom/factr2/log/live_next_campaign_20261013/train_motion.yaml",
+      "collision_report": "/home/venom/factr2/log/live_next_campaign_20261013/train_motion.collision.json",
+      "started_at": "2026-10-13T22:13:40.208436+08:00",
+      "motion_pid": 13462,
+      "ended_at": "2026-10-13T23:02:06.816978+08:00"
+    },
+    "val": {
+      "session": "/home/venom/factr2/data/quick_capture/right/20261013_230234_420641",
+      "status": "recording",
+      "capture_pid": 14798,
+      "plan": "/home/venom/factr2/log/live_next_campaign_20261013/val_motion.yaml",
+      "collision_report": "/home/venom/factr2/log/live_next_campaign_20261013/val_motion.collision.json",
+      "started_at": "2026-10-13T23:02:58.519086+08:00",
+      "motion_pid": 15240
+    }
+  },
+  "automatic_deployment": false,
+  "current_role": "val",
+  "error": "Operator STOP_CAPTURE",
+  "ended_at": "2026-10-13T23:19:58.506657+08:00",
+  "stop_semantics": "No further trajectory windows; position and gravity controllers remain active"
+}

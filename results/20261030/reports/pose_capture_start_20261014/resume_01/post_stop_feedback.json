@@ -1,0 +1,1622 @@
+[
+  {
+    "time": 1791986560.1962729,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0016740949995437404,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0016740949995437404,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0016740949995437404,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0016740949995437404,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0016740949995437404,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0016740949995437404,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0016740949995437404,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986560.3980203,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0009415300000910065,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0009415300000910065,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0009415300000910065,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0009415300000910065,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0009415300000910065,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0009415300000910065,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0009415300000910065,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986560.6000373,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.002507580999917991,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.002507580999917991,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.002507580999917991,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.002507580999917991,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.002507580999917991,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.002507580999917991,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.002507580999917991,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986560.8020377,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0019151179994878476,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0019151179994878476,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0019151179994878476,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0019151179994878476,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0019151179994878476,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0019151179994878476,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0019151179994878476,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986561.0047255,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0009545910006636404,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0009545910006636404,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0009545910006636404,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0009545910006636404,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0009545910006636404,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0009545910006636404,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0009545910006636404,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986561.2063959,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0007515620000049239,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0007515620000049239,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0007515620000049239,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0007515620000049239,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0007515620000049239,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0007515620000049239,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0007515620000049239,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986561.4079201,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0021145850005268585,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0021145850005268585,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0021145850005268585,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0021145850005268585,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0021145850005268585,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0021145850005268585,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0021145850005268585,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986561.6094089,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0010103929998876993,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0010103929998876993,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0010103929998876993,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0010103929998876993,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0010103929998876993,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0010103929998876993,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0010103929998876993,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986561.8120017,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.002888705000259506,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.002888705000259506,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.002888705000259506,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.002888705000259506,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.002888705000259506,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.002888705000259506,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.002888705000259506,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986562.0145316,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0024161589999494026,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0024161589999494026,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0024161589999494026,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0024161589999494026,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0024161589999494026,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0024161589999494026,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0024161589999494026,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986562.216228,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0017999490000875085,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0017999490000875085,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0017999490000875085,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0017999490000875085,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0017999490000875085,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0017999490000875085,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0017999490000875085,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986562.41789,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0009593400000085239,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0009593400000085239,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0009593400000085239,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0009593400000085239,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0009593400000085239,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0009593400000085239,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0009593400000085239,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986562.6198206,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.002363918000810372,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.002363918000810372,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.002363918000810372,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.002363918000810372,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.002363918000810372,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.002363918000810372,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.002363918000810372,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986562.8217638,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0016574740002397448,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0016574740002397448,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0016574740002397448,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0016574740002397448,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0016574740002397448,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0016574740002397448,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0016574740002397448,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986563.023851,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0006933839995326707,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0006933839995326707,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0006933839995326707,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0006933839995326707,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0006933839995326707,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0006933839995326707,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0006933839995326707,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986563.2257884,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0027735359999496723,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0027735359999496723,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0027735359999496723,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0027735359999496723,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0027735359999496723,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0027735359999496723,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0027735359999496723,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986563.4283373,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0023686670001552557,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0023686670001552557,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0023686670001552557,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0023686670001552557,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0023686670001552557,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0023686670001552557,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0023686670001552557,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986563.6306143,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.001582672999575152,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.001582672999575152,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.001582672999575152,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.001582672999575152,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.001582672999575152,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.001582672999575152,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.001582672999575152,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986563.8326087,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0009902100000545033,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0009902100000545033,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0009902100000545033,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0009902100000545033,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0009902100000545033,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0009902100000545033,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0009902100000545033,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986564.0352218,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.00036687600004370324,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.00036687600004370324,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.00036687600004370324,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.00036687600004370324,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.00036687600004370324,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.00036687600004370324,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.00036687600004370324,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986564.2377365,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0025859440002022893,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0025859440002022893,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0025859440002022893,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0025859440002022893,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0025859440002022893,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0025859440002022893,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0025859440002022893,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986564.4392512,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0022701210000377614,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0022701210000377614,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0022701210000377614,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0022701210000377614,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0022701210000377614,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0022701210000377614,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0022701210000377614,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986564.6414676,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0011409970002205228,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0011409970002205228,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0011409970002205228,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0011409970002205228,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0011409970002205228,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0011409970002205228,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0011409970002205228,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986564.8436782,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0006423300001188181,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0006423300001188181,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0006423300001188181,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0006423300001188181,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0006423300001188181,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0006423300001188181,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0006423300001188181,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986565.0457807,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0026203749994238024,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0026203749994238024,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0026203749994238024,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0026203749994238024,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0026203749994238024,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0026203749994238024,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0026203749994238024,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986565.2481706,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0023247369999808143,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0023247369999808143,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0023247369999808143,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0023247369999808143,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0023247369999808143,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0023247369999808143,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0023247369999808143,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986565.4498158,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0013582729998233845,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0013582729998233845,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0013582729998233845,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0013582729998233845,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0013582729998233845,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0013582729998233845,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0013582729998233845,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986565.6523292,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0005117270002301666,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0005117270002301666,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0005117270002301666,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0005117270002301666,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0005117270002301666,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0005117270002301666,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0005117270002301666,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986565.8549435,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0003716259998327587,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0003716259998327587,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0003716259998327587,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0003716259998327587,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0003716259998327587,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0003716259998327587,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0003716259998327587,
+        "error": 1
+      }
+    ]
+  },
+  {
+    "time": 1791986566.0569534,
+    "motors": [
+      {
+        "slot": 0,
+        "online": true,
+        "enabled": true,
+        "age": 0.0022618100001636776,
+        "error": 1
+      },
+      {
+        "slot": 1,
+        "online": true,
+        "enabled": true,
+        "age": 0.0022618100001636776,
+        "error": 1
+      },
+      {
+        "slot": 2,
+        "online": true,
+        "enabled": true,
+        "age": 0.0022618100001636776,
+        "error": 1
+      },
+      {
+        "slot": 3,
+        "online": true,
+        "enabled": true,
+        "age": 0.0022618100001636776,
+        "error": 1
+      },
+      {
+        "slot": 4,
+        "online": false,
+        "enabled": true,
+        "age": 0.0022618100001636776,
+        "error": 1
+      },
+      {
+        "slot": 5,
+        "online": false,
+        "enabled": true,
+        "age": 0.0022618100001636776,
+        "error": 1
+      },
+      {
+        "slot": 6,
+        "online": false,
+        "enabled": true,
+        "age": 0.0022618100001636776,
+        "error": 1
+      }
+    ]
+  }
+]

@@ -1,0 +1,193 @@
+{
+  "status": "completed",
+  "session": "/home/venom/factr2/data/quick_capture/right/20261019_225752_773614",
+  "rows": 14263,
+  "max_sample_gap_ms": 13.345272,
+  "steps": 22,
+  "formal_motion": {
+    "rows": 2760,
+    "valid_rows": 2271,
+    "valid_fraction": 0.8228260869565217,
+    "reasons": {
+      "ok": 2271,
+      "inconsistent_with_tool_contact": 489
+    },
+    "force_norm_rms_n": 2.5389509415420375,
+    "force_norm_p95_n": 3.936419448822723,
+    "force_norm_max_n": 5.106531139375121,
+    "force_mean_n": [
+      -0.07878468911233177,
+      -0.12716784960072622,
+      -0.1854164629385293
+    ],
+    "raw_residual_vector_rms_nm": 0.28951220537675176
+  },
+  "motion_including_probes": {
+    "rows": 7254,
+    "valid_rows": 6113,
+    "valid_fraction": 0.8427074717397298,
+    "reasons": {
+      "ok": 6113,
+      "inconsistent_with_tool_contact": 1141
+    },
+    "force_norm_rms_n": 1.9470684273015832,
+    "force_norm_p95_n": 3.866371963948262,
+    "force_norm_max_n": 6.114294707554388,
+    "force_mean_n": [
+      -0.11300434784773507,
+      -0.10658961706670377,
+      -0.055967023649906474
+    ],
+    "raw_residual_vector_rms_nm": 0.25835392954294917
+  },
+  "segments": [
+    {
+      "name": "0010_diagnostic_j1_v0.6_out",
+      "rows": 460,
+      "valid_rows": 460,
+      "valid_fraction": 1.0,
+      "reasons": {
+        "ok": 460
+      },
+      "force_norm_rms_n": 3.122812917989541,
+      "force_norm_p95_n": 3.7566830121597286,
+      "force_norm_max_n": 3.859695982123596,
+      "force_mean_n": [
+        -0.15757472926681892,
+        -0.05975691892548849,
+        -3.0112814961561503
+      ],
+      "raw_residual_vector_rms_nm": 0.3501763542882563
+    },
+    {
+      "name": "0012_diagnostic_j1_v0.6_return",
+      "rows": 460,
+      "valid_rows": 460,
+      "valid_fraction": 1.0,
+      "reasons": {
+        "ok": 460
+      },
+      "force_norm_rms_n": 1.7840714667696451,
+      "force_norm_p95_n": 2.331258512944316,
+      "force_norm_max_n": 2.521154026786994,
+      "force_mean_n": [
+        -0.2075687465732894,
+        -0.09573241309662586,
+        1.6282584666140998
+      ],
+      "raw_residual_vector_rms_nm": 0.23506662347050028
+    },
+    {
+      "name": "0014_diagnostic_j2_v0.6_out",
+      "rows": 460,
+      "valid_rows": 223,
+      "valid_fraction": 0.48478260869565215,
+      "reasons": {
+        "ok": 223,
+        "inconsistent_with_tool_contact": 237
+      },
+      "force_norm_rms_n": 0.5592714905423664,
+      "force_norm_p95_n": 0.8076240282094846,
+      "force_norm_max_n": 0.8455335793412295,
+      "force_mean_n": [
+        -0.42173112499069804,
+        -0.04973240352839024,
+        -0.0724621685437607
+      ],
+      "raw_residual_vector_rms_nm": 0.20336140888613694
+    },
+    {
+      "name": "0016_diagnostic_j2_v0.6_return",
+      "rows": 460,
+      "valid_rows": 229,
+      "valid_fraction": 0.49782608695652175,
+      "reasons": {
+        "ok": 229,
+        "inconsistent_with_tool_contact": 231
+      },
+      "force_norm_rms_n": 1.0026739056790404,
+      "force_norm_p95_n": 1.4749575507187125,
+      "force_norm_max_n": 1.567679601435544,
+      "force_mean_n": [
+        0.6820867584855925,
+        0.035462728013796414,
+        0.6171292456510872
+      ],
+      "raw_residual_vector_rms_nm": 0.2989940304417922
+    },
+    {
+      "name": "0018_diagnostic_j4_v0.6_out",
+      "rows": 460,
+      "valid_rows": 452,
+      "valid_fraction": 0.9826086956521739,
+      "reasons": {
+        "ok": 452,
+        "inconsistent_with_tool_contact": 8
+      },
+      "force_norm_rms_n": 2.863285580091796,
+      "force_norm_p95_n": 4.05048376116549,
+      "force_norm_max_n": 4.299697094564513,
+      "force_mean_n": [
+        -0.08319697450020655,
+        0.9593724945534868,
+        -2.416036511496149
+      ],
+      "raw_residual_vector_rms_nm": 0.27911702755852086
+    },
+    {
+      "name": "0020_diagnostic_j4_v0.6_return",
+      "rows": 460,
+      "valid_rows": 447,
+      "valid_fraction": 0.9717391304347827,
+      "reasons": {
+        "ok": 447,
+        "inconsistent_with_tool_contact": 13
+      },
+      "force_norm_rms_n": 3.237015551482464,
+      "force_norm_p95_n": 4.753737929255321,
+      "force_norm_max_n": 5.106531139375121,
+      "force_mean_n": [
+        -0.07942018889001609,
+        -1.4495304250102494,
+        2.6442836147278848
+      ],
+      "raw_residual_vector_rms_nm": 0.34112240891378093
+    }
+  ],
+  "assumptions": "Unloaded declaration retained from operator; no independent force sensor. Published filtered wrench, raw NEXT torque residual.",
+  "no_time_shift_fit_or_zero_offset_subtraction": true,
+  "before": {
+    "rows": 800,
+    "valid_rows": 800,
+    "valid_fraction": 1.0,
+    "reasons": {
+      "ok": 800
+    },
+    "force_norm_rms_n": 0.7339842456793146,
+    "force_norm_p95_n": 0.8713786032490504,
+    "force_norm_max_n": 1.058863763485253,
+    "force_mean_n": [
+      -0.06622397544276185,
+      -0.3687587458464017,
+      -0.6195111760513035
+    ],
+    "raw_residual_vector_rms_nm": 0.19065396417131822
+  },
+  "after": {
+    "rows": 800,
+    "valid_rows": 800,
+    "valid_fraction": 1.0,
+    "reasons": {
+      "ok": 800
+    },
+    "force_norm_rms_n": 0.27130880213860914,
+    "force_norm_p95_n": 0.46473314800752663,
+    "force_norm_max_n": 0.6958033225270591,
+    "force_mean_n": [
+      -0.07490941201986934,
+      -0.0093467648015619,
+      -0.20295286250203134
+    ],
+    "raw_residual_vector_rms_nm": 0.06944103922257468
+  }
+}

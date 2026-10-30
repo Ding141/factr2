@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "rows": 309,
+  "source_rate_hz": 99.6764851131799,
+  "max_source_gap_ms": 13.34493,
+  "recording": "full precision same-frame old/new",
+  "physical_motion": false
+}

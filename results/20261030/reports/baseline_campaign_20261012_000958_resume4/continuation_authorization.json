@@ -1,0 +1,9 @@
+{
+  "user_instruction": "采集完成之后直接开始训练，这期间不用我批准，如果机器出问题停下来就检查原因然后继续",
+  "capture_to_training_already_automatic": true,
+  "automatic_supervised_recovery_authorized": true,
+  "heartbeat_automation_id": "automation",
+  "check_interval_minutes": 5,
+  "robot_control_restart_without_support_authorized": false,
+  "automatic_deployment": false
+}

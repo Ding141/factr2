@@ -1,0 +1,174 @@
+{
+  "status": "completed_two_low_speed_pilot_batches",
+  "side": "right",
+  "thermal": "unclassified_with_measured_nominal_CAN_temperatures",
+  "profile": "v06_a15",
+  "single_joint_training_excitation": [
+    "J1"
+  ],
+  "coupled_excitation": "all seven joints",
+  "higher_speed_cold_warm_and_independent_validation_sessions_completed": false,
+  "old_models_deleted": false,
+  "batches": {
+    "continuous": {
+      "raw_session": "/home/venom/factr2/data/quick_capture/right/20261016_174822_112445",
+      "derived": "/home/venom/factr2/data/right/targeted/20261016_174822_continuous_train",
+      "motion_blocks": 12,
+      "raw_rows": 20762,
+      "actual_hz": [
+        99.99997749916213
+      ],
+      "max_gap_ms": 10.172801999999999,
+      "max_tracking_deg": 1.7055004739053938,
+      "derived_rows": 1730,
+      "derived_episodes": 2,
+      "temperature_valid_fraction": 1.0,
+      "can_frames": 511158,
+      "can_drops": 0,
+      "missing_kernel_timestamps": 0,
+      "last_nominal_temperature_c": {
+        "2": {
+          "mos": 30,
+          "rotor": 27
+        },
+        "3": {
+          "mos": 29,
+          "rotor": 26
+        },
+        "4": {
+          "mos": 28,
+          "rotor": 26
+        },
+        "5": {
+          "mos": 28,
+          "rotor": 26
+        },
+        "6": {
+          "mos": 28,
+          "rotor": 26
+        },
+        "7": {
+          "mos": 29,
+          "rotor": 26
+        },
+        "1": {
+          "mos": 30,
+          "rotor": 26
+        }
+      },
+      "raw_quality_accepted": true,
+      "derived_quality_accepted": true
+    },
+    "hysteresis": {
+      "raw_session": "/home/venom/factr2/data/quick_capture/right/20261016_175255_734151",
+      "derived": "/home/venom/factr2/data/right/targeted/20261016_175255_hysteresis_train",
+      "motion_blocks": 21,
+      "raw_rows": 18476,
+      "actual_hz": [
+        100.00000949986557
+      ],
+      "max_gap_ms": 13.332211000000001,
+      "max_tracking_deg": 1.7078945057597283,
+      "derived_rows": 6160,
+      "derived_episodes": 12,
+      "temperature_valid_fraction": 1.0,
+      "can_frames": 454440,
+      "can_drops": 0,
+      "missing_kernel_timestamps": 0,
+      "last_nominal_temperature_c": {
+        "3": {
+          "mos": 29,
+          "rotor": 27
+        },
+        "4": {
+          "mos": 28,
+          "rotor": 27
+        },
+        "5": {
+          "mos": 29,
+          "rotor": 27
+        },
+        "6": {
+          "mos": 28,
+          "rotor": 27
+        },
+        "7": {
+          "mos": 30,
+          "rotor": 27
+        },
+        "1": {
+          "mos": 30,
+          "rotor": 26
+        },
+        "2": {
+          "mos": 31,
+          "rotor": 28
+        }
+      },
+      "raw_quality_accepted": true,
+      "derived_quality_accepted": true
+    }
+  },
+  "disk_free_gib": 0.9316787719726562,
+  "final_state": {
+    "right": {
+      "actual_deg": [
+        0.12343763420776382,
+        50.69242317663605,
+        0.35353233996829425,
+        -54.19021111517158,
+        0.4903373865779532,
+        0.31015371019480814,
+        0.8591186353752571
+      ],
+      "target_deg": [
+        0.0,
+        50.0,
+        0.0,
+        -55.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_tracking_deg": 0.8591186353752571
+    },
+    "left": {
+      "actual_deg": [
+        3.985658811985318,
+        -1.6017225927333658,
+        0.37541626606901507,
+        6.747143948891029,
+        -18.268568620721272,
+        -1.1561712396752308,
+        1.2525375315679916
+      ],
+      "target_deg": [
+        3.985658811985318,
+        -1.6017225927333658,
+        0.37541626606901507,
+        6.747143948891029,
+        -18.268568620721272,
+        -1.1561712396752308,
+        1.2525375315679916
+      ],
+      "max_tracking_deg": 0.0
+    }
+  },
+  "recording_active": false,
+  "software_auxiliary_nodes_cleanup": {
+    "stopped": [
+      {
+        "pid": 26017,
+        "signal": "SIGINT",
+        "component": "adapter_launch_pid"
+      },
+      {
+        "pid": 24935,
+        "signal": "SIGINT",
+        "component": "health_pid"
+      }
+    ],
+    "robot_controllers_untouched": true,
+    "gravity_and_position_remain_active": true
+  }
+}

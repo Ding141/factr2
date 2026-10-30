@@ -1,0 +1,129 @@
+{
+  "removed": [
+    {
+      "path": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273/best_epoch_0005.pt",
+      "kind": "obsolete_intermediate_checkpoint",
+      "bytes": 1056178,
+      "sha256": "7ea42c26be66a8d2f7063575fbb15573aa53d712251f67a00ff8928a83ebef92"
+    },
+    {
+      "path": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273/best_epoch_0010.pt",
+      "kind": "obsolete_intermediate_checkpoint",
+      "bytes": 1067506,
+      "sha256": "9d2ef2eb758772ab6b5b0380f7729003933ab713de89cc1dc728bd730fa2778c"
+    },
+    {
+      "path": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273/best_epoch_0011.pt",
+      "kind": "obsolete_intermediate_checkpoint",
+      "bytes": 1069810,
+      "sha256": "283d425f84137f346d8f3186cb37b902dc939119da5556adc96aecd4b54e57b0"
+    },
+    {
+      "path": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273/best_epoch_0008.pt",
+      "kind": "obsolete_intermediate_checkpoint",
+      "bytes": 1063026,
+      "sha256": "44aca475107230543e92fcc37c7464169284bcc5f08a8d7ea5bdc64574d87135"
+    },
+    {
+      "path": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273/best_epoch_0009.pt",
+      "kind": "obsolete_intermediate_checkpoint",
+      "bytes": 1065266,
+      "sha256": "487d3192dac96d458c471860be44cc304dc7e1a276bd4b3fbb36c01f52ed5ce9"
+    },
+    {
+      "path": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273/best_epoch_0003.pt",
+      "kind": "obsolete_intermediate_checkpoint",
+      "bytes": 1051634,
+      "sha256": "f490dfb02dc69761a591cd2c28beb7dc2fa29dc5c91f10c319cfa3d036b33683"
+    },
+    {
+      "path": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273/best_epoch_0016.pt",
+      "kind": "obsolete_intermediate_checkpoint",
+      "bytes": 1081138,
+      "sha256": "ee009582bc7c64b24bea93920f957e8c29ac035d5ebbcc4c1829de80582afe52"
+    },
+    {
+      "path": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273/best_epoch_0007.pt",
+      "kind": "obsolete_intermediate_checkpoint",
+      "bytes": 1060722,
+      "sha256": "95f65412e99066f9e48acde342b4bc1be3834b757938e2e6e39e1270f87e15aa"
+    },
+    {
+      "path": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273/best_epoch_0006.pt",
+      "kind": "obsolete_intermediate_checkpoint",
+      "bytes": 1058482,
+      "sha256": "86e31551c38e49c2c1b526849e9b28f9e865a01ccdec21b246fd6d65e0cd421d"
+    },
+    {
+      "path": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273/best_epoch_0004.pt",
+      "kind": "obsolete_intermediate_checkpoint",
+      "bytes": 1053938,
+      "sha256": "a23eaea0648c021946a0ea81a48db87c6dc06cc86edf2bfbf04615045add0d0c"
+    },
+    {
+      "path": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273/best_epoch_0002.pt",
+      "kind": "obsolete_intermediate_checkpoint",
+      "bytes": 1049394,
+      "sha256": "6d7463c1e56e2d3614708cef5cdd7e9445fd98b7035323fdcd24376e6ad55544"
+    },
+    {
+      "path": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273/best_epoch_0001.pt",
+      "kind": "obsolete_intermediate_checkpoint",
+      "bytes": 1047090,
+      "sha256": "cebe11bf3e0a396f8683370af5bb7121d88133539c8170bfc0e0cb882158b628"
+    },
+    {
+      "path": "/home/venom/factr2/runs/next_right_next_v2_campaign_fresh_20261014_054103_user_stop_replay4_20261014_064800_044091/best_epoch_0003.pt",
+      "kind": "obsolete_intermediate_checkpoint",
+      "bytes": 1081394,
+      "sha256": "2c1aad82118a0fce7be88dc4b085b77d250a58ebb048583b590c94ccadbfb874"
+    },
+    {
+      "path": "/home/venom/factr2/runs/next_right_next_v2_campaign_fresh_20261014_054103_user_stop_replay4_20261014_064800_044091/best_epoch_0002.pt",
+      "kind": "obsolete_intermediate_checkpoint",
+      "bytes": 1069234,
+      "sha256": "8b580f59901efbe29a5ae2450b03a89d7aa3df277ec85992545deeebb8ad2c7a"
+    },
+    {
+      "path": "/home/venom/factr2/runs/next_right_next_v2_campaign_fresh_20261014_054103_user_stop_replay4_20261014_064800_044091/best_epoch_0001.pt",
+      "kind": "obsolete_intermediate_checkpoint",
+      "bytes": 1057010,
+      "sha256": "f1d879459cc74925b3eb5a7c092d6103c697f14fc240b07ffa12eb528f56420b"
+    },
+    {
+      "path": "/home/venom/factr2/log/tmp/pytest-of-venom/pytest-37",
+      "kind": "synthetic_test_temporary_files",
+      "bytes": 29155966
+    },
+    {
+      "path": "/home/venom/factr2/log/tmp/pytest-of-venom/pytest-38",
+      "kind": "synthetic_test_temporary_files",
+      "bytes": 29155968
+    },
+    {
+      "path": "/home/venom/factr2/log/tmp/pytest-of-venom/pytest-39",
+      "kind": "synthetic_test_temporary_files",
+      "bytes": 29155957
+    }
+  ],
+  "protected_models": [
+    {
+      "path": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273/model.pt",
+      "sha256": "f8a2bff3962490e3902c2a092067569148ec9037eef30267ff780de61c3bdb22"
+    },
+    {
+      "path": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273/best_epoch_0019.pt",
+      "sha256": "718458e104fe3d395c78af0225ea4c2d20b6babc06440112b3401031a3b6bb45"
+    },
+    {
+      "path": "/home/venom/factr2/runs/next_right_next_v2_campaign_fresh_20261014_054103_user_stop_replay4_20261014_064800_044091/model.pt",
+      "sha256": "e000f998b9e31c20b15f07b962bb2759b4853958f00d43b0474d8fc49be192b4"
+    },
+    {
+      "path": "/home/venom/factr2/runs/next_right_next_v2_campaign_fresh_20261014_054103_user_stop_replay4_20261014_064800_044091/best_epoch_0004.pt",
+      "sha256": "10ec68a9d57c6e7bc4b8d000d2b0e78b67204ab62b8b3a354fff02172f682fce"
+    }
+  ],
+  "real_robot_logs_deleted": false,
+  "bytes_reclaimed": 103399713
+}

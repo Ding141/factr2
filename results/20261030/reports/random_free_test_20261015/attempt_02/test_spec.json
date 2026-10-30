@@ -1,0 +1,100 @@
+{
+  "seed": 20261015,
+  "random_targets": 24,
+  "center_deg": [
+    31.22925886128147,
+    59.04301950450884,
+    -6.221045769842622,
+    -59.83669705822461,
+    5.766166521394446,
+    -10.231807742406364,
+    1.2553598227556435
+  ],
+  "amplitude_deg": [
+    7.0,
+    7.0,
+    7.0,
+    6.0,
+    7.0,
+    5.0,
+    7.0
+  ],
+  "left_pose_deg": [
+    -0.6042829517766106,
+    -0.7711715896598152,
+    0.37541626606901507,
+    0.627239811046244,
+    6.75762698879897,
+    -1.1561712396752308,
+    1.2525375315679916
+  ],
+  "speed_limits_deg_s": [
+    12.0,
+    12.0,
+    12.0,
+    12.0,
+    12.0,
+    12.0,
+    12.0
+  ],
+  "acceleration_limits_deg_s2": [
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0
+  ],
+  "tracking_stop_limit_deg": 3.0,
+  "arrival_tolerance_deg": 1.5,
+  "motion_seconds_nominal": 43.96,
+  "baseline_before_seconds": 8,
+  "settling_after_seconds": 3,
+  "baseline_after_seconds": 8,
+  "ground_truth": {
+    "source": "operator_declared_empty_no_external_contact",
+    "external_joint_torque_nm": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "endpoint_wrench": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "independent_force_sensor": false
+  },
+  "model_hash": "f8a2bff3962490e3902c2a092067569148ec9037eef30267ff780de61c3bdb22",
+  "model_dir": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273",
+  "endpoint_config": {
+    "side": "right",
+    "tool_frame": "right_attachment_point",
+    "root_frame": "base_footprint",
+    "robot_description_sha256": "e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345",
+    "inference_config": "/home/venom/factr2/log/deploy_pose_trial_20261015/inference.yaml",
+    "solver": {
+      "characteristic_length_m": 0.4,
+      "damping": 0.005,
+      "max_condition": 100.0,
+      "max_relative_residual": 0.35,
+      "mode": "full_wrench"
+    },
+    "web": {
+      "host": "127.0.0.1",
+      "port": 8082,
+      "refresh_hz": 10,
+      "history_points": 600
+    },
+    "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+  },
+  "motion_sent": false
+}

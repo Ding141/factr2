@@ -1,0 +1,51 @@
+[
+  {
+    "path": "/home/venom/factr2/log/next_inertia_trial_20261016_v1/diagnostics.jsonl",
+    "archive": "/home/venom/factr2/log/next_inertia_trial_20261016_v1/diagnostics.jsonl.gz",
+    "sha256": "0e3b9e63abc65fc0fd136519ced75eda8360d01da4e9ac9596eef5065c0c6a7b",
+    "original_bytes": 61772109,
+    "compressed_bytes": 5724855
+  },
+  {
+    "path": "/home/venom/factr2/log/next_feedback_trial_20261016_v2/diagnostics.jsonl",
+    "archive": "/home/venom/factr2/log/next_feedback_trial_20261016_v2/diagnostics.jsonl.gz",
+    "sha256": "01440b59fd786de8d1251ce51ac89bff308544284ab4bed35f390ea2e059fe08",
+    "original_bytes": 44792512,
+    "compressed_bytes": 4157958
+  },
+  {
+    "path": "/home/venom/factr2/log/md_force_observation_20261016_223403/diagnostics.jsonl",
+    "archive": "/home/venom/factr2/log/md_force_observation_20261016_223403/diagnostics.jsonl.gz",
+    "sha256": "6efcd21e641432e6847f82e6e6775343bac36d194e8c1077e49162520fac8bbd",
+    "original_bytes": 33809951,
+    "compressed_bytes": 2374754
+  },
+  {
+    "path": "/home/venom/factr2/log/targeted_force_observation_20261016/diagnostics.jsonl",
+    "archive": "/home/venom/factr2/log/targeted_force_observation_20261016/diagnostics.jsonl.gz",
+    "sha256": "41d8fe67defb1bbd25e13a47e677064630794feb3aad8f2e5d47f7ed392f49c2",
+    "original_bytes": 16580813,
+    "compressed_bytes": 1572012
+  },
+  {
+    "path": "/home/venom/factr2/log/md_force_observation_20261016_223403/samples.csv",
+    "archive": "/home/venom/factr2/log/md_force_observation_20261016_223403/samples.csv.gz",
+    "sha256": "e8f7208a5204854f93cf0d36b82b40746baa78915e5c9fbfb505e4268f6f8cad",
+    "original_bytes": 35719055,
+    "compressed_bytes": 8480388
+  },
+  {
+    "path": "/home/venom/factr2/log/next_inertia_trial_20261016_v1/samples.csv",
+    "archive": "/home/venom/factr2/log/next_inertia_trial_20261016_v1/samples.csv.gz",
+    "sha256": "53c1b82e860933e12fc91e4e08a68328d3ac246de9a3631bb08d4f1c6181ed04",
+    "original_bytes": 67333815,
+    "compressed_bytes": 16312226
+  },
+  {
+    "path": "/home/venom/factr2/log/next_inertia_trial_20261016_v1/endpoint_messages.csv",
+    "archive": "/home/venom/factr2/log/next_inertia_trial_20261016_v1/endpoint_messages.csv.gz",
+    "sha256": "f69bb30661fd2a8886a3a17e258d09c99d88b7460dcb85ca4329a789794f1744",
+    "original_bytes": 7440583,
+    "compressed_bytes": 2819670
+  }
+]

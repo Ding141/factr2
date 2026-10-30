@@ -1,0 +1,10 @@
+{
+  "pid": 37267,
+  "side": "right",
+  "domain": 74,
+  "role": "train",
+  "operator_authorized_resume": true,
+  "fast_velocity_deg_s": 16,
+  "fast_acceleration_deg_s2": 60,
+  "tracking_limit_deg": 3
+}

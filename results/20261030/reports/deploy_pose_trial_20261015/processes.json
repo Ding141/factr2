@@ -1,0 +1,51 @@
+{
+  "health": {
+    "pid": 10962,
+    "command": [
+      "/bin/bash",
+      "--noprofile",
+      "--norc",
+      "-c",
+      "source /opt/ros/humble/setup.bash; source /home/venom/dual_arm_robot/install/local_setup.bash; exec /usr/bin/python3.10 /home/venom/factr2/factr2_w3_adapter/tools/w3_health_monitor.py"
+    ]
+  },
+  "adapter": {
+    "pid": 10963,
+    "command": [
+      "/bin/bash",
+      "/home/venom/factr2/scripts/next.sh",
+      "ros2",
+      "launch",
+      "factr2_w3_adapter",
+      "adapter.launch.py",
+      "side:=right",
+      "profile:=real",
+      "publish_hz:=100"
+    ]
+  },
+  "next": {
+    "pid": 10964,
+    "command": [
+      "/bin/bash",
+      "/home/venom/factr2/scripts/next.sh",
+      "ros2",
+      "launch",
+      "factr2_next",
+      "readonly.launch.py",
+      "side:=right",
+      "inference_config:=/home/venom/factr2/log/deploy_pose_trial_20261015/inference.yaml",
+      "web_config:=/home/venom/factr2/config/w3/right/visualize.yaml"
+    ]
+  },
+  "endpoint": {
+    "pid": 32029,
+    "command": [
+      "/bin/bash",
+      "/home/venom/factr2/scripts/next.sh",
+      "python",
+      "scripts/w3_endpoint_wrench.py",
+      "--config",
+      "/home/venom/factr2/log/force_pose_20261015/attempt_02/endpoint_full.yaml"
+    ]
+  }
+}

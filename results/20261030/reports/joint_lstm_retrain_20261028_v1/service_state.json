@@ -1,0 +1,17 @@
+{
+  "service": "stopped_offline",
+  "pid": 15821,
+  "bundle": "/home/venom/factr2/models/w3/right/joint_lstm_observer_20261028_v1",
+  "bundle_sha256": "6762291153e86efe34b9cce8c761a2fcdbcf61f51415c130c51c4d8e952f4c3d",
+  "model_sha256": "bec10a63f3ef31bf41dc66560afb8247342f645b42f6d4516c0165e7d44a932b",
+  "state": "stale",
+  "reason": "user_requests_offline_training",
+  "outputs": 0,
+  "next_topic_root": "/next/right/joint_lstm",
+  "url": "http://127.0.0.1:8083/",
+  "compensation_enabled": false,
+  "controller_changes": false,
+  "architecture": "independent_joint_lstm_v1",
+  "deployment_ready": false,
+  "stopped_at": "2026-10-28T22:25:35.184756+08:00"
+}

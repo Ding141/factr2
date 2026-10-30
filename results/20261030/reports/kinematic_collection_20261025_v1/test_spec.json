@@ -1,0 +1,124 @@
+{
+  "purpose": "New no-load velocity/acceleration identification with whole-block holdouts",
+  "next_topic_root": "/next/right/kinematic_compensated",
+  "base_model_dir": "/home/venom/factr2/models/w3/right/frozen_sigma_observer_20261023",
+  "base_metadata_sha256": "cbe838418b4f5b550662e51230e8b3f60a2fdfa4328e6cc5d7a6cd5a112876c9",
+  "training_envelope": {
+    "position_bounds_deg": [
+      [
+        -4.7944077454344916,
+        24.778070204899308
+      ],
+      [
+        45.621637259169454,
+        64.52787067423696
+      ],
+      [
+        -13.02292873761926,
+        4.200349481051694
+      ],
+      [
+        -66.4082149225523,
+        -50.23411181700325
+      ],
+      [
+        -4.73350038728455,
+        10.631966377142936
+      ],
+      [
+        -13.284873322478418,
+        3.8728350801604123
+      ],
+      [
+        -4.779994765625295,
+        4.443656614100004
+      ]
+    ],
+    "position_margin_deg": 0.0,
+    "source": "observed training positions only; rectangular bounds do not certify pose combinations"
+  },
+  "initial_command_deg": [
+    0.42943010902433504,
+    0.4433225094991905,
+    -7.012252944000177,
+    -3.853684026658565,
+    1.5556456338905384,
+    0.31015371019480814,
+    -0.583471958844796
+  ],
+  "left_pose_deg": [
+    0.22626805129693991,
+    -0.7711715896598152,
+    0.37541626606901507,
+    -0.4656450976691562,
+    -1.3731394822109293,
+    1.8382383339717192,
+    -0.8457512229732856
+  ],
+  "working_center_deg": [
+    1.0,
+    55.0,
+    -4.0,
+    -58.0,
+    1.0,
+    -2.0,
+    0.0
+  ],
+  "maximum_amplitude_deg": [
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    2.0,
+    2.0,
+    2.0
+  ],
+  "plan_sha256": "5546a8ebea78441d66a67acf618bd53ebd2693541244b2620aa4bc45df64802d",
+  "command_seconds": 601.99,
+  "steps": 35,
+  "block_roles": {
+    "startup_pilot_out": "unused",
+    "startup_pilot_return": "unused",
+    "approach_working_pose": "unused",
+    "baseline_before": "train",
+    "identify_slow_probe_j1": "train",
+    "identify_slow_probe_j2": "train",
+    "identify_slow_probe_j3": "train",
+    "identify_slow_probe_j4": "train",
+    "identify_slow_probe_j5": "train",
+    "identify_slow_probe_j6": "train",
+    "identify_slow_probe_j7": "train",
+    "identify_slow_train_0": "train",
+    "identify_slow_train_0_settle": "unused",
+    "identify_slow_train_1": "train",
+    "identify_slow_train_1_settle": "unused",
+    "identify_slow_val_2": "val",
+    "identify_slow_val_2_settle": "unused",
+    "identify_slow_test_3": "test",
+    "identify_slow_test_3_settle": "unused",
+    "identify_fast_probe_j1": "train",
+    "identify_fast_probe_j2": "train",
+    "identify_fast_probe_j3": "train",
+    "identify_fast_probe_j4": "train",
+    "identify_fast_probe_j5": "train",
+    "identify_fast_probe_j6": "train",
+    "identify_fast_probe_j7": "train",
+    "identify_fast_train_0": "train",
+    "identify_fast_train_0_settle": "unused",
+    "identify_fast_train_1": "train",
+    "identify_fast_train_1_settle": "unused",
+    "identify_fast_val_2": "val",
+    "identify_fast_val_2_settle": "unused",
+    "identify_fast_test_3": "test",
+    "identify_fast_test_3_settle": "unused",
+    "baseline_after": "test"
+  },
+  "split_boundary_purge_seconds": 1.0,
+  "model_frozen_during_capture": true,
+  "maximum_planned_velocity_deg_s": 2.4,
+  "maximum_planned_acceleration_deg_s2": 3.0,
+  "input_precision": "full ROS precision, never rounded dashboard output",
+  "no_load_status": "operator confirmation required",
+  "model_hash": "887d403a95a1a0fa1387232ae36e89bed368a0f9254a69a0d8a628d2502bed03",
+  "model_dir": "/home/venom/factr2/data/right/kinematic_compensation_20261023_v2"
+}

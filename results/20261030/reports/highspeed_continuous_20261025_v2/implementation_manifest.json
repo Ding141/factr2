@@ -1,0 +1,8 @@
+{
+  "/home/venom/factr2/scripts/w3_continuous_highspeed.py": "cad689b6db722a35ceb876648590bc3debcd068730e8600c9b5b70b870112a33",
+  "/home/venom/factr2/scripts/audit_w3_continuous_recording.py": "e3214d6a37ec9b74e1d1ce6efe851a74e19bd65f15a8f06865c6bb3c8b29ad4f",
+  "/home/venom/factr2/scripts/record_w3_atomic_waveforms.py": "64f0c123fc346816459dbd5253992990e68475eb134afd18382f3a0d99196153",
+  "/home/venom/factr2/scripts/w3_targeted_can_record.py": "97cea612f2bc5fcb783e201a4f0aff81cd502a6be93166682dafe86ee6d329c8",
+  "/home/venom/factr2/scripts/train_w3_highspeed.py": "ae5d5a89fa14928ad39b00860e12c560510823bc72f4c2932e32a6ec01587f63",
+  "/home/venom/factr2/scripts/finish_w3_highspeed.py": "f253cbec28f5fa996292a6caae6cfa2e3a31e2f531b9885a46f12a3f2da46abb"
+}

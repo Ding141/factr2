@@ -1,0 +1,27 @@
+{
+  "status": "stopped_future_windows",
+  "initial_target_deg": [
+    0.0,
+    50.0,
+    0.0,
+    -55.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "left_deg": [
+    -1.7190244658360516,
+    -2.672696254591365,
+    0.37541626606901507,
+    4.080638096918051,
+    20.199657841437503,
+    -2.4457109549736384,
+    1.0776846888156653
+  ],
+  "duration": 20,
+  "maximum_future_window_seconds": 0.8,
+  "preserves_controller_limits": true,
+  "collision_report": "/home/venom/factr2/log/live_next_campaign_resume_20261014/right_zero_native_collision.json",
+  "source": "Explicit user zero requests; inspected rejected web trajectory before native replacement",
+  "error": "Timeout: fresh real feedback, command state and adapter OK; check mode, capture, ROS domain"
+}

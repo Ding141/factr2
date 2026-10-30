@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "side": "right",
+  "domain": 74,
+  "started_unix": 1791605055.2509916,
+  "plan": "/home/venom/factr2/data/motion_plans/right_coverage_smooth_kp35_20261010.yaml",
+  "session": "/home/venom/factr2/data/quick_capture/right/20261010_120428_881457",
+  "dataset": "/home/venom/factr2/data/right/smooth_20261010_120428_881457_session_trial",
+  "error": "Command '['/home/venom/factr2/scripts/next.sh', 'python', '/home/venom/factr2/scripts/prepare_w3_session_trial.py', '--session', '/home/venom/factr2/data/quick_capture/right/20261010_120428_881457', '--output', '/home/venom/factr2/data/right/smooth_20261010_120428_881457_session_trial']' returned non-zero exit status 1.",
+  "completed_unix": 1791606498.4181275
+}

@@ -1,0 +1,25 @@
+{
+  "operator_confirmed": true,
+  "plan_sha256": "16a71a54b101af887c78ab6df255789ed5272303614cc36b5efe965ebb508766",
+  "source": "Human current request: 控制机械臂进行运动，观测补偿后的波形图并分析; and preceding explicit human no-load/clear-path/emergency-stop confirmation in this session",
+  "scope": "Current working pose, same previously confirmed clearance envelope with smaller amplitudes and unchanged velocity/acceleration bounds; no new large approach",
+  "prior_cleared_amplitudes_deg": [
+    3,
+    3,
+    3,
+    3,
+    2,
+    2,
+    2
+  ],
+  "actual_maximum_amplitudes_deg": [
+    2.5,
+    2.5,
+    2.5,
+    2.5,
+    1.5,
+    1.5,
+    1.5
+  ],
+  "new_permission_question": false
+}

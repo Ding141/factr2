@@ -1,0 +1,20 @@
+{
+  "run": "/home/venom/factr2/runs/next_right_c2_campaign_20261010_164151_566506_session_trial_20261010_174837_628319",
+  "model_sha256": "47e6cb562a77d41955191f994c864e3d7abd3b6bb529ef3faee0449d488606b0",
+  "session": "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506",
+  "plan_sha256": "836a255b088a66017890b0399054a4e42a00e71bc6c61a6dbb5daeb932a19e15",
+  "read_only": true,
+  "sample_hz": 100,
+  "config_files": {
+    "endpoint.yaml": "67a89cbbd61bf9acd2dfd2027b565527ff75f9eae38667505608582ea17bcafa",
+    "visualize.yaml": "aceadc095dca1fbdf6e0402e7466542025a815836c3c5c78b72d442c32133122",
+    "endpoint_wrench.before.yaml": "77fff66acd1ad115782f79a2430b54fc869e9ce0fc912250e09a2541aacf1706",
+    "inference.yaml": "6989f9493f1c69172c56528dbe3efbe9657f2460da667fb512fca295a1c8777e",
+    "inference_smooth_100hz.before.yaml": "5aa95a5b64dad6be7c6bfc92c31e444ff3fb0e4fdc98a263b2ba5e1cc8591603"
+  },
+  "verified_unix": 1791625963.2323234,
+  "verification_files": [
+    "inference_verification.json",
+    "endpoint_verification.json"
+  ]
+}

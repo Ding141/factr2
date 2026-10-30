@@ -1,0 +1,38 @@
+[
+  {
+    "threads": 1,
+    "batch": 256,
+    "ms": 297.57759250000504,
+    "windows_per_second": 860.2798276889604
+  },
+  {
+    "threads": 1,
+    "batch": 1024,
+    "ms": 1276.4126760000352,
+    "windows_per_second": 802.2483787993749
+  },
+  {
+    "threads": 4,
+    "batch": 256,
+    "ms": 133.47539500000494,
+    "windows_per_second": 1917.9564892839653
+  },
+  {
+    "threads": 4,
+    "batch": 1024,
+    "ms": 513.1424795000328,
+    "windows_per_second": 1995.5471256203698
+  },
+  {
+    "threads": 8,
+    "batch": 256,
+    "ms": 103.66638225002589,
+    "windows_per_second": 2469.4601513398147
+  },
+  {
+    "threads": 8,
+    "batch": 1024,
+    "ms": 394.74513849998516,
+    "windows_per_second": 2594.078812195526
+  }
+]

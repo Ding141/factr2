@@ -1,0 +1,30 @@
+{
+  "artifact_sha256": {
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/protocol_source.py": "2a30d4ef148629bdda7ea7c397807f591be4d67efb18d7d7930ea85a6af6eabd",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/motion.yaml": "9183e7d99406722d1db2273b9e61cebf593e1b2cad85d216cf552e9de835fca3",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/test_spec.json": "ad8be9ca9b3ae8aece48a413eb461eef162501537eae12fa118b424ac1bec2d2",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/analysis_acceptance.json": "f260ab4f078595e2f726dbe4e5fec293e9d7a4b669c5f90449045d66fed3cd6e",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/record.py": "2e31987e707bbc689c93c1cd45e27a9eb1555669f9e843ef878b82badb1aa652",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/move.py": "5b933d271a0b74c197a27a21702fe13ebda2290d0e9adf77553851856f394988",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/run.py": "2fdd32e6961a263a81b45349163d4a92a3ef32d33b95e33480bd55f13f2828f5",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/analyse.py": "02f30f128394a5d6cbf6a9fcc4003ed7d31035336a50b56d24780152f3de69f9",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/render.py": "1fb02bae1224585c413a4b98840d94501bdd761b8c430775eb6de716d59b1886",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/analysis.json": "14198e98acefec0cbe6e7d1fa96829f2e4a4ec3672fddf07e611d6a2288ab44a",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/samples.csv": "53c1b82e860933e12fc91e4e08a68328d3ac246de9a3631bb08d4f1c6181ed04",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/endpoint_messages.csv": "f69bb30661fd2a8886a3a17e258d09c99d88b7460dcb85ca4329a789794f1744",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/trial_arrays.npz": "1c4c9d9982553448a148f342283e5c8ab5900675db8894fcc1ce433fd67f8678",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/feedback.png": "0c95332977053da535520b951b99a1768945b423900e02501c369b3ea417157d",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/achieved_motion_check.png": "d70f0627bf7d0d3fc595c409cebc126b2cc41c540f14df02b71bf97bfdea1d0a",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/residual_by_acceleration.png": "2532ac7a721ff9d55df1fd2fe9b367568ea6787e0fb05e3dc0cb4bce9d2d3473",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/native_command_check.json": "0f7cdbc8088443efe544a70eac86922eeef7b63efa77393777f22c51162be158",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/postflight.py": "f391ce965e2e1c72e01965d95293fad5e04534723cc0e0329029482805acbe7b",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/postflight.json": "8056cf1b86078e3ae81fda76a116f18e72ddbfd49016c3982c4d26b74759cfb5",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/postflight_8081.json": "f38c2438c0e4d406a9337449247b46d893af034a6d053ead84b7c78d8b3cbf45",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/postflight_8082.json": "edcabd9be8941f6fb9df5898083ba62ee6afc53f12d76c42fc85551337ebd891",
+    "/home/venom/factr2/log/next_inertia_trial_20261016_v1/REPORT.md": "553576a1440240a23a0eb66d3e4b6d594996f53e48f8b13243ff2727d4eeec66"
+  },
+  "h5_sha256": {
+    "/home/venom/factr2/data/quick_capture/right/20261016_231752_162269/20261016_231752_162269_20261016_231828.h5": "49da953f6f0ac9e3213dc47332de54f9dd9ab0b916bd002f91fc2a9d964a6ec6"
+  },
+  "model_sha256": "b5216350f2c76a7462ab931e5d62e8f2442e00e65f0f4146fb4b7868829d62a6"
+}

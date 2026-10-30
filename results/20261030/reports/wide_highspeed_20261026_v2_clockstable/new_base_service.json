@@ -1,0 +1,13 @@
+{
+  "service": "running",
+  "pid": 24407,
+  "deployment_ready": false,
+  "calibration": "uncalibrated",
+  "state": "stale",
+  "reason": "input_timeout",
+  "outputs": 680909,
+  "next_topic_root": "/next/right/frozen_sigma",
+  "url": "http://127.0.0.1:8082/",
+  "bundle": "/home/venom/factr2/models/w3/right/wide_highspeed_observer_20261026_v1",
+  "metadata_sha256": "3ea80b6d4a101bce327161b874fefd859afd323fabcf5f2f91ee526bf6edd403"
+}

@@ -1,0 +1,42 @@
+{
+  "status": "training_complete_not_deployed",
+  "completed_utc": "2026-10-26T05:47:24.878552+00:00",
+  "resume_request": "请继续完成还未完成的训练",
+  "mean_selected_epoch": 20,
+  "sigma_completed_epochs": 6,
+  "sigma_selected_epoch": 1,
+  "compensation_selected": {
+    "mode": "velocity_acceleration",
+    "scope": "pooled",
+    "ridge": 0.1,
+    "score": 0.8055867359177404,
+    "enabled": [
+      true,
+      false,
+      true,
+      false,
+      true,
+      false,
+      false
+    ]
+  },
+  "full_pipeline_gate_passed": false,
+  "deployed": false,
+  "model_paths": {
+    "training_complete": true,
+    "mean": "/home/venom/factr2/data/right/highspeed_mean_20261025_v3",
+    "sigma": "/home/venom/factr2/data/right/highspeed_sigma_20261025_v1",
+    "observer": "/home/venom/factr2/models/w3/right/highspeed_observer_20261025_v1",
+    "compensation": "/home/venom/factr2/data/right/highspeed_compensation_20261025_v1",
+    "deployed": false,
+    "full_pipeline_gate_passed": false,
+    "deployment_block_reason": "Old low-speed held-out MSE increased 20.879%, exceeding frozen 15% allowance",
+    "mean_metadata_sha256": "077190d99440a8bf27dc7a41e03563528f1d630f2f56a37db87d3e1f5cc3ebdb",
+    "compensation_sha256": "cbb403b729f321b08ad09e9f9d462f56f4e13440bb01046db3476a916fd67048"
+  },
+  "tests": {
+    "passed": 27,
+    "skipped": 1
+  },
+  "robot_motion_sent": false
+}

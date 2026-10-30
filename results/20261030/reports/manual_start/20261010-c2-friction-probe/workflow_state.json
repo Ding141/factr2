@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "side": "right",
+  "domain": 74,
+  "started_unix": 1791619206.4836843,
+  "plan": "/home/venom/factr2/data/motion_plans/right_c2_friction_probe_20261010.yaml",
+  "session": "/home/venom/factr2/data/quick_capture/right/20261010_160004_957524",
+  "completed_unix": 1791619288.8616436
+}

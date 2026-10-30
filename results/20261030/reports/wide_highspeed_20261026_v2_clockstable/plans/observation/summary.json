@@ -1,0 +1,286 @@
+{
+  "rows": 32155,
+  "seconds": 322.183303519,
+  "max_source_gap_ms": 583.362176,
+  "formal_seconds": 160.0,
+  "formal_interior_valid_fraction": 0.9908558365480783,
+  "compensation_enabled": false,
+  "all_corrections_exactly_zero": true,
+  "raw": {
+    "rms_nm": [
+      0.9077858240422234,
+      0.7659598359619945,
+      0.5381912766640935,
+      0.6651045750399565,
+      0.12777984533301595,
+      0.37968046577804204,
+      0.1305284311750489
+    ],
+    "mean_nm": [
+      -0.08719772454552627,
+      -0.18451578326593138,
+      -0.03921703436689233,
+      0.05607504754420571,
+      0.02971682450633359,
+      -0.011453530389248852,
+      -0.02894730182188659
+    ],
+    "absolute_p95_nm": [
+      1.7355532467365264,
+      1.3842251300811768,
+      0.9864444971084594,
+      1.292122381925583,
+      0.23021582141518593,
+      0.7152129471302031,
+      0.23242773711681364
+    ],
+    "absolute_peak_nm": [
+      2.3559491634368896,
+      1.9387450218200684,
+      1.7266850471496582,
+      2.107499599456787,
+      0.36741703748703003,
+      1.1168982982635498,
+      0.37219053506851196
+    ]
+  },
+  "final": {
+    "rms_nm": [
+      0.8976215504545728,
+      0.7552928803223421,
+      0.5230056226573642,
+      0.653810874176986,
+      0.12190293694963796,
+      0.3719325234117922,
+      0.1256391057492724
+    ],
+    "mean_nm": [
+      -0.0878047575632813,
+      -0.18433482105531154,
+      -0.03944101590981637,
+      0.05616025784127273,
+      0.029732430042360224,
+      -0.01135373482863884,
+      -0.028958860778033422
+    ],
+    "absolute_p95_nm": [
+      1.716873049736023,
+      1.3534013032913208,
+      0.9682388097047805,
+      1.2729064881801602,
+      0.21768270954489707,
+      0.698602384328842,
+      0.21791206896305082
+    ],
+    "absolute_peak_nm": [
+      2.282259702682495,
+      1.8628590106964111,
+      1.5440315008163452,
+      2.0270464420318604,
+      0.34241217374801636,
+      1.0430303812026978,
+      0.3357340395450592
+    ]
+  },
+  "tracking_max_deg": [
+    0.6226367950439453,
+    0.7544898986816406,
+    0.8642902374267578,
+    1.3042755126953125,
+    0.8922183513641357,
+    1.0811405181884766,
+    1.1651582717895508
+  ],
+  "position_span_deg": [
+    51.77906036376953,
+    27.452327728271484,
+    37.768757820129395,
+    39.16762924194336,
+    37.22234344482422,
+    26.053455352783203,
+    29.069721221923828
+  ],
+  "suspected_joint_stall_seconds": [
+    0.05,
+    0.05,
+    0.09,
+    0.16,
+    0.03,
+    0.0,
+    0.07
+  ],
+  "suspected_whole_arm_pause_seconds": 0.0,
+  "can": {
+    "status": "closed",
+    "interface": "can1",
+    "frames": 762395,
+    "kernel_timestamps_missing": 0,
+    "socket_dropped_frames": 0,
+    "last_received_mono": {
+      "2": 7757.764863552001,
+      "3": 7757.765261367001,
+      "4": 7757.7656651180005,
+      "5": 7757.766117558001,
+      "6": 7757.763633296,
+      "7": 7757.764029923001,
+      "1": 7757.764447925
+    },
+    "last_temperature_c": {
+      "2": {
+        "mos": 36,
+        "rotor": 35
+      },
+      "3": {
+        "mos": 33,
+        "rotor": 31
+      },
+      "4": {
+        "mos": 31,
+        "rotor": 31
+      },
+      "5": {
+        "mos": 32,
+        "rotor": 30
+      },
+      "6": {
+        "mos": 31,
+        "rotor": 30
+      },
+      "7": {
+        "mos": 32,
+        "rotor": 29
+      },
+      "1": {
+        "mos": 35,
+        "rotor": 32
+      }
+    },
+    "temperature_samples_by_motor": {
+      "1": 3066,
+      "2": 3066,
+      "3": 3065,
+      "4": 3066,
+      "5": 3066,
+      "6": 3067,
+      "7": 3066
+    },
+    "timestamp_kind": "Linux kernel software receive; not device acquisition",
+    "raw_format": "<qqqIHH + DLC bytes",
+    "socket_receive_buffer_bytes": 425984,
+    "userspace_queue_capacity_frames": 16384,
+    "userspace_queue_peak_frames": 7,
+    "maximum_writer_lag_seconds": 0.002817950999997265,
+    "updated_mono": 7757.766166246
+  },
+  "deployment": {
+    "status": "deployed",
+    "compensation_enabled": false,
+    "motion_publishers": {
+      "/joint_position_command": [],
+      "/left_pose_goal": [],
+      "/right_pose_goal": []
+    },
+    "gate": {
+      "passed": true,
+      "criteria": {
+        "scope": "Read-only external joint torque observation; never motor feedforward",
+        "minimum_new_highspeed_test_mse_improvement_fraction": 0.05,
+        "maximum_old_test_mse_ratio": 1.15,
+        "minimum_final_highspeed_test_mse_improvement_fraction": 0.05,
+        "maximum_final_old_test_mse_ratio": 1.15,
+        "minimum_highspeed_test_position_support_fraction": 0.98,
+        "per_joint_rmse_allowance": "no increase greater than max(20% incumbent RMSE, 0.02 Nm)",
+        "require_completed_independent_recordings": true,
+        "require_clean_CAN": true,
+        "test_fail_action": "Keep incumbent; freeze failed candidate and do not tune on this test recording",
+        "real_contact_validation": false
+      },
+      "per_joint_pass": {
+        "old": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "high": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "highspeed_mse_ratio": 0.6192114593985265,
+      "old_mse_ratio": 1.0055556623404223,
+      "action": "Candidate may proceed to matched-head and compensation checks"
+    },
+    "operator_requested_deployment": true,
+    "observer_pid": 24407,
+    "metadata_sha256": "3ea80b6d4a101bce327161b874fefd859afd323fabcf5f2f91ee526bf6edd403",
+    "url": "http://127.0.0.1:8082/",
+    "compensation_publisher_count": 0,
+    "verified_zero_correction_frames": 100,
+    "publishers": {
+      "/next/right/frozen_sigma/distribution": 1,
+      "/next/right/frozen_sigma/external_joint_torque": 1,
+      "/next/right/kinematic_compensated/distribution": 0
+    }
+  },
+  "training": {
+    "status": "complete",
+    "experiment": "/home/venom/factr2/data/right/wide_highspeed_mean_20261026_v1",
+    "sigma": "/home/venom/factr2/data/right/wide_highspeed_sigma_20261026_v1",
+    "observer": "/home/venom/factr2/models/w3/right/wide_highspeed_observer_20261026_v1",
+    "gate": {
+      "passed": true,
+      "criteria": {
+        "scope": "Read-only external joint torque observation; never motor feedforward",
+        "minimum_new_highspeed_test_mse_improvement_fraction": 0.05,
+        "maximum_old_test_mse_ratio": 1.15,
+        "minimum_final_highspeed_test_mse_improvement_fraction": 0.05,
+        "maximum_final_old_test_mse_ratio": 1.15,
+        "minimum_highspeed_test_position_support_fraction": 0.98,
+        "per_joint_rmse_allowance": "no increase greater than max(20% incumbent RMSE, 0.02 Nm)",
+        "require_completed_independent_recordings": true,
+        "require_clean_CAN": true,
+        "test_fail_action": "Keep incumbent; freeze failed candidate and do not tune on this test recording",
+        "real_contact_validation": false
+      },
+      "per_joint_pass": {
+        "old": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "high": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "highspeed_mse_ratio": 0.6192114593985265,
+      "old_mse_ratio": 1.0055556623404223,
+      "action": "Candidate may proceed to matched-head and compensation checks"
+    },
+    "compensation_enabled": false,
+    "automatic_deployment": false,
+    "contact_validated": false
+  },
+  "formal_max_source_gap_ms": 13.387939,
+  "formal_rows": 15997,
+  "startup_gap_explanation": "583 ms model warmup/reset in startup, before actuation; continuous motion source gap max 13.39 ms",
+  "invalid_scope_policy": "Retained with out_of_scope flag; never zeroed. Summary RMS uses valid interior rows only."
+}

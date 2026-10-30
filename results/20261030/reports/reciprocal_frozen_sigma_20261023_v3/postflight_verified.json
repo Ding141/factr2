@@ -1,0 +1,30 @@
+{
+  "controllers": {
+    "cartesian_position_controller": "inactive",
+    "gravity_compensation_controller": "active",
+    "joint_position_controller": "active",
+    "joint_state_broadcaster": "active"
+  },
+  "right_actual_deg": [
+    1.085128269345559,
+    50.08043822700291,
+    -2.7720168657429007,
+    -54.23392432585966,
+    1.380792791138212,
+    -0.3236878447823751,
+    -0.36490590540438794
+  ],
+  "right_command_deg": [
+    1.238124506753845,
+    50.0,
+    -2.7720168657429007,
+    -55.0,
+    1.380792791138212,
+    -0.3236878447823751,
+    -0.1899984211387014
+  ],
+  "adapter_ok": true,
+  "all_fresh": true,
+  "motion_commands_sent": 0,
+  "checked_wall_ns": 1792740928045226491
+}

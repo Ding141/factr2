@@ -1,0 +1,23 @@
+{
+  "status": "waiting_for_operator_to_pause_ntp",
+  "first_train_recording_accepted": true,
+  "failed_role": "val",
+  "failed_session": "/home/venom/factr2/data/quick_capture/right/20261026_145809_427639",
+  "error": "Fresh atomic model output unavailable",
+  "root_cause": "CLOCK_REALTIME jumped forward while CLOCK_MONOTONIC and CAN receive continued",
+  "wall_minus_monotonic_step_ms": 500.2253,
+  "max_can_receive_monotonic_gap_ms": 0.946753,
+  "waveform_source_gap_ms": 1029.984401,
+  "waveform_receive_monotonic_gap_ms": 530.655982,
+  "automatic_time_service": "systemd-timesyncd",
+  "ntp_service_stop_attempt": "sudo -n failed: administrator password required; service remains active",
+  "hardware_after_stop": {
+    "healthy": true,
+    "motion_publishers": [],
+    "max_stationary_position_span_deg": 0.021856605344040804
+  },
+  "required_operator_action": "sudo systemctl stop systemd-timesyncd",
+  "restore_after_all_motion": "sudo systemctl start systemd-timesyncd",
+  "no_protection_threshold_relaxed": true,
+  "failed_record_excluded_from_training": true
+}

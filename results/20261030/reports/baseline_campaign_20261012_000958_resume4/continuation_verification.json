@@ -1,0 +1,32 @@
+{
+  "validation_resume_session": "/home/venom/factr2/data/quick_capture/right/20261012_001341_150928",
+  "motion_status": "completed",
+  "raw_quality_accepted": true,
+  "raw_h5_sha256": "ce5c9da721a9ef5d2de75d063db4381f416bfe89569a76552e377a221d7b9bf4",
+  "raw_episodes": {
+    "ep_0000": {
+      "errors": [],
+      "rows": 24669,
+      "duration_seconds": 246.679964046,
+      "hz": 100.00001457516022,
+      "max_gap_seconds": 0.013389202000000001
+    }
+  },
+  "previous_failure_event_now_completed": true,
+  "final_static_completed": true,
+  "scheduler": {
+    "max_gap_ms": 6.3793720000830945,
+    "phase_max_ms": {
+      "spin": 6.2238360005721916,
+      "state_guard": 0.4499870010477025,
+      "capture_guard": 0.6886350001877872,
+      "audit_tick": 0.7539369998994516,
+      "build_window": 1.570799999171868,
+      "publish": 0.2671429992915364
+    }
+  },
+  "automatic_deployment": false,
+  "supervisor_active": true,
+  "optimizer_started": false,
+  "status_at_verification": "test_collision_check"
+}

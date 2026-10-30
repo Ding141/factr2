@@ -1,0 +1,44 @@
+{
+  "purpose": "Prospective independent continuous high-speed free-motion recording",
+  "next_topic_root": "/next/right/kinematic_compensated",
+  "base_model_dir": "/home/venom/factr2/models/w3/right/frozen_sigma_observer_20261023",
+  "base_metadata_sha256": "cbe838418b4f5b550662e51230e8b3f60a2fdfa4328e6cc5d7a6cd5a112876c9",
+  "training_envelope": {
+    "position_bounds_deg": [
+      [
+        -4.7944077454344916,
+        24.778070204899308
+      ],
+      [
+        45.621637259169454,
+        64.52787067423696
+      ],
+      [
+        -13.02292873761926,
+        4.200349481051694
+      ],
+      [
+        -66.4082149225523,
+        -50.23411181700325
+      ],
+      [
+        -4.73350038728455,
+        10.631966377142936
+      ],
+      [
+        -13.284873322478418,
+        3.8728350801604123
+      ],
+      [
+        -4.779994765625295,
+        4.443656614100004
+      ]
+    ],
+    "position_margin_deg": 0.0,
+    "source": "observed training positions only; rectangular bounds do not certify pose combinations"
+  },
+  "plan_sha256": "a70a5c65bf0255afcfcfa2efbecd7a5e84a1600023dd023b5f20fbc4e06654cb",
+  "command_seconds": 263.49999999999994,
+  "model_hash": "89af2ae40f122e512287dac6fe0798d388701ad10c43cdfcaaa50a5888fc459e",
+  "role": "val"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "aborted",
+  "reason": "J7 reported speed exceeded guard (quantized feedback)",
+  "events": [
+    {
+      "phase": "outbound",
+      "start_ros_ns": 1792721348271803625,
+      "goal_rad": 0.02853777553060905,
+      "command_duration_s": 10.0,
+      "planned_peak_deg_s": 0.375
+    }
+  ],
+  "rows": 989
+}

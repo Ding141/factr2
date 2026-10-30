@@ -1,0 +1,10 @@
+{
+  "stopped_this_turn_groups": [
+    19367,
+    19385
+  ],
+  "retained_existing_adapter_pid": 9275,
+  "retained_existing_inference_pid": 9348,
+  "retained_health_pid": 9229,
+  "robot_controller_changed": false
+}

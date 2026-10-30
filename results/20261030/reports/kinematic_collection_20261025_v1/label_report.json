@@ -1,0 +1,21 @@
+{
+  "status": "labeled",
+  "rows": 64189,
+  "duration_seconds": 641.863267373,
+  "maximum_joined_gap_ms": 16.671653000000003,
+  "gaps_above_40ms": 0,
+  "residual_identity_error_nm": 0.0,
+  "raw_h5_quality_accepted": true,
+  "predeclared_valid_rows": {
+    "train": 21754,
+    "val": 4264,
+    "test": 7373
+  },
+  "source_sha256": "bda4d4dac3b8b33ff0a83e76052d245e8adc09a3f54feb9a09aaa2021a83c264",
+  "labeled_sha256": "d3414edb088f366c84263fdb3b3a556a911b425cd2a870d75d8a6ff7e422c3d0",
+  "plan_sha256": "5546a8ebea78441d66a67acf618bd53ebd2693541244b2620aa4bc45df64802d",
+  "split_manifest_sha256": "dab48a537be191a36c9bb6a61e0407d46e9d0dd59d695bfa235edf7cc180a66f",
+  "no_load_provenance": "human operator confirmation; no independent external torque sensor",
+  "input_precision": "full ROS precision; dashboard rounding excluded",
+  "filters_reset_on_gaps": true
+}

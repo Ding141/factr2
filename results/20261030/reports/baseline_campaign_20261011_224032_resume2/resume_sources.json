@@ -1,0 +1,12 @@
+{
+  "parent_session": "/home/venom/factr2/data/quick_capture/right/20261011_215544_913483",
+  "events": [
+    "003_sine_j1_slow",
+    "004_sine_j2_slow",
+    "005_sine_j3_slow",
+    "007_sine_j5_slow",
+    "008_sine_j6_slow",
+    "009_sine_j7_slow"
+  ],
+  "reference": "/home/venom/factr2/log/baseline_campaign_20261011_224032_resume2/train_reference.yaml"
+}

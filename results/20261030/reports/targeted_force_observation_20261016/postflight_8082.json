@@ -1,0 +1,31 @@
+{
+  "state": "valid",
+  "reasons": [],
+  "geometry": {
+    "condition_number": 12.017276440516797,
+    "scaled_singular_values": [
+      2.044996577512025,
+      1.6670104440862972,
+      1.4496556720567664,
+      0.5882757265409521,
+      0.47063503495712977,
+      0.17017138514158048
+    ],
+    "mode": "full_wrench",
+    "observable_rank": 6,
+    "moments_observed": true,
+    "assumption": "all_external_loading_at_tool_origin",
+    "torque_fit_error_nm": 0.011573236279586252,
+    "relative_fit_error": 0.0794354841657519,
+    "reason": "ok",
+    "valid": true
+  },
+  "wrench": {
+    "fx": -0.1454520413885242,
+    "fy": 0.46428893572712016,
+    "fz": -0.7986326464031176,
+    "mx": 0.031234346280178935,
+    "my": -0.011763750593758681,
+    "mz": 0.004017606514810812
+  }
+}

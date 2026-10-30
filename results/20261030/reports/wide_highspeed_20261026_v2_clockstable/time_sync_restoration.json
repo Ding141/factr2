@@ -1,0 +1,10 @@
+{
+  "service": "systemd-timesyncd",
+  "original_active": true,
+  "current_active": false,
+  "restoration_requires_operator_password": true,
+  "attempt": "sudo -n requires password",
+  "command": "sudo systemctl start systemd-timesyncd",
+  "safe_to_restore_now": true,
+  "hardware_motion": "stopped"
+}

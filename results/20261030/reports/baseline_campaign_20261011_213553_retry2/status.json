@@ -1,0 +1,12 @@
+{
+  "pid": 24880,
+  "status": "stopped",
+  "sessions": {},
+  "role": "train",
+  "automatic_deployment": false,
+  "started_utc": "2026-10-11T13:52:59Z",
+  "updated_utc": "2026-10-11T13:53:35Z",
+  "plan": "/home/venom/factr2/log/baseline_campaign_20261011_213553_retry2/train.yaml",
+  "planned_seconds": 2128.4999999999995,
+  "error": "C exited before recording; see /home/venom/factr2/log/baseline_campaign_20261011_213553_retry2/train_capture.log"
+}

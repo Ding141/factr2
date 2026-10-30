@@ -1,0 +1,133 @@
+{
+  "checked_at": "2026-10-14T03:09:43.058927+08:00",
+  "initial_target_deg": [
+    1.8938226670750689,
+    1.5362074182145908,
+    1.0529437109775999,
+    -2.1488141683100226,
+    -2.968726313839268,
+    0.11344426209844094,
+    2.432794220146195
+  ],
+  "robot_description_sha256": "e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345",
+  "controllers": {
+    "gravity_compensation_controller": "active",
+    "joint_state_broadcaster": "active",
+    "joint_position_controller": "active",
+    "cartesian_position_controller": "inactive"
+  },
+  "motor_health": [
+    {
+      "channel": 0,
+      "slot": 0,
+      "online": true,
+      "enabled": true,
+      "error": 1,
+      "age": 0.002575256999989506
+    },
+    {
+      "channel": 0,
+      "slot": 1,
+      "online": true,
+      "enabled": true,
+      "error": 1,
+      "age": 0.002575256999989506
+    },
+    {
+      "channel": 0,
+      "slot": 2,
+      "online": true,
+      "enabled": true,
+      "error": 1,
+      "age": 0.002575256999989506
+    },
+    {
+      "channel": 0,
+      "slot": 3,
+      "online": true,
+      "enabled": true,
+      "error": 1,
+      "age": 0.002575256999989506
+    },
+    {
+      "channel": 0,
+      "slot": 4,
+      "online": true,
+      "enabled": true,
+      "error": 1,
+      "age": 0.002575256999989506
+    },
+    {
+      "channel": 0,
+      "slot": 5,
+      "online": true,
+      "enabled": true,
+      "error": 1,
+      "age": 0.002575256999989506
+    },
+    {
+      "channel": 0,
+      "slot": 6,
+      "online": true,
+      "enabled": true,
+      "error": 1,
+      "age": 0.002575256999989506
+    },
+    {
+      "channel": 1,
+      "slot": 0,
+      "online": true,
+      "enabled": true,
+      "error": 1,
+      "age": 0.002575256999989506
+    },
+    {
+      "channel": 1,
+      "slot": 1,
+      "online": true,
+      "enabled": true,
+      "error": 1,
+      "age": 0.002575256999989506
+    },
+    {
+      "channel": 1,
+      "slot": 2,
+      "online": true,
+      "enabled": true,
+      "error": 1,
+      "age": 0.002575256999989506
+    },
+    {
+      "channel": 1,
+      "slot": 3,
+      "online": true,
+      "enabled": true,
+      "error": 1,
+      "age": 0.002575256999989506
+    },
+    {
+      "channel": 1,
+      "slot": 4,
+      "online": true,
+      "enabled": true,
+      "error": 1,
+      "age": 0.002575256999989506
+    },
+    {
+      "channel": 1,
+      "slot": 5,
+      "online": true,
+      "enabled": true,
+      "error": 1,
+      "age": 0.002575256999989506
+    },
+    {
+      "channel": 1,
+      "slot": 6,
+      "online": true,
+      "enabled": true,
+      "error": 1,
+      "age": 0.002575256999989506
+    }
+  ]
+}

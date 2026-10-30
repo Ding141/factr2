@@ -1,0 +1,8 @@
+{
+  "checkpoint_load_after_cleanup": "PASS",
+  "finite_forward_shape": [
+    1,
+    7
+  ],
+  "checkpoint": "/home/venom/factr2/models/w3/right/c2_20261010"
+}

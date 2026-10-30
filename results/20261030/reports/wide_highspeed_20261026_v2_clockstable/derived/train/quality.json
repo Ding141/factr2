@@ -1,0 +1,350 @@
+{
+  "path": "/home/venom/factr2/log/wide_highspeed_20261026_v2_clockstable/derived/train/samples.h5",
+  "errors": [],
+  "episodes": {
+    "ep_0000": {
+      "errors": [],
+      "rows": 16019,
+      "duration_seconds": 159.979981716,
+      "hz": 100.12502707017124,
+      "max_gap_seconds": 0.013393004
+    },
+    "ep_0001": {
+      "errors": [],
+      "rows": 15980,
+      "duration_seconds": 159.989970131,
+      "hz": 99.87501083296893,
+      "max_gap_seconds": 0.013447028000000001
+    }
+  },
+  "excluded": {},
+  "metadata": {
+    "source": "real",
+    "tool": "bare_attachment_v1",
+    "gripper": "absent",
+    "load": "empty_v1",
+    "w3_workspace": "/home/venom/dual_arm_robot",
+    "calibration": {
+      "path": "/home/venom/factr2/data/quick_capture/profiles/edf771ba9b48ea3df508380569d22a30b0e51036dcb3a321df3cf9e582f2b9ca/calibration.yaml",
+      "sha256": "edf771ba9b48ea3df508380569d22a30b0e51036dcb3a321df3cf9e582f2b9ca"
+    },
+    "control": {
+      "gains": {
+        "position_params": "/home/venom/factr2/data/quick_capture/right/20261026_144857_880345/audit/position.yaml"
+      },
+      "feedforward": {
+        "gravity_params": "/home/venom/factr2/data/quick_capture/right/20261026_144857_880345/audit/gravity.yaml",
+        "friction_model": "/home/venom/factr2/data/quick_capture/right/20261026_144857_880345/audit/friction_model.yaml",
+        "friction_sha256": "5b3fb0c9415b973d951c0ee8d2fee4af974a8ceeb735137271a68e98febe71e1"
+      }
+    },
+    "trajectory_id": "right_wide_continuous_20261026_train:sha256:6d43adacddfbed95599c9a78e4df94125c4a6a6fccd15fbf7711a2de632f2f1e",
+    "contact": {
+      "present": false,
+      "label": "operator_declared_free_motion"
+    },
+    "temperature": {
+      "initial_condition": "unclassified",
+      "source": "operator_declaration_and_motion_history",
+      "declared_idle_minutes": 0.0,
+      "warmup_session": null,
+      "temperature_measured": true,
+      "temperature_c": null,
+      "steady_temperature_verified": false,
+      "label_scope": "initial condition only; temperature may change during capture",
+      "observation_files": [
+        "/home/venom/factr2/data/quick_capture/right/20261026_144857_880345/audit/motor_temperature.csv",
+        "/home/venom/factr2/data/quick_capture/right/20261026_144857_880345/audit/raw_can.bin"
+      ],
+      "observation_source": "passive nominal CAN MOS/rotor Celsius",
+      "last_observed_nominal_c": {
+        "2": {
+          "mos": 35,
+          "rotor": 33
+        },
+        "3": {
+          "mos": 32,
+          "rotor": 30
+        },
+        "4": {
+          "mos": 31,
+          "rotor": 30
+        },
+        "5": {
+          "mos": 31,
+          "rotor": 29
+        },
+        "6": {
+          "mos": 30,
+          "rotor": 30
+        },
+        "7": {
+          "mos": 31,
+          "rotor": 28
+        },
+        "1": {
+          "mos": 34,
+          "rotor": 31
+        }
+      },
+      "observation_complete": true,
+      "timestamp_kind": "Linux kernel software receive; not device acquisition",
+      "motor_temperature_csv_sha256": "f1ff3c1572faeb16d5d720d0e5da5c11fa0741e5e1679bd4f7530affd9540760",
+      "raw_can_sha256": "568f41e90baec17f18edb5fadc5499b8572aa917770df43a7de7685284cf3b08",
+      "alignment": "causal kernel software receive stamp <= ROS source header; age <=500ms; invalid/mismatched clocks stored as NaN plus mask"
+    },
+    "audit_paths": [
+      "/home/venom/factr2/data/quick_capture/right/20261026_144857_880345/audit/bag",
+      "/home/venom/factr2/data/quick_capture/right/20261026_144857_880345/audit/motion.yaml",
+      "/home/venom/factr2/data/quick_capture/right/20261026_144857_880345/audit/motion_run.json"
+    ],
+    "health_gate_enabled": true,
+    "targeted_collection": {
+      "schema": "w3_targeted_free_motion_v1",
+      "family": "continuous",
+      "role": "train",
+      "phase_labels": "/factr2/right/collection_event",
+      "intentional_stops": false,
+      "independent_session_required": true,
+      "probe_and_transition_rows_excluded_from_training": true
+    },
+    "contract_version": "w3_next_v1",
+    "side": "right",
+    "joint_order": [
+      "right_joint_0",
+      "right_joint_1",
+      "right_joint_2",
+      "right_joint_3",
+      "right_joint_4",
+      "right_joint_5",
+      "right_joint_6"
+    ],
+    "sample_hz": 100.0,
+    "topics": {
+      "joint_pos": {
+        "topic": "{robot_topic_root}/joint_pos",
+        "field": "position",
+        "type": "sensor_msgs/JointState"
+      },
+      "joint_vel": {
+        "topic": "{robot_topic_root}/joint_vel",
+        "field": "velocity",
+        "type": "sensor_msgs/JointState"
+      },
+      "joint_cmd": {
+        "topic": "{robot_topic_root}/joint_cmd",
+        "field": "position",
+        "type": "sensor_msgs/JointState"
+      },
+      "measured_joint_torque": {
+        "topic": "{robot_topic_root}/joint_effort",
+        "field": "effort",
+        "type": "sensor_msgs/JointState"
+      }
+    },
+    "session_id": "train",
+    "time_source": "ROS header ns; recorder watchdog monotonic",
+    "config_sha256": "5681803d1c659c832e749cb095ee7aa1101dd3d9e7ee4107d4239044474926cd",
+    "software_commits": {
+      "factr2": "f811f2c2391f2d4ecc7efab0bcec1d6225680ac3",
+      "w3": "480f34c9c5cf7cad2a7a83179543debdedd81c21"
+    },
+    "episodes": {
+      "ep_0000": {
+        "family": "continuous",
+        "phase": "continuous",
+        "kind": "continuous_multisine",
+        "speed": "continuous_v12_wide",
+        "active_joints": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "pose_index": 0,
+        "approach_direction": null,
+        "dwell_seconds": null,
+        "profile": {
+          "id": "continuous_v12_wide",
+          "velocity_deg_s": 12.0,
+          "acceleration_deg_s2": 30.0,
+          "jerk_deg_s3": 120.0
+        },
+        "peak_bounds": {
+          "velocity_deg_s": [
+            10.35777429007117,
+            7.898666109131928,
+            9.900159871892917,
+            9.523515293168288,
+            9.207700433199589,
+            8.24310528063161,
+            7.306292922706547
+          ],
+          "acceleration_deg_s2": [
+            14.953256368297865,
+            14.090881252736038,
+            16.643857095271702,
+            15.598616822696254,
+            17.145955685522665,
+            14.294940048485152,
+            14.6854973694763
+          ],
+          "jerk_deg_s3": [
+            22.772897763062208,
+            25.782954338083794,
+            30.64603616440117,
+            26.83327001446512,
+            34.00613817954297,
+            26.191583374791136,
+            32.823047882899886
+          ]
+        },
+        "rows": 16019,
+        "event": "continuous_v12_wide_train_continuous",
+        "source_episode": "ep_0001",
+        "source_row_start": 11299,
+        "source_row_stop_exclusive": 27318,
+        "state_codes": {
+          "entry_ramp": 0,
+          "continuous_excitation": 1,
+          "exit_ramp": 2,
+          "hysteresis": 3,
+          "stationary_hold": 4
+        },
+        "thermal_initial_condition": "unclassified",
+        "measured_position_mean_deg": [
+          0.8497572541236877,
+          48.55428695678711,
+          -3.8686397075653076,
+          -60.74802017211914,
+          -0.23373755812644958,
+          -2.232226848602295,
+          2.036027193069458
+        ],
+        "native_goal_deg": [
+          1.0,
+          49.99999999999999,
+          -4.0,
+          -62.0,
+          1.0,
+          -1.9999999999999998,
+          0.0
+        ]
+      },
+      "ep_0001": {
+        "family": "continuous",
+        "phase": "continuous",
+        "kind": "continuous_multisine",
+        "speed": "continuous_v18_wide",
+        "active_joints": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "pose_index": 0,
+        "approach_direction": null,
+        "dwell_seconds": null,
+        "profile": {
+          "id": "continuous_v18_wide",
+          "velocity_deg_s": 18.0,
+          "acceleration_deg_s2": 45.0,
+          "jerk_deg_s3": 150.0
+        },
+        "peak_bounds": {
+          "velocity_deg_s": [
+            12.753602641669076,
+            10.426390022671175,
+            12.04584228932222,
+            11.988605167246508,
+            10.500167234664374,
+            10.069042833807398,
+            9.14869422708282
+          ],
+          "acceleration_deg_s2": [
+            23.43954663028623,
+            24.29056571404508,
+            25.227219354735475,
+            25.40393846711247,
+            22.463623122168862,
+            21.55541123783312,
+            23.887389287462533
+          ],
+          "jerk_deg_s3": [
+            47.57385854509388,
+            60.56535853130444,
+            55.707308852622305,
+            57.55270331573603,
+            53.52986303219821,
+            50.158740574693,
+            67.03814351115355
+          ]
+        },
+        "rows": 15980,
+        "event": "continuous_v18_wide_train_continuous",
+        "source_episode": "ep_0001",
+        "source_row_start": 30605,
+        "source_row_stop_exclusive": 46585,
+        "state_codes": {
+          "entry_ramp": 0,
+          "continuous_excitation": 1,
+          "exit_ramp": 2,
+          "hysteresis": 3,
+          "stationary_hold": 4
+        },
+        "thermal_initial_condition": "unclassified",
+        "measured_position_mean_deg": [
+          1.002746343612671,
+          51.274715423583984,
+          -3.9348037242889404,
+          -63.667259216308594,
+          3.1893117427825928,
+          -1.4222735166549683,
+          1.3449739217758179
+        ],
+        "native_goal_deg": [
+          1.0,
+          50.0,
+          -4.0,
+          -62.0,
+          0.9999999999999997,
+          -1.9999999999999996,
+          -2.168404344971009e-19
+        ]
+      }
+    },
+    "h5_sha256": "43840e48ac8dddf9ef0fbae4298457fa93955395d08099660e7e78b0bcece60b",
+    "derivation": {
+      "source_h5": "/home/venom/factr2/data/quick_capture/right/20261026_144857_880345/20261026_144857_880345_20261026_144933.h5",
+      "source_sha256": "22d50f6d6245f6c2ce2308c55dd29a67ea077b29215e143525df74b4175fdb7d",
+      "source_session": "/home/venom/factr2/data/quick_capture/right/20261026_144857_880345",
+      "plan_sha256": "6d43adacddfbed95599c9a78e4df94125c4a6a6fccd15fbf7711a2de632f2f1e",
+      "role": "train",
+      "family": "continuous",
+      "completed_only": false,
+      "synthetic_samples_added": 0,
+      "discarded_families": [
+        "transition",
+        "speed_probe",
+        "warmup"
+      ],
+      "history_policy": "For long-memory features, compute causally on full raw source before selecting ranges; reset after source gaps. Never combine independent sessions.",
+      "quality_audit": "/home/venom/factr2/log/wide_highspeed_20261026_v1/plans/train/continuous_quality.json",
+      "quality_audit_sha256": "7dcbce7103d181d1be84c6478cb1ddd6ccb5345555381535cb0f8d94e0399304",
+      "accepted_motion_events": [
+        "continuous_v12_wide_train_continuous",
+        "continuous_v18_wide_train_continuous"
+      ],
+      "excluded_motion_events": [],
+      "selection": "Drop entire blocks using fixed encoder-motion thresholds before fitting; never filter by torque/model error"
+    }
+  },
+  "h5_sha256": "43840e48ac8dddf9ef0fbae4298457fa93955395d08099660e7e78b0bcece60b",
+  "accepted": true
+}

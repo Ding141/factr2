@@ -1,0 +1,62 @@
+[
+  {
+    "session": "20261012_002019_959735",
+    "original": "/home/venom/factr2/data/quick_capture/right/20261012_002019_959735/audit/bag/bag_0.db3",
+    "archive": "/home/venom/factr2/data/quick_capture/right/20261012_002019_959735/audit/bag/bag_0.db3.zstd",
+    "original_bytes": 1115295744,
+    "archive_bytes": 111503531,
+    "restored_sha256": "e56d06fa90f91931654375f873d765d324bb5f7da12431beadafbae773d86e6d",
+    "source_sha256": "e56d06fa90f91931654375f873d765d324bb5f7da12431beadafbae773d86e6d",
+    "messages": 2032760,
+    "verified_at": "2026-10-14T03:12:53.050795+08:00",
+    "h5_modified": false,
+    "restore_command": [
+      "zstd",
+      "-d",
+      "--keep",
+      "/home/venom/factr2/data/quick_capture/right/20261012_002019_959735/audit/bag/bag_0.db3.zstd",
+      "-o",
+      "/home/venom/factr2/data/quick_capture/right/20261012_002019_959735/audit/bag/bag_0.db3"
+    ]
+  },
+  {
+    "session": "20261010_160331_906917",
+    "original": "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/bag/bag_0.db3",
+    "archive": "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/bag/bag_0.db3.zstd",
+    "original_bytes": 1063337984,
+    "archive_bytes": 112545089,
+    "restored_sha256": "0c0642b1a67fcddbce15ca7ce9026f83bff5ed04c3442600cdabfe3823bf4635",
+    "source_sha256": "0c0642b1a67fcddbce15ca7ce9026f83bff5ed04c3442600cdabfe3823bf4635",
+    "messages": 2151038,
+    "verified_at": "2026-10-14T03:13:07.929305+08:00",
+    "h5_modified": false,
+    "restore_command": [
+      "zstd",
+      "-d",
+      "--keep",
+      "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/bag/bag_0.db3.zstd",
+      "-o",
+      "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/bag/bag_0.db3"
+    ]
+  },
+  {
+    "session": "20261010_164151_566506",
+    "original": "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/audit/bag/bag_0.db3",
+    "archive": "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/audit/bag/bag_0.db3.zstd",
+    "original_bytes": 640667648,
+    "archive_bytes": 77128820,
+    "restored_sha256": "5437691e0f1d45b886a750a4365db9975abf5ea41666b2937355e20458256ac5",
+    "source_sha256": "5437691e0f1d45b886a750a4365db9975abf5ea41666b2937355e20458256ac5",
+    "messages": 1278412,
+    "verified_at": "2026-10-14T03:13:17.077495+08:00",
+    "h5_modified": false,
+    "restore_command": [
+      "zstd",
+      "-d",
+      "--keep",
+      "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/audit/bag/bag_0.db3.zstd",
+      "-o",
+      "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/audit/bag/bag_0.db3"
+    ]
+  }
+]

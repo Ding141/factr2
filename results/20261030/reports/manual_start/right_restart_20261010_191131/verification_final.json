@@ -1,0 +1,173 @@
+[
+  {
+    "control": {
+      "controllers": {
+        "gravity_compensation_controller": "active",
+        "joint_state_broadcaster": "active",
+        "joint_position_controller": "active"
+      },
+      "healthy_motors": 7
+    },
+    "model": {
+      "state": "valid",
+      "reason": "ok",
+      "diagnostics": {
+        "outputs": 12644,
+        "dropped": 0,
+        "resets": 6,
+        "state": "valid",
+        "reason": "ok",
+        "history_count": 50,
+        "source_age_seconds": 0.006906534000000001,
+        "receive_age_seconds": 0.0030276199977379292,
+        "last_output_stamp_ns": 1791631048718056502,
+        "output_hz": 100,
+        "infer_ms": 0.7135680025385227,
+        "infer_p95_ms": 0.763435000408208,
+        "device": "cpu"
+      }
+    },
+    "endpoint": {
+      "state": "valid",
+      "reasons": [],
+      "geometry": {
+        "condition_number": 7.063918277129055,
+        "scaled_singular_values": [
+          2.0389381423136506,
+          1.6132649268364898,
+          1.4534180693373793,
+          0.5277802184176885,
+          0.4953346333992741,
+          0.2886412416342851
+        ],
+        "torque_fit_error_nm": 0.5348617823989559,
+        "relative_fit_error": 0.3203054139004391,
+        "reason": "ok",
+        "valid": true
+      },
+      "outputs": 4053,
+      "wrench": {
+        "fx": 3.541597948333354,
+        "fy": 4.095110113017956,
+        "fz": -4.288124216674992,
+        "mx": 0.2580380521357206,
+        "my": -0.42604843691480704,
+        "mz": 0.2184644242321232
+      }
+    }
+  },
+  {
+    "control": {
+      "controllers": {
+        "gravity_compensation_controller": "active",
+        "joint_state_broadcaster": "active",
+        "joint_position_controller": "active"
+      },
+      "healthy_motors": 7
+    },
+    "model": {
+      "state": "valid",
+      "reason": "ok",
+      "diagnostics": {
+        "outputs": 12746,
+        "dropped": 0,
+        "resets": 6,
+        "state": "valid",
+        "reason": "ok",
+        "history_count": 50,
+        "source_age_seconds": 0.006929093000000001,
+        "receive_age_seconds": 0.0027759119984693825,
+        "last_output_stamp_ns": 1791631049738056739,
+        "output_hz": 100,
+        "infer_ms": 0.5449710006359965,
+        "infer_p95_ms": 0.763435000408208,
+        "device": "cpu"
+      }
+    },
+    "endpoint": {
+      "state": "valid",
+      "reasons": [],
+      "geometry": {
+        "condition_number": 7.063918019796661,
+        "scaled_singular_values": [
+          2.0389399747542183,
+          1.613266141405684,
+          1.4534182167636887,
+          0.5277793886608352,
+          0.49533408060245293,
+          0.2886415115577616
+        ],
+        "torque_fit_error_nm": 0.5040350711732509,
+        "relative_fit_error": 0.30347688753083774,
+        "reason": "ok",
+        "valid": true
+      },
+      "outputs": 4155,
+      "wrench": {
+        "fx": 3.4139093258674977,
+        "fy": 4.399844585028631,
+        "fz": -4.981226357965758,
+        "mx": 0.26524865600599506,
+        "my": -0.40263635632777556,
+        "mz": 0.20297130987934997
+      }
+    }
+  },
+  {
+    "control": {
+      "controllers": {
+        "gravity_compensation_controller": "active",
+        "joint_state_broadcaster": "active",
+        "joint_position_controller": "active"
+      },
+      "healthy_motors": 7
+    },
+    "model": {
+      "state": "valid",
+      "reason": "ok",
+      "diagnostics": {
+        "outputs": 12848,
+        "dropped": 0,
+        "resets": 6,
+        "state": "valid",
+        "reason": "ok",
+        "history_count": 50,
+        "source_age_seconds": 0.006895848,
+        "receive_age_seconds": 0.002918387999670813,
+        "last_output_stamp_ns": 1791631050758061726,
+        "output_hz": 100,
+        "infer_ms": 0.5461580003611743,
+        "infer_p95_ms": 0.7824320018698927,
+        "device": "cpu"
+      }
+    },
+    "endpoint": {
+      "state": "valid",
+      "reasons": [],
+      "geometry": {
+        "condition_number": 7.022868499169816,
+        "scaled_singular_values": [
+          2.037350806879128,
+          1.6112837100703772,
+          1.4536406006955502,
+          0.5262688727293343,
+          0.4938552434645097,
+          0.29010237157650987
+        ],
+        "torque_fit_error_nm": 0.21455272388903746,
+        "relative_fit_error": 0.20973489937607462,
+        "reason": "ok",
+        "valid": true
+      },
+      "outputs": 4257,
+      "wrench": {
+        "fx": 2.529130833304734,
+        "fy": 1.8658939957641172,
+        "fz": -1.3632758697931666,
+        "mx": 0.08453319792207635,
+        "my": -0.2254228134340934,
+        "mz": 0.07722060957833402
+      }
+    }
+  }
+]

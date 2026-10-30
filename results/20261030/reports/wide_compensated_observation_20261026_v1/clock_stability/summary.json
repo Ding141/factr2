@@ -1,0 +1,28 @@
+{
+  "passed": false,
+  "seconds": 90.00012643599985,
+  "time_service_active": false,
+  "clock_steps": [],
+  "bad_health": [],
+  "counts": {
+    "/factr2/right/joint_pos": 9000,
+    "/factr2/right/adapter_status": 9000,
+    "/factr2/w3_health": 4499,
+    "/joint_position_controller/command_state": 26978,
+    "/joint_states": 26978,
+    "/next/right/kinematic_compensated/distribution": 8772
+  },
+  "max_receive_gap_seconds": {
+    "/next/right/kinematic_compensated/distribution": 0.049393745999623206,
+    "/factr2/w3_health": 0.020560840001053293,
+    "/joint_states": 0.0064234070014208555,
+    "/joint_position_controller/command_state": 0.006215625999175245,
+    "/factr2/right/joint_pos": 0.011182190999534214,
+    "/factr2/right/adapter_status": 0.011170317000505747
+  },
+  "motion_publishers": {
+    "/joint_position_command": [],
+    "/left_pose_goal": [],
+    "/right_pose_goal": []
+  }
+}

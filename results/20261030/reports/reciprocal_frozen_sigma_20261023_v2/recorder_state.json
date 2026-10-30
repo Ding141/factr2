@@ -1,0 +1,11 @@
+{
+  "status": "closed",
+  "error": null,
+  "rows": 1443,
+  "source_frames": 1444,
+  "unmatched_evictions": 0,
+  "updated_mono": 20226.25576861,
+  "last_join_mono": 20226.250522414,
+  "source_rate_hz": 88.61455023404916,
+  "pid": 44957
+}

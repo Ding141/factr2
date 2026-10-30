@@ -1,0 +1,586 @@
+{
+  "test_physical_mse_nm2": 0.006656592437218687,
+  "test_diagnostics": {
+    "groups": {
+      "single_joint": {
+        "samples": 2399,
+        "signed_bias_nm": [
+          0.026055270597909252,
+          0.025567247565972676,
+          0.031105678702084485,
+          -0.029122597023255557,
+          0.0015183390214755902,
+          0.0028456618755136167,
+          0.00017258302895966835
+        ],
+        "per_joint_rmse_nm": [
+          0.19047563541751966,
+          0.0496471968474154,
+          0.06935950244792284,
+          0.07099192257460567,
+          0.008776410945537664,
+          0.03399964727216187,
+          0.010641939398253067
+        ]
+      },
+      "multi_joint": {
+        "samples": 2401,
+        "signed_bias_nm": [
+          -0.00510260502283224,
+          -0.005726609088818621,
+          -0.007614925552427567,
+          0.013177827344442585,
+          -0.007410711336208634,
+          -0.03413026175426018,
+          0.004145748486417669
+        ],
+        "per_joint_rmse_nm": [
+          0.11618770132368127,
+          0.12311465913322349,
+          0.13760125192189535,
+          0.14501095014265242,
+          0.04610156764689502,
+          0.0994940999649121,
+          0.03708376885607812
+        ]
+      },
+      "static": {
+        "samples": 2404,
+        "signed_bias_nm": [
+          0.021223929938519927,
+          0.01857162239513269,
+          -0.011403323452891913,
+          0.015321246778263494,
+          0.0017610667374766042,
+          -0.0011506444252926715,
+          0.007360459450350831
+        ],
+        "per_joint_rmse_nm": [
+          0.04488276214666822,
+          0.028081313057499637,
+          0.03252131700247088,
+          0.05392665504418796,
+          0.012168429857077096,
+          0.028280334257654763,
+          0.012713849909896921
+        ]
+      }
+    },
+    "static_episodes": [
+      {
+        "family": "hysteresis",
+        "phase": "hysteresis",
+        "kind": "static_anchor0_pattern0_from_low",
+        "speed": "v06_a15",
+        "active_joints": [
+          0
+        ],
+        "pose_index": 0,
+        "approach_direction": "from_low",
+        "dwell_seconds": 3,
+        "profile": {
+          "id": "v06_a15",
+          "velocity_deg_s": 6,
+          "acceleration_deg_s2": 15,
+          "jerk_deg_s3": 60
+        },
+        "peak_bounds": {
+          "velocity_deg_s": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceleration_deg_s2": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "jerk_deg_s3": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "rows": 300,
+        "event": "0011_v06_a15_static_anchor0_pattern0_from_low",
+        "source_episode": "ep_0000",
+        "source_row_start": 11765,
+        "source_row_stop_exclusive": 12065,
+        "state_codes": {
+          "entry_ramp": 0,
+          "continuous_excitation": 1,
+          "exit_ramp": 2,
+          "hysteresis": 3,
+          "stationary_hold": 4
+        },
+        "thermal_initial_condition": "unclassified",
+        "measured_position_mean_deg": [
+          -0.5105509161949158,
+          50.708831787109375,
+          0.17868013679981232,
+          -54.605472564697266,
+          0.0757356807589531,
+          -0.061408791691064835,
+          -0.21222013235092163
+        ],
+        "native_goal_deg": [
+          0.0,
+          50.0,
+          0.0,
+          -55.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "path": "/home/venom/factr2/data/right/targeted_training_20261016_v1/test_08.h5",
+        "episode": "ep_0002",
+        "samples": 251,
+        "signed_bias_nm": [
+          0.045704809083803685,
+          0.03331361386732039,
+          -0.016236914667721553,
+          0.005819294602780387,
+          0.0035048391173150882,
+          0.023186908738012334,
+          -0.004030365389357813
+        ],
+        "per_joint_rmse_nm": [
+          0.04849478344916953,
+          0.03496016142529506,
+          0.029436555607721286,
+          0.05050612438225211,
+          0.006255205623739885,
+          0.029856091904157372,
+          0.005081580091620223
+        ]
+      },
+      {
+        "family": "hysteresis",
+        "phase": "hysteresis",
+        "kind": "static_anchor0_pattern0_from_high",
+        "speed": "v06_a15",
+        "active_joints": [
+          0
+        ],
+        "pose_index": 0,
+        "approach_direction": "from_high",
+        "dwell_seconds": 3,
+        "profile": {
+          "id": "v06_a15",
+          "velocity_deg_s": 6,
+          "acceleration_deg_s2": 15,
+          "jerk_deg_s3": 60
+        },
+        "peak_bounds": {
+          "velocity_deg_s": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceleration_deg_s2": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "jerk_deg_s3": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "rows": 300,
+        "event": "0014_v06_a15_static_anchor0_pattern0_from_high",
+        "source_episode": "ep_0000",
+        "source_row_start": 13002,
+        "source_row_stop_exclusive": 13302,
+        "state_codes": {
+          "entry_ramp": 0,
+          "continuous_excitation": 1,
+          "exit_ramp": 2,
+          "hysteresis": 3,
+          "stationary_hold": 4
+        },
+        "thermal_initial_condition": "unclassified",
+        "measured_position_mean_deg": [
+          0.1202319860458374,
+          50.7136116027832,
+          0.17868013679981232,
+          -54.605472564697266,
+          0.07660993933677673,
+          -0.061408791691064835,
+          -0.21265727281570435
+        ],
+        "native_goal_deg": [
+          0.0,
+          50.0,
+          0.0,
+          -55.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "path": "/home/venom/factr2/data/right/targeted_training_20261016_v1/test_08.h5",
+        "episode": "ep_0005",
+        "samples": 251,
+        "signed_bias_nm": [
+          0.025752527579902654,
+          0.012635265851670002,
+          0.02628742874538191,
+          0.0026270167118598625,
+          -0.004412982140045106,
+          -0.009961983599455144,
+          0.0038320997044145742
+        ],
+        "per_joint_rmse_nm": [
+          0.02808619831918758,
+          0.015294854572702549,
+          0.03828233479955513,
+          0.048642035941584866,
+          0.006698561005559233,
+          0.024161862676052425,
+          0.004779767814445702
+        ]
+      },
+      {
+        "family": "hysteresis",
+        "phase": "hysteresis",
+        "kind": "static_anchor0_pattern1_from_low",
+        "speed": "v06_a15",
+        "active_joints": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "pose_index": 0,
+        "approach_direction": "from_low",
+        "dwell_seconds": 10,
+        "profile": {
+          "id": "v06_a15",
+          "velocity_deg_s": 6,
+          "acceleration_deg_s2": 15,
+          "jerk_deg_s3": 60
+        },
+        "peak_bounds": {
+          "velocity_deg_s": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceleration_deg_s2": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "jerk_deg_s3": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "rows": 1000,
+        "event": "0017_v06_a15_static_anchor0_pattern1_from_low",
+        "source_episode": "ep_0000",
+        "source_row_start": 14239,
+        "source_row_stop_exclusive": 15239,
+        "state_codes": {
+          "entry_ramp": 0,
+          "continuous_excitation": 1,
+          "exit_ramp": 2,
+          "hysteresis": 3,
+          "stationary_hold": 4
+        },
+        "thermal_initial_condition": "unclassified",
+        "measured_position_mean_deg": [
+          -0.51055908203125,
+          49.31608200073242,
+          -0.7830162644386292,
+          -55.391727447509766,
+          -0.5150483846664429,
+          -0.3236885964870453,
+          -0.40868815779685974
+        ],
+        "native_goal_deg": [
+          0.0,
+          50.0,
+          0.0,
+          -55.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "path": "/home/venom/factr2/data/right/targeted_training_20261016_v1/test_08.h5",
+        "episode": "ep_0008",
+        "samples": 951,
+        "signed_bias_nm": [
+          -0.0222777237870581,
+          0.0015965066648977624,
+          -0.023818308533936922,
+          -0.024659543237328104,
+          -0.003318464130522905,
+          -0.026726903419586785,
+          -0.00039372681350953405
+        ],
+        "per_joint_rmse_nm": [
+          0.02971244051266583,
+          0.019491787007102152,
+          0.038704588877832305,
+          0.02777642427281224,
+          0.010575448006174172,
+          0.02978187170697709,
+          0.003975541861359412
+        ]
+      },
+      {
+        "family": "hysteresis",
+        "phase": "hysteresis",
+        "kind": "static_anchor0_pattern1_from_high",
+        "speed": "v06_a15",
+        "active_joints": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "pose_index": 0,
+        "approach_direction": "from_high",
+        "dwell_seconds": 10,
+        "profile": {
+          "id": "v06_a15",
+          "velocity_deg_s": 6,
+          "acceleration_deg_s2": 15,
+          "jerk_deg_s3": 60
+        },
+        "peak_bounds": {
+          "velocity_deg_s": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "acceleration_deg_s2": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "jerk_deg_s3": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "rows": 1000,
+        "event": "0020_v06_a15_static_anchor0_pattern1_from_high",
+        "source_episode": "ep_0000",
+        "source_row_start": 16176,
+        "source_row_stop_exclusive": 17176,
+        "state_codes": {
+          "entry_ramp": 0,
+          "continuous_excitation": 1,
+          "exit_ramp": 2,
+          "hysteresis": 3,
+          "stationary_hold": 4
+        },
+        "thermal_initial_condition": "unclassified",
+        "measured_position_mean_deg": [
+          0.12278073281049728,
+          50.710731506347656,
+          0.3571847081184387,
+          -54.19050216674805,
+          0.4903552830219269,
+          0.3252559304237366,
+          0.8591265678405762
+        ],
+        "native_goal_deg": [
+          0.0,
+          50.0,
+          0.0,
+          -55.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "path": "/home/venom/factr2/data/right/targeted_training_20261016_v1/test_08.h5",
+        "episode": "ep_0011",
+        "samples": 951,
+        "signed_bias_nm": [
+          0.057069034060046125,
+          0.033222643102118435,
+          -0.00766041766400725,
+          0.06116033515632993,
+          0.008009892453970845,
+          0.02032773895251903,
+          0.019052306419780986
+        ],
+        "per_joint_rmse_nm": [
+          0.05814257601983827,
+          0.035058803990414285,
+          0.023664587139092634,
+          0.07267723515954178,
+          0.015501379268753326,
+          0.027302395003509804,
+          0.01949253678097755
+        ]
+      }
+    ],
+    "groups_by_speed": {
+      "single_joint:v06_a15": {
+        "samples": 2399,
+        "signed_bias_nm": [
+          0.026055270597909252,
+          0.025567247565972676,
+          0.031105678702084485,
+          -0.029122597023255557,
+          0.0015183390214755902,
+          0.0028456618755136167,
+          0.00017258302895966835
+        ],
+        "per_joint_rmse_nm": [
+          0.19047563541751966,
+          0.0496471968474154,
+          0.06935950244792284,
+          0.07099192257460567,
+          0.008776410945537664,
+          0.03399964727216187,
+          0.010641939398253067
+        ]
+      },
+      "multi_joint:v06_a15": {
+        "samples": 2401,
+        "signed_bias_nm": [
+          -0.00510260502283224,
+          -0.005726609088818621,
+          -0.007614925552427567,
+          0.013177827344442585,
+          -0.007410711336208634,
+          -0.03413026175426018,
+          0.004145748486417669
+        ],
+        "per_joint_rmse_nm": [
+          0.11618770132368127,
+          0.12311465913322349,
+          0.13760125192189535,
+          0.14501095014265242,
+          0.04610156764689502,
+          0.0994940999649121,
+          0.03708376885607812
+        ]
+      },
+      "static:v06_a15": {
+        "samples": 2404,
+        "signed_bias_nm": [
+          0.021223929938519927,
+          0.01857162239513269,
+          -0.011403323452891913,
+          0.015321246778263494,
+          0.0017610667374766042,
+          -0.0011506444252926715,
+          0.007360459450350831
+        ],
+        "per_joint_rmse_nm": [
+          0.04488276214666822,
+          0.028081313057499637,
+          0.03252131700247088,
+          0.05392665504418796,
+          0.012168429857077096,
+          0.028280334257654763,
+          0.012713849909896921
+        ]
+      }
+    },
+    "matched_return_baselines": [
+      {
+        "path": "/home/venom/factr2/data/right/targeted_training_20261016_v1/test_08.h5",
+        "pose_id": "0",
+        "pattern_id": "0",
+        "speed": "v06_a15",
+        "baseline_gap_nm": [
+          0.01995228150390103,
+          0.020678348015650386,
+          0.04252434341310346,
+          0.0031922778909205247,
+          0.007917821257360194,
+          0.03314889233746748,
+          0.007862465093772386
+        ]
+      },
+      {
+        "path": "/home/venom/factr2/data/right/targeted_training_20261016_v1/test_08.h5",
+        "pose_id": "0",
+        "pattern_id": "1",
+        "speed": "v06_a15",
+        "baseline_gap_nm": [
+          0.07934675784710422,
+          0.031626136437220675,
+          0.01615789086992967,
+          0.08581987839365804,
+          0.01132835658449375,
+          0.04705464237210581,
+          0.01944603323329052
+        ]
+      }
+    ]
+  },
+  "evaluation_scope": "post-hoc disjoint whole recording sessions; validation/test limited to 6 deg/s",
+  "deployment_ready": false,
+  "automatic_deployment": false,
+  "pending": [
+    "prospective matching multi-speed independent validation/test",
+    "dedicated cold/warm comparison",
+    "12 deg/s and higher measured coverage",
+    "contact/release validation"
+  ]
+}

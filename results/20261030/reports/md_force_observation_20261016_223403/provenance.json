@@ -1,0 +1,38 @@
+{
+  "status": "complete",
+  "checked_wall_ns": 1792161551240682630,
+  "models_unchanged": {
+    "NEXT": "b5216350f2c76a7462ab931e5d62e8f2442e00e65f0f4146fb4b7868829d62a6",
+    "NEXT_MD": "923bff7d716f33f2c91adec04d307deaebc1e03076939b30feafa3b9c5c4d7f0"
+  },
+  "session": "/home/venom/factr2/data/quick_capture/right/20261016_223606_187477",
+  "capture_h5_sha256": {
+    "/home/venom/factr2/data/quick_capture/right/20261016_223606_187477/20261016_223606_187477_20261016_223638.h5": "5fab8070e592722114116d8561640c8a643a279e8c8fb0040ee72b1900669a3d"
+  },
+  "artifact_sha256": {
+    "prepare.py": "95e91679333707ed7578d41fd14905a9dd8230a0597f814673476582f1ceef18",
+    "record.py": "4c67a5714f6c54f1e47c7b6b52ff88e29260dcbb87e7073921f3572da35da90c",
+    "move.py": "5b933d271a0b74c197a27a21702fe13ebda2290d0e9adf77553851856f394988",
+    "run.py": "2fdd32e6961a263a81b45349163d4a92a3ef32d33b95e33480bd55f13f2828f5",
+    "analyse.py": "417e26ad37006a5419b21e36e858bf3bdcaa70fb4f8959a1c82e28bfe2489f55",
+    "motion.yaml": "0c066960cf7eb4b64105c63d7fad3389fe2b9d96d59d3313513469cf4b6586ac",
+    "test_spec.json": "411d009e49e9ad8fb9ea74ae2df121be9551d34916d89aab7044ea9be7934777",
+    "samples.csv": "e8f7208a5204854f93cf0d36b82b40746baa78915e5c9fbfb505e4268f6f8cad",
+    "endpoint_messages.csv": "dcb719af538a28b532772cdb7cb2c11e1c9e7712fd02490641c1241163ed99a3",
+    "diagnostics.jsonl": "6efcd21e641432e6847f82e6e6775343bac36d194e8c1077e49162520fac8bbd",
+    "analysis.json": "8ca4c5822393d5d1abf12419cbf439d7b4c08af3a2edfdf84b97bba3a2863178",
+    "analysis_arrays.npz": "6d618dc59a59c97eede1039e88534a2750c5708c30d5b502d4153400a9aef2d6",
+    "REPORT.md": "1da54be912e4b24b4fc605b29fc6342111a448fd865a827e21fe4ea3859bdfe1",
+    "feedback.png": "4236d517e6d7d848337b7148fffa1d86885fafd4183bb14b283238ec1b896349"
+  },
+  "latest_commanded_pose_deg": [
+    3.469446951953614e-18,
+    50.00000000000002,
+    -3.0357660829594124e-18,
+    -54.99999999999999,
+    -6.938893903907228e-18,
+    -8.673617379884035e-19,
+    1.734723475976807e-18
+  ],
+  "observations_only_not_training": true
+}

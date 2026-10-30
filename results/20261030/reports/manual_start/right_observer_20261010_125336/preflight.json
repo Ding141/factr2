@@ -1,0 +1,49 @@
+{
+  "position": {
+    "matching": true,
+    "mismatches": []
+  },
+  "kp": [
+    70.0,
+    70.0,
+    70.0,
+    60.0,
+    10.0,
+    35.0,
+    10.0
+  ],
+  "kd": [
+    2.75,
+    2.5,
+    2.0,
+    2.0,
+    0.7,
+    1.0,
+    0.5
+  ],
+  "calibration": {
+    "live_path": "/home/venom/dual_arm_robot/src/ros2_ws_config/joint_offsets_right.yaml",
+    "sha256": "23532d9890f7e3ece77a80f0af8a26742c6bcf85a1cd07ceda3147dd528e6838",
+    "matches_training": true
+  },
+  "robot_description_sha256": "7830b419d3b12a413a1ec672a1ca0da8ef5d6b255bc883d40428185933fd88f4",
+  "gravity": {
+    "matching": true,
+    "mismatches": []
+  },
+  "controllers": {
+    "gravity_compensation_controller": "active",
+    "joint_state_broadcaster": "active",
+    "joint_position_controller": "active"
+  },
+  "all_right_motors_healthy": true,
+  "initial_q_deg": [
+    0.12343763420776382,
+    0.4214659041551497,
+    -0.08359976691252183,
+    -0.4658555568188806,
+    -0.6955847165456643,
+    -0.2362614234062119,
+    -0.14628521045061982
+  ]
+}

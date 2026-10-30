@@ -1,0 +1,7 @@
+{
+  "status": "interrupted_for_parallel_execution",
+  "run": "runs/right_joint_lstm_v1_20261028_104823_227499",
+  "completed_epochs": 1,
+  "checkpoint_preserved": true,
+  "reason": "CPU execution acceleration; final run restarts from random weights"
+}

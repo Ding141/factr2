@@ -1,0 +1,16 @@
+{
+  "removed_only_targeted_capture_test_fixtures": [
+    {
+      "path": "/tmp/pytest-of-venom/pytest-2",
+      "bytes": 15570711
+    },
+    {
+      "path": "/tmp/pytest-of-venom/pytest-3",
+      "bytes": 17891261
+    },
+    {
+      "path": "/tmp/pytest-of-venom/pytest-4",
+      "bytes": 17891261
+    }
+  ]
+}

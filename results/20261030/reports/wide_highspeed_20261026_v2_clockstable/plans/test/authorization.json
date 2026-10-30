@@ -1,0 +1,9 @@
+{
+  "operator_confirmed": true,
+  "answer": "已暂停校时，请继续静止验证和剩余任务",
+  "scope": "Resume remaining previously authorized bounded no-load recordings after 90-second static validation; low-speed return from stopped pose; extra compensation off after training",
+  "original_authorization": "/home/venom/factr2/log/wide_highspeed_20261026_v1/authorization.json",
+  "ntp_service_paused_by_operator": true,
+  "restore_after_all_motion": "sudo systemctl start systemd-timesyncd",
+  "plan_sha256": "af908693abe51231c11a797fa122d541776be5eaf63cb53f2de06da29b362072"
+}

@@ -1,0 +1,56 @@
+{
+  "robot_experiment_date": "2026-10-16",
+  "offline_followup_date": "2026-10-19",
+  "no_additional_robot_motion_in_offline_followup": true,
+  "motion_status": "completed",
+  "recording_active": false,
+  "tests_passed": 28,
+  "postflight": {
+    "status": "complete",
+    "control_profile_sha256": "cbfcb882c7148d63e304f96e920bc4f459dc74c978c32516d6f4a947fb20a1a5",
+    "control_profile_matches_training": true,
+    "final_native_target_deg": [
+      2.0816681711721688e-17,
+      50.00000000000001,
+      1.0408340855860844e-17,
+      -54.99999999999999,
+      -1.0408340855860844e-17,
+      1.0408340855860844e-17,
+      -1.0408340855860844e-17
+    ],
+    "final_measured_position_deg": [
+      0.1017995949171636,
+      50.69242317663609,
+      -0.45734771829561877,
+      -55.37046780374989,
+      0.4516511951190018,
+      -0.3241249768892552,
+      0.8610857298562209
+    ],
+    "max_final_tracking_deg": 0.8610857298562209,
+    "model_unchanged": true,
+    "formal_force_acceptance": false,
+    "hardware_control_changed": false
+  },
+  "no_delay_search_or_new_time_shift_applied": true,
+  "software_queue_probe_uses_synthetic_messages_only": true,
+  "artifacts": {
+    "log/next_feedback_trial_20261016_v2/motion.yaml": "166508b77937d0b155e4ab2bdbef4beea94ec6daecbbb80708585c102911dba3",
+    "log/next_feedback_trial_20261016_v2/test_spec.json": "8107007409bec4c748938c6aadc087b1cfe9b92dd6d5d263f77a10e839dd1bd5",
+    "log/next_feedback_trial_20261016_v2/calibration.yaml": "edf771ba9b48ea3df508380569d22a30b0e51036dcb3a321df3cf9e582f2b9ca",
+    "log/next_feedback_trial_20261016_v2/analysis_source.py": "bf50fe2c67dc96772c9a6b3d5391cf37abfa0bca672b888ad461301c00fc0f54",
+    "log/next_feedback_trial_20261016_v2/render_source.py": "0e5cb7b9e7a1524733c1ce3228556af1732eb5a7e6e6fdf0513599289b89298a",
+    "log/next_feedback_trial_20261016_v2/protocol_source.py": "9b567f59811f0c3a3c488f7638e33c56e050faf6c8cb869057588c2cd966657d",
+    "log/next_feedback_trial_20261016_v2/samples.csv": "f9556a6be61949c5b3b7c06165a63fa7180b443a51732ea92c9604d0f893c466",
+    "log/next_feedback_trial_20261016_v2/feedback_analysis.json": "78923bdb06996bacef0a5f5405679ffd3187dd960b2c95d31758427277c56edb",
+    "log/next_feedback_trial_20261016_v2/queue_probe.cpp": "6b3a4dc231772935d4d44e2e1b686854f5f3eeb428534d58f794314db36e36ef",
+    "log/next_feedback_trial_20261016_v2/queue_probe_result.json": "f1e3557acfd6ea5ba5ffa5d92733e1bb863b52c6d71d64867c42694cde621642",
+    "log/next_feedback_trial_20261016_v2/REPORT.md": "391286bdd626594d019a223e0152a36d3f5cea33254bcc8ddddb96a942b4ec26",
+    "log/next_feedback_trial_20261016_v2/cross_layer_detail.png": "79182f510fe8439e8a888903f1cdfd926bfc8dbe9c6af6b4402b0c5f3b86bcb5",
+    "log/next_feedback_trial_20261016_v2/tracking_detail.png": "b90419b1635ae67a361ad2a5973f71143f1c915a31ffafa9c710247a59f8796b",
+    "log/next_feedback_trial_20261016_v2/feedback_consistency.png": "c0fd84fb3df9878bfc18c9c9eb44175471c4c36c7c1ff048c45bcd709b13b7fb",
+    "data/quick_capture/right/20261016_234400_384531/audit/raw_can.bin": "62488dbd465a4d18bfe8bb77409923780ae883b719bd6f3fef04f67eac29e5e8",
+    "data/quick_capture/right/20261016_234400_384531/audit/bag/metadata.yaml": "3ef2b35724246816d9d8b51b9dcab9483b980e6abcb1a2d6b7a69af13539e3e0",
+    "data/quick_capture/right/20261016_234400_384531/20261016_234400_384531_20261016_234432.h5": "3a4982339a7e2205c8b31625444eb56accd561eb3b1c447b71b41a64adda0fee"
+  }
+}

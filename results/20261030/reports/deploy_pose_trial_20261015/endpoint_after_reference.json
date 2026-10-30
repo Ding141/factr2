@@ -1,0 +1,31 @@
+{
+  "state": "unavailable",
+  "reasons": [
+    "inconsistent_with_tool_contact"
+  ],
+  "explanation": "关节残差不符合单一末端接触假设",
+  "estimation_mode": "force_only",
+  "moments_observed": false,
+  "geometry": {
+    "condition_number": 6.727975973456114,
+    "scaled_singular_values": [
+      1.3096927491068908,
+      0.9602410470967321,
+      0.19466370781852108
+    ],
+    "mode": "force_only",
+    "observable_rank": 3,
+    "moments_observed": false,
+    "assumption": "tool_point_force_zero_external_moment",
+    "torque_fit_error_nm": 0.15310613637240067,
+    "relative_fit_error": 0.5934901801028726,
+    "reason": "inconsistent_with_tool_contact",
+    "valid": false
+  },
+  "frame_id": "right_attachment_point",
+  "moment_reference_point": "right_attachment_point",
+  "sign_convention": "NEXT_residual",
+  "outputs": 13,
+  "wrench": null,
+  "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。点力模式仅估计Fx/Fy/Fz，假设外加力矩为零；不可用于拧转力矩检测。"
+}

@@ -1,0 +1,26 @@
+{
+  "status": "endpoint_force_panel_added",
+  "verified_at": "2026-10-30T10:44:57.606664+08:00",
+  "frames": 213,
+  "endpoint_frames": 21,
+  "physical_motion": false,
+  "old_models_unchanged": true,
+  "urls": {
+    "old": "http://127.0.0.1:8082/",
+    "new": "http://127.0.0.1:8083/"
+  },
+  "config": "/home/venom/factr2/config/w3/right/endpoint_force_comparison.yaml",
+  "source_sha256": {
+    "scripts/w3_endpoint_force_panel.py": "7b8759462ca990aaaa4744a7eb69fc0bcdabcfaff1c3a92a36d8d035cccfb38c",
+    "scripts/observe_w3_model_comparison.py": "f4d3d3841fe8b77b88cb992ee1e638f2091d26f6e871c23e9862fe1bc60d4118",
+    "scripts/record_w3_model_comparison.py": "8553ceeabf404572e26dc7c3613784712b34c5697764bc188b2faf42344bb446",
+    "factr2_next/src/factr2_next/factr2_next/visualization/web_node.py": "48e316f7bf912af085e7d73983df8700a357aaa8001ddf0be67d4e98be83bef7"
+  },
+  "tests": {
+    "geometry_and_wrench": "14 passed",
+    "paired_observer_and_two_dashboards": "1 passed",
+    "joint_dashboard_and_force_panel": "8 passed, 1 skipped",
+    "javascript_syntax": "passed"
+  },
+  "movement_task": "Still awaiting operator clearance and local clock-sync pause from previous request"
+}

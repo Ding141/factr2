@@ -1,0 +1,371 @@
+[
+  {
+    "role": "train",
+    "steps": 21,
+    "seconds": 371.32,
+    "plan_sha256": "c0ac4320c2db929f7157493dbf4412e4f87bcf8897602aeb932c856e75a77f1b",
+    "collision_accepted": true,
+    "formal": [
+      {
+        "name": "continuous_v06_train_continuous",
+        "definition": {
+          "generator": "analytic_multisine_with_C3_endpoint_window",
+          "seed": 202610250,
+          "cycles_per_joint": [
+            10.998644212078531,
+            11.715192390785063,
+            12.3199704765637,
+            13.495720204476434,
+            15.276942788791136,
+            20.986910191943217,
+            24.6331798335185
+          ],
+          "phase_rad": [
+            -1.861628969654661,
+            0.7947770168600368,
+            -2.1374087057975486,
+            2.2779831326743443,
+            -1.1250696562511076,
+            0.4927869317365565,
+            3.125179422883204
+          ],
+          "nominal_seconds": 90.0,
+          "actual_seconds": 90.0,
+          "entry_ramp_seconds": 8.0,
+          "exit_ramp_seconds": 8.0,
+          "plateau_seconds": 74.0,
+          "one_native_trajectory": true,
+          "interior_arrival_waits": 0,
+          "interior_intentional_holds": 0
+        },
+        "smoothness": {
+          "interior_min_vector_speed_deg_s": 5.0601903870154095,
+          "interior_stopped_samples": 0,
+          "interior_knot_stops": 0,
+          "maximum_knot_jerk_jump_deg_s3": 0.022197477245835984,
+          "sampled_velocity_peak_deg_s": [
+            4.6071013101894245,
+            4.907248291508409,
+            4.3004809067171745,
+            4.710895042910528,
+            4.266127128665732,
+            4.395488052811381,
+            3.4394405107568704
+          ],
+          "sampled_acceleration_peak_deg_s2": [
+            3.92877310829289,
+            4.407868528535501,
+            4.092029923478222,
+            4.841995220272698,
+            4.71474256561598,
+            6.555107448153306,
+            5.999655031963535
+          ]
+        }
+      },
+      {
+        "name": "continuous_v12_train_continuous",
+        "definition": {
+          "generator": "analytic_multisine_with_C3_endpoint_window",
+          "seed": 202611259,
+          "cycles_per_joint": [
+            21.360087095332137,
+            23.279439377245158,
+            22.519451580366034,
+            24.250933173650523,
+            24.67074719221224,
+            32.29313772047557,
+            34.80506314238037
+          ],
+          "phase_rad": [
+            1.9046441899513704,
+            -0.7718351052211379,
+            -0.2924138738322575,
+            -1.6156688962924857,
+            0.6317449038300835,
+            -1.5213002082548355,
+            1.04955377011422
+          ],
+          "nominal_seconds": 90.0,
+          "actual_seconds": 90.0,
+          "entry_ramp_seconds": 8.0,
+          "exit_ramp_seconds": 8.0,
+          "plateau_seconds": 74.0,
+          "one_native_trajectory": true,
+          "interior_arrival_waits": 0,
+          "interior_intentional_holds": 0
+        },
+        "smoothness": {
+          "interior_min_vector_speed_deg_s": 6.108033459614503,
+          "interior_stopped_samples": 0,
+          "interior_knot_stops": 0,
+          "maximum_knot_jerk_jump_deg_s3": 0.13092863437179858,
+          "sampled_velocity_peak_deg_s": [
+            8.947291954901287,
+            9.75126844896153,
+            7.860771164550702,
+            8.465171570227747,
+            6.8893719718913,
+            6.763456074117794,
+            4.859701865145212
+          ],
+          "sampled_acceleration_peak_deg_s2": [
+            13.433649858227938,
+            16.047900551519877,
+            12.591140205489323,
+            14.47191441580291,
+            11.968042247537463,
+            15.328328636375373,
+            11.858358474848092
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "role": "val",
+    "steps": 18,
+    "seconds": 263.49999999999994,
+    "plan_sha256": "a70a5c65bf0255afcfcfa2efbecd7a5e84a1600023dd023b5f20fbc4e06654cb",
+    "collision_accepted": true,
+    "formal": [
+      {
+        "name": "continuous_v06_val_continuous",
+        "definition": {
+          "generator": "analytic_multisine_with_C3_endpoint_window",
+          "seed": 202610251,
+          "cycles_per_joint": [
+            10.869506526905255,
+            11.447999331110982,
+            12.44797220444412,
+            13.669989286333443,
+            15.167842431215279,
+            20.881860982036763,
+            23.070868148730355
+          ],
+          "phase_rad": [
+            2.6997757493760464,
+            -2.0108747656876234,
+            3.083952400534124,
+            -1.4017626488637904,
+            0.6057557335329178,
+            -2.6948716076130266,
+            -1.9414759216968773
+          ],
+          "nominal_seconds": 90.0,
+          "actual_seconds": 90.0,
+          "entry_ramp_seconds": 8.0,
+          "exit_ramp_seconds": 8.0,
+          "plateau_seconds": 74.0,
+          "one_native_trajectory": true,
+          "interior_arrival_waits": 0,
+          "interior_intentional_holds": 0
+        },
+        "smoothness": {
+          "interior_min_vector_speed_deg_s": 3.89347854276482,
+          "interior_stopped_samples": 0,
+          "interior_knot_stops": 0,
+          "maximum_knot_jerk_jump_deg_s3": 0.01614135117557325,
+          "sampled_velocity_peak_deg_s": [
+            4.553001458795848,
+            4.7953267388356835,
+            4.345158468353447,
+            4.771726395149508,
+            4.23566063058284,
+            4.373475779150452,
+            3.221300853272602
+          ],
+          "sampled_acceleration_peak_deg_s2": [
+            3.885340310375061,
+            4.201748149260087,
+            4.185202581833684,
+            4.941591723902742,
+            4.764646901123205,
+            6.479944513576036,
+            5.19269373159651
+          ]
+        }
+      },
+      {
+        "name": "continuous_v12_val_continuous",
+        "definition": {
+          "generator": "analytic_multisine_with_C3_endpoint_window",
+          "seed": 202611260,
+          "cycles_per_joint": [
+            21.783583941447645,
+            23.35343515455914,
+            22.53184557407797,
+            24.287474879706952,
+            25.167287191246608,
+            31.692824611086557,
+            33.71585285288631
+          ],
+          "phase_rad": [
+            3.0042664662186507,
+            -0.3002183879981941,
+            -2.9786938509388254,
+            1.7088943087122646,
+            -1.1525682959541188,
+            -0.5571384148640166,
+            -1.8525997639519962
+          ],
+          "nominal_seconds": 90.0,
+          "actual_seconds": 90.0,
+          "entry_ramp_seconds": 8.0,
+          "exit_ramp_seconds": 8.0,
+          "plateau_seconds": 74.0,
+          "one_native_trajectory": true,
+          "interior_arrival_waits": 0,
+          "interior_intentional_holds": 0
+        },
+        "smoothness": {
+          "interior_min_vector_speed_deg_s": 5.585114113934943,
+          "interior_stopped_samples": 0,
+          "interior_knot_stops": 0,
+          "maximum_knot_jerk_jump_deg_s3": 0.11833166405723716,
+          "sampled_velocity_peak_deg_s": [
+            9.12468601666702,
+            9.782263539260718,
+            7.865097466632282,
+            8.477927749905305,
+            7.028030858209533,
+            6.637728804187071,
+            4.707620254439685
+          ],
+          "sampled_acceleration_peak_deg_s2": [
+            14.053669884997657,
+            16.215352309123663,
+            12.604662404253082,
+            14.579277281630397,
+            12.513551143985888,
+            14.710250727794936,
+            11.135699937228274
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "role": "test",
+    "steps": 18,
+    "seconds": 263.49999999999994,
+    "plan_sha256": "123fb1942fa006168b574220869cf35a4c52aa3a5374bd0b54ed8c87e2e453b8",
+    "collision_accepted": true,
+    "formal": [
+      {
+        "name": "continuous_v06_test_continuous",
+        "definition": {
+          "generator": "analytic_multisine_with_C3_endpoint_window",
+          "seed": 202610252,
+          "cycles_per_joint": [
+            10.162828736073966,
+            11.999451465712474,
+            12.39852237271175,
+            13.467008862191841,
+            15.654310571134221,
+            21.336259400348805,
+            24.0676066083445
+          ],
+          "phase_rad": [
+            -1.2088479861347559,
+            2.9365071061542825,
+            -1.9616376556372035,
+            -2.367321817095351,
+            0.16295164933897155,
+            -2.5619579329533084,
+            0.2133785825872847
+          ],
+          "nominal_seconds": 90.0,
+          "actual_seconds": 90.0,
+          "entry_ramp_seconds": 8.0,
+          "exit_ramp_seconds": 8.0,
+          "plateau_seconds": 74.0,
+          "one_native_trajectory": true,
+          "interior_arrival_waits": 0,
+          "interior_intentional_holds": 0
+        },
+        "smoothness": {
+          "interior_min_vector_speed_deg_s": 3.7251243883469463,
+          "interior_stopped_samples": 0,
+          "interior_knot_stops": 0,
+          "maximum_knot_jerk_jump_deg_s3": 0.019870305543159716,
+          "sampled_velocity_peak_deg_s": [
+            4.25699569159468,
+            5.026314039636425,
+            4.327900710446529,
+            4.700872896377988,
+            4.371508163958667,
+            4.468655550009859,
+            3.360471485643249
+          ],
+          "sampled_acceleration_peak_deg_s2": [
+            3.5438652407375475,
+            4.7539315836322285,
+            4.183531014114727,
+            4.790086352960202,
+            4.974963405343184,
+            6.79339464337537,
+            5.733011103524785
+          ]
+        }
+      },
+      {
+        "name": "continuous_v12_test_continuous",
+        "definition": {
+          "generator": "analytic_multisine_with_C3_endpoint_window",
+          "seed": 202611261,
+          "cycles_per_joint": [
+            20.45477424283991,
+            23.590265952163946,
+            22.42694679572498,
+            24.941140988816805,
+            24.96014523039254,
+            30.369542245443796,
+            33.42844844665862
+          ],
+          "phase_rad": [
+            2.668625768413899,
+            0.8294827716035074,
+            2.027595772888529,
+            -2.77353231290433,
+            1.0929312843168653,
+            -1.2633152372271321,
+            -1.2842886410992291
+          ],
+          "nominal_seconds": 90.0,
+          "actual_seconds": 90.0,
+          "entry_ramp_seconds": 8.0,
+          "exit_ramp_seconds": 8.0,
+          "plateau_seconds": 74.0,
+          "one_native_trajectory": true,
+          "interior_arrival_waits": 0,
+          "interior_intentional_holds": 0
+        },
+        "smoothness": {
+          "interior_min_vector_speed_deg_s": 9.353267557494402,
+          "interior_stopped_samples": 0,
+          "interior_knot_stops": 0,
+          "maximum_knot_jerk_jump_deg_s3": 0.10459867902569187,
+          "sampled_velocity_peak_deg_s": [
+            8.568074911716408,
+            9.881467245574642,
+            7.8284808859478625,
+            8.706100165883061,
+            6.97018661896303,
+            6.360580692372669,
+            4.667488714047047
+          ],
+          "sampled_acceleration_peak_deg_s2": [
+            12.466883718596405,
+            16.376980647795992,
+            12.288805026009458,
+            15.187635760796123,
+            12.309392003982197,
+            13.578997751148302,
+            10.89321325575485
+          ]
+        }
+      }
+    ]
+  }
+]

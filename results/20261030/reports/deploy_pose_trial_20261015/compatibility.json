@@ -1,0 +1,30 @@
+{
+  "checkpoint": "/home/venom/factr2/runs/trial_pose_trial_20261015_20261015_023524_208273",
+  "sample_hz": 100,
+  "live_control_profile_sha256": "dbd0cc6db8961eaba572f5088b3ba5b4fab6e42ed5fddba428c34f1084eec47e",
+  "training_control_profile_sha256": "dbd0cc6db8961eaba572f5088b3ba5b4fab6e42ed5fddba428c34f1084eec47e",
+  "live_arm_profile_sha256": "cbfcb882c7148d63e304f96e920bc4f459dc74c978c32516d6f4a947fb20a1a5",
+  "training_arm_profile_sha256": "cbfcb882c7148d63e304f96e920bc4f459dc74c978c32516d6f4a947fb20a1a5",
+  "calibration_match": true,
+  "friction_match": true,
+  "geometry_match": true,
+  "robot_description_sha256": "e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345",
+  "current_right_deg": [
+    0.12343763420776382,
+    0.9241678270680882,
+    -3.8429905276009,
+    -1.4494027973007166,
+    -2.728303655054819,
+    0.5287197636352162,
+    -0.0588587890744566
+  ],
+  "controllers": {
+    "joint_state_broadcaster": "active",
+    "joint_position_controller": "inactive",
+    "cartesian_position_controller": "inactive",
+    "gravity_compensation_controller": "active"
+  },
+  "all_motors_healthy": true,
+  "full_control_match": true,
+  "arm_control_match": true
+}

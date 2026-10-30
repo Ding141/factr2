@@ -1,0 +1,16 @@
+{
+  "user_instruction": "然后让机械臂右臂归零",
+  "side": "right",
+  "goal_deg": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "max_speed_deg_s": 6.0,
+  "duration_seconds": 25.8,
+  "execute_after_git_commit": true
+}

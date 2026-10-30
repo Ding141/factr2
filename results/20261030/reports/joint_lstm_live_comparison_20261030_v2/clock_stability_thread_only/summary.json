@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "seconds": 90.00022220399933,
+  "time_service_active": false,
+  "clock_steps": [],
+  "bad_health": [],
+  "counts": {
+    "/factr2/w3_health": 9004,
+    "/next/right/model_comparison/frame": 8844,
+    "/factr2/right/joint_pos": 8822,
+    "/factr2/right/adapter_status": 8822,
+    "/joint_states": 26296,
+    "/joint_position_controller/command_state": 26296
+  },
+  "max_receive_gap_seconds": {
+    "/joint_position_controller/command_state": 0.006336138999358809,
+    "/factr2/right/joint_pos": 0.012243856000168307,
+    "/factr2/right/adapter_status": 0.01199463599914452,
+    "/joint_states": 0.006337325999993482,
+    "/factr2/w3_health": 0.011791699000241351,
+    "/next/right/model_comparison/frame": 0.053110116999960155
+  },
+  "max_source_gap_seconds": {
+    "/joint_position_controller/command_state": 0.0039400600000000004,
+    "/factr2/right/joint_pos": 0.013365350000000002,
+    "/factr2/right/adapter_status": 0.010355713,
+    "/joint_states": 0.0039400600000000004,
+    "/factr2/w3_health": 0.010589506,
+    "/next/right/model_comparison/frame": 0.013365350000000002
+  },
+  "max_source_age_seconds": {
+    "/joint_position_controller/command_state": 0.0034048290000000003,
+    "/factr2/right/joint_pos": 0.004800465,
+    "/factr2/right/adapter_status": 0.0025420520000000004,
+    "/joint_states": 0.003286153,
+    "/factr2/w3_health": 0.002016314,
+    "/next/right/model_comparison/frame": 0.098039861
+  },
+  "timing_criteria": {
+    "maximum_source_gap_seconds": 0.04,
+    "maximum_source_age_seconds": 0.25,
+    "receive_scheduling_jitter_reported_separately": true
+  },
+  "motion_publishers": {
+    "/joint_position_command": [],
+    "/left_pose_goal": [],
+    "/right_pose_goal": []
+  }
+}

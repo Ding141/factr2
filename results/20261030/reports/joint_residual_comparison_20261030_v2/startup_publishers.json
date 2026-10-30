@@ -1,0 +1,16 @@
+{
+  "/factr2/right/joint_pos": 1,
+  "/factr2/right/joint_vel": 1,
+  "/factr2/right/joint_cmd": 1,
+  "/factr2/right/joint_effort": 1,
+  "/next/right/model_comparison/frame": 1,
+  "/next/right/model_comparison/endpoint_force": 1,
+  "/next/right/joint_lstm/free_joint_torque_pred": 1,
+  "/next/right/joint_lstm/external_joint_torque/raw": 1,
+  "/next/right/joint_lstm/external_joint_torque": 1,
+  "/next/right/joint_lstm/status": 1,
+  "/next/right/frozen_sigma/free_joint_torque_pred": 1,
+  "/next/right/frozen_sigma/external_joint_torque/raw": 1,
+  "/next/right/frozen_sigma/external_joint_torque": 1,
+  "/next/right/frozen_sigma/status": 1
+}

@@ -1,6 +1,7 @@
 #!/usr/bin/python3.10
 """One real W3 capture. Never enables motors, switches modes or publishes targets."""
 import argparse
+import fcntl
 from datetime import datetime
 import hashlib
 import json
@@ -24,7 +25,7 @@ DISK_RESERVE = 512 * 1024**2
 
 def check_capture_space(path, duration_seconds=0., bag_profile='full'):
     # Conservative planning estimate, not a guarantee of compression or traffic.
-    rate = (2. if bag_profile == 'full' else .5) * 1024**2
+    rate = (3. if bag_profile=='targeted_full' else 2. if bag_profile == 'full' else .5) * 1024**2
     required = DISK_RESERVE + max(0., duration_seconds)*rate
     free = shutil.disk_usage(path).free
     if free < required:
@@ -157,6 +158,8 @@ def prepare(session, side, snapshots, load, tool, motion=None, workspace=None, f
     source_dir=audit/'source_snapshot';source_dir.mkdir()
     workspace_path=Path(workspace if workspace is not None else W3).expanduser().resolve()
     sources=[workspace_path/'src/ieir_controllers/src/joint_position_controller.cpp',
+      workspace_path/'src/ieir_controllers/src/dm_hardware_interface.cpp',
+      workspace_path/'src/ieir_controllers/include/ieir_controllers/dm_hardware_interface.hpp',
       workspace_path/'src/ieir_controllers/include/ieir_controllers/joint_position_controller.hpp',
       workspace_path/'src/ieir_controllers/include/ieir_controllers/trajectory_spline.hpp',
       workspace_path/'src/ieir_controllers/src/gravity_compensation_controller.cpp',
@@ -196,7 +199,7 @@ def prepare(session, side, snapshots, load, tool, motion=None, workspace=None, f
         audit_paths=[str(audit / 'bag')], health_gate_enabled=True)
     if motion is not None:
         plan, raw, digest = motion
-        if plan.get('config', {}).get('baseline_protocol'):
+        if plan.get('config', {}).get('baseline_protocol') or plan.get('schema')=='w3_targeted_free_motion_v1':
             if (not collision_report or collision_report.get('accepted') is not True
                     or collision_report.get('plan_sha256') != digest
                     or collision_report.get('robot_description_sha256') != plan['model_sha256']):
@@ -205,6 +208,28 @@ def prepare(session, side, snapshots, load, tool, motion=None, workspace=None, f
         (audit / 'motion.yaml').write_bytes(raw)
         cfg['metadata']['trajectory_id'] = f'{plan["name"]}:sha256:{digest}'
         cfg['metadata']['audit_paths'] += [str(audit / 'motion.yaml'), str(audit / 'motion_run.json')]
+        if plan.get('schema')=='w3_targeted_free_motion_v1':
+            cfg['metadata']['temperature']=dict(plan['thermal'])
+            cfg['metadata']['temperature']['observation_files']=[str(audit/'motor_temperature.csv'),str(audit/'raw_can.bin')]
+            cfg['metadata']['temperature']['observation_source']='passive CAN feedback nominal MOS/rotor Celsius; validity recorded per sample'
+            cfg['metadata']['targeted_collection']=dict(schema=plan['schema'],family=plan['family'],role=plan['role'],
+                phase_labels='/factr2/right/collection_event',intentional_stops=plan['family']=='hysteresis',
+                independent_session_required=True,probe_and_transition_rows_excluded_from_training=True)
+            for filename in ('w3_targeted_protocol.py','w3_targeted_capture.py','w3_targeted_guardian.py','w3_targeted_can_record.py','prepare_w3_targeted_session.py'):
+                source=ROOT/'scripts'/filename
+                if source.is_file():
+                    shutil.copy2(source,source_dir/filename)
+                    manifest[str(source)]=hashlib.sha256(source.read_bytes()).hexdigest()
+            motor_dir=audit/'motor_config';motor_dir.mkdir()
+            for source in (workspace_path/'src/W3_ROBOT/w3_robot_bridge/config/motor_config/right_arm').glob('*.yaml'):
+                shutil.copy2(source,motor_dir/source.name)
+                manifest[str(source)]=hashlib.sha256(source.read_bytes()).hexdigest()
+            for filename in ('src/damiao_protocol.cpp','src/w3_robot_bridge_node.cpp','include/w3_robot_bridge/motor_types.hpp','msg/MotorState.msg'):
+                source=workspace_path/'src/W3_ROBOT/w3_robot_bridge'/filename
+                if source.is_file():
+                    shutil.copy2(source,source_dir/source.name)
+                    manifest[str(source)]=hashlib.sha256(source.read_bytes()).hexdigest()
+            (source_dir/'manifest.json').write_text(json.dumps(manifest,indent=2))
     if validation_only:
         # Contact/release recordings must never enter a free-space train split.
         cfg['metadata']['contact'] = {'present': True, 'label': 'mixed_contact_validation_only'}
@@ -216,6 +241,15 @@ def summarize(session, env):
     if len(files) != 1:
         print(f'未得到唯一 H5，检查日志：{session}', flush=True)
         return 1
+    meta_path=files[0].with_suffix('.metadata.json')
+    meta=json.loads(meta_path.read_text())
+    if meta.get('targeted_collection'):
+        can=json.loads((session/'audit/can_record_state.json').read_text())
+        measured=all(can['temperature_samples_by_motor'].get(str(j),0)>0 for j in range(1,8))
+        meta['temperature'].update(temperature_measured=measured,last_observed_nominal_c=can['last_temperature_c'],
+            observation_complete=can['status']=='closed' and not can['socket_dropped_frames'] and not can['kernel_timestamps_missing'],
+            timestamp_kind=can['timestamp_kind'])
+        meta_path.write_text(json.dumps(meta,indent=2)+'\n')
     result = subprocess.run(next_command(['ros2', 'run', 'factr2_next', 'next_check_h5',
         'check', files[0], '--json', session / 'quality.json']),
         cwd=ROOT, env=env, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
@@ -276,6 +310,9 @@ def main():
                         help='minimal omits redundant raw bridge/state traffic; H5 four streams are unchanged')
     parser.add_argument('--bag-compression', choices=['none', 'zstd'], default='none',
                         help='Lossless message compression in 64 MiB databases; H5 streams unchanged')
+    parser.add_argument('--reuse-state-components',action='store_true',
+                        help='Reuse an existing real 100Hz health/adapter pair; still starts its own bag and recorder')
+    parser.add_argument('--raw-can-interface',default='can1',help='Passive targeted feedback/temperature recorder interface')
     args = parser.parse_args()
     if args.validation_only and args.motion:
         parser.error('Contact validation uses position holding; no automatic motion plan')
@@ -289,12 +326,15 @@ def main():
                 raise ValueError('--side must match the motion file side')
         except (ValueError, OSError, yaml.YAMLError) as exc:
             parser.error(str(exc))
+    targeted=motion is not None and motion[0].get('schema')=='w3_targeted_free_motion_v1'
+    if targeted and (args.frequency!=100 or args.bag_profile!='full' or args.validation_only):
+        parser.error('Targeted collection requires --frequency 100 --bag-profile full and contact-free mode')
     import sys
     if not sys.stdin.isatty():
         parser.error('Run capture in an interactive terminal; Enter stops this session')
     env = runtime_environment(args.domain)
     duration = sum(s['duration_seconds'] + s['hold_seconds'] for s in motion[0]['steps']) if motion else 0.
-    check_capture_space(ROOT, duration, args.bag_profile)
+    check_capture_space(ROOT, duration, 'targeted_full' if targeted else args.bag_profile)
     for folder in (workspace / 'log/ros', workspace / 'log/tmp'):
         folder.mkdir(parents=True, exist_ok=True)
     children = []
@@ -304,6 +344,13 @@ def main():
     session = ROOT / 'data/quick_capture' / args.side / datetime.now().strftime('%Y%m%d_%H%M%S_%f')
     session.mkdir(parents=True)
     active_file = session.parent / 'active.json'
+    if targeted:
+        capture_lock=(session.parent/'targeted_capture.lock').open('a')
+        try:fcntl.flock(capture_lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        except OSError:
+            capture_lock.close()
+            raise RuntimeError('Another targeted C supervisor already owns this arm')
+        handles.append(capture_lock)
     active_info = None
     service = f'/factr2/{args.side}/record'
 
@@ -350,37 +397,61 @@ def main():
             print(f'读取实时参数：{node}', flush=True)
             snapshots[filename] = runtime_parameters(node, env, workspace)
         collision = None
-        if motion and motion[0].get('config', {}).get('baseline_protocol'):
+        if motion and (motion[0].get('config', {}).get('baseline_protocol') or targeted):
             collision = json.loads(args.motion.with_suffix('.collision.json').read_text())
         prepare(session, args.side, snapshots, args.load, args.tool, motion, workspace=workspace,
                 frequency=args.frequency, collision_report=collision, validation_only=args.validation_only)
         run(next_command(['python', 'scripts/check_w3_configs.py', '--runtime', 'record',
                           '--config', session / 'record.yaml']), env)
         # Refuse to duplicate existing capture components on this side.
-        graph = run(w3_command(['ros2', 'node', 'list', '--no-daemon'], env, workspace), env)
-        if any(name in graph.splitlines() for name in
-               ('/w3_health_monitor', f'/w3_next_adapter_{args.side}', f'/quick_recorder_{args.side}')):
+        # A short discovery window can omit running FastDDS nodes. Keep the
+        # same required-node checks, allowing graph discovery five seconds.
+        graph = run(w3_command(['ros2', 'node', 'list', '--no-daemon', '--spin-time', '5'], env, workspace), env)
+        if f'/quick_recorder_{args.side}' in graph.splitlines():
+            raise RuntimeError('An existing recorder must be closed before starting another capture')
+        if args.reuse_state_components:
+            if not all(n in graph.splitlines() for n in ('/w3_health_monitor',f'/w3_next_adapter_{args.side}')):
+                raise RuntimeError('Reuse requires both existing health and real adapter nodes')
+            adapter_parameters=runtime_parameters(f'/w3_next_adapter_{args.side}',env,workspace)
+            adapter=parameters(adapter_parameters)
+            if (adapter.get('side')!=args.side or adapter.get('publish_hz')!=args.frequency or
+                    adapter.get('require_hardware_health') is not True or
+                    adapter.get('state_topic')!='/joint_states' or
+                    adapter.get('command_state_topic')!='/joint_position_controller/command_state' or
+                    adapter.get('output_reliability')!='reliable'):
+                raise RuntimeError('Existing adapter is not the expected real reliable state source')
+            (session/'audit/adapter_reused.yaml').write_text(adapter_parameters)
+        elif any(name in graph.splitlines() for name in ('/w3_health_monitor',f'/w3_next_adapter_{args.side}')):
             raise RuntimeError('已有健康器/本侧 adapter/quick recorder，请先停止旧采集进程再运行。')
         print('正在启动只读健康器、real adapter、bag 和 recorder，等待新鲜四流…', flush=True)
-        launch('health', w3_command(['/usr/bin/python3.10',
-               ROOT / 'factr2_w3_adapter/tools/w3_health_monitor.py'], env, workspace))
-        launch('adapter', next_command(['ros2', 'launch', 'factr2_w3_adapter', 'adapter.launch.py',
-               f'side:={args.side}', 'profile:=real', f'publish_hz:={args.frequency}']))
+        if not args.reuse_state_components:
+            launch('health', w3_command(['/usr/bin/python3.10',
+                   ROOT / 'factr2_w3_adapter/tools/w3_health_monitor.py'], env, workspace))
+            launch('adapter', next_command(['ros2', 'launch', 'factr2_w3_adapter', 'adapter.launch.py',
+                   f'side:={args.side}', 'profile:=real', f'publish_hz:={args.frequency}']))
         root = f'/factr2/{args.side}'
-        topics = ['/w3_robot_bridge_node/state', '/joint_states',
+        topics = ['/w3_robot_bridge_node/state', '/w3_robot_bridge_node/commands', '/joint_states',
+                  '/dynamic_joint_states', '/dm_hardware_interface/feedback_state',
                   '/joint_position_controller/command_state', '/joint_position_command', '/factr2/w3_health']
         topics += [root + '/' + key for key in
                    ('adapter_status', 'joint_pos', 'joint_vel', 'joint_cmd', 'joint_effort')]
-        if motion and motion[0].get('config', {}).get('execution_mode') == 'direct_pose_goals':
+        if motion and (motion[0].get('config', {}).get('execution_mode') == 'direct_pose_goals' or targeted):
             topics += [root+'/pose_goal', '/joint_position_controller/stop']
+        if targeted:
+            topics += [root+'/collection_event',root+'/collection_heartbeat',root+'/collection_guardian','/parameter_events']
         if args.bag_profile == 'minimal':
-            topics = [t for t in topics if t not in ('/w3_robot_bridge_node/state', '/joint_states')]
+            topics = [t for t in topics if t not in ('/w3_robot_bridge_node/state', '/w3_robot_bridge_node/commands', '/joint_states', '/dynamic_joint_states', '/dm_hardware_interface/feedback_state')]
         (session/'audit/bag_profile.json').write_text(json.dumps(dict(profile=args.bag_profile, topics=topics,
             compression=args.bag_compression,
             reserve_bytes=DISK_RESERVE, estimated_duration_seconds=duration), indent=2)+'\n')
         launch('bag', w3_command(bag_record_command(session/'audit/bag', topics, args.bag_compression), env, workspace))
         launch('recorder', next_command(['ros2', 'run', 'factr2_next', 'next_record', '--ros-args',
                '-p', f'config_file:={session / "record.yaml"}', '-r', f'__node:=quick_recorder_{args.side}']))
+        if targeted:
+            launch('can_record',next_command(['python',ROOT/'scripts/w3_targeted_can_record.py',
+                '--interface',args.raw_can_interface,'--session',session]))
+            launch('guardian',next_command(['python',ROOT/'scripts/w3_targeted_guardian.py',
+                '--session',session,'--digest',motion[2],'--supervisor-pid',os.getpid()]))
         deadline = time.monotonic() + 30
         while time.monotonic() < deadline:
             failed = [label for label, proc in children if proc.poll() is not None]
@@ -400,6 +471,8 @@ def main():
             from w3_motion_sequence import write_json
             active_info = {'pid': os.getpid(), 'session': str(session), 'side': args.side,
                            'domain': args.domain, 'motion_sha256': motion[2]}
+            if targeted:
+                active_info.update(heartbeat_mono=time.monotonic(),record_start_mono=time.monotonic(),record_start_wall_ns=time.time_ns())
             write_json(active_file, active_info)
         if args.validation_only:
             print('\n已开始接触/卸载验证录制，此数据禁止训练。保持位置模式，按现场确认的步骤测试并标注时段；按 Enter 停录。', flush=True)
@@ -412,6 +485,9 @@ def main():
             failed = [label for label, proc in children if proc.poll() is not None]
             if failed:
                 raise RuntimeError(f'采集中进程退出：{failed}；本次不视为完整成功，请检查日志。')
+            if targeted and active_info is not None:
+                active_info['heartbeat_mono']=time.monotonic()
+                write_json(active_file,active_info)
             ready, _, _ = select.select([sys.stdin], [], [], .2)
             if ready:
                 sys.stdin.readline()
@@ -434,6 +510,8 @@ def main():
                 recording(False)
             except (RuntimeError, OSError, subprocess.TimeoutExpired):
                 print('停录服务无响应，将通过 recorder 的 SIGINT 正常关闭 H5。', flush=True)
+        stop('guardian')
+        stop('can_record')
         closed = stop('recorder')
         bag_closed = stop('bag')
         stop('adapter')

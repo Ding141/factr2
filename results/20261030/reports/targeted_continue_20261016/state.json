@@ -1,0 +1,165 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-16T10:04:25.186012+00:00",
+  "profile": "v06_a15",
+  "role": "train",
+  "thermal": "unclassified",
+  "previous_result": "/home/venom/factr2/log/targeted_live_20261016_1744/collection_result.json",
+  "batches": [
+    {
+      "label": "01_continuous_J2_J3_J4_J5_J6_J7",
+      "family": "continuous",
+      "joints_zero_based": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "profile": "v06_a15",
+      "status": "completed",
+      "plan": "/home/venom/factr2/log/targeted_continue_20261016/01_continuous_J2_J3_J4_J5_J6_J7.yaml",
+      "planned_seconds": 113.31000000000002,
+      "plan_sha256": "eff2d86c97d01c7fc371ca69bfa941972a025005c2ceed02c9f61c265c8d5189",
+      "session": "/home/venom/factr2/data/quick_capture/right/20261016_180440_213026",
+      "completed_utc": "2026-10-16T10:07:13.459877+00:00",
+      "derived": "/home/venom/factr2/data/right/targeted/20261016_180440_213026_01_continuous_J2_J3_J4_J5_J6_J7",
+      "raw_rows": 12028,
+      "derived_rows": 5089,
+      "max_gap_ms": 10.141932,
+      "max_tracking_deg": 1.7249853544878788,
+      "can_drops": 0,
+      "kernel_timestamps_missing": 0,
+      "raw_quality_accepted": true,
+      "derived_quality_accepted": true
+    },
+    {
+      "label": "02_hysteresis_J2_J3",
+      "family": "hysteresis",
+      "joints_zero_based": [
+        1,
+        2
+      ],
+      "profile": "v06_a15",
+      "status": "completed",
+      "plan": "/home/venom/factr2/log/targeted_continue_20261016/02_hysteresis_J2_J3.yaml",
+      "planned_seconds": 124.02000000000002,
+      "plan_sha256": "314b326dbdf93e657be1b7fef8dfa1a61050d50480491c3e58569e20e71ecc03",
+      "session": "/home/venom/factr2/data/quick_capture/right/20261016_180728_071485",
+      "completed_utc": "2026-10-16T10:10:12.648999+00:00",
+      "derived": "/home/venom/factr2/data/right/targeted/20261016_180728_071485_02_hysteresis_J2_J3",
+      "raw_rows": 13159,
+      "derived_rows": 6160,
+      "max_gap_ms": 10.267786000000001,
+      "max_tracking_deg": 1.7130026173172297,
+      "can_drops": 0,
+      "kernel_timestamps_missing": 0,
+      "raw_quality_accepted": true,
+      "derived_quality_accepted": true
+    },
+    {
+      "label": "03_hysteresis_J4_J5",
+      "family": "hysteresis",
+      "joints_zero_based": [
+        3,
+        4
+      ],
+      "profile": "v06_a15",
+      "status": "completed",
+      "plan": "/home/venom/factr2/log/targeted_continue_20261016/03_hysteresis_J4_J5.yaml",
+      "planned_seconds": 124.02000000000002,
+      "plan_sha256": "1873a99ad8eb5853292f1e5d0997a8b6d6ff6605c58d2d43d9824addc30ffc77",
+      "session": "/home/venom/factr2/data/quick_capture/right/20261016_181027_282853",
+      "completed_utc": "2026-10-16T10:13:13.374311+00:00",
+      "derived": "/home/venom/factr2/data/right/targeted/20261016_181027_282853_03_hysteresis_J4_J5",
+      "raw_rows": 13203,
+      "derived_rows": 6160,
+      "max_gap_ms": 10.157366000000001,
+      "max_tracking_deg": 1.7026639110100352,
+      "can_drops": 0,
+      "kernel_timestamps_missing": 0,
+      "raw_quality_accepted": true,
+      "derived_quality_accepted": true
+    },
+    {
+      "label": "04_hysteresis_J6_J7",
+      "family": "hysteresis",
+      "joints_zero_based": [
+        5,
+        6
+      ],
+      "profile": "v06_a15",
+      "status": "not_executed_disk_budget",
+      "plan": "/home/venom/factr2/log/targeted_continue_20261016/04_hysteresis_J6_J7.yaml",
+      "planned_seconds": 119.58000000000003,
+      "plan_sha256": "57a2091ca7b2d5916740ea2f901f36abd52a9177d8528c7e556ee0301838fa01",
+      "reason": "磁盘空间不足：剩余 0.85 GiB，本次预计至少需要 0.85 GiB；请先清理或缩小采集计划。"
+    },
+    {
+      "label": "05_hysteresis_J6",
+      "family": "hysteresis",
+      "joints_zero_based": [
+        5
+      ],
+      "profile": "v06_a15",
+      "status": "completed",
+      "plan": "/home/venom/factr2/log/targeted_continue_20261016/05_hysteresis_J6.yaml",
+      "planned_seconds": 81.78000000000002,
+      "plan_sha256": "57bafa0dfe79d681002eea2fe75696e9db75640e86fc41b56e34227897d7f213",
+      "session": "/home/venom/factr2/data/quick_capture/right/20261016_181338_735757",
+      "completed_utc": "2026-10-16T10:15:38.014075+00:00",
+      "derived": "/home/venom/factr2/data/right/targeted/20261016_181338_735757_05_hysteresis_J6",
+      "raw_rows": 8785,
+      "derived_rows": 1936,
+      "max_gap_ms": 10.115811,
+      "max_tracking_deg": 1.7078349714375425,
+      "can_drops": 0,
+      "kernel_timestamps_missing": 0,
+      "raw_quality_accepted": true,
+      "derived_quality_accepted": true
+    },
+    {
+      "label": "06_hysteresis_J7",
+      "family": "hysteresis",
+      "joints_zero_based": [
+        6
+      ],
+      "profile": "v06_a15",
+      "status": "completed",
+      "plan": "/home/venom/factr2/log/targeted_continue_20261016/06_hysteresis_J7.yaml",
+      "planned_seconds": 86.22000000000001,
+      "plan_sha256": "94c2cb81a03128b5ad13eb2f2dbe53fe7d3b7ab14e59affee6fca9b27fd9a337",
+      "session": "/home/venom/factr2/data/quick_capture/right/20261016_181548_996711",
+      "completed_utc": "2026-10-16T10:17:53.383709+00:00",
+      "derived": "/home/venom/factr2/data/right/targeted/20261016_181548_996711_06_hysteresis_J7",
+      "raw_rows": 9215,
+      "derived_rows": 2380,
+      "max_gap_ms": 10.158554,
+      "max_tracking_deg": 1.7119739397432543,
+      "can_drops": 0,
+      "kernel_timestamps_missing": 0,
+      "raw_quality_accepted": true,
+      "derived_quality_accepted": true
+    }
+  ],
+  "remaining": [],
+  "components": [
+    {
+      "label": "health",
+      "pid": 29555,
+      "created_by_this_coordinator": true
+    },
+    {
+      "label": "adapter",
+      "pid": 29556,
+      "created_by_this_coordinator": true
+    }
+  ],
+  "controller_switches": false,
+  "current_batch": "06_hysteresis_J7",
+  "C_pid": 36845,
+  "ended_utc": "2026-10-16T10:17:53.715545+00:00",
+  "recording_active": false,
+  "controller_holding_preserved": true
+}

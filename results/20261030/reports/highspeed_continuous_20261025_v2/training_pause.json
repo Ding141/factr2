@@ -1,0 +1,45 @@
+{
+  "status": "paused_by_user",
+  "paused_utc": "2026-10-25T13:19:53.794040+00:00",
+  "reason": "用户要求采集完成后暂时停止训练",
+  "collection": {
+    "train": {
+      "status": "completed",
+      "session": "/home/venom/factr2/data/quick_capture/right/20261025_205102_846154",
+      "accepted_blocks": [
+        "continuous_v06_train_continuous",
+        "continuous_v12_train_continuous"
+      ],
+      "excluded_blocks": []
+    },
+    "val": {
+      "status": "completed",
+      "session": "/home/venom/factr2/data/quick_capture/right/20261025_205713_594833",
+      "accepted_blocks": [
+        "continuous_v06_val_continuous",
+        "continuous_v12_val_continuous"
+      ],
+      "excluded_blocks": []
+    },
+    "test": {
+      "status": "completed",
+      "session": "/home/venom/factr2/data/quick_capture/right/20261025_210257_202436",
+      "accepted_blocks": [
+        "continuous_v12_test_continuous"
+      ],
+      "excluded_blocks": [
+        "continuous_v06_test_continuous"
+      ]
+    }
+  },
+  "mean_training": {
+    "status": "trained",
+    "selected_epoch": 20,
+    "completed_epochs": 20,
+    "training_seconds": 50.54523098299978,
+    "test_used_for_fit": false
+  },
+  "followup_sigma_started": false,
+  "followup_compensation_started": false,
+  "new_model_deployed": false
+}

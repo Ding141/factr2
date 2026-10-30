@@ -1,0 +1,20 @@
+{
+  "error": "Motion scheduler stalled >200ms",
+  "failed_event": "024_pose0_line_x_slow",
+  "old_session": "/home/venom/factr2/data/quick_capture/right/20261011_224500_979861",
+  "previous_phase_timing_unavailable": true,
+  "raw_quality_accepted": true,
+  "retained_sweeps": 14,
+  "guards_unchanged": {
+    "scheduler_ms": 200,
+    "tracking_deg": 3,
+    "state_age_ms": 250
+  },
+  "changes": [
+    "single bracket target interpolation",
+    "precomputed radian windows",
+    "per-phase scheduler diagnostics"
+  ],
+  "no_control_restart": true,
+  "raw_files_modified": false
+}

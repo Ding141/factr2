@@ -1,0 +1,8 @@
+{
+  "stage": "training",
+  "updated": "2026-10-28T12:12:37.934984+08:00",
+  "training_run": "/home/venom/factr2/runs/right_joint_lstm_parallel_durable_v1_20261028_111023_546939",
+  "bundle": "/home/venom/factr2/models/w3/right/joint_lstm_observer_20261028_v1",
+  "controller_changes": false,
+  "training_pid": 19719
+}

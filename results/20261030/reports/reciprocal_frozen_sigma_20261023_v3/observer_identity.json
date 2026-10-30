@@ -1,0 +1,21 @@
+{
+  "original_bundle": "/home/venom/factr2/models/w3/right/frozen_sigma_observer_20261023",
+  "archived_bundle": "/home/venom/factr2/log/reciprocal_frozen_sigma_20261023_v3/observer_bundle",
+  "metadata_sha256": "cbe838418b4f5b550662e51230e8b3f60a2fdfa4328e6cc5d7a6cd5a112876c9",
+  "all_artifact_hashes_verified": true,
+  "artifact_sha256": {
+    "mean_checkpoint/config.yaml": "92eb9d0cce7dc8a3ba88432ffd68fa9ce9c316a156c2155b60afe7314b7b0d33",
+    "mean_checkpoint/metrics.json": "668a5cf67e224099b03f903712a069b8a96502ceef63a3be1d434a2def8bc076",
+    "mean_checkpoint/normalization.npz": "7dd5f89e072dcf21208398fe275b703c35d94d1844fc9f2b846c54ac254f7945",
+    "mean_checkpoint/model.pt": "8e1bcb25c1af7053760150ce8f4483a67e38754c243fc0aa069f905ffc4a7ac6",
+    "mean_checkpoint/metadata.json": "d91a825d251b479292092d4e9a0cd0c23a8f3d65339a178f187667f0f054e24d",
+    "variance_head/history.json": "b06ef0bb5d3c1214c84d4c7403cc37f67fea9d28d6cc2da32857c25c264deb68",
+    "variance_head/normalization.npz": "83d81c9b996c06a507c3be0293e8e241d080d3730419ee40b6607c344d3ce46a",
+    "variance_head/head.pt": "dd20312fa0d88ef90aa284a0c88b797ce024742de8de4498e93e945ed2176e64",
+    "variance_head/metadata.json": "2530d926738dda55ea4199df4eeed9fbe84f70551e118b6d4f722f1bc28e2bdd",
+    "provenance.json": "fe9560364159d9245e3493d6854eeec4b6e541492419e7de65d273a6a3f6dce9"
+  },
+  "calibration": "uncalibrated",
+  "deployment_ready": false,
+  "source_namespace": "/next/right/frozen_sigma"
+}

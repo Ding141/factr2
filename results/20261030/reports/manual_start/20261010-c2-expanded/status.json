@@ -1,0 +1,45 @@
+{
+  "status": "remaining_capture_starting",
+  "capture_started": true,
+  "motion_sent": true,
+  "new_training_started": false,
+  "robot_state": "right position hold + gravity active, CAN1 reconnected; left not controlled",
+  "domain": 74,
+  "plan_sha256": "5fb1795b6213cbd75612896928bd717caa55b1930217b0d2963118a533eb6a29",
+  "planned_duration_seconds": 2162.28,
+  "offline_collision_pass": true,
+  "offline_dense_spline_pass": true,
+  "controller_tests_passed": 11,
+  "user_approved": true,
+  "small_probe_session": "/home/venom/factr2/data/quick_capture/right/20261010_141247_113649",
+  "small_probe_command_continuity_pass": true,
+  "small_probe_J6_range_fraction": [
+    0.619,
+    0.645
+  ],
+  "smooth_friction_tests_passed": 4,
+  "configuration_tests_passed": 35,
+  "formal_capture_started": true,
+  "friction_library_loaded": true,
+  "can_restarted": true,
+  "plan_path": "/home/venom/factr2/data/motion_plans/right_coverage_c2_expanded_friction_20261010.yaml",
+  "small_friction_probe_session": "/home/venom/factr2/data/quick_capture/right/20261010_160004_957524",
+  "small_friction_probe_completed": true,
+  "small_friction_probe_command_continuity_pass": true,
+  "small_friction_probe_J6_range_fraction": [
+    0.82,
+    0.831
+  ],
+  "small_friction_probe_J6_low_motion_fraction": [
+    0.056,
+    0.014
+  ],
+  "continuous_boundary_check_fixed": true,
+  "source_prefix_dataset": "/home/venom/factr2/data/right/c2_20261010_160331_verified_prefix",
+  "source_interrupted_session": "20261010_160331_906917",
+  "resume_workflow": "/home/venom/factr2/log/manual_start/20261010-c2-resume",
+  "resume_duration_seconds": 839.6,
+  "recovery_completed": true,
+  "new_model": "/home/venom/factr2/runs/next_right_c2_campaign_20261010_164151_566506_session_trial_20261010_174837_628319",
+  "deployment": "/home/venom/factr2/log/manual_start/right_observer_c2_20261010_164151_566506"
+}

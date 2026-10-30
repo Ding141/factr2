@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "report": "/home/venom/factr2/log/reciprocal_frozen_sigma_20261023_v3/REPORT.md",
+  "waveform": "/home/venom/factr2/log/reciprocal_frozen_sigma_20261023_v3/waveform_in_scope.png",
+  "j1_waveform": "/home/venom/factr2/log/reciprocal_frozen_sigma_20261023_v3/j1_waveform.png",
+  "samples": "/home/venom/factr2/log/reciprocal_frozen_sigma_20261023_v3/samples.csv",
+  "session": "/home/venom/factr2/data/quick_capture/right/20261023_152700_183710",
+  "next_topic_root": "/next/right/frozen_sigma",
+  "model_metadata_sha256": "cbe838418b4f5b550662e51230e8b3f60a2fdfa4328e6cc5d7a6cd5a112876c9",
+  "motion_steps_completed": 14,
+  "recorded_frames": 21945,
+  "calibration": "uncalibrated",
+  "independent_external_torque_ground_truth": false
+}

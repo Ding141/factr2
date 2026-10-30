@@ -1,0 +1,45 @@
+{
+  "checked_utc": "2026-10-11T18:13:13.703457+00:00",
+  "software_zero_target_reached": true,
+  "actual_joint_deg": [
+    0.12343763420776382,
+    0.4214659041551497,
+    0.06939647049576379,
+    -0.3784291354427174,
+    -0.36773563638505224,
+    -0.891959583727436,
+    -0.1899984211387014
+  ],
+  "motor_health_ok": true,
+  "controllers": {
+    "joint_position_controller": "active",
+    "joint_state_broadcaster": "active",
+    "gravity_compensation_controller": "active"
+  },
+  "observation": {
+    "8081": {
+      "state": "valid",
+      "reason": "ok",
+      "geometry": null
+    },
+    "8082": {
+      "state": "unavailable",
+      "reason": "姿态接近奇异点，误差会被放大",
+      "geometry": {
+        "condition_number": 1455.142140905772,
+        "scaled_singular_values": [
+          2.1941695782382107,
+          1.8051323313188676,
+          1.414259194929345,
+          0.6280654885763193,
+          0.6227639139778618,
+          0.0015078730225436406
+        ],
+        "reason": "near_singular",
+        "valid": false
+      }
+    }
+  },
+  "factr2_commit": "112bd9c",
+  "pushed": false
+}

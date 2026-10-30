@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "phase": "postflight_observation",
+  "step_index": 26,
+  "started_utc": "2026-10-25T07:49:13.367344+00:00",
+  "automatic_retry": false,
+  "model_hash": "89af2ae40f122e512287dac6fe0798d388701ad10c43cdfcaaa50a5888fc459e",
+  "updated_utc": "2026-10-25T07:54:20.077450+00:00",
+  "C_pid": 23192,
+  "session": "/home/venom/factr2/data/quick_capture/right/20261025_154916_281304",
+  "recorder_pid": 23732,
+  "motion_pid": 23781,
+  "total_steps": 26,
+  "finished_utc": "2026-10-25T07:54:11.905059+00:00",
+  "recording_active": false
+}

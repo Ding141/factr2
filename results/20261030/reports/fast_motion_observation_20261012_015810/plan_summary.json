@@ -1,0 +1,24 @@
+{
+  "approved": "直接进行大幅度快速的测试，我这里可以保证机械臂的安全",
+  "duration_seconds": 52.8,
+  "requested_max_offset_deg": 20.0,
+  "requested_max_speed_deg_s": 12.0,
+  "max_offset_deg": 20.0,
+  "initial_target_deg": [
+    0.0,
+    50.0,
+    0.0,
+    -55.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "health_feedback_timeout_seconds": 0.25,
+  "scheduler_stall_limit_seconds": 0.2,
+  "tracking_limit_deg": 3.0,
+  "training_data": false,
+  "external_contact_allowed": false,
+  "status": "offline_validated",
+  "max_speed_deg_s": 10.36455564097587,
+  "max_acceleration_deg_s2": 12.085371875457337
+}

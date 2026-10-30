@@ -1,0 +1,26 @@
+{
+  "controller_pid": 21825,
+  "feedback_policy": "KeepLast(1), best effort, volatile; persistent SingleThreadedExecutor",
+  "source_timestamp_scope": "bridge publication, not motor acquisition",
+  "feedback_max_age_s_default": 0.05,
+  "changes_to_gains": false,
+  "model_changes": false,
+  "files": [
+    {
+      "path": "/home/venom/dual_arm_robot/install/ieir_controllers/lib/libdm_hardware_interface.so",
+      "sha256": "542949d1e273667dc6f5b4b2a6c576f054f2e66cb77ae18cf90e6d906f051a15"
+    },
+    {
+      "path": "/home/venom/dual_arm_robot/src/ieir_controllers/src/dm_hardware_interface.cpp",
+      "sha256": "62967254a303b7f1e0cb76eff0ad08b42e439c161698d5b19c67698e5aa60b0d"
+    },
+    {
+      "path": "/home/venom/dual_arm_robot/src/ieir_controllers/include/ieir_controllers/dm_hardware_interface.hpp",
+      "sha256": "b7368388aba1490dcdad350f6de831c5267e9b7014c45f18e64ded97eddfe71e"
+    },
+    {
+      "path": "/home/venom/factr2/scripts/quick_capture.py",
+      "sha256": "0b134d33b0f94e9ba44ad3e439abdbaa635d6151c7722a2d6200e4cf0f50676d"
+    }
+  ]
+}

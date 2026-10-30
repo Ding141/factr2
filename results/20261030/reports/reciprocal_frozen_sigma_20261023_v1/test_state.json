@@ -1,0 +1,13 @@
+{
+  "status": "failed",
+  "phase": "startup",
+  "step_index": 0,
+  "started_utc": "2026-10-23T07:21:54.070412+00:00",
+  "automatic_retry": false,
+  "model_hash": "cbe838418b4f5b550662e51230e8b3f60a2fdfa4328e6cc5d7a6cd5a112876c9",
+  "updated_utc": "2026-10-23T07:22:19.913753+00:00",
+  "C_pid": 44055,
+  "error": "Capture failed before motion; inspect capture.log",
+  "finished_utc": "2026-10-23T07:22:19.913392+00:00",
+  "recording_active": false
+}

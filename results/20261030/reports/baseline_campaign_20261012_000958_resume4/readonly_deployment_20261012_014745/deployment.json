@@ -1,0 +1,152 @@
+{
+  "mode": "readonly_diagnostic_candidate",
+  "user_instruction": "部署模型，打开外力检测窗口",
+  "acceptance_passed": false,
+  "deployment_ready": false,
+  "candidate": "/home/venom/factr2/runs/next_right_baseline_campaign_20261012_000958_resume4_20261012_013705_122044",
+  "model_sha256": "20e673f4d1980c3c0d52e9b0f74bd70b7eefe8c5c2e70f7432b427c2cd9c3eeb",
+  "calibration_sha256": "23532d9890f7e3ece77a80f0af8a26742c6bcf85a1cd07ceda3147dd528e6838",
+  "started_utc": "2026-10-11T17:48:39.016514+00:00",
+  "status": "readonly_observation_running",
+  "automatic_rezero": false,
+  "motion_commands": false,
+  "control_restart": false,
+  "control_profile_sha256": "82af2663601b7c902f410b5270b867d010a4e0539fee0c8f11b203b42fbfec6a",
+  "robot_description_sha256": "7830b419d3b12a413a1ec672a1ca0da8ef5d6b255bc883d40428185933fd88f4",
+  "launches": [
+    {
+      "role": "C_health",
+      "command": [
+        "/usr/bin/python3.10",
+        "/home/venom/factr2/factr2_w3_adapter/tools/w3_health_monitor.py"
+      ],
+      "script": "/home/venom/factr2/log/baseline_campaign_20261012_000958_resume4/readonly_deployment_20261012_014745/C_health.sh",
+      "log": "/home/venom/factr2/log/baseline_campaign_20261012_000958_resume4/readonly_deployment_20261012_014745/C_health.log"
+    },
+    {
+      "role": "D_adapter",
+      "command": [
+        "/home/venom/factr2/scripts/next.sh",
+        "ros2",
+        "launch",
+        "factr2_w3_adapter",
+        "adapter.launch.py",
+        "side:=right",
+        "profile:=real",
+        "publish_hz:=100"
+      ],
+      "script": "/home/venom/factr2/log/baseline_campaign_20261012_000958_resume4/readonly_deployment_20261012_014745/D_adapter.sh",
+      "log": "/home/venom/factr2/log/baseline_campaign_20261012_000958_resume4/readonly_deployment_20261012_014745/D_adapter.log"
+    },
+    {
+      "role": "E_inference",
+      "command": [
+        "/home/venom/factr2/scripts/next.sh",
+        "ros2",
+        "launch",
+        "factr2_next",
+        "readonly.launch.py",
+        "side:=right",
+        "inference_config:=/home/venom/factr2/log/baseline_campaign_20261012_000958_resume4/readonly_deployment_20261012_014745/inference.yaml",
+        "web_config:=/home/venom/factr2/config/w3/right/visualize.yaml"
+      ],
+      "script": "/home/venom/factr2/log/baseline_campaign_20261012_000958_resume4/readonly_deployment_20261012_014745/E_inference.sh",
+      "log": "/home/venom/factr2/log/baseline_campaign_20261012_000958_resume4/readonly_deployment_20261012_014745/E_inference.log"
+    },
+    {
+      "role": "F_endpoint",
+      "command": [
+        "/home/venom/factr2/scripts/next.sh",
+        "python",
+        "/home/venom/factr2/scripts/w3_endpoint_wrench.py",
+        "--config",
+        "/home/venom/factr2/log/baseline_campaign_20261012_000958_resume4/readonly_deployment_20261012_014745/endpoint_wrench.yaml"
+      ],
+      "script": "/home/venom/factr2/log/baseline_campaign_20261012_000958_resume4/readonly_deployment_20261012_014745/F_endpoint.sh",
+      "log": "/home/venom/factr2/log/baseline_campaign_20261012_000958_resume4/readonly_deployment_20261012_014745/F_endpoint.log"
+    }
+  ],
+  "readonly_deployed": true,
+  "verified_utc": "2026-10-11T17:50:13.849981+00:00",
+  "windows_opened": [
+    "http://127.0.0.1:8081/",
+    "http://127.0.0.1:8082/"
+  ],
+  "web": {
+    "8081": {
+      "state": "valid",
+      "reason": "ok",
+      "outputs": 3929,
+      "diagnostics": {
+        "outputs": 3929,
+        "dropped": 0,
+        "resets": 0,
+        "state": "valid",
+        "reason": "ok",
+        "history_count": 50,
+        "source_age_seconds": 0.005424781,
+        "receive_age_seconds": 0.004472565997275524,
+        "last_output_stamp_ns": 1791741013811420222,
+        "output_hz": 100,
+        "infer_ms": 0.8952249991125427,
+        "infer_p95_ms": 0.979999150331423,
+        "device": "cpu"
+      },
+      "geometry": null
+    },
+    "8082": {
+      "state": "valid",
+      "reason": "等效末端负载估计，尚未做接触精度与方向标定",
+      "outputs": 3931,
+      "diagnostics": null,
+      "geometry": {
+        "condition_number": 11.861424429276594,
+        "scaled_singular_values": [
+          2.0465612895022964,
+          1.6619591211561702,
+          1.4509216948181576,
+          0.5848762727492482,
+          0.46931087691753137,
+          0.17253925122609515
+        ],
+        "torque_fit_error_nm": 0.035885435215456486,
+        "relative_fit_error": 0.20188286429137564,
+        "reason": "ok",
+        "valid": true
+      },
+      "non_null_points": {
+        "t": 404,
+        "fx": 393,
+        "fy": 393,
+        "fz": 393,
+        "mx": 393,
+        "my": 393,
+        "mz": 393
+      },
+      "wrench": {
+        "fx": 0.2511773715795366,
+        "fy": -0.002004061369648954,
+        "fz": -0.5107617203738571,
+        "mx": 0.0038888705864684953,
+        "my": 0.012107465901206274,
+        "mz": -0.017270237435970594
+      }
+    }
+  },
+  "pids": {
+    "E_inference": 44980,
+    "C_health": 44936,
+    "D_adapter": 44955,
+    "F_endpoint": 45014
+  },
+  "configuration_sha256": {
+    "inference.yaml": "773d100b76392b93d430f0f5855092a4093d22ba9977db362f16151d1fdb4dcd",
+    "endpoint_wrench.yaml": "3db6cd564a650379adb457cc6b9567153877cc7f206e224017f73af2230d2346"
+  },
+  "controllers": {
+    "joint_position_controller": "active",
+    "joint_state_broadcaster": "active",
+    "gravity_compensation_controller": "active"
+  },
+  "robot_control_modified": false
+}

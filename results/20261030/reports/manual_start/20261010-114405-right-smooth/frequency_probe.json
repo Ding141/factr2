@@ -1,0 +1,17 @@
+{
+  "/factr2/right/joint_pos": {
+    "messages": 300,
+    "hz": 99.99988441484932,
+    "max_gap_ms": 10.108672
+  },
+  "/joint_states": {
+    "messages": 612,
+    "hz": 300.00121296726104,
+    "max_gap_ms": 3.456256
+  },
+  "/joint_position_controller/command_state": {
+    "messages": 611,
+    "hz": 300.00042806618455,
+    "max_gap_ms": 3.456256
+  }
+}

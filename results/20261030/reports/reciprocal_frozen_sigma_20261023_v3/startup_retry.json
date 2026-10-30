@@ -1,0 +1,8 @@
+{
+  "previous_stage": "/home/venom/factr2/log/reciprocal_frozen_sigma_20261023_v2",
+  "previous_error": "Fresh atomic model output unavailable during startup preflight",
+  "previous_motion_events": [],
+  "motion_commands_sent_in_previous_attempt": 0,
+  "change": "Wait for the new subscription to discover a fresh atomic packet before strict preflight; no freshness threshold changed",
+  "same_frozen_motion_and_authorization": true
+}

@@ -1,0 +1,36 @@
+{
+  "checked_utc": "2026-10-13T23:18:12.713907+08:00",
+  "source": "/home/venom/factr2/data/quick_capture/right/20261013_221316_579007/20261013_221316_579007_20261013_221339.h5",
+  "events": 258,
+  "valid_events": 253,
+  "skipped_transition_events": 0,
+  "failed_events": [
+    {
+      "event": "010_sine_j1_fast",
+      "phase": "single_joint",
+      "reason": "Incomplete continuous event coverage: 010_sine_j1_fast"
+    },
+    {
+      "event": "013_sine_j4_fast",
+      "phase": "single_joint",
+      "reason": "Incomplete continuous event coverage: 013_sine_j4_fast"
+    },
+    {
+      "event": "042_pose0_circle_xy_r1_slow",
+      "phase": "cartesian",
+      "reason": "Incomplete continuous event coverage: 042_pose0_circle_xy_r1_slow"
+    },
+    {
+      "event": "044_pose0_circle_xy_r1_fast",
+      "phase": "cartesian",
+      "reason": "Incomplete continuous event coverage: 044_pose0_circle_xy_r1_fast"
+    },
+    {
+      "event": "180_pose5_line_x_r1_slow",
+      "phase": "cartesian",
+      "reason": "Incomplete continuous event coverage: 180_pose5_line_x_r1_slow"
+    }
+  ],
+  "raw_episodes": 8,
+  "raw_rows": 284207
+}

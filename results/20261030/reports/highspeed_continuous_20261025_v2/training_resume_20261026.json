@@ -1,0 +1,13 @@
+{
+  "status": "resumed_by_user",
+  "utc": "2026-10-26T05:41:06.736656+00:00",
+  "request": "请继续完成还未完成的训练",
+  "mean": "data/right/highspeed_mean_20261025_v3",
+  "mean_already_complete": true,
+  "next_stages": [
+    "matching sigma head",
+    "velocity acceleration residual fit",
+    "heldout pipeline evaluation"
+  ],
+  "robot_motion": false
+}

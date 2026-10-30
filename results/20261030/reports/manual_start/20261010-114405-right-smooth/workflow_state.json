@@ -1,0 +1,10 @@
+{
+  "status": "failed",
+  "side": "right",
+  "domain": 74,
+  "started_unix": 1791604038.4117193,
+  "plan": "/home/venom/factr2/data/motion_plans/right_coverage_smooth_20261010_114405.yaml",
+  "session": "/home/venom/factr2/data/quick_capture/right/20261010_114717_526404",
+  "error": "Command '['/usr/bin/python3.10', '/home/venom/factr2/scripts/w3_coverage_motion.py', 'run', '--file', '/home/venom/factr2/data/motion_plans/right_coverage_smooth_20261010_114405.yaml', '--send']' returned non-zero exit status 1.",
+  "completed_unix": 1791604403.3850622
+}

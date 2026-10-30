@@ -1,0 +1,194 @@
+{
+  "side": "right",
+  "domain": 74,
+  "initial_command_deg": [
+    -13.231166797054607,
+    28.988486220923374,
+    -11.777047550514432,
+    -38.934082018977655,
+    -0.4114488470731339,
+    -1.7662784390024282,
+    -9.65407245964845
+  ],
+  "measured_right_deg": [
+    -13.231166797054607,
+    28.988486220923374,
+    -11.777047550514432,
+    -38.934082018977655,
+    -0.4114488470731339,
+    -1.7662784390024282,
+    -9.65407245964845
+  ],
+  "stop_controller_present": true,
+  "left_pose_deg": [
+    -0.6042829517766106,
+    -0.7711715896598152,
+    0.37541626606901507,
+    0.627239811046244,
+    0.7032380254729471,
+    -1.1561712396752308,
+    1.2525375315679916
+  ],
+  "controller_states": {
+    "joint_position_controller": "active",
+    "joint_state_broadcaster": "active",
+    "cartesian_position_controller": "inactive",
+    "gravity_compensation_controller": "active"
+  },
+  "motor_health": [
+    {
+      "channel": 0,
+      "slot": 0,
+      "online": true,
+      "enabled": true,
+      "position": -2.172694206237793,
+      "velocity": -0.010990142822265625,
+      "torque": 0.19780349731445312,
+      "error": 1,
+      "age": 0.0006601400000363356
+    },
+    {
+      "channel": 0,
+      "slot": 1,
+      "online": true,
+      "enabled": true,
+      "position": 2.580491065979004,
+      "velocity": -0.010990142822265625,
+      "torque": -0.14505386352539062,
+      "error": 1,
+      "age": 0.0006601400000363356
+    },
+    {
+      "channel": 0,
+      "slot": 2,
+      "online": true,
+      "enabled": true,
+      "position": -2.214655876159668,
+      "velocity": -0.0048847198486328125,
+      "torque": -0.047863006591796875,
+      "error": 1,
+      "age": 0.0006601400000363356
+    },
+    {
+      "channel": 0,
+      "slot": 3,
+      "online": true,
+      "enabled": true,
+      "position": 2.8501949310302734,
+      "velocity": -0.0048847198486328125,
+      "torque": 0.020513534545898438,
+      "error": 1,
+      "age": 0.0006601400000363356
+    },
+    {
+      "channel": 0,
+      "slot": 4,
+      "online": true,
+      "enabled": true,
+      "position": -0.6639585494995117,
+      "velocity": -0.012210845947265625,
+      "torque": 0.0073261260986328125,
+      "error": 1,
+      "age": 0.0006601400000363356
+    },
+    {
+      "channel": 0,
+      "slot": 5,
+      "online": true,
+      "enabled": true,
+      "position": -1.2159528732299805,
+      "velocity": -0.012210845947265625,
+      "torque": 0.021978378295898438,
+      "error": 1,
+      "age": 0.0006601400000363356
+    },
+    {
+      "channel": 0,
+      "slot": 6,
+      "online": true,
+      "enabled": true,
+      "position": -1.4208059310913086,
+      "velocity": -0.012210845947265625,
+      "torque": -0.0024423599243164062,
+      "error": 1,
+      "age": 0.0006601400000363356
+    },
+    {
+      "channel": 1,
+      "slot": 0,
+      "online": true,
+      "enabled": true,
+      "position": 1.8732357025146484,
+      "velocity": -0.010990142822265625,
+      "torque": 3.8109893798828125,
+      "error": 1,
+      "age": 0.0006601400000363356
+    },
+    {
+      "channel": 1,
+      "slot": 1,
+      "online": true,
+      "enabled": true,
+      "position": 2.6377124786376953,
+      "velocity": 0.010990142822265625,
+      "torque": 3.7846145629882812,
+      "error": 1,
+      "age": 0.0006601400000363356
+    },
+    {
+      "channel": 1,
+      "slot": 2,
+      "online": true,
+      "enabled": true,
+      "position": -2.884908676147461,
+      "velocity": -0.0048847198486328125,
+      "torque": 0.9094009399414062,
+      "error": 1,
+      "age": 0.0006601400000363356
+    },
+    {
+      "channel": 1,
+      "slot": 3,
+      "online": true,
+      "enabled": true,
+      "position": -0.6414508819580078,
+      "velocity": -0.0048847198486328125,
+      "torque": 1.7709407806396484,
+      "error": 1,
+      "age": 0.0006601400000363356
+    },
+    {
+      "channel": 1,
+      "slot": 4,
+      "online": true,
+      "enabled": true,
+      "position": -2.8891048431396484,
+      "velocity": 0.012210845947265625,
+      "torque": 0.021978378295898438,
+      "error": 1,
+      "age": 0.0006601400000363356
+    },
+    {
+      "channel": 1,
+      "slot": 5,
+      "online": true,
+      "enabled": true,
+      "position": 2.09182071685791,
+      "velocity": -0.012210845947265625,
+      "torque": -0.03174591064453125,
+      "error": 1,
+      "age": 0.0006601400000363356
+    },
+    {
+      "channel": 1,
+      "slot": 6,
+      "online": true,
+      "enabled": true,
+      "position": 1.9434270858764648,
+      "velocity": -0.012210845947265625,
+      "torque": -0.021978378295898438,
+      "error": 1,
+      "age": 0.0006601400000363356
+    }
+  ]
+}

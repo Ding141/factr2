@@ -1,0 +1,254 @@
+{
+  "date": "2026-10-21",
+  "scope": "offline solver replay of recorded residuals",
+  "limitations": [
+    "No new model fit, inference, timestamp shift, or parameter tuning.",
+    "Solver validity is not accuracy; force statistics include only solver-valid frames.",
+    "force_only assumes zero moment about right_attachment_point.",
+    "Runtime freshness/envelope gates are not re-executed; their recorded states are reported.",
+    "These are already-inspected diagnostic datasets, not a new blind test."
+  ],
+  "code_sha256": {
+    "/home/venom/factr2/docs/research/review_20261021/analyze_endpoint.py": "d8725675619cda5ee097f56cfad6b139076b1e720438cf1bd5ebdaddf9a2e19e",
+    "/home/venom/factr2/scripts/w3_coverage_plan.py": "74298c0e5657560a30bd96a836e0594de3479b3ef6861e84dcb54d8021e6006e",
+    "/home/venom/factr2/factr2_next/src/factr2_next/factr2_next/inference/endpoint_wrench.py": "092ffb3600982c9a8e655746e81a216c7fc1f0173961c7b98c9e59f8e35b2d66"
+  },
+  "stages": [
+    {
+      "stage": "/home/venom/factr2/log/random_free_test_20261015/attempt_03",
+      "rows": 4734,
+      "recorded_reasons": {
+        "ok": 3308,
+        "inconsistent_with_tool_contact": 1426
+      },
+      "recorded_next_states": {
+        "valid": 4734
+      },
+      "recorded_contact_states": {
+        "0": 4734
+      },
+      "source_sha256": {
+        "samples.csv": "89f73cd47aa5c02dccbca1285c2fb02f35abf471fa054ee828a80e502e699fdf",
+        "robot.urdf": "e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345"
+      },
+      "modes": {
+        "full_wrench": {
+          "condition_quantiles": {
+            "min": 10.38350255584969,
+            "p50": 12.366166266972456,
+            "p95": 14.540447527193061,
+            "max": 14.965218823194862
+          },
+          "geometry_rejected_rows": 0,
+          "signals": {
+            "external_raw_nm": {
+              "solver_reasons": {
+                "ok": 3261,
+                "inconsistent_with_tool_contact": 1473
+              },
+              "solver_valid_fraction": 0.6888466413181242,
+              "force_norm_p95_valid_n": 6.730385907713241,
+              "joint_mae_nm": [
+                0.16927731077430316,
+                0.16580150567583762,
+                0.14230100642441193,
+                0.15687732765530552,
+                0.05197523962777151,
+                0.16175962200079053,
+                0.04463138926088067
+              ],
+              "joint_averaged_mae_nm": 0.12751762877418585,
+              "fit_error_p95_nm": 0.30607533483344945
+            },
+            "external_filtered_nm": {
+              "solver_reasons": {
+                "ok": 3308,
+                "inconsistent_with_tool_contact": 1426
+              },
+              "solver_valid_fraction": 0.6987748204478242,
+              "force_norm_p95_valid_n": 6.389919036808114,
+              "joint_mae_nm": [
+                0.1642257201454941,
+                0.16056576255505514,
+                0.13297031811266313,
+                0.14948736923768355,
+                0.04973004644536142,
+                0.15919383899571007,
+                0.040709972506500346
+              ],
+              "joint_averaged_mae_nm": 0.12241186114263825,
+              "fit_error_p95_nm": 0.29493087432423654
+            }
+          }
+        },
+        "force_only": {
+          "condition_quantiles": {
+            "min": 5.606738382520534,
+            "p50": 6.680099300344562,
+            "p95": 8.063195313564401,
+            "max": 8.269872723973167
+          },
+          "geometry_rejected_rows": 0,
+          "signals": {
+            "external_raw_nm": {
+              "solver_reasons": {
+                "inconsistent_with_tool_contact": 3900,
+                "ok": 834
+              },
+              "solver_valid_fraction": 0.1761723700887199,
+              "force_norm_p95_valid_n": 6.602888674768085,
+              "joint_mae_nm": [
+                0.16927731077430316,
+                0.16580150567583762,
+                0.14230100642441193,
+                0.15687732765530552,
+                0.05197523962777151,
+                0.16175962200079053,
+                0.04463138926088067
+              ],
+              "joint_averaged_mae_nm": 0.12751762877418585,
+              "fit_error_p95_nm": 0.5592678886362961
+            },
+            "external_filtered_nm": {
+              "solver_reasons": {
+                "inconsistent_with_tool_contact": 3874,
+                "ok": 860
+              },
+              "solver_valid_fraction": 0.18166455428812844,
+              "force_norm_p95_valid_n": 6.408689664256032,
+              "joint_mae_nm": [
+                0.1642257201454941,
+                0.16056576255505514,
+                0.13297031811266313,
+                0.14948736923768355,
+                0.04973004644536142,
+                0.15919383899571007,
+                0.040709972506500346
+              ],
+              "joint_averaged_mae_nm": 0.12241186114263825,
+              "fit_error_p95_nm": 0.5441071288149499
+            }
+          }
+        }
+      }
+    },
+    {
+      "stage": "/home/venom/factr2/log/next_feedback_trial_20261019_v1",
+      "rows": 11900,
+      "recorded_reasons": {
+        "ok": 8275,
+        "inconsistent_with_tool_contact": 3625
+      },
+      "recorded_next_states": {
+        "valid": 11900
+      },
+      "recorded_contact_states": {
+        "0": 11900
+      },
+      "source_sha256": {
+        "samples.csv": "9a86d52238836d3e4dc10ab465d28c05fcfedbf842776a8063ec3b67bac99eba",
+        "robot.urdf": "e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345"
+      },
+      "modes": {
+        "full_wrench": {
+          "condition_quantiles": {
+            "min": 11.191527513237654,
+            "p50": 11.939440007696989,
+            "p95": 12.512648755197665,
+            "max": 12.852639481900104
+          },
+          "geometry_rejected_rows": 0,
+          "signals": {
+            "external_raw_nm": {
+              "solver_reasons": {
+                "ok": 8357,
+                "inconsistent_with_tool_contact": 3543
+              },
+              "solver_valid_fraction": 0.7022689075630252,
+              "force_norm_p95_valid_n": 5.584018165068081,
+              "joint_mae_nm": [
+                0.1131792267631082,
+                0.09492566801920659,
+                0.07875635550803498,
+                0.10830274675573622,
+                0.030353653573454552,
+                0.07214903630504087,
+                0.025635399822177007
+              ],
+              "joint_averaged_mae_nm": 0.07475744096382263,
+              "fit_error_p95_nm": 0.1628041924334257
+            },
+            "external_filtered_nm": {
+              "solver_reasons": {
+                "ok": 8275,
+                "inconsistent_with_tool_contact": 3625
+              },
+              "solver_valid_fraction": 0.6953781512605042,
+              "force_norm_p95_valid_n": 5.516880872280941,
+              "joint_mae_nm": [
+                0.11147572954449565,
+                0.09408935821796814,
+                0.07480365024131802,
+                0.1070050036875298,
+                0.029719742162317844,
+                0.07110259475522017,
+                0.02537786711406984
+              ],
+              "joint_averaged_mae_nm": 0.07336770653184564,
+              "fit_error_p95_nm": 0.1569088632600399
+            }
+          }
+        },
+        "force_only": {
+          "condition_quantiles": {
+            "min": 6.313452179481672,
+            "p50": 6.71535618953042,
+            "p95": 7.080294741925184,
+            "max": 7.292810059746023
+          },
+          "geometry_rejected_rows": 0,
+          "signals": {
+            "external_raw_nm": {
+              "solver_reasons": {
+                "ok": 3001,
+                "inconsistent_with_tool_contact": 8899
+              },
+              "solver_valid_fraction": 0.25218487394957984,
+              "force_norm_p95_valid_n": 6.848134718425259,
+              "joint_mae_nm": [
+                0.1131792267631082,
+                0.09492566801920659,
+                0.07875635550803498,
+                0.10830274675573622,
+                0.030353653573454552,
+                0.07214903630504087,
+                0.025635399822177007
+              ],
+              "joint_averaged_mae_nm": 0.07475744096382263,
+              "fit_error_p95_nm": 0.2814371209365084
+            },
+            "external_filtered_nm": {
+              "solver_reasons": {
+                "ok": 2967,
+                "inconsistent_with_tool_contact": 8933
+              },
+              "solver_valid_fraction": 0.24932773109243697,
+              "force_norm_p95_valid_n": 6.746639943072995,
+              "joint_mae_nm": [
+                0.11147572954449565,
+                0.09408935821796814,
+                0.07480365024131802,
+                0.1070050036875298,
+                0.029719742162317844,
+                0.07110259475522017,
+                0.02537786711406984
+              ],
+              "joint_averaged_mae_nm": 0.07336770653184564,
+              "fit_error_p95_nm": 0.271027548102189
+            }
+          }
+        }
+      }
+    }
+  ]
+}

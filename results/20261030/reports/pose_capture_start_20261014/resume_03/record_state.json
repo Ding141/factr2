@@ -1,0 +1,16 @@
+{
+  "status": "failed",
+  "pid": 32601,
+  "side": "right",
+  "role": "train",
+  "domain": 74,
+  "plan": "/home/venom/factr2/log/pose_capture_start_20261014/resume_03/train.yaml",
+  "stop_file": "/home/venom/factr2/log/pose_capture_start_20261014/resume_03/STOP_CAPTURE",
+  "automatic_training": false,
+  "automatic_deployment": false,
+  "updated_at": "2026-10-14T22:33:00.842601+08:00",
+  "capture_pid": 32650,
+  "session": "/home/venom/factr2/data/quick_capture/right/20261014_222919_803528",
+  "motion_pid": 33135,
+  "error": "Motion failed; no automatic retry"
+}

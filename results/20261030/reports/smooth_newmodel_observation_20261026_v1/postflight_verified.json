@@ -1,0 +1,13 @@
+{
+  "robot_stable_span_deg": 0.021856605344040804,
+  "motion_publishers": {
+    "/joint_position_command": [],
+    "/left_pose_goal": [],
+    "/right_pose_goal": []
+  },
+  "H5_accepted": true,
+  "CAN_drops": 0,
+  "CAN_timestamp_missing": 0,
+  "observer_state": "valid",
+  "training_performed": false
+}

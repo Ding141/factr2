@@ -1,0 +1,20 @@
+{
+  "status": "stopped_on_repeated_right_wrist_feedback_loss",
+  "session": "/home/venom/factr2/data/quick_capture/right/20261014_215932_289257",
+  "motion_failed_at": "006_sweep_j4_slow",
+  "completed_events": 5,
+  "recorded_rows": 11505,
+  "recorded_frequency_hz": 100.0,
+  "max_recording_gap_ms": 13.34,
+  "recording_quality_passed": true,
+  "full_protocol_completed": false,
+  "automatic_retry": false,
+  "offline_right_slots": [
+    4,
+    5,
+    6
+  ],
+  "post_stop_feedback_samples": 30,
+  "offline_in_all_post_stop_samples": true,
+  "bounded_stop_messages": 1
+}

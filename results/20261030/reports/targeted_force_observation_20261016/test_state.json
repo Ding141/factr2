@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "phase": "finished",
+  "step_index": 20,
+  "started_utc": "2026-10-16T13:19:55.270113+00:00",
+  "automatic_retry": false,
+  "model_hash": "b5216350f2c76a7462ab931e5d62e8f2442e00e65f0f4146fb4b7868829d62a6",
+  "updated_utc": "2026-10-16T13:22:39.964837+00:00",
+  "C_pid": 56892,
+  "session": "/home/venom/factr2/data/quick_capture/right/20261016_211956_613895",
+  "recorder_pid": 57329,
+  "motion_pid": 57358,
+  "total_steps": 20,
+  "finished_utc": "2026-10-16T13:22:39.800863+00:00",
+  "recording_active": false
+}

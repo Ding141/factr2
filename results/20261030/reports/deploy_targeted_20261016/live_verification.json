@@ -1,0 +1,343 @@
+{
+  "observation_seconds": 10.005633954999212,
+  "diagnostics": {
+    "inference": {
+      "messages": 500,
+      "last": [
+        {
+          "name": "factr2/next/right",
+          "level": 0,
+          "message": "valid:ok",
+          "values": {
+            "outputs": 10389,
+            "dropped": 0,
+            "resets": 0,
+            "state": "valid",
+            "reason": "ok",
+            "history_count": 50,
+            "source_age_seconds": 0.008692236,
+            "receive_age_seconds": 0.005587441002717242,
+            "last_output_stamp_ns": 1792156549854020162,
+            "output_hz": 100,
+            "infer_ms": 0.7598730007885024,
+            "infer_p95_ms": 0.9754865504874032,
+            "device": "cpu"
+          }
+        }
+      ],
+      "ok_messages": 500
+    },
+    "adapter": {
+      "messages": 998,
+      "last": [
+        {
+          "name": "factr2/adapter/right",
+          "level": 0,
+          "message": "ok",
+          "values": {
+            "state_receive_age_seconds": 0.0020196000004943926,
+            "state_source_age_seconds": 0.002419721,
+            "command_receive_age_seconds": 0.0022190669988049194,
+            "command_source_age_seconds": 0.002419721,
+            "output_hz_last_second": 99,
+            "health_mode": "required",
+            "health_receive_age_seconds": 0.005430717999843182,
+            "health_source_age_seconds": 0.0059412580000000005,
+            "health_source_stamp_ns": 1792156549850498625,
+            "source_skew_seconds": 0.0,
+            "invalid": 0,
+            "stale": 0,
+            "duplicate": 0,
+            "skew": 0,
+            "health_rejected": 1,
+            "clock_reset": 0,
+            "outputs": 10539,
+            "side": "right",
+            "recent_rejection": "health_missing_stale_or_error",
+            "state_source_stamp_ns": 1792156549854020162,
+            "command_source_stamp_ns": 1792156549854020162
+          }
+        }
+      ],
+      "ok_messages": 998
+    },
+    "health": {
+      "messages": 499,
+      "last": [
+        {
+          "name": "factr2/w3/left",
+          "level": 0,
+          "message": "ok",
+          "values": {
+            "side": "left",
+            "channel": 0,
+            "missing_slots": [],
+            "duplicate_slots": [],
+            "offline_slots": [],
+            "disabled_slots": [],
+            "fault_slots": [],
+            "nonfinite_slots": [],
+            "healthy": true,
+            "raw_source_stamp_ns": 1792156549848837590,
+            "raw_receive_age_seconds": 0.001382018999720458,
+            "raw_source_age_seconds": 0.0016610350000000002,
+            "reason": "ok"
+          }
+        },
+        {
+          "name": "factr2/w3/right",
+          "level": 0,
+          "message": "ok",
+          "values": {
+            "side": "right",
+            "channel": 1,
+            "missing_slots": [],
+            "duplicate_slots": [],
+            "offline_slots": [],
+            "disabled_slots": [],
+            "fault_slots": [],
+            "nonfinite_slots": [],
+            "healthy": true,
+            "raw_source_stamp_ns": 1792156549848837590,
+            "raw_receive_age_seconds": 0.001382018999720458,
+            "raw_source_age_seconds": 0.0016610350000000002,
+            "reason": "ok"
+          }
+        }
+      ],
+      "ok_messages": 499
+    }
+  },
+  "topology": {
+    "w3_health_monitor": {
+      "publishers": [
+        [
+          "/factr2/w3_health",
+          [
+            "diagnostic_msgs/msg/DiagnosticArray"
+          ]
+        ],
+        [
+          "/parameter_events",
+          [
+            "rcl_interfaces/msg/ParameterEvent"
+          ]
+        ],
+        [
+          "/rosout",
+          [
+            "rcl_interfaces/msg/Log"
+          ]
+        ]
+      ],
+      "clients": []
+    },
+    "w3_next_adapter_right": {
+      "publishers": [
+        [
+          "/factr2/right/adapter_status",
+          [
+            "diagnostic_msgs/msg/DiagnosticArray"
+          ]
+        ],
+        [
+          "/factr2/right/joint_cmd",
+          [
+            "sensor_msgs/msg/JointState"
+          ]
+        ],
+        [
+          "/factr2/right/joint_effort",
+          [
+            "sensor_msgs/msg/JointState"
+          ]
+        ],
+        [
+          "/factr2/right/joint_pos",
+          [
+            "sensor_msgs/msg/JointState"
+          ]
+        ],
+        [
+          "/factr2/right/joint_vel",
+          [
+            "sensor_msgs/msg/JointState"
+          ]
+        ],
+        [
+          "/parameter_events",
+          [
+            "rcl_interfaces/msg/ParameterEvent"
+          ]
+        ],
+        [
+          "/rosout",
+          [
+            "rcl_interfaces/msg/Log"
+          ]
+        ]
+      ],
+      "clients": []
+    },
+    "next_inference_right": {
+      "publishers": [
+        [
+          "/next/right/contact_state",
+          [
+            "std_msgs/msg/Bool"
+          ]
+        ],
+        [
+          "/next/right/external_joint_torque",
+          [
+            "sensor_msgs/msg/JointState"
+          ]
+        ],
+        [
+          "/next/right/external_joint_torque/raw",
+          [
+            "sensor_msgs/msg/JointState"
+          ]
+        ],
+        [
+          "/next/right/free_joint_torque_pred",
+          [
+            "sensor_msgs/msg/JointState"
+          ]
+        ],
+        [
+          "/next/right/mse",
+          [
+            "std_msgs/msg/Float32"
+          ]
+        ],
+        [
+          "/next/right/normalized_contact_magnitude",
+          [
+            "std_msgs/msg/Float32"
+          ]
+        ],
+        [
+          "/next/right/status",
+          [
+            "diagnostic_msgs/msg/DiagnosticArray"
+          ]
+        ],
+        [
+          "/parameter_events",
+          [
+            "rcl_interfaces/msg/ParameterEvent"
+          ]
+        ],
+        [
+          "/rosout",
+          [
+            "rcl_interfaces/msg/Log"
+          ]
+        ]
+      ],
+      "clients": []
+    },
+    "next_web_right": {
+      "publishers": [
+        [
+          "/parameter_events",
+          [
+            "rcl_interfaces/msg/ParameterEvent"
+          ]
+        ],
+        [
+          "/rosout",
+          [
+            "rcl_interfaces/msg/Log"
+          ]
+        ]
+      ],
+      "clients": []
+    },
+    "right_endpoint_wrench_observer": {
+      "publishers": [
+        [
+          "/next/right/endpoint_wrench",
+          [
+            "geometry_msgs/msg/WrenchStamped"
+          ]
+        ],
+        [
+          "/next/right/endpoint_wrench/status",
+          [
+            "diagnostic_msgs/msg/DiagnosticArray"
+          ]
+        ],
+        [
+          "/parameter_events",
+          [
+            "rcl_interfaces/msg/ParameterEvent"
+          ]
+        ],
+        [
+          "/rosout",
+          [
+            "rcl_interfaces/msg/Log"
+          ]
+        ]
+      ],
+      "clients": []
+    }
+  },
+  "8081": {
+    "state": "valid",
+    "reason": "ok",
+    "diagnostics": {
+      "outputs": 10389,
+      "dropped": 0,
+      "resets": 0,
+      "state": "valid",
+      "reason": "ok",
+      "history_count": 50,
+      "source_age_seconds": 0.008692236,
+      "receive_age_seconds": 0.005587441002717242,
+      "last_output_stamp_ns": 1792156549854020162,
+      "output_hz": 100,
+      "infer_ms": 0.7598730007885024,
+      "infer_p95_ms": 0.9754865504874032,
+      "device": "cpu"
+    }
+  },
+  "8082": {
+    "state": "valid",
+    "reasons": [],
+    "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+    "geometry": {
+      "condition_number": 11.845014114961144,
+      "scaled_singular_values": [
+        2.0467339681280343,
+        1.6609753986994091,
+        1.45156933493165,
+        0.5852392927930866,
+        0.4696470486062219,
+        0.17279286865035098
+      ],
+      "mode": "full_wrench",
+      "observable_rank": 6,
+      "moments_observed": true,
+      "assumption": "all_external_loading_at_tool_origin",
+      "torque_fit_error_nm": 0.004052453462926855,
+      "relative_fit_error": 0.04052453462926855,
+      "reason": "ok",
+      "valid": true
+    },
+    "outputs": 10117,
+    "wrench": {
+      "fx": 0.12862585310442382,
+      "fy": 0.0016462450015519916,
+      "fz": -0.02932907938891716,
+      "mx": -0.04428622427156915,
+      "my": 0.003710611590711845,
+      "mz": -0.0002369335939327152
+    },
+    "model_notice": "2026-10-16 待验收模型（最佳第12轮）；当前为真机只读观测。验证/测试仅覆盖6°/s，接触及卸载恢复尚未验证。"
+  },
+  "status": "running_readonly_trial",
+  "deployment_ready": false
+}

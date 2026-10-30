@@ -1,0 +1,17 @@
+{
+  "status": "checked",
+  "url": "http://127.0.0.1:8083/",
+  "enabled_joints": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "source_model_metadata_sha256": "3ea80b6d4a101bce327161b874fefd859afd323fabcf5f2f91ee526bf6edd403",
+  "compensation_model_sha256": "da96b945986d6195a9249260baafa62ad190fa658fc42f1485eb55f4aa1e6f88",
+  "feature_mode": "position_dynamic_coupling",
+  "deployment_ready": false
+}

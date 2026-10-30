@@ -1,0 +1,9 @@
+{
+  "scripts/export_w3_frozen_sigma.py": "eba98a47ef1337289ba3de58eba1b5b9b6ae3e192efb05e477c94cc045be4259",
+  "scripts/observe_w3_frozen_sigma.py": "87b48bae7ae762f70fd07eadb846d0f5b10a68a963be56a9abc63217eed72733",
+  "scripts/test_w3_frozen_sigma_observer.py": "3479ed49ea0a6469f997de02946744187a64bba28b446e3564b64e3b81337dfc",
+  "factr2_next/src/factr2_next/factr2_next/inference/frozen_sigma_observer.py": "09dddbdc2cef6e9e77085ef95f42dcc153ed2f4bef8d40494fbb08bbc63341cc",
+  "factr2_next/src/factr2_next/factr2_next/visualization/frozen_sigma_web.py": "7636e3fc1b285406ba5263a31389356b2ed901d49792398ce8b6458943d66615",
+  "factr2_next/src/factr2_next/factr2_next/visualization/web_node.py": "04857eef6940253dfc8e2b303362dc384d87d4d3769fc1fe076bd747d39e45d9",
+  "factr2_next/src/factr2_next/factr2_next/w3_config.py": "a9aa50b2cf60f0ae4a8226a3c3830555884950a13355b36e40d224473a6ac394"
+}

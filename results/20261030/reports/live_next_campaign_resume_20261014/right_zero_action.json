@@ -1,0 +1,47 @@
+{
+  "status": "arrival_checked",
+  "side": "right",
+  "duration": 20,
+  "source": "prior explicit user zero requests",
+  "initial_deg": [
+    0.25457726627200866,
+    50.08043822700291,
+    0.20053610256000862,
+    -54.19021111517158,
+    0.1131096811838454,
+    0.7035726063875426,
+    0.8372620300312164
+  ],
+  "left_deg": [
+    -1.7190244658360516,
+    -2.672696254591365,
+    0.37541626606901507,
+    4.080638096918051,
+    20.199657841437503,
+    -2.4457109549736384,
+    1.0776846888156653
+  ],
+  "plan_sha256": "4e009f1dd5d3ee1b9e0e4d87cea450fe7b5ca44f4b9e62ad61a0d079238c990d",
+  "request_wall_time": 1791927479.174051,
+  "response": {
+    "message": "Model-zero trajectory published (right, 20.00 s); arrival is not yet confirmed"
+  },
+  "actual_deg": [
+    0.25457726627200866,
+    50.08043822700291,
+    0.20053610256000862,
+    -54.19021111517158,
+    0.09125307583980459,
+    0.7035726063875426,
+    0.8372620300312164
+  ],
+  "max_abs_deg": 54.19021111517158,
+  "within_1_5_deg": false,
+  "controllers": {
+    "gravity_compensation_controller": "active",
+    "joint_state_broadcaster": "active",
+    "joint_position_controller": "active",
+    "cartesian_position_controller": "inactive"
+  },
+  "ended_wall_time": 1791927503.297971
+}

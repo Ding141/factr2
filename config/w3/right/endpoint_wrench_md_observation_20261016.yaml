@@ -1,0 +1,21 @@
+side: right
+tool_frame: right_attachment_point
+root_frame: base_footprint
+robot_description_sha256: e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345
+inference_config: /home/venom/factr2/config/w3/right/inference_md_observation_20261016.yaml
+solver:
+  characteristic_length_m: 0.4
+  damping: 0.005
+  max_condition: 100.0
+  max_relative_residual: 0.35
+  mode: full_wrench
+web:
+  host: 127.0.0.1
+  port: 8084
+  refresh_hz: 10
+  history_points: 600
+model_notice: NEXT+MD 实验模型（最佳第8轮）。离线对照误差高于原版，当前仅观测。MD从零初始化，启动前运动历史未知；不扣零、不修改机器人控制。
+next_topic_root: /next/right/md
+node_name: right_endpoint_wrench_md_observer
+model_label: NEXT+MD · 右臂末端等效力与力矩
+joint_dashboard_url: http://127.0.0.1:8083/

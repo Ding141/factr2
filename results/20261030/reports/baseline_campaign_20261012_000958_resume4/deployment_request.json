@@ -1,0 +1,23 @@
+{
+  "requested_utc": "2026-10-11T17:21:00.728282+00:00",
+  "user_instruction": "训练完成之后部署模型，同时打开外力检测窗口",
+  "authorized": true,
+  "mode": "readonly_candidate_observation",
+  "requires_frozen_independent_free_val_test_pass": true,
+  "manual_release_acceptance_pending": true,
+  "deployment_ready_until_manual_release_pass": false,
+  "preserve_robot_control": true,
+  "send_motion": false,
+  "preserve_previous_model": true,
+  "auto_tare": false,
+  "urls": [
+    "http://127.0.0.1:8082/",
+    "http://127.0.0.1:8081/"
+  ],
+  "automation_id": "automation",
+  "status": "readonly_diagnostic_candidate_deployed_by_explicit_user_request",
+  "candidate": "/home/venom/factr2/runs/next_right_baseline_campaign_20261012_000958_resume4_20261012_013705_122044",
+  "deployment_ready": false,
+  "readonly_deployed": true,
+  "receipt": "/home/venom/factr2/log/baseline_campaign_20261012_000958_resume4/readonly_deployment_20261012_014745/deployment.json"
+}

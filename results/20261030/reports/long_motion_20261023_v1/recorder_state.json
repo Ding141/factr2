@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "rows": 0,
+  "error": "Object of type bytes is not JSON serializable",
+  "updated_mono": 3098.83359443
+}

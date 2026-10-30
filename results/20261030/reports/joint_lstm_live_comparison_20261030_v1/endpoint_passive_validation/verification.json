@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "rows": 213,
+  "endpoint_frames": 21,
+  "windows": {
+    "8082": {
+      "joint_state": "out_of_scope",
+      "endpoint_state": "unavailable",
+      "reason": "outside_collection_range:right_joint_1,right_joint_3",
+      "geometry": {
+        "condition_number": 118.08585322904106,
+        "scaled_singular_values": [
+          2.1923726545792355,
+          1.8037015826701044,
+          1.4155199305526156,
+          0.6279662989347985,
+          0.6210530413464482,
+          0.01856592127362519
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "reason": "near_singular",
+        "valid": false
+      },
+      "frame_id": "right_attachment_point"
+    },
+    "8083": {
+      "joint_state": "out_of_scope",
+      "endpoint_state": "unavailable",
+      "reason": "outside_collection_range:right_joint_1,right_joint_3",
+      "geometry": {
+        "condition_number": 118.08585322904106,
+        "scaled_singular_values": [
+          2.1923726545792355,
+          1.8037015826701044,
+          1.4155199305526156,
+          0.6279662989347985,
+          0.6210530413464482,
+          0.01856592127362519
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "reason": "near_singular",
+        "valid": false
+      },
+      "frame_id": "right_attachment_point"
+    }
+  },
+  "old_models_unchanged": true,
+  "physical_motion": false
+}

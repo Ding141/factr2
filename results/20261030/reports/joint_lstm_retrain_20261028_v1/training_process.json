@@ -1,0 +1,22 @@
+{
+  "pid": 9665,
+  "command": [
+    "bash",
+    "scripts/next.sh",
+    "env",
+    "OPENBLAS_NUM_THREADS=1",
+    "OMP_NUM_THREADS=1",
+    "MKL_NUM_THREADS=1",
+    "PYTHONUNBUFFERED=1",
+    "python",
+    "-m",
+    "factr2_next.training.train",
+    "--config",
+    "/home/venom/factr2/log/joint_lstm_retrain_20261028_v1/recovery_training_config.yaml"
+  ],
+  "started": "2026-10-28T21:26:30.291410+08:00",
+  "status": "complete",
+  "execution": "detached host process; five completed branches reused; two deterministic replays; full epoch recovery checkpoints enabled",
+  "log": "/home/venom/factr2/log/joint_lstm_retrain_20261028_v1/recovery_training.log",
+  "finished": "2026-10-28T22:22:19.451512+08:00"
+}

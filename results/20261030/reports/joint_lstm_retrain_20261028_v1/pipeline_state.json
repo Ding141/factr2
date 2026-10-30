@@ -1,0 +1,72 @@
+{
+  "stage": "trained_offline_complete",
+  "updated": "2026-10-28T22:28:32.200560+08:00",
+  "training_run": "/home/venom/factr2/runs/right_joint_lstm_recovered_v1_20261028_212633_446761",
+  "bundle": "/home/venom/factr2/models/w3/right/joint_lstm_observer_20261028_v1",
+  "controller_changes": false,
+  "services": {
+    "health": 15814,
+    "adapter": 15820,
+    "observer": 15821,
+    "old_shared_observer": 15822
+  },
+  "live_status": {
+    "service": "running",
+    "pid": 15821,
+    "bundle": "/home/venom/factr2/models/w3/right/joint_lstm_observer_20261028_v1",
+    "bundle_sha256": "6762291153e86efe34b9cce8c761a2fcdbcf61f51415c130c51c4d8e952f4c3d",
+    "model_sha256": "bec10a63f3ef31bf41dc66560afb8247342f645b42f6d4516c0165e7d44a932b",
+    "state": "stale",
+    "reason": "input_timeout",
+    "outputs": 0,
+    "next_topic_root": "/next/right/joint_lstm",
+    "url": "http://127.0.0.1:8083/",
+    "compensation_enabled": false,
+    "controller_changes": false,
+    "architecture": "independent_joint_lstm_v1",
+    "deployment_ready": false
+  },
+  "old_live_status": {
+    "service": "running",
+    "pid": 15822,
+    "bundle": "/home/venom/factr2/models/w3/right/wide_highspeed_observer_20261026_v1",
+    "metadata_sha256": "3ea80b6d4a101bce327161b874fefd859afd323fabcf5f2f91ee526bf6edd403",
+    "architecture": "shared_lstm",
+    "state": "stale",
+    "reason": "input_timeout",
+    "outputs": 0,
+    "next_topic_root": "/next/right/frozen_sigma",
+    "url": "http://127.0.0.1:8082/",
+    "compensation_enabled": false,
+    "sigma_displayed": false,
+    "controller_changes": false
+  },
+  "old_model_preserved": true,
+  "comparison": "8082 preserved shared mean vs 8083 new joint mean; no residual compensation, same LP12/LP5",
+  "report": "/home/venom/factr2/log/joint_lstm_retrain_20261028_v1/REPORT.md",
+  "offline_only": true,
+  "services_stopped": {
+    "health": {
+      "pid": 15814,
+      "signal": "SIGINT",
+      "process_present": false
+    },
+    "adapter": {
+      "pid": 15820,
+      "signal": "SIGINT",
+      "process_present": false
+    },
+    "observer": {
+      "pid": 15821,
+      "signal": "SIGINT",
+      "process_present": false
+    },
+    "old_shared_observer": {
+      "pid": 15822,
+      "signal": "SIGINT",
+      "process_present": false
+    }
+  },
+  "services_running": false,
+  "comparison_report": "/home/venom/factr2/log/joint_lstm_retrain_20261028_v1/evaluation_grouped/comparison.json"
+}

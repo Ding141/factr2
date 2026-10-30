@@ -33,6 +33,9 @@ def persist_best_snapshot(run, state, norm, cfg, metrics, source, manifest_path)
 def train(cfg):
     from factr2_next.training.train import set_seed, run_epoch
     cfg = copy.deepcopy(cfg)
+    if cfg['model']['type'] == 'joint_lstm':
+        from factr2_next.w3_config import validate_w3_config
+        validate_w3_config(cfg, 'train')
     manifest_path = str(Path(cfg['data']['manifest']).resolve())
     expected = {'side':cfg['side'], 'joint_order':cfg['joint_names'], 'contract_version':cfg['contract_version'], 'sample_hz':cfg['data'].get('sample_hz',50)}
     manifest, reports = validate_manifest(manifest_path, expected)
@@ -65,7 +68,8 @@ def train(cfg):
     optimizer=cfg['train'].get('optimizer','adam')
     if optimizer not in ('adam','adamw'): raise ValueError('Unsupported optimizer')
     cls=torch.optim.AdamW if optimizer=='adamw' else torch.optim.Adam
-    opt = cls(model.parameters(),lr=float(cfg['train']['learning_rate']),weight_decay=float(cfg['train'].get('weight_decay',0)))
+    opt = (None if cfg['model']['type'] == 'joint_lstm' else
+           cls(model.parameters(),lr=float(cfg['train']['learning_rate']),weight_decay=float(cfg['train'].get('weight_decay',0))))
     batch = int(cfg['train']['batch_size']);epochs=int(cfg['train']['epochs'])
     if batch < 1 or epochs < 1:
         raise ValueError('batch_epochs_positive')
@@ -90,37 +94,48 @@ def train(cfg):
     started=time.monotonic()
     run = Path(cfg['save']['output_dir'])/(cfg['save']['run_name']+'_'+datetime.now().strftime('%Y%m%d_%H%M%S_%f'))
     run.mkdir(parents=True,exist_ok=False)
-    for epoch in range(1,epochs+1):
-        extra={'gradient_clip':cfg['train']['gradient_clip']} if 'gradient_clip' in cfg['train'] else {}
-        scale_args = {'output_scale':output_scale} if output_scale is not None else {}
-        tr=run_epoch(model,loaders[0],device,opt,**scale_args,**extra)
-        if diagnostics_enabled:
-            from factr2_next.training.validation_metrics import validation_epoch
-            va, diagnostic = validation_epoch(model, loaders[1], device, norm, loss_units)
-            metrics['validation_diagnostics'].append(diagnostic)
+    if cfg['model']['type'] == 'joint_lstm':
+        from factr2_next.training.joint_lstm import fit_joint_lstm
+        def save_joint_best(joint_state):
+            persist_best_snapshot(run, joint_state, norm, cfg, metrics,
+                                  reports['train'][0]['metadata'], manifest_path)
+        if cfg['train'].get('parallel_joints'):
+            from factr2_next.training.parallel_joint_lstm import fit_parallel
+            state = fit_parallel(model, loaders, device, norm, cfg, metrics, save_joint_best, run)
         else:
-            with torch.inference_mode():va=run_epoch(model,loaders[1],device,**scale_args)
-        if not np.isfinite([tr,va]).all():
-            raise ValueError('nonfinite_loss')
-        metrics['train_loss'].append(tr);metrics['val_loss'].append(va)
-        if va < best:
-            best=va;metrics['best_epoch']=epoch
-            state={k:v.detach().cpu().clone() for k,v in model.state_dict().items()}
-            persist_best_snapshot(run,state,norm,cfg,metrics,reports['train'][0]['metadata'],manifest_path)
-        print(f"{cfg['side']} epoch {epoch}: train={tr:.6f} val={va:.6f}",flush=True)
-        if diagnostics_enabled:
-            for group, values in diagnostic['groups'].items():
-                print(f"  val {group}: max joint RMSE={max(values['per_joint_rmse_nm']):.4f} Nm "
-                      f"max abs bias={max(map(abs, values['signed_bias_nm'])):.4f} Nm", flush=True)
-        if va < early_best-delta: early_best=va; stale=0
-        else: stale+=1
-        stop_file=cfg['train'].get('stop_file')
-        if stop_file and Path(stop_file).exists():
-            metrics.update(stop_reason='user_requested',stopped_epoch=epoch)
-            break
-        if early.get('enabled',False) and epoch>=warmup and stale>=patience:
-            metrics['early_stopped_epoch']=epoch
-            break
+            state = fit_joint_lstm(model, loaders, device, norm, cfg, metrics, save_joint_best)
+    else:
+        for epoch in range(1,epochs+1):
+            extra={'gradient_clip':cfg['train']['gradient_clip']} if 'gradient_clip' in cfg['train'] else {}
+            scale_args = {'output_scale':output_scale} if output_scale is not None else {}
+            tr=run_epoch(model,loaders[0],device,opt,**scale_args,**extra)
+            if diagnostics_enabled:
+                from factr2_next.training.validation_metrics import validation_epoch
+                va, diagnostic = validation_epoch(model, loaders[1], device, norm, loss_units)
+                metrics['validation_diagnostics'].append(diagnostic)
+            else:
+                with torch.inference_mode():va=run_epoch(model,loaders[1],device,**scale_args)
+            if not np.isfinite([tr,va]).all():
+                raise ValueError('nonfinite_loss')
+            metrics['train_loss'].append(tr);metrics['val_loss'].append(va)
+            if va < best:
+                best=va;metrics['best_epoch']=epoch
+                state={k:v.detach().cpu().clone() for k,v in model.state_dict().items()}
+                persist_best_snapshot(run,state,norm,cfg,metrics,reports['train'][0]['metadata'],manifest_path)
+            print(f"{cfg['side']} epoch {epoch}: train={tr:.6f} val={va:.6f}",flush=True)
+            if diagnostics_enabled:
+                for group, values in diagnostic['groups'].items():
+                    print(f"  val {group}: max joint RMSE={max(values['per_joint_rmse_nm']):.4f} Nm "
+                          f"max abs bias={max(map(abs, values['signed_bias_nm'])):.4f} Nm", flush=True)
+            if va < early_best-delta: early_best=va; stale=0
+            else: stale+=1
+            stop_file=cfg['train'].get('stop_file')
+            if stop_file and Path(stop_file).exists():
+                metrics.update(stop_reason='user_requested',stopped_epoch=epoch)
+                break
+            if early.get('enabled',False) and epoch>=warmup and stale>=patience:
+                metrics['early_stopped_epoch']=epoch
+                break
     model.load_state_dict(state);model.eval()
     x,_=train_ds[0]
     with torch.inference_mode():
@@ -156,6 +171,14 @@ def train(cfg):
         ('w3_train.py', 'train.py', 'dataset.py', 'models.py', 'coverage_audit.py', 'validation_metrics.py')}
     meta['data_contract_source_files_sha256'] = {name:sha256(source_dir.parent/'data_collection'/name)
         for name in ('quality.py','campaign.py')}
+    if cfg['model']['type'] == 'joint_lstm':
+        meta['architecture'] = 'independent_joint_lstm_v1'
+        meta['per_joint_best_epoch'] = metrics['per_joint_best_epoch']
+        meta['training_source_files_sha256']['joint_lstm.py'] = sha256(source_dir/'joint_lstm.py')
+        if cfg['train'].get('parallel_joints'):
+            meta['training_source_files_sha256']['parallel_joint_lstm.py'] = sha256(source_dir/'parallel_joint_lstm.py')
+    if cfg.get('trial'):
+        meta.update(trial=copy.deepcopy(cfg['trial']),deployment_ready=False,automatic_deployment=False)
     write_json(run/'metadata.json',meta)
     from factr2_next.inference.checkpoint import load_checkpoint
     loaded=load_checkpoint(run,device,expected={'side':cfg['side'],'joint_order':cfg['joint_names']})

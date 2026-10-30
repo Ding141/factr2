@@ -1,0 +1,17 @@
+{
+  "status": "completed",
+  "pid": 46250,
+  "side": "right",
+  "role": "train",
+  "domain": 74,
+  "plan": "/home/venom/factr2/log/pose_capture_start_20261014/resume_06/train.yaml",
+  "stop_file": "/home/venom/factr2/log/pose_capture_start_20261014/resume_06/STOP_CAPTURE",
+  "automatic_training": false,
+  "automatic_deployment": false,
+  "updated_at": "2026-10-14T23:29:51.304586+08:00",
+  "capture_pid": 46365,
+  "session": "/home/venom/factr2/data/quick_capture/right/20261014_230723_088450",
+  "motion_pid": 47295,
+  "capture_return_code": 0,
+  "finished_at": "2026-10-14T23:29:51.304570+08:00"
+}

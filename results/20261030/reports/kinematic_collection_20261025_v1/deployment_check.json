@@ -1,0 +1,242 @@
+{
+  "status": "verified",
+  "paired_frames": 600,
+  "residual_identity_error_nm": 4.440892098500626e-16,
+  "source_publishers": {
+    "/next/right/kinematic_compensated/input/joint_effort_filtered": 1,
+    "/next/right/kinematic_compensated/free_joint_torque_pred": 1,
+    "/next/right/kinematic_compensated/external_joint_torque/raw": 1,
+    "/next/right/kinematic_compensated/external_joint_torque": 1,
+    "/next/right/kinematic_compensated/distribution": 1
+  },
+  "latest_packet": {
+    "schema": "w3_kinematic_residual_v1",
+    "stamp_ns": 1792913912325796901,
+    "state": "valid",
+    "reason": "ok",
+    "joint_names": [
+      "right_joint_0",
+      "right_joint_1",
+      "right_joint_2",
+      "right_joint_3",
+      "right_joint_4",
+      "right_joint_5",
+      "right_joint_6"
+    ],
+    "units": "Nm",
+    "base_metadata_sha256": "cbe838418b4f5b550662e51230e8b3f60a2fdfa4328e6cc5d7a6cd5a112876c9",
+    "compensation_applied": true,
+    "enabled_joints": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "calibration": "uncalibrated",
+    "contact_validated": false,
+    "signal": {
+      "input_torque_hz": 12.0,
+      "output_hz": 5.0,
+      "motor_velocity_hz": 8.0,
+      "position_noise_rad": 0.00038,
+      "jerk_density": 1.0,
+      "max_gap_seconds": 0.04,
+      "warmup_seconds": 0.5
+    },
+    "raw_external_nm": [
+      -0.10739734373487336,
+      0.02461471670495092,
+      -0.049373489213759225,
+      -0.07922414415870627,
+      0.0009709482890636005,
+      0.0051343684753618465,
+      0.0020371811076399125
+    ],
+    "final_external_nm": [
+      -0.1044500941931783,
+      0.02985153534140871,
+      -0.052171376374770206,
+      -0.08793759731225781,
+      0.0011150255846167747,
+      -0.024273670823032632,
+      -0.0015124939945508806
+    ],
+    "upstream_external_nm": [
+      -0.1175837516784668,
+      0.031119346618652344,
+      -0.05179905891418457,
+      -0.08932983875274658,
+      0.0014334507286548615,
+      0.006847456097602844,
+      0.0018152222037315369
+    ],
+    "correction_nm": [
+      -0.011028153709963288,
+      0.0010247568706579983,
+      -0.009145056900174251,
+      -0.007632935947136762,
+      -0.0003109902906214217,
+      -0.005986003474833481,
+      -0.0010871160748817828
+    ]
+  },
+  "windows": {
+    "8082": {
+      "state": "valid",
+      "reason": "ok",
+      "display_decimals": 2,
+      "last_valid_age_seconds": 0.01057415300010689,
+      "diagnostics": {
+        "outputs": 179636,
+        "dropped": 25,
+        "resets": 22,
+        "state": "valid",
+        "reason": "ok",
+        "history_count": 50,
+        "source_age_seconds": 0.008580666,
+        "receive_age_seconds": 0.0067023460001109925,
+        "last_output_stamp_ns": 1792913912365786578,
+        "output_hz": 100,
+        "infer_ms": 0.7195080002020404,
+        "infer_p95_ms": 1.0791442000936513,
+        "device": "cpu"
+      }
+    },
+    "8083": {
+      "state": "valid",
+      "reason": "ok",
+      "display_decimals": 2,
+      "last_valid_age_seconds": 0.05704058899982556,
+      "diagnostics": {
+        "outputs": 4568,
+        "dropped": 0,
+        "resets": 1,
+        "state": "valid",
+        "reason": "ok",
+        "output_hz": 98,
+        "calibration": "uncalibrated",
+        "contact_validated": false,
+        "compensation_applied": true,
+        "enabled_joints": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "base_metadata_sha256": "cbe838418b4f5b550662e51230e8b3f60a2fdfa4328e6cc5d7a6cd5a112876c9",
+        "input_cutoff_hz": 12.0,
+        "output_cutoff_hz": 5.0
+      }
+    }
+  },
+  "observer_publishers": [
+    [
+      "/next/right/kinematic_compensated/correction",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/distribution",
+      [
+        "std_msgs/msg/String"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/external_joint_torque",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/external_joint_torque/raw",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/free_joint_torque_pred",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/input/joint_acc_estimated",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/input/joint_cmd_filtered",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/input/joint_effort_filtered",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/input/joint_pos_filtered",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/input/joint_vel_estimated",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/input/motor_vel_filtered",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/mse",
+      [
+        "std_msgs/msg/Float32"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/normalized_contact_magnitude",
+      [
+        "std_msgs/msg/Float32"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/status",
+      [
+        "diagnostic_msgs/msg/DiagnosticArray"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/upstream_external_joint_torque/raw",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/parameter_events",
+      [
+        "rcl_interfaces/msg/ParameterEvent"
+      ]
+    ],
+    [
+      "/rosout",
+      [
+        "rcl_interfaces/msg/Log"
+      ]
+    ]
+  ]
+}

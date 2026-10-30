@@ -1,0 +1,31 @@
+{
+  "deleted_paths": [
+    "/home/venom/factr2/runs/next_left_coverage_20261009_161246_session_trial_20261010_110350_044237",
+    "/home/venom/factr2/runs/next_right_c2_campaign_20261010_164151_566506_session_trial_20261010_174837_628319",
+    "/home/venom/factr2/runs/next_right_smooth_20261010_120428_881457_session_trial_cpu8_20261010_124353_140595",
+    "/home/venom/factr2/data/quick_capture/left/20261009_134121_473881/audit/bag",
+    "/home/venom/factr2/data/quick_capture/left/20261009_135027_065645/audit/bag",
+    "/home/venom/factr2/data/quick_capture/left/20261009_140212_513856/audit/bag",
+    "/home/venom/factr2/data/quick_capture/left/20261009_150900_298038/audit/bag",
+    "/home/venom/factr2/data/quick_capture/left/20261009_161246_435241/audit/bag",
+    "/home/venom/factr2/data/quick_capture/right/20261010_114717_526404/audit/bag",
+    "/home/venom/factr2/data/quick_capture/right/20261010_120030_799821/audit/bag",
+    "/home/venom/factr2/data/quick_capture/right/20261010_120220_339266/audit/bag",
+    "/home/venom/factr2/data/quick_capture/right/20261010_120428_881457/audit/bag",
+    "/home/venom/factr2/data/quick_capture/right/20261010_141247_113649/audit/bag",
+    "/home/venom/factr2/data/quick_capture/right/20261010_160004_957524/audit/bag",
+    "/home/venom/factr2/log/tmp/pytest-of-venom"
+  ],
+  "deleted_file_bytes": 3642409497,
+  "available_bytes_before": 2113056768,
+  "available_bytes_after": 5757034496,
+  "available_bytes_increase": 3643977728,
+  "retained_model": "/home/venom/factr2/models/w3/right/c2_20261010",
+  "all_model_archive_checksums": "PASS",
+  "retained_h5_count": 13,
+  "all_retained_h5_checksums": "PASS",
+  "latest_raw_bags_preserved": [
+    "/home/venom/factr2/data/quick_capture/right/20261010_160331_906917/audit/bag",
+    "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506/audit/bag"
+  ]
+}

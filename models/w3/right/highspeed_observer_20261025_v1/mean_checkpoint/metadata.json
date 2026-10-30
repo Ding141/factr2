@@ -1,0 +1,32 @@
+{
+  "schema": "next_u_ablation_v1",
+  "arm": "NEXT_MSE",
+  "seed": 0,
+  "side": "right",
+  "joint_order": [
+    "right_joint_0",
+    "right_joint_1",
+    "right_joint_2",
+    "right_joint_3",
+    "right_joint_4",
+    "right_joint_5",
+    "right_joint_6"
+  ],
+  "input_size": 21,
+  "output_size": 7,
+  "history": 50,
+  "sample_hz": 100,
+  "output": "free torque mean Nm and variance Nm2",
+  "external_sign": "measured minus predicted free mean",
+  "calibration": "uncalibrated",
+  "deployment_ready": false,
+  "automatic_deployment": false,
+  "selection": "equal-weight old/new validation MSE; old <=110% incumbent; new <= incumbent; per-joint increase <=max(20%,0.02Nm); epoch0 included",
+  "lock_sha256": "f46ff8a971b488ae123b09cfaf6254a4f946276e7990427ae1aab11ab88427dd",
+  "artifact_sha256": {
+    "model.pt": "d0f5b4144a657ebb2ec795dfa6035ef42b6c38f33b9ddc4b76898925dab4f42e",
+    "normalization.npz": "7dd5f89e072dcf21208398fe275b703c35d94d1844fc9f2b846c54ac254f7945",
+    "config.yaml": "27483d3af41ce2040e4b1f1df84b3e79e3fae5223956093785cabcc40427ea25",
+    "metrics.json": "f48f25cd0219ef39f023cd6943d4a41bd6eccc1b581efd76099f173301ca11a9"
+  }
+}

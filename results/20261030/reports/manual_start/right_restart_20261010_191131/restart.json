@@ -1,0 +1,12 @@
+{
+  "prepared_at": "2026-10-10T19:11:31.742555",
+  "domain": 74,
+  "side": "right",
+  "checkpoint": "/home/venom/factr2/models/w3/right/c2_20261010",
+  "state": "running_verified_after_support_removed",
+  "old_control_pgid": 79221,
+  "observations_only": true,
+  "support_removed_confirmed": true,
+  "endpoint_state": "valid",
+  "endpoint_reasons": []
+}

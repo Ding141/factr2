@@ -1,0 +1,84 @@
+{
+  "input_messages": {
+    "joint_pos": 431,
+    "joint_vel": 430,
+    "joint_cmd": 430,
+    "joint_effort": 430
+  },
+  "input_hz": {
+    "joint_pos": 100.0,
+    "joint_vel": 100.0,
+    "joint_cmd": 100.0,
+    "joint_effort": 100.0
+  },
+  "diagnostics": {
+    "factr2/adapter/right": {
+      "level": 0,
+      "message": "ok",
+      "values": {
+        "state_receive_age_seconds": "0.0015039590002743353",
+        "state_source_age_seconds": "0.001791218",
+        "command_receive_age_seconds": "0.0014374850002241146",
+        "command_source_age_seconds": "0.001791218",
+        "output_hz_last_second": "100",
+        "health_mode": "\"required\"",
+        "health_receive_age_seconds": "0.004949887000293529",
+        "health_source_age_seconds": "0.005308368",
+        "health_source_stamp_ns": "1792912129852459338",
+        "source_skew_seconds": "0.0",
+        "invalid": "0",
+        "stale": "0",
+        "duplicate": "0",
+        "skew": "0",
+        "health_rejected": "1",
+        "clock_reset": "0",
+        "outputs": "4010",
+        "side": "\"right\"",
+        "recent_rejection": "\"health_missing_stale_or_error\"",
+        "state_source_stamp_ns": "1792912129855976488",
+        "command_source_stamp_ns": "1792912129855976488"
+      }
+    },
+    "factr2/w3/right": {
+      "level": 0,
+      "message": "ok",
+      "values": {
+        "side": "\"right\"",
+        "channel": "1",
+        "missing_slots": "[]",
+        "duplicate_slots": "[]",
+        "offline_slots": "[]",
+        "disabled_slots": "[]",
+        "fault_slots": "[]",
+        "nonfinite_slots": "[]",
+        "healthy": "true",
+        "raw_source_stamp_ns": "1792912129850247914",
+        "raw_receive_age_seconds": "0.001995385999634891",
+        "raw_source_age_seconds": "0.002211424",
+        "reason": "\"ok\""
+      }
+    }
+  },
+  "dashboard": {
+    "state": "out_of_scope",
+    "reason": "outside_collection_range:right_joint_1,right_joint_3",
+    "display_decimals": 2,
+    "last_valid_age_seconds": 0.009243349999906059,
+    "diagnostics": {
+      "outputs": 3960,
+      "dropped": 0,
+      "resets": 2,
+      "state": "out_of_scope",
+      "reason": "outside_collection_range:right_joint_1,right_joint_3",
+      "history_count": 50,
+      "source_age_seconds": 0.009121086,
+      "receive_age_seconds": 0.006629524999880232,
+      "last_output_stamp_ns": 1792912129845961573,
+      "output_hz": 100,
+      "infer_ms": 0.7573200000479119,
+      "infer_p95_ms": 1.2189566501092486,
+      "device": "cpu"
+    }
+  },
+  "samples": 600
+}

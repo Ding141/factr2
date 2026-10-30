@@ -1,0 +1,6 @@
+{
+  "previous": "long_motion_20261023_v1",
+  "reason": "Readonly recorder JSON serialization of ROS uint8 diagnostic level fixed",
+  "previous_motion_attempted": false,
+  "robot_gains_or_plan_changed": false
+}

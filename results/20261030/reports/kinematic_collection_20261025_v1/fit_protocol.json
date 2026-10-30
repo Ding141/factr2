@@ -1,0 +1,22 @@
+{
+  "observation": "/home/venom/factr2/log/kinematic_collection_20261025_v1",
+  "output": "/home/venom/factr2/data/right/kinematic_compensation_20261025_v1",
+  "split_manifest": "/home/venom/factr2/log/kinematic_collection_20261025_v1/test_spec.json",
+  "acceleration_floor_rad_s2": 0.005,
+  "stationary_noise_rule": "raise acceleration feature floors using 3 * train-only stationary MAD sigma",
+  "selection": "training fit; validation only for feature mode, scope, ridge and enabled joints; test report after selection",
+  "comparison": [
+    "unprocessed NEXT",
+    "same filters without learning",
+    "velocity-only",
+    "velocity-and-acceleration",
+    "selected candidate"
+  ],
+  "signal_cutoffs_hz": {
+    "input_torque": 12.0,
+    "output": 5.0
+  },
+  "uses_dashboard_rounded_values": false,
+  "online_adaptation": false,
+  "intercept": false
+}

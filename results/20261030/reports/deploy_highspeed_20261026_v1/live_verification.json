@@ -1,0 +1,20 @@
+{
+  "publishers": {
+    "/factr2/right/joint_pos": 1,
+    "/factr2/right/joint_cmd": 1,
+    "/factr2/right/joint_vel": 1,
+    "/factr2/right/joint_effort": 1,
+    "/next/right/frozen_sigma/free_joint_torque_pred": 1,
+    "/next/right/kinematic_compensated/distribution": 1
+  },
+  "received_packets": 204,
+  "discovery_seconds": 2.0372567949998484,
+  "motor_commands_sent": 0,
+  "base_metadata_sha256": "077190d99440a8bf27dc7a41e03563528f1d630f2f56a37db87d3e1f5cc3ebdb",
+  "identity_matches_new_model": true,
+  "last_state": "out_of_scope",
+  "last_reason": "outside_base_collection_range",
+  "compensation_applied": false,
+  "input_age_seconds": 0.005968632,
+  "verified": true
+}

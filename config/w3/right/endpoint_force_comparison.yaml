@@ -1,0 +1,10 @@
+tool_frame: right_attachment_point
+root_frame: base_footprint
+robot_description_sha256: e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345
+history_points: 100
+solver:
+  characteristic_length_m: 0.4
+  damping: 0.005
+  max_condition: 100.0
+  max_relative_residual: 0.35
+  mode: full_wrench

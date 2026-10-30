@@ -1,0 +1,69 @@
+{
+  "publishers": [
+    [
+      "/next/right/endpoint_wrench",
+      [
+        "geometry_msgs/msg/WrenchStamped"
+      ]
+    ],
+    [
+      "/next/right/endpoint_wrench/status",
+      [
+        "diagnostic_msgs/msg/DiagnosticArray"
+      ]
+    ],
+    [
+      "/parameter_events",
+      [
+        "rcl_interfaces/msg/ParameterEvent"
+      ]
+    ],
+    [
+      "/rosout",
+      [
+        "rcl_interfaces/msg/Log"
+      ]
+    ]
+  ],
+  "endpoint": {
+    "state": "unavailable",
+    "reasons": [
+      "outside_collection_range:right_joint_3",
+      "near_singular"
+    ],
+    "explanation": "J4 超出模型采集范围；姿态接近奇异点，误差会被放大",
+    "geometry": {
+      "condition_number": 4741.044428389844,
+      "scaled_singular_values": [
+        2.194191634451071,
+        1.8051473777742524,
+        1.4142193789080757,
+        0.6280587477054109,
+        0.622863350353406,
+        0.0004628076508441966
+      ],
+      "reason": "near_singular",
+      "valid": false
+    },
+    "frame_id": "right_attachment_point",
+    "moment_reference_point": "right_attachment_point",
+    "sign_convention": "NEXT_residual",
+    "outputs": 0,
+    "wrench": null
+  },
+  "original_joint_observation": {
+    "outputs": 125711,
+    "dropped": 0,
+    "resets": 0,
+    "state": "out_of_scope",
+    "reason": "outside_collection_range:right_joint_3",
+    "history_count": 50,
+    "source_age_seconds": 0.005182573,
+    "receive_age_seconds": 0.003009809999639401,
+    "last_output_stamp_ns": 1791609494394492213,
+    "output_hz": 100,
+    "infer_ms": 0.5829649999213871,
+    "infer_p95_ms": 0.8985500508060795,
+    "device": "cpu"
+  }
+}

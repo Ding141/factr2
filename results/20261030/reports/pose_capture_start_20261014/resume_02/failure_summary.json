@@ -1,0 +1,51 @@
+{
+  "status": "stopped_on_repeated_right_wrist_feedback_loss",
+  "session": "/home/venom/factr2/data/quick_capture/right/20261014_221352_322925",
+  "failed_step": "006_sweep_j4_slow",
+  "recording_quality": true,
+  "episode": {
+    "errors": [],
+    "rows": 12363,
+    "duration_seconds": 123.619994077,
+    "hz": 100.00000479129613,
+    "max_gap_seconds": 0.013389201000000002
+  },
+  "full_protocol_completed": false,
+  "first_health_failure": {
+    "bag_timestamp_ns": 1791987380204634271,
+    "name": "factr2/w3/right",
+    "reason": "motor_unhealthy",
+    "values": {
+      "side": "right",
+      "channel": 1,
+      "missing_slots": [],
+      "duplicate_slots": [],
+      "offline_slots": [
+        4,
+        5,
+        6
+      ],
+      "disabled_slots": [],
+      "fault_slots": [],
+      "nonfinite_slots": [],
+      "healthy": false,
+      "raw_source_stamp_ns": 1791987380202592112,
+      "raw_receive_age_seconds": 0.0015031240000098478,
+      "raw_source_age_seconds": 0.001725149,
+      "reason": "motor_unhealthy"
+    }
+  },
+  "unhealthy_right_diagnostics": 116,
+  "stop_requests": 1,
+  "can1_bus_errors": 0,
+  "automatic_retry": false,
+  "last_healthy_position_deg": [
+    0.1234376332797034,
+    50.080439390867134,
+    -0.7830111255421164,
+    -57.796603133973505,
+    0.8780908806049846,
+    -0.9138162384195893,
+    -0.364905897976546
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "status": "active_readonly",
+  "pid": 74197,
+  "authorized_by_user": true,
+  "robot_command_publishers": false,
+  "controller_switches": false,
+  "hardware_motion": false,
+  "started_at": "2026-10-14T07:01:52.028175+08:00",
+  "urls": {
+    "force": "http://127.0.0.1:8082/",
+    "torque": "http://127.0.0.1:8081/"
+  },
+  "checkpoint_dir": "/home/venom/factr2/runs/next_right_next_v2_campaign_fresh_20261014_054103_user_stop_replay4_20261014_064800_044091",
+  "best_epoch": 4,
+  "deployment_ready": false,
+  "free_space_passed": false,
+  "acceptance_report": "/home/venom/factr2/runs/next_right_next_v2_campaign_fresh_20261014_054103_user_stop_replay4_20261014_064800_044091/baseline_acceptance.json",
+  "inference_config": "/home/venom/factr2/log/live_next_campaign_resume_20261014/deployed_right/inference.yaml",
+  "endpoint_config": "/home/venom/factr2/log/live_next_campaign_resume_20261014/deployed_right/endpoint_wrench.yaml",
+  "held_target_deg": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "model_sha256": "e000f998b9e31c20b15f07b962bb2759b4853958f00d43b0474d8fc49be192b4",
+  "processes": [
+    {
+      "role": "health",
+      "pid": 74295
+    },
+    {
+      "role": "adapter",
+      "pid": 74296
+    },
+    {
+      "role": "inference_web",
+      "pid": 74297
+    },
+    {
+      "role": "endpoint",
+      "pid": 74298
+    }
+  ],
+  "online_state": "out_of_scope",
+  "online_reason": "outside_collection_range:right_joint_1,right_joint_3",
+  "force_state": "unavailable",
+  "force_reasons": [
+    "outside_collection_range:right_joint_1,right_joint_3",
+    "near_singular"
+  ],
+  "activated_at": "2026-10-14T07:01:55.959605+08:00"
+}

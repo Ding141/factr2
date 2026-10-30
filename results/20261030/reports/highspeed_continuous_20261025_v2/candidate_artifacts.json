@@ -1,0 +1,15 @@
+{
+  "training_complete": true,
+  "mean": "/home/venom/factr2/data/right/highspeed_mean_20261025_v3",
+  "sigma": "/home/venom/factr2/data/right/highspeed_sigma_20261025_v1",
+  "observer": "/home/venom/factr2/models/w3/right/highspeed_observer_20261025_v1",
+  "compensation": "/home/venom/factr2/data/right/highspeed_compensation_20261025_v1",
+  "deployed": true,
+  "full_pipeline_gate_passed": false,
+  "deployment_block_reason": "Old low-speed held-out MSE increased 20.879%, exceeding frozen 15% allowance",
+  "mean_metadata_sha256": "077190d99440a8bf27dc7a41e03563528f1d630f2f56a37db87d3e1f5cc3ebdb",
+  "compensation_sha256": "cbb403b729f321b08ad09e9f9d462f56f4e13440bb01046db3476a916fd67048",
+  "deployment_mode": "explicit_user_requested_read_only_research",
+  "deployment_record": "/home/venom/factr2/log/deploy_highspeed_20261026_v1/deployment_status.json",
+  "current_pose_state": "out_of_scope"
+}

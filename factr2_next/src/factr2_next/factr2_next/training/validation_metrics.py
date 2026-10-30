@@ -42,11 +42,24 @@ def validation_epoch(model, loader, device, normalization, loss_units):
     for item in statics:
         match = re.fullmatch(r'static_pose(\d+)_from_(low|high)', item['kind'])
         if match:
-            paired.setdefault((item['path'], match[1]), {})[match[2]] = item
+            pose, pattern, direction = match[1], None, match[2]
+        else:
+            match = re.fullmatch(r'static_anchor(\d+)_pattern(\d+)_from_(low|high)', item['kind'])
+            if not match:
+                continue
+            pose, pattern, direction = match.groups()
+        # Same pose can occur at several acceleration/velocity profiles and
+        # with different active joints. Never pair across these experiments.
+        key = (item['path'], pose, pattern, item.get('speed', 'unknown'))
+        pair = paired.setdefault(key, {})
+        if direction in pair:
+            raise ValueError('Ambiguous duplicate static return pair')
+        pair[direction] = item
     returns = []
-    for (path, pose), pair in paired.items():
+    for (path, pose, pattern, speed), pair in paired.items():
         if set(pair) == {'low', 'high'}:
             gap = abs(np.asarray(pair['low']['signed_bias_nm'])-pair['high']['signed_bias_nm'])
-            returns.append(dict(path=path, pose_id=pose, baseline_gap_nm=gap.tolist()))
+            returns.append(dict(path=path, pose_id=pose, pattern_id=pattern,
+                                speed=speed, baseline_gap_nm=gap.tolist()))
     return total_loss/seen, dict(groups={k:finish(v) for k,v in groups.items()}, static_episodes=statics,
         groups_by_speed={k:finish(v) for k,v in speeds.items()}, matched_return_baselines=returns)

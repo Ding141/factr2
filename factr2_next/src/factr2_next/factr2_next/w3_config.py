@@ -31,7 +31,14 @@ def validate_w3_config(cfg, purpose, require_paths=True):
             if topic != f'/factr2/{side}/{suffix}' or spec.get('field') != field:
                 raise ValueError(f'Wrong W3 topic/field for {key}')
     if purpose in ('inference', 'visualize'):
-        if cfg.get('next_topic_root') != f'/next/{side}':
+        research_sigma = (side == 'right' and cfg.get('next_topic_root') == '/next/right/frozen_sigma'
+                          and cfg.get('observation_mode') == 'uncalibrated_research')
+        research_compensation = (purpose == 'visualize' and side == 'right'
+                                 and cfg.get('next_topic_root') == '/next/right/kinematic_compensated'
+                                 and cfg.get('observation_mode') == 'kinematic_residual_research')
+        research_joint_lstm = (side == 'right' and cfg.get('next_topic_root') == '/next/right/joint_lstm'
+                               and cfg.get('observation_mode') == 'independent_joint_lstm_research')
+        if cfg.get('next_topic_root') != f'/next/{side}' and not (research_sigma or research_compensation or research_joint_lstm):
             raise ValueError('Wrong NEXT output root')
         for topic in cfg['outputs'].values():
             if not topic.format(next_topic_root=cfg['next_topic_root']).startswith(f'/next/{side}/'):
@@ -47,6 +54,10 @@ def validate_w3_config(cfg, purpose, require_paths=True):
         model = cfg['model']
         baseline = dict(type='lstm', state_mode='stateless', bidirectional=False,
                         hidden_size=128, num_layers=2, head_hidden=256, head_layers=2, dropout=0.1)
+        if model.get('type') == 'joint_lstm':
+            if cfg.get('trial', {}).get('architecture') != 'independent_joint_lstm_v1':
+                raise ValueError('joint_lstm_requires_explicit_research_trial')
+            baseline['type'] = 'joint_lstm'
         if any(model.get(k) != v for k, v in baseline.items()):
             raise ValueError('W3 v1 baseline model differs from contract')
         if data.get('val_split') == 'random':
@@ -58,7 +69,10 @@ def validate_w3_config(cfg, purpose, require_paths=True):
     if purpose == 'inference' and cfg.get('require_adapter_status', True) is not True:
         raise ValueError('W3 inference requires adapter diagnostics')
     if require_paths and purpose == 'inference':
-        for name in ('model.pt', 'config.yaml', 'normalization.npz'):
+        files = ('metadata.json', 'mean_checkpoint/model.pt', 'mean_checkpoint/config.yaml',
+                 'mean_checkpoint/normalization.npz', 'variance_head/head.pt', 'variance_head/normalization.npz') if research_sigma else (
+                 'model.pt', 'config.yaml', 'normalization.npz')
+        for name in files:
             if not (Path(cfg['checkpoint_dir']) / name).is_file():
                 raise ValueError(f'Set a complete W3 checkpoint directory: missing {name}')
     if require_paths and purpose == 'record':

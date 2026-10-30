@@ -1,0 +1,31 @@
+{
+  "schema": "w3_kinematic_residual_v1",
+  "files": {
+    "model.json": "89af2ae40f122e512287dac6fe0798d388701ad10c43cdfcaaa50a5888fc459e",
+    "recipe.json": "4cf8a60e9c1950479bd1dfa8ad02f0b96cd4d4188a977993ad0e30976b7c9371",
+    "comparison.json": "b2996e4eafcc0c335fd11ba8ac28a419bb3010b336f8064eb408d3da7283ed51",
+    "replay.npz": "18053f66520beca4059b141684369d7b8722c9c39c26ffafe078d4266c343501",
+    "velocity.json": "ba46c0c4c3360bfdedbbc6a977520d61bd804caededa9d78954bbc6c97eef2b5",
+    "velocity_acceleration.json": "89af2ae40f122e512287dac6fe0798d388701ad10c43cdfcaaa50a5888fc459e",
+    "frozen_split.json": "dab48a537be191a36c9bb6a61e0407d46e9d0dd59d695bfa235edf7cc180a66f",
+    "runtime_verification.json": "fe4973940be55658fd6d00deaa403601f62474491d56e0f49c06abeaf8c3e7fe",
+    "heldout_detail.json": "b5448a5d5a5b6b5f12b63dd48e759de2daf6929edb489173fc89edf4b805320d",
+    "REPORT_ZH.md": "a6feb61a9751ecfc4cc2283a46394269766de65d7602d88011f3a3558a1bd6b2",
+    "all_joints_comparison.png": "477a3ba213da419a27df6c9445d8a397e06d0ee856f56e8ce7c054ae41435e39",
+    "joint_motion.png": "6555602c5a9d32aaa0b9f7559e5a86c96b0b8f2569ef719d0709c58d331a9bc4",
+    "historical_sources.json": "6cfc34b6fc5033efa29da0506d7abac6d2a7afd3c76e9db2cdced91bcec5f188",
+    "source_snapshot_sha256.json": "a5fc335f90f19e6b02f84a2c1d2c29138eadc07d3f9f7f2dbdf93efd858a34de",
+    "source_snapshot/scripts/fit_w3_kinematic_compensation.py": "ec87bbc0b85135796305b521631454b7a6eddaf2c831a4446219014868a338d9",
+    "source_snapshot/scripts/label_w3_kinematic_collection.py": "3676a530d0d8f6c7e754f82c8b012092bfdbab571ecdb7db9c1a6be85673b5cc",
+    "source_snapshot/scripts/report_w3_kinematic_collection.py": "5d28e0086b1db3a34753fd3443c1f728cae9c9d7b939bf9fb47708363b46e566",
+    "source_snapshot/scripts/observe_w3_kinematic_compensation.py": "966c10c0275156f1cb473beb4a3082b65a23bd24ad5e7a2b4f97370c83c641de",
+    "source_snapshot/scripts/test_label_w3_kinematic_collection.py": "81eff1264305d80fed7b049108d4b1d79aec732b25ebc9092e7446d01af9ffa6",
+    "source_snapshot/scripts/test_w3_kinematic_compensation.py": "6501712586159f8cba1c36bf6975ff76319b80fa1323cf01b03926a39b545a5c",
+    "source_snapshot/factr2_next/src/factr2_next/factr2_next/inference/kinematic_compensation.py": "2f1cf09ddc11306c1ca20505ede236ba8616ca005e454fad0cc113bd9717cb7b",
+    "source_snapshot/factr2_next/src/factr2_next/factr2_next/inference/kinematic_observer.py": "90fdd4c2a73b12bc47297f414cde08faba60753fc7d0ea85c9f26c67ce16e616",
+    "source_snapshot/factr2_next/src/factr2_next/factr2_next/visualization/web_node.py": "99508c24cad2c65627393891190374352ef7b13855025e0d75add8cdc327f938",
+    "source_snapshot/log/kinematic_collection_20261025_v1/verify_replay.py": "ae906a3e0b4b9b97b730555c6ab3105bffbac35d3da0e2ab85ec376dda566531"
+  },
+  "base_metadata_sha256": "cbe838418b4f5b550662e51230e8b3f60a2fdfa4328e6cc5d7a6cd5a112876c9",
+  "deployment_ready": false
+}

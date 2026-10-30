@@ -1,0 +1,20 @@
+{
+  "status": "failed",
+  "side": "right",
+  "motion_sha256": "ba9c4f6c1769ec7186d0d491cc33da7ab7545befcb18efc211071d668f3fc32e",
+  "motion_name": "right_zero_operator_requested",
+  "started_utc": "2026-10-11T18:10:19.003843+00:00",
+  "events": [],
+  "purpose": "user requested software zero",
+  "goal_deg": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "error": "Other motion publishers: ['_NODE_NAME_UNKNOWN_']",
+  "completed_utc": "2026-10-11T18:10:19.130267+00:00"
+}

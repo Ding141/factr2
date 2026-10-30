@@ -1,0 +1,16 @@
+{
+  "side": "right",
+  "checkpoint": "/home/venom/factr2/runs/next_right_smooth_20261010_120428_881457_session_trial_cpu8_20261010_124353_140595",
+  "sample_hz": 100,
+  "ros_domain_id": 74,
+  "ros_localhost_only": 1,
+  "web": "http://127.0.0.1:8081",
+  "mode": "observation_only",
+  "deployment_state": "running_observation_out_of_scope",
+  "verification": "PASS_30_SECONDS",
+  "reason": "current right_joint_3 position outside collection range; residuals are diagnostic only",
+  "runtime_source_sha256": {
+    "factr2_next/src/factr2_next/factr2_next/inference/inference_node.py": "af410105a74acc6585de9880c83a0ce622cf9c4ee5e028249b62dfb681dba3ac",
+    "factr2_next/src/factr2_next/factr2_next/inference/operating_envelope.py": "dde04c4fd58f5650d18119e3e7b721bca0bbd008aa61e706b0a5e62ecdfdb87a"
+  }
+}

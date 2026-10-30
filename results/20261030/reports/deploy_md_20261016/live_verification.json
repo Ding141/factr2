@@ -1,0 +1,239 @@
+{
+  "seconds": 10.00912343500022,
+  "diagnostics": {
+    "baseline": {
+      "messages": 432,
+      "valid": 432,
+      "last": {
+        "outputs": 453277,
+        "dropped": 0,
+        "resets": 0,
+        "state": "valid",
+        "reason": "ok",
+        "history_count": 50,
+        "source_age_seconds": 0.009119665,
+        "receive_age_seconds": 0.0057014230005734134,
+        "last_output_stamp_ns": 1792160978733564402,
+        "output_hz": 100,
+        "infer_ms": 0.6850729987490922,
+        "infer_p95_ms": 1.047199999447912,
+        "device": "cpu"
+      }
+    },
+    "md": {
+      "messages": 499,
+      "valid": 499,
+      "last": {
+        "outputs": 6401,
+        "dropped": 0,
+        "resets": 0,
+        "state": "valid",
+        "reason": "ok",
+        "history_count": 50,
+        "source_age_seconds": 0.008079589,
+        "receive_age_seconds": 0.004626914997061249,
+        "last_output_stamp_ns": 1792160978733564402,
+        "output_hz": 100,
+        "infer_ms": 0.986647999525303,
+        "infer_p95_ms": 1.1516829981701449,
+        "device": "cpu"
+      }
+    }
+  },
+  "topology": {
+    "next_md_inference_right": {
+      "publishers": [
+        [
+          "/next/right/md/contact_state",
+          [
+            "std_msgs/msg/Bool"
+          ]
+        ],
+        [
+          "/next/right/md/external_joint_torque",
+          [
+            "sensor_msgs/msg/JointState"
+          ]
+        ],
+        [
+          "/next/right/md/external_joint_torque/raw",
+          [
+            "sensor_msgs/msg/JointState"
+          ]
+        ],
+        [
+          "/next/right/md/free_joint_torque_pred",
+          [
+            "sensor_msgs/msg/JointState"
+          ]
+        ],
+        [
+          "/next/right/md/mse",
+          [
+            "std_msgs/msg/Float32"
+          ]
+        ],
+        [
+          "/next/right/md/normalized_contact_magnitude",
+          [
+            "std_msgs/msg/Float32"
+          ]
+        ],
+        [
+          "/next/right/md/status",
+          [
+            "diagnostic_msgs/msg/DiagnosticArray"
+          ]
+        ],
+        [
+          "/parameter_events",
+          [
+            "rcl_interfaces/msg/ParameterEvent"
+          ]
+        ],
+        [
+          "/rosout",
+          [
+            "rcl_interfaces/msg/Log"
+          ]
+        ]
+      ],
+      "clients": []
+    },
+    "next_md_web_right": {
+      "publishers": [
+        [
+          "/parameter_events",
+          [
+            "rcl_interfaces/msg/ParameterEvent"
+          ]
+        ],
+        [
+          "/rosout",
+          [
+            "rcl_interfaces/msg/Log"
+          ]
+        ]
+      ],
+      "clients": []
+    },
+    "right_endpoint_wrench_md_observer": {
+      "publishers": [
+        [
+          "/next/right/md/endpoint_wrench",
+          [
+            "geometry_msgs/msg/WrenchStamped"
+          ]
+        ],
+        [
+          "/next/right/md/endpoint_wrench/status",
+          [
+            "diagnostic_msgs/msg/DiagnosticArray"
+          ]
+        ],
+        [
+          "/parameter_events",
+          [
+            "rcl_interfaces/msg/ParameterEvent"
+          ]
+        ],
+        [
+          "/rosout",
+          [
+            "rcl_interfaces/msg/Log"
+          ]
+        ]
+      ],
+      "clients": []
+    }
+  },
+  "snapshots": {
+    "8082": {
+      "state": "valid",
+      "reasons": [],
+      "wrench": {
+        "fx": 0.0866557624622494,
+        "fy": 0.20592533801371138,
+        "fz": -1.0092194787305009,
+        "mx": 0.0352900146829753,
+        "my": 0.016194249365352867,
+        "mz": -0.009154056191666485
+      },
+      "geometry": {
+        "condition_number": 12.058982163598532,
+        "scaled_singular_values": [
+          2.043766382346639,
+          1.6613381932652098,
+          1.4527455679344097,
+          0.5879486180093784,
+          0.467828093545943,
+          0.1694808363276289
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.021326993972272376,
+        "relative_fit_error": 0.1623584004094706,
+        "reason": "ok",
+        "valid": true
+      },
+      "outputs": 444345,
+      "model_notice": "2026-10-16 待验收模型（最佳第12轮）；当前为真机只读观测。验证/测试仅覆盖6°/s，接触及卸载恢复尚未验证。"
+    },
+    "8083": {
+      "state": "valid",
+      "reason": "ok",
+      "diagnostics": {
+        "outputs": 6401,
+        "dropped": 0,
+        "resets": 0,
+        "state": "valid",
+        "reason": "ok",
+        "history_count": 50,
+        "source_age_seconds": 0.008079589,
+        "receive_age_seconds": 0.004626914997061249,
+        "last_output_stamp_ns": 1792160978733564402,
+        "output_hz": 100,
+        "infer_ms": 0.986647999525303,
+        "infer_p95_ms": 1.1516829981701449,
+        "device": "cpu"
+      }
+    },
+    "8084": {
+      "state": "valid",
+      "reasons": [],
+      "wrench": {
+        "fx": -0.4300117658675623,
+        "fy": -2.1891830307023934,
+        "fz": 2.043988151531994,
+        "mx": -0.3443145323651345,
+        "my": 0.09940979603285502,
+        "mz": 0.0277971611143978
+      },
+      "geometry": {
+        "condition_number": 12.058982163598532,
+        "scaled_singular_values": [
+          2.043766382346639,
+          1.6613381932652098,
+          1.4527455679344097,
+          0.5879486180093784,
+          0.467828093545943,
+          0.1694808363276289
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.034675903202379045,
+        "relative_fit_error": 0.08360665892494926,
+        "reason": "ok",
+        "valid": true
+      },
+      "outputs": 6404,
+      "model_notice": "NEXT+MD 实验模型（最佳第8轮）。离线对照误差高于原版，当前仅观测。MD从零初始化，启动前运动历史未知；不扣零、不修改机器人控制。"
+    }
+  },
+  "status": "running_readonly_md_trial",
+  "deployment_ready": false
+}

@@ -1,0 +1,22 @@
+{
+  "/home/venom/factr2/log/joint_lstm_live_comparison_20261030_v1/run.py": "c6df432068ddfe561bfacea4e9f0c7fdaee7a7a56ee2ccddb7febeaaa904fcfe",
+  "/home/venom/factr2/log/joint_lstm_live_comparison_20261030_v1/move.py": "e9070a9df773f969219e6d9593675df5a39fd862507d809dcaf33bd5dde3807a",
+  "/home/venom/factr2/log/joint_lstm_live_comparison_20261030_v1/record.py": "bddfc1d992880c9e5b8fcf5bf93598f7ac2dbc92877a985194a2290aa882b6c0",
+  "/home/venom/factr2/log/joint_lstm_live_comparison_20261030_v1/motion.yaml": "2377bab9f9a8ab545752c11888cd0b3ec594b7f13421bc1e92b781ea7c13d9f6",
+  "/home/venom/factr2/log/joint_lstm_live_comparison_20261030_v1/test_spec.json": "cdedbb7fefa879633894d16c2ac6851fd81444d11ac9554756bab9de3a8fbfee",
+  "/home/venom/factr2/scripts/observe_w3_model_comparison.py": "f4d3d3841fe8b77b88cb992ee1e638f2091d26f6e871c23e9862fe1bc60d4118",
+  "/home/venom/factr2/scripts/record_w3_model_comparison.py": "8553ceeabf404572e26dc7c3613784712b34c5697764bc188b2faf42344bb446",
+  "/home/venom/factr2/scripts/w3_motion_sequence.py": "94092b7e9b8e394d7b41e44287e4e4b2e5833a0a0d40c4c9293419a32b6c87c0",
+  "/home/venom/factr2/scripts/w3_coverage_motion.py": "415bbf08ad156e68f1f923547d06d88f713524e001e3eff48eba1c2f86df23cd",
+  "/home/venom/factr2/scripts/w3_motion_audit.py": "d67154b5ff4f93d9ca5f2de7bd37583642d284b7373db6b4228ecefacab9ee75",
+  "/home/venom/factr2/scripts/w3_targeted_capture.py": "bcae775871ba60751834eb246901c5e7ee4a099dafb95550d43dde02560ba43c",
+  "/home/venom/factr2/scripts/w3_pose_motion.py": "7f92dec2a29510fa2badcf09926a1448ebdd84fdc0c5b12df0bc81a99ad4aac3",
+  "/home/venom/factr2/scripts/w3_clock_stability_probe.py": "6c37c590b2a4cdc603627841d77759e2f54c161fc4961a2f0519e2a917cc8861",
+  "/home/venom/factr2/models/w3/right/joint_lstm_observer_20261028_v1/bundle.json": "6762291153e86efe34b9cce8c761a2fcdbcf61f51415c130c51c4d8e952f4c3d",
+  "/home/venom/factr2/models/w3/right/joint_lstm_observer_20261028_v1/mean_checkpoint/model.pt": "bec10a63f3ef31bf41dc66560afb8247342f645b42f6d4516c0165e7d44a932b",
+  "/home/venom/factr2/models/w3/right/wide_highspeed_observer_20261026_v1/metadata.json": "3ea80b6d4a101bce327161b874fefd859afd323fabcf5f2f91ee526bf6edd403",
+  "/home/venom/factr2/models/w3/right/wide_highspeed_observer_20261026_v1/mean_checkpoint/model.pt": "2cdd28518d828e234ae10d5f313b37af516969b77afad76661aaf0918b8a8e59",
+  "/home/venom/factr2/scripts/w3_endpoint_force_panel.py": "7b8759462ca990aaaa4744a7eb69fc0bcdabcfaff1c3a92a36d8d035cccfb38c",
+  "/home/venom/factr2/config/w3/right/endpoint_force_comparison.yaml": "87996cb668eeab218c51fab474c99002b6c4290f923dbb0fad9921e049e95ac0",
+  "/home/venom/factr2/factr2_next/src/factr2_next/factr2_next/visualization/web_node.py": "48e316f7bf912af085e7d73983df8700a357aaa8001ddf0be67d4e98be83bef7"
+}

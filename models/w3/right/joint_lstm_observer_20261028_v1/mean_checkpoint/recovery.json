@@ -1,0 +1,37 @@
+[
+  {
+    "joint": 1,
+    "mode": "deterministic_replay_from_seed",
+    "source": "/home/venom/factr2/runs/right_joint_lstm_parallel_durable_v1_20261028_111023_546939/joint_training/joint_1"
+  },
+  {
+    "joint": 2,
+    "mode": "reuse_complete",
+    "source": "/home/venom/factr2/runs/right_joint_lstm_parallel_durable_v1_20261028_111023_546939/joint_training/joint_2"
+  },
+  {
+    "joint": 3,
+    "mode": "deterministic_replay_from_seed",
+    "source": "/home/venom/factr2/runs/right_joint_lstm_parallel_durable_v1_20261028_111023_546939/joint_training/joint_3"
+  },
+  {
+    "joint": 4,
+    "mode": "reuse_complete",
+    "source": "/home/venom/factr2/runs/right_joint_lstm_parallel_durable_v1_20261028_111023_546939/joint_training/joint_4"
+  },
+  {
+    "joint": 5,
+    "mode": "reuse_complete",
+    "source": "/home/venom/factr2/runs/right_joint_lstm_parallel_durable_v1_20261028_111023_546939/joint_training/joint_5"
+  },
+  {
+    "joint": 6,
+    "mode": "reuse_complete",
+    "source": "/home/venom/factr2/runs/right_joint_lstm_parallel_durable_v1_20261028_111023_546939/joint_training/joint_6"
+  },
+  {
+    "joint": 7,
+    "mode": "reuse_complete",
+    "source": "/home/venom/factr2/runs/right_joint_lstm_parallel_durable_v1_20261028_111023_546939/joint_training/joint_7"
+  }
+]

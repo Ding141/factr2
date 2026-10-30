@@ -1,0 +1,1544 @@
+{
+  "offline_only": true,
+  "initial_pose_source": "all_zero_preview_not_live",
+  "robot_description_sha256": "7830b419d3b12a413a1ec672a1ca0da8ef5d6b255bc883d40428185933fd88f4",
+  "roles": {
+    "train": {
+      "plan": {
+        "role": "train",
+        "seed": 1701,
+        "task_poses_deg": [
+          [
+            0.0,
+            50.0,
+            0.0,
+            -55.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -23.44797300736475,
+            58.95031375704305,
+            -10.243444707048832,
+            -65.46099402492,
+            20.039772111330898,
+            3.5972763740740348,
+            -20.43305179480559
+          ],
+          [
+            -31.367614465864353,
+            44.127427422829236,
+            10.172179180669701,
+            -40.654256405967196,
+            -5.2798695168342284,
+            5.328028480537931,
+            -20.348626962105335
+          ]
+        ],
+        "task_max_condition": 20.0,
+        "approach_may_be_singular": true,
+        "joint_sweeps_may_be_singular": true,
+        "automatic_rezero": false,
+        "limitations": [
+          "Geometry is not collision clearance",
+          "No-contact returns are friction probes, not external-load release validation"
+        ],
+        "plan_sha256": "a67d753d16a2931d1a7a09fe76ab8de9668f2a0c4f1c07d4ffc7fee9c33415ef",
+        "name": "right_next_baseline_conditioned_v3",
+        "side": "right",
+        "steps": 90,
+        "duration_seconds": 2120.6499999999996,
+        "planned_min_deg": [
+          -134.9999990730439,
+          -0.499999998390237,
+          -115.89999801711633,
+          -98.99999800621194,
+          -115.89999999979946,
+          -31.899999311421418,
+          -71.99999854151366
+        ],
+        "planned_max_deg": [
+          104.99999997178067,
+          155.39999999388016,
+          115.89999801711633,
+          68.99999999535572,
+          115.89999999979946,
+          31.899999311421418,
+          71.99999854151366
+        ],
+        "working_bounds_deg": [
+          [
+            -135.0,
+            105.0
+          ],
+          [
+            -0.5,
+            155.4
+          ],
+          [
+            -115.9,
+            115.9
+          ],
+          [
+            -99.0,
+            69.0
+          ],
+          [
+            -115.9,
+            115.9
+          ],
+          [
+            -31.9,
+            31.9
+          ],
+          [
+            -72.0,
+            72.0
+          ]
+        ],
+        "model_sha256": "7830b419d3b12a413a1ec672a1ca0da8ef5d6b255bc883d40428185933fd88f4"
+      },
+      "collision": {
+        "accepted": true,
+        "plan_sha256": "a67d753d16a2931d1a7a09fe76ab8de9668f2a0c4f1c07d4ffc7fee9c33415ef",
+        "robot_description_sha256": "7830b419d3b12a413a1ec672a1ca0da8ef5d6b255bc883d40428185933fd88f4",
+        "left_pose_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "left_pose_source": "operator_confirmed_near_zero; modeled at zero",
+        "max_sample_joint_travel_deg": 0.25,
+        "checked_configurations": 22341,
+        "minimum_sampled_distance_m": 0.012249930877310938,
+        "distance_configurations_checked": 201,
+        "closest": {
+          "pair": [
+            "right_link_3_0",
+            "right_link_1_0"
+          ],
+          "step": "001_approach_slow",
+          "position_deg": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "failure": null,
+        "excluded_pairs": [
+          {
+            "pair": [
+              "left_arm_attachment_point_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_base_link_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_base_link_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_1_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_1_0",
+              "left_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_2_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_2_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_2_0",
+              "left_link_1_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_link_2_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_link_3_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_3_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_4_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_3_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_4_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_5_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_3_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_4_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_5_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_6_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_arm_attachment_point_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_arm_attachment_point_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_arm_attachment_point_0",
+              "left_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "left_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "right_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_1_0",
+              "right_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_1_0",
+              "right_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_2_0",
+              "right_link_1_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_3_0",
+              "right_link_2_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_4_0",
+              "right_link_3_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_5_0",
+              "right_link_4_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_6_0",
+              "right_link_5_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_7_0",
+              "right_link_6_0"
+            ],
+            "reason": "rigid/adjacent body"
+          }
+        ],
+        "elapsed_seconds": 47.81958432700003,
+        "limitations": [
+          "Discrete URDF mesh check, not continuous collision certification",
+          "External support fixtures, cables, and pose uncertainty are not modeled",
+          "Samples describe command targets; measured tracking must be monitored during capture"
+        ]
+      }
+    },
+    "val": {
+      "plan": {
+        "role": "val",
+        "seed": 2903,
+        "task_poses_deg": [
+          [
+            0.0,
+            50.0,
+            0.0,
+            -55.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            8.066051434734035,
+            29.21662547392149,
+            -3.0144031063080767,
+            -40.18143757911743,
+            -13.569388024468632,
+            5.035981724887218,
+            -12.633226576460277
+          ],
+          [
+            -12.056576901280543,
+            56.31270993715817,
+            1.867768056135084,
+            -42.6663531019373,
+            20.432431750789107,
+            10.583527931485996,
+            6.96286803775239
+          ]
+        ],
+        "task_max_condition": 20.0,
+        "approach_may_be_singular": true,
+        "joint_sweeps_may_be_singular": true,
+        "automatic_rezero": false,
+        "limitations": [
+          "Geometry is not collision clearance",
+          "No-contact returns are friction probes, not external-load release validation"
+        ],
+        "plan_sha256": "10f99d4c5e83afed65fbf1cbd26e0a67ef78541d65cc31983bc7066a9d8da381",
+        "name": "right_next_baseline_conditioned_v3",
+        "side": "right",
+        "steps": 90,
+        "duration_seconds": 2146.7,
+        "planned_min_deg": [
+          -134.99999994391374,
+          -0.49999853236212743,
+          -115.89999971694303,
+          -98.99999985920766,
+          -115.8999994007345,
+          -31.899999788222775,
+          -71.99999991508831
+        ],
+        "planned_max_deg": [
+          104.99999928697001,
+          155.39999983489116,
+          115.89999971694303,
+          68.9999999395001,
+          115.8999994007345,
+          31.899999788222775,
+          71.99999991508831
+        ],
+        "working_bounds_deg": [
+          [
+            -135.0,
+            105.0
+          ],
+          [
+            -0.5,
+            155.4
+          ],
+          [
+            -115.9,
+            115.9
+          ],
+          [
+            -99.0,
+            69.0
+          ],
+          [
+            -115.9,
+            115.9
+          ],
+          [
+            -31.9,
+            31.9
+          ],
+          [
+            -72.0,
+            72.0
+          ]
+        ],
+        "model_sha256": "7830b419d3b12a413a1ec672a1ca0da8ef5d6b255bc883d40428185933fd88f4"
+      },
+      "collision": {
+        "accepted": true,
+        "plan_sha256": "10f99d4c5e83afed65fbf1cbd26e0a67ef78541d65cc31983bc7066a9d8da381",
+        "robot_description_sha256": "7830b419d3b12a413a1ec672a1ca0da8ef5d6b255bc883d40428185933fd88f4",
+        "left_pose_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "left_pose_source": "operator_confirmed_near_zero; modeled at zero",
+        "max_sample_joint_travel_deg": 0.25,
+        "checked_configurations": 22455,
+        "minimum_sampled_distance_m": 0.011926333845366259,
+        "distance_configurations_checked": 202,
+        "closest": {
+          "pair": [
+            "right_link_7_0",
+            "right_link_5_0"
+          ],
+          "step": "015_sine_j6_fast",
+          "position_deg": [
+            0.0,
+            50.0,
+            0.0,
+            -55.0,
+            0.0,
+            -25.334315337246057,
+            0.0
+          ]
+        },
+        "failure": null,
+        "excluded_pairs": [
+          {
+            "pair": [
+              "left_arm_attachment_point_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_base_link_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_base_link_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_1_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_1_0",
+              "left_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_2_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_2_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_2_0",
+              "left_link_1_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_link_2_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_link_3_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_3_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_4_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_3_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_4_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_5_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_3_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_4_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_5_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_6_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_arm_attachment_point_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_arm_attachment_point_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_arm_attachment_point_0",
+              "left_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "left_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "right_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_1_0",
+              "right_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_1_0",
+              "right_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_2_0",
+              "right_link_1_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_3_0",
+              "right_link_2_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_4_0",
+              "right_link_3_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_5_0",
+              "right_link_4_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_6_0",
+              "right_link_5_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_7_0",
+              "right_link_6_0"
+            ],
+            "reason": "rigid/adjacent body"
+          }
+        ],
+        "elapsed_seconds": 49.42569725400017,
+        "limitations": [
+          "Discrete URDF mesh check, not continuous collision certification",
+          "External support fixtures, cables, and pose uncertainty are not modeled",
+          "Samples describe command targets; measured tracking must be monitored during capture"
+        ]
+      }
+    },
+    "test": {
+      "plan": {
+        "role": "test",
+        "seed": 4307,
+        "task_poses_deg": [
+          [
+            0.0,
+            50.0,
+            0.0,
+            -55.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -12.888981582620847,
+            57.15728152467224,
+            18.68486110150637,
+            -70.6823503528632,
+            -13.676939692556777,
+            -4.255202545382991,
+            6.955091332638247
+          ],
+          [
+            -32.23092884458948,
+            30.143443928986215,
+            -3.7152077414011657,
+            -59.49066103729516,
+            16.2123169714626,
+            -14.692095711705624,
+            -3.6765349337714746
+          ]
+        ],
+        "task_max_condition": 20.0,
+        "approach_may_be_singular": true,
+        "joint_sweeps_may_be_singular": true,
+        "automatic_rezero": false,
+        "limitations": [
+          "Geometry is not collision clearance",
+          "No-contact returns are friction probes, not external-load release validation"
+        ],
+        "plan_sha256": "b66c548da0d0d397ebd2e224200cdd502b74994fb4dd0345cd4cf67b8e5d64d9",
+        "name": "right_next_baseline_conditioned_v3",
+        "side": "right",
+        "steps": 90,
+        "duration_seconds": 2110.0299999999997,
+        "planned_min_deg": [
+          -134.99999817844719,
+          -0.49999999989650235,
+          -115.89999936391862,
+          -98.999999990615,
+          -115.89999975542631,
+          -31.899999702303344,
+          -71.99999949528987
+        ],
+        "planned_max_deg": [
+          104.999999953834,
+          155.39999967953975,
+          115.89999936391862,
+          68.99999915722432,
+          115.89999975542631,
+          31.899999702303344,
+          71.99999949528987
+        ],
+        "working_bounds_deg": [
+          [
+            -135.0,
+            105.0
+          ],
+          [
+            -0.5,
+            155.4
+          ],
+          [
+            -115.9,
+            115.9
+          ],
+          [
+            -99.0,
+            69.0
+          ],
+          [
+            -115.9,
+            115.9
+          ],
+          [
+            -31.9,
+            31.9
+          ],
+          [
+            -72.0,
+            72.0
+          ]
+        ],
+        "model_sha256": "7830b419d3b12a413a1ec672a1ca0da8ef5d6b255bc883d40428185933fd88f4"
+      },
+      "collision": {
+        "accepted": true,
+        "plan_sha256": "b66c548da0d0d397ebd2e224200cdd502b74994fb4dd0345cd4cf67b8e5d64d9",
+        "robot_description_sha256": "7830b419d3b12a413a1ec672a1ca0da8ef5d6b255bc883d40428185933fd88f4",
+        "left_pose_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "left_pose_source": "operator_confirmed_near_zero; modeled at zero",
+        "max_sample_joint_travel_deg": 0.25,
+        "checked_configurations": 22173,
+        "minimum_sampled_distance_m": 0.012249930877310938,
+        "distance_configurations_checked": 202,
+        "closest": {
+          "pair": [
+            "right_link_3_0",
+            "right_link_1_0"
+          ],
+          "step": "001_approach_slow",
+          "position_deg": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "failure": null,
+        "excluded_pairs": [
+          {
+            "pair": [
+              "left_arm_attachment_point_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_base_link_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_base_link_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_1_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_1_0",
+              "left_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_2_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_2_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_2_0",
+              "left_link_1_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_3_0",
+              "left_link_2_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_4_0",
+              "left_link_3_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_3_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_5_0",
+              "left_link_4_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_3_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_4_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_6_0",
+              "left_link_5_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_base_link_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_1_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_2_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_3_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_4_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_5_0"
+            ],
+            "reason": "static left-arm pair"
+          },
+          {
+            "pair": [
+              "left_link_7_0",
+              "left_link_6_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_arm_attachment_point_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_arm_attachment_point_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_arm_attachment_point_0",
+              "left_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "left_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "left_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_base_link_0",
+              "right_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_1_0",
+              "right_arm_attachment_point_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_1_0",
+              "right_base_link_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_2_0",
+              "right_link_1_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_3_0",
+              "right_link_2_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_4_0",
+              "right_link_3_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_5_0",
+              "right_link_4_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_6_0",
+              "right_link_5_0"
+            ],
+            "reason": "rigid/adjacent body"
+          },
+          {
+            "pair": [
+              "right_link_7_0",
+              "right_link_6_0"
+            ],
+            "reason": "rigid/adjacent body"
+          }
+        ],
+        "elapsed_seconds": 47.40907831300001,
+        "limitations": [
+          "Discrete URDF mesh check, not continuous collision certification",
+          "External support fixtures, cables, and pose uncertainty are not modeled",
+          "Samples describe command targets; measured tracking must be monitored during capture"
+        ]
+      }
+    }
+  },
+  "regression_tests_passed": 109
+}

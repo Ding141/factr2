@@ -1,0 +1,16 @@
+version: 1
+# Freeze by complete original recording; retain original collection_role=train.
+# High-speed sessions train; independent 6 deg/s recordings are held out.
+sessions:
+  train:
+    - /home/venom/factr2/data/right/targeted/20261016_182029_549446_01_continuous_J1_J2_J3_J4_J5_J6_J7/samples.h5
+    - /home/venom/factr2/data/right/targeted/20261016_183214_777387_02_hysteresis_J1_J2_J3_J4_J5_J6_J7/samples.h5
+    - /home/venom/factr2/data/right/targeted/20261016_180728_071485_02_hysteresis_J2_J3/samples.h5
+    - /home/venom/factr2/data/right/targeted/20261016_181338_735757_05_hysteresis_J6/samples.h5
+    - /home/venom/factr2/data/right/targeted/20261016_181548_996711_06_hysteresis_J7/samples.h5
+  val:
+    - /home/venom/factr2/data/right/targeted/20261016_180440_213026_01_continuous_J2_J3_J4_J5_J6_J7/samples.h5
+    - /home/venom/factr2/data/right/targeted/20261016_181027_282853_03_hysteresis_J4_J5/samples.h5
+  test:
+    - /home/venom/factr2/data/right/targeted/20261016_174822_continuous_train/samples.h5
+    - /home/venom/factr2/data/right/targeted/20261016_175255_hysteresis_train/samples.h5

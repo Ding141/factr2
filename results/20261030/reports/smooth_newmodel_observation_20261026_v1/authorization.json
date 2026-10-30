@@ -1,0 +1,7 @@
+{
+  "operator_confirmed": true,
+  "plan_sha256": "abfb2a46a948a23be85e544ce77350bf48136615bf2b91ea5bc620b79fd96666",
+  "confirmation": "已确认，可以执行本次运动和记录",
+  "utc": "2026-10-26T06:23:25.098106+00:00",
+  "scope": "right arm no load, slow approach, capped 6deg/s continuous motion, record only; no gain or mode change"
+}

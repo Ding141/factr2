@@ -1,0 +1,9 @@
+[
+  {
+    "before_kernel_receive_ns": 1792723907135557240,
+    "after_kernel_receive_ns": 1792723906581917143,
+    "wall_step_ms": -553.63297,
+    "monotonic_interval_ms": 0.405078,
+    "kernel_timestamp_step_ms": -553.640097
+  }
+]

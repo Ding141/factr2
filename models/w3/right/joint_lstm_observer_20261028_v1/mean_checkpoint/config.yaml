@@ -1,0 +1,71 @@
+contract_version: w3_next_v1
+side: right
+joint_names:
+- right_joint_0
+- right_joint_1
+- right_joint_2
+- right_joint_3
+- right_joint_4
+- right_joint_5
+- right_joint_6
+data:
+  arm_mode: single
+  keys:
+    joint_pos: joint_pos
+    joint_vel: joint_vel
+    joint_cmd: joint_cmd
+    measured_joint_torque: measured_joint_torque
+  history: 50
+  sample_hz: 100
+  manifest: /home/venom/factr2/data/right/wide_highspeed_mean_20261026_v1/split.json
+  require_independent_sessions: true
+  memory_budget_mb: 512
+model:
+  type: joint_lstm
+  state_mode: stateless
+  hidden_size: 128
+  num_layers: 2
+  bidirectional: false
+  head_hidden: 256
+  head_layers: 2
+  dropout: 0.1
+train:
+  device: cpu
+  cpu_threads: 8
+  seed: 0
+  epochs: 60
+  batch_size: 256
+  learning_rate: 0.001
+  optimizer: adamw
+  weight_decay: 1.0e-06
+  gradient_clip: 1.0
+  loss_units: physical_nm
+  early_stopping:
+    enabled: true
+    patience: 10
+    warmup: 10
+    min_delta: 1.0e-05
+  validation_diagnostics: true
+  stop_file: /home/venom/factr2/log/joint_lstm_retrain_20261028_v1/STOP_PARALLEL
+  parallel_joints: 7
+  worker_threads: 2
+  autocast_bfloat16: true
+  resolved_device: cpu
+  resume_from_run: /home/venom/factr2/runs/right_joint_lstm_parallel_durable_v1_20261028_111023_546939
+save:
+  output_dir: /home/venom/factr2/runs
+  run_name: right_joint_lstm_recovered_v1
+trial:
+  architecture: independent_joint_lstm_v1
+  scope: Seven independent LSTMs; every branch receives all 21 state features.
+  reference: ICRA 2020 Yilmaz et al.; independent scalar networks adapted to NEXT
+    LSTM.
+  initialization: fresh independent weights; no shared model warm start
+  deployment_ready: false
+  automatic_deployment: false
+  pending:
+  - independent low/high speed evaluation against the shared LSTM
+  - online inference latency and physical contact validation
+  - refit variance and residual compensation for the new mean
+  execution: Independent CPU workers, seed0 + joint index for dropout; FP32 validation
+    and deployment

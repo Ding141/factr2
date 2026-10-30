@@ -1,0 +1,15 @@
+{
+  "schema": "w3_frozen_sigma_observer_v1",
+  "deployment_mode": "read_only_research_observation",
+  "deployment_ready": false,
+  "calibration": "uncalibrated",
+  "status": "running_waiting_for_input",
+  "url": "http://127.0.0.1:8082/",
+  "next_topic_root": "/next/right/frozen_sigma",
+  "record": "/home/venom/factr2/log/deploy_frozen_sigma_20261023/deployment.json",
+  "metadata_sha256": "cbe838418b4f5b550662e51230e8b3f60a2fdfa4328e6cc5d7a6cd5a112876c9",
+  "inference_config_sha256": "bae1b4beee8fd44a5ff0f951cab5d59d8658bd312d8837dad71f71eb1751d70f",
+  "web_config_sha256": "b8fcf0d36cbbd1023ab2541682bb360c58a98a4d273b6bcf417946438b6d8a7c",
+  "regression_passed": 44,
+  "isolated_transport_passed": 2
+}

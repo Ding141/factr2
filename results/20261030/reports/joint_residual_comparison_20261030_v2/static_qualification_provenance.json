@@ -1,0 +1,6 @@
+{
+  "source": "/home/venom/factr2/log/joint_residual_comparison_20261030_v1/clock_stability/summary.json",
+  "same_live_observer": true,
+  "same_compensation_sha256": "ddd137118de1bc1492757f287e7d4f09f41c103d6c15c83dcd2b8e0fd0738c65",
+  "change": "One retry of read-only preflight services only, before any motion; same observer/recording and trajectory"
+}

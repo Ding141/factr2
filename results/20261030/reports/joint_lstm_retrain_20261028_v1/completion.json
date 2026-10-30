@@ -1,0 +1,27 @@
+{
+  "status": "trained_evaluated_offline",
+  "architecture": "independent_joint_lstm_v1",
+  "bundle": "/home/venom/factr2/models/w3/right/joint_lstm_observer_20261028_v1",
+  "mean_model_sha256": "bec10a63f3ef31bf41dc66560afb8247342f645b42f6d4516c0165e7d44a932b",
+  "controller_changes": false,
+  "compensation_enabled": false,
+  "old_model_preserved": true,
+  "live_services_running": false,
+  "comparison_report": "/home/venom/factr2/log/joint_lstm_retrain_20261028_v1/evaluation_grouped/comparison.json",
+  "comparison_ports": {
+    "old": 8082,
+    "new": 8083
+  },
+  "physical_motion_performed": false,
+  "physical_contact_validated": false,
+  "per_joint_best_epoch": [
+    33,
+    24,
+    34,
+    15,
+    27,
+    23,
+    19
+  ],
+  "test_used_for_fit": false
+}

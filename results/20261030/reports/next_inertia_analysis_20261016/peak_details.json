@@ -1,0 +1,9 @@
+{
+  "dominant_joint": "J1",
+  "raw_residual_nm": -0.8049855482909166,
+  "nominal_inertia_nm": -0.125238272467681,
+  "estimated_acceleration_rad_s2": -0.9913590872189112,
+  "actual_speed_estimate_deg_s": -3.353694099794094,
+  "native_speed_deg_s": 0.14155450393396504,
+  "window31_total_inertia_rms_nm": 0.037973737732799454
+}

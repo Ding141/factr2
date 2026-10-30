@@ -1,0 +1,15 @@
+{
+  "old_dashboard_pid": 19443,
+  "old_inference_untouched": true,
+  "old_dashboard_command": [
+    "/home/venom/factr2/scripts/next.sh",
+    "python",
+    "/home/venom/factr2/scripts/w3_endpoint_wrench.py",
+    "--config",
+    "/home/venom/factr2/config/w3/right/endpoint_wrench_targeted_20261016.yaml"
+  ],
+  "ros_domain_id": 74,
+  "ros_localhost_only": 1,
+  "old_output_root": "/next/right",
+  "new_output_root": "/next/right/frozen_sigma"
+}

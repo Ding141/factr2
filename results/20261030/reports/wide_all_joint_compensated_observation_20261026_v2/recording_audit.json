@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "recorded_packet_count": 33294,
+  "all_packets_have_all_seven_joints_enabled": true,
+  "nonzero_correction_frames": [
+    32933,
+    32933,
+    32934,
+    32934,
+    32933,
+    32931,
+    32919
+  ],
+  "correction_abs_peak_nm": [
+    1.0881727417900198,
+    0.8708652420958074,
+    0.6431655293428568,
+    0.6529395383121908,
+    0.26055098402447796,
+    0.6601692357460336,
+    0.2674934128458533
+  ],
+  "correction_caps_preserved_nm": [
+    2.9930029131618006,
+    2.2899268628038785,
+    1.6989558747776536,
+    1.8482815362104739,
+    0.5135290389641172,
+    1.3631911144468236,
+    0.498366769826614
+  ],
+  "weights_filters_support_unchanged": true,
+  "all_27_motion_blocks_completed": true,
+  "base_and_residual_hashes_unchanged": true,
+  "original_attempt_preserved": "/home/venom/factr2/log/wide_all_joint_compensated_observation_20261026_v1",
+  "no_refitting": true,
+  "no_motor_torque_compensation": true
+}

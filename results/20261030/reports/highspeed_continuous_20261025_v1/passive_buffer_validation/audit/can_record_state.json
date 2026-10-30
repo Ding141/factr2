@@ -1,0 +1,62 @@
+{
+  "status": "closed",
+  "interface": "can1",
+  "frames": 220455,
+  "kernel_timestamps_missing": 0,
+  "socket_dropped_frames": 0,
+  "last_received_mono": {
+    "2": 3046.6245510800004,
+    "3": 3046.624951912,
+    "4": 3046.6253491750003,
+    "5": 3046.625753576,
+    "6": 3046.623323606,
+    "7": 3046.623732764,
+    "1": 3046.624132406
+  },
+  "last_temperature_c": {
+    "2": {
+      "mos": 33,
+      "rotor": 31
+    },
+    "3": {
+      "mos": 31,
+      "rotor": 28
+    },
+    "4": {
+      "mos": 29,
+      "rotor": 28
+    },
+    "5": {
+      "mos": 30,
+      "rotor": 28
+    },
+    "6": {
+      "mos": 29,
+      "rotor": 28
+    },
+    "7": {
+      "mos": 30,
+      "rotor": 27
+    },
+    "1": {
+      "mos": 32,
+      "rotor": 28
+    }
+  },
+  "temperature_samples_by_motor": {
+    "1": 885,
+    "2": 885,
+    "3": 885,
+    "4": 884,
+    "5": 885,
+    "6": 885,
+    "7": 885
+  },
+  "timestamp_kind": "Linux kernel software receive; not device acquisition",
+  "raw_format": "<qqqIHH + DLC bytes",
+  "socket_receive_buffer_bytes": 425984,
+  "userspace_queue_capacity_frames": 16384,
+  "userspace_queue_peak_frames": 6,
+  "maximum_writer_lag_seconds": 0.0022755289996894135,
+  "updated_mono": 3046.625808289
+}

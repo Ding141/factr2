@@ -1,0 +1,69 @@
+{
+  "before": {
+    "service": "running",
+    "pid": 33027,
+    "state": "out_of_scope",
+    "reason": "outside_collection_range:right_joint_1,right_joint_3",
+    "outputs": 2726,
+    "counts": {
+      "outputs": 2726,
+      "dropped": 0,
+      "resets": 2
+    },
+    "model_sha256": {
+      "old": "2cdd28518d828e234ae10d5f313b37af516969b77afad76661aaf0918b8a8e59",
+      "new": "bec10a63f3ef31bf41dc66560afb8247342f645b42f6d4516c0165e7d44a932b"
+    },
+    "compensation_enabled": false,
+    "same_input_history": true,
+    "packet_topic": "/next/right/model_comparison/frame",
+    "last_stamp_ns": 1793326859931254213,
+    "last_packet_mono_age_seconds": 0.006110012000000001,
+    "old_state": "out_of_scope",
+    "infer_ms_p99": 5.297842559991749,
+    "old_url": "http://127.0.0.1:8082/",
+    "new_url": "http://127.0.0.1:8083/"
+  },
+  "after": {
+    "service": "running",
+    "pid": 33027,
+    "state": "out_of_scope",
+    "reason": "outside_collection_range:right_joint_1,right_joint_3",
+    "outputs": 3026,
+    "counts": {
+      "outputs": 3026,
+      "dropped": 0,
+      "resets": 2
+    },
+    "model_sha256": {
+      "old": "2cdd28518d828e234ae10d5f313b37af516969b77afad76661aaf0918b8a8e59",
+      "new": "bec10a63f3ef31bf41dc66560afb8247342f645b42f6d4516c0165e7d44a932b"
+    },
+    "compensation_enabled": false,
+    "same_input_history": true,
+    "packet_topic": "/next/right/model_comparison/frame",
+    "last_stamp_ns": 1793326862931236814,
+    "last_packet_mono_age_seconds": 0.008008188000000001,
+    "old_state": "out_of_scope",
+    "infer_ms_p99": 5.113581379912375,
+    "old_url": "http://127.0.0.1:8082/",
+    "new_url": "http://127.0.0.1:8083/"
+  },
+  "count_increase": 300,
+  "windows": {
+    "8082": {
+      "state": "out_of_scope",
+      "reason": "outside_collection_range:right_joint_1,right_joint_3",
+      "last_valid_age_seconds": 0.014786679000053482,
+      "status_age_seconds": 0.011950991000048816,
+      "display_decimals": 2
+    },
+    "8083": {
+      "state": "out_of_scope",
+      "reason": "outside_collection_range:right_joint_1,right_joint_3",
+      "last_valid_age_seconds": 0.034316927999952895,
+      "status_age_seconds": 0.03133274399988295,
+      "display_decimals": 2
+    }
+  }
+}

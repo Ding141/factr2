@@ -1,0 +1,50 @@
+{
+  "schema": "w3_observer_profile_v1",
+  "kind": "joint_lstm",
+  "ros_domain_id": 74,
+  "bundle": "/home/venom/factr2/models/w3/right/joint_lstm_observer_20261028_v1",
+  "bundle_sha256": "6762291153e86efe34b9cce8c761a2fcdbcf61f51415c130c51c4d8e952f4c3d",
+  "mean_model_sha256": "bec10a63f3ef31bf41dc66560afb8247342f645b42f6d4516c0165e7d44a932b",
+  "next_topic_root": "/next/right/joint_lstm",
+  "architecture": "independent_joint_lstm_v1",
+  "compensation_enabled": true,
+  "controller_changes": false,
+  "research_only": true,
+  "contact_validated": false,
+  "selected_epoch_per_joint": [
+    33,
+    24,
+    34,
+    15,
+    27,
+    23,
+    19
+  ],
+  "trained_epochs_per_joint": [
+    43,
+    34,
+    44,
+    25,
+    37,
+    33,
+    23
+  ],
+  "rollback": "/home/venom/factr2/log/joint_lstm_retrain_20261028_v1/activation",
+  "residual_compensation": {
+    "enabled": true,
+    "model": "/home/venom/factr2/log/joint_residual_comparison_20261030_v1/compensation/model.json",
+    "model_sha256": "ddd137118de1bc1492757f287e7d4f09f41c103d6c15c83dcd2b8e0fd0738c65",
+    "enabled_joints": [
+      true,
+      false,
+      false,
+      false,
+      false,
+      true,
+      true
+    ],
+    "comparison": "8082 same independent LSTM without residual; 8083 with frozen residual",
+    "controller_changes": false,
+    "contact_validated": false
+  }
+}

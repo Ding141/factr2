@@ -1,0 +1,22 @@
+{
+  "gravity_compensation_controller.cpp": {
+    "captured_sha256": "1f64e347446a29f387d91a9b24fd0259e352831f151acea6c50d9ed78dc6f46b",
+    "current_sha256": "1f64e347446a29f387d91a9b24fd0259e352831f151acea6c50d9ed78dc6f46b",
+    "matches": true
+  },
+  "smooth_friction.hpp": {
+    "captured_sha256": "9673dfddf1a35444b0b23c26931a94d9842f51c2364334f3301f0836a2552855",
+    "current_sha256": "9673dfddf1a35444b0b23c26931a94d9842f51c2364334f3301f0836a2552855",
+    "matches": true
+  },
+  "joint_position_controller.cpp": {
+    "captured_sha256": "0f74a01e886883c79cce0c4ea89d4f8b5dc94c0d8edd865f4992a17a9e684c8c",
+    "current_sha256": "0f74a01e886883c79cce0c4ea89d4f8b5dc94c0d8edd865f4992a17a9e684c8c",
+    "matches": true
+  },
+  "damiao_protocol.cpp": {
+    "captured_sha256": "7e1797070e515aeaef5f06791379b7c9e7072a84dff8f5fe9709c5856d383862",
+    "current_sha256": "7e1797070e515aeaef5f06791379b7c9e7072a84dff8f5fe9709c5856d383862",
+    "matches": true
+  }
+}

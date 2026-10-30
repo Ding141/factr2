@@ -1,0 +1,6 @@
+{
+  "pid": 9953,
+  "started": "2026-10-28T21:27:07.543878+08:00",
+  "run": "/home/venom/factr2/runs/right_joint_lstm_recovered_v1_20261028_212633_446761",
+  "comparison": "8082 old shared / 8083 new joint; no residual compensation"
+}

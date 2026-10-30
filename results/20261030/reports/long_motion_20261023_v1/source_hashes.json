@@ -1,0 +1,8 @@
+{
+  "w3_joint_observation_record.py": "46126394a3e521046a1ed0234a1a045555b081fd540c003bdc568711b7bc0d71",
+  "w3_long_observation.py": "6a9adff026f6406c4619f2e7b366ef097011ba24f7c92fed4afcd1126f396ff3",
+  "test_w3_long_observation.py": "aee729089847d63782126bf54bfd6f5782bf7c8b3fc97348387ec92ffc6e5862",
+  "visualize.yaml": "098a015096169bb42d515b7b34e1a1bee5ebcb57e83b84b1a3c07dc87e4f1be7",
+  "inference_targeted_20261016.yaml": "e1c8101da7cd1ce3d2b994475785467a09e98b66bfb29f259376e3daea91b624",
+  "endpoint_wrench_targeted_20261016.yaml": "5110fe4c65f8fc49b018f44f7e812c3e643a44df1c85389d31e090020177f551"
+}

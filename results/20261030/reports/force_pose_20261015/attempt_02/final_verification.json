@@ -1,0 +1,2060 @@
+{
+  "valid_fraction": 1.0,
+  "sample_count": 50,
+  "last_endpoint": {
+    "state": "valid",
+    "reasons": [],
+    "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+    "estimation_mode": "full_wrench",
+    "moments_observed": true,
+    "geometry": {
+      "condition_number": 12.49184164532743,
+      "scaled_singular_values": [
+        2.0399720045152203,
+        1.6492493889010906,
+        1.4471744216518911,
+        0.5475119060329449,
+        0.438218516953692,
+        0.16330434394181353
+      ],
+      "mode": "full_wrench",
+      "observable_rank": 6,
+      "moments_observed": true,
+      "assumption": "all_external_loading_at_tool_origin",
+      "torque_fit_error_nm": 0.007385375879299875,
+      "relative_fit_error": 0.07385375879299874,
+      "reason": "ok",
+      "valid": true
+    },
+    "frame_id": "right_attachment_point",
+    "moment_reference_point": "right_attachment_point",
+    "sign_convention": "NEXT_residual",
+    "outputs": 10792,
+    "wrench": {
+      "fx": -0.059715161446641275,
+      "fy": -0.22223665097521753,
+      "fz": 0.43623294643165866,
+      "mx": 0.01696658466624152,
+      "my": 0.05439872578782862,
+      "mz": 0.001218492938251738
+    },
+    "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+  },
+  "all_motors_healthy": true,
+  "right_actual_deg": [
+    31.400677013637033,
+    59.325946212072246,
+    -6.356554783678953,
+    -60.11346044643336,
+    6.451634513982398,
+    -10.574599675677591,
+    2.083088534641542
+  ],
+  "mode": "full_wrench",
+  "gates_unchanged": true,
+  "accuracy_accepted": false,
+  "motion": {
+    "status": "completed",
+    "operator_authorized": true,
+    "plan_sha256": "7b7840105d0ad90e40fe392ddc5537740cfa87e6521a1dcd68b23c3c108eb3e1",
+    "automatic_retry": false,
+    "events": [
+      {
+        "name": "001_approach_pose5_after_motion_slow",
+        "status": "completed",
+        "arrival_error_deg": [
+          -0.11014923258602863,
+          -0.19104401228094273,
+          -0.594970114227889,
+          0.4557806382313001,
+          0.6718080719027355,
+          -0.5148108759571539,
+          0.9269008228422952
+        ]
+      },
+      {
+        "name": "002_return_pose5_after_motion_slow",
+        "status": "completed",
+        "arrival_error_deg": [
+          0.2151860045570066,
+          0.2829267075634078,
+          -0.1355090138363309,
+          -0.25490678286471313,
+          0.6636113872439116,
+          -0.3427919332712275,
+          0.8277287118858986
+        ]
+      }
+    ],
+    "actual_deg": [
+      31.444444865838477,
+      59.325946212072246,
+      -6.356554783678953,
+      -60.09160384108932,
+      6.429777908638358,
+      -10.574599675677591,
+      2.083088534641542
+    ],
+    "max_tracking_deg": [
+      1.766305322543472,
+      1.229395451520155,
+      1.4217154803803584,
+      1.2464937805211647,
+      1.4044443229016326,
+      0.6833149223485572,
+      1.2937679977198526
+    ]
+  },
+  "samples": [
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.491910481641561,
+        "scaled_singular_values": [
+          2.0399761971921606,
+          1.649261965525681,
+          1.4471564413776592,
+          0.547507821679451,
+          0.43822393589136355,
+          0.16330377968927676
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0066252288795156655,
+        "relative_fit_error": 0.06625228879515666,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10287,
+      "wrench": {
+        "fx": -0.07042343907255061,
+        "fy": -0.23138254585301476,
+        "fz": 0.2658195162922226,
+        "mx": 0.0062655232018009495,
+        "my": 0.050577378659339374,
+        "mz": 0.0009831346516622722
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0019010801385720831,
+        "relative_fit_error": 0.017384488157666186,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10297,
+      "wrench": {
+        "fx": -0.07544081037021318,
+        "fy": -0.25230538357530136,
+        "fz": 0.11500576152069476,
+        "mx": 5.108041268433831e-05,
+        "my": 0.0520973951459632,
+        "mz": 0.0003765368170687584
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.007690510840507835,
+        "relative_fit_error": 0.072277952451153,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10308,
+      "wrench": {
+        "fx": -0.04500930884486081,
+        "fy": -0.17669794525664775,
+        "fz": 0.04299285776214081,
+        "mx": 0.006359985845037622,
+        "my": 0.05187492778290284,
+        "mz": 0.003506482377174445
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.007528797377949907,
+        "relative_fit_error": 0.07528797377949907,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10318,
+      "wrench": {
+        "fx": -0.09455521537963003,
+        "fy": -0.09975546850252633,
+        "fz": 0.13130080910828654,
+        "mx": 0.01735236683884607,
+        "my": 0.05354755987758949,
+        "mz": 8.294352326355065e-05
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.005421065540084845,
+        "relative_fit_error": 0.05421065540084845,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10328,
+      "wrench": {
+        "fx": -0.08363237553879191,
+        "fy": -0.1417125645514516,
+        "fz": 0.004274681844602449,
+        "mx": 0.011207096310681532,
+        "my": 0.05349714572884859,
+        "mz": 0.0037168555603275585
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.00196776503441968,
+        "relative_fit_error": 0.017443032890152543,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10339,
+      "wrench": {
+        "fx": -0.10017675677801989,
+        "fy": -0.1269994624237998,
+        "fz": 0.004907615038764792,
+        "mx": 0.02935448215460302,
+        "my": 0.05115301120323596,
+        "mz": -0.0033180222374611223
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.005797127855330648,
+        "relative_fit_error": 0.048451683934450804,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10349,
+      "wrench": {
+        "fx": -0.04257382626267496,
+        "fy": -0.26912483420521244,
+        "fz": 0.15640951349469723,
+        "mx": 0.0042571217906426295,
+        "my": 0.04972213678361138,
+        "mz": -0.00039172809784986877
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.005354961598306698,
+        "relative_fit_error": 0.05354961598306698,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10359,
+      "wrench": {
+        "fx": -0.054369761192318435,
+        "fy": -0.16377093437987897,
+        "fz": 0.38923703356641637,
+        "mx": 0.02465533033817245,
+        "my": 0.05126453249550251,
+        "mz": 0.0004240164327396532
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.002098257382876014,
+        "relative_fit_error": 0.020982573828760138,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10370,
+      "wrench": {
+        "fx": -0.10030758557789263,
+        "fy": -0.05084420689004057,
+        "fz": -0.058272844712743764,
+        "mx": 0.013041440952551407,
+        "my": 0.05267129203079758,
+        "mz": -0.003181829869522865
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0006794512424567715,
+        "relative_fit_error": 0.006794512424567715,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10380,
+      "wrench": {
+        "fx": -0.06883917399165967,
+        "fy": -0.16265097902621303,
+        "fz": 0.13253424939430358,
+        "mx": 0.008861322192518124,
+        "my": 0.052848780988542204,
+        "mz": -2.8593277868152165e-05
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0032854937163649994,
+        "relative_fit_error": 0.03285493716364999,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10390,
+      "wrench": {
+        "fx": -0.0710745946318557,
+        "fy": -0.03259143665247494,
+        "fz": -0.12870897862727645,
+        "mx": 0.020941705392526058,
+        "my": 0.051072882099800536,
+        "mz": -0.004674664574797728
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.009324146989058637,
+        "relative_fit_error": 0.09324146989058636,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10400,
+      "wrench": {
+        "fx": -0.0651067917531438,
+        "fy": -0.11711180718254932,
+        "fz": 0.11444976328666295,
+        "mx": 0.0176664266859985,
+        "my": 0.05590471357540772,
+        "mz": -0.00350181993503311
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.006275701924798772,
+        "relative_fit_error": 0.06275701924798771,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10411,
+      "wrench": {
+        "fx": -0.026308352553604968,
+        "fy": -0.08607762489187137,
+        "fz": 0.20259327197110016,
+        "mx": 0.019597302696306683,
+        "my": 0.05114118931545519,
+        "mz": -0.004113538920821703
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0022763427306925622,
+        "relative_fit_error": 0.02276342730692562,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10421,
+      "wrench": {
+        "fx": -0.07838656539170354,
+        "fy": -0.14615564478004195,
+        "fz": 0.07881635672898002,
+        "mx": 0.007141430293537093,
+        "my": 0.055513629962509144,
+        "mz": -0.002739563787718464
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0017460857530743046,
+        "relative_fit_error": 0.017230174265563284,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10431,
+      "wrench": {
+        "fx": -0.11107474723197318,
+        "fy": -0.09165754856158298,
+        "fz": -0.09178865987183588,
+        "mx": 0.018648446962336838,
+        "my": 0.05458658666198131,
+        "mz": -0.0023287222276329395
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.007297057152189115,
+        "relative_fit_error": 0.0605586237452155,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10442,
+      "wrench": {
+        "fx": -0.07357835219849876,
+        "fy": -0.07152881825070428,
+        "fz": 0.005756826720070643,
+        "mx": 0.04827610930036988,
+        "my": 0.05014292159343728,
+        "mz": 0.0020450090882510714
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.010693107041971267,
+        "relative_fit_error": 0.10693107041971267,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10452,
+      "wrench": {
+        "fx": -0.06563246992266465,
+        "fy": -0.11787760962959974,
+        "fz": 0.24563023907257273,
+        "mx": 0.02602575981780468,
+        "my": 0.05216305504541643,
+        "mz": 0.00452370227044568
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.010617656316248069,
+        "relative_fit_error": 0.08907841015216335,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10462,
+      "wrench": {
+        "fx": -0.06906321768331694,
+        "fy": -0.28857096710560987,
+        "fz": 0.1813090751266082,
+        "mx": 0.0063186477651054245,
+        "my": 0.049542767445322586,
+        "mz": 0.003381995846163529
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.491910481641561,
+        "scaled_singular_values": [
+          2.0399761971921606,
+          1.649261965525681,
+          1.4471564413776592,
+          0.547507821679451,
+          0.43822393589136355,
+          0.16330377968927676
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.007877955694211479,
+        "relative_fit_error": 0.07877955694211479,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10473,
+      "wrench": {
+        "fx": -0.04600753320062066,
+        "fy": -0.11583300133042337,
+        "fz": 0.24172435611756057,
+        "mx": 0.03094197821256681,
+        "my": 0.05102701620007499,
+        "mz": 0.0022582589000481406
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0023876212178563215,
+        "relative_fit_error": 0.023876212178563214,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10483,
+      "wrench": {
+        "fx": -0.0945926285945718,
+        "fy": -0.1671080836616384,
+        "fz": 0.26393856901394747,
+        "mx": 0.018586817391559797,
+        "my": 0.05583341197502425,
+        "mz": 0.00018556624725249435
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.010421880839431363,
+        "relative_fit_error": 0.09812612560823587,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10493,
+      "wrench": {
+        "fx": -0.08758768987968336,
+        "fy": -0.16253813881314788,
+        "fz": -0.0016372713531209353,
+        "mx": 0.012525243358755912,
+        "my": 0.05379218677098956,
+        "mz": 0.004111373313994024
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0011884194024971023,
+        "relative_fit_error": 0.011884194024971022,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10503,
+      "wrench": {
+        "fx": -0.07267792059631466,
+        "fy": -0.10180898995286279,
+        "fz": 0.18513171684832708,
+        "mx": 0.02512770439927839,
+        "my": 0.05162402570478182,
+        "mz": -0.004129183424353443
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0010101045568640418,
+        "relative_fit_error": 0.010101045568640417,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10514,
+      "wrench": {
+        "fx": -0.12148319680278494,
+        "fy": -0.14028199911084965,
+        "fz": 0.08772773200356647,
+        "mx": 0.013566059408096567,
+        "my": 0.059734421673200075,
+        "mz": -0.000686143865170081
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.491910481641561,
+        "scaled_singular_values": [
+          2.0399761971921606,
+          1.649261965525681,
+          1.4471564413776592,
+          0.547507821679451,
+          0.43822393589136355,
+          0.16330377968927676
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.00037828913436012776,
+        "relative_fit_error": 0.003326492756256279,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10524,
+      "wrench": {
+        "fx": -0.09078945028353459,
+        "fy": -0.3562526611221776,
+        "fz": 0.39563485565779,
+        "mx": -0.003953531452358276,
+        "my": 0.057727884991623596,
+        "mz": 0.00019956791414305977
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.006398095471778661,
+        "relative_fit_error": 0.0639809547177866,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10534,
+      "wrench": {
+        "fx": -0.13453672520034426,
+        "fy": -0.19734450823835017,
+        "fz": 0.05505261928878085,
+        "mx": -0.007452460562008699,
+        "my": 0.05846487262581232,
+        "mz": -0.0029685120087987547
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.491910481641561,
+        "scaled_singular_values": [
+          2.0399761971921606,
+          1.649261965525681,
+          1.4471564413776592,
+          0.547507821679451,
+          0.43822393589136355,
+          0.16330377968927676
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.004851816513312957,
+        "relative_fit_error": 0.04431552517158401,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10545,
+      "wrench": {
+        "fx": -0.059829491274940236,
+        "fy": -0.2560251261578012,
+        "fz": 0.1666954458303217,
+        "mx": 0.003872946771433138,
+        "my": 0.049861877889047196,
+        "mz": 0.0021471676102280727
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0068778345954471016,
+        "relative_fit_error": 0.06066447062315156,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10555,
+      "wrench": {
+        "fx": -0.057378408777059756,
+        "fy": -0.35371631941271164,
+        "fz": 0.4292018704418226,
+        "mx": -0.003275333274041443,
+        "my": 0.05295470261121358,
+        "mz": -0.004163373080422989
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0011849022609990106,
+        "relative_fit_error": 0.011849022609990106,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10565,
+      "wrench": {
+        "fx": -0.0818334900093332,
+        "fy": -0.04847875184804189,
+        "fz": 0.15285491744932908,
+        "mx": 0.022651762457054702,
+        "my": 0.05593007084414758,
+        "mz": -0.0004973718878726219
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.005461656248301354,
+        "relative_fit_error": 0.05149484012634338,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10576,
+      "wrench": {
+        "fx": -0.03437677279802899,
+        "fy": -0.23995183017221602,
+        "fz": 0.2564990201865767,
+        "mx": 0.0037692723581650117,
+        "my": 0.053719456126815966,
+        "mz": 0.0027815007535851675
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.491910481641561,
+        "scaled_singular_values": [
+          2.0399761971921606,
+          1.649261965525681,
+          1.4471564413776592,
+          0.547507821679451,
+          0.43822393589136355,
+          0.16330377968927676
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.006074701746407478,
+        "relative_fit_error": 0.05741912114342893,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10586,
+      "wrench": {
+        "fx": -0.06620306836437298,
+        "fy": -0.16253882462383745,
+        "fz": 0.23884046177984894,
+        "mx": 0.03078191014716966,
+        "my": 0.04949013337201565,
+        "mz": -0.0011843207080496235
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.009096086385145452,
+        "relative_fit_error": 0.07466395837024455,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10596,
+      "wrench": {
+        "fx": -0.035597838117675314,
+        "fy": -0.13275757959452344,
+        "fz": 0.1870341564024761,
+        "mx": 0.04232523887017071,
+        "my": 0.04851480545460908,
+        "mz": -0.003463652981791634
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.491910481641561,
+        "scaled_singular_values": [
+          2.0399761971921606,
+          1.649261965525681,
+          1.4471564413776592,
+          0.547507821679451,
+          0.43822393589136355,
+          0.16330377968927676
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.00037495152312598925,
+        "relative_fit_error": 0.0034098819581278687,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10607,
+      "wrench": {
+        "fx": -0.07433119697613953,
+        "fy": -0.1583749310429281,
+        "fz": 0.11852199532691854,
+        "mx": 0.021292703270946185,
+        "my": 0.05398514402574485,
+        "mz": -0.006788491541573228
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0012002554642913921,
+        "relative_fit_error": 0.01159674314234768,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10617,
+      "wrench": {
+        "fx": -0.050297133585175485,
+        "fy": -0.27787122327204045,
+        "fz": 0.5540725280404624,
+        "mx": 0.013314796073144623,
+        "my": 0.05583086766628499,
+        "mz": -0.0019301172601111746
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0014190542039368495,
+        "relative_fit_error": 0.014190542039368495,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10627,
+      "wrench": {
+        "fx": -0.08830486298509405,
+        "fy": -0.05782457326140217,
+        "fz": 0.1758896585984919,
+        "mx": 0.02290434671449231,
+        "my": 0.05659561934123782,
+        "mz": -0.002798238550478421
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0102077463166111,
+        "relative_fit_error": 0.102077463166111,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10637,
+      "wrench": {
+        "fx": -0.06859161074010545,
+        "fy": -0.18977185457679344,
+        "fz": 0.11995318452864552,
+        "mx": 0.006330873739277672,
+        "my": 0.05118493492030721,
+        "mz": 0.005013222776766445
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.005635981770875212,
+        "relative_fit_error": 0.05585223334942739,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10648,
+      "wrench": {
+        "fx": -0.07448743865026244,
+        "fy": -0.13572795862944612,
+        "fz": 0.012601474363241452,
+        "mx": 0.014524538473336296,
+        "my": 0.052818360248771304,
+        "mz": 0.001946313166532789
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.004239247155115335,
+        "relative_fit_error": 0.04239247155115335,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10658,
+      "wrench": {
+        "fx": -0.08976545362024549,
+        "fy": -0.03901150390516834,
+        "fz": -0.043085351437542344,
+        "mx": 0.025864450377223208,
+        "my": 0.05659952347274384,
+        "mz": -0.0012488397333039866
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.004558904863530997,
+        "relative_fit_error": 0.045589048635309964,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10668,
+      "wrench": {
+        "fx": -0.08535903633105454,
+        "fy": -0.09939989145444675,
+        "fz": -0.011035033832325354,
+        "mx": 0.009545572531080612,
+        "my": 0.0543606548908244,
+        "mz": 0.0006352157359167106
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.005245492641151781,
+        "relative_fit_error": 0.04990440746837052,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10679,
+      "wrench": {
+        "fx": -0.11375958779901463,
+        "fy": -0.21786768619235342,
+        "fz": 0.17414204006475886,
+        "mx": 0.008367731577427527,
+        "my": 0.05544239663307152,
+        "mz": -0.0084363450023009
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.491910481641561,
+        "scaled_singular_values": [
+          2.0399761971921606,
+          1.649261965525681,
+          1.4471564413776592,
+          0.547507821679451,
+          0.43822393589136355,
+          0.16330377968927676
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0022121898343785435,
+        "relative_fit_error": 0.022121898343785435,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10689,
+      "wrench": {
+        "fx": -0.0762172531741613,
+        "fy": -0.19997994870262203,
+        "fz": 0.23040114467973558,
+        "mx": -0.0014455968502191648,
+        "my": 0.05444772589473775,
+        "mz": -0.0018486539863598014
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.011178413325940755,
+        "relative_fit_error": 0.10820076262847068,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10700,
+      "wrench": {
+        "fx": -0.03416201490451718,
+        "fy": -0.16114407450732796,
+        "fz": 0.15003976697276486,
+        "mx": 0.021845291125299066,
+        "my": 0.04490030662535138,
+        "mz": 0.0019937610535360663
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.009432302031875464,
+        "relative_fit_error": 0.09432302031875464,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10710,
+      "wrench": {
+        "fx": -0.040976364908492866,
+        "fy": -0.11447609306330692,
+        "fz": 0.08774571660314512,
+        "mx": 0.0125143902445114,
+        "my": 0.05080509685860699,
+        "mz": 0.004113276903221911
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.491910481641561,
+        "scaled_singular_values": [
+          2.0399761971921606,
+          1.649261965525681,
+          1.4471564413776592,
+          0.547507821679451,
+          0.43822393589136355,
+          0.16330377968927676
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.006328029923111109,
+        "relative_fit_error": 0.06328029923111109,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10720,
+      "wrench": {
+        "fx": -0.11682801260630689,
+        "fy": -0.07485580185136864,
+        "fz": -0.0262620418387298,
+        "mx": 0.011643996175370668,
+        "my": 0.057858317594368804,
+        "mz": 0.0037212254716871298
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.005290314393043288,
+        "relative_fit_error": 0.052903143930432876,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10730,
+      "wrench": {
+        "fx": -0.09171494520630472,
+        "fy": 0.01954148245188953,
+        "fz": -0.17067245283337637,
+        "mx": 0.022337629500147504,
+        "my": 0.05326648592406682,
+        "mz": 0.001890066765652514
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0010705106277900606,
+        "relative_fit_error": 0.010675950036100196,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10741,
+      "wrench": {
+        "fx": -0.07187192202937137,
+        "fy": -0.10208883936009595,
+        "fz": 0.1291560034223613,
+        "mx": 0.03032920296178576,
+        "my": 0.05321513348147237,
+        "mz": -0.0017385304049837534
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.491910481641561,
+        "scaled_singular_values": [
+          2.0399761971921606,
+          1.649261965525681,
+          1.4471564413776592,
+          0.547507821679451,
+          0.43822393589136355,
+          0.16330377968927676
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.003109047753697877,
+        "relative_fit_error": 0.026708813871013492,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10751,
+      "wrench": {
+        "fx": -0.06570149763691487,
+        "fy": -0.2702040316157439,
+        "fz": 0.3134635045975205,
+        "mx": 0.015005283147043675,
+        "my": 0.05314531080342685,
+        "mz": -0.0013601853397042939
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 3.6187644671470684e-05,
+        "relative_fit_error": 0.0003618764467147068,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10761,
+      "wrench": {
+        "fx": -0.0880081453266426,
+        "fy": -0.069608661099264,
+        "fz": -0.024934205805179216,
+        "mx": 0.026801191276999408,
+        "my": 0.05219155678402906,
+        "mz": -0.0014215819454290106
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.00019028445353558057,
+        "relative_fit_error": 0.0017422571269062302,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10772,
+      "wrench": {
+        "fx": -0.0603028051321441,
+        "fy": -0.24031971223888088,
+        "fz": 0.21269406124450524,
+        "mx": 0.009574079591137126,
+        "my": 0.051179306985078214,
+        "mz": -0.0017786799095741198
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.0027141375444877263,
+        "relative_fit_error": 0.026527558763495447,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10782,
+      "wrench": {
+        "fx": -0.031910171420694335,
+        "fy": -0.15290242671595905,
+        "fz": 0.11735173728454822,
+        "mx": 0.015410768437653372,
+        "my": 0.04893516447399207,
+        "mz": -0.0006605833274192925
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    },
+    {
+      "state": "valid",
+      "reasons": [],
+      "explanation": "等效末端负载估计，尚未做接触精度与方向标定",
+      "estimation_mode": "full_wrench",
+      "moments_observed": true,
+      "geometry": {
+        "condition_number": 12.49184164532743,
+        "scaled_singular_values": [
+          2.0399720045152203,
+          1.6492493889010906,
+          1.4471744216518911,
+          0.5475119060329449,
+          0.438218516953692,
+          0.16330434394181353
+        ],
+        "mode": "full_wrench",
+        "observable_rank": 6,
+        "moments_observed": true,
+        "assumption": "all_external_loading_at_tool_origin",
+        "torque_fit_error_nm": 0.007385375879299875,
+        "relative_fit_error": 0.07385375879299874,
+        "reason": "ok",
+        "valid": true
+      },
+      "frame_id": "right_attachment_point",
+      "moment_reference_point": "right_attachment_point",
+      "sign_convention": "NEXT_residual",
+      "outputs": 10792,
+      "wrench": {
+        "fx": -0.059715161446641275,
+        "fy": -0.22223665097521753,
+        "fz": 0.43623294643165866,
+        "mx": 0.01696658466624152,
+        "my": 0.05439872578782862,
+        "mz": 0.001218492938251738
+      },
+      "model_notice": "初步模型：2026-10-15，最佳第19轮；未通过独立会话、高速覆盖和接触卸载验收。六维末端等效力/力矩模式，假设外部载荷作用在末端安装点；空载模型误差可能产生非零读数。"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "checked_utc": "2026-10-11T18:09:51.435130+00:00",
+  "pytest_passed": 117,
+  "pytest_seconds": 160.86,
+  "archive_checkpoint_load": "PASS",
+  "inference_config_validation": "PASS",
+  "legacy_resource_benchmark": "not run: old generated mock fixture absent",
+  "candidate_acceptance_passed": false,
+  "deployment_ready": false
+}

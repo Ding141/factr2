@@ -1,0 +1,9 @@
+{
+  "previous_attempt": "/home/venom/factr2/log/right_zero_20261012_020709",
+  "reason": "initial DDS discovery exposed web-console endpoint before node name resolved",
+  "audited_publisher": "ieir_web_console_10057",
+  "previous_attempt_published": false,
+  "unknown_publisher_guard_retained": true,
+  "only_addition": "wait for complete publisher identity before existing preflight",
+  "robot_control_changed": false
+}

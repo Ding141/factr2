@@ -1,0 +1,47 @@
+{
+  "purpose": "Independent broad-pose high-speed no-load capture; existing observer is reference only",
+  "next_topic_root": "/next/right/kinematic_compensated",
+  "base_model_dir": "/home/venom/factr2/models/w3/right/highspeed_observer_20261025_v1",
+  "base_metadata_sha256": "077190d99440a8bf27dc7a41e03563528f1d630f2f56a37db87d3e1f5cc3ebdb",
+  "training_envelope": {
+    "position_bounds_deg": [
+      [
+        -4.838120956122573,
+        24.778070204899308
+      ],
+      [
+        45.621637259169454,
+        64.52787067423696
+      ],
+      [
+        -13.02292873761926,
+        4.200349481051694
+      ],
+      [
+        -66.4082149225523,
+        -50.23411181700325
+      ],
+      [
+        -4.73350038728455,
+        10.631966377142936
+      ],
+      [
+        -13.284873322478418,
+        3.8728350801604123
+      ],
+      [
+        -4.779994765625295,
+        4.443656614100004
+      ]
+    ],
+    "position_margin_deg": 0.0,
+    "source": "observed training positions only; rectangular bounds do not certify pose combinations"
+  },
+  "plan_sha256": "6d43adacddfbed95599c9a78e4df94125c4a6a6fccd15fbf7711a2de632f2f1e",
+  "command_seconds": 458.6099999999999,
+  "model_hash": "cbb403b729f321b08ad09e9f9d462f56f4e13440bb01046db3476a916fd67048",
+  "role": "train",
+  "model_frozen_during_capture": true,
+  "retune_on_observation": false,
+  "recording_mode": "atomic_full_precision"
+}

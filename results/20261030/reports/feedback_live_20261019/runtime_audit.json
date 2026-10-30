@@ -1,0 +1,12 @@
+{
+  "control_profile_sha256": "cbfcb882c7148d63e304f96e920bc4f459dc74c978c32516d6f4a947fb20a1a5",
+  "expected_control_profile_sha256": "cbfcb882c7148d63e304f96e920bc4f459dc74c978c32516d6f4a947fb20a1a5",
+  "calibration_path": "/home/venom/dual_arm_robot/src/ros2_ws_config/joint_offsets_dual.yaml",
+  "calibration_sha256": "edf771ba9b48ea3df508380569d22a30b0e51036dcb3a321df3cf9e582f2b9ca",
+  "robot_description_sha256": "e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345",
+  "geometry_sha256": "4965fa475682e16c745577db60cf48247e3a2274891ee2ffa9814aa7beb361a0",
+  "deployment_ready": false,
+  "mode": "readonly_trial",
+  "model_sha256": "b5216350f2c76a7462ab931e5d62e8f2442e00e65f0f4146fb4b7868829d62a6",
+  "control_profile_matches": true
+}

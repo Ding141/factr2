@@ -1,0 +1,61 @@
+{
+  "motors": [
+    {
+      "slot": 0,
+      "online": true,
+      "enabled": true,
+      "age": 0.0014188250006554881
+    },
+    {
+      "slot": 1,
+      "online": true,
+      "enabled": true,
+      "age": 0.0014188250006554881
+    },
+    {
+      "slot": 2,
+      "online": true,
+      "enabled": true,
+      "age": 0.0014188250006554881
+    },
+    {
+      "slot": 3,
+      "online": true,
+      "enabled": true,
+      "age": 0.0014188250006554881
+    },
+    {
+      "slot": 4,
+      "online": true,
+      "enabled": true,
+      "age": 0.0014188250006554881
+    },
+    {
+      "slot": 5,
+      "online": true,
+      "enabled": true,
+      "age": 0.0014188250006554881
+    },
+    {
+      "slot": 6,
+      "online": true,
+      "enabled": true,
+      "age": 0.0014188250006554881
+    }
+  ],
+  "state": {
+    "status": "recording_and_moving",
+    "pid": 32601,
+    "side": "right",
+    "role": "train",
+    "domain": 74,
+    "plan": "/home/venom/factr2/log/pose_capture_start_20261014/resume_03/train.yaml",
+    "stop_file": "/home/venom/factr2/log/pose_capture_start_20261014/resume_03/STOP_CAPTURE",
+    "automatic_training": false,
+    "automatic_deployment": false,
+    "updated_at": "2026-10-14T22:29:43.206363+08:00",
+    "capture_pid": 32650,
+    "session": "/home/venom/factr2/data/quick_capture/right/20261014_222919_803528",
+    "motion_pid": 33135
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "source": "real",
+  "tool": "bare_attachment_v1",
+  "gripper": "absent",
+  "load": "empty_v1",
+  "calibration": {
+    "path": "/home/venom/factr2/data/quick_capture/profiles/edf771ba9b48ea3df508380569d22a30b0e51036dcb3a321df3cf9e582f2b9ca/calibration.yaml",
+    "sha256": "edf771ba9b48ea3df508380569d22a30b0e51036dcb3a321df3cf9e582f2b9ca"
+  },
+  "control": {
+    "gains": {
+      "position_params": "/home/venom/factr2/data/quick_capture/right/20261016_182029_549446/audit/position.yaml"
+    },
+    "feedforward": {
+      "gravity_params": "/home/venom/factr2/data/quick_capture/right/20261016_182029_549446/audit/gravity.yaml",
+      "friction_model": "/home/venom/factr2/data/quick_capture/right/20261016_182029_549446/audit/friction_model.yaml",
+      "friction_sha256": "5b3fb0c9415b973d951c0ee8d2fee4af974a8ceeb735137271a68e98febe71e1"
+    }
+  },
+  "control_profile_sha256": "cbfcb882c7148d63e304f96e920bc4f459dc74c978c32516d6f4a947fb20a1a5",
+  "control_profile_scope": "arm_v2",
+  "operating_envelope": {
+    "position_bounds_deg": [
+      [
+        -4.794407367706299,
+        24.77806854248047
+      ],
+      [
+        45.62163543701172,
+        64.52787017822266
+      ],
+      [
+        -13.022928237915039,
+        4.2003493309021
+      ],
+      [
+        -66.40821075439453,
+        -50.234107971191406
+      ],
+      [
+        -4.733500003814697,
+        10.631965637207031
+      ],
+      [
+        -13.284873008728027,
+        3.8728349208831787
+      ],
+      [
+        -4.779994487762451,
+        4.4436564445495605
+      ]
+    ],
+    "position_margin_deg": 0.0,
+    "source": "observed training positions only; rectangular bounds do not certify all pose combinations"
+  },
+  "task_coverage": {
+    "scope": "targeted free motion; post-hoc whole-session holdouts",
+    "prospective_independent_protocol_completed": false,
+    "temperature_conditions": "unclassified; nominal measurements retained"
+  },
+  "schema": "w3_checkpoint_v1",
+  "contract_version": "w3_next_v1",
+  "side": "right",
+  "joint_order": [
+    "right_joint_0",
+    "right_joint_1",
+    "right_joint_2",
+    "right_joint_3",
+    "right_joint_4",
+    "right_joint_5",
+    "right_joint_6"
+  ],
+  "feature_order": [
+    "q",
+    "qdot",
+    "q_cmd-q"
+  ],
+  "history": 50,
+  "input_size": 21,
+  "output_size": 7,
+  "sample_hz": 100,
+  "dataset_id": "targeted_training_20261016_v1",
+  "manifest_sha256": "6cfc34b6fc5033efa29da0506d7abac6d2a7afd3c76e9db2cdced91bcec5f188",
+  "seed": 0,
+  "resolved_device": "cpu",
+  "software_versions": {
+    "python": "3.10.12",
+    "numpy": "1.26.4",
+    "torch": "2.5.1+cpu"
+  },
+  "w3_workspace": "/home/venom/dual_arm_robot",
+  "evaluation_scope": "independent_recording_sessions",
+  "training_source_sha256": "f69a43f7e5443dd5f34e594be9133ec31f4264790d1044a2349e0be874e0fb40",
+  "software_commits": {
+    "factr2": "f811f2c2391f2d4ecc7efab0bcec1d6225680ac3",
+    "w3": "480f34c9c5cf7cad2a7a83179543debdedd81c21"
+  },
+  "baseline": "train eligible-label mean Nm",
+  "artifact_sha256": {
+    "model.pt": "b5216350f2c76a7462ab931e5d62e8f2442e00e65f0f4146fb4b7868829d62a6",
+    "config.yaml": "3c36528a9d7f9ec114996c4dfab844a84f7e27cda15fa0f3b464fc4101363a47",
+    "normalization.npz": "7dd5f89e072dcf21208398fe275b703c35d94d1844fc9f2b846c54ac254f7945",
+    "metrics.json": "6b6ee48da365291d404b815d33c23fec95e2a96c4b3cb023e81b5ec07ce631f7"
+  },
+  "training_source_files_sha256": {
+    "w3_train.py": "f69a43f7e5443dd5f34e594be9133ec31f4264790d1044a2349e0be874e0fb40",
+    "train.py": "fb2925908590d6185b8da9f51cbce98b9e06d51779a83c8e6c193b448a85d0ce",
+    "dataset.py": "0dd6bcc47320d6169f82cbebd970fd281de9be2de0c52516f2c100d42e40a87b",
+    "models.py": "737717671ffd421dfb6452fbaa76bd49786910fe13cd3e3cee552aeca07ed80a",
+    "coverage_audit.py": "5bfe054e6300bf841ab98198d04b77275260dcd40eff26b28b2d22bfe8351c06",
+    "validation_metrics.py": "fa8c63d45f5ea15ae957ddee6ee027648009b1162dee72fa87820b64abeeab33"
+  },
+  "data_contract_source_files_sha256": {
+    "quality.py": "799289f4bf9b7f62745e8baaef79b07601a7eecb411f0a0236fbf2a5cce1b6d3",
+    "campaign.py": "4bff6329dfee0a58afe4dab1e0d44d9595139d6f3bb481e76e1c4690fac64b8a"
+  },
+  "trial": {
+    "scope": "post-hoc disjoint whole recording sessions; validation/test limited to 6 deg/s",
+    "deployment_ready": false,
+    "production_coverage_audit": "/home/venom/factr2/data/right/targeted_training_20261016_v1/production_coverage_audit.json",
+    "pending": [
+      "prospective matching multi-speed independent validation/test",
+      "dedicated cold/warm comparison",
+      "12 deg/s and higher measured coverage",
+      "contact/release validation"
+    ]
+  },
+  "deployment_ready": false,
+  "automatic_deployment": false
+}

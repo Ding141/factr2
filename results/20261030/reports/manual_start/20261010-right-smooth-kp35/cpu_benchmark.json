@@ -1,0 +1,18 @@
+[
+  {
+    "threads": 1,
+    "train_batch_seconds": 0.2244487080001818
+  },
+  {
+    "threads": 2,
+    "train_batch_seconds": 0.13341650224992918
+  },
+  {
+    "threads": 4,
+    "train_batch_seconds": 0.09001795225003661
+  },
+  {
+    "threads": 8,
+    "train_batch_seconds": 0.06707512800016957
+  }
+]

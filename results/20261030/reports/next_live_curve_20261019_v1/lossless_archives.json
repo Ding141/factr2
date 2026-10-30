@@ -1,0 +1,65 @@
+[
+  {
+    "original": "/home/venom/factr2/log/live_next_campaign_20261013/train_motion.yaml",
+    "archive": "/home/venom/factr2/log/live_next_campaign_20261013/train_motion.yaml.gz",
+    "sha256": "4963fcfc89aad88d26e8506cde2876868c6f5ae8b5881afd59a8b0b72aa13d24",
+    "original_bytes": 45619020,
+    "archive_bytes": 11348574
+  },
+  {
+    "original": "/home/venom/factr2/log/live_next_campaign_20261013/test_resume_motion.yaml",
+    "archive": "/home/venom/factr2/log/live_next_campaign_20261013/test_resume_motion.yaml.gz",
+    "sha256": "3d0cf99fb8b704792555f6006e45b3ff61be0d38ec67a18a261c12cba9412893",
+    "original_bytes": 45301853,
+    "archive_bytes": 11246783
+  },
+  {
+    "original": "/home/venom/factr2/log/live_next_campaign_20261013/test_motion.yaml",
+    "archive": "/home/venom/factr2/log/live_next_campaign_20261013/test_motion.yaml.gz",
+    "sha256": "cfd9f5689af44bf99b7ba9330249ba44329eb17082b1062a36987fdd0d09d4c1",
+    "original_bytes": 45297736,
+    "archive_bytes": 11246692
+  },
+  {
+    "original": "/home/venom/factr2/log/live_next_campaign_20261013/val_motion.yaml",
+    "archive": "/home/venom/factr2/log/live_next_campaign_20261013/val_motion.yaml.gz",
+    "sha256": "ae454f80a39149aa1dffd95bd9018156fe91660521274d7f2f86a9def4d06de0",
+    "original_bytes": 44636964,
+    "archive_bytes": 10993961
+  },
+  {
+    "original": "/home/venom/factr2/log/live_next_campaign_20261013/val_resume_motion.yaml",
+    "archive": "/home/venom/factr2/log/live_next_campaign_20261013/val_resume_motion.yaml.gz",
+    "sha256": "f161c697c507acfc2ea3c7cbb6648cca128464d5b43470b09016e033b1cdb048",
+    "original_bytes": 37898807,
+    "archive_bytes": 10133734
+  },
+  {
+    "original": "/home/venom/factr2/log/baseline_campaign_20261011_230915_resume3/val.yaml",
+    "archive": "/home/venom/factr2/log/baseline_campaign_20261011_230915_resume3/val.yaml.gz",
+    "sha256": "1f82101e9cdab1c4d218c98643e3df481384b4eeba3e4a1e774c785e459dc675",
+    "original_bytes": 26461697,
+    "archive_bytes": 4142401
+  },
+  {
+    "original": "/home/venom/factr2/log/baseline_campaign_20261012_000958_resume4/val_reference.yaml",
+    "archive": "/home/venom/factr2/log/baseline_campaign_20261012_000958_resume4/val_reference.yaml.gz",
+    "sha256": "1f82101e9cdab1c4d218c98643e3df481384b4eeba3e4a1e774c785e459dc675",
+    "original_bytes": 26461697,
+    "archive_bytes": 4142411
+  },
+  {
+    "original": "/home/venom/factr2/log/baseline_campaign_20261011_222947_resume1/train_reference.yaml",
+    "archive": "/home/venom/factr2/log/baseline_campaign_20261011_222947_resume1/train_reference.yaml.gz",
+    "sha256": "d1363c4ec09202f555e63cdce661bc7d6e8a646c1e0d3895e98fb059dcf78b02",
+    "original_bytes": 26070630,
+    "archive_bytes": 4027672
+  },
+  {
+    "original": "/home/venom/factr2/log/baseline_campaign_20261011_230915_resume3/train_reference.yaml",
+    "archive": "/home/venom/factr2/log/baseline_campaign_20261011_230915_resume3/train_reference.yaml.gz",
+    "sha256": "05e271e639d2f31092775b6eb0d546a50edb506b3e06ae811c78cadaad2842ed",
+    "original_bytes": 26047307,
+    "archive_bytes": 4036243
+  }
+]

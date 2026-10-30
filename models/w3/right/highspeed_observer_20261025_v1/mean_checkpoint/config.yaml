@@ -1,0 +1,95 @@
+data:
+  arm_mode: single
+  keys:
+    joint_pos: joint_pos
+    joint_vel: joint_vel
+    joint_cmd: joint_cmd
+    measured_joint_torque: measured_joint_torque
+  history: 50
+  manifest: /home/venom/factr2/data/right/highspeed_mean_20261025_v3/split.json
+  memory_budget_mb: 512
+  sample_hz: 100
+  require_independent_sessions: true
+model:
+  type: lstm
+  state_mode: stateless
+  hidden_size: 128
+  num_layers: 2
+  bidirectional: false
+  head_hidden: 256
+  head_layers: 2
+  dropout: 0.1
+train:
+  batch_size: 512
+  epochs: 20
+  learning_rate: 0.0001
+  device: cpu
+  seed: 0
+  cpu_threads: 8
+  optimizer: adamw
+  weight_decay: 1.0e-06
+  gradient_clip: 1.0
+  loss_units: physical_nm
+  early_stopping:
+    enabled: true
+    patience: 4
+    warmup: 3
+    min_delta: 1.0e-05
+  validation_diagnostics: true
+  stop_file: /home/venom/factr2/data/right/highspeed_mean_20261025_v3/STOP_TRAINING
+save:
+  output_dir: /home/venom/factr2/runs
+  run_name: targeted_next_targeted_training_20261016_v1
+contract_version: w3_next_v1
+side: right
+joint_names:
+- right_joint_0
+- right_joint_1
+- right_joint_2
+- right_joint_3
+- right_joint_4
+- right_joint_5
+- right_joint_6
+trial:
+  scope: Retained old session splits plus prospective new high-speed session holdouts;
+    failed whole motion blocks excluded
+  deployment_ready: false
+  collection_frequency_hz: 100
+  pending:
+  - known physical contact/release validation
+  - independent cold/warm comparison
+  - poses and measured speeds outside observed training coverage
+next_u:
+  floor: 0.0001
+  ceiling: 10000.0
+  initial: 1.0
+comparison:
+  schema: next_u_ablation_v1
+  arms:
+  - NEXT_MSE
+  seeds:
+  - 0
+  fresh_paired_training: false
+  historical_checkpoint_reused: true
+  warm_start: /home/venom/factr2/models/w3/right/frozen_sigma_observer_20261023/mean_checkpoint
+  selection: equal-weight old/new validation MSE; old <=110% incumbent; new <= incumbent;
+    per-joint increase <=max(20%,0.02Nm); epoch0 included
+  training_subset: fixed seed0, stride5 target pool, balanced old/new, max12000 per
+    stratum
+  normalization: frozen incumbent train-only statistics; no refit on holdout data
+  test_scope: new independent 12 deg/s cap test; 6 deg/s cap test block excluded by
+    encoder quality; retained historical low-speed tests
+  deployment_ready: false
+  automatic_deployment: false
+adaptation:
+  scheme: anchored_head
+  seed: 0
+  maximum_epochs: 20
+  anchored_head:
+    freeze_lstm: true
+    dropout_during_adaptation: false
+    objective: 0.5*(old physical MSE + 2*old teacher distillation MSE)/old baseline
+      train MSE + 0.5*new physical MSE/new baseline train MSE
+    rationale: Old/new validation error scales differ; preserve old mapping while
+      learning new motion
+    test_used_for_scheme_selection: false

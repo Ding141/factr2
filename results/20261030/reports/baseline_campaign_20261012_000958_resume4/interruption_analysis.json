@@ -1,0 +1,31 @@
+{
+  "failed_role": "val",
+  "failed_stage": "audit_tick",
+  "scheduler_gap_ms": 753.283588,
+  "audit_tick_ms": 752.689936,
+  "spin_ms": 0.4,
+  "failed_event": "087_static_pose2_after_motion",
+  "model_optimizer_not_started": true,
+  "raw_files_modified": false,
+  "training_capture_complete": true,
+  "fix": [
+    "asynchronous bounded disk and stdout output",
+    "final audit flush before sender exit",
+    "audit errors/5s stall still stop",
+    "pre-publish 200ms guard"
+  ],
+  "recaptured_groups": [
+    "sine_j7_fast",
+    "pose2",
+    "home_finish"
+  ],
+  "tests_passed": {
+    "motion_audit_coverage_smooth": 23,
+    "campaign_integrity_evaluation_recovery": 1
+  },
+  "lossless_bag_compression_receipts": [
+    "/home/venom/factr2/data/quick_capture/right/20261011_232124_888889/audit/bag/COMPRESSED_STORAGE.json",
+    "/home/venom/factr2/data/quick_capture/right/20261011_215544_913483/audit/bag/COMPRESSED_STORAGE.json",
+    "/home/venom/factr2/data/quick_capture/right/20261011_224500_979861/audit/bag/COMPRESSED_STORAGE.json"
+  ]
+}

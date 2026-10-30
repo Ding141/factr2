@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "control_profile_sha256": "cbfcb882c7148d63e304f96e920bc4f459dc74c978c32516d6f4a947fb20a1a5",
+  "control_profile_matches_training": true,
+  "final_native_target_deg": [
+    2.0816681711721688e-17,
+    50.00000000000001,
+    1.0408340855860844e-17,
+    -54.99999999999999,
+    -1.0408340855860844e-17,
+    1.0408340855860844e-17,
+    -1.0408340855860844e-17
+  ],
+  "final_measured_position_deg": [
+    0.1017995949171636,
+    50.69242317663609,
+    -0.45734771829561877,
+    -55.37046780374989,
+    0.4516511951190018,
+    -0.3241249768892552,
+    0.8610857298562209
+  ],
+  "max_final_tracking_deg": 0.8610857298562209,
+  "model_unchanged": true,
+  "formal_force_acceptance": false,
+  "hardware_control_changed": false
+}

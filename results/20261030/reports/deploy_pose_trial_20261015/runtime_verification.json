@@ -1,0 +1,58 @@
+{
+  "seconds": 5.000214411999991,
+  "counts": {
+    "/factr2/right/joint_pos": 492,
+    "/next/right/free_joint_torque_pred": 421,
+    "/next/right/external_joint_torque": 421
+  },
+  "statuses": {
+    "adapter": {
+      "state_receive_age_seconds": 0.0018557529999725375,
+      "state_source_age_seconds": 0.002025537,
+      "command_receive_age_seconds": 0.0017940129999942656,
+      "command_source_age_seconds": 0.002025537,
+      "output_hz_last_second": 100,
+      "health_mode": "required",
+      "health_receive_age_seconds": 0.00621789899992109,
+      "health_source_age_seconds": 0.0066013980000000005,
+      "health_source_stamp_ns": 1792012133341097651,
+      "source_skew_seconds": 0.0,
+      "invalid": 0,
+      "stale": 0,
+      "duplicate": 0,
+      "skew": 0,
+      "health_rejected": 1,
+      "clock_reset": 0,
+      "outputs": 40742,
+      "side": "right",
+      "recent_rejection": "health_missing_stale_or_error",
+      "state_source_stamp_ns": 1792012133345673512,
+      "command_source_stamp_ns": 1792012133345673512,
+      "message": "ok"
+    },
+    "next": {
+      "outputs": 40625,
+      "dropped": 0,
+      "resets": 0,
+      "state": "valid",
+      "reason": "ok",
+      "history_count": 50,
+      "source_age_seconds": 0.007905055000000001,
+      "receive_age_seconds": 0.005308426000055988,
+      "last_output_stamp_ns": 1792012133335669308,
+      "output_hz": 100,
+      "infer_ms": 0.7669970000279136,
+      "infer_p95_ms": 1.034970800009205,
+      "device": "cpu",
+      "message": "valid:ok"
+    }
+  },
+  "publishers": {
+    "/next/right/external_joint_torque": [
+      "next_inference_right"
+    ],
+    "/factr2/right/joint_pos": [
+      "w3_next_adapter_right"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "domain": 74,
+  "health_pid": 24935,
+  "adapter_launch_pid": 26017,
+  "both_created_this_turn": true,
+  "controller_activation": "joint_position_controller activated at current measured pose; gravity kept active"
+}

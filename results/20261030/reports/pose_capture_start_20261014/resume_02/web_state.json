@@ -1,0 +1,1510 @@
+{
+  "preview": false,
+  "joints": {
+    "right_joint_4": {
+      "position": 0.1328201599121095,
+      "velocity": -0.012210845947265625,
+      "effort": 0.0073261260986328125,
+      "at": 6079.340125082,
+      "age": 0.0004571110002871137
+    },
+    "right_joint_5": {
+      "position": -0.023578495788574294,
+      "velocity": -0.012210845947265625,
+      "effort": -0.0073261260986328125,
+      "at": 6079.340125082,
+      "age": 0.0004571110002871137
+    },
+    "left_joint_3": {
+      "position": 0.010947399902344057,
+      "velocity": -0.0048847198486328125,
+      "effort": 0.0068378448486328125,
+      "at": 6079.340125082,
+      "age": 0.0004571110002871137
+    },
+    "left_joint_4": {
+      "position": 0.01227381896972668,
+      "velocity": -0.012210845947265625,
+      "effort": 0.012209892272949219,
+      "at": 6079.340125082,
+      "age": 0.0004571110002871137
+    },
+    "right_joint_3": {
+      "position": -0.1019732197138924,
+      "velocity": 0.0048847198486328125,
+      "effort": -0.08888816833496094,
+      "at": 6079.340125082,
+      "age": 0.0004571110002871137
+    },
+    "right_joint_2": {
+      "position": 0.08933261108398449,
+      "velocity": -0.0048847198486328125,
+      "effort": -0.0615386962890625,
+      "at": 6079.340125082,
+      "age": 0.0004571110002871137
+    },
+    "left_joint_6": {
+      "position": 0.021860903930663866,
+      "velocity": 0.012210845947265625,
+      "effort": 0.0024423599243164062,
+      "at": 6079.340125082,
+      "age": 0.0004571110002871137
+    },
+    "right_joint_0": {
+      "position": 0.07120136731992677,
+      "velocity": 0.010990142822265625,
+      "effort": 0.3560447692871094,
+      "at": 6079.340125082,
+      "age": 0.0004571110002871137
+    },
+    "left_joint_5": {
+      "position": -0.020178994849197274,
+      "velocity": 0.012210845947265625,
+      "effort": -0.017093658447265625,
+      "at": 6079.340125082,
+      "age": 0.0004571110002871137
+    },
+    "left_joint_0": {
+      "position": -0.010546727122171973,
+      "velocity": 0.010990142822265625,
+      "effort": -0.19780349731445312,
+      "at": 6079.340125082,
+      "age": 0.0004571110002871137
+    },
+    "right_joint_6": {
+      "position": -0.11661451416015645,
+      "velocity": 0.012210845947265625,
+      "effort": -0.0073261260986328125,
+      "at": 6079.340125082,
+      "age": 0.0004571110002871137
+    },
+    "right_joint_1": {
+      "position": 0.008118907165527212,
+      "velocity": -0.010990142822265625,
+      "effort": 0.118682861328125,
+      "at": 6079.340125082,
+      "age": 0.0004571110002871137
+    },
+    "left_joint_2": {
+      "position": 0.006552249908447383,
+      "velocity": -0.0048847198486328125,
+      "effort": -0.03418731689453125,
+      "at": 6079.340125082,
+      "age": 0.0004571110002871137
+    },
+    "left_joint_1": {
+      "position": -0.013459483337402434,
+      "velocity": -0.010990142822265625,
+      "effort": -0.14505386352539062,
+      "at": 6079.340125082,
+      "age": 0.0004571110002871137
+    }
+  },
+  "motors": [
+    {
+      "channel": 0,
+      "slot": 0,
+      "online": true,
+      "enabled": true,
+      "position": -2.172694206237793,
+      "velocity": -0.03296661376953125,
+      "torque": 0.19780349731445312,
+      "error": 1,
+      "age": 0.0023211750003611087
+    },
+    {
+      "channel": 0,
+      "slot": 1,
+      "online": true,
+      "enabled": true,
+      "position": 2.580491065979004,
+      "velocity": -0.010990142822265625,
+      "torque": -0.14505386352539062,
+      "error": 1,
+      "age": 0.0023211750003611087
+    },
+    {
+      "channel": 0,
+      "slot": 2,
+      "online": true,
+      "enabled": true,
+      "position": -2.214655876159668,
+      "velocity": -0.0048847198486328125,
+      "torque": 0.0068378448486328125,
+      "error": 1,
+      "age": 0.0023211750003611087
+    },
+    {
+      "channel": 0,
+      "slot": 3,
+      "online": true,
+      "enabled": true,
+      "position": 2.8501949310302734,
+      "velocity": -0.0048847198486328125,
+      "torque": 0.07521438598632812,
+      "error": 1,
+      "age": 0.0023211750003611087
+    },
+    {
+      "channel": 0,
+      "slot": 4,
+      "online": true,
+      "enabled": true,
+      "position": -0.6639585494995117,
+      "velocity": -0.012210845947265625,
+      "torque": 0.0024423599243164062,
+      "error": 1,
+      "age": 0.0023211750003611087
+    },
+    {
+      "channel": 0,
+      "slot": 5,
+      "online": true,
+      "enabled": true,
+      "position": -1.2159528732299805,
+      "velocity": -0.012210845947265625,
+      "torque": 0.03174591064453125,
+      "error": 1,
+      "age": 0.0023211750003611087
+    },
+    {
+      "channel": 0,
+      "slot": 6,
+      "online": true,
+      "enabled": true,
+      "position": -1.4208059310913086,
+      "velocity": -0.012210845947265625,
+      "torque": -0.0024423599243164062,
+      "error": 1,
+      "age": 0.0023211750003611087
+    },
+    {
+      "channel": 1,
+      "slot": 0,
+      "online": true,
+      "enabled": true,
+      "position": 1.570725440979004,
+      "velocity": -0.03296661376953125,
+      "torque": -0.3560447692871094,
+      "error": 1,
+      "age": 0.0023211750003611087
+    },
+    {
+      "channel": 1,
+      "slot": 1,
+      "online": true,
+      "enabled": true,
+      "position": 2.1398868560791016,
+      "velocity": -0.010990142822265625,
+      "torque": 0.118682861328125,
+      "error": 1,
+      "age": 0.0023211750003611087
+    },
+    {
+      "channel": 1,
+      "slot": 2,
+      "online": true,
+      "enabled": true,
+      "position": -2.5900278091430664,
+      "velocity": -0.0048847198486328125,
+      "torque": -0.020513534545898438,
+      "error": 1,
+      "age": 0.0023211750003611087
+    },
+    {
+      "channel": 1,
+      "slot": 3,
+      "online": true,
+      "enabled": true,
+      "position": -1.2190055847167969,
+      "velocity": -0.0048847198486328125,
+      "torque": 0.1299152374267578,
+      "error": 1,
+      "age": 0.0023211750003611087
+    },
+    {
+      "channel": 1,
+      "slot": 4,
+      "online": true,
+      "enabled": true,
+      "position": -2.7494850158691406,
+      "velocity": -0.012210845947265625,
+      "torque": 0.0073261260986328125,
+      "error": 1,
+      "age": 0.0023211750003611087
+    },
+    {
+      "channel": 1,
+      "slot": 5,
+      "online": true,
+      "enabled": true,
+      "position": 2.099069595336914,
+      "velocity": -0.012210845947265625,
+      "torque": -0.012209892272949219,
+      "error": 1,
+      "age": 0.0023211750003611087
+    },
+    {
+      "channel": 1,
+      "slot": 6,
+      "online": true,
+      "enabled": true,
+      "position": 1.8915462493896484,
+      "velocity": -0.012210845947265625,
+      "torque": 0.0073261260986328125,
+      "error": 1,
+      "age": 0.0023211750003611087
+    }
+  ],
+  "controllers": {
+    "joint_position_controller": "active",
+    "joint_state_broadcaster": "active",
+    "cartesian_position_controller": "inactive",
+    "gravity_compensation_controller": "active"
+  },
+  "controller_age": 0.5186537669997051,
+  "poses": {
+    "left": {
+      "position": [
+        -0.21104759561213893,
+        -0.007475348469928511,
+        0.6103599438202837
+      ],
+      "quaternion": [
+        0.00946749785744386,
+        0.9999453321491352,
+        -0.0008246646978568756,
+        0.004361092249816622
+      ],
+      "age": 0.01902176099974895
+    },
+    "right": {
+      "position": [
+        0.20583663917248263,
+        -0.0029158353054212632,
+        0.6113707229907619
+      ],
+      "quaternion": [
+        0.10842212767068159,
+        0.9922718035186172,
+        0.03413549840649548,
+        -0.04976020419786714
+      ],
+      "age": 0.018977830999574508
+    }
+  },
+  "services": [
+    "/cartesian_position_controller/describe_parameters",
+    "/cartesian_position_controller/get_parameter_types",
+    "/cartesian_position_controller/get_parameters",
+    "/cartesian_position_controller/list_parameters",
+    "/cartesian_position_controller/set_parameters",
+    "/cartesian_position_controller/set_parameters_atomically",
+    "/controller_manager/configure_controller",
+    "/controller_manager/describe_parameters",
+    "/controller_manager/get_parameter_types",
+    "/controller_manager/get_parameters",
+    "/controller_manager/list_controller_types",
+    "/controller_manager/list_controllers",
+    "/controller_manager/list_hardware_components",
+    "/controller_manager/list_hardware_interfaces",
+    "/controller_manager/list_parameters",
+    "/controller_manager/load_controller",
+    "/controller_manager/reload_controller_libraries",
+    "/controller_manager/set_hardware_component_state",
+    "/controller_manager/set_parameters",
+    "/controller_manager/set_parameters_atomically",
+    "/controller_manager/switch_controller",
+    "/controller_manager/unload_controller",
+    "/dm_hardware_interface/describe_parameters",
+    "/dm_hardware_interface/get_parameter_types",
+    "/dm_hardware_interface/get_parameters",
+    "/dm_hardware_interface/list_parameters",
+    "/dm_hardware_interface/set_parameters",
+    "/dm_hardware_interface/set_parameters_atomically",
+    "/gravity_compensation_controller/describe_parameters",
+    "/gravity_compensation_controller/get_parameter_types",
+    "/gravity_compensation_controller/get_parameters",
+    "/gravity_compensation_controller/list_parameters",
+    "/gravity_compensation_controller/set_parameters",
+    "/gravity_compensation_controller/set_parameters_atomically",
+    "/ieir_web_console_28958/describe_parameters",
+    "/ieir_web_console_28958/get_parameter_types",
+    "/ieir_web_console_28958/get_parameters",
+    "/ieir_web_console_28958/list_parameters",
+    "/ieir_web_console_28958/set_parameters",
+    "/ieir_web_console_28958/set_parameters_atomically",
+    "/joint_position_controller/describe_parameters",
+    "/joint_position_controller/get_parameter_types",
+    "/joint_position_controller/get_parameters",
+    "/joint_position_controller/list_parameters",
+    "/joint_position_controller/set_parameters",
+    "/joint_position_controller/set_parameters_atomically",
+    "/joint_state_broadcaster/describe_parameters",
+    "/joint_state_broadcaster/get_parameter_types",
+    "/joint_state_broadcaster/get_parameters",
+    "/joint_state_broadcaster/list_parameters",
+    "/joint_state_broadcaster/set_parameters",
+    "/joint_state_broadcaster/set_parameters_atomically",
+    "/robot_state_publisher/describe_parameters",
+    "/robot_state_publisher/get_parameter_types",
+    "/robot_state_publisher/get_parameters",
+    "/robot_state_publisher/list_parameters",
+    "/robot_state_publisher/set_parameters",
+    "/robot_state_publisher/set_parameters_atomically",
+    "/w3_robot_bridge_node/describe_parameters",
+    "/w3_robot_bridge_node/disable",
+    "/w3_robot_bridge_node/enable",
+    "/w3_robot_bridge_node/get_parameter_types",
+    "/w3_robot_bridge_node/get_parameters",
+    "/w3_robot_bridge_node/list_parameters",
+    "/w3_robot_bridge_node/set_parameters",
+    "/w3_robot_bridge_node/set_parameters_atomically",
+    "/w3_robot_bridge_node/zero"
+  ],
+  "nodes": [
+    "cartesian_position_controller",
+    "controller_manager",
+    "dm_hardware_interface",
+    "gravity_compensation_controller",
+    "ieir_web_console_28958",
+    "joint_position_controller",
+    "joint_state_broadcaster",
+    "robot_state_publisher",
+    "w3_robot_bridge_node"
+  ],
+  "calibration": {},
+  "logs": [
+    {
+      "id": 53,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.059582033] [DMHardwareInterface]:   right_joint_1 ch1.slot1  type=DM8009   offset=+2.1318 sign=+1 urdf=[-0.349,+3.054] center=+1.353 wrap_safe=true pos_max=12.5 vel_max=45.0 tor_max=54.0"
+    },
+    {
+      "id": 54,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.059585595] [DMHardwareInterface]:   right_joint_2 ch1.slot2  type=DM4340P  offset=-2.6794 sign=+1 urdf=[-2.531,+2.531] center=+0.000 wrap_safe=true pos_max=12.5 vel_max=20.0 tor_max=28.0"
+    },
+    {
+      "id": 55,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.059591532] [DMHardwareInterface]:   right_joint_3 ch1.slot3  type=DM4340   offset=-1.3210 sign=-1 urdf=[-2.094,+1.571] center=-0.262 wrap_safe=true pos_max=12.5 vel_max=20.0 tor_max=28.0"
+    },
+    {
+      "id": 56,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.059597468] [DMHardwareInterface]:   right_joint_4 ch1.slot4  type=DM4310   offset=-2.8823 sign=+1 urdf=[-2.531,+2.531] center=+0.000 wrap_safe=true pos_max=12.5 vel_max=50.0 tor_max=10.0"
+    },
+    {
+      "id": 57,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.059603405] [DMHardwareInterface]:   right_joint_5 ch1.slot5  type=DM4310   offset=+2.1226 sign=+1 urdf=[-0.698,+0.698] center=+0.000 wrap_safe=true pos_max=12.5 vel_max=50.0 tor_max=10.0"
+    },
+    {
+      "id": 58,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.059608154] [DMHardwareInterface]:   right_joint_6 ch1.slot6  type=DM4310   offset=+1.7749 sign=-1 urdf=[-1.571,+1.571] center=+0.000 wrap_safe=true pos_max=12.5 vel_max=50.0 tor_max=10.0"
+    },
+    {
+      "id": 59,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.059616465] [resource_manager]: Successful initialization of hardware 'dual_arm_dm_system'"
+    },
+    {
+      "id": 60,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.059786249] [resource_manager]: 'configure' hardware 'dual_arm_dm_system'"
+    },
+    {
+      "id": 61,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "dm_hardware_interface",
+      "text": "W3 bridge: sub /w3_robot_bridge_node/state   pub /w3_robot_bridge_node/commands"
+    },
+    {
+      "id": 62,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.064208948] [dm_hardware_interface]: W3 bridge: sub /w3_robot_bridge_node/state   pub /w3_robot_bridge_node/commands"
+    },
+    {
+      "id": 63,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.064244567] [resource_manager]: Successful 'configure' of hardware 'dual_arm_dm_system'"
+    },
+    {
+      "id": 64,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.064261190] [resource_manager]: 'activate' hardware 'dual_arm_dm_system'"
+    },
+    {
+      "id": 65,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.064274250] [dm_hardware_interface]: ENABLE: 50Hz zero-cmd + 50Hz motor_enable publish until all 14 joint(s) report err=1 (timeout 5.0s)..."
+    },
+    {
+      "id": 66,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "dm_hardware_interface",
+      "text": "ENABLE: 50Hz zero-cmd + 50Hz motor_enable publish until all 14 joint(s) report err=1 (timeout 5.0s)..."
+    },
+    {
+      "id": 67,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "spawner_gravity_compensation_controller",
+      "text": "waiting for service /controller_manager/list_controllers to become available..."
+    },
+    {
+      "id": 68,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[spawner-4] [INFO] [1791986796.199994712] [spawner_gravity_compensation_controller]: waiting for service /controller_manager/list_controllers to become available..."
+    },
+    {
+      "id": 69,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "dm_hardware_interface",
+      "text": "ENABLED (all 14 motor(s) report err=1)"
+    },
+    {
+      "id": 70,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.226558213] [dm_hardware_interface]: ENABLED (all 14 motor(s) report err=1)"
+    },
+    {
+      "id": 71,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.226624702] [resource_manager]: Successful 'activate' of hardware 'dual_arm_dm_system'"
+    },
+    {
+      "id": 72,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "update rate is 300 Hz"
+    },
+    {
+      "id": 73,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.230424068] [controller_manager]: update rate is 300 Hz"
+    },
+    {
+      "id": 74,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.230453750] [controller_manager]: Spawning controller_manager RT thread with scheduler priority: 50"
+    },
+    {
+      "id": 75,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [WARN] [1791986796.230549922] [controller_manager]: Could not enable FIFO RT scheduling policy: with error number <1>(Operation not permitted). See [https://control.ros.org/master/doc/ros2_control/controller_manager/doc/userdoc.html] for details on how to enable realtime scheduling."
+    },
+    {
+      "id": 76,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "Spawning controller_manager RT thread with scheduler priority: 50"
+    },
+    {
+      "id": 77,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[spawner-5] [INFO] [1791986796.230684087] [spawner_joint_position_controller]: waiting for service /controller_manager/list_controllers to become available..."
+    },
+    {
+      "id": 78,
+      "time": "22:06:36",
+      "level": "warn",
+      "source": "controller_manager",
+      "text": "Could not enable FIFO RT scheduling policy: with error number <1>(Operation not permitted). See [https://control.ros.org/master/doc/ros2_control/controller_manager/doc/userdoc.html] for details on how to enable realtime scheduling."
+    },
+    {
+      "id": 79,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "spawner_joint_position_controller",
+      "text": "waiting for service /controller_manager/list_controllers to become available..."
+    },
+    {
+      "id": 80,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[spawner-3] [INFO] [1791986796.231256366] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available..."
+    },
+    {
+      "id": 81,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "spawner_joint_state_broadcaster",
+      "text": "waiting for service /controller_manager/list_controllers to become available..."
+    },
+    {
+      "id": 82,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[spawner-6] [INFO] [1791986796.231477204] [spawner_cartesian_position_controller]: waiting for service /controller_manager/list_controllers to become available..."
+    },
+    {
+      "id": 83,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "spawner_cartesian_position_controller",
+      "text": "waiting for service /controller_manager/list_controllers to become available..."
+    },
+    {
+      "id": 84,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.232069668] [controller_manager]: Loading controller 'joint_position_controller'"
+    },
+    {
+      "id": 85,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "Loading controller 'joint_position_controller'"
+    },
+    {
+      "id": 86,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.240865199] [controller_manager]: Loading controller 'joint_state_broadcaster'"
+    },
+    {
+      "id": 87,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "Loading controller 'joint_state_broadcaster'"
+    },
+    {
+      "id": 88,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[spawner-5] [INFO] [1791986796.241223764] [spawner_joint_position_controller]: \u001b[94mLoaded \u001b[1mjoint_position_controller\u001b[0m"
+    },
+    {
+      "id": 89,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "spawner_joint_position_controller",
+      "text": "\u001b[94mLoaded \u001b[1mjoint_position_controller\u001b[0m"
+    },
+    {
+      "id": 90,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.247612635] [controller_manager]: Loading controller 'cartesian_position_controller'"
+    },
+    {
+      "id": 91,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "Loading controller 'cartesian_position_controller'"
+    },
+    {
+      "id": 92,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[spawner-3] [INFO] [1791986796.247956953] [spawner_joint_state_broadcaster]: \u001b[94mLoaded \u001b[1mjoint_state_broadcaster\u001b[0m"
+    },
+    {
+      "id": 93,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "spawner_joint_state_broadcaster",
+      "text": "\u001b[94mLoaded \u001b[1mjoint_state_broadcaster\u001b[0m"
+    },
+    {
+      "id": 94,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.260887856] [controller_manager]: Configuring controller 'joint_position_controller'"
+    },
+    {
+      "id": 95,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "Configuring controller 'joint_position_controller'"
+    },
+    {
+      "id": 96,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[spawner-6] [INFO] [1791986796.261268980] [spawner_cartesian_position_controller]: \u001b[94mLoaded \u001b[1mcartesian_position_controller\u001b[0m"
+    },
+    {
+      "id": 97,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "spawner_cartesian_position_controller",
+      "text": "\u001b[94mLoaded \u001b[1mcartesian_position_controller\u001b[0m"
+    },
+    {
+      "id": 98,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.264762021] [joint_position_controller]: JointPositionController configured with 14 joint(s); subscribing to '/joint_position_command' (trajectory_msgs/JointTrajectory)"
+    },
+    {
+      "id": 99,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "joint_position_controller",
+      "text": "  left_joint_3    kp= 60.00  kd= 2.000"
+    },
+    {
+      "id": 100,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.264798828] [joint_position_controller]:   left_joint_0    kp= 70.00  kd= 2.750"
+    },
+    {
+      "id": 101,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.264823761] [joint_position_controller]:   left_joint_1    kp= 70.00  kd= 2.500"
+    },
+    {
+      "id": 102,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.264845132] [joint_position_controller]:   left_joint_2    kp= 70.00  kd= 2.000"
+    },
+    {
+      "id": 103,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.264864129] [joint_position_controller]:   left_joint_3    kp= 60.00  kd= 2.000"
+    },
+    {
+      "id": 104,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.264880751] [joint_position_controller]:   left_joint_4    kp= 10.00  kd= 0.700"
+    },
+    {
+      "id": 105,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.264900936] [joint_position_controller]:   left_joint_5    kp= 20.00  kd= 0.850"
+    },
+    {
+      "id": 106,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.264918745] [joint_position_controller]:   left_joint_6    kp= 10.00  kd= 0.500"
+    },
+    {
+      "id": 107,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.264938929] [joint_position_controller]:   right_joint_0   kp= 70.00  kd= 2.750"
+    },
+    {
+      "id": 108,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.264955552] [joint_position_controller]:   right_joint_1   kp= 70.00  kd= 2.500"
+    },
+    {
+      "id": 109,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.264975736] [joint_position_controller]:   right_joint_2   kp= 70.00  kd= 2.000"
+    },
+    {
+      "id": 110,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.264992358] [joint_position_controller]:   right_joint_3   kp= 60.00  kd= 2.000"
+    },
+    {
+      "id": 111,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.265013729] [joint_position_controller]:   right_joint_4   kp= 10.00  kd= 0.700"
+    },
+    {
+      "id": 112,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.265029164] [joint_position_controller]:   right_joint_5   kp= 35.00  kd= 1.000"
+    },
+    {
+      "id": 113,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "joint_position_controller",
+      "text": "  right_joint_2   kp= 70.00  kd= 2.000"
+    },
+    {
+      "id": 114,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.265050536] [joint_position_controller]:   right_joint_6   kp= 10.00  kd= 0.500"
+    },
+    {
+      "id": 115,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "joint_position_controller",
+      "text": "  right_joint_3   kp= 60.00  kd= 2.000"
+    },
+    {
+      "id": 116,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "joint_position_controller",
+      "text": "  right_joint_4   kp= 10.00  kd= 0.700"
+    },
+    {
+      "id": 117,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "joint_position_controller",
+      "text": "  right_joint_5   kp= 35.00  kd= 1.000"
+    },
+    {
+      "id": 118,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "joint_position_controller",
+      "text": "  right_joint_6   kp= 10.00  kd= 0.500"
+    },
+    {
+      "id": 119,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "Configuring controller 'joint_state_broadcaster'"
+    },
+    {
+      "id": 120,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.267769457] [controller_manager]: Configuring controller 'joint_state_broadcaster'"
+    },
+    {
+      "id": 121,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.267827634] [joint_state_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published"
+    },
+    {
+      "id": 122,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "joint_state_broadcaster",
+      "text": "'joints' or 'interfaces' parameter is empty. All available state interfaces will be published"
+    },
+    {
+      "id": 123,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.271027413] [controller_manager]: Configuring controller 'cartesian_position_controller'"
+    },
+    {
+      "id": 124,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "Configuring controller 'cartesian_position_controller'"
+    },
+    {
+      "id": 125,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.271155641] [cartesian_position_controller]: Configuring CartesianPositionController with 14 joints"
+    },
+    {
+      "id": 126,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "cartesian_position_controller",
+      "text": "Configuring CartesianPositionController with 14 joints"
+    },
+    {
+      "id": 127,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.273437635] [cartesian_position_controller]: Dynamics initialized. nq=14, nv=14"
+    },
+    {
+      "id": 128,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.273505311] [cartesian_position_controller]: Left EE frame: left_attachment_point (id=23), Right EE frame: right_attachment_point (id=43)"
+    },
+    {
+      "id": 129,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "cartesian_position_controller",
+      "text": "Dynamics initialized. nq=14, nv=14"
+    },
+    {
+      "id": 130,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.273606232] [cartesian_position_controller]:   left_joint_0     idx_v= 0  kp= 70.00  kd= 2.750"
+    },
+    {
+      "id": 131,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.273632353] [cartesian_position_controller]:   left_joint_1     idx_v= 1  kp= 70.00  kd= 2.500"
+    },
+    {
+      "id": 132,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.273651349] [cartesian_position_controller]:   left_joint_2     idx_v= 2  kp= 70.00  kd= 2.000"
+    },
+    {
+      "id": 133,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.273676283] [cartesian_position_controller]:   left_joint_3     idx_v= 3  kp= 60.00  kd= 2.000"
+    },
+    {
+      "id": 134,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.273696467] [cartesian_position_controller]:   left_joint_4     idx_v= 4  kp= 10.00  kd= 0.700"
+    },
+    {
+      "id": 135,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.273716651] [cartesian_position_controller]:   left_joint_5     idx_v= 5  kp= 20.00  kd= 0.850"
+    },
+    {
+      "id": 136,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "cartesian_position_controller",
+      "text": "  right_joint_2    idx_v= 9  kp= 70.00  kd= 2.000"
+    },
+    {
+      "id": 137,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.273735648] [cartesian_position_controller]:   left_joint_6     idx_v= 6  kp= 10.00  kd= 0.500"
+    },
+    {
+      "id": 138,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.273773642] [cartesian_position_controller]:   right_joint_0    idx_v= 7  kp= 70.00  kd= 2.750"
+    },
+    {
+      "id": 139,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.273793826] [cartesian_position_controller]:   right_joint_1    idx_v= 8  kp= 70.00  kd= 2.500"
+    },
+    {
+      "id": 140,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.273818759] [cartesian_position_controller]:   right_joint_2    idx_v= 9  kp= 70.00  kd= 2.000"
+    },
+    {
+      "id": 141,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.273837756] [cartesian_position_controller]:   right_joint_3    idx_v=10  kp= 60.00  kd= 2.000"
+    },
+    {
+      "id": 142,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.273856753] [cartesian_position_controller]:   right_joint_4    idx_v=11  kp= 10.00  kd= 0.700"
+    },
+    {
+      "id": 143,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.273875749] [cartesian_position_controller]:   right_joint_5    idx_v=12  kp= 35.00  kd= 1.000"
+    },
+    {
+      "id": 144,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.273897121] [cartesian_position_controller]:   right_joint_6    idx_v=13  kp= 10.00  kd= 0.500"
+    },
+    {
+      "id": 145,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "cartesian_position_controller",
+      "text": "  right_joint_3    idx_v=10  kp= 60.00  kd= 2.000"
+    },
+    {
+      "id": 146,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "cartesian_position_controller",
+      "text": "  right_joint_4    idx_v=11  kp= 10.00  kd= 0.700"
+    },
+    {
+      "id": 147,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "cartesian_position_controller",
+      "text": "  right_joint_5    idx_v=12  kp= 35.00  kd= 1.000"
+    },
+    {
+      "id": 148,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "cartesian_position_controller",
+      "text": "  right_joint_6    idx_v=13  kp= 10.00  kd= 0.500"
+    },
+    {
+      "id": 149,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.278210588] [cartesian_position_controller]: CartesianPositionController configured successfully"
+    },
+    {
+      "id": 150,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "cartesian_position_controller",
+      "text": "CartesianPositionController configured successfully"
+    },
+    {
+      "id": 151,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[spawner-3] [INFO] [1791986796.288003453] [spawner_joint_state_broadcaster]: \u001b[92mConfigured and activated \u001b[1mjoint_state_broadcaster\u001b[0m"
+    },
+    {
+      "id": 152,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "spawner_joint_state_broadcaster",
+      "text": "\u001b[92mConfigured and activated \u001b[1mjoint_state_broadcaster\u001b[0m"
+    },
+    {
+      "id": 153,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[INFO] [spawner-5]: process has finished cleanly [pid 29098]"
+    },
+    {
+      "id": 154,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[INFO] [spawner-6]: process has finished cleanly [pid 29100]"
+    },
+    {
+      "id": 155,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[INFO] [spawner-3]: process has finished cleanly [pid 29094]"
+    },
+    {
+      "id": 156,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "Loading controller 'gravity_compensation_controller'"
+    },
+    {
+      "id": 157,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.452032750] [controller_manager]: Loading controller 'gravity_compensation_controller'"
+    },
+    {
+      "id": 158,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "spawner_gravity_compensation_controller",
+      "text": "\u001b[94mLoaded \u001b[1mgravity_compensation_controller\u001b[0m"
+    },
+    {
+      "id": 159,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[spawner-4] [INFO] [1791986796.461234338] [spawner_gravity_compensation_controller]: \u001b[94mLoaded \u001b[1mgravity_compensation_controller\u001b[0m"
+    },
+    {
+      "id": 160,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "controller_manager",
+      "text": "Configuring controller 'gravity_compensation_controller'"
+    },
+    {
+      "id": 161,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.461710446] [controller_manager]: Configuring controller 'gravity_compensation_controller'"
+    },
+    {
+      "id": 162,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.461797119] [gravity_compensation_controller]: Configuring GravityCompensationController with 14 joints"
+    },
+    {
+      "id": 163,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Configuring GravityCompensationController with 14 joints"
+    },
+    {
+      "id": 164,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.462986796] [gravity_compensation_controller]: Dynamics initialized. nq=14, nv=14"
+    },
+    {
+      "id": 165,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Dynamics initialized. nq=14, nv=14"
+    },
+    {
+      "id": 166,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463242066] [gravity_compensation_controller]: Joint left_joint_0 (idx_v=0): Effort Limit=40.00, gravity_gain=1.150 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 167,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Joint left_joint_4 (idx_v=4): Effort Limit=7.00, gravity_gain=1.000 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 168,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463272935] [gravity_compensation_controller]: Joint left_joint_1 (idx_v=1): Effort Limit=40.00, gravity_gain=1.150 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 169,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463293120] [gravity_compensation_controller]: Joint left_joint_2 (idx_v=2): Effort Limit=27.00, gravity_gain=1.000 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 170,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463310929] [gravity_compensation_controller]: Joint left_joint_3 (idx_v=3): Effort Limit=27.00, gravity_gain=1.000 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 171,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463333488] [gravity_compensation_controller]: Joint left_joint_4 (idx_v=4): Effort Limit=7.00, gravity_gain=1.000 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 172,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463357234] [gravity_compensation_controller]: Joint left_joint_5 (idx_v=5): Effort Limit=7.00, gravity_gain=1.000 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 173,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463376231] [gravity_compensation_controller]: Joint left_joint_6 (idx_v=6): Effort Limit=7.00, gravity_gain=1.200 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 174,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Joint right_joint_2 (idx_v=9): Effort Limit=27.00, gravity_gain=1.000 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 175,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463394040] [gravity_compensation_controller]: Joint right_joint_0 (idx_v=7): Effort Limit=40.00, gravity_gain=1.150 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 176,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463413037] [gravity_compensation_controller]: Joint right_joint_1 (idx_v=8): Effort Limit=40.00, gravity_gain=1.150 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 177,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463433221] [gravity_compensation_controller]: Joint right_joint_2 (idx_v=9): Effort Limit=27.00, gravity_gain=1.000 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 178,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463462904] [gravity_compensation_controller]: Joint right_joint_3 (idx_v=10): Effort Limit=27.00, gravity_gain=1.000 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 179,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463481900] [gravity_compensation_controller]: Joint right_joint_4 (idx_v=11): Effort Limit=7.00, gravity_gain=1.000 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 180,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463500897] [gravity_compensation_controller]: Joint right_joint_5 (idx_v=12): Effort Limit=7.00, gravity_gain=1.000 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 181,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463529393] [gravity_compensation_controller]: Joint right_joint_6 (idx_v=13): Effort Limit=7.00, gravity_gain=1.100 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 182,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Joint right_joint_6 (idx_v=13): Effort Limit=7.00, gravity_gain=1.100 (pure gravity compensation, Kp=0, Kd=0)"
+    },
+    {
+      "id": 183,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463912891] [gravity_compensation_controller]: Friction[left_joint_0 -> DM8009]: gain=0.700 viscous=0.0067 coulomb_pos=0.476 coulomb_neg=0.502"
+    },
+    {
+      "id": 184,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463946135] [gravity_compensation_controller]: Friction[left_joint_1 -> DM8009]: gain=0.700 viscous=0.0067 coulomb_pos=0.476 coulomb_neg=0.502"
+    },
+    {
+      "id": 185,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.463986504] [gravity_compensation_controller]: Friction[left_joint_2 -> DM4340P]: gain=0.850 viscous=0.0660 coulomb_pos=0.572 coulomb_neg=0.575"
+    },
+    {
+      "id": 186,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.464009062] [gravity_compensation_controller]: Friction[left_joint_3 -> DM4340]: gain=0.950 viscous=0.0508 coulomb_pos=0.500 coulomb_neg=0.474"
+    },
+    {
+      "id": 187,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.464036370] [gravity_compensation_controller]: Friction[left_joint_4 -> DM4310]: gain=0.800 viscous=0.0035 coulomb_pos=0.093 coulomb_neg=0.099"
+    },
+    {
+      "id": 188,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.464058929] [gravity_compensation_controller]: Friction[left_joint_5 -> DM4310]: gain=0.900 viscous=0.0035 coulomb_pos=0.093 coulomb_neg=0.099"
+    },
+    {
+      "id": 189,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.464081488] [gravity_compensation_controller]: Friction[left_joint_6 -> DM4310]: gain=0.500 viscous=0.0035 coulomb_pos=0.093 coulomb_neg=0.099"
+    },
+    {
+      "id": 190,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.464105234] [gravity_compensation_controller]: Friction[right_joint_0 -> DM8009]: gain=0.700 viscous=0.0067 coulomb_pos=0.476 coulomb_neg=0.502"
+    },
+    {
+      "id": 191,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.464128980] [gravity_compensation_controller]: Friction[right_joint_1 -> DM8009]: gain=0.700 viscous=0.0067 coulomb_pos=0.476 coulomb_neg=0.502"
+    },
+    {
+      "id": 192,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Friction[right_joint_3 -> DM4340]: gain=0.950 viscous=0.0508 coulomb_pos=0.500 coulomb_neg=0.474"
+    },
+    {
+      "id": 193,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.464182409] [gravity_compensation_controller]: Friction[right_joint_2 -> DM4340P]: gain=0.850 viscous=0.0660 coulomb_pos=0.572 coulomb_neg=0.575"
+    },
+    {
+      "id": 194,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.464210904] [gravity_compensation_controller]: Friction[right_joint_3 -> DM4340]: gain=0.950 viscous=0.0508 coulomb_pos=0.500 coulomb_neg=0.474"
+    },
+    {
+      "id": 195,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.464235837] [gravity_compensation_controller]: Friction[right_joint_4 -> DM4310]: gain=0.800 viscous=0.0035 coulomb_pos=0.093 coulomb_neg=0.099"
+    },
+    {
+      "id": 196,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.464256021] [gravity_compensation_controller]: Friction[right_joint_5 -> DM4310]: gain=0.800 viscous=0.0035 coulomb_pos=0.093 coulomb_neg=0.099"
+    },
+    {
+      "id": 197,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.464278580] [gravity_compensation_controller]: Friction[right_joint_6 -> DM4310]: gain=0.500 viscous=0.0035 coulomb_pos=0.093 coulomb_neg=0.099"
+    },
+    {
+      "id": 198,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.464296389] [gravity_compensation_controller]: Friction compensation loaded for 14/14 joints (per-joint gain, deadband=0.050)"
+    },
+    {
+      "id": 199,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Friction[right_joint_4 -> DM4310]: gain=0.800 viscous=0.0035 coulomb_pos=0.093 coulomb_neg=0.099"
+    },
+    {
+      "id": 200,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Friction[right_joint_5 -> DM4310]: gain=0.800 viscous=0.0035 coulomb_pos=0.093 coulomb_neg=0.099"
+    },
+    {
+      "id": 201,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Friction[right_joint_6 -> DM4310]: gain=0.500 viscous=0.0035 coulomb_pos=0.093 coulomb_neg=0.099"
+    },
+    {
+      "id": 202,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "Friction compensation loaded for 14/14 joints (per-joint gain, deadband=0.050)"
+    },
+    {
+      "id": 203,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.465288974] [gravity_compensation_controller]: GravityCompensationController configured; smooth friction=on, torque cap=0.800 Nm"
+    },
+    {
+      "id": 204,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "GravityCompensationController configured; smooth friction=on, torque cap=0.800 Nm"
+    },
+    {
+      "id": 205,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986796.470836047] [gravity_compensation_controller]: GravityCompensationController activated. Robot should feel weightless."
+    },
+    {
+      "id": 206,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "gravity_compensation_controller",
+      "text": "GravityCompensationController activated. Robot should feel weightless."
+    },
+    {
+      "id": 207,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "spawner_gravity_compensation_controller",
+      "text": "\u001b[92mConfigured and activated \u001b[1mgravity_compensation_controller\u001b[0m"
+    },
+    {
+      "id": 208,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[spawner-4] [INFO] [1791986796.474709026] [spawner_gravity_compensation_controller]: \u001b[92mConfigured and activated \u001b[1mgravity_compensation_controller\u001b[0m"
+    },
+    {
+      "id": 209,
+      "time": "22:06:36",
+      "level": "info",
+      "source": "control",
+      "text": "[INFO] [spawner-4]: process has finished cleanly [pid 29096]"
+    },
+    {
+      "id": 210,
+      "time": "22:08:56",
+      "level": "info",
+      "source": "joint_position_controller",
+      "text": "JointPositionController activated; holding current position. Send a trajectory_msgs/JointTrajectory on '/joint_position_command' to move."
+    },
+    {
+      "id": 211,
+      "time": "22:08:56",
+      "level": "info",
+      "source": "control",
+      "text": "[ros2_control_node-2] [INFO] [1791986936.847778771] [joint_position_controller]: JointPositionController activated; holding current position. Send a trajectory_msgs/JointTrajectory on '/joint_position_command' to move."
+    },
+    {
+      "id": 212,
+      "time": "22:08:56",
+      "level": "info",
+      "source": "console",
+      "text": "switch: Controller manager accepted switch; waiting for refreshed state"
+    }
+  ],
+  "processes": {
+    "control": {
+      "pid": 29085,
+      "running": true,
+      "exit_code": null,
+      "label": "control / dual / gravity",
+      "stopping": false
+    }
+  },
+  "recording": null,
+  "last_recording": null
+}

@@ -1,0 +1,6 @@
+{
+  "calibration_sha256": "edf771ba9b48ea3df508380569d22a30b0e51036dcb3a321df3cf9e582f2b9ca",
+  "protocol_sha256": "9b567f59811f0c3a3c488f7638e33c56e050faf6c8cb869057588c2cd966657d",
+  "motion_sha256": "313559e643610ccc562be3c326186c956b5abda16a9179911ea9f32e924dd5d7",
+  "no_new_delay_fit": true
+}

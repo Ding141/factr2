@@ -1,0 +1,28 @@
+{
+  "status": "failed",
+  "formal_complete": false,
+  "total_frames": 19283,
+  "plateau_frames": 0,
+  "common_valid_frames": 0,
+  "common_valid_fraction": 0.0,
+  "max_source_gap_ms": 760.006814,
+  "source_rate_hz": 99.25701164601568,
+  "model_sha256": {
+    "old": "2cdd28518d828e234ae10d5f313b37af516969b77afad76661aaf0918b8a8e59",
+    "new": "bec10a63f3ef31bf41dc66560afb8247342f645b42f6d4516c0165e7d44a932b"
+  },
+  "same_input_history": true,
+  "compensation_enabled": false,
+  "extra_learning_or_zeroing": false,
+  "physical_contact_ground_truth": false,
+  "metrics": {
+    "old_raw_nm": null,
+    "new_raw_nm": null,
+    "old_filtered_nm": null,
+    "new_filtered_nm": null
+  },
+  "completed_steps": 3,
+  "max_tracking_deg": 1.4518320452572553,
+  "session": "/home/venom/factr2/data/quick_capture/right/20261030_105813_514952",
+  "motion_status": "failed"
+}

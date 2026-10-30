@@ -1,0 +1,55 @@
+{
+  "name": "left_free_space_coverage_conservative_v1",
+  "side": "left",
+  "steps": 142,
+  "duration_seconds": 810.3199999999995,
+  "planned_min_deg": [
+    -8.0,
+    0.0,
+    -8.0,
+    -24.0,
+    -8.0,
+    -6.0,
+    -8.0
+  ],
+  "planned_max_deg": [
+    8.0,
+    16.0,
+    8.0,
+    0.0,
+    8.0,
+    6.0,
+    8.0
+  ],
+  "working_bounds_deg": [
+    [
+      -8,
+      8
+    ],
+    [
+      0,
+      16
+    ],
+    [
+      -8,
+      8
+    ],
+    [
+      -24,
+      -8
+    ],
+    [
+      -8,
+      8
+    ],
+    [
+      -6,
+      6
+    ],
+    [
+      -8,
+      8
+    ]
+  ],
+  "model_sha256": "e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345"
+}

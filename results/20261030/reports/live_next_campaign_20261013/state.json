@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-10-13T22:19:16.499824+08:00",
+  "status": "collecting",
+  "user_requested_collection_and_training": true,
+  "side": "right",
+  "domain": 74,
+  "sample_hz": 100,
+  "hardware_motion_started": true,
+  "new_data_recording_started": true,
+  "training_started": false,
+  "can1": {
+    "state": "ERROR-ACTIVE",
+    "tx_error_counter": 0,
+    "rx_error_counter": 0,
+    "source": "live preflight"
+  },
+  "right_motors_online": 7,
+  "right_motors_expected": 7,
+  "controllers_running": true,
+  "live_ros_nodes": [
+    "ieir_web_console_9980",
+    "w3_robot_bridge_node"
+  ],
+  "frozen_recipe": "/home/venom/factr2/log/live_next_campaign_20261013/right_next_protocol_v2.yaml",
+  "frozen_training_template": "/home/venom/factr2/log/live_next_campaign_20261013/train_next_v2.yaml",
+  "frozen_acceptance": "/home/venom/factr2/log/live_next_campaign_20261013/baseline_acceptance.yaml",
+  "pending": [
+    "Complete independent train/val/test sessions and quality checks"
+  ],
+  "storage": {
+    "free_bytes": 2970443776,
+    "three_session_duration_seconds_archived_estimate": 8397.84,
+    "uncompressed_minimal_estimated_bytes": 4939757649,
+    "note": "Compression or additional space needed before the full campaign; old data preserved"
+  },
+  "training_device": "cpu",
+  "cuda_available": false,
+  "current_role": "train",
+  "current_session": "/home/venom/factr2/data/quick_capture/right/20261013_221316_579007",
+  "collection_state_file": "/home/venom/factr2/log/live_next_campaign_20261013/collection_state.json",
+  "runtime": {
+    "adapter_hz": 99.0,
+    "health_ok": true,
+    "max_tracking_deg": [
+      1.4445953972888874,
+      1.4868842314964217,
+      1.5718486442999604,
+      1.561767989135745,
+      0.38959224172909307,
+      0.9575293997595584,
+      0.189998421138716
+    ],
+    "event": "006_sine_j4_slow",
+    "elapsed_seconds": 310.02763986
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "review_date": "2026-10-21",
+  "upstream_commit": "0df02c5b26e33911078152b6c587d6e8a160d279",
+  "upstream_model_identical": true,
+  "repositories": {
+    "/home/venom/factr2": {
+      "head": "f811f2c2391f2d4ecc7efab0bcec1d6225680ac3",
+      "note": "Reviewed working tree including pre-existing uncommitted modifications, not only HEAD."
+    },
+    "/home/venom/dual_arm_robot": {
+      "head": "480f34c9c5cf7cad2a7a83179543debdedd81c21",
+      "note": "Reviewed working tree including pre-existing uncommitted modifications, not only HEAD."
+    }
+  },
+  "tests": {
+    "command": "scripts/next.sh env PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -m pytest -q -p no:cacheprovider factr2_next/src/factr2_next/test/test_endpoint_wrench.py factr2_next/src/factr2_next/test/test_inference_math.py factr2_next/src/factr2_next/test/test_operating_envelope.py factr2_next/src/factr2_next/test/test_training_contract.py scripts/test_w3_endpoint_wrench.py scripts/test_w3_next_revision.py",
+    "result": "55 passed in 16.13s",
+    "hardware_motion": false
+  },
+  "files": {
+    "/home/venom/factr2/factr2_next/src/factr2_next/factr2_next/training/models.py": "737717671ffd421dfb6452fbaa76bd49786910fe13cd3e3cee552aeca07ed80a",
+    "/home/venom/factr2/factr2_next/src/factr2_next/factr2_next/inference/inference_node.py": "9488b702deb82890b80ea9fe031cb6fda1be07cf3b5895df0e27cdaa0d6eca0e",
+    "/home/venom/factr2/factr2_next/src/factr2_next/factr2_next/inference/endpoint_wrench.py": "092ffb3600982c9a8e655746e81a216c7fc1f0173961c7b98c9e59f8e35b2d66",
+    "/home/venom/factr2/factr2_w3_adapter/factr2_w3_adapter/validation.py": "61d26973c2295d8f125dec9849175cfd3f05fff1b4fa3b49c7d7f94a737b017f",
+    "/home/venom/factr2/scripts/w3_endpoint_wrench.py": "e860226266353fb0f16cc745486df9c31bb2328fb6e14c89160d3ad997f7aa64",
+    "/home/venom/factr2/models/w3/right/targeted_candidate_20261016/metadata.json": "8597f0ef3787cbac936590fd866aa08e2809342ad9b99892ceeb013f463c0b54",
+    "/home/venom/dual_arm_robot/src/ieir_controllers/src/dm_hardware_interface.cpp": "62967254a303b7f1e0cb76eff0ad08b42e439c161698d5b19c67698e5aa60b0d"
+  }
+}

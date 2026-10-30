@@ -1,0 +1,19 @@
+{
+  "state": "valid",
+  "reason": "ok",
+  "diagnostics": {
+    "outputs": 54049,
+    "dropped": 0,
+    "resets": 0,
+    "state": "valid",
+    "reason": "ok",
+    "history_count": 50,
+    "source_age_seconds": 0.008733792,
+    "receive_age_seconds": 0.005671740000252612,
+    "last_output_stamp_ns": 1792156986453966404,
+    "output_hz": 100,
+    "infer_ms": 0.6613270015805028,
+    "infer_p95_ms": 0.8221471487559029,
+    "device": "cpu"
+  }
+}

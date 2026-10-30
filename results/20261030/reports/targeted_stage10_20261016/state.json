@@ -1,0 +1,87 @@
+{
+  "status": "completed",
+  "started_utc": "2026-10-16T10:19:41.607432+00:00",
+  "profile": "v10_a20_and_v10_a40",
+  "role": "train",
+  "thermal": "unclassified",
+  "previous_result": "/home/venom/factr2/log/targeted_continue_20261016/state.json",
+  "batches": [
+    {
+      "label": "01_continuous_J1_J2_J3_J4_J5_J6_J7",
+      "family": "continuous",
+      "joints_zero_based": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "profile": "v10_a20_and_v10_a40",
+      "status": "completed",
+      "plan": "/home/venom/factr2/log/targeted_stage10_20261016/01_continuous_J1_J2_J3_J4_J5_J6_J7.yaml",
+      "planned_seconds": 523.3800000000002,
+      "plan_sha256": "50afa1b9951f72dab1d4e029e64a4d37b72f8c6a44b7cc94641aaab228fe30ac",
+      "session": "/home/venom/factr2/data/quick_capture/right/20261016_182029_549446",
+      "completed_utc": "2026-10-16T10:30:19.118943+00:00",
+      "derived": "/home/venom/factr2/data/right/targeted/20261016_182029_549446_01_continuous_J1_J2_J3_J4_J5_J6_J7",
+      "raw_rows": 54739,
+      "derived_rows": 30890,
+      "max_gap_ms": 13.328649000000002,
+      "max_tracking_deg": 2.0674159356757897,
+      "can_drops": 0,
+      "kernel_timestamps_missing": 0,
+      "raw_quality_accepted": true,
+      "derived_quality_accepted": true
+    },
+    {
+      "label": "02_hysteresis_J1_J2_J3_J4_J5_J6_J7",
+      "family": "hysteresis",
+      "joints_zero_based": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "profile": "v10_a20_and_v10_a40",
+      "status": "completed",
+      "plan": "/home/venom/factr2/log/targeted_stage10_20261016/02_hysteresis_J1_J2_J3_J4_J5_J6_J7.yaml",
+      "planned_seconds": 974.0799999999971,
+      "plan_sha256": "3d40844861766dbc5142067280495f40711ba461d2e93b59a14ebd8755a78455",
+      "session": "/home/venom/factr2/data/quick_capture/right/20261016_183214_777387",
+      "completed_utc": "2026-10-16T10:50:08.571115+00:00",
+      "derived": "/home/venom/factr2/data/right/targeted/20261016_183214_777387_02_hysteresis_J1_J2_J3_J4_J5_J6_J7",
+      "raw_rows": 102655,
+      "derived_rows": 75960,
+      "max_gap_ms": 10.906553,
+      "max_tracking_deg": 1.9392987192764495,
+      "can_drops": 0,
+      "kernel_timestamps_missing": 0,
+      "raw_quality_accepted": true,
+      "derived_quality_accepted": true
+    }
+  ],
+  "remaining": [],
+  "components": [
+    {
+      "label": "health",
+      "pid": 38924,
+      "created_by_this_coordinator": true
+    },
+    {
+      "label": "adapter",
+      "pid": 38925,
+      "created_by_this_coordinator": true
+    }
+  ],
+  "controller_switches": false,
+  "current_batch": "02_hysteresis_J1_J2_J3_J4_J5_J6_J7",
+  "C_pid": 41512,
+  "ended_utc": "2026-10-16T10:50:08.930676+00:00",
+  "recording_active": false,
+  "controller_holding_preserved": true
+}

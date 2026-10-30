@@ -1,0 +1,10 @@
+{
+  "status": "checked",
+  "bundle": "/home/venom/factr2/models/w3/right/joint_lstm_observer_20261028_v1",
+  "architecture": "independent_joint_lstm_v1",
+  "model_sha256": "bec10a63f3ef31bf41dc66560afb8247342f645b42f6d4516c0165e7d44a932b",
+  "compensation_enabled": false,
+  "controller_changes": false,
+  "next_topic_root": "/next/right/joint_lstm",
+  "deployment_ready": false
+}

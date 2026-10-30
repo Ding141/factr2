@@ -1,0 +1,52 @@
+{
+  "training_eligible": false,
+  "reason": "Incomplete high-speed block; passive CAN RX overflow; no automatic retry",
+  "events": [
+    {
+      "name": "continuous_v06_train_continuous",
+      "status": "completed",
+      "recorded_seconds": 69.996653404,
+      "tracking_max_deg": [
+        0.7524824703068209,
+        1.0316825182958453,
+        0.8137893006157668,
+        1.0640691084672014,
+        0.8519258268823522,
+        0.8276219883379883,
+        1.1011624944605125
+      ],
+      "suspected_stall_seconds": [
+        0.08,
+        0.12,
+        0.13,
+        0.18,
+        0.16,
+        0.0,
+        0.22
+      ]
+    },
+    {
+      "name": "continuous_v12_train_continuous",
+      "status": "moving",
+      "recorded_seconds": 47.956665277000006,
+      "tracking_max_deg": [
+        0.7149247803110113,
+        0.7920289926319128,
+        0.7900651789104298,
+        0.9739355726386947,
+        0.7826516256970932,
+        0.8460673246805285,
+        1.1190070823454192
+      ],
+      "suspected_stall_seconds": [
+        0.04,
+        0.05,
+        0.1,
+        0.13,
+        0.04,
+        0.0,
+        0.11
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "mean_model_sha256": "bec10a63f3ef31bf41dc66560afb8247342f645b42f6d4516c0165e7d44a932b",
+  "manifest_sha256": "8802c8dab3667b74c50ddeeb46bfa8da4390e06957f234c48093138da168d276",
+  "source_manifest": "/home/venom/factr2/data/right/wide_highspeed_mean_20261026_v1/split.json",
+  "training_stride": 5,
+  "validation_stride": 1,
+  "fit": "original train recordings only; no Oct30 live observation fitting",
+  "selection": "original validation only; per joint, equal low/high normalized error",
+  "prior_live_data_role": "retrospective evaluation only",
+  "test_used_for_fit": false,
+  "modes": [
+    "velocity_acceleration",
+    "position_velocity_acceleration",
+    "position_dynamic_coupling"
+  ],
+  "ridge": [
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "application": "subtract_before_identical_RC12_RC5",
+  "no_intercept": true,
+  "no_torque_features": true,
+  "no_online_zeroing": true,
+  "validation_cache_sha256": "ac8282712521346c4b7f3d5390c8aad123efbaede137cbcd230b35a67f7bb12a"
+}

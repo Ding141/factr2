@@ -1,0 +1,10 @@
+{
+  "hardware_healthy": true,
+  "motion_publishers": {
+    "/joint_position_command": [],
+    "/left_pose_goal": [],
+    "/right_pose_goal": []
+  },
+  "max_stationary_span_deg": 0.021856605344040804,
+  "source_age_s": 0.0068259090003266465
+}

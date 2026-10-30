@@ -1,0 +1,8 @@
+{
+  "user_requested_research_observation": true,
+  "performance_gate_passed": false,
+  "no_threshold_relaxation": true,
+  "no_test_tuning": true,
+  "controller_changes": false,
+  "deployment_ready": false
+}

@@ -1,0 +1,85 @@
+{
+  "counts": {
+    "joint_pos": 501,
+    "joint_vel": 500,
+    "joint_cmd": 500,
+    "joint_effort": 500
+  },
+  "last": {
+    "joint_pos": {
+      "age_seconds": 0.004527026,
+      "names": [
+        "right_joint_0",
+        "right_joint_1",
+        "right_joint_2",
+        "right_joint_3",
+        "right_joint_4",
+        "right_joint_5",
+        "right_joint_6"
+      ]
+    },
+    "joint_vel": {
+      "age_seconds": 0.0031779440000000003,
+      "names": [
+        "right_joint_0",
+        "right_joint_1",
+        "right_joint_2",
+        "right_joint_3",
+        "right_joint_4",
+        "right_joint_5",
+        "right_joint_6"
+      ]
+    },
+    "joint_cmd": {
+      "age_seconds": 0.0035294650000000003,
+      "names": [
+        "right_joint_0",
+        "right_joint_1",
+        "right_joint_2",
+        "right_joint_3",
+        "right_joint_4",
+        "right_joint_5",
+        "right_joint_6"
+      ]
+    },
+    "joint_effort": {
+      "age_seconds": 0.00365416,
+      "names": [
+        "right_joint_0",
+        "right_joint_1",
+        "right_joint_2",
+        "right_joint_3",
+        "right_joint_4",
+        "right_joint_5",
+        "right_joint_6"
+      ]
+    }
+  },
+  "status": {
+    "message": "ok",
+    "level": "b'\\x00'",
+    "values": {
+      "state_receive_age_seconds": "0.002213635000089198",
+      "state_source_age_seconds": "0.0025283420000000003",
+      "command_receive_age_seconds": "0.002130505000195626",
+      "command_source_age_seconds": "0.0025283420000000003",
+      "output_hz_last_second": "99",
+      "health_mode": "\"required\"",
+      "health_receive_age_seconds": "0.00274685500016858",
+      "health_source_age_seconds": "0.0034712740000000003",
+      "health_source_stamp_ns": "1793156478929019469",
+      "source_skew_seconds": "0.0",
+      "invalid": "0",
+      "stale": "0",
+      "duplicate": "0",
+      "skew": "0",
+      "health_rejected": "1",
+      "clock_reset": "0",
+      "outputs": "11462",
+      "side": "\"right\"",
+      "recent_rejection": "\"health_missing_stale_or_error\"",
+      "state_source_stamp_ns": "1793156478929962401",
+      "command_source_stamp_ns": "1793156478929962401"
+    }
+  }
+}

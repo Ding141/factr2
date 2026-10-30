@@ -1,0 +1,16 @@
+{
+  "plan_sha256": "2377bab9f9a8ab545752c11888cd0b3ec594b7f13421bc1e92b781ea7c13d9f6",
+  "command_seconds": 443.2699999999999,
+  "model_sha256": {
+    "old": "2cdd28518d828e234ae10d5f313b37af516969b77afad76661aaf0918b8a8e59",
+    "new": "bec10a63f3ef31bf41dc66560afb8247342f645b42f6d4516c0165e7d44a932b"
+  },
+  "model_hash": "1e2b7188ef85ab0d8e607935a622994d93dbc41f8053725e931cae0cb0a3f886",
+  "packet_topic": "/next/right/model_comparison/frame",
+  "same_input_history": true,
+  "compensation_enabled": false,
+  "old_model_preserved": true,
+  "formal_steps_unchanged": true,
+  "role": "prospective_same_trajectory_comparison",
+  "retune_on_observation": false
+}

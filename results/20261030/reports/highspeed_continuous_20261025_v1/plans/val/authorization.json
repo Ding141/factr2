@@ -1,0 +1,7 @@
+{
+  "operator_confirmed": true,
+  "plan_sha256": "a70a5c65bf0255afcfcfa2efbecd7a5e84a1600023dd023b5f20fbc4e06654cb",
+  "confirmation": "已确认，可以执行上述三次高速采集",
+  "confirmed_at_utc": "2026-10-25T12:35:33.087890+00:00",
+  "scope": "three role-separated recordings; approach <=2.4 deg/s, continuous 6/12 deg/s; a<=30, jerk<=120; no gain/mode change; retain all guards"
+}

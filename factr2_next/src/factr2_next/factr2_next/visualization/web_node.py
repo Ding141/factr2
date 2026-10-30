@@ -1,10 +1,12 @@
 from factr2_next.w3_config import validate_w3_config
 import json
+import math
 import threading
 import time
 from collections import deque
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+import html
 
 import numpy as np
 import rclpy
@@ -18,30 +20,35 @@ from diagnostic_msgs.msg import DiagnosticArray
 
 
 HTML = """<!doctype html>
-<html><head><meta charset="utf-8"><title>FACTR2 NEXT</title>
+<html lang="zh"><head><meta charset="utf-8"><title>__TITLE__</title>
 <style>
 :root{color-scheme:dark;--bg:#101214;--panel:#181b1f;--line:#2b3036;--text:#e8edf2;--muted:#98a2ad}
 *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font:14px system-ui,sans-serif}
 main{max-width:1280px;margin:22px auto;padding:0 18px}.top{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:14px}
 h1{font-size:20px;margin:0}.pill{color:var(--muted);font-size:13px}.plot{background:#14171a;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.description{color:var(--muted);line-height:1.7}.notice{padding:10px 14px;border:1px solid #68572f;border-radius:8px;color:#f5cc79;margin-bottom:12px}
 canvas{display:block;width:100%;height:580px}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px}
-.group{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px}.group h2{font-size:12px;font-weight:650;color:var(--muted);margin:0 0 8px;text-transform:uppercase}
+.group{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px}.group h2{font-size:12px;font-weight:650;color:var(--muted);margin:0 0 8px}
 .items{display:flex;flex-wrap:wrap;gap:7px}.item{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:6px;padding:5px 7px;cursor:pointer;user-select:none}
 .item.off{opacity:.42}.sw{width:10px;height:10px;border-radius:2px;flex:0 0 auto}input{accent-color:#4ea1ff;margin:0}.value{color:var(--muted);font-variant-numeric:tabular-nums}.status{margin-top:8px;color:var(--muted);font-size:12px}
 </style></head>
 <body><main>
-<div class="top"><div><h1>FACTR2 NEXT</h1><div class="pill" id="topic-root">waiting</div></div><div class="pill" id="status">connecting</div></div>
+<div class="top"><div><h1>__TITLE__</h1><div class="pill" id="topic-root">waiting</div></div><div class="pill" id="status">connecting</div></div>
+<p class="description">__DESCRIPTION__</p>__NOTICE__
 <div class="plot"><canvas id="plot" width="1240" height="580"></canvas></div>
 <div class="controls" id="controls"></div>
+__EXTRA_PANEL__
 </main>
 <script>
 const canvas=document.getElementById("plot"), ctx=canvas.getContext("2d");
 const controls=document.getElementById("controls"), statusEl=document.getElementById("status");
 let data={t:[]}, controlsReady=false;
 const groups=__GROUPS__;
+const jointTorqueView=__JOINT_TORQUE_VIEW__;
+const storagePrefix=jointTorqueView?"next.joint_torque.":"next.";
 const series=groups.flatMap(g=>g[1]).map(s=>({key:s[0],label:s[1],color:s[2],visible:loadVisible(s[0],s[3])}));
-function loadVisible(key, fallback){const v=localStorage.getItem("next."+key); return v===null?fallback:v==="1"}
-function setVisible(key, value){localStorage.setItem("next."+key,value?"1":"0")}
+function loadVisible(key, fallback){const v=localStorage.getItem(storagePrefix+key); return v===null?fallback:v==="1"}
+function setVisible(key, value){localStorage.setItem(storagePrefix+key,value?"1":"0")}
 function finite(xs){return (xs||[]).filter(Number.isFinite)}
 function setupControls(){
   controls.innerHTML=groups.map(([name,items])=>`<section class=group><h2>${name}</h2><div class=items>${
@@ -59,7 +66,7 @@ function setupControls(){
 function draw(){
   if(!controlsReady) setupControls();
   ctx.clearRect(0,0,canvas.width,canvas.height);
-  const pad={l:62,r:18,t:22,b:42}, W=canvas.width-pad.l-pad.r, H=canvas.height-pad.t-pad.b;
+  const pad={l:70,r:18,t:28,b:50}, W=canvas.width-pad.l-pad.r, H=canvas.height-pad.t-pad.b;
   const t=data.t||[], xs=finite(t);
   const ys=series.flatMap(s=>s.visible?finite(data[s.key]):[]);
   let xmin=xs.length?xs[0]:0, xmax=xs.length?xs[xs.length-1]:10, ymin=Math.min(...ys), ymax=Math.max(...ys);
@@ -67,7 +74,12 @@ function draw(){
   if(!Number.isFinite(ymin)||!Number.isFinite(ymax)||ymin===ymax){ymin=-1;ymax=1}
   const m=(ymax-ymin)*0.08; ymin-=m; ymax+=m; grid(pad,W,H,xmin,xmax,ymin,ymax);
   for(const s of series){ if(!s.visible) continue; drawLine(s,pad,W,H,xmin,xmax,ymin,ymax); }
-  for(const s of series){ const el=document.getElementById("v-"+s.key), vals=finite(data[s.key]); if(el) el.textContent=vals.length?vals[vals.length-1].toFixed(3):"--"; }
+  for(const s of series){
+    const el=document.getElementById("v-"+s.key), vals=data[s.key]||[];
+    const value=jointTorqueView?vals[vals.length-1]:finite(vals).slice(-1)[0];
+    const usable=Number.isFinite(value)&&(!jointTorqueView||data.state==="valid");
+    if(el) el.textContent=usable?value.toFixed(jointTorqueView?2:3)+(jointTorqueView?" N·m":""):"—";
+  }
 }
 function drawLine(s,pad,W,H,xmin,xmax,ymin,ymax){
   const t=data.t||[], vals=data[s.key]||[]; ctx.strokeStyle=s.color; ctx.lineWidth=2; ctx.beginPath(); let open=false;
@@ -78,6 +90,7 @@ function drawLine(s,pad,W,H,xmin,xmax,ymin,ymax){
 }
 function grid(pad,W,H,x0,x1,y0,y1){
   ctx.strokeStyle="#293039"; ctx.fillStyle="#9aa4ae"; ctx.lineWidth=1; ctx.font="12px system-ui";
+  if(jointTorqueView){ctx.fillText("关节外部力矩（N·m）",pad.l,16);ctx.fillText("时间（s）",pad.l+W/2-25,canvas.height-6)}
   for(let i=0;i<=5;i++){const x=pad.l+i*W/5, y=pad.t+i*H/5;
     ctx.beginPath(); ctx.moveTo(pad.l,y); ctx.lineTo(pad.l+W,y); ctx.stroke();
     ctx.fillText((y1-(y1-y0)*i/5).toFixed(2),8,y+4);
@@ -86,13 +99,18 @@ function grid(pad,W,H,x0,x1,y0,y1){
   }
 }
 const events=new EventSource("/events");
-events.onerror=()=>{statusEl.textContent="disconnected"};
+events.onerror=()=>{data.state="stale";statusEl.textContent="连接中断 · 当前力矩不可用";draw();
+ if(typeof updateUncertainty==="function") updateUncertainty(data);
+ if(typeof updateEndpointForce==="function") updateEndpointForce(data)};
 events.onmessage=(ev)=>{
   data=JSON.parse(ev.data); document.getElementById("topic-root").textContent=`topics: ${data.next_topic_root}  samples: ${(data.t||[]).length}`;
   const age=data.last_valid_age_seconds===null?"--":data.last_valid_age_seconds.toFixed(2)+" s";
   statusEl.textContent=`${data.state} · last valid ${age} · ${data.reason||""}`; draw();
+  if(typeof updateUncertainty==="function") updateUncertainty(data);
+  if(typeof updateEndpointForce==="function") updateEndpointForce(data);
 };
 setupControls(); draw();
+__EXTRA_SCRIPT__
 </script></body></html>
 """
 
@@ -105,7 +123,10 @@ def plot_keys(count, feedback=False):
     return tuple(summary+[f'{p}_j{i+1}' for p in prefixes for i in range(count)])
 
 
-def page(names, feedback=False):
+def page(names, feedback=False, view='diagnostics', model_label=None, model_notice=None,
+         extra_panel='', extra_script='', torque_display=None):
+    if view not in ('diagnostics', 'joint_torque'):
+        raise ValueError('Unknown plot view: ' + str(view))
     groups=[['Summary',[
         ['ext_norm','Filtered torque norm (Nm)','#ff5a63',True],
         ['ext_raw_norm','Raw torque norm (Nm)','#f7a1a8',False],
@@ -116,7 +137,36 @@ def page(names, feedback=False):
     colors=['#ff6b6b','#ffa94d','#ffd43b','#69db7c','#4dabf7','#b197fc','#f783ac']
     for label,prefix in [('Filtered torque (Nm)','ext'),('Raw torque (Nm)','raw'),('Free prediction (Nm)','free')]+([('Feedback (Nm)','fb')] if feedback else []):
         groups.append([label,[[f'{prefix}_j{i+1}',name,colors[i%len(colors)],False] for i,name in enumerate(names)]])
-    return HTML.replace('__GROUPS__',json.dumps(groups))
+    if view == 'joint_torque':
+        display = torque_display or {}
+        primary = display.get('primary', 'raw')
+        if primary not in ('raw', 'ext'):
+            raise ValueError('invalid primary torque series')
+        groups = [[label, [[f'{prefix}_j{i+1}', f'J{i+1} · {name}',
+                           colors[i % len(colors)], prefix == primary]
+                          for i, name in enumerate(names)]]
+                  for label, prefix in [(display.get('raw_label', '关节外部力矩 · 原始残差（N·m）'), 'raw'),
+                                        (display.get('filtered_label', '关节外部力矩 · 滤波对照（N·m）'), 'ext')]]
+        if feedback and display.get('reference_label'):
+            groups.append([display['reference_label'], [[f'fb_j{i+1}', f'J{i+1} · {name}',
+                           colors[i % len(colors)], False] for i, name in enumerate(names)]])
+    title = model_label or ('FACTR2 NEXT · 关节外部力矩' if view == 'joint_torque' else 'FACTR2 NEXT')
+    description = ('显示各关节的外部力矩估计：τ_ext = τ_measured − τ_free_pred。'
+                   f'默认显示原始残差，可勾选滤波对照；J1–J{len(names)} 对应实际关节顺序，单位 N·m。'
+                   '正负号沿用 NEXT 残差；数据无效时当前值显示“—”，历史曲线保留。'
+                   if view == 'joint_torque' else 'NEXT 力矩、接触信号与预测诊断。')
+    notice = '<div class="notice">' + html.escape(str(model_notice)) + '</div>' if model_notice else ''
+    if view == 'joint_torque' and torque_display:
+        description = str(torque_display.get('description', description))
+    markup = (HTML.replace('__GROUPS__', json.dumps(groups))
+            .replace('__JOINT_TORQUE_VIEW__', json.dumps(view == 'joint_torque'))
+            .replace('__TITLE__', html.escape(str(title)))
+            .replace('__DESCRIPTION__', description).replace('__NOTICE__', notice)
+            .replace('__EXTRA_PANEL__', extra_panel).replace('__EXTRA_SCRIPT__', extra_script))
+    if torque_display:
+        # Separate visibility preferences for a distinct signal definition.
+        markup = markup.replace('"next.joint_torque."', json.dumps(str(torque_display['storage_prefix'])))
+    return markup
 
 
 TORQUE_KEYS = {
@@ -128,10 +178,12 @@ TORQUE_KEYS = {
 
 
 class WebNode(Node):
-    def __init__(self, **kwargs):
-        super().__init__("factr2_next_visualize", **kwargs)
+    def __init__(self, config=None, node_name="factr2_next_visualize",
+                 extra_panel='', extra_script='', extra_snapshot=None, **kwargs):
+        super().__init__(node_name, **kwargs)
         default = Path(get_package_share_directory("factr2_next")) / "config" / "visualize.yaml"
-        self.cfg = self._load_config(self.declare_parameter("config_file", str(default)).value)
+        config_path = self.declare_parameter("config_file", str(default)).value
+        self.cfg = self._load_config(config_path) if config is None else config
         validate_w3_config(self.cfg, "visualize")
         self.next_topic_root = str(self.cfg.get("next_topic_root", "/next"))
         self.feedback_topic_root = str(self.cfg.get("feedback_topic_root", "/factr2_feedback"))
@@ -142,7 +194,12 @@ class WebNode(Node):
         if not 1<=self.joint_count<=64 or not 1<=self.max_points<=10000:raise ValueError('web_joint_count_max_points')
         self.feedback = any(k.startswith('feedback_') for k in self.cfg['outputs'])
         self.keys = plot_keys(self.joint_count,self.feedback)
-        self.html = page(self.names,self.feedback)
+        self.view = self.cfg.get('plot', {}).get('view', 'diagnostics')
+        self.extra_snapshot=extra_snapshot
+        self.html = page(self.names, self.feedback, self.view,
+                         self.cfg.get('model_label'), self.cfg.get('model_notice'),
+                         extra_panel=extra_panel,extra_script=extra_script,
+                         torque_display=self.cfg.get('plot', {}).get('torque_display'))
         self.runtime_status={'state':'warming','reason':'waiting_for_status'}
         self.status_received = None
         self.last_valid_mono = None
@@ -205,7 +262,7 @@ class WebNode(Node):
                 10,
             ),
         ]
-        self.subs.append(self._sub(DiagnosticArray,self.next_topic_root+'/status',self._status,qos_profile_sensor_data))
+        self.subs.append(self._sub(DiagnosticArray,outputs.get('status',self.next_topic_root+'/status'),self._status,qos_profile_sensor_data))
         if "contact_state" in outputs:
             self.subs.append(
                 self._sub(
@@ -277,22 +334,34 @@ class WebNode(Node):
 
     def _snapshot(self):
         with self.cond:
-            out = {
-                k: [x if np.isfinite(x) else None for x in v]
-                for k, v in self.data.items()
-            }
-            out['next_topic_root']=self.next_topic_root
-            out['joint_names']=self.names;out['side']=self.cfg.get('side','generic')
-            out['units']='torque Nm; MSE Nm²; contact magnitude configured norm/scale'
-            age=time.monotonic()-self.last_valid_mono if self.last_valid_mono is not None else None
-            status_age=time.monotonic()-self.status_received if self.status_received is not None else None
-            out['last_valid_age_seconds']=age;out['status_age_seconds']=status_age
-            out['state']=self.runtime_status.get('state','warming')
-            out['reason']=self.runtime_status.get('reason','')
-            if (age is not None and age>.25) or (self.w3 and (status_age is None or status_age>.25)):
-                out['state']='stale';out['reason']='torque_or_status_timeout'
-            out['diagnostics']=self.runtime_status
-            return json.dumps(out,allow_nan=False).encode()
+            # Copy under the producer lock; conversion and JSON encoding can
+            # take milliseconds and must not block incoming torque callbacks.
+            samples = {k: list(v) for k, v in self.data.items()}
+            runtime_status = dict(self.runtime_status)
+            last_valid_mono = self.last_valid_mono
+            status_received = self.status_received
+        out = {k: [x if math.isfinite(x) else None for x in values]
+               for k, values in samples.items()}
+        if self.view == 'joint_torque':
+            for key in out:
+                if key.startswith(('raw_j', 'ext_j', 'fb_j')):
+                    out[key] = [None if x is None else (round(x, 2) or 0.0) for x in out[key]]
+            out['display_decimals'] = 2
+        out['next_topic_root']=self.next_topic_root
+        out['joint_names']=self.names;out['side']=self.cfg.get('side','generic')
+        out['units']='torque Nm; MSE Nm²; contact magnitude configured norm/scale'
+        out['view']=self.view
+        out['quantity']='external_joint_torque'
+        age=time.monotonic()-last_valid_mono if last_valid_mono is not None else None
+        status_age=time.monotonic()-status_received if status_received is not None else None
+        out['last_valid_age_seconds']=age;out['status_age_seconds']=status_age
+        out['state']=runtime_status.get('state','warming')
+        out['reason']=runtime_status.get('reason','')
+        if (age is not None and age>.25) or (self.w3 and (status_age is None or status_age>.25)):
+            out['state']='stale';out['reason']='torque_or_status_timeout'
+        out['diagnostics']=runtime_status
+        if self.extra_snapshot is not None:out.update(self.extra_snapshot())
+        return json.dumps(out,allow_nan=False).encode()
 
     def _handler(self):
         node = self

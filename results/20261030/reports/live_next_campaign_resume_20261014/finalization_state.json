@@ -1,0 +1,11 @@
+{
+  "status": "training",
+  "pid": 4,
+  "started_at": "2026-10-14T03:36:25.926239+08:00",
+  "automatic_deployment": false,
+  "robot_command_calls": false,
+  "collection_state": "/home/venom/factr2/log/live_next_campaign_resume_20261014/pipeline_state.json",
+  "recovery_reason": "Coordinator loaded earlier manifest implementation",
+  "dataset": "/home/venom/factr2/data/right/next_v2_campaign_fresh_20261014_054103",
+  "training_started_at": "2026-10-14T05:45:16.492094+08:00"
+}

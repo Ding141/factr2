@@ -1,0 +1,23 @@
+{
+  "service": "running",
+  "pid": 14650,
+  "url": "http://127.0.0.1:8083/",
+  "state": "valid",
+  "reason": "base_valid_compensation_bypassed_out_of_support",
+  "outputs": 127491,
+  "experiment": "/home/venom/factr2/data/right/kinematic_compensation_20261023_v2",
+  "next_topic_root": "/next/right/kinematic_compensated",
+  "enabled_joints": [
+    true,
+    false,
+    true,
+    true,
+    false,
+    true,
+    true
+  ],
+  "compensation_applied": false,
+  "calibration": "uncalibrated",
+  "deployment_ready": false,
+  "contact_validated": false
+}

@@ -1,0 +1,91 @@
+{
+  "role": "test",
+  "family": "continuous",
+  "ranges": [
+    {
+      "episode": "ep_0000",
+      "family": "continuous",
+      "phase": "continuous",
+      "kind": "continuous_multisine",
+      "speed": "continuous_v12",
+      "active_joints": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "pose_index": 0,
+      "approach_direction": null,
+      "dwell_seconds": null,
+      "profile": {
+        "id": "continuous_v12",
+        "velocity_deg_s": 12.0,
+        "acceleration_deg_s2": 30.0,
+        "jerk_deg_s3": 120.0
+      },
+      "peak_bounds": {
+        "velocity_deg_s": [
+          8.61368445555715,
+          9.951710692601662,
+          7.878930327114093,
+          8.775622681796198,
+          7.025893273235895,
+          6.436292162048189,
+          4.735023585608436
+        ],
+        "acceleration_deg_s2": [
+          12.563018399097363,
+          16.442074716865264,
+          12.361707248488912,
+          15.332397489511225,
+          12.452375537366361,
+          13.800962480195262,
+          11.100213810029613
+        ],
+        "jerk_deg_s3": [
+          20.0259824217932,
+          29.684334218568594,
+          20.825164892210736,
+          27.94491717014298,
+          23.27493713398965,
+          30.56403817967725,
+          26.794819889632222
+        ]
+      },
+      "rows": 8999,
+      "event": "continuous_v12_test_continuous",
+      "source_episode": "ep_0000",
+      "source_row_start": 17815,
+      "source_row_stop_exclusive": 26814,
+      "state_codes": {
+        "entry_ramp": 0,
+        "continuous_excitation": 1,
+        "exit_ramp": 2,
+        "hysteresis": 3,
+        "stationary_hold": 4
+      },
+      "thermal_initial_condition": "unclassified",
+      "measured_position_mean_deg": [
+        0.9702847003936768,
+        55.13353729248047,
+        -4.151236057281494,
+        -57.74221420288086,
+        1.0164227485656738,
+        -2.014282464981079,
+        -0.007175126578658819
+      ],
+      "native_goal_deg": [
+        1.0,
+        54.99999999999999,
+        -4.0,
+        -58.0,
+        1.0,
+        -1.9999999999999998,
+        -1.1519648082658485e-19
+      ]
+    }
+  ]
+}

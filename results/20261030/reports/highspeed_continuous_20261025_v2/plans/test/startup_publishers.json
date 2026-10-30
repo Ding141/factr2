@@ -1,0 +1,17 @@
+{
+  "/factr2/right/joint_pos": 1,
+  "/factr2/right/joint_vel": 1,
+  "/factr2/right/joint_cmd": 1,
+  "/factr2/right/joint_effort": 1,
+  "/next/right/kinematic_compensated/free_joint_torque_pred": 1,
+  "/next/right/kinematic_compensated/external_joint_torque/raw": 1,
+  "/next/right/kinematic_compensated/external_joint_torque": 1,
+  "/next/right/kinematic_compensated/status": 1,
+  "/next/right/kinematic_compensated/distribution": 1,
+  "/next/right/kinematic_compensated/input/joint_effort_filtered": 1,
+  "/next/right/kinematic_compensated/input/joint_vel_estimated": 1,
+  "/next/right/kinematic_compensated/input/joint_acc_estimated": 1,
+  "/next/right/kinematic_compensated/correction": 1,
+  "/next/right/kinematic_compensated/upstream_external_joint_torque/raw": 1,
+  "/next/right/frozen_sigma/free_joint_torque_pred": 1
+}

@@ -1,0 +1,95 @@
+{
+  "source": "real",
+  "tool": "bare_attachment_v1",
+  "gripper": "absent",
+  "load": "empty_v1",
+  "calibration": {
+    "path": "/home/venom/factr2/data/quick_capture/profiles/edf771ba9b48ea3df508380569d22a30b0e51036dcb3a321df3cf9e582f2b9ca/calibration.yaml",
+    "sha256": "edf771ba9b48ea3df508380569d22a30b0e51036dcb3a321df3cf9e582f2b9ca"
+  },
+  "control": {
+    "gains": {
+      "position_params": "/home/venom/factr2/data/quick_capture/right/20261016_182029_549446/audit/position.yaml"
+    },
+    "feedforward": {
+      "gravity_params": "/home/venom/factr2/data/quick_capture/right/20261016_182029_549446/audit/gravity.yaml",
+      "friction_model": "/home/venom/factr2/data/quick_capture/right/20261016_182029_549446/audit/friction_model.yaml",
+      "friction_sha256": "5b3fb0c9415b973d951c0ee8d2fee4af974a8ceeb735137271a68e98febe71e1"
+    }
+  },
+  "control_profile_sha256": "cbfcb882c7148d63e304f96e920bc4f459dc74c978c32516d6f4a947fb20a1a5",
+  "control_profile_scope": "arm_v2",
+  "schema": "w3_frozen_sigma_observer_v1",
+  "side": "right",
+  "joint_order": [
+    "right_joint_0",
+    "right_joint_1",
+    "right_joint_2",
+    "right_joint_3",
+    "right_joint_4",
+    "right_joint_5",
+    "right_joint_6"
+  ],
+  "contract_version": "w3_next_v1",
+  "sample_hz": 100,
+  "history": 50,
+  "input_size": 21,
+  "output_size": 7,
+  "operating_envelope": {
+    "position_bounds_deg": [
+      [
+        -4.7944077454344916,
+        24.778070204899308
+      ],
+      [
+        45.621637259169454,
+        64.52787067423696
+      ],
+      [
+        -13.02292873761926,
+        4.200349481051694
+      ],
+      [
+        -66.4082149225523,
+        -50.23411181700325
+      ],
+      [
+        -4.73350038728455,
+        10.631966377142936
+      ],
+      [
+        -13.284873322478418,
+        3.8728350801604123
+      ],
+      [
+        -4.779994765625295,
+        4.443656614100004
+      ]
+    ],
+    "position_margin_deg": 0.0,
+    "source": "observed training positions only; rectangular bounds do not certify pose combinations"
+  },
+  "feature_order": [
+    "q",
+    "qdot",
+    "q_cmd-q"
+  ],
+  "deployment_mode": "read_only_research_observation",
+  "calibration_state": "uncalibrated",
+  "deployment_ready": false,
+  "automatic_deployment": false,
+  "external_sign": "measured minus predicted free mean",
+  "sigma_units": "Nm",
+  "artifact_sha256": {
+    "mean_checkpoint/config.yaml": "92eb9d0cce7dc8a3ba88432ffd68fa9ce9c316a156c2155b60afe7314b7b0d33",
+    "mean_checkpoint/metrics.json": "668a5cf67e224099b03f903712a069b8a96502ceef63a3be1d434a2def8bc076",
+    "mean_checkpoint/normalization.npz": "7dd5f89e072dcf21208398fe275b703c35d94d1844fc9f2b846c54ac254f7945",
+    "mean_checkpoint/model.pt": "8e1bcb25c1af7053760150ce8f4483a67e38754c243fc0aa069f905ffc4a7ac6",
+    "mean_checkpoint/metadata.json": "d91a825d251b479292092d4e9a0cd0c23a8f3d65339a178f187667f0f054e24d",
+    "variance_head/history.json": "b06ef0bb5d3c1214c84d4c7403cc37f67fea9d28d6cc2da32857c25c264deb68",
+    "variance_head/normalization.npz": "83d81c9b996c06a507c3be0293e8e241d080d3730419ee40b6607c344d3ce46a",
+    "variance_head/head.pt": "dd20312fa0d88ef90aa284a0c88b797ce024742de8de4498e93e945ed2176e64",
+    "variance_head/metadata.json": "2530d926738dda55ea4199df4eeed9fbe84f70551e118b6d4f722f1bc28e2bdd",
+    "provenance.json": "fe9560364159d9245e3493d6854eeec4b6e541492419e7de65d273a6a3f6dce9"
+  }
+}

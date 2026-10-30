@@ -1,0 +1,35 @@
+{
+  "status": "code_model_and_default_profile_ready",
+  "live_service_running": false,
+  "robot_data_sources_running": false,
+  "physical_motion_performed": false,
+  "replay_only": true,
+  "active_experiment": "/home/venom/factr2/data/right/validated_joint_compensation_20261026_v1",
+  "model_sha256": "da96b945986d6195a9249260baafa62ad190fa658fc42f1485eb55f4aa1e6f88",
+  "enabled_joints": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "nonlinear_updates": [
+    1,
+    2
+  ],
+  "legacy_outputs_preserved": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "original_low_speed_regression_gate_passed": false,
+  "research_observation_only": true,
+  "replay_before_rms_nm": 0.4332778135013832,
+  "replay_after_rms_nm": 0.3789128894540165,
+  "replay_reduction_fraction": 0.12547359304653882,
+  "unchanged_joint_max_error_nm": 2.935429677108914e-13
+}

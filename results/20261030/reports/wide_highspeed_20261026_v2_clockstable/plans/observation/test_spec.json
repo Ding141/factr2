@@ -1,0 +1,47 @@
+{
+  "purpose": "Post-deployment no-load waveform only; never use this record for current training or selection",
+  "next_topic_root": "/next/right/frozen_sigma",
+  "base_model_dir": "/home/venom/factr2/models/w3/right/wide_highspeed_observer_20261026_v1",
+  "base_metadata_sha256": "3ea80b6d4a101bce327161b874fefd859afd323fabcf5f2f91ee526bf6edd403",
+  "training_envelope": {
+    "position_bounds_deg": [
+      [
+        -24.837188907260355,
+        26.854447712583188
+      ],
+      [
+        36.4198424847882,
+        64.52787067423696
+      ],
+      [
+        -22.989650057528586,
+        14.800966997451564
+      ],
+      [
+        -81.42397600147514,
+        -42.125201951337395
+      ],
+      [
+        -17.612870501381188,
+        19.63133141999794
+      ],
+      [
+        -15.164541382065927,
+        11.085624126720598
+      ],
+      [
+        -14.418867432260832,
+        14.716424623452438
+      ]
+    ],
+    "position_margin_deg": 0.0,
+    "source": "observed training positions only; rectangular bounds do not certify pose combinations"
+  },
+  "plan_sha256": "1f0213a421c645916cf27cd5346b288bd237e024f10addb5bf47eb8e1e84bb26",
+  "command_seconds": 284.97,
+  "model_hash": "3ea80b6d4a101bce327161b874fefd859afd323fabcf5f2f91ee526bf6edd403",
+  "role": "test",
+  "model_frozen_during_capture": true,
+  "retune_on_observation": false,
+  "recording_mode": "atomic_base_no_compensation"
+}

@@ -472,6 +472,9 @@ def load_capture_motion(path):
     parsed = yaml.load(raw, Loader=getattr(yaml, 'CSafeLoader', yaml.SafeLoader))
     if isinstance(parsed, dict) and parsed.get('schema') == SCHEMA:
         return load_coverage(path)
+    if isinstance(parsed, dict) and parsed.get('schema') == 'w3_targeted_free_motion_v1':
+        from w3_targeted_protocol import load
+        return load(path)
     from w3_motion_sequence import load_motion
     return load_motion(path)
 

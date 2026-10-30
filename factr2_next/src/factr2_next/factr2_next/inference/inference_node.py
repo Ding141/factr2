@@ -114,13 +114,13 @@ class InferenceNode(Node):
         self.robot_topic_root = str(self.cfg.get("robot_topic_root", "/robot"))
         self.next_topic_root = str(self.cfg.get("next_topic_root", "/next"))
 
-        self.loaded = load_checkpoint(
+        self.loaded = self._load_checkpoint(
             Path(str(self.cfg["checkpoint_dir"])).expanduser(),
             device=self.cfg.get("device", "cpu"),
             expected=({'side':self.cfg['side'],'joint_order':self.cfg['joint_names'],
                        'sample_hz':self.cfg.get('sample_hz',50),'history':50} if self.w3 else None),
         )
-        self.buffer = HistoryBuffer(self.loaded.history)
+        self.buffer = self._create_history_buffer()
         frozen_envelope = self.loaded.metadata.get('operating_envelope')
         if frozen_envelope is not None and self.cfg.get('operating_envelope') != frozen_envelope:
             raise ValueError('Runtime envelope must match the checkpoint training envelope')
@@ -133,7 +133,8 @@ class InferenceNode(Node):
         self.topic_cfg = self.cfg["topics"]
         self._validate_postprocessing()
         self.names = self.cfg.get('joint_names',[])
-        self.status_pub = self.create_publisher(DiagnosticArray,self.next_topic_root+'/status',qos_profile_sensor_data)
+        status_topic = self._format_topic(self.cfg['outputs'].get('status', self.next_topic_root+'/status'))
+        self.status_pub = self.create_publisher(DiagnosticArray,status_topic,qos_profile_sensor_data)
         self._publish_status()
         self.state,self.reason = 'warming','waiting_50_fresh_frames'
         if self.w3:
@@ -184,6 +185,15 @@ class InferenceNode(Node):
             f"low={self.contact_cfg.get('low_threshold', 1.0)}, "
             f"high={self.contact_cfg.get('high_threshold', 2.0)}"
         )
+
+    def _load_checkpoint(self, path, **kwargs):
+        return load_checkpoint(path, **kwargs)
+
+    def _create_history_buffer(self):
+        return HistoryBuffer(self.loaded.history)
+
+    def _append_history(self, joint_pos, joint_vel, joint_cmd):
+        self.buffer.append(joint_pos, joint_vel, joint_cmd)
 
     def _validate_postprocessing(self):
         c=self.contact_magnitude_cfg
@@ -267,7 +277,7 @@ class InferenceNode(Node):
             joint_pos,joint_vel,joint_cmd,measured=[self._extract(m,k) for m,k in zip(msgs,INPUT_KEYS)]
             self.last_stamp=stamp_ns(msgs[-1]);self.last_input_mono=time.monotonic()
 
-        self.buffer.append(joint_pos, joint_vel, joint_cmd)
+        self._append_history(joint_pos, joint_vel, joint_cmd)
         # Paper Sec. 4, Eq. (3): f_theta consumes a full history window.
         if not self.buffer.ready:
             return
@@ -297,6 +307,9 @@ class InferenceNode(Node):
         contact = self._update_observation_state(normalized_contact_magnitude)
         self.counts["outputs"]+=1;self.output_times.append(time.monotonic())
         self.last_output_stamp=self.last_stamp
+        # Snapshot the already computed output; a recorder must not advance the
+        # causal filter a second time just to reconstruct the plotted sample.
+        self.last_external_output=tau_ext.copy()
         stamp = msgs[-1].header.stamp
         self.pubs["free"].publish(self._joint_state(tau_free, stamp))
         self.pubs["external_raw"].publish(self._joint_state(tau_ext_raw, stamp))

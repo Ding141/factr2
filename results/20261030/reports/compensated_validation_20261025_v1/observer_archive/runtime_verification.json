@@ -1,0 +1,30 @@
+{
+  "model_sha256": "89af2ae40f122e512287dac6fe0798d388701ad10c43cdfcaaa50a5888fc459e",
+  "frames": 64189,
+  "evaluation_frames_checked": 28564,
+  "max_runtime_replay_error_nm": 2.220446049250313e-16,
+  "max_evaluation_error_nm": 2.220446049250313e-16,
+  "synthetic_step_nm": 0.3,
+  "synthetic_fixed_kinematics": true,
+  "physical_contact_validated": false,
+  "settled_step_gain": [
+    0.9999999999999994,
+    0.9999999999999992,
+    0.9999999999999992,
+    1.0000000000000002,
+    0.9999999999999998,
+    0.9999999999999998,
+    0.9999999999999998
+  ],
+  "rise_90pct_ms": [
+    80,
+    80,
+    80,
+    80,
+    80,
+    80,
+    80
+  ],
+  "learned_correction_independent_of_torque_injection": true,
+  "hardware_commands_sent": 0
+}

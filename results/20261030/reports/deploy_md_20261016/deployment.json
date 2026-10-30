@@ -1,0 +1,21 @@
+{
+  "mode": "readonly_md_trial",
+  "model": "/home/venom/factr2/data/right/md_ablation_20261016_v2/next_md_seed0",
+  "model_sha256": "923bff7d716f33f2c91adec04d307deaebc1e03076939b30feafa3b9c5c4d7f0",
+  "recipe_sha256": "eb52bfae6e35bf023517d17d0d122a5fda22d2ea9dbda820ed3508a615fd0994",
+  "deployment_ready": false,
+  "started_wall_ns": 1792160916231836467,
+  "configuration_and_source_sha256": {
+    "/home/venom/factr2/config/w3/right/inference_md_observation_20261016.yaml": "04440e113e615f4a6ed451429aa4239fbeea7d12c566584fcbd488dbeab67415",
+    "/home/venom/factr2/config/w3/right/visualize_md_observation_20261016.yaml": "8f58bee4891b39feba4c1910cde4a4b2000960d91962eb16ababaeef13229771",
+    "/home/venom/factr2/config/w3/right/endpoint_wrench_md_observation_20261016.yaml": "9d074e4662453bf04b3da908f040a2c92f43779ba452793acd58cb05cf5c5eaf",
+    "/home/venom/factr2/factr2_next/src/factr2_next/factr2_next/inference/md_observer.py": "0acb58c8e35e5690b3f55e4396658f0a1ede7d7dbd8b66aced9a681bfa609223",
+    "/home/venom/factr2/factr2_next/src/factr2_next/factr2_next/inference/inference_node.py": "9488b702deb82890b80ea9fe031cb6fda1be07cf3b5895df0e27cdaa0d6eca0e",
+    "/home/venom/factr2/factr2_next/src/factr2_next/factr2_next/visualization/web_node.py": "a068491542c5ded4054e1b98ec489abe4f93e31b04049c44bcf876897b46980d",
+    "/home/venom/factr2/scripts/w3_endpoint_wrench.py": "e860226266353fb0f16cc745486df9c31bb2328fb6e14c89160d3ad997f7aa64"
+  },
+  "baseline_preserved": true,
+  "topic_root": "/next/right/md",
+  "joint_url": "http://127.0.0.1:8083/",
+  "endpoint_url": "http://127.0.0.1:8084/"
+}

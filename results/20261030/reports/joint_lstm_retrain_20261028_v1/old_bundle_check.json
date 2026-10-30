@@ -1,0 +1,9 @@
+{
+  "status": "checked",
+  "bundle": "/home/venom/factr2/models/w3/right/wide_highspeed_observer_20261026_v1",
+  "metadata_sha256": "3ea80b6d4a101bce327161b874fefd859afd323fabcf5f2f91ee526bf6edd403",
+  "architecture": "shared_lstm",
+  "compensation_enabled": false,
+  "signal": "LP12 residual then LP5",
+  "controller_changes": false
+}

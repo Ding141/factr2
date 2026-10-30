@@ -1,0 +1,188 @@
+{
+  "status": "passed",
+  "packets": 601,
+  "source_rate_hz": 100.0547934901572,
+  "max_paired_torque_identity_error_nm": 2.220446049250313e-16,
+  "paired_frames": 601,
+  "state": "valid",
+  "last_packet": {
+    "schema": "w3_kinematic_residual_v1",
+    "stamp_ns": 1792749442210569085,
+    "state": "valid",
+    "reason": "ok",
+    "joint_names": [
+      "right_joint_0",
+      "right_joint_1",
+      "right_joint_2",
+      "right_joint_3",
+      "right_joint_4",
+      "right_joint_5",
+      "right_joint_6"
+    ],
+    "units": "Nm",
+    "base_metadata_sha256": "cbe838418b4f5b550662e51230e8b3f60a2fdfa4328e6cc5d7a6cd5a112876c9",
+    "compensation_applied": true,
+    "enabled_joints": [
+      true,
+      false,
+      true,
+      true,
+      false,
+      true,
+      true
+    ],
+    "calibration": "uncalibrated",
+    "contact_validated": false,
+    "signal": {
+      "input_torque_hz": 12.0,
+      "output_hz": 5.0,
+      "motor_velocity_hz": 8.0,
+      "position_noise_rad": 0.00038,
+      "jerk_density": 1.0,
+      "max_gap_seconds": 0.04,
+      "warmup_seconds": 0.5
+    },
+    "raw_external_nm": [
+      -0.03839977633749634,
+      -0.026788695994091505,
+      -0.14659477580741356,
+      0.016282230156753747,
+      0.0016684436184651926,
+      -0.008528007385234992,
+      0.012510899143555297
+    ],
+    "final_external_nm": [
+      -0.02606081865865827,
+      -0.023554835004137513,
+      -0.14098119177916757,
+      0.013821360004275803,
+      -0.003710302156927797,
+      -0.008982333527206177,
+      0.011029363388126157
+    ],
+    "upstream_external_nm": [
+      -0.047071218490600586,
+      -0.025916576385498047,
+      -0.14893102645874023,
+      0.024609923362731934,
+      0.005568590015172958,
+      -0.0083407461643219,
+      0.013870008289813995
+    ],
+    "correction_nm": [
+      -0.0031909142399688868,
+      0.0,
+      0.00045684800328006756,
+      0.00031011702923837073,
+      0.0,
+      -0.00018077302461661765,
+      3.509747599327135e-05
+    ]
+  },
+  "publishers": [
+    [
+      "/next/right/kinematic_compensated/correction",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/distribution",
+      [
+        "std_msgs/msg/String"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/external_joint_torque",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/external_joint_torque/raw",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/free_joint_torque_pred",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/input/joint_acc_estimated",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/input/joint_cmd_filtered",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/input/joint_effort_filtered",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/input/joint_pos_filtered",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/input/joint_vel_estimated",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/input/motor_vel_filtered",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/mse",
+      [
+        "std_msgs/msg/Float32"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/normalized_contact_magnitude",
+      [
+        "std_msgs/msg/Float32"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/status",
+      [
+        "diagnostic_msgs/msg/DiagnosticArray"
+      ]
+    ],
+    [
+      "/next/right/kinematic_compensated/upstream_external_joint_torque/raw",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/parameter_events",
+      [
+        "rcl_interfaces/msg/ParameterEvent"
+      ]
+    ],
+    [
+      "/rosout",
+      [
+        "rcl_interfaces/msg/Log"
+      ]
+    ]
+  ],
+  "no_control_publishers": true,
+  "motion_commands_sent": 0
+}

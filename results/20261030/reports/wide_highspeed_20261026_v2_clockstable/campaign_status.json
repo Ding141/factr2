@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "reused_train": "/home/venom/factr2/log/wide_highspeed_20261026_v1/plans/train",
+  "failed_val_excluded": true,
+  "training_started": false,
+  "time_sync_paused": true,
+  "time_sync_restore_required": true,
+  "clock_probe_passed": true,
+  "all_recordings_completed": true,
+  "training_completed": true,
+  "deployed": true,
+  "extra_compensation_enabled": false,
+  "post_deployment_motion_completed": true,
+  "hardware_motion": "stopped",
+  "report": "/home/venom/factr2/log/wide_highspeed_20261026_v2_clockstable/REPORT.md"
+}

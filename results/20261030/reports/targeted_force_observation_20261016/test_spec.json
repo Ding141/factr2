@@ -1,0 +1,129 @@
+{
+  "purpose": "read-only model feedback during user-authorized free motion; not training",
+  "role": "test",
+  "model_dir": "/home/venom/factr2/models/w3/right/targeted_candidate_20261016",
+  "model_hash": "b5216350f2c76a7462ab931e5d62e8f2442e00e65f0f4146fb4b7868829d62a6",
+  "endpoint_config": {
+    "side": "right",
+    "tool_frame": "right_attachment_point",
+    "root_frame": "base_footprint",
+    "robot_description_sha256": "e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345",
+    "inference_config": "/home/venom/factr2/config/w3/right/inference_targeted_20261016.yaml",
+    "solver": {
+      "characteristic_length_m": 0.4,
+      "damping": 0.005,
+      "max_condition": 100.0,
+      "max_relative_residual": 0.35,
+      "mode": "full_wrench"
+    },
+    "web": {
+      "host": "127.0.0.1",
+      "port": 8082,
+      "refresh_hz": 10,
+      "history_points": 600
+    },
+    "model_notice": "2026-10-16 待验收模型（最佳第12轮）；当前为真机只读观测。验证/测试仅覆盖6°/s，接触及卸载恢复尚未验证。"
+  },
+  "plan_sha256": "829b58fad9bccd6f62e734200bae9a6fc9dea5d01554c0ceaa497ba8ff092382",
+  "initial_command_deg": [
+    0.0,
+    50.0,
+    0.0,
+    -55.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "left_pose_deg": [
+    3.985658811985318,
+    -1.7110056194535699,
+    0.37541626606901507,
+    6.747143948891029,
+    -18.290425226065313,
+    -1.1561712396752308,
+    1.2525375315679916
+  ],
+  "command_bounds_deg": [
+    [
+      -2.3341456840778334,
+      2.3341456840778343
+    ],
+    [
+      47.66585431592218,
+      52.33414568407786
+    ],
+    [
+      -2.3341456840778334,
+      2.3341456840778343
+    ],
+    [
+      -57.33414568407783,
+      -52.665854315922154
+    ],
+    [
+      -2.3341456840778334,
+      2.3341456840778343
+    ],
+    [
+      -2.3341456840778334,
+      2.3341456840778343
+    ],
+    [
+      -2.3341456840778334,
+      2.3341456840778343
+    ]
+  ],
+  "training_envelope": {
+    "position_bounds_deg": [
+      [
+        -4.794407367706299,
+        24.77806854248047
+      ],
+      [
+        45.62163543701172,
+        64.52787017822266
+      ],
+      [
+        -13.022928237915039,
+        4.2003493309021
+      ],
+      [
+        -66.40821075439453,
+        -50.234107971191406
+      ],
+      [
+        -4.733500003814697,
+        10.631965637207031
+      ],
+      [
+        -13.284873008728027,
+        3.8728349208831787
+      ],
+      [
+        -4.779994487762451,
+        4.4436564445495605
+      ]
+    ],
+    "position_margin_deg": 0.0,
+    "source": "observed training positions only; rectangular bounds do not certify all pose combinations"
+  },
+  "velocity_caps_deg_s": [
+    6,
+    10
+  ],
+  "command_seconds": 119.37000000000002,
+  "steps": 20,
+  "ground_truth": {
+    "source": "prior operator empty/no-contact declaration; no independent sensor",
+    "assumed_external_wrench": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "independently_measured": false
+  },
+  "automatic_retry": false
+}

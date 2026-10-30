@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "side": "right",
+  "domain": 74,
+  "started_unix": 1791621706.4360223,
+  "plan": "/home/venom/factr2/data/motion_plans/right_coverage_c2_resume_20261010.yaml",
+  "session": "/home/venom/factr2/data/quick_capture/right/20261010_164151_566506",
+  "dataset": "/home/venom/factr2/data/right/c2_campaign_20261010_164151_566506_session_trial",
+  "run_directory": "/home/venom/factr2/runs/next_right_c2_campaign_20261010_164151_566506_session_trial_20261010_174837_628319",
+  "completed_unix": 1791625733.6270084
+}

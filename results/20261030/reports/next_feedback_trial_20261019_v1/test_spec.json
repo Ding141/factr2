@@ -1,0 +1,122 @@
+{
+  "purpose": "position/velocity feedback, derivative uncertainty, native and CAN tracking; NEXT only",
+  "role": "test",
+  "model_dir": "/home/venom/factr2/models/w3/right/targeted_candidate_20261016",
+  "model_hash": "b5216350f2c76a7462ab931e5d62e8f2442e00e65f0f4146fb4b7868829d62a6",
+  "endpoint_config": {
+    "side": "right",
+    "tool_frame": "right_attachment_point",
+    "root_frame": "base_footprint",
+    "robot_description_sha256": "e3a8e37ee96fe8ff435af115e63aa788b4aed3e7b9c1dd2f65de9bcd9948e345",
+    "inference_config": "/home/venom/factr2/config/w3/right/inference_targeted_20261016.yaml",
+    "solver": {
+      "characteristic_length_m": 0.4,
+      "damping": 0.005,
+      "max_condition": 100.0,
+      "max_relative_residual": 0.35,
+      "mode": "full_wrench"
+    },
+    "web": {
+      "host": "127.0.0.1",
+      "port": 8082,
+      "refresh_hz": 10,
+      "history_points": 600
+    },
+    "model_notice": "2026-10-16 待验收模型（最佳第12轮）；当前为真机只读观测。验证/测试仅覆盖6°/s，接触及卸载恢复尚未验证。"
+  },
+  "plan_sha256": "80ca28df024795300585a4a116fe078db7a7b71051aa14dce21c33712b9e77d1",
+  "initial_command_deg": [
+    0.0,
+    50.0,
+    0.0,
+    -55.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "left_pose_deg": [
+    3.985658811985318,
+    -1.7110056194535699,
+    0.37541626606901507,
+    6.747143948891029,
+    -18.290425226065313,
+    -1.1561712396752308,
+    1.2525375315679916
+  ],
+  "training_envelope": {
+    "position_bounds_deg": [
+      [
+        -4.794407367706299,
+        24.77806854248047
+      ],
+      [
+        45.62163543701172,
+        64.52787017822266
+      ],
+      [
+        -13.022928237915039,
+        4.2003493309021
+      ],
+      [
+        -66.40821075439453,
+        -50.234107971191406
+      ],
+      [
+        -4.733500003814697,
+        10.631965637207031
+      ],
+      [
+        -13.284873008728027,
+        3.8728349208831787
+      ],
+      [
+        -4.779994487762451,
+        4.4436564445495605
+      ]
+    ],
+    "position_margin_deg": 0.0,
+    "source": "observed training positions only; rectangular bounds do not certify all pose combinations"
+  },
+  "command_seconds": 281.9399999999999,
+  "steps": 62,
+  "feedback_protocol": {
+    "role": "independent diagnostic; never training or delay calibration",
+    "position_derivatives": {
+      "sample_period_seconds": 0.01,
+      "polynomial_order": 3,
+      "centered_windows_samples": [
+        11,
+        21,
+        31,
+        51
+      ],
+      "include_naive_difference": true,
+      "edge_policy": "exclude half-window at record boundaries; no differentiation across gaps >40ms"
+    },
+    "plateau_guard_seconds": 0.25,
+    "plateau_checks": [
+      "encoder displacement divided by elapsed time",
+      "trapezoidal integral of reported velocity against encoder displacement",
+      "unshifted raw velocity and fixed-window position derivatives"
+    ],
+    "raw_can_matching": "latest preceding kernel RX per joint; report ages and disagreement, never shift",
+    "uncertainty": "method sensitivity and quantization bounds, not calibrated physical confidence intervals",
+    "latency": "do not estimate, fit or apply any new time shift on these independent data",
+    "static_analysis": "last 8s of initial/final settle; all 7 feedback channels",
+    "controller_changes": false,
+    "model_changes": false
+  },
+  "automatic_retry": false,
+  "ground_truth": {
+    "source": "operator requests unloaded no-contact diagnostic",
+    "assumed_external_wrench": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "independently_measured": false
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "comparison_strokes": 72,
+  "max_native_command_reconstruction_error_deg": 0.00014309256338407295,
+  "interpretation": "Controller native position targets match frozen S-curves; no time offset fitted"
+}

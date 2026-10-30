@@ -1,0 +1,151 @@
+{
+  "duration_seconds": 30.0267600319994,
+  "outputs_received": 3000,
+  "fully_paired_frames": 3000,
+  "output_hz": 100.00002776926412,
+  "source_gap_ms": {
+    "p95": 10.022014,
+    "max": 10.254724999999999
+  },
+  "raw_output_latency_ms": {
+    "p95": 4.039260349999999,
+    "max": 5.785721
+  },
+  "inference_ms_p95": 0.9593400000085239,
+  "states": {
+    "out_of_scope": 1500
+  },
+  "reasons": {
+    "outside_collection_range:right_joint_3": 1500
+  },
+  "first_status": {
+    "outputs": 17027,
+    "dropped": 0,
+    "resets": 0,
+    "state": "out_of_scope",
+    "reason": "outside_collection_range:right_joint_3",
+    "history_count": 50,
+    "source_age_seconds": 0.005062655,
+    "receive_age_seconds": 0.00268923800012999,
+    "last_output_stamp_ns": 1791608407554606053,
+    "output_hz": 100,
+    "infer_ms": 0.6138349999673665,
+    "infer_p95_ms": 0.9713909498259453,
+    "device": "cpu",
+    "diagnostic_level": 1
+  },
+  "last_status": {
+    "outputs": 20025,
+    "dropped": 0,
+    "resets": 0,
+    "state": "out_of_scope",
+    "reason": "outside_collection_range:right_joint_3",
+    "history_count": 50,
+    "source_age_seconds": 0.005080464000000001,
+    "receive_age_seconds": 0.002977752999868244,
+    "last_output_stamp_ns": 1791608437534587584,
+    "output_hz": 100,
+    "infer_ms": 0.5948380003246712,
+    "infer_p95_ms": 0.936781000746123,
+    "device": "cpu",
+    "diagnostic_level": 1
+  },
+  "adapter_levels": {
+    "0": 3000
+  },
+  "raw_formula_max_abs_error_nm": 2.9802322387695312e-08,
+  "joint_torque_mean_nm": {
+    "measured": [
+      -0.1454670689900716,
+      -0.5666714566548665,
+      0.1106415818532308,
+      0.10758739153544108,
+      0.09452666854858398,
+      0.14161660162607828,
+      0.02895400842030843
+    ],
+    "free": [
+      -0.9069082984328269,
+      0.09188591996828716,
+      0.34850171595811846,
+      -0.39783661102255186,
+      0.0971011576851209,
+      0.5363619795838992,
+      0.02338575726747513
+    ],
+    "raw": [
+      0.7614412294427554,
+      -0.6585573766231537,
+      -0.23786013410488765,
+      0.5054240025778611,
+      -0.002574489136536916,
+      -0.3947453779578209,
+      0.005568251152833303
+    ],
+    "ext": [
+      0.7614339147408803,
+      -0.6585673464735349,
+      -0.2378786016702652,
+      0.505425070186456,
+      -0.00258068390032228,
+      -0.394739462574323,
+      0.005569798253355354
+    ]
+  },
+  "inference_publishers": [
+    [
+      "/next/right/contact_state",
+      [
+        "std_msgs/msg/Bool"
+      ]
+    ],
+    [
+      "/next/right/external_joint_torque",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/external_joint_torque/raw",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/free_joint_torque_pred",
+      [
+        "sensor_msgs/msg/JointState"
+      ]
+    ],
+    [
+      "/next/right/mse",
+      [
+        "std_msgs/msg/Float32"
+      ]
+    ],
+    [
+      "/next/right/normalized_contact_magnitude",
+      [
+        "std_msgs/msg/Float32"
+      ]
+    ],
+    [
+      "/next/right/status",
+      [
+        "diagnostic_msgs/msg/DiagnosticArray"
+      ]
+    ],
+    [
+      "/parameter_events",
+      [
+        "rcl_interfaces/msg/ParameterEvent"
+      ]
+    ],
+    [
+      "/rosout",
+      [
+        "rcl_interfaces/msg/Log"
+      ]
+    ]
+  ]
+}

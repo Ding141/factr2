@@ -121,6 +121,17 @@ class CoverageClient(MotionClient):
                 self.state['adapter_hz'] = float(values.get('output_hz_last_second', '0'))
                 self.state['adapter_reason'] = diagnostic.message
 
+    def ready(self):
+        # The dual-arm collision pose also needs fresh left feedback. Waiting
+        # only for the moving arm races the first left health callback during
+        # discovery or after a blocking service call. Keep the same 250 ms
+        # freshness checks used by the guard before accepting readiness.
+        if not super().ready():
+            return False
+        return (getattr(self, 'stationary_left_deg', None) is None or
+                (all(self.fresh(key) for key in ('left_q', 'left_cmd', 'left_health'))
+                 and self.state.get('left_healthy', False)))
+
     def guard(self):
         super().guard()
         if getattr(self, 'stationary_left_deg', None) is not None:

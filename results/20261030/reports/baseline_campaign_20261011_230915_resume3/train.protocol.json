@@ -1,0 +1,146 @@
+{
+  "role": "train",
+  "seed": 1701,
+  "task_poses_deg": [
+    [
+      0.0,
+      50.0,
+      0.0,
+      -55.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      -23.44797300736475,
+      58.95031375704305,
+      -10.243444707048832,
+      -65.46099402492,
+      20.039772111330898,
+      3.5972763740740348,
+      -20.43305179480559
+    ],
+    [
+      -31.367614465864353,
+      44.127427422829236,
+      10.172179180669701,
+      -40.654256405967196,
+      -5.2798695168342284,
+      5.328028480537931,
+      -20.348626962105335
+    ]
+  ],
+  "task_max_condition": 20.0,
+  "approach_may_be_singular": true,
+  "joint_sweeps_may_be_singular": true,
+  "automatic_rezero": false,
+  "limitations": [
+    "Geometry is not collision clearance",
+    "No-contact returns are friction probes, not external-load release validation"
+  ],
+  "retained_sources": [
+    {
+      "parent_session": "/home/venom/factr2/data/quick_capture/right/20261011_215544_913483",
+      "parent_h5_sha256": "b2892d70a6025e474348c1a8f25a2202266d5422ca0927b021c3a7f30f661a46",
+      "events": [
+        "003_sine_j1_slow",
+        "004_sine_j2_slow",
+        "005_sine_j3_slow",
+        "007_sine_j5_slow",
+        "008_sine_j6_slow",
+        "009_sine_j7_slow"
+      ]
+    },
+    {
+      "parent_session": "/home/venom/factr2/data/quick_capture/right/20261011_224500_979861",
+      "parent_h5_sha256": "c3cb931b3a603f1afaa50161ce0f3b8fa26036249329bf57cc4495163c186f3a",
+      "events": [
+        "006_sine_j4_slow",
+        "010_sine_j1_fast",
+        "011_sine_j2_fast",
+        "012_sine_j3_fast",
+        "013_sine_j4_fast",
+        "014_sine_j5_fast",
+        "015_sine_j6_fast",
+        "016_sine_j7_fast"
+      ]
+    }
+  ],
+  "excluded_events": {
+    "/home/venom/factr2/data/quick_capture/right/20261011_215544_913483/006_sine_j4_slow": "Sweep crosses a raw feedback interruption"
+  },
+  "selected_completed_events": [
+    "003_sine_j1_slow",
+    "004_sine_j2_slow",
+    "005_sine_j3_slow",
+    "007_sine_j5_slow",
+    "008_sine_j6_slow",
+    "009_sine_j7_slow",
+    "006_sine_j4_slow",
+    "010_sine_j1_fast",
+    "011_sine_j2_fast",
+    "012_sine_j3_fast",
+    "013_sine_j4_fast",
+    "014_sine_j5_fast",
+    "015_sine_j6_fast",
+    "016_sine_j7_fast"
+  ],
+  "raw_files_modified": false,
+  "failed_fast_block_reused": false,
+  "remaining_steps": 76,
+  "reference_steps": 90,
+  "plan_sha256": "c80c245d3d8bbcadca2d207fe4897091151b6b3a7b5876a6596076869a24c1e1",
+  "name": "right_next_baseline_conditioned_v3",
+  "side": "right",
+  "steps": 76,
+  "duration_seconds": 340.3,
+  "planned_min_deg": [
+    -35.36761446586435,
+    40.127427422829236,
+    -14.243444707048832,
+    -70.16591975983441,
+    -9.279869516834228,
+    -3.0,
+    -24.43305179480559
+  ],
+  "planned_max_deg": [
+    5.474416074716864,
+    62.95031375704305,
+    14.172179180669701,
+    -36.654256405967196,
+    24.039772111330898,
+    8.328028480537931,
+    4.0
+  ],
+  "working_bounds_deg": [
+    [
+      -135.0,
+      105.0
+    ],
+    [
+      -0.5,
+      155.4
+    ],
+    [
+      -115.9,
+      115.9
+    ],
+    [
+      -99.0,
+      69.0
+    ],
+    [
+      -115.9,
+      115.9
+    ],
+    [
+      -31.9,
+      31.9
+    ],
+    [
+      -72.0,
+      72.0
+    ]
+  ],
+  "model_sha256": "7830b419d3b12a413a1ec672a1ca0da8ef5d6b255bc883d40428185933fd88f4"
+}

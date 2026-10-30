@@ -1,0 +1,18 @@
+{
+  "available_bytes": 2113056768,
+  "free_bytes": 7498543104,
+  "controllers": {
+    "joint_position_controller": "active",
+    "joint_state_broadcaster": "active",
+    "gravity_compensation_controller": "active"
+  },
+  "control_process": {
+    "control": {
+      "pid": 10652,
+      "running": true,
+      "exit_code": null,
+      "label": "control / right / gravity",
+      "stopping": false
+    }
+  }
+}
